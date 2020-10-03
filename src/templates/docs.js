@@ -91,7 +91,7 @@ export default class MDXRuntimeTest extends Component {
           <link rel="canonical" href={canonicalUrl} />
         </Helmet>
         <div className={'titleWrapper'}>
-          <StyledHeading>{mdx.fields.title}<span> ({date})</span></StyledHeading>
+          <StyledHeading>{mdx.fields.title}<span></span></StyledHeading>
           <Edit className={'mobileView'}>
             {docsLocation && (
               <Link className={'gitBtn'} to={`${docsLocation}/${mdx.parent.relativePath}`}>
@@ -102,6 +102,7 @@ export default class MDXRuntimeTest extends Component {
         </div>
         <StyledMainWrapper>
           <MDXRenderer>{mdx.body}</MDXRenderer>
+          <i>{date}</i>
         </StyledMainWrapper>
         <div className={'addPaddTopBottom'}>
           <NextPrevious mdx={mdx} nav={nav} />
