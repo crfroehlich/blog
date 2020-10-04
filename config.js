@@ -9,8 +9,7 @@ const config = {
   header: {
     logo: 'https://raw.githubusercontent.com/crfroehlich/cdn/main/images/luddite_logo.svg',
     logoLink: 'https://github.com/crfroehlich/',
-    title:
-      "BLOG.LUDDITES.ME",
+    title: 'LUDDITES, INC.',
     githubUrl: 'https://github.com/crfroehlich/blog',
     helpUrl: '',
     tweetText: '',

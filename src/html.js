@@ -39,21 +39,25 @@ export default class HTML extends React.Component {
                 navBarClose();
               }
             });
-            try {
-              function addComments() {
+            function addComments() {
+              try {
                 var nav = document.getElementsByClassName('addPaddTopBottom')[0];
                 if(!nav) {
-                  return setTimeout(addComments, 1000);
+                  setTimeout(addComments, 1000);
+                } else {
+                  var script = document.createElement('script');
+                  script.src = 'https://utteranc.es/client.js';
+                  script.setAttribute('repo', 'crfroehlich/blog');
+                  script.setAttribute('issue-term', 'pathname');
+                  script.async = true;
+                  nav.appendChild(script);
                 }
-                var script = document.createElement('script');
-                script.src = 'https://utteranc.es/client.js';
-                script.setAttribute('repo', 'crfroehlich/blog');
-                script.setAttribute('issue-term', 'pathname');
-                script.async = true;
-                nav.append(script);
+              } catch(e) {
+                console.log(e);
+                setTimeout(addComments, 1000);
               }
-              addComments();
-            } catch(e) { }
+            }
+            setTimeout(addComments, 500);
             `,
             }}
           />
