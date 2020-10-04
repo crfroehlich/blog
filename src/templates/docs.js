@@ -77,11 +77,6 @@ export default class MDXRuntimeTest extends Component {
       config.gatsby.pathPrefix !== '/' ? canonicalUrl + config.gatsby.pathPrefix : canonicalUrl;
     canonicalUrl = canonicalUrl + mdx.fields.slug;
 
-    let gitalkConfig = {
-      id: canonicalUrl,
-      title: metaTitle,
-    }
-
     return (
       <Layout {...this.props}>
         <Helmet>
@@ -113,7 +108,6 @@ export default class MDXRuntimeTest extends Component {
         <div className={'addPaddTopBottom'}>
           <NextPrevious mdx={mdx} nav={nav} />
         </div>
-        <Gitalk options={gitalkConfig}/>
       </Layout>
     );
   }

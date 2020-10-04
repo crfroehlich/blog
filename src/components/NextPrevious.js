@@ -115,6 +115,7 @@ const NextPrevious = ({ mdx, nav }) => {
           </div>
         </Link>
       ) : null}
+
     </StyledNextPrevious>
   );
 };
