@@ -7,6 +7,7 @@ import { Layout, Link } from '$components';
 import NextPrevious from '../components/NextPrevious';
 import config from '../../config';
 import { Edit, StyledHeading, StyledMainWrapper } from '../components/styles/Docs';
+import Gitalk from 'gatsby-plugin-gitalk';
 
 const forcedNavOrder = config.sidebar.forcedNavOrder;
 
@@ -75,7 +76,12 @@ export default class MDXRuntimeTest extends Component {
     canonicalUrl =
       config.gatsby.pathPrefix !== '/' ? canonicalUrl + config.gatsby.pathPrefix : canonicalUrl;
     canonicalUrl = canonicalUrl + mdx.fields.slug;
-      console.log(this.props)
+
+    let gitalkConfig = {
+      id: canonicalUrl,
+      title: metaTitle,
+    }
+
     return (
       <Layout {...this.props}>
         <Helmet>
@@ -107,6 +113,7 @@ export default class MDXRuntimeTest extends Component {
         <div className={'addPaddTopBottom'}>
           <NextPrevious mdx={mdx} nav={nav} />
         </div>
+        <Gitalk options={gitalkConfig}/>
       </Layout>
     );
   }

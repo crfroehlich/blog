@@ -30,8 +30,10 @@ const calculateTreeData = edges => {
         config.gatsby && config.gatsby.trailingSlash ? parts.slice(1, -2) : parts.slice(1, -1);
 
       let path = [];
+
       for (const part of slicedParts) {
         let tmp = prevItems && prevItems.find(({ label }) => label == part);
+
         path.push(part);
         if (tmp) {
           if (!tmp.items) {

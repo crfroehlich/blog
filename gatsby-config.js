@@ -1,6 +1,8 @@
 require("dotenv").config();
 const queries = require("./src/utils/algolia");
+
 const config = require("./config");
+
 const plugins = [
   'gatsby-plugin-sitemap',
   'gatsby-plugin-sharp',
@@ -18,6 +20,20 @@ const plugins = [
       name: "docs",
       path: `${__dirname}/content/`
     }
+  },
+  {
+      resolve: `gatsby-plugin-gitalk`,
+      options: {
+        config: {
+          clientID: 'd43d25f5f1c7901acef8',
+          clientSecret: 'c5544388ec0e08c5237f4f71045b671a2e94c02d',
+          repo: 'blog',
+          owner: 'crfroehlich',
+          admin: ['crfroehlich'],
+          id: 'https://blog.luddites.me',
+          distractionFreeMode: false
+        }
+      }
   },
   {
     resolve: 'gatsby-plugin-mdx',
@@ -49,6 +65,7 @@ const plugins = [
     },
   },
 ];
+
 // check and add algolia
 if (config.header.search && config.header.search.enabled) {
   console.log(config);
