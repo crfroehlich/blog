@@ -75,17 +75,24 @@ hold my breath, and step inside his car.</p><i>08/11/1998</i></div><div class="a
             });
             try {
               function addComments() {
-                var nav = document.getElementsByClassName('addPaddTopBottom')[0];
-                if(!nav) {
-                  return setTimeout(addComments, 1000);
+                try {
+                  var nav = document.getElementsByClassName('addPaddTopBottom')[0];
+                  if(!nav) {
+                    return setTimeout(addComments, 1000);
+                  }
+                  var script = document.createElement('script');
+                  script.src = 'https://utteranc.es/client.js';
+                  script.setAttribute('repo', 'crfroehlich/blog');
+                  script.setAttribute('issue-term', 'pathname');
+                  script.async = true;
+                  nav.append(script);
+                } catch(e) {
+                  console.log(e);
+                  setTimeout(addComments, 1000);
                 }
-                var script = document.createElement('script');
-                script.src = 'https://utteranc.es/client.js';
-                script.setAttribute('repo', 'crfroehlich/blog');
-                script.setAttribute('issue-term', 'pathname');
-                script.async = true;
-                nav.append(script);
               }
               addComments();
-            } catch(e) { }
+            } catch(e) {
+              console.log(e);
+            }
             </script></body></html>
