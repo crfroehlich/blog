@@ -11,23 +11,21 @@ Words have been changed and characters rearranged to limit liability to the not 
 Every sixty minutes at seven minutes past the hour exactly, Oscar would run naked through the house. He always entered through the front door, streaked through the living room, raced down the hallway, dashed in and out of each room (bathrooms and closets included), ran a quick circle around the island in the kitchen and exited through the mudroom and out the garage. If the garage door were closed, Oscar would mash the button and jog in place until the door raised high enough to dart under.
 While Oscar’s hourly run was in and of itself perplexing, what confused us even more was that not one of us had the faintest idea who was Oscar or whence he came. Did he visit other houses on our street? The pure oddity of our visitor left us in an unusual position. Customarily, it is not appropriate to approach a stranger’s house (be it or not a neighbor’s), knock upon the door and inquire about nude persons that may or may not be running through said person’s home.
 
-```
-“Good afternoon, ma’am. I’m your neighbor from down the street, and…”
-“Oh, yes, ma’am. Number 312, yes.”
-“I’m sure you have seen me riding down the street. Yes, ma’am.”
-“Oh, no, ma’am — we don’t even play baseball. I don’t…”
-“Yes, ma’am, I see. I am very sorry about the window, but it really wasn’t…”
-“If I may, I will ask my mother to inquire around.”
-“Yes ma’am, integrity and responsibility are very important virtues for our young people, yes. As a matter of fact, I…”
-“Of course, ma’am. I could not agree more.”
-“Ma’am, the reason I came by is to ask if you have ever seen Oscar.”
-“Well, you see, ma’am, I really do not know. I only know that he runs naked through our house every day.”
-“Heaven forbid, ma’am. This is no prank…”
-“Please, I assure you, I had no such intention…”
-“Accept my apologies; I am sorry to have disturbed you.”
-“Yes, I will have my mother…”
-“Good day ma’am.”
-```
+> “Good afternoon, ma’am. I’m your neighbor from down the street, and…”
+> “Oh, yes, ma’am. Number 312, yes.”
+> “I’m sure you have seen me riding down the street. Yes, ma’am.”
+> “Oh, no, ma’am — we don’t even play baseball. I don’t…”
+> “Yes, ma’am, I see. I am very sorry about the window, but it really wasn’t…”
+> “If I may, I will ask my mother to inquire around.”
+> “Yes ma’am, integrity and responsibility are very important virtues for our young people, yes. As a matter of fact, I…”
+> “Of course, ma’am. I could not agree more.”
+> “Ma’am, the reason I came by is to ask if you have ever seen Oscar.”
+> “Well, you see, ma’am, I really do not know. I only know that he runs naked through our house every day.”
+> “Heaven forbid, ma’am. This is no prank…”
+> “Please, I assure you, I had no such intention…”
+> “Accept my apologies; I am sorry to have disturbed you.”
+> “Yes, I will have my mother…”
+> “Good day ma’am.”
 
 So you see, the question of asking about the neighborhood was itself quite out of the question. The next, most obvious approach was to try to follow Oscar and see where he went. Now, I do not know if you have ever tried to chase a naked, fully grown man with a seven foot long beard as he runs down the street in broad daylight, but the folks around here do not take kindly to it. Frankly, we didn’t much relish the idea either. It is one thing to blissfully, obliviously ignore a naked person streaking past and quite another thing entirely to try to unsee a couple of children chasing a naked, fully grown man with a seven foot beard.
 
