@@ -71,7 +71,7 @@ const calculateTreeData = edges => {
 
   if (config.gatsby && config.gatsby.trailingSlash) {
   }
-  tmp.reverse();
+  //tmp.reverse();
   return tmp.reduce((accu, slug) => {
     const parts = slug.split('/');
 
@@ -98,9 +98,14 @@ const calculateTreeData = edges => {
     // sort items alphabetically.
     prevItems.map(item => {
       item.items = item.items.sort(function(a, b) {
-        if (a.label < b.label) return -1;
-        if (a.label > b.label) return 1;
-        return 0;
+        switch( a.title.localeCompare(b.title, 'en', { numeric: true })) {
+          case -1:
+            return 1;
+          case 1:
+            return -1;
+          default:
+            return 0;
+        }
       });
     });
     const slicedLength =
@@ -130,6 +135,17 @@ const Tree = ({ edges }) => {
     }
   });
   const [collapsed, setCollapsed] = useState(defaultCollapsed);
+
+  treeData.items = treeData.items.sort(function(a, b) {
+    switch( a.title.localeCompare(b.title, 'en', { numeric: true })) {
+      case -1:
+        return 1;
+      case 1:
+        return -1;
+      default:
+        return 0;
+    }
+  });
 
   const toggle = url => {
     setCollapsed({
