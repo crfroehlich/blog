@@ -5,12 +5,12 @@ metaDescription: "poetry"
 metaDate: 08/11/1998
 ---
 
-The lamplight.. it plays with your mind, dances from it's
+The lamplight.. it plays with your mind, dances from its
 post as it were some god, some shade or creature..
 the whir of flies buzz in their dense swarm at the top
 like a cloud, or plague, or fog. The insects dance with the
 light; and the light casts scornful glances at the dark street,
-painting billboards in the distance and benches, the ones
+painting billboards in the distance and benches, the ones  
 that might bear "wet paint" signs in humble scribble on
 some piece of lost cardboard that would be slightly drenched
 with rain that might hold that unholy acid, on the side of the
