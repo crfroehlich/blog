@@ -25,9 +25,9 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
       env:
-        ALGOLIA_ADMIN_KEY: ${{ secret.ALGOLIA_ADMIN_KEY }}
-        GATSBY_ALGOLIA_APP_ID: ${{ secret.GATSBY_ALGOLIA_APP_ID }}
-        GATSBY_ALGOLIA_SEARCH_KEY: ${{ secret.GATSBY_ALGOLIA_SEARCH_KEY }}   
+        ALGOLIA_ADMIN_KEY: ${{ secrets.ALGOLIA_ADMIN_KEY }}
+        GATSBY_ALGOLIA_APP_ID: ${{ secrets.GATSBY_ALGOLIA_APP_ID }}
+        GATSBY_ALGOLIA_SEARCH_KEY: ${{ secrets.GATSBY_ALGOLIA_SEARCH_KEY }}   
     - run: npm install -g gatsby-cli
     - run: npm install
     - run: npm run build
