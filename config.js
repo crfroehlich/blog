@@ -3,7 +3,7 @@ const config = {
   gatsby: {
     pathPrefix: '/',
     siteUrl: 'https://blog.luddites.me',
-    gaTrackingId: null,
+    gaTrackingId: 'G-WZTYEG3VZJ',
     trailingSlash: false,
   },
   header: {

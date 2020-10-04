@@ -25,5 +25,6 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - run: npm install -g gatsby-cli
+    - run: npm install
     - run: npm run build
     - run: npx gh-pages -d public
