@@ -1,9 +1,10 @@
 ---
-title: 'The Single Arity (aka Communicating and why I Quit Email: Series Finale)'
-date: 2013-03-28T20:54:00.000-05:00
-draft: false
+title: 'The Single Arity (aka Communicating and why I Quit Email
+metaTitle: 'The Single Arity (aka Communicating and why I Quit Email: Series Finale)'
+metaDate: 3/28/2013
+metaDraft: false
 aliases: [ "/2013/03/the-single-arity-aka-communicating-and.html" ]
-tags : [email, communication, lif]
+tags: ["email","communication","lif"]
 ---
 
 _Aside: In all, I'd much rather elaborate on [wheres, joins, and orders by](http://hiking.luddites.me/2013/03/currying-favor-with-partial-application.html), but I have a few unfinished pieces. So on with it._  

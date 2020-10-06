@@ -1,9 +1,10 @@
 ---
-title: 'jail''s not so bad; it''s the rape that gets you'
-date: 2006-08-25T00:37:00.000-05:00
-draft: true
+title: "jail''s not so bad; it''s the rape that gets you"
+metaTitle: "jail''s not so bad; it''s the rape that gets you"
+metaDate: 8/25/2006
+metaDraft: true
 aliases: [ "/2006/08/jail-not-so-bad-it-rape-that-gets-you.html" ]
-tags : [drenkingg, lif]
+tags: ["drenkingg","lif"]
 ---
 
 #### qweqwe

@@ -1,7 +1,8 @@
 ---
-title: 'presidential politics aside'
-date: 2008-09-11T13:59:00.000-05:00
-draft: false
+title: "presidential politics aside"
+metaTitle: "presidential politics aside"
+metaDate: 9/11/2008
+metaDraft: false
 aliases: [ "/2008/09/presidential-politics-aside.html" ]
 ---
 

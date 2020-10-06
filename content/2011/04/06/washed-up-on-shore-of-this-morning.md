@@ -1,7 +1,8 @@
 ---
-title: 'washed up on the shore of this morning'
-date: 2011-04-06T20:08:00.000-05:00
-draft: false
+title: "washed up on the shore of this morning"
+metaTitle: "washed up on the shore of this morning"
+metaDate: 4/6/2011
+metaDraft: false
 aliases: [ "/2011/04/washed-up-on-shore-of-this-morning.html" ]
 ---
 

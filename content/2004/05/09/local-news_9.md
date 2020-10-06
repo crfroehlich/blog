@@ -1,9 +1,10 @@
 ---
-title: 'Local News'
-date: 2004-05-09T00:10:00.000-05:00
-draft: false
+title: "Local News"
+metaTitle: "Local News"
+metaDate: 5/9/2004
+metaDraft: false
 aliases: [ "/2004/05/local-news_9.html" ]
-tags : [baghdad, news, donald thisbit]
+tags: ["baghdad","news","donald thisbit"]
 ---
 
 ## HEADLINES (Politics):

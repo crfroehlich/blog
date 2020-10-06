@@ -1,7 +1,8 @@
 ---
-title: 'unleash the space'
-date: 2008-10-23T10:19:00.000-05:00
-draft: false
+title: "unleash the space"
+metaTitle: "unleash the space"
+metaDate: 10/23/2008
+metaDraft: false
 aliases: [ "/2008/10/unleash-space.html" ]
 ---
 

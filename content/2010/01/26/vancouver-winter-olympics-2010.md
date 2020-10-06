@@ -1,7 +1,8 @@
 ---
-title: 'Vancouver! Winter! Olympics! 2010!'
-date: 2010-01-26T22:32:00.000-06:00
-draft: false
+title: "Vancouver! Winter! Olympics! 2010!"
+metaTitle: "Vancouver! Winter! Olympics! 2010!"
+metaDate: 1/26/2010
+metaDraft: false
 aliases: [ "/2010/01/vancouver-winter-olympics-2010.html" ]
 ---
 

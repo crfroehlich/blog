@@ -1,7 +1,8 @@
 ---
-title: 'From JsDoc to Github Pages in 27 easy steps (aka API Documentation Considered Evil)?'
-date: 2013-07-06T22:17:00.000-05:00
-draft: false
+title: "From JsDoc to Github Pages in 27 easy steps (aka API Documentation Considered Evil)?"
+metaTitle: "From JsDoc to Github Pages in 27 easy steps (aka API Documentation Considered Evil)?"
+metaDate: 7/6/2013
+metaDraft: false
 aliases: [ "/2013/07/api-documentation-considered-evil.html" ]
 ---
 

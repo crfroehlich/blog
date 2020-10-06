@@ -1,7 +1,8 @@
 ---
-title: 'something worth sharing'
-date: 2009-07-16T22:32:00.000-05:00
-draft: false
+title: "something worth sharing"
+metaTitle: "something worth sharing"
+metaDate: 7/16/2009
+metaDraft: false
 aliases: [ "/2009/07/something-worth-sharing.html" ]
 ---
 

@@ -1,7 +1,8 @@
 ---
-title: 'Pope Announces: "Life Begins at Lust"'
-date: 2007-09-06T22:37:00.000-05:00
-draft: false
+title: 'Pope Announces
+metaTitle: 'Pope Announces: "Life Begins at Lust"'
+metaDate: 9/6/2007
+metaDraft: false
 aliases: [ "/2007/09/pope-announces-begins-at-lust.html" ]
 ---
 

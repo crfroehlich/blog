@@ -1,7 +1,8 @@
 ---
-title: 'adjustments'
-date: 2000-05-02T09:30:00.000-05:00
-draft: false
+title: "adjustments"
+metaTitle: "adjustments"
+metaDate: 5/2/2000
+metaDraft: false
 aliases: [ "/2000/05/adjustments.html" ]
 ---
 

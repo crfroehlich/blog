@@ -1,9 +1,10 @@
 ---
-title: 'The Audacity of Trying'
-date: 2013-11-09T19:32:00.001-06:00
-draft: false
+title: "The Audacity of Trying"
+metaTitle: "The Audacity of Trying"
+metaDate: 11/9/2013
+metaDraft: false
 aliases: [ "/2013/11/the-audacity-of-trying.html" ]
-tags : [TWC, economy, donald thisbit, liberation]
+tags: ["TWC","economy","donald thisbit","liberation"]
 ---
 
 Money (the desire for money), we might naively think, is the great unifier. We all want it, as much of it as we can get, at the lowest level of effort. [Incorporated Individuals](http://www.murrayhillincforcongress.com/) tend to thirst for it a little more than their non-incorporated peers. Only a few elites have come to realize that something greater than money exists; while the rest of us waste our effort in the acquisition of valued assets, this enlightened Select seeks out the superior resource: [power](http://www.imdb.com/title/tt1856010/quotes?item=qt1869599). The company of these persons understands that power achieved is little without frequent demonstrations of power wielded.  

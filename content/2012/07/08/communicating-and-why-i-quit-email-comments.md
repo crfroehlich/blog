@@ -1,7 +1,8 @@
 ---
-title: 'Communicating and Why I Quit Email (Episode 1)'
-date: 2012-07-08T20:22:00.000-05:00
-draft: false
+title: "Communicating and Why I Quit Email (Episode 1)"
+metaTitle: "Communicating and Why I Quit Email (Episode 1)"
+metaDate: 7/8/2012
+metaDraft: false
 aliases: [ "/2012/07/communicating-and-why-i-quit-email.html" ]
 ---
 

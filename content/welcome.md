@@ -1,6 +1,7 @@
 ---
 title: "Welcome"
 metaTitle: "Welcome"
+metaTitle: "Welcome"
 metaDescription: "Welcome"
 metaDate: "10/03/2020"
 ---

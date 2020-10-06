@@ -1,7 +1,8 @@
 ---
-title: 'Eli Walks'
-date: 2009-03-02T17:45:00.000-06:00
-draft: false
+title: "Eli Walks"
+metaTitle: "Eli Walks"
+metaDate: 3/2/2009
+metaDraft: false
 aliases: [ "/2009/03/eli-walks.html" ]
 ---
 

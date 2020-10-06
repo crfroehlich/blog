@@ -1,7 +1,8 @@
 ---
-title: 'Pope Announces Revolutionary "Abstinence Only Education"'
-date: 2007-09-24T00:18:00.000-05:00
-draft: false
+title: "Pope Announces Revolutionary \"Abstinence Only Education\""
+metaTitle: "Pope Announces Revolutionary \"Abstinence Only Education\""
+metaDate: 9/24/2007
+metaDraft: false
 aliases: [ "/2007/09/pope-announces-revolutionary-only.html" ]
 ---
 

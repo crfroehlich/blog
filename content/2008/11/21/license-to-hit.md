@@ -1,9 +1,10 @@
 ---
-title: 'License to *hit'
-date: 2008-11-21T11:14:00.000-06:00
-draft: false
+title: "License to *hit"
+metaTitle: "License to *hit"
+metaDate: 11/21/2008
+metaDraft: false
 aliases: [ "/2008/11/license-to-hit.html" ]
-tags : [hatred, family, lif]
+tags: ["hatred","family","lif"]
 ---
 
 The subject of the latest email from Dean. Indulging him:  

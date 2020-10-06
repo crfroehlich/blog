@@ -1,9 +1,10 @@
 ---
-title: 'the folly of age'
-date: 2008-11-07T13:56:00.000-06:00
-draft: false
+title: "the folly of age"
+metaTitle: "the folly of age"
+metaDate: 11/7/2008
+metaDraft: false
 aliases: [ "/2008/11/the-folly-of-age.html" ]
-tags : [politics, family, country]
+tags: ["politics","family","country"]
 ---
 
 My brother, Timothy, wise beyond his years, hipped me to an [email conversation with our grandparents](http://oftim.blogspot.com/2008/11/filler.html).  I consider it worth reading.  

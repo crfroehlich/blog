@@ -1,9 +1,10 @@
 ---
-title: 'Quip Me Gently'
-date: 2013-11-04T22:07:00.001-06:00
-draft: false
+title: "Quip Me Gently"
+metaTitle: "Quip Me Gently"
+metaDate: 11/4/2013
+metaDraft: false
 aliases: [ "/2013/11/quip-me-gently.html" ]
-tags : [quips, quotations, lif]
+tags: ["quips","quotations","lif"]
 ---
 
 _"...if you wait until the last minute, it only takes a minute."_  

@@ -1,7 +1,8 @@
 ---
-title: 'over the hill and through the woods'
-date: 2008-11-01T00:02:00.000-05:00
-draft: false
+title: "over the hill and through the woods"
+metaTitle: "over the hill and through the woods"
+metaDate: 11/1/2008
+metaDraft: false
 aliases: [ "/2008/11/over-hill-and-through-woods.html" ]
 ---
 

@@ -1,7 +1,8 @@
 ---
-title: 'Revisiting: How to Subclass an Array (Really)'
-date: 2013-03-17T18:27:00.000-05:00
-draft: false
+title: 'Revisiting
+metaTitle: 'Revisiting: How to Subclass an Array (Really)'
+metaDate: 3/17/2013
+metaDraft: false
 aliases: [ "/2013/03/revisiting-how-to-subclass-array-really.html" ]
 ---
 

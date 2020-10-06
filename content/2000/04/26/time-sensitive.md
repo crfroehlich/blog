@@ -1,7 +1,8 @@
 ---
-title: 'time sensitive'
-date: 2000-04-26T22:52:00.000-05:00
-draft: false
+title: "time sensitive"
+metaTitle: "time sensitive"
+metaDate: 4/26/2000
+metaDraft: false
 aliases: [ "/2000/04/time-sensitive.html" ]
 ---
 

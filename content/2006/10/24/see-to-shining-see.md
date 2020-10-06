@@ -1,9 +1,10 @@
 ---
-title: 'See to Shining See'
-date: 2006-10-24T22:24:00.000-05:00
-draft: false
+title: "See to Shining See"
+metaTitle: "See to Shining See"
+metaDate: 10/24/2006
+metaDraft: false
 aliases: [ "/2006/10/see-to-shining-see.html" ]
-tags : [lif, anaxagoras]
+tags: ["lif","anaxagoras"]
 ---
 
 It takes a moment to find Calliope. Urgency predicates motion.  

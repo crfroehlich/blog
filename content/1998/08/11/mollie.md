@@ -1,7 +1,8 @@
 ---
-title: 'Mollie'
-date: 1998-08-11T15:01:00.000-05:00
-draft: false
+title: "Mollie"
+metaTitle: "Mollie"
+metaDate: 8/11/1998
+metaDraft: false
 aliases: [ "/1998/08/mollie.html" ]
 ---
 

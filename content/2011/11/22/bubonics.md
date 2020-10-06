@@ -1,9 +1,10 @@
 ---
-title: 'Affectation Without Action'
-date: 2011-11-22T18:25:00.001-06:00
-draft: false
+title: "Affectation Without Action"
+metaTitle: "Affectation Without Action"
+metaDate: 11/22/2011
+metaDraft: false
 aliases: [ "/2011/11/bubonics.html" ]
-tags : [titanic, death, knol, bubonics]
+tags: ["titanic","death","knol","bubonics"]
 ---
 
 The [ill-fated knol project](http://www.techdirt.com/articles/20110119/15120412735/failure-knol-shows-again-that-big-company-with-all-money-doesnt-always-win.shtml) [has ended](http://googleblog.blogspot.com/2011/11/more-spring-cleaning-out-of-season.html?utm_source=feedburner&utm_medium=feed&utm_campaign=Feed%3A+blogspot%2FMKuf+%28Official+Google+Blog%29&utm_content=Google+Feedfetcher), but I wanted to preserve my lone contribution to the project. [This was that](http://knol.google.com/k/christopher-froehlich/bubonics/mh9lgdu4kskb/2).

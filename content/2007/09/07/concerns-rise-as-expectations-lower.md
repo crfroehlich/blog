@@ -1,7 +1,8 @@
 ---
-title: 'Concerns Rise as Expectations Lower'
-date: 2007-09-07T12:45:00.000-05:00
-draft: false
+title: "Concerns Rise as Expectations Lower"
+metaTitle: "Concerns Rise as Expectations Lower"
+metaDate: 9/7/2007
+metaDraft: false
 aliases: [ "/2007/09/concerns-rise-as-expectations-lower.html" ]
 ---
 

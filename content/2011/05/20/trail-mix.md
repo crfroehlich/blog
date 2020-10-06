@@ -1,9 +1,10 @@
 ---
-title: 'Trail Mix'
-date: 2011-05-20T11:29:00.000-05:00
-draft: false
+title: "Trail Mix"
+metaTitle: "Trail Mix"
+metaDate: 5/20/2011
+metaDraft: false
 aliases: [ "/2011/05/trail-mix.html" ]
-tags : [spam, trail mix]
+tags: ["spam","trail mix"]
 ---
 
 What hiker does not need nourishment on the journey toward nirvana? Google has some advice in the form of advertisements, should one be so bold as to enter their spam folder.  

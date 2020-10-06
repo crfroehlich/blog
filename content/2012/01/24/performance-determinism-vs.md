@@ -1,7 +1,8 @@
 ---
-title: 'Performance! Determinism. Vs?'
-date: 2012-01-24T08:27:00.000-06:00
-draft: false
+title: "Performance! Determinism. Vs?"
+metaTitle: "Performance! Determinism. Vs?"
+metaDate: 1/24/2012
+metaDraft: false
 aliases: [ "/2012/01/performance-determinism-vs.html" ]
 ---
 

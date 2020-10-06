@@ -1,7 +1,8 @@
 ---
-title: 'Crunchy Frog'
-date: 2013-05-21T06:52:00.001-05:00
-draft: false
+title: "Crunchy Frog"
+metaTitle: "Crunchy Frog"
+metaDate: 5/21/2013
+metaDraft: false
 aliases: [ "/2013/05/crunchy-frog.html" ]
 ---
 

@@ -1,8 +1,9 @@
 ---
-title: 'Can''t Talk No Jive'
-date: 2003-12-03T00:29:00.000-06:00
-draft: false
-tags : [russian, lif]
+title: "Can''t Talk No Jive"
+metaTitle: "Can''t Talk No Jive"
+metaDate: 12/3/2003
+metaDraft: false
+tags: ["russian","lif"]
 ---
 
 Friends of Athens,

@@ -1,7 +1,8 @@
 ---
-title: 'burning bush'
-date: 2008-11-06T14:27:00.000-06:00
-draft: false
+title: "burning bush"
+metaTitle: "burning bush"
+metaDate: 11/6/2008
+metaDraft: false
 aliases: [ "/2008/11/burning-bush.html" ]
 ---
 

@@ -1,9 +1,10 @@
 ---
-title: 'I fought the giant lizard today'
-date: 2005-09-15T00:07:00.000-05:00
-draft: false
+title: "I fought the giant lizard today"
+metaTitle: "I fought the giant lizard today"
+metaDate: 9/15/2005
+metaDraft: false
 aliases: [ "/2005/09/i-fought-giant-lizard-today.html" ]
-tags : [lif]
+tags: ["lif"]
 ---
 
 I knew going into that den of fear that my battle would not be one of fortunate ease. At first, he clung cleverly to the side of the refrigerator. A bold move. One I would not forget. I countered from the counter, swinging my spatula of justice toward his forbidable frame. "Check!" I cried. He bounded from the fridge to the wall to the floor to the ceiling to the door. Bolder still. "But I control the exits here, my friend. You cannot escape. You leave either dead or vanquished!" His eyes flitted to and fro. I hurled myself against the door, mighty weapon already weaving painful swirls of judgement down upon him; but he loosed a fearsome scowl and lept yet again into the dark crevasses of the couch.  

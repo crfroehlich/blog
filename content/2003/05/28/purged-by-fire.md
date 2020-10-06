@@ -1,7 +1,8 @@
 ---
-title: 'Purged By Fire'
-date: 2003-05-28T00:26:00.000-05:00
-draft: false
+title: "Purged By Fire"
+metaTitle: "Purged By Fire"
+metaDate: 5/28/2003
+metaDraft: false
 aliases: [ "/2003/05/purged-by-fire.html" ]
 ---
 

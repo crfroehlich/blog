@@ -1,7 +1,8 @@
 ---
-title: 'defer'
-date: 2000-04-21T06:00:00.000-05:00
-draft: false
+title: "defer"
+metaTitle: "defer"
+metaDate: 4/21/2000
+metaDraft: false
 aliases: [ "/2000/04/defer.html" ]
 ---
 

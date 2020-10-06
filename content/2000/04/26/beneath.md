@@ -1,7 +1,8 @@
 ---
-title: 'beneath'
-date: 2000-04-26T22:44:00.000-05:00
-draft: false
+title: "beneath"
+metaTitle: "beneath"
+metaDate: 4/26/2000
+metaDraft: false
 aliases: [ "/2000/04/beneath.html" ]
 ---
 

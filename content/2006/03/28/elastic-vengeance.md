@@ -1,9 +1,10 @@
 ---
-title: 'elastic vengeance'
-date: 2006-03-28T00:33:00.000-06:00
-draft: false
+title: "elastic vengeance"
+metaTitle: "elastic vengeance"
+metaDate: 3/28/2006
+metaDraft: false
 aliases: [ "/2006/03/elastic-vengeance.html" ]
-tags : [pregnant, lif]
+tags: ["pregnant","lif"]
 ---
 
 It comes in those moments between 3:15 and the wailing of the next door neighbor's newborn tapioca child. It creeps up your pant leg like a twice dead grandmother with a bayonet between her cold, dead hands--except you aren't wearing pants. A cold sweat would make things right; but, instead, you feel the knots in your stomach boring chimney holes and preparing to hibernate through the winter that is your discontent. Hot flashes like oranges thrown whole into blenders splatter across your peripherals. It hurts, excepting that it doesn't. You wish it hurt, because that would be better than feel grandma's M9 poking into your chest with less than enough force to tickle but more than enough to remind you that things are very unsettling. Visions of diapers, green mush, swimming pools, inflatable rafts, and endless dying childhood innocence embrace you with the sticky taste of buttery entreat. It's all fading faster than you can bolt upright in bed. Cinnamon and sulfer in the air. Black eyes learing from behind the curtains. Skin crawling on top of your own.  

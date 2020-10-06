@@ -1,7 +1,8 @@
 ---
-title: 'parched'
-date: 2000-04-25T22:40:00.000-05:00
-draft: false
+title: "parched"
+metaTitle: "parched"
+metaDate: 4/25/2000
+metaDraft: false
 aliases: [ "/2000/04/parched.html" ]
 ---
 

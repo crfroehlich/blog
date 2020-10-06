@@ -1,9 +1,10 @@
 ---
-title: 'jail''s not so bad; it''s the rape that gets you'
-date: 2006-08-25T00:37:00.000-05:00
-draft: true
+title: "jail''s not so bad; it''s the rape that gets you"
+metaTitle: "jail''s not so bad; it''s the rape that gets you"
+metaDate: 8/25/2006
+metaDraft: true
 aliases: [ "/2006/08/jail-not-so-bad-it-rape-that-gets-you.html" ]
-tags : [drenkingg, lif]
+tags: ["drenkingg","lif"]
 ---
 
 There's a brief moment, when you're soaring through the air towards a poodle, surrounded by some two to four odd tons of steel and american plastic, when the thought, "Fuck." might cross your mind. This thought tends to be quickly interrupted by other thoughts, generally spewed toward you from people not yourself, asking questions in that "oh-not-so-asking" sort of tone, in the vein of where and where not your arms should be held and directed, and what sorts of things are being recorded and on what media, and how long you can expect to rot in what sort of hell after you kicked so and so in such and such a place.

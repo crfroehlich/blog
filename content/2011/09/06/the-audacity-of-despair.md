@@ -1,7 +1,8 @@
 ---
-title: 'The Audacity of Despair'
-date: 2011-09-06T19:57:00.000-05:00
-draft: false
+title: "The Audacity of Despair"
+metaTitle: "The Audacity of Despair"
+metaDate: 9/6/2011
+metaDraft: false
 aliases: [ "/2011/09/the-audacity-of-despair.html" ]
 ---
 

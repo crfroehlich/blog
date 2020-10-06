@@ -1,7 +1,8 @@
 ---
-title: 'Currying Favor with Partial Application to get JavaScript SQL'
-date: 2013-03-16T21:16:00.000-05:00
-draft: false
+title: "Currying Favor with Partial Application to get JavaScript SQL"
+metaTitle: "Currying Favor with Partial Application to get JavaScript SQL"
+metaDate: 3/16/2013
+metaDraft: false
 aliases: [ "/2013/03/currying-favor-with-partial-application.html" ]
 ---
 

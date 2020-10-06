@@ -1,7 +1,8 @@
 ---
-title: 'this is the end of the world'
-date: 2011-03-16T19:12:00.000-05:00
-draft: false
+title: "this is the end of the world"
+metaTitle: "this is the end of the world"
+metaDate: 3/16/2011
+metaDraft: false
 aliases: [ "/2011/03/this-is-end-of-world.html" ]
 ---
 

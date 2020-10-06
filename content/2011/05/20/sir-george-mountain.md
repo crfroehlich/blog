@@ -1,7 +1,8 @@
 ---
-title: 'Sir George Mountain'
-date: 2011-05-20T08:03:00.000-05:00
-draft: false
+title: "Sir George Mountain"
+metaTitle: "Sir George Mountain"
+metaDate: 5/20/2011
+metaDraft: false
 aliases: [ "/2011/05/sir-george-mountain.html" ]
 ---
 

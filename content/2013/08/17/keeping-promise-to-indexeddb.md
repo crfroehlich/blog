@@ -1,9 +1,10 @@
 ---
-title: 'Keeping a Promise to IndexedDb'
-date: 2013-08-17T23:19:00.000-05:00
-draft: false
+title: "Keeping a Promise to IndexedDb"
+metaTitle: "Keeping a Promise to IndexedDb"
+metaDate: 8/18/2013
+metaDraft: false
 aliases: [ "/2013/08/keeping-promise-to-indexeddb.html" ]
-tags : [Firebase, Grunt, zen, javascript, promises, lif, Q.js]
+tags: ["Firebase","Grunt","zen","javascript","promises","lif","Q.js"]
 ---
 
 APIs are hellish things: inconstant moons, inconsistent interfaces, intolerable incompatibility. If you have not watched [Bret Victor's latest epic](http://worrydream.com/dbx), I do recommend it. As he channels the spirit of innovation from the 1970s, he notes that it would be horrible if, 40 years from then, the only way two systems could communicate were through predefined and agreed upon interfaces. Indeed. What a terrible thing that would be it is.  

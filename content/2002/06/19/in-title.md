@@ -1,7 +1,8 @@
 ---
-title: 'In Title'
-date: 2002-06-19T14:04:00.000-05:00
-draft: false
+title: "In Title"
+metaTitle: "In Title"
+metaDate: 6/19/2002
+metaDraft: false
 aliases: [ "/2002/06/in-title.html" ]
 ---
 

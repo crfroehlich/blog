@@ -1,7 +1,8 @@
 ---
-title: 'A Promise to IndexedDb'
-date: 2013-06-26T21:59:00.003-05:00
-draft: false
+title: "A Promise to IndexedDb"
+metaTitle: "A Promise to IndexedDb"
+metaDate: 6/26/2013
+metaDraft: false
 aliases: [ "/2013/06/a-promise-to-indexeddb.html" ]
 ---
 

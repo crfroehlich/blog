@@ -1,7 +1,8 @@
 ---
-title: 'One Man Hiking His Desk Makes a Journey. Two Men Hiking Makes a Race.'
-date: 2011-10-11T20:45:00.000-05:00
-draft: false
+title: "One Man Hiking His Desk Makes a Journey. Two Men Hiking Makes a Race."
+metaTitle: "One Man Hiking His Desk Makes a Journey. Two Men Hiking Makes a Race."
+metaDate: 10/11/2011
+metaDraft: false
 aliases: [ "/2011/10/one-man-hiking-his-desk-makes-journey.html" ]
 ---
 

@@ -1,7 +1,8 @@
 ---
-title: 'year, new'
-date: 2009-01-01T23:46:00.000-06:00
-draft: false
+title: "year, new"
+metaTitle: "year, new"
+metaDate: 1/2/2009
+metaDraft: false
 aliases: [ "/2009/01/year-new.html" ]
 ---
 

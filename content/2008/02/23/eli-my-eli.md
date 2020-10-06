@@ -1,9 +1,10 @@
 ---
-title: 'Eli, my Eli'
-date: 2008-02-23T19:29:00.000-06:00
-draft: false
+title: "Eli, my Eli"
+metaTitle: "Eli, my Eli"
+metaDate: 2/23/2008
+metaDraft: false
 aliases: [ "/2008/02/eli-my-eli.html" ]
-tags : [hello, lif, eli]
+tags: ["hello","lif","eli"]
 ---
 
 It is almost a month since you were born. We have taken many pictures of your progress, and it is a joy to watch you grow day by daily.  

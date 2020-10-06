@@ -1,7 +1,8 @@
 ---
-title: 'The Quick, Molting Sweat Lodge of the Soul'
-date: 2013-04-07T18:50:00.000-05:00
-draft: false
+title: "The Quick, Molting Sweat Lodge of the Soul"
+metaTitle: "The Quick, Molting Sweat Lodge of the Soul"
+metaDate: 4/7/2013
+metaDraft: false
 aliases: [ "/2013/04/the-quick-molting-sweat-lodge-of-soul.html" ]
 ---
 

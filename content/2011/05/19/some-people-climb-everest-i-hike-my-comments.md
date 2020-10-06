@@ -1,9 +1,10 @@
 ---
-title: 'Some People Climb Everest; I Hike My Desk'
-date: 2011-05-19T22:00:00.000-05:00
-draft: false
+title: "Some People Climb Everest; I Hike My Desk"
+metaTitle: "Some People Climb Everest; I Hike My Desk"
+metaDate: 5/19/2011
+metaDraft: false
 aliases: [ "/2011/05/some-people-climb-everest-i-hike-my.html" ]
-tags : [hiking, tenzing norgay, optimism, desk]
+tags: ["hiking","tenzing norgay","optimism","desk"]
 ---
 
 #### Nifty. I think you should get the other part of th...

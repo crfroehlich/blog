@@ -1,9 +1,10 @@
 ---
-title: 'in the waking hours'
-date: 2008-06-19T14:37:00.000-05:00
-draft: false
+title: "in the waking hours"
+metaTitle: "in the waking hours"
+metaDate: 6/19/2008
+metaDraft: false
 aliases: [ "/2008/06/in-waking-hours.html" ]
-tags : [home, lif, eli]
+tags: ["home","lif","eli"]
 ---
 
 There is within me this horribly perverse desire to hoard away little minutes here and thither for my own squandering. Fatherhood robs you of your selfishness, and I want it back. I linger fondly over memories of gross self indulgence, filling my belly with late night television and sleeping until noon after noon. There were these rare but ghastly glimpses into a future filled with stale potato chips and beer cans stacked to the ceiling and dripping disorder across the room, and the vague notion of eternity in this foul stench of a vision; but these were easily squashed by the audacity of self import.  

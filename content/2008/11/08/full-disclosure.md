@@ -1,7 +1,8 @@
 ---
-title: 'full disclosure'
-date: 2008-11-08T21:10:00.000-06:00
-draft: false
+title: "full disclosure"
+metaTitle: "full disclosure"
+metaDate: 11/8/2008
+metaDraft: false
 aliases: [ "/2008/11/full-disclosure.html" ]
 ---
 

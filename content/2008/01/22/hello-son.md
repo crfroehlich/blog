@@ -1,7 +1,8 @@
 ---
-title: 'hello, son'
-date: 2008-01-22T22:09:00.000-06:00
-draft: false
+title: "hello, son"
+metaTitle: "hello, son"
+metaDate: 1/22/2008
+metaDraft: false
 aliases: [ "/2008/01/hello-son.html" ]
 ---
 

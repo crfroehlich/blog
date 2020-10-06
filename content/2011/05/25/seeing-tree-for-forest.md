@@ -1,9 +1,10 @@
 ---
-title: 'Seeing the Tree for the Forest'
-date: 2011-05-25T20:04:00.000-05:00
-draft: false
+title: "Seeing the Tree for the Forest"
+metaTitle: "Seeing the Tree for the Forest"
+metaDate: 5/25/2011
+metaDraft: false
 aliases: [ "/2011/05/seeing-tree-for-forest.html" ]
-tags : [meaning, journey, details]
+tags: ["meaning","journey","details"]
 ---
 
 My hike today spanned the 3500 km of the Appalachian Trail. The journey I embarked when I began hiking my desk has already connected me with remote corners of the world, and as I reflect on the truths these excursions have imparted, I am wont to ponder the [details that I have missed](http://www.youtube.com/watch?v=vJG698U2Mvo).  

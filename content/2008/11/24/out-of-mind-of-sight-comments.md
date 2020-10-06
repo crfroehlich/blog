@@ -1,9 +1,10 @@
 ---
-title: 'out of mind of sight'
-date: 2008-11-24T14:02:00.000-06:00
-draft: false
+title: "out of mind of sight"
+metaTitle: "out of mind of sight"
+metaDate: 11/24/2008
+metaDraft: false
 aliases: [ "/2008/11/out-of-mind-of-sight.html" ]
-tags : [mind, lif, sailing]
+tags: ["mind","lif","sailing"]
 ---
 
 #### Holy shit, I couldn't have better expressed th...

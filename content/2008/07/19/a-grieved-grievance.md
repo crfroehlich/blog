@@ -1,7 +1,8 @@
 ---
-title: 'a grieved grievance'
-date: 2008-07-19T19:09:00.000-05:00
-draft: false
+title: "a grieved grievance"
+metaTitle: "a grieved grievance"
+metaDate: 7/19/2008
+metaDraft: false
 aliases: [ "/2008/07/a-grieved-grievance.html" ]
 ---
 

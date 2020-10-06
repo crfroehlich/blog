@@ -1,9 +1,10 @@
 ---
-title: 'quit me thisly'
-date: 2007-07-09T23:45:00.000-05:00
-draft: false
+title: "quit me thisly"
+metaTitle: "quit me thisly"
+metaDate: 7/10/2007
+metaDraft: false
 aliases: [ "/2007/07/quit-me-thisly.html" ]
-tags : [glated, heat, lif]
+tags: ["glated","heat","lif"]
 ---
 
 squalor tempests beneath the artificial breeze

@@ -1,7 +1,8 @@
 ---
-title: 'in the end'
-date: 2000-04-23T22:36:00.000-05:00
-draft: false
+title: "in the end"
+metaTitle: "in the end"
+metaDate: 4/23/2000
+metaDraft: false
 aliases: [ "/2000/04/in-end.html" ]
 ---
 

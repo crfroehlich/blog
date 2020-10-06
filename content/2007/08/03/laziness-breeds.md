@@ -1,9 +1,10 @@
 ---
-title: 'laziness breeds'
-date: 2007-08-03T01:08:00.000-05:00
-draft: false
+title: "laziness breeds"
+metaTitle: "laziness breeds"
+metaDate: 8/3/2007
+metaDraft: false
 aliases: [ "/2007/08/laziness-breeds.html" ]
-tags : [lollygagging, lif, peanut]
+tags: ["lollygagging","lif","peanut"]
 ---
 
 [![](http://bp0.blogger.com/_NHWs1LwT47s/RrLIcqG62mI/AAAAAAAADlc/SawVTgr4PZ4/s320/Peanut+at+15+Weeks.jpg)](http://bp0.blogger.com/_NHWs1LwT47s/RrLIcqG62mI/AAAAAAAADlc/SawVTgr4PZ4/s1600-h/Peanut+at+15+Weeks.jpg)He's in there, lollygagging about, twiddling the old thumbs as he mocks me. I see him, in his wee chair, leaning back against his tiny gravity, reading his mini New York Times late edition and sipping a barely visible cup of Chai. It disgusts me. I've already planned the first speech: day one, hour one, minute one, second 25 (give him a moment with Mom before setting things down)  

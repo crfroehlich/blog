@@ -1,7 +1,8 @@
 ---
-title: 'Your Hyperbole is Too Large'
-date: 2012-06-16T10:36:00.000-05:00
-draft: false
+title: "Your Hyperbole is Too Large"
+metaTitle: "Your Hyperbole is Too Large"
+metaDate: 6/16/2012
+metaDraft: false
 aliases: [ "/2012/06/your-hyperbole-is-too-large.html" ]
 ---
 

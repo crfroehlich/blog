@@ -1,9 +1,10 @@
 ---
-title: 'a moral'
-date: 2008-12-18T21:21:00.000-06:00
-draft: false
+title: "a moral"
+metaTitle: "a moral"
+metaDate: 12/18/2008
+metaDraft: false
 aliases: [ "/2008/12/a-moral.html" ]
-tags : [ought, lif, morality]
+tags: ["ought","lif","morality"]
 ---
 
 in elementary school, the 'they' that we remember vaguely as anything other than 'me' called me Son of Thunder.  i remember the chanting, like a mob of monks echoing a boomful curse, 'Son of Thunder! Son of Thunder!' i needed anger then, as a shield from all the pain.  no matter that we were poorish or dressed badly, always behind or obtuse to the current fads--i had no self awareness of this condition.  

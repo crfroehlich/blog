@@ -1,7 +1,8 @@
 ---
-title: 'palin should have won'
-date: 2009-02-28T22:12:00.000-06:00
-draft: false
+title: "palin should have won"
+metaTitle: "palin should have won"
+metaDate: 2/28/2009
+metaDraft: false
 aliases: [ "/2009/02/palin-should-have-won.html" ]
 ---
 

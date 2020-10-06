@@ -1,9 +1,10 @@
 ---
-title: 'Local News'
-date: 2004-05-15T00:12:00.000-05:00
-draft: false
+title: "Local News"
+metaTitle: "Local News"
+metaDate: 5/15/2004
+metaDraft: false
 aliases: [ "/2004/05/local-news.html" ]
-tags : [baghdad, news]
+tags: ["baghdad","news"]
 ---
 
 # HEADLINES: Mullis Sightings in Hong-Kong Continue (page 7)

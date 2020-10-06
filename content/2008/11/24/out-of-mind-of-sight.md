@@ -1,9 +1,10 @@
 ---
-title: 'out of mind of sight'
-date: 2008-11-24T14:02:00.000-06:00
-draft: false
+title: "out of mind of sight"
+metaTitle: "out of mind of sight"
+metaDate: 11/24/2008
+metaDraft: false
 aliases: [ "/2008/11/out-of-mind-of-sight.html" ]
-tags : [mind, lif, sailing]
+tags: ["mind","lif","sailing"]
 ---
 
 Self-consciousness is generally loathsome, though it doesn't stop me from trepidating on its doorstep, flirting with it constantly behind my eyelids.  In one sense, the whole of my existence is a barbaric wrestle with regret.  Skipping from one medication to the next in the endless psychopharmicological pursuit of a cure to this rotating polarity in my brain, I feel at all times nervous about the state of my emotions.  I am, after all, a creature more emotional than rational; though I do with my best intentions try to reason my way through the emotional cloud.  

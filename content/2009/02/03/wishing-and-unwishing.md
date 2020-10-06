@@ -1,9 +1,10 @@
 ---
-title: 'wishing and unwishing'
-date: 2009-02-03T22:19:00.000-06:00
-draft: false
+title: "wishing and unwishing"
+metaTitle: "wishing and unwishing"
+metaDate: 2/3/2009
+metaDraft: false
 aliases: [ "/2009/02/wishing-and-unwishing.html" ]
-tags : [belief, family, lif]
+tags: ["belief","family","lif"]
 ---
 
 my uncle once said something true.  

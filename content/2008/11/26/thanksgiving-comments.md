@@ -1,9 +1,10 @@
 ---
-title: 'Thanksgiving'
-date: 2008-11-26T21:59:00.000-06:00
-draft: false
+title: "Thanksgiving"
+metaTitle: "Thanksgiving"
+metaDate: 11/26/2008
+metaDraft: false
 aliases: [ "/2008/11/thanksgiving.html" ]
-tags : [thanksgiving, lif, holiday]
+tags: ["thanksgiving","lif","holiday"]
 ---
 
 #### 'singing': sorry, I'm not home right n...

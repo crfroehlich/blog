@@ -1,9 +1,10 @@
 ---
-title: 'i pity them'
-date: 2008-11-22T21:02:00.000-06:00
-draft: false
+title: "i pity them"
+metaTitle: "i pity them"
+metaDate: 11/22/2008
+metaDraft: false
 aliases: [ "/2008/11/i-pity-them.html" ]
-tags : [politics, family, lif]
+tags: ["politics","family","lif"]
 ---
 
 family is a strange thing. this is overly generic. family is an evolved concept, evolved out of necessity for the preservation of species. it is both a biological connection between generations and a social grouping, collecting different biological chains together into one label. this can be extraordinarily useful as members of the group assist the survival of each other.  

@@ -1,9 +1,10 @@
 ---
-title: 'tails of the apocalypse'
-date: 2006-08-29T00:39:00.000-05:00
-draft: false
+title: "tails of the apocalypse"
+metaTitle: "tails of the apocalypse"
+metaDate: 8/29/2006
+metaDraft: false
 aliases: [ "/2006/08/tails-of-apocalypse.html" ]
-tags : [gimel, lif]
+tags: ["gimel","lif"]
 ---
 
 Bukowski, we miss hating you.  

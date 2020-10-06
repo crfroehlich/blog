@@ -1,9 +1,10 @@
 ---
-title: 'can''t see my tale'
-date: 2006-10-09T00:40:00.000-05:00
-draft: false
+title: "can''t see my tale"
+metaTitle: "can''t see my tale"
+metaDate: 10/9/2006
+metaDraft: false
 aliases: [ "/2006/10/can-see-my-tale.html" ]
-tags : [obsequious, lif]
+tags: ["obsequious","lif"]
 ---
 
 Nothing.

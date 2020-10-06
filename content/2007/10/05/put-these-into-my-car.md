@@ -1,9 +1,10 @@
 ---
-title: 'Put These Into My Car'
-date: 2007-10-05T16:10:00.000-05:00
-draft: false
+title: "Put These Into My Car"
+metaTitle: "Put These Into My Car"
+metaDate: 10/5/2007
+metaDraft: false
 aliases: [ "/2007/10/put-these-into-my-car.html" ]
-tags : [slashdot, wishes]
+tags: ["slashdot","wishes"]
 ---
 
 Every day that I drive, stuck in traffic, I find myself wishing for little things--often simple things to make my drive faster, safer, more enjoyable. I doubt anyone's listening, but by golly gershwin I'm going to write them down.  

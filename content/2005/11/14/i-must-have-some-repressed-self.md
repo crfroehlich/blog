@@ -1,9 +1,10 @@
 ---
-title: '"W"it'
-date: 2005-11-14T23:26:00.000-06:00
-draft: false
+title: "\"W\"it"
+metaTitle: "\"W\"it"
+metaDate: 11/15/2005
+metaDraft: false
 aliases: [ "/2005/11/i-must-have-some-repressed-self.html" ]
-tags : [pillaging, lif, dreams]
+tags: ["pillaging","lif","dreams"]
 ---
 
 I must have some repressed self-loathing, because my brain unleashed a fury of W’s drivel in my dream last night. I wish I could remember more of it, but the only phrase that remains (and picture him with his usual…  

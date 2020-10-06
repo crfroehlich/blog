@@ -1,7 +1,8 @@
 ---
-title: 'a man and his economy'
-date: 2008-10-21T12:26:00.000-05:00
-draft: false
+title: "a man and his economy"
+metaTitle: "a man and his economy"
+metaDate: 10/21/2008
+metaDraft: false
 aliases: [ "/2008/10/a-man-and-his-economy.html" ]
 ---
 

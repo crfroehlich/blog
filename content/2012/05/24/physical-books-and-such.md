@@ -1,7 +1,8 @@
 ---
-title: 'Physical Books (and Such)'
-date: 2012-05-24T21:22:00.000-05:00
-draft: false
+title: "Physical Books (and Such)"
+metaTitle: "Physical Books (and Such)"
+metaDate: 5/24/2012
+metaDraft: false
 aliases: [ "/2012/05/physical-books-and-such.html" ]
 ---
 

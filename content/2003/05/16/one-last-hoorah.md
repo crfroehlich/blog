@@ -1,9 +1,10 @@
 ---
-title: 'One Last Hoorah'
-date: 2003-05-16T00:20:00.000-05:00
-draft: false
+title: "One Last Hoorah"
+metaTitle: "One Last Hoorah"
+metaDate: 5/16/2003
+metaDraft: false
 aliases: [ "/2003/05/one-last-hoorah.html" ]
-tags : [army, lif]
+tags: ["army","lif"]
 ---
 
 Friends of the U.S. Armed Forces,

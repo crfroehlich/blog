@@ -1,7 +1,8 @@
 ---
-title: 'a dark in the shot'
-date: 2008-04-08T20:37:00.000-05:00
-draft: false
+title: "a dark in the shot"
+metaTitle: "a dark in the shot"
+metaDate: 4/8/2008
+metaDraft: false
 aliases: [ "/2008/04/a-dark-in-shot.html" ]
 ---
 

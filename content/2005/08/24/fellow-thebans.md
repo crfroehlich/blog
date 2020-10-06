@@ -1,9 +1,10 @@
 ---
-title: 'Fellow Thebans'
-date: 2005-08-24T00:17:00.000-05:00
-draft: false
+title: "Fellow Thebans"
+metaTitle: "Fellow Thebans"
+metaDate: 8/24/2005
+metaDraft: false
 aliases: [ "/2005/08/fellow-thebans.html" ]
-tags : [lif]
+tags: ["lif"]
 ---
 
 This winter has been especially harsh and long. With temperatures plummeting to record lows and heat expenditures on the rise, I find myself with my fellow citizens: pulling the wool blanket a little bit closer, holding the hot chocolate a little bit longer, and above all, staying indoors as much as possible.

@@ -1,7 +1,8 @@
 ---
-title: 'forgotten futures'
-date: 2007-10-18T00:01:00.000-05:00
-draft: false
+title: "forgotten futures"
+metaTitle: "forgotten futures"
+metaDate: 10/18/2007
+metaDraft: false
 aliases: [ "/2007/10/forgotten-futures.html" ]
 ---
 

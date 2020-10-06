@@ -1,9 +1,10 @@
 ---
-title: 'for your bucket of thoughts'
-date: 2008-10-30T10:05:00.000-05:00
-draft: false
+title: "for your bucket of thoughts"
+metaTitle: "for your bucket of thoughts"
+metaDate: 10/30/2008
+metaDraft: false
 aliases: [ "/2008/10/for-your-bucket-of-thoughts.html" ]
-tags : [ugliness, damnation, evil, god]
+tags: ["ugliness","damnation","evil","god"]
 ---
 
 If you ask the Jew, the average practicing Jew or even a cross section of Rabis on the question of the afterlife, you'll find that they generally don't believe in one. The question doesn't interest them very much. If you drill down, they'll admit they believe in Sheol, this place where everyone (Jews and non-Jews) go when they die; and it's a bit like Pergatory--nothing particularly good or bad happens there, it's just a holding cell for a time.  

@@ -1,7 +1,8 @@
 ---
-title: 'Complex Units of Measure'
-date: 2012-10-02T22:07:00.000-05:00
-draft: false
+title: "Complex Units of Measure"
+metaTitle: "Complex Units of Measure"
+metaDate: 10/2/2012
+metaDraft: false
 aliases: [ "/2012/10/complex-units-of-measure.html" ]
 ---
 

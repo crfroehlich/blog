@@ -1,7 +1,8 @@
 ---
-title: 'Goodybye Randy Pausch '
-date: 2008-08-15T20:31:00.000-05:00
-draft: false
+title: "Goodybye Randy Pausch "
+metaTitle: "Goodybye Randy Pausch "
+metaDate: 8/15/2008
+metaDraft: false
 aliases: [ "/2008/08/goodybye-randy-pausch.html" ]
 ---
 

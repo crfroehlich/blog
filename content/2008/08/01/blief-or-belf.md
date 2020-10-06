@@ -1,9 +1,10 @@
 ---
-title: 'blief or belf'
-date: 2008-08-01T13:48:00.000-05:00
-draft: false
+title: "blief or belf"
+metaTitle: "blief or belf"
+metaDate: 8/1/2008
+metaDraft: false
 aliases: [ "/2008/08/blief-or-belf.html" ]
-tags : [belief, lif, good, god]
+tags: ["belief","lif","good","god"]
 ---
 
 I encountered this on my YouTube browsing, a rendering of Penn Jillette's contribution to the NPR show, _This I Believe_:  

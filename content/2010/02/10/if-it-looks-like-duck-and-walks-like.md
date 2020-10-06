@@ -1,7 +1,8 @@
 ---
-title: 'if it looks like a duck and walks like a duck, let''s call it a moose'
-date: 2010-02-10T18:58:00.000-06:00
-draft: false
+title: "if it looks like a duck and walks like a duck, let''s call it a moose"
+metaTitle: "if it looks like a duck and walks like a duck, let''s call it a moose"
+metaDate: 2/10/2010
+metaDraft: false
 aliases: [ "/2010/02/if-it-looks-like-duck-and-walks-like.html" ]
 ---
 

@@ -1,7 +1,8 @@
 ---
-title: 'Good Reads'
-date: 2013-01-13T20:00:00.000-06:00
-draft: false
+title: "Good Reads"
+metaTitle: "Good Reads"
+metaDate: 1/13/2013
+metaDraft: false
 aliases: [ "/2013/01/good-reads.html" ]
 ---
 

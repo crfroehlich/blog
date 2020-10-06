@@ -1,7 +1,8 @@
 ---
-title: 'Remember to Look Up and Write Down'
-date: 2011-07-25T22:07:00.005-05:00
-draft: false
+title: "Remember to Look Up and Write Down"
+metaTitle: "Remember to Look Up and Write Down"
+metaDate: 7/25/2011
+metaDraft: false
 aliases: [ "/2011/07/remember-to-look-up-and-write-down.html" ]
 ---
 

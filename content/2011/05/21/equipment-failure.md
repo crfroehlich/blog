@@ -1,9 +1,10 @@
 ---
-title: 'Equipment Failure'
-date: 2011-05-21T19:34:00.000-05:00
-draft: false
+title: "Equipment Failure"
+metaTitle: "Equipment Failure"
+metaDate: 5/21/2011
+metaDraft: false
 aliases: [ "/2011/05/equipment-failure.html" ]
-tags : [hiking, failure, equipment]
+tags: ["hiking","failure","equipment"]
 ---
 
 When you've been hiking as long as I have, you know instinctively that [equipment failure is a guarantee](http://goo.gl/i2n8n). Since the early days of my hiking career, I have kept a vigilant log of my successes based on the readings of my trusty pedometer. Yesterday, after a catastrophic mid-afternoon pedometer failure, I lost all of the data for the day's progress.  

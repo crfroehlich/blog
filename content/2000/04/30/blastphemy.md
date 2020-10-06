@@ -1,7 +1,8 @@
 ---
-title: 'blastphemy'
-date: 2000-04-30T23:14:00.000-05:00
-draft: false
+title: "blastphemy"
+metaTitle: "blastphemy"
+metaDate: 5/1/2000
+metaDraft: false
 aliases: [ "/2000/05/blastphemy.html" ]
 ---
 

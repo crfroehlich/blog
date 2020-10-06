@@ -1,9 +1,10 @@
 ---
-title: 'обо мне'
-date: 2005-12-13T16:59:00.000-06:00
-draft: false
+title: "обо мне"
+metaTitle: "обо мне"
+metaDate: 12/13/2005
+metaDraft: false
 aliases: [ "/2005/12/obo-mne.html" ]
-tags : [lif, honesty, liberation]
+tags: ["lif","honesty","liberation"]
 ---
 
 I talk to myself when I feel awkward. I say the things that I want to say to the people involved (past or present) in my life, and then I feel more awkward as I remind myself that only I can hear my voice.  

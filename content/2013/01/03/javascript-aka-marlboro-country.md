@@ -1,7 +1,8 @@
 ---
-title: 'JavaScript (aka Marlboro Country)'
-date: 2013-01-03T21:23:00.000-06:00
-draft: false
+title: "JavaScript (aka Marlboro Country)"
+metaTitle: "JavaScript (aka Marlboro Country)"
+metaDate: 1/3/2013
+metaDraft: false
 aliases: [ "/2013/01/javascript-aka-marlboro-country.html" ]
 ---
 

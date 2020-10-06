@@ -1,7 +1,8 @@
 ---
-title: 'The Cost of Urgency'
-date: 2012-04-25T21:33:00.000-05:00
-draft: false
+title: "The Cost of Urgency"
+metaTitle: "The Cost of Urgency"
+metaDate: 4/25/2012
+metaDraft: false
 aliases: [ "/2012/04/the-cost-of-urgency.html" ]
 ---
 

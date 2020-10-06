@@ -1,9 +1,10 @@
 ---
-title: 'i love twine'
-date: 2008-05-21T18:54:00.000-05:00
-draft: false
+title: "i love twine"
+metaTitle: "i love twine"
+metaDate: 5/21/2008
+metaDraft: false
 aliases: [ "/2008/05/i-love-twine.html" ]
-tags : [semantic web, twine]
+tags: ["semantic web","twine"]
 ---
 
 from the knots it forms in my [drawers...](http://www.sciencenews.org/articles/20071222/bob11.asp)  

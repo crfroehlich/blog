@@ -1,9 +1,10 @@
 ---
-title: 'Yes!'
-date: 2004-04-25T00:30:00.000-05:00
-draft: false
+title: "Yes!"
+metaTitle: "Yes!"
+metaDate: 4/25/2004
+metaDraft: false
 aliases: [ "/2004/04/yes.html" ]
-tags : [letters, notes, lif, farewell]
+tags: ["letters","notes","lif","farewell"]
 ---
 
 Friends,

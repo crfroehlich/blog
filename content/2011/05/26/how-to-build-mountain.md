@@ -1,9 +1,10 @@
 ---
-title: 'How to Build a Mountain'
-date: 2011-05-26T22:51:00.003-05:00
-draft: false
+title: "How to Build a Mountain"
+metaTitle: "How to Build a Mountain"
+metaDate: 5/26/2011
+metaDraft: false
 aliases: [ "/2011/05/how-to-build-mountain.html" ]
-tags : [mountain, diy, standing desk]
+tags: ["mountain","diy","standing desk"]
 ---
 
 The decision to climb [Mount Vesuvius](http://en.wikipedia.org/wiki/Mount_Vesuvius) probably does not come lightly to most. Our inner Ahab thirsts for our outer [toska](http://www.wordnik.com/words/toska), but what to do?  

@@ -1,7 +1,8 @@
 ---
-title: 'God Probably, *Probably*, Doesn''t Use Your App'
-date: 2013-08-14T21:13:00.002-05:00
-draft: false
+title: "God Probably, *Probably*, Doesn''t Use Your App"
+metaTitle: "God Probably, *Probably*, Doesn''t Use Your App"
+metaDate: 8/14/2013
+metaDraft: false
 aliases: [ "/2013/08/god-probably-probably-doesnt-use-your.html" ]
 ---
 

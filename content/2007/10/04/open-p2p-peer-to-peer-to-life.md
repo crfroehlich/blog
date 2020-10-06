@@ -1,9 +1,10 @@
 ---
-title: 'Open P2P (Peer to Peer) to Life'
-date: 2007-10-04T10:04:00.000-05:00
-draft: false
+title: "Open P2P (Peer to Peer) to Life"
+metaTitle: "Open P2P (Peer to Peer) to Life"
+metaDate: 10/4/2007
+metaDraft: false
 aliases: [ "/2007/10/open-p2p-peer-to-peer-to-life.html" ]
-tags : [slashdot, wishes]
+tags: ["slashdot","wishes"]
 ---
 
 I'm just one fellow, and not terribly educated at that; so my opinions may not be grounded in actuality. Nonetheless, I've been thinking of a few ideas, wondering if anyone else has thought of them and if they're any good.  

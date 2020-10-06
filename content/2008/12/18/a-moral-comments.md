@@ -1,9 +1,10 @@
 ---
-title: 'a moral'
-date: 2008-12-18T21:21:00.000-06:00
-draft: false
+title: "a moral"
+metaTitle: "a moral"
+metaDate: 12/18/2008
+metaDraft: false
 aliases: [ "/2008/12/a-moral.html" ]
-tags : [ought, lif, morality]
+tags: ["ought","lif","morality"]
 ---
 
 #### This post hit so close to home for me. I could no...

@@ -1,6 +1,7 @@
 ---
 title: "Meeting Melchilzedek"
 metaTitle: "Meeting Melchilzedek"
+metaTitle: "Meeting Melchilzedek"
 metaDescription: "short story"
 metaDate: "10/13/2009"
 ---

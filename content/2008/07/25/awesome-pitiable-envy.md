@@ -1,7 +1,8 @@
 ---
-title: 'awesome pitiable envy'
-date: 2008-07-25T22:43:00.000-05:00
-draft: false
+title: "awesome pitiable envy"
+metaTitle: "awesome pitiable envy"
+metaDate: 7/25/2008
+metaDraft: false
 aliases: [ "/2008/07/awesome-pitiable-envy.html" ]
 ---
 

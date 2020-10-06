@@ -1,7 +1,8 @@
 ---
-title: 'Bush Repunctuates Education Law: "No! Child... ''Left Behind''?" Act'
-date: 2007-09-24T00:27:00.000-05:00
-draft: false
+title: 'Bush Repunctuates Education Law
+metaTitle: 'Bush Repunctuates Education Law: "No! Child... ''Left Behind''?" Act'
+metaDate: 9/24/2007
+metaDraft: false
 aliases: [ "/2007/09/bush-repunctuates-education-law-child.html" ]
 ---
 

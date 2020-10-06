@@ -1,7 +1,8 @@
 ---
-title: 'Automakers Propose Cutting Emisions in Half by Releasing Only Pure, Clean Carbon-Monoxide'
-date: 2007-09-27T21:58:00.000-05:00
-draft: false
+title: "Automakers Propose Cutting Emisions in Half by Releasing Only Pure, Clean Carbon-Monoxide"
+metaTitle: "Automakers Propose Cutting Emisions in Half by Releasing Only Pure, Clean Carbon-Monoxide"
+metaDate: 9/27/2007
+metaDraft: false
 aliases: [ "/2007/09/automakers-propose-cutting-emisions-in.html" ]
 ---
 
