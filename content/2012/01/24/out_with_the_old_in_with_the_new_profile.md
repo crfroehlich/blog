@@ -1,7 +1,6 @@
 ---
 title: "Out With the Old, In With the New (Profile)"
 metaTitle: "Out With the Old, In With the New (Profile)"
-metaTitle: "Out With the Old, In With the New (Profile)"
 metaDescription: "work"
 metaDate: "01/24/2012"
 ---

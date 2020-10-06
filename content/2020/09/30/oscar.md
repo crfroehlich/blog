@@ -1,7 +1,6 @@
 ---
 title: "Oscar"
 metaTitle: "Oscar"
-metaTitle: "Oscar"
 metaDescription: "short story"
 metaDate: "09/30/2020"
 ---

@@ -1,7 +1,6 @@
 ---
 title: "It's that time when the world falls in love"
 metaTitle: "It's that time when the world falls in love"
-metaTitle: "Eli begins"
 metaDescription: "Ultrasound of Eli"
 metaDate: "07/09/2007"
 ---
