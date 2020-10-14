@@ -5,6 +5,7 @@
   "version": "0.0.1",
   "dependencies": {
     "@babel/plugin-proposal-export-default-from": "^7.10.4",
+    "@dream-bit-de/gatsby-plugin-better-page-tree": "1.5.0",
     "@emotion/core": "^10.0.35",
     "@emotion/styled": "^10.0.27",
     "@emotion/styled-base": "^10.0.31",
@@ -50,7 +51,9 @@
     "react-live": "^2.2.2",
     "react-loadable": "^5.5.0",
     "styled-components": "^5.2.0",
-    "styled-icons": "^10.22.0"
+    "styled-icons": "^10.22.0",
+    "ts-node": "9.0.0",
+    "typescript": "3.4.3"
   },
   "license": "MIT",
   "main": "n/a",

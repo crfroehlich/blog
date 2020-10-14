@@ -3,6 +3,7 @@ import config from '../../../config';
 import TreeNode from './treeNode';
 
 const calculateTreeData = edges => {
+  
   const originalData = config.sidebar.ignoreIndex
     ? edges.filter(
         ({
@@ -18,7 +19,7 @@ const calculateTreeData = edges => {
       accu,
       {
         node: {
-          fields: { slug, title },
+          fields: { slug, title, date },
         },
       }
     ) => {
@@ -45,19 +46,21 @@ const calculateTreeData = edges => {
         }
         prevItems = tmp.items;
       }
-      const slicedLength = 3;
+      const slicedLength = 2;
 
       const existingItem = prevItems.find(({ label }) => label === parts[slicedLength]);
 
       if (existingItem) {
         existingItem.url = slug;
         existingItem.title = title;
+        existingItem.date = date;
       } else {
         prevItems.push({
           label: parts[slicedLength],
           url: slug,
           items: [],
           title,
+          date,
         });
       }
       return accu;
@@ -97,19 +100,11 @@ const calculateTreeData = edges => {
         prevItems = tmp.items;
       }
     }
-    // sort items alphabetically.
+    // sort items by date descending.
     prevItems.map(item => {
-      item.items = item.items.sort(function(a, b) {
-        switch( a.title.localeCompare(b.title, 'en', { numeric: true })) {
-          case -1:
-            return 1;
-          case 1:
-            return -1;
-          default:
-            return 0;
-        }
-      });
+      item.items = item.items.sort((a, b) => new Date(b.date) - new Date(a.date));
     });
+    
     const slicedLength =
       config.gatsby && config.gatsby.trailingSlash ? parts.length - 2 : parts.length - 1;
 

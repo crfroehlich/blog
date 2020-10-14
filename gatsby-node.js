@@ -105,5 +105,11 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
       node,
       value: node.frontmatter.title || startCase(parent.name),
     });
+
+    createNodeField({
+      name: 'date',
+      node,
+      value: new Date(node.frontmatter.metaDate),
+    });
   }
 };
