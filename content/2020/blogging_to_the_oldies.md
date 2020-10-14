@@ -2,7 +2,7 @@
 title: "Blogging to the Oldies"
 metaTitle: "Blogging to the Oldies"
 metaDescription: "blogging, tech"
-metaDate: "10/04/2020"
+metaDate: 10/04/2020
 ---
 
 ## Reality, Meet Opportunity
