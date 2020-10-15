@@ -12,10 +12,28 @@ const forcedNavOrder = config.sidebar.forcedNavOrder;
 
 export default class MDXRuntimeTest extends Component {
   render() {
+    
     const { data } = this.props;
 
-    if (!data) {
-      return null;
+    if (!data || !data.site) {
+      return (
+        <Layout {...this.props}>
+        <Helmet>
+          {metaTitle ? <title>{metaTitle}</title> : null}
+          {metaTitle ? <meta name="title" content={metaTitle} /> : null}
+          {metaDescription ? <meta name="description" content={metaDescription} /> : null}
+          {metaTitle ? <meta property="og:title" content={metaTitle} /> : null}
+          {metaDescription ? <meta property="og:description" content={metaDescription} /> : null}
+          <link rel="canonical" href={canonicalUrl} />
+        </Helmet>
+        <div className={'titleWrapper'}>
+          <StyledHeading>Trail Closed for Maintenance</StyledHeading>
+        </div>
+        <StyledMainWrapper>Sadly, your journey ends here. Go back to the beginning; consider the navel and its many wonders; cast your gaze inward and skyward and outbetween.</StyledMainWrapper>
+        <div className={'addPaddTopBottom'}>
+          <NextPrevious mdx={mdx} nav={nav} />
+        </div>
+      </Layout>);
     }
     const {
       allMdx,
