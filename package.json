@@ -4,7 +4,7 @@
   "author": "Christopher Froehlich",
   "version": "0.0.1",
   "dependencies": {
-    "@babel/plugin-proposal-export-default-from": "^7.10.4",
+    "@babel/plugin-proposal-export-default-from": "^7.12.1",
     "@dream-bit-de/gatsby-plugin-better-page-tree": "1.5.0",
     "@emotion/core": "^10.0.35",
     "@emotion/styled": "^10.0.27",
