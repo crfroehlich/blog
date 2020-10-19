@@ -42,7 +42,7 @@
     "lodash.flatten": "^4.4.0",
     "lodash.startcase": "^4.4.0",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1",
+    "react-dom": "^16.14.0",
     "react-feather": "^2.0.8",
     "react-github-btn": "^1.2.0",
     "react-helmet": "^6.1.0",
