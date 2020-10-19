@@ -1,9 +1,9 @@
 ---
 title: "this is the end of the world"
 metaTitle: "this is the end of the world"
-metaDate: 3/16/2011
+metaDate: 02/04/2017
 metaDraft: false
-aliases: [ "/2011/03/this-is-end-of-world.html" ]
+tags: [ "poetry" ]
 ---
 
 The world is a small, flat rock which rests evenly in the palm of your hand. As you toss it lightly into the air, the accompanying thump against your palm inspires confidence.
