@@ -38,22 +38,27 @@ In order to reconcile the two different behaviors, we need to make some changes 
 
 If we start with a [T4 import](https://github.com/crfroehlich/AutoEcMvc/blob/master/T4/templates/imports.ttinclude) that looks like this:
 
+```t4
 #><#@ assembly name="$(SolutionDir)CodeGeneration\\bin\\netstandard2.0\\CodeGeneration.Dll"
 #><#@ assembly name="$(SolutionDir)CodeGeneration\\bin\\netstandard2.0\\Newtonsoft.Json.Dll"
 #><#@ import namespace="Newtonsoft.Json"
 #><#@ import namespace="Newtonsoft.Json.Linq"
 #><#@ import namespace="CodeGeneration" #>
+```
 
 we have two immediate problems. `$(SolutionDir)` cannot resolve outside of VS, and our 3rd party dependency on Newtonsoft will not be available from the `bin` directory. Starting with the latter, you can add this into a property group in the project file:
 
+```xml
 <PropertyGroup>
   <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
 </PropertyGroup>
+```
 
 Now, all reference binaries will be copied into the build output directory.
 
 Next, the challenge of resolving the path to that output directory can be solved as well. A custom mapping is required, which is also possible with a little XML markup:
 
+```xml
 <PropertyGroup>       <targetFolder>$(MSBuildProjectDirectory)\\..\\CodeGeneration\\bin\\netstandard2.0</targetFolder>
 </PropertyGroup>
 <ItemGroup>
@@ -61,14 +66,18 @@ Next, the challenge of resolving the path to that output directory can be solved
     <Value>$(targetFolder)</Value>
   </T4ParameterValues>
 </ItemGroup>
+```
 
 Now, I can update the T4 imports to:
 
+```xml
 #><#@ assembly name="$(targetFolder)\\CodeGeneration.Dll"
 #><#@ assembly name="$(targetFolder)\\Newtonsoft.Json.Dll"
+```
 
 And this will work seamlessly between VS and msbuild. There are a few other changes to make, but these are much more clearly documented elsewhere. For reference here, you also need:
 
+```xml
 <Import Project="$(MSBuildToolsPath)\\Microsoft.CSharp.targets" />
 <PropertyGroup>
   <!-- Get the Visual Studio version: -->
@@ -84,6 +93,7 @@ And this will work seamlessly between VS and msbuild. There are a few other chan
   <TransformOutOfDateOnly>false</TransformOutOfDateOnly>
   <RunPostBuildEvent>Always</RunPostBuildEvent>
 </PropertyGroup>
+```
 
 This is the final glue to ensure that you get identical behavior when compiling the project from any direction.
 

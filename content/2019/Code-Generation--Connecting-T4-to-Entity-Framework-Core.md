@@ -27,6 +27,7 @@ If you look through the structure of [AutoEcMvc](https://github.com/crfroehlich/
 
 Perhaps the single most import part of code gen is the structured data format in use. I need to be able to map my JSON back to a C# class that can be used deterministically in T4, so my [Course](https://github.com/crfroehlich/AutoEcMvc/blob/master/CodeGeneration/Transforms/schema/Course.json) class is defined in JSON as:
 
+```json
   "Description": "A course represents a college course that a student can take",
   "DisplayName": "Title",
   "HasControllers": true,
@@ -35,28 +36,33 @@ Perhaps the single most import part of code gen is the structured data format in
   "DatabaseGeneratedOption": "None",
   "PrimaryKeyDisplayName": "Number",
   "Columns": \[...\]
+```
 
 Each entity has a collection of columns, and a column looks like:
 
+```json
 "Description": "Unique name of the course",
 "Length": 50,
 "MinimumLength": 3,
 "Name": "Title",
 "Order": 0,
 "Type": "string"
+```
 
 Honestly, it took quite a few iterations before I landed on the current data structure — and there is still quite a bit of cruft that can be removed to polish this. I started with the model classes, because they are the simplest and require the least amount of logic overall. I opted to use a numbered naming convention for the templates as a clue to the developer on the order in which things should be done: note this is simply an opinion and has no effect on the text transform step of compile — these templates can (and should always be able to) be transformed in any order. So [02\_models.tt](https://github.com/crfroehlich/AutoEcMvc/blob/master/CodeGeneration/Transforms/templates/02_Models.tt) is the first step of the process.
 
 First, include our imports for T4:
 
-<#@ include file="imports.ttinclude" #><#
+`<#@ include file="imports.ttinclude" #><#`
 
 You’ll notice that I frequently start an opening tag immediately after a closing tag `#><#` . This is [just a trick](https://stackoverflow.com/a/19860881) to avoid injecting extra white space into the output file.
 
 Second, load our schema from JSON:
 
+```c#
 var tables = BuildMethods.GetJsonFilesAsTables(Path.GetDirectoryName(Host.TemplateFile) + "\\\\..\\\\schema");
 foreach(var table in tables) {
+```
 
 It becomes easier as you scale the templates up and out to use utility methods. I have opted to store these in a static [BuildMethods](https://github.com/crfroehlich/AutoEcMvc/blob/master/CodeGeneration/Core/BuildMethods.cs) class for two reasons: (1) you get compile time errors that make sense if the methods don’t compile and (2) debugging is much simpler inside a C# class. You could just as easily write these in a shared T4 include, which I also do for the [SaveOutput](https://github.com/crfroehlich/AutoEcMvc/blob/master/CodeGeneration/Transforms/templates/saveoutput.ttinclude) methods. Either way works just as well. The plus sides of defining methods in T4 in this way are (1) you don’t need the “BuildMethods” prefix and (2) the methods do not need to compile before the transform executes. Personally, I generally prefer the static BuildMethods approach for most of my logic.
 
@@ -68,7 +74,9 @@ Second, we have a relationship to `Department` which has the database column `De
 
 Third, we write out a model file for each JSON file that’s been processed:
 
+```t4
 <#    SaveOutput(table.Name + ".cs", "..//..//..//AutoEcMvc//Generated//Models");  } //foreach(var table in tables) #><#@ include file="saveoutput.ttinclude" #>
+```
 
 Since I want to have a single model template generate many model outputs, this handles the writing of the individual files. T4 still generates a single, backing file — which is annoying. I set the template output extension to `.ignore`, which generates a `02_models.ignore` file after each compilation. A post build event then deletes all .ignore files. It’s not the most elegant solution to the problem, but it works well enough.
 
