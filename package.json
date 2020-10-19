@@ -63,7 +63,7 @@
     "serve": "gatsby serve",
     "format": "prettier --write \"src/**/*.{js,jsx,css,json}\"",
     "lint": "eslint --fix \"src/**/*.{js,jsx}\"",
-    "deploy": "gatsby build && gh-pages -d public -b gh-pages"
+    "deploy": "yarn build && node publish.js"
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",
