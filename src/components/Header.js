@@ -90,13 +90,11 @@ const Header = ({ location, isDarkThemeActive, toggleActiveTheme }) => (
         },
       } = data;
 
-      const finalLogoLink = logo.link !== '' ? logo.link : 'https://blog.luddites.me/';
-
       return (
         <div className={'navBarWrapper'}>
           <nav className={'navBarDefault'}>
             <div className={'navBarHeader'}>
-              <Link to={finalLogoLink} className={'navBarBrand'}>
+              <Link to={'/'} className={'navBarBrand'}>
                 <img
                   className={'img-responsive displayInline'}
                   src={logo.image !== '' ? logo.image : logoImg}
@@ -129,13 +127,12 @@ const Header = ({ location, isDarkThemeActive, toggleActiveTheme }) => (
                   if (link.link !== '' && link.text !== '') {
                     return (
                       <li key={key}>
-                        <a
+                        <Link
                           className="sidebarLink"
-                          href={link.link}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          dangerouslySetInnerHTML={{ __html: link.text }}
-                        />
+                          to={link.link}
+                          onclick="return false;"
+                          title={link.text }
+                        >{link.text }</Link>
                       </li>
                     );
                   }

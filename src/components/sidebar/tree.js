@@ -3,7 +3,7 @@ import config from '../../../config';
 import TreeNode from './treeNode';
 
 const calculateTreeData = edges => {
-  
+
   const originalData = config.sidebar.ignoreIndex
     ? edges.filter(
         ({
@@ -104,7 +104,7 @@ const calculateTreeData = edges => {
     prevItems.map(item => {
       item.items = item.items.sort((a, b) => new Date(b.date) - new Date(a.date));
     });
-    
+
     const slicedLength =
       config.gatsby && config.gatsby.trailingSlash ? parts.length - 2 : parts.length - 1;
 

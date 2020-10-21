@@ -5,6 +5,7 @@ const path = require('path');
 const startCase = require('lodash.startcase');
 
 const config = require('./config');
+const _ = require('lodash');
 
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions;
@@ -26,6 +27,11 @@ exports.createPages = ({ graphql, actions }) => {
                   }
                 }
               }
+            },
+            tagsGroup: allMdx(limit: 2000) {
+              group(field: frontmatter___tags) {
+                fieldValue
+              }
             }
           }
         `
@@ -35,15 +41,29 @@ exports.createPages = ({ graphql, actions }) => {
           reject(result.errors);
         }
 
+        const blogTemplate = path.resolve('./src/templates/docs.js');
+        const tagTemplate = path.resolve("src/templates/tags.js")
+
         // Create blog posts pages.
         result.data.allMdx.edges.forEach(({ node }) => {
           createPage({
             path: node.fields.slug ? node.fields.slug : '/',
-            component: path.resolve('./src/templates/docs.js'),
+            component: blogTemplate,
             context: {
               id: node.fields.id,
             },
           });
+        });
+
+        // Make tag pages
+        result.data.tagsGroup.group.forEach(tag => {
+          createPage({
+            path: `/tags/${_.kebabCase(tag.fieldValue)}/`,
+            component: tagTemplate,
+            context: {
+              tag: tag.fieldValue,
+            },
+          })
         });
       })
     );

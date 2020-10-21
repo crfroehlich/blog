@@ -45,31 +45,33 @@ export default class MDXRuntimeTest extends Component {
 
     const gitHub = require('../components/images/github.svg');
 
-    const navItems = allMdx.edges
-      .map(({ node }) => node.fields.slug)
-      .filter(slug => slug !== '/')
-      .reverse()
-      .reduce(
-        (acc, cur) => {
-          if (forcedNavOrder.find(url => url === cur)) {
-            return { ...acc, [cur]: [cur] };
-          }
+    let navItems = [];
+    if(allMdx && allMdx.edges) {
+      navItems = allMdx.edges
+        .map(({ node }) => node.fields.slug)
+        .filter(slug => slug !== '/')
+        .reverse()
+        .reduce(
+          (acc, cur) => {
+            if (forcedNavOrder.find(url => url === cur)) {
+              return { ...acc, [cur]: [cur] };
+            }
 
-          let prefix = cur.split('/')[1];
+            let prefix = cur.split('/')[1];
 
-          if (config.gatsby && config.gatsby.trailingSlash) {
-            prefix = prefix + '/';
-          }
+            if (config.gatsby && config.gatsby.trailingSlash) {
+              prefix = prefix + '/';
+            }
 
-          if (prefix && forcedNavOrder.find(url => url === `/${prefix}`)) {
-            return { ...acc, [`/${prefix}`]: [...acc[`/${prefix}`], cur] };
-          } else {
-            return { ...acc, items: [...acc.items, cur] };
-          }
-        },
-        { items: [] }
-      );
-
+            if (prefix && forcedNavOrder.find(url => url === `/${prefix}`)) {
+              return { ...acc, [`/${prefix}`]: [...acc[`/${prefix}`], cur] };
+            } else {
+              return { ...acc, items: [...acc.items, cur] };
+            }
+          },
+          { items: [] }
+        );
+    }
     const nav = forcedNavOrder
       .reduce((acc, cur) => {
         return acc.concat(navItems[cur]);
@@ -82,15 +84,15 @@ export default class MDXRuntimeTest extends Component {
         }
       }).sort((a, b) => new Date(b.date) - new Date(a.date));
     // meta tags
-    const metaTitle = mdx.frontmatter.metaTitle;
-    const metaDescription = mdx.frontmatter.metaDescription;
-    const date = mdx.frontmatter.metaDate;
+    const metaTitle = (mdx) ? mdx.frontmatter.metaTitle : '';
+    const metaDescription = (mdx) ? mdx.frontmatter.metaDescription : '';
+    const date = (mdx) ? mdx.frontmatter.metaDate : '';
 
     let canonicalUrl = config.gatsby.siteUrl;
 
     canonicalUrl =
       config.gatsby.pathPrefix !== '/' ? canonicalUrl + config.gatsby.pathPrefix : canonicalUrl;
-    canonicalUrl = canonicalUrl + mdx.fields.slug;
+    canonicalUrl = canonicalUrl + ((mdx) ? mdx.fields.slug : '');
 
     return (
       <Layout {...this.props}>
@@ -107,7 +109,7 @@ export default class MDXRuntimeTest extends Component {
           <link rel="canonical" href={canonicalUrl} />
         </Helmet>
         <div className={'titleWrapper'}>
-          <StyledHeading>{mdx.fields.title}<span></span></StyledHeading>
+          <StyledHeading>{title}<span></span></StyledHeading>
           <Edit className={'mobileView'}>
             {docsLocation && (
               <Link className={'gitBtn'} to={`${docsLocation}/${mdx.parent.relativePath}`}>
@@ -117,7 +119,7 @@ export default class MDXRuntimeTest extends Component {
           </Edit>
         </div>
         <StyledMainWrapper>
-          <MDXRenderer>{mdx.body}</MDXRenderer>
+          <MDXRenderer>{(mdx) ? mdx.body : '<div/>'}</MDXRenderer>
           <i>{date}</i>
         </StyledMainWrapper>
         <div className={'addPaddTopBottom'}>

@@ -4,6 +4,8 @@ import Link from './link';
 import { StyledNextPrevious } from './styles/PageNavigationButtons';
 
 const NextPrevious = ({ mdx, nav }) => {
+  if(!nav || !mdx) return <div/>;
+
   let currentIndex = 0;
 
   nav.map((el, index) => {
