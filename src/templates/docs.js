@@ -12,7 +12,7 @@ const forcedNavOrder = config.sidebar.forcedNavOrder;
 
 export default class MDXRuntimeTest extends Component {
   render() {
-    
+
     const { data } = this.props;
 
     if (!data || !data.site) {
@@ -78,11 +78,9 @@ export default class MDXRuntimeTest extends Component {
       .map(slug => {
         if (slug) {
           const { node } = allMdx.edges.find(({ node }) => node.fields.slug === slug);
-
-          return { title: node.fields.title, url: node.fields.slug };
+          return node.fields;
         }
-      }).reverse();
-
+      }).sort((a, b) => new Date(b.date) - new Date(a.date));
     // meta tags
     const metaTitle = mdx.frontmatter.metaTitle;
     const metaDescription = mdx.frontmatter.metaDescription;
@@ -143,6 +141,7 @@ export const pageQuery = graphql`
         id
         title
         slug
+        date
       }
       body
       tableOfContents
@@ -163,6 +162,7 @@ export const pageQuery = graphql`
           fields {
             slug
             title
+            date
           }
         }
       }

@@ -4,49 +4,40 @@ import Link from './link';
 import { StyledNextPrevious } from './styles/PageNavigationButtons';
 
 const NextPrevious = ({ mdx, nav }) => {
-  let currentIndex;
-  const nextInfo = {};
+  let currentIndex = 0;
 
-  const previousInfo = {};
-
-  if(nav) {
-    if (currentIndex === undefined) {
-      // index
-      if (nav[0]) {
-        nextInfo.url = nav[0].url;
-        nextInfo.title = nav[0].title;
-      }
-      previousInfo.url = null;
-      previousInfo.title = null;
-      currentIndex = -1;
-    } else if (currentIndex === 0) {
-      // first page
-      nextInfo.url = nav[currentIndex + 1] ? nav[currentIndex + 1].url : null;
-      nextInfo.title = nav[currentIndex + 1] ? nav[currentIndex + 1].title : null;
-      previousInfo.url = null;
-      previousInfo.title = null;
-    } else if (currentIndex === nav.length - 1) {
-      // last page
-      nextInfo.url = null;
-      nextInfo.title = null;
-      previousInfo.url = nav[currentIndex - 1] ? nav[currentIndex - 1].url : null;
-      previousInfo.title = nav[currentIndex - 1] ? nav[currentIndex - 1].title : null;
-    } else if (currentIndex) {
-      // any other page
-      if (nav[currentIndex + 1]) {
-        nextInfo.url = nav[currentIndex + 1].url;
-        nextInfo.title = nav[currentIndex + 1].title;
-      }
-      if (nav[currentIndex - 1]) {
-        previousInfo.url = nav[currentIndex - 1].url;
-        previousInfo.title = nav[currentIndex - 1].title;
-      }
+  nav.map((el, index) => {
+    if (el && el.slug === mdx.fields.slug) {
+      currentIndex = index;
     }
+  });
+
+  const getNav = (offset) => nav[currentIndex + offset];
+  const getNavPrev = () => getNav(-1);
+  const getNavNext = () => getNav(1);
+  const getDate = (offset) =>
+    new Date(getNav(offset).date)
+    .toLocaleDateString(navigator.language, {
+      weekday: 'long', year: 'numeric', month: '2-digit', day: '2-digit'
+    });
+  const getTitle = (offset) => {
+    let title = getNav(offset).title.trim();
+    // TODO: compute the total length of left/right and set accordingly
+    if(offset === 1 && title.length > 38) {
+      title = title.substr(0,34).trim() + '…';
+    }
+    if(offset === -1 && title.length > 41) {
+      title = title.substr(0,38).trim() + '…';
+    }
+    return title;
   }
+  let nextInfo = getNav(1);
+  let previousInfo = getNav(-1);
+
   return (
     <StyledNextPrevious>
-      {previousInfo.url && currentIndex >= 0 ? (
-        <Link to={nav[currentIndex - 1].url} className={'previousBtn'}>
+      {previousInfo && currentIndex >= 0 ? (
+        <Link to={getNavPrev().slug} title={getNavPrev().title} className={'previousBtn'} >
           <div className={'leftArrow'}>
             <svg
               preserveAspectRatio="xMidYMid meet"
@@ -69,22 +60,22 @@ const NextPrevious = ({ mdx, nav }) => {
           </div>
           <div className={'preRightWrapper'}>
             <div className={'smallContent'}>
-              <span>Previous</span>
+              <span>{getDate(-1)}</span>
             </div>
             <div className={'nextPreviousTitle'}>
-              <span>{nav[currentIndex - 1].title}</span>
+              <span>{getTitle(-1)}</span>
             </div>
           </div>
         </Link>
       ) : null}
-      {nextInfo.url && currentIndex >= 0 ? (
-        <Link to={nav[currentIndex + 1].url} className={'nextBtn'}>
+      {nextInfo && currentIndex >= 0 ? (
+        <Link to={getNavNext().slug} title={getNavNext().title} className={'nextBtn'}>
           <div className={'nextRightWrapper'}>
             <div className={'smallContent'}>
-              <span>Next</span>
+              <span>{getDate(1)}</span>
             </div>
             <div className={'nextPreviousTitle'}>
-              <span>{nav[currentIndex + 1] && nav[currentIndex + 1].title}</span>
+              <span>{getTitle(1)}</span>
             </div>
           </div>
           <div className={'rightArrow'}>
