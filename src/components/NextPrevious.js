@@ -11,13 +11,16 @@ const NextPrevious = ({ mdx, nav }) => {
       currentIndex = index;
     }
   });
-
+  let locale = 'en-US';
+  if(typeof window !== 'undefined' && window.navigator) {
+    locale = window.navigator.language;
+  }
   const getNav = (offset) => nav[currentIndex + offset];
   const getNavPrev = () => getNav(-1);
   const getNavNext = () => getNav(1);
   const getDate = (offset) =>
     new Date(getNav(offset).date)
-    .toLocaleDateString(navigator.language, {
+    .toLocaleDateString(locale, {
       weekday: 'long', year: 'numeric', month: '2-digit', day: '2-digit'
     });
   const getTitle = (offset) => {
