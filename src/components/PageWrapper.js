@@ -22,7 +22,6 @@ export const PageWrapper = ({ props, pageContent, pageTitle, showGithub }) => {
   if(data && data.site) {
     site = data.site;
     siteMetadata = site.siteMetadata;
-    title = siteMetadata.title;
     docsLocation = siteMetadata.docsLocation;
   }
 
@@ -35,7 +34,7 @@ export const PageWrapper = ({ props, pageContent, pageTitle, showGithub }) => {
 
   if(mdx) {
     if(mdx.frontmatter) {
-      title = mdx.frontmatter.metaTitle;
+      title = mdx.frontmatter.metaTitle || title;
       description = mdx.frontmatter.metaDescription || title;
     }
     if(!body) {
@@ -43,7 +42,11 @@ export const PageWrapper = ({ props, pageContent, pageTitle, showGithub }) => {
     }
   }
 
-  let canonicalUrl = config.gatsby.siteUrl;
+  if(!title && siteMetadata) {
+    title = siteMetadata.title;
+  }
+
+  let canonicalUrl = `${config.gatsby.siteUrl}`;
 
   canonicalUrl = config.gatsby.pathPrefix !== '/' ? canonicalUrl + config.gatsby.pathPrefix : canonicalUrl;
   canonicalUrl = canonicalUrl + ((mdx) ? mdx.fields.slug : '');
@@ -90,6 +93,7 @@ export const PageWrapper = ({ props, pageContent, pageTitle, showGithub }) => {
     })
     .sort((a, b) => new Date(b.date) - new Date(a.date));
 
+    console.log([pageTitle, title, props])
   return (
     <Layout {...props}>
         <Helmet>
