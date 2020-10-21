@@ -20,7 +20,7 @@ const config = {
 		      </div>
 		    </a>
 		  </li>`,
-    links: [{ text: 'Home', link: '/' }],
+    links: [{ text: 'Tags', link: '/tags' }],
     search: {
       enabled: true,
       indexName: 'blog',

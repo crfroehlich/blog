@@ -2379,6 +2379,175 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@material/animation@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "@material/animation@npm:1.0.0"
+  dependencies:
+    tslib: ^1.9.3
+  checksum: 81a6a8afba9c198885216f1f4da039e6188969823464de4d1c5deea3548a0f458ec4dea7a0eb4caf42a5be45722f5bf31092e019ead3b8547da285773050896c
+  languageName: node
+  linkType: hard
+
+"@material/base@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "@material/base@npm:1.0.0"
+  dependencies:
+    tslib: ^1.9.3
+  checksum: 1e9e549e53974a6cceeff054b58c13e988c82c3594cf878e696166d3547dd6a30155bd6951901464a9e38b8c8f7fcaeb4abe35d8d2f02efd4ca5bc8dd38f2f73
+  languageName: node
+  linkType: hard
+
+"@material/checkbox@npm:^2.3.0":
+  version: 2.3.0
+  resolution: "@material/checkbox@npm:2.3.0"
+  dependencies:
+    "@material/animation": ^1.0.0
+    "@material/base": ^1.0.0
+    "@material/dom": ^1.1.0
+    "@material/feature-targeting": ^0.44.1
+    "@material/ripple": ^2.3.0
+    "@material/rtl": ^0.42.0
+    "@material/theme": ^1.1.0
+    tslib: ^1.9.3
+  checksum: cfeda6976555ef08e857445af9d3e86c542fbdbe606ffda7f6eeef8e7eb323af98e1e584c45de1475cdc682fc23309bc0bf999111aaf31ecd2130eff0acc742c
+  languageName: node
+  linkType: hard
+
+"@material/chips@npm:^2.3.0":
+  version: 2.3.0
+  resolution: "@material/chips@npm:2.3.0"
+  dependencies:
+    "@material/animation": ^1.0.0
+    "@material/base": ^1.0.0
+    "@material/checkbox": ^2.3.0
+    "@material/elevation": ^1.1.0
+    "@material/feature-targeting": ^0.44.1
+    "@material/ripple": ^2.3.0
+    "@material/shape": ^1.1.1
+    "@material/theme": ^1.1.0
+    "@material/typography": ^2.3.0
+    tslib: ^1.9.3
+  checksum: 371e8ba49eed19c0537081baf25c987792b78bd995c018672a1d2a3f3636b201f448cdf3a73261466e6d4be71b7c19a392f8b554e0a86dad0755b87c596c0863
+  languageName: node
+  linkType: hard
+
+"@material/dom@npm:^1.0.0, @material/dom@npm:^1.1.0":
+  version: 1.1.0
+  resolution: "@material/dom@npm:1.1.0"
+  dependencies:
+    tslib: ^1.9.3
+  checksum: 2c6f9a3386488242982596e05a1f52cdd86fedc933593cb7396b7bceba693ac3e0007b36ef783c0147d9bd0701f7b84e96e301318eb2a89f1540c0c772d48dc5
+  languageName: node
+  linkType: hard
+
+"@material/elevation@npm:^1.1.0":
+  version: 1.1.0
+  resolution: "@material/elevation@npm:1.1.0"
+  dependencies:
+    "@material/animation": ^1.0.0
+    "@material/feature-targeting": ^0.44.1
+    "@material/theme": ^1.1.0
+  checksum: a6d108add1d392960df8e2cc094bb5536f972d296c28e5eb561f303a2ef575c731b07cc2abc1a6192ac465e4dd75d71c8b1eefde3b4ded3d0bbacb26953145e1
+  languageName: node
+  linkType: hard
+
+"@material/feature-targeting@npm:^0.44.1":
+  version: 0.44.1
+  resolution: "@material/feature-targeting@npm:0.44.1"
+  checksum: 62e7c882396b849de19d7556ea954c353b1e95b619f2c2ea50d89887a4ff3517517937f9df2d3de8ffa8aeb05c3afc3212b2ca30360732c709b72706950d5943
+  languageName: node
+  linkType: hard
+
+"@material/react-chips@npm:^0.15.0":
+  version: 0.15.0
+  resolution: "@material/react-chips@npm:0.15.0"
+  dependencies:
+    "@material/chips": ^2.3.0
+    "@material/react-ripple": ^0.15.0
+    classnames: ^2.2.6
+    react-is: ^16.8.6
+  peerDependencies:
+    react: ^16.4.2
+  checksum: f589b246fb6b986e3093a50c82cea65817e3c2b937c3515c47c7e41a38c6661cfb166d3f5c703388dd17513663ff4d6b23befde9c7ab6a4ee929049c2388a629
+  languageName: node
+  linkType: hard
+
+"@material/react-ripple@npm:^0.15.0":
+  version: 0.15.0
+  resolution: "@material/react-ripple@npm:0.15.0"
+  dependencies:
+    "@material/dom": ^1.0.0
+    "@material/ripple": ^1.0.0
+    classnames: ^2.2.6
+    utility-types: ^3.2.1
+  peerDependencies:
+    react: ^16.4.2
+  checksum: 4d22c69869afb9c8d48b0d5ce8c6d2cc7370aa3e8308ce1fd3b84e37feab8d9631cb487b372711d95f60d689d19bd603e86e36454bdc4dd5d24e860920f64bde
+  languageName: node
+  linkType: hard
+
+"@material/ripple@npm:^1.0.0":
+  version: 1.1.0
+  resolution: "@material/ripple@npm:1.1.0"
+  dependencies:
+    "@material/animation": ^1.0.0
+    "@material/base": ^1.0.0
+    "@material/dom": ^1.1.0
+    "@material/feature-targeting": ^0.44.1
+    "@material/theme": ^1.1.0
+    tslib: ^1.9.3
+  checksum: f23488b128ba4ef789c7a5819520336866ff1c894336c51272d04c6ad2cadbaf216d9347c5c4f329442331747ff60fbd37550a14fd403954eed4e81e7048bb76
+  languageName: node
+  linkType: hard
+
+"@material/ripple@npm:^2.3.0":
+  version: 2.3.0
+  resolution: "@material/ripple@npm:2.3.0"
+  dependencies:
+    "@material/animation": ^1.0.0
+    "@material/base": ^1.0.0
+    "@material/dom": ^1.1.0
+    "@material/feature-targeting": ^0.44.1
+    "@material/theme": ^1.1.0
+    tslib: ^1.9.3
+  checksum: 79c5a88f8bde3b6ad0412d58b2d68c89a285e59ce086238f638659e2cbe9843a4b606f749d281ad071b0c5732fc5c9b67bb75ed7b396448a40e17d47046ca83a
+  languageName: node
+  linkType: hard
+
+"@material/rtl@npm:^0.42.0":
+  version: 0.42.0
+  resolution: "@material/rtl@npm:0.42.0"
+  checksum: 4d972dfbe311124a678f262e90692db4547fc7c6bcf91d6497304451bac43c62b1f4b45b28f564cecbf67a120940cda72750c85db5e6e27f24da312fb87232e9
+  languageName: node
+  linkType: hard
+
+"@material/shape@npm:^1.1.1":
+  version: 1.1.1
+  resolution: "@material/shape@npm:1.1.1"
+  dependencies:
+    "@material/feature-targeting": ^0.44.1
+  checksum: 02b31ebd0c7da26ecac255582c720169c01f4bdae218499aacb1d0e17779358768dbcf6ec44eb9dd4399c5214e6b27173149791dbacc5ef46066dd0e8d68e36b
+  languageName: node
+  linkType: hard
+
+"@material/theme@npm:^1.1.0":
+  version: 1.1.0
+  resolution: "@material/theme@npm:1.1.0"
+  dependencies:
+    "@material/feature-targeting": ^0.44.1
+  checksum: 1c86cbb94f0fd66204a26ffb79b31c66675c302c68d07413c7531d048cd5cf790b20454875d498674e9a0aa9f4e1c98fd103fd2f7526a82d3847258353abfe59
+  languageName: node
+  linkType: hard
+
+"@material/typography@npm:^2.3.0":
+  version: 2.3.0
+  resolution: "@material/typography@npm:2.3.0"
+  dependencies:
+    "@material/feature-targeting": ^0.44.1
+  checksum: 3d609a8655b3483cfb9c338b55cad97b22c5e2bb029621469709e6c3d42f90be277b0eb4164feb547660dcd0c6177ecd4855eb30373f11ae859a5c69cf9ce444
+  languageName: node
+  linkType: hard
+
 "@mdx-js/loader@npm:^1.6.19":
   version: 1.6.19
   resolution: "@mdx-js/loader@npm:1.6.19"
@@ -5335,6 +5504,7 @@ __metadata:
     "@emotion/core": ^10.0.35
     "@emotion/styled": ^10.0.27
     "@emotion/styled-base": ^10.0.31
+    "@material/react-chips": ^0.15.0
     "@mdx-js/loader": ^1.6.19
     "@mdx-js/mdx": ^1.6.19
     "@mdx-js/react": ^1.6.19
@@ -6374,7 +6544,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"classnames@npm:^2.2.5":
+"classnames@npm:^2.2.5, classnames@npm:^2.2.6":
   version: 2.2.6
   resolution: "classnames@npm:2.2.6"
   checksum: 490eaeca5931846737ffd33e472a701d268d5b8bc5717dd4cf108a127b06e86e05350e06799abbbe763a0e4c945b4217f6700b7ae00ddc703505682c370e5cf2
@@ -18432,7 +18602,7 @@ fsevents@~2.1.2:
   languageName: node
   linkType: hard
 
-"react-is@npm:^16.12.0, react-is@npm:^16.7.0, react-is@npm:^16.8.1":
+"react-is@npm:^16.12.0, react-is@npm:^16.7.0, react-is@npm:^16.8.1, react-is@npm:^16.8.6":
   version: 16.13.1
   resolution: "react-is@npm:16.13.1"
   checksum: 11bcf1267a314a522615f626f3ce3727a3a24cdbf61c4d452add3550a7875326669631326cfb1ba3e92b6f72244c32ffecf93ad21c0cad8455d3e169d0e3f060
@@ -22541,6 +22711,13 @@ typescript@^4.0.3:
   version: 0.4.0
   resolution: "utila@npm:0.4.0"
   checksum: 6799b0a5666ac26fb547068e6967e51b534e290174b10ae26e500c216197b0faed9be8a12108bc408ce475ce1002c866aac2d1d4e1453dc72b441d8900f2063a
+  languageName: node
+  linkType: hard
+
+"utility-types@npm:^3.2.1":
+  version: 3.10.0
+  resolution: "utility-types@npm:3.10.0"
+  checksum: 0d2add8ad7057883548a328076dd5eaa8ccb3660df053645fec332253f047fa0882da766dfa676c6a530f6a80023f1f519e1bc3f90088c4fcede303c33de0e4a
   languageName: node
   linkType: hard
 

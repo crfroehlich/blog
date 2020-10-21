@@ -1,12 +1,11 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Layout, Link } from '$components';
 import Helmet from 'react-helmet';
 import NextPrevious from '../components/NextPrevious';
 import config from '../../config';
 import { StyledHeading, StyledMainWrapper } from '../components/styles/Docs';
 
-const NotFound = ({ data, mdx, nav }) => {
-  // meta tags
+export const NotFound = ({ data, mdx, nav }) => {
   const metaTitle = (mdx && mdx.frontmatter) ? mdx.frontmatter.metaTitle : '';
   const metaDescription = (mdx && mdx.frontmatter) ? mdx.frontmatter.metaDescription : '';
   let canonicalUrl = config.gatsby.siteUrl;
@@ -26,7 +25,7 @@ const NotFound = ({ data, mdx, nav }) => {
         <div className={'titleWrapper'}>
           <StyledHeading>Trail Closed for Maintenance</StyledHeading>
         </div>
-        <StyledMainWrapper>Sadly, your journey to {data.path} ends here. <Link to={'/'}>Go back</Link> to the beginning; consider the navel and its many wonders; cast your gaze inward and skyward and outbetween.</StyledMainWrapper>
+        <StyledMainWrapper>Sadly, your journey to <code>{data.path}</code> ends here. <Link to={'/'}>Go back</Link> to the beginning; consider the navel and its many wonders; cast your gaze inward and skyward and outbetween.</StyledMainWrapper>
         <div className={'addPaddTopBottom'}>
           <NextPrevious mdx={mdx} nav={nav} />
         </div>

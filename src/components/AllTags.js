@@ -5,17 +5,18 @@ import NextPrevious from './NextPrevious';
 import config from '../../config';
 import { StyledHeading, StyledMainWrapper } from './styles/Docs';
 import { kebabCase } from 'lodash';
+import {ChipSet, Chip} from '@material/react-chips';
 
 const AllTags = ({ props, mdx, nav }) => {
   console.log([props, mdx, nav])
-  
+
   const metaTitle = (mdx && mdx.frontmatter) ? mdx.frontmatter.metaTitle : '';
   const metaDescription = (mdx && mdx.frontmatter) ? mdx.frontmatter.metaDescription : '';
   let canonicalUrl = config.gatsby.siteUrl;
   canonicalUrl = config.gatsby.pathPrefix !== '/' ? canonicalUrl + config.gatsby.pathPrefix : canonicalUrl;
   canonicalUrl = canonicalUrl + ((mdx) ? mdx.fields.slug : '');
 
-  const {
+  let {
     data: {
       allMdx: { group },
       site: {
@@ -23,7 +24,10 @@ const AllTags = ({ props, mdx, nav }) => {
       },
     }
   } = props;
-  
+
+  group = group.filter(a => a.totalCount > 1);
+  group.sort((a, b) => b.totalCount - a.totalCount);
+
   return (
     <Layout {...props}>
         <Helmet>
@@ -39,15 +43,13 @@ const AllTags = ({ props, mdx, nav }) => {
         </div>
         <StyledMainWrapper>
           <h1>Tags</h1>
-          <ul>
+          <ChipSet>
             {group.map(tag => (
-              <li key={tag.fieldValue}>
-                <Link to={`/tags/${kebabCase(tag.fieldValue)}/`}>
-                  {tag.fieldValue} ({tag.totalCount})
-                </Link>
-              </li>
+              <Link to={`/tags/${kebabCase(tag.fieldValue)}`}>
+                <Chip handleInteraction={console.log} id={tag.fieldValue} label={tag.fieldValue} key={tag.fieldValue} />
+              </Link>
             ))}
-          </ul>
+          </ChipSet>
         </StyledMainWrapper>
         <div className={'addPaddTopBottom'}>
           <NextPrevious mdx={mdx} nav={nav} />
