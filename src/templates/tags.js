@@ -8,6 +8,7 @@ const Tags = ({ pageContext, data }) => {
   const tagHeader = `${totalCount} post${
     totalCount === 1 ? "" : "s"
   } tagged with "${tag}"`
+  console.log(data);
   return (
     <div>
       <h1>{tagHeader}</h1>
@@ -22,10 +23,6 @@ const Tags = ({ pageContext, data }) => {
           )
         })}
       </ul>
-      {/*
-              This links to a page that does not yet exist.
-              You'll come back to it!
-            */}
       <Link to="/tags">All tags</Link>
     </div>
   )

@@ -5347,29 +5347,29 @@ __metadata:
     emotion-server: ^10.0.27
     emotion-theming: ^10.0.27
     eslint: ^7.11.0
-    eslint-config-prettier: ^6.13.0
+    eslint-config-prettier: ^6.14.0
     eslint-plugin-import: ^2.22.1
     eslint-plugin-jsx-a11y: ^6.3.1
     eslint-plugin-prettier: ^3.1.4
     eslint-plugin-react: ^7.21.5
-    gatsby: ^2.24.83
+    gatsby: ^2.24.84
     gatsby-link: ^2.4.16
     gatsby-plugin-algolia: ^0.13.0
     gatsby-plugin-emotion: ^4.3.14
     gatsby-plugin-gtag: ^1.0.13
     gatsby-plugin-layout: ^1.3.13
     gatsby-plugin-manifest: ^2.4.35
-    gatsby-plugin-mdx: ^1.2.49
-    gatsby-plugin-offline: ^3.2.35
+    gatsby-plugin-mdx: ^1.2.50
+    gatsby-plugin-offline: ^3.2.36
     gatsby-plugin-react-helmet: ^3.3.14
     gatsby-plugin-remove-serviceworker: ^1.0.0
     gatsby-plugin-remove-trailing-slashes: ^2.3.13
     gatsby-plugin-sharp: ^2.6.43
     gatsby-plugin-sitemap: ^2.4.17
     gatsby-remark-copy-linked-files: ^2.3.19
-    gatsby-remark-images: ^3.3.37
+    gatsby-remark-images: ^3.3.38
     gatsby-source-filesystem: ^2.3.35
-    gatsby-transformer-remark: ^2.8.44
+    gatsby-transformer-remark: ^2.8.45
     gh-pages: ^3.1.0
     graphql: ^15.3.0
     is-absolute-url: ^3.0.3
@@ -5383,7 +5383,7 @@ __metadata:
     react-github-btn: ^1.2.0
     react-helmet: ^6.1.0
     react-id-generator: ^3.0.1
-    react-instantsearch-dom: ^6.8.1
+    react-instantsearch-dom: ^6.8.2
     react-live: ^2.2.2
     react-loadable: ^5.5.0
     styled-components: ^5.2.0
@@ -8793,16 +8793,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-config-prettier@npm:^6.13.0":
-  version: 6.13.0
-  resolution: "eslint-config-prettier@npm:6.13.0"
+"eslint-config-prettier@npm:^6.14.0":
+  version: 6.14.0
+  resolution: "eslint-config-prettier@npm:6.14.0"
   dependencies:
     get-stdin: ^6.0.0
   peerDependencies:
     eslint: ">=3.14.1"
   bin:
     eslint-config-prettier-check: bin/cli.js
-  checksum: fe88da82a493da579fe57cc7b0be0cac5c84bfb5148d5e35abda99a73e6a0ab1125aa24ceae52144c9382c958f1f33efaadb4b86455cd28fef72172d9046a683
+  checksum: 8d478429bb6c63a538270b8d2fae13a2ffe5c5bd8401d2f478e9a65e1bc94ed6e0f6ca3d063a8decd0003ad91ef26ca32fadf2d08f3e2d7dd4c76ee8efea6711
   languageName: node
   linkType: hard
 
@@ -10535,9 +10535,9 @@ fsevents@~2.1.2:
   languageName: node
   linkType: hard
 
-"gatsby-plugin-mdx@npm:^1.2.49":
-  version: 1.2.49
-  resolution: "gatsby-plugin-mdx@npm:1.2.49"
+"gatsby-plugin-mdx@npm:^1.2.50":
+  version: 1.2.50
+  resolution: "gatsby-plugin-mdx@npm:1.2.50"
   dependencies:
     "@babel/core": ^7.11.6
     "@babel/generator": ^7.11.6
@@ -10578,13 +10578,13 @@ fsevents@~2.1.2:
   peerDependencies:
     "@mdx-js/mdx": ^1.0.0
     "@mdx-js/react": ^1.0.0
-  checksum: 3195f0a7f7acff9beb79a4ebd500e791931e388980ab642a2bcd31b47eed9f46f828e7a6da12395fe880dc49979b53331393954d0113d87fe624a38fa94bf433
+  checksum: 5f3d3eaa5fb2d725a54313171d347a6e7fee69ad4062abbca08d848e104daa83776453f1fe55f54148c955958be0bd9645b4d25c152794a71a55a18cf8c4cab7
   languageName: node
   linkType: hard
 
-"gatsby-plugin-offline@npm:^3.2.35":
-  version: 3.2.35
-  resolution: "gatsby-plugin-offline@npm:3.2.35"
+"gatsby-plugin-offline@npm:^3.2.36":
+  version: 3.2.36
+  resolution: "gatsby-plugin-offline@npm:3.2.36"
   dependencies:
     "@babel/runtime": ^7.11.2
     cheerio: ^1.0.0-rc.3
@@ -10595,7 +10595,7 @@ fsevents@~2.1.2:
     workbox-build: ^4.3.1
   peerDependencies:
     gatsby: ^2.4.0
-  checksum: 6992c8bba2f20f20cecc97ce2272d03d005092595616c211be269363923be62e4a7ee47e26b93c3689ce5eb7cd4f5035e1fd19a05e5ca79ff58417ec8733322e
+  checksum: 19ab654ce486b47c9b4607cc28475cc97f59bc83c09a363929a68200dd1f4b80bbb21ae8eb6c8a826dd566d06fa0706338967b12d43b3ccc4f4d8377237e3b7e
   languageName: node
   linkType: hard
 
@@ -10690,9 +10690,9 @@ fsevents@~2.1.2:
   languageName: node
   linkType: hard
 
-"gatsby-plugin-typescript@npm:^2.4.23":
-  version: 2.4.23
-  resolution: "gatsby-plugin-typescript@npm:2.4.23"
+"gatsby-plugin-typescript@npm:^2.4.24":
+  version: 2.4.24
+  resolution: "gatsby-plugin-typescript@npm:2.4.24"
   dependencies:
     "@babel/core": ^7.11.6
     "@babel/plugin-proposal-nullish-coalescing-operator": ^7.10.4
@@ -10701,18 +10701,18 @@ fsevents@~2.1.2:
     "@babel/preset-typescript": ^7.10.4
     "@babel/runtime": ^7.11.2
     babel-plugin-remove-graphql-queries: ^2.9.20
-  checksum: 737304af1ad51d1a803c62b51c586326532d9e3fdad9ff0f6abd30e7855f49c01d0dacac4f57b22fc8e17e7780d8157cf6c94a298e170156c8db986ccf7893a3
+  checksum: 7ca2fc5f19098af252de472ba05e0c590bd2cecc405334e9474932bc6a2a44fb0be2de175c81f491669e3d4142f776a2c24705a0e70872321db1d83a441b0f91
   languageName: node
   linkType: hard
 
-"gatsby-plugin-utils@npm:^0.2.37":
-  version: 0.2.37
-  resolution: "gatsby-plugin-utils@npm:0.2.37"
+"gatsby-plugin-utils@npm:^0.2.38":
+  version: 0.2.38
+  resolution: "gatsby-plugin-utils@npm:0.2.38"
   dependencies:
     joi: ^17.2.1
   peerDependencies:
     gatsby: ^2.24.79
-  checksum: 8282ab2d37bf676d73bac6337f708587659e17769605c8681051bc873f601a0627b1d47dbdd5d00ad6b38f4826793fe380b6863bb746d00b27e9e961091fd030
+  checksum: c0d0f43f58d7adea17faadc0fbe3beb0da03c409e97e2e432d8c1ac5b1c6d1565350f8623b0e03e1f11ea31daa0ef53cffa368405d518070610b03a0b96fe148
   languageName: node
   linkType: hard
 
@@ -10841,9 +10841,9 @@ fsevents@~2.1.2:
   languageName: node
   linkType: hard
 
-"gatsby-remark-images@npm:^3.3.37":
-  version: 3.3.37
-  resolution: "gatsby-remark-images@npm:3.3.37"
+"gatsby-remark-images@npm:^3.3.38":
+  version: 3.3.38
+  resolution: "gatsby-remark-images@npm:3.3.38"
   dependencies:
     "@babel/runtime": ^7.11.2
     chalk: ^2.4.2
@@ -10859,7 +10859,7 @@ fsevents@~2.1.2:
   peerDependencies:
     gatsby: ^2.0.0
     gatsby-plugin-sharp: ^2.0.0-beta.5
-  checksum: ccc571ced535c2468ec8f0934ed113732513c28168775f52cf5bfd780cdf429e92f62ed16e3d6d943a36e21f0830e838af606144c0f7b662d069fa719e8ed5dd
+  checksum: c79528690e12fb9a43c9fce6ceb6866aa6c15b598f1592e1b11ee27dccac59cc30e076e1002229ebe57ee9755d886d49afcff1cbb9d1af9ee951d2d2e9acd57e
   languageName: node
   linkType: hard
 
@@ -10910,9 +10910,9 @@ fsevents@~2.1.2:
   languageName: node
   linkType: hard
 
-"gatsby-transformer-remark@npm:^2.8.44":
-  version: 2.8.44
-  resolution: "gatsby-transformer-remark@npm:2.8.44"
+"gatsby-transformer-remark@npm:^2.8.45":
+  version: 2.8.45
+  resolution: "gatsby-transformer-remark@npm:2.8.45"
   dependencies:
     "@babel/runtime": ^7.11.2
     bluebird: ^3.7.2
@@ -10937,13 +10937,13 @@ fsevents@~2.1.2:
     unist-util-visit: ^1.4.1
   peerDependencies:
     gatsby: ^2.12.0
-  checksum: 423bcace303ec6f6c0641ba09bcffece01f958fe52a34919a1dced29169cdb231d66ef9765be0ba8b15d06dc11abdc0a56849ded98732c7a555ab2251549f37b
+  checksum: accd6ad6d6119fe5e0a3ad5c708a8bc6370a9b1229e9a0155f3e88dc3e19303c76ffb88f7f5cec9ff9e41385445a45763f334323e127a5f12e823c48f9ff91bc
   languageName: node
   linkType: hard
 
-"gatsby@npm:^2.24.83":
-  version: 2.24.83
-  resolution: "gatsby@npm:2.24.83"
+"gatsby@npm:^2.24.84":
+  version: 2.24.84
+  resolution: "gatsby@npm:2.24.84"
   dependencies:
     "@babel/code-frame": ^7.10.4
     "@babel/core": ^7.11.6
@@ -11017,8 +11017,8 @@ fsevents@~2.1.2:
     gatsby-legacy-polyfills: ^0.0.5
     gatsby-link: ^2.4.16
     gatsby-plugin-page-creator: ^2.3.33
-    gatsby-plugin-typescript: ^2.4.23
-    gatsby-plugin-utils: ^0.2.37
+    gatsby-plugin-typescript: ^2.4.24
+    gatsby-plugin-utils: ^0.2.38
     gatsby-react-router-scroll: ^3.0.15
     gatsby-telemetry: ^1.3.38
     glob: ^7.1.6
@@ -11098,7 +11098,7 @@ fsevents@~2.1.2:
     react-dom: ^16.4.2
   bin:
     gatsby: ./cli.js
-  checksum: e7a3255b165e710db5eea45d5555ccbb46c308885bf919f8597ccfc5898a42f46840e5859e9a6916b6984e968806a3a6acbc2c3c4f6d9a0d0c7126cd9534a09a
+  checksum: 7906cedc685d51343047570152ff995d6c72214134e64dff323b2e4e87fe4ad805aebbfbf1a53f383b23e693ba20f2de699551eec5a10bf5d84b58e748af72d0
   languageName: node
   linkType: hard
 
@@ -18400,9 +18400,9 @@ fsevents@~2.1.2:
   languageName: node
   linkType: hard
 
-"react-instantsearch-core@npm:^6.8.1":
-  version: 6.8.1
-  resolution: "react-instantsearch-core@npm:6.8.1"
+"react-instantsearch-core@npm:^6.8.2":
+  version: 6.8.2
+  resolution: "react-instantsearch-core@npm:6.8.2"
   dependencies:
     "@babel/runtime": ^7.1.2
     algoliasearch-helper: ^3.1.0
@@ -18411,24 +18411,24 @@ fsevents@~2.1.2:
   peerDependencies:
     algoliasearch: ">= 3.1 < 5"
     react: ">= 16.3.0 < 17"
-  checksum: b53ed9156880db2e091e8deb520ff16d568bb04ec7fcb03a098a26ca4355e77173b125f3d6dc57c60bd19be0d19d13189a554c01d34eb09a29c27cabf65a6101
+  checksum: 9140d2716f40fba11961213049f9cab3859e0bd7a8765bccb09d9683d645e92b6d9ec8baf509f877c1156998c08ef98d57b3a2d5155ccfd247aa63064c5dd721
   languageName: node
   linkType: hard
 
-"react-instantsearch-dom@npm:^6.8.1":
-  version: 6.8.1
-  resolution: "react-instantsearch-dom@npm:6.8.1"
+"react-instantsearch-dom@npm:^6.8.2":
+  version: 6.8.2
+  resolution: "react-instantsearch-dom@npm:6.8.2"
   dependencies:
     "@babel/runtime": ^7.1.2
     algoliasearch-helper: ^3.1.0
     classnames: ^2.2.5
     prop-types: ^15.5.10
     react-fast-compare: ^3.0.0
-    react-instantsearch-core: ^6.8.1
+    react-instantsearch-core: ^6.8.2
   peerDependencies:
     react: ">= 16.3.0 < 17"
     react-dom: ">= 16.3.0 < 17"
-  checksum: 873833a04a5c8898815645f85db9be1d2102a62f01e41bb03604f9963ce1e67507308dfae0b1709b109ae1a8223eda12271858edf8dc85d1845da3a57df33c37
+  checksum: 5cbdf88495c66c5526ffd2756039a540d757c30ba657061dab8a61b3c5ca68b9a7da6fd3d157b86afbca268bf2ad7bc9f18fe1c6b84a603c72768cc0ad2f1e01
   languageName: node
   linkType: hard
 

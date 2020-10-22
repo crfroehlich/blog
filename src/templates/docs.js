@@ -2,48 +2,34 @@ import React, { Component } from 'react';
 import Helmet from 'react-helmet';
 import { graphql } from 'gatsby';
 import MDXRenderer from 'gatsby-plugin-mdx/mdx-renderer';
-
 import { Layout, Link } from '$components';
 import NextPrevious from '../components/NextPrevious';
 import config from '../../config';
 import { Edit, StyledHeading, StyledMainWrapper } from '../components/styles/Docs';
-
+import NotFound from '../components/NotFound';
+import AllTags from '../components/AllTags';
+const gitHub = require('../components/images/github.svg');
 const forcedNavOrder = config.sidebar.forcedNavOrder;
 
-export default class MDXRuntimeTest extends Component {
+export default class BlogDocument extends Component {
   render() {
 
-    const { data } = this.props;
-
-    if (!data || !data.site) {
-      return (
-        <Layout {...this.props}>
-        <Helmet>
-          {metaTitle ? <title>{metaTitle}</title> : null}
-          {metaTitle ? <meta name="title" content={metaTitle} /> : null}
-          {metaDescription ? <meta name="description" content={metaDescription} /> : null}
-          {metaTitle ? <meta property="og:title" content={metaTitle} /> : null}
-          {metaDescription ? <meta property="og:description" content={metaDescription} /> : null}
-          <link rel="canonical" href={canonicalUrl} />
-        </Helmet>
-        <div className={'titleWrapper'}>
-          <StyledHeading>Trail Closed for Maintenance</StyledHeading>
-        </div>
-        <StyledMainWrapper>Sadly, your journey ends here. Go back to the beginning; consider the navel and its many wonders; cast your gaze inward and skyward and outbetween.</StyledMainWrapper>
-        <div className={'addPaddTopBottom'}>
-          <NextPrevious mdx={mdx} nav={nav} />
-        </div>
-      </Layout>);
-    }
+    const { data, path } = this.props;
+    
     const {
       allMdx,
       mdx,
+    } = data;
+
+    if (!data || !data.site) {
+      return <NotFound data={this.props} mdx={mdx} nav={nav} />;
+    }
+   
+    const {
       site: {
         siteMetadata: { docsLocation, title },
       },
     } = data;
-
-    const gitHub = require('../components/images/github.svg');
 
     let navItems = [];
     if(allMdx && allMdx.edges) {
@@ -83,15 +69,20 @@ export default class MDXRuntimeTest extends Component {
           return node.fields;
         }
       }).sort((a, b) => new Date(b.date) - new Date(a.date));
+    
+    if(path === '/tags') {
+      return <AllTags props={this.props} mdx={mdx} nav={nav} />;
+    } else if(path.startsWith('/tags')) {
+      return <Div />
+    }
+    
     // meta tags
     const metaTitle = (mdx) ? mdx.frontmatter.metaTitle : '';
     const metaDescription = (mdx) ? mdx.frontmatter.metaDescription : '';
     const date = (mdx) ? mdx.frontmatter.metaDate : '';
 
     let canonicalUrl = config.gatsby.siteUrl;
-
-    canonicalUrl =
-      config.gatsby.pathPrefix !== '/' ? canonicalUrl + config.gatsby.pathPrefix : canonicalUrl;
+    canonicalUrl = config.gatsby.pathPrefix !== '/' ? canonicalUrl + config.gatsby.pathPrefix : canonicalUrl;
     canonicalUrl = canonicalUrl + ((mdx) ? mdx.fields.slug : '');
 
     return (
@@ -167,6 +158,10 @@ export const pageQuery = graphql`
             date
           }
         }
+      }
+      group(field: frontmatter___tags) {
+        fieldValue
+        totalCount
       }
     }
   }

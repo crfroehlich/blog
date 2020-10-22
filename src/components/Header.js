@@ -130,9 +130,8 @@ const Header = ({ location, isDarkThemeActive, toggleActiveTheme }) => (
                         <Link
                           className="sidebarLink"
                           to={link.link}
-                          onclick="return false;"
                           title={link.text }
-                        >{link.text }</Link>
+                        >{link.text}</Link>
                       </li>
                     );
                   }
