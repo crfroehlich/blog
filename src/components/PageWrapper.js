@@ -19,12 +19,12 @@ export const PageWrapper = ({ props, pageContent, pageTitle, showGithub }) => {
     mdx,
   } = data;
 
-  let site, 
-    siteMetadata, 
-    title = pageTitle, 
-    body, 
-    docsLocation, 
-    date = new Date(), 
+  let site,
+    siteMetadata,
+    title = pageTitle,
+    body,
+    docsLocation,
+    date = new Date(),
     tags = [];
 
   if(data && data.site) {
@@ -142,6 +142,13 @@ export const PageWrapper = ({ props, pageContent, pageTitle, showGithub }) => {
         <div className={'addPaddTopBottom'}>
           <NextPrevious mdx={mdx} nav={nav} />
         </div>
+        <script
+            defer
+            async={true}
+            src={'https://utteranc.es/client.js'}
+            repo={'crfroehlich/blog'}
+            issue-term={'pathname'}
+          />
       </Layout>
   );
 };

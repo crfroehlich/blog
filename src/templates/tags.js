@@ -4,20 +4,24 @@ import PropTypes from "prop-types"
 import { Link, graphql } from "gatsby"
 const Tags = ({ pageContext, data }) => {
   console.warn('THIS _should_ !not! *happen*');
-  
+
   const { tag } = pageContext
+
   const { edges, totalCount } = data.allMdx
+
   const tagHeader = `${totalCount} post${
     totalCount === 1 ? "" : "s"
   } tagged with "${tag}"`
- 
+
   return (
     <div>
       <h1>{tagHeader}</h1>
       <ul>
         {edges.map(({ node }) => {
           const { slug } = node.fields
+
           const { title } = node.frontmatter
+
           return (
             <li key={slug}>
               <Link to={slug}>{title}</Link>
@@ -29,6 +33,7 @@ const Tags = ({ pageContext, data }) => {
     </div>
   )
 }
+
 Tags.propTypes = {
   pageContext: PropTypes.shape({
     tag: PropTypes.string.isRequired,

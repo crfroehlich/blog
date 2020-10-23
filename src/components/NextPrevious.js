@@ -13,20 +13,23 @@ const NextPrevious = ({ mdx, nav }) => {
       currentIndex = index;
     }
   });
-  let locale = 'en-US';
-  if(typeof window !== 'undefined' && window.navigator) {
-    locale = window.navigator.language;
-  }
+  let locale = 'ru-RU';
+
   const getNav = (offset) => nav[currentIndex + offset];
+
   const getNavPrev = () => getNav(-1);
+
   const getNavNext = () => getNav(1);
+
   const getDate = (offset) =>
     new Date(getNav(offset).date)
     .toLocaleDateString(locale, {
       weekday: 'long', year: 'numeric', month: '2-digit', day: '2-digit'
     });
+
   const getTitle = (offset) => {
     let title = getNav(offset).title.trim();
+
     // TODO: compute the total length of left/right and set accordingly
     if(offset === 1 && title.length > 38) {
       title = title.substr(0,34).trim() + '…';
@@ -36,7 +39,9 @@ const NextPrevious = ({ mdx, nav }) => {
     }
     return title;
   }
+
   let nextInfo = getNav(1);
+
   let previousInfo = getNav(-1);
 
   return (

@@ -57,7 +57,7 @@ export default class HTML extends React.Component {
                 setTimeout(addComments, 1000);
               }
             }
-            setTimeout(addComments, 500);
+            //setTimeout(addComments, 500);
             `,
             }}
           />

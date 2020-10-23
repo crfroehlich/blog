@@ -9,13 +9,13 @@ export default class BlogDocument extends Component {
   render() {
 
     const { data, path } = this.props;
-    
+
     const { mdx } = data;
 
     const decodedPath = (decodeURIComponent) ? decodeURIComponent(path) : path;
 
     if(decodedPath === '/визуализации') {
-      console.log(this.props)
+
       return <Chips props={this.props} />;
     } else if(path.startsWith('/визуализации')) {
       return null;
