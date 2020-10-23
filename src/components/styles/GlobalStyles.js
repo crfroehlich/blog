@@ -1,11 +1,10 @@
 import { injectGlobal } from 'emotion';
-import '@rmwc/card/styles';
-import "@rmwc/chip/styles";
-import '@rmwc/typography/styles';
+import 'rmwc/dist/styles';
 
 export const baseStyles = injectGlobal`
   @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap');
   @import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600&display=swap');
+  @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
   * {
     margin: 0;
     padding: 0;

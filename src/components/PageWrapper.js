@@ -5,7 +5,7 @@ import Helmet from 'react-helmet';
 import NextPrevious from './NextPrevious';
 import config from '../../config';
 import { Edit, StyledHeading, StyledMainWrapper } from './styles/Docs';
-import {ChipSet, Chip} from '@rmwc/chip';
+import {ChipSet, Chip} from 'rmwc';
 import { kebabCase } from 'lodash';
 const gitHub = require('./images/github.svg');
 

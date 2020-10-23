@@ -1,71 +1,66 @@
 import React from 'react';
+import Link from './link';
 import PageWrapper from './PageWrapper';
-import { CardActionIcons, CardActionIcon,CardActionButtons, CardActionButton, CardMedia, CardActions, Card, CardPrimaryAction } from '@rmwc/card'
-import { Typography } from '@rmwc/typography';
+import { CardMedia, Card, CardPrimaryAction, Typography, Grid, GridCell } from 'rmwc'
+import backgroundImage from './images/card.png';
 
 export const Cards = ({ props }) => {
   console.log(props)
   let {
     data: {
       allMdx: {
-        group,
+        edges
       },
-    }
+    },
+    path,
   } = props;
 
-  const d = [1,2,3,4,5,6];
+  const parts = path.split('/');
+  const title = parts[parts.length-1];
 
-  const cards = (<div>
-    {d.map(element => (
-      <Card style={{ width: '21rem' }}>
-        <CardPrimaryAction>
-          <CardMedia
-            sixteenByNine
-            style={{
-              backgroundImage: 'url(images/backgrounds/mb-bg-fb-16.png)'
-            }}
-          />
-          <div style={{ padding: '0 1rem 1rem 1rem' }}>
-            <Typography use="headline6" tag="h2">
-              Our Changing Planet
-            </Typography>
-            <Typography
-              use="subtitle2"
-              tag="h3"
-              theme="textSecondaryOnBackground"
-              style={{ marginTop: '-1rem' }}
-            >
-              by Kurt Wagner
-            </Typography>
-            <Typography
-              use="body1"
-              tag="div"
-              theme="textSecondaryOnBackground"
-            >
-              Visit ten places on our planet that are undergoing the biggest
-              changes today.
-            </Typography>
-          </div>
-        </CardPrimaryAction>
-        <CardActions>
-          <CardActionButtons>
-            <CardActionButton>Read</CardActionButton>
-            <CardActionButton>Bookmark</CardActionButton>
-          </CardActionButtons>
-          <CardActionIcons>
-            <CardActionIcon onIcon="favorite" icon="favorite_border" />
-            <CardActionIcon icon="share" />
-            <CardActionIcon icon="more_vert" />
-          </CardActionIcons>
-        </CardActions>
-      </Card>
+  const cards = (<Grid>
+    {edges.map(e => (
+        <GridCell span={6}>
+         <Card style={{ width: '21rem', height: '22rem' }}>
+            <CardPrimaryAction>
+              <CardMedia
+                sixteenByNine
+                style={{
+                  backgroundImage: `url(${backgroundImage})`
+                }}
+              />
+              <Link to={e.node.fields.slug} key={e.node.fields.slug}>
+                <div style={{ padding: '0 1rem 1rem 1rem' }}>
+                <Typography use="headline6" tag="h2">
+                  {'                                                                                      .'} 
+                  </Typography>
+                  <Typography
+                    use="subtitle2"
+                    tag="h3"
+                    theme="textSecondaryOnBackground"
+                    style={{ marginTop: '-1rem' }}
+                  >
+                    { e.node.fields.title }
+                  </Typography>
+                  <Typography
+                    use="body1"
+                    tag="div"
+                    theme="textSecondaryOnBackground"
+                  >
+                    { e.node.excerpt }
+                  </Typography>
+              </div>
+              </Link>
+            </CardPrimaryAction>
+          </Card>
+        </GridCell>
     ))}
-    </div>
+    </Grid>
   );
 
   return (
     <PageWrapper
-      pageTitle={'cards...'}
+      pageTitle={title}
       props={props}
       pageContent={cards}
     />

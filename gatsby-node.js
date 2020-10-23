@@ -20,10 +20,22 @@ exports.createPages = ({ graphql, actions }) => {
                 node {
                   fields {
                     id
-                  }
-                  tableOfContents
-                  fields {
+                    title
                     slug
+                    date
+                    tags
+                  }
+                  body
+                  tableOfContents
+                  parent {
+                    ... on File {
+                      relativePath
+                    }
+                  }
+                  frontmatter {
+                    metaTitle
+                    metaDescription
+                    metaDate
                   }
                 }
               }
@@ -90,28 +102,29 @@ exports.onCreateBabelConfig = ({ actions }) => {
 
 exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions;
-
-  if (node.internal.type === `Mdx`) {
+try {
+  //if (node.internal.type === `Mdx`) {
     const parent = getNode(node.parent);
+    if(parent) {
+      let value = parent.relativePath.replace(parent.ext, '');
 
-    let value = parent.relativePath.replace(parent.ext, '');
+      if (value === 'index') {
+        value = '';
+      }
 
-    if (value === 'index') {
-      value = '';
-    }
-
-    if (config.gatsby && config.gatsby.trailingSlash) {
-      createNodeField({
-        name: `slug`,
-        node,
-        value: value === '' ? `/` : `/${value}/`,
-      });
-    } else {
-      createNodeField({
-        name: `slug`,
-        node,
-        value: `/${value}`,
-      });
+      if (config.gatsby && config.gatsby.trailingSlash) {
+        createNodeField({
+          name: `slug`,
+          node,
+          value: value === '' ? `/` : `/${value}/`,
+        });
+      } else {
+        createNodeField({
+          name: `slug`,
+          node,
+          value: `/${value}`,
+        });
+      }
     }
 
     createNodeField({
@@ -120,22 +133,29 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
       value: node.id,
     });
 
-    createNodeField({
-      name: 'title',
-      node,
-      value: node.frontmatter.title || startCase(parent.name),
-    });
+    if(node.frontmatter) {
+      createNodeField({
+        name: 'title',
+        node,
+        value: node.frontmatter.title || startCase(parent.name),
+      });
 
-    createNodeField({
-      name: 'date',
-      node,
-      value: new Date(node.frontmatter.metaDate),
-    });
+      createNodeField({
+        name: 'date',
+        node,
+        value: new Date(node.frontmatter.metaDate),
+      });
 
-    createNodeField({
-      name: 'tags',
-      node,
-      value: (node.frontmatter.tags) ? node.frontmatter.tags.toString().split(',') : [],
-    });
+      createNodeField({
+        name: 'tags',
+        node,
+        value: (node.frontmatter.tags) ? node.frontmatter.tags.toString().split(',') : [],
+      });
+    }
+  } catch(e) {
+    console.error(e);
   }
+  // } else {
+  //   console.log(['node', node])
+  // }
 };

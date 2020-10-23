@@ -64,9 +64,23 @@ export const pageQuery = graphql`
       edges {
         node {
           fields {
-            slug
+            id
             title
+            slug
             date
+            tags
+          }
+          body
+          tableOfContents
+          parent {
+            ... on File {
+              relativePath
+            }
+          }
+          frontmatter {
+            metaTitle
+            metaDescription
+            metaDate
           }
         }
       }

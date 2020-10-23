@@ -60,6 +60,12 @@ export default Tags;
 
 export const pageQuery = graphql`
   query($tag: String) {
+    site {
+      siteMetadata {
+        title
+        docsLocation
+      }
+    }
     allMdx(
       limit: 2000
       sort: { fields: [frontmatter___metaDate], order: DESC }
@@ -68,13 +74,24 @@ export const pageQuery = graphql`
       totalCount
       edges {
         node {
+          excerpt
           fields {
+            id
+            title
             slug
+            date
+            tags
           }
           frontmatter {
-            title
+            metaTitle
+            metaDescription
+            metaDate
           }
         }
+      }
+      group(field: frontmatter___tags) {
+        fieldValue
+        totalCount
       }
     }
   }`;

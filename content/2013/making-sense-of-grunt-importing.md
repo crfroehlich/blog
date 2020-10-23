@@ -1,6 +1,6 @@
 ---
-title: 'Making Sense of Grunt
-metaTitle: 'Making Sense of Grunt: Importing an Existing Project'
+title: "Making Sense of Grunt: Importing an Existing Project"
+metaTitle: "Making Sense of Grunt: Importing an Existing Project"
 metaDate: 7/28/2013
 metaDraft: false
 tags: ["tools","code"]
