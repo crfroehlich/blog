@@ -19,7 +19,13 @@ export const PageWrapper = ({ props, pageContent, pageTitle, showGithub }) => {
     mdx,
   } = data;
 
-  let site, siteMetadata, title = pageTitle, body, docsLocation, date = Date.now(), tags = [];
+  let site, 
+    siteMetadata, 
+    title = pageTitle, 
+    body, 
+    docsLocation, 
+    date = new Date(), 
+    tags = [];
 
   if(data && data.site) {
     site = data.site;
@@ -101,15 +107,13 @@ export const PageWrapper = ({ props, pageContent, pageTitle, showGithub }) => {
     })
     .sort((a, b) => new Date(b.date) - new Date(a.date));
 
-    console.log(['pageTitle', pageTitle, 'title', title, 'props', props, 'mdx', mdx]);
-
   const chips = (<ChipSet>
     {tags.map(tag => (
-      <Link to={`/визуализации/${kebabCase(tag)}`} key={kebabCase(tag)}>
+      //<Link to={`/визуализации/${kebabCase(tag)}`} key={kebabCase(tag)}>
         <Chip handleInteraction={() => {}} id={tag} label={tag} key={tag} />
-      </Link>
+      //</Link>
     ))}
-    <DisplayDate date={date} />
+    {mdx && (<DisplayDate date={date} />)}
  </ChipSet>);
 
   return (

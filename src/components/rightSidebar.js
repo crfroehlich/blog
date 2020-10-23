@@ -35,7 +35,6 @@ const SidebarLayout = ({ location }) => (
               location.pathname.startsWith(item.node.fields.slug) ||
               config.gatsby.pathPrefix + item.node.fields.slug === location.pathname
             ) {
-              console.log(item.node.fields.slug)
               if (item.node.tableOfContents.items) {
                 innerItems = item.node.tableOfContents.items.map((innerItem, index) => {
                   const itemId = innerItem.title
@@ -56,7 +55,6 @@ const SidebarLayout = ({ location }) => (
           }
         });
       }
-      console.log(['allMdx', allMdx, 'location', location])
       if (finalNavItems && finalNavItems.length) {
         return (
           <div>

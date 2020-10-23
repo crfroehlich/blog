@@ -559,6 +559,14 @@ export const baseStyles = injectGlobal`
     font-weight: 400;
   }
 
+  .blogDate {
+    text-alight: right;
+    float: right;
+    display: block;
+    margin-left: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
   /* **************************** */
 
   .nextRightWrapper {

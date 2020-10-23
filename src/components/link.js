@@ -12,9 +12,9 @@ export const Link = ({ to, ...props }) =>
   );
 
 export const DisplayDate = ({ date }) => {
-  return (<div style={{textAlign: 'right', float: 'right'}}>{date.toLocaleDateString('en-US', {
+  return (<span className={'blogDate'}>{date ? date.toLocaleDateString('en-US', {
     weekday: 'long', year: 'numeric', month: '2-digit', day: '2-digit'
-  })}</div>);
+  }) : ''}</span>);
 }
 
 export default Link;

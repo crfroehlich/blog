@@ -6,6 +6,7 @@ import {ChipSet, Chip} from '@material/react-chips';
 import KeywordCloud from 'react-keyword-cloud';
 
 export const Chips = ({ props }) => {
+  console.log(props)
   let {
     data: {
       allMdx: {
@@ -19,13 +20,13 @@ export const Chips = ({ props }) => {
 
 
 
-  const chips = (<ChipSet>
-    {group.map(tag => (
-      <Link to={`/визуализации/${kebabCase(tag.fieldValue)}`} key={kebabCase(tag.fieldValue)}>
-        <Chip handleInteraction={() => {}} id={tag.fieldValue} label={tag.fieldValue} key={tag.fieldValue} />
-      </Link>
-    ))}
-  </ChipSet>);
+  // const chips = (<ChipSet>
+  //   {group.map(tag => (
+  //     <Link to={`/визуализации/${kebabCase(tag.fieldValue)}`} key={kebabCase(tag.fieldValue)}>
+  //       <Chip handleInteraction={() => {}} id={tag.fieldValue} label={tag.fieldValue} key={tag.fieldValue} />
+  //     </Link>
+  //   ))}
+  // </ChipSet>);
 
   const cloud = (<KeywordCloud
     height={800}

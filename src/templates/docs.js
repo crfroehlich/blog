@@ -12,7 +12,10 @@ export default class BlogDocument extends Component {
     
     const { mdx } = data;
 
-    if(path === '/визуализации') {
+    const decodedPath = (decodeURIComponent) ? decodeURIComponent(path) : path;
+
+    if(decodedPath === '/визуализации') {
+      console.log(this.props)
       return <Chips props={this.props} />;
     } else if(path.startsWith('/визуализации')) {
       return null;
