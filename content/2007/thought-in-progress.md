@@ -3,7 +3,6 @@ title: "thought in progress"
 metaTitle: "thought in progress"
 metaDate: 12/15/2007
 metaDraft: false
-aliases: [ "/2007/12/thought-in-progress.html" ]
 tags: ["surgery","meanderings"]
 ---
 

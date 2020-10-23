@@ -3,7 +3,7 @@ title: "JavaScript (aka Marlboro Country)"
 metaTitle: "JavaScript (aka Marlboro Country)"
 metaDate: 1/3/2013
 metaDraft: false
-aliases: [ "/2013/01/javascript-aka-marlboro-country.html" ]
+tags: [ "code" ]
 ---
 
 Sometimes JavaScript land just feels like Marlboro Country. The sales pitch certainly feels similar:

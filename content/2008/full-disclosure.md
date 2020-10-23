@@ -3,7 +3,6 @@ title: "full disclosure"
 metaTitle: "full disclosure"
 metaDate: 11/8/2008
 metaDraft: false
-aliases: [ "/2008/11/full-disclosure.html" ]
 ---
 
 never before and never since have I awoken with the force of another man's fist in my face.  there is a time, in my past, when I woke to the blurred forms of socks filled with soap and padlocks flying toward my restrained form.  there is no one to hear that scream.  

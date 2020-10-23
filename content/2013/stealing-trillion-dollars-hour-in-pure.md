@@ -3,7 +3,7 @@ title: "Stealing a Trillion Dollars an Hour in Pure JavaScript"
 metaTitle: "Stealing a Trillion Dollars an Hour in Pure JavaScript"
 metaDate: 1/31/2013
 metaDraft: false
-aliases: [ "/2013/01/stealing-trillion-dollars-hour-in-pure.html" ]
+tags: [ "code" ]
 ---
 
 ### The Heist

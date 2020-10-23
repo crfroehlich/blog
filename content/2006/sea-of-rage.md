@@ -3,8 +3,7 @@ title: "Sea of Rage"
 metaTitle: "Sea of Rage"
 metaDate: 10/25/2006
 metaDraft: false
-aliases: [ "/2006/10/sea-of-rage.html" ]
-tags: ["fury","lif","sam"]
+tags: ["fury","lïf","sam"]
 ---
 
 [![](http://bp3.blogger.com/_NHWs1LwT47s/RosjmwKHc8I/AAAAAAAADbI/unStJ3EBvvA/s320/IMG_0029.jpg)](http://bp3.blogger.com/_NHWs1LwT47s/RosjmwKHc8I/AAAAAAAADbI/unStJ3EBvvA/s1600-h/IMG_0029.jpg)  

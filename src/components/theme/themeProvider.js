@@ -11,14 +11,12 @@ class ThemeProvider extends React.Component {
     isDarkThemeActive: true,
   };
 
-  componentDidMount() {
-    this.retrieveActiveTheme();
-  }
-
   retrieveActiveTheme = () => {
     const isDarkThemeActive = JSON.parse(window.localStorage.getItem('isDarkThemeActive'));
-
-    this.setState({ isDarkThemeActive });
+    
+    if(this.state.isDarkThemeActive != isDarkThemeActive) {
+      this.setState({ isDarkThemeActive });
+    }
   };
 
   toggleActiveTheme = () => {
@@ -28,6 +26,8 @@ class ThemeProvider extends React.Component {
   };
 
   render() {
+    this.retrieveActiveTheme();
+
     const { children, location } = this.props;
 
     const { isDarkThemeActive } = this.state;

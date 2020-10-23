@@ -3,7 +3,7 @@ title: "Mollie"
 metaTitle: "Mollie"
 metaDate: 8/11/1998
 metaDraft: false
-aliases: [ "/1998/08/mollie.html" ]
+tags: ["cello", "poetry", "churches"]
 ---
 
 shake your hair back

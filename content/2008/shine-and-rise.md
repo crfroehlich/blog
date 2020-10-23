@@ -3,8 +3,7 @@ title: "shine and rise"
 metaTitle: "shine and rise"
 metaDate: 10/29/2008
 metaDraft: false
-aliases: [ "/2008/10/shine-and-rise.html" ]
-tags: ["mournings","lif","eli"]
+tags: ["mournings","lïf","eli"]
 ---
 
 mornings are like little deaths; the gaping jawl of the reaper, his teeth both rotting and sharpened, looming above the head of the wakened, threating to consume it  

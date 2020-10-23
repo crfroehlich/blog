@@ -3,7 +3,7 @@ title: "The Greatest Heist Ever Conceived"
 metaTitle: "The Greatest Heist Ever Conceived"
 metaDate: 1/31/2013
 metaDraft: false
-aliases: [ "/2013/01/the-greatest-heist-ever-conceived.html" ]
+tags: [ "code" ]
 ---
 
 ### The Heist

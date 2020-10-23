@@ -3,7 +3,7 @@ title: "Lamplight"
 metaTitle: "Lamplight"
 metaDescription: "poetry"
 metaDate: 08/11/1998
-tags: ["poetry"]
+tags: ["poetry", "lamps", "highschool"]
 ---
 
 The lamplight.. it plays with your mind, dances from its

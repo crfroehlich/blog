@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import { Layout, Link } from '$components';
+import { DisplayDate } from './link';
 import Helmet from 'react-helmet';
 import NextPrevious from '../components/NextPrevious';
 import config from '../../config';
 import { Edit, StyledHeading, StyledMainWrapper } from '../components/styles/Docs';
-
+import {ChipSet, Chip} from '@material/react-chips';
+import { kebabCase } from 'lodash';
 const gitHub = require('../components/images/github.svg');
 
 const forcedNavOrder = config.sidebar.forcedNavOrder;
@@ -17,7 +19,7 @@ export const PageWrapper = ({ props, pageContent, pageTitle, showGithub }) => {
     mdx,
   } = data;
 
-  let site, siteMetadata, title = pageTitle, body, docsLocation;
+  let site, siteMetadata, title = pageTitle, body, docsLocation, date = Date.now(), tags = [];
 
   if(data && data.site) {
     site = data.site;
@@ -39,6 +41,12 @@ export const PageWrapper = ({ props, pageContent, pageTitle, showGithub }) => {
     }
     if(!body) {
       body = mdx.body;
+    }
+    if(mdx.fields.date) {
+      date = new Date(mdx.fields.date);
+    }
+    if(mdx.fields.tags) {
+      tags = mdx.fields.tags;
     }
   }
 
@@ -93,7 +101,17 @@ export const PageWrapper = ({ props, pageContent, pageTitle, showGithub }) => {
     })
     .sort((a, b) => new Date(b.date) - new Date(a.date));
 
-    console.log([pageTitle, title, props])
+    console.log(['pageTitle', pageTitle, 'title', title, 'props', props, 'mdx', mdx]);
+
+  const chips = (<ChipSet>
+    {tags.map(tag => (
+      <Link to={`/визуализации/${kebabCase(tag)}`} key={kebabCase(tag)}>
+        <Chip handleInteraction={() => {}} id={tag} label={tag} key={tag} />
+      </Link>
+    ))}
+    <DisplayDate date={date} />
+ </ChipSet>);
+
   return (
     <Layout {...props}>
         <Helmet>
@@ -113,7 +131,10 @@ export const PageWrapper = ({ props, pageContent, pageTitle, showGithub }) => {
               </Link>
             </Edit>)}
         </div>
-        <StyledMainWrapper>{body}</StyledMainWrapper>
+        <StyledMainWrapper>
+          {chips}
+          {body}
+        </StyledMainWrapper>
         <div className={'addPaddTopBottom'}>
           <NextPrevious mdx={mdx} nav={nav} />
         </div>

@@ -53,7 +53,7 @@ export default class HTML extends React.Component {
                   nav.appendChild(script);
                 }
               } catch(e) {
-                console.log(e);
+                console.error(e);
                 setTimeout(addComments, 1000);
               }
             }

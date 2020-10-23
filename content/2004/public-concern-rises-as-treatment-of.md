@@ -3,7 +3,6 @@ title: "Public Concern Rises as Treatment of Prisoners Declines"
 metaTitle: "Public Concern Rises as Treatment of Prisoners Declines"
 metaDate: 5/28/2004
 metaDraft: false
-aliases: [ "/2004/05/public-concern-rises-as-treatment-of.html" ]
 tags: ["baghdad","news","donald thisbit"]
 ---
 

@@ -3,7 +3,7 @@ title: "on bubbles"
 metaTitle: "on bubbles"
 metaDate: 4/27/2000
 metaDraft: false
-aliases: [ "/2000/04/on-bubbles.html" ]
+tags: [ "poetry" ]
 ---
 
 How would one justify the extent of the madness -

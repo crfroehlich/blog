@@ -3,8 +3,7 @@ title: "One Last Hoorah"
 metaTitle: "One Last Hoorah"
 metaDate: 5/16/2003
 metaDraft: false
-aliases: [ "/2003/05/one-last-hoorah.html" ]
-tags: ["army","lif"]
+tags: ["army","lïf"]
 ---
 
 Friends of the U.S. Armed Forces,

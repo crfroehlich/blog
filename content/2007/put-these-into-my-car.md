@@ -3,7 +3,6 @@ title: "Put These Into My Car"
 metaTitle: "Put These Into My Car"
 metaDate: 10/5/2007
 metaDraft: false
-aliases: [ "/2007/10/put-these-into-my-car.html" ]
 tags: ["slashdot","wishes"]
 ---
 

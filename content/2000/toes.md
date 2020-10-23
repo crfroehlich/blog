@@ -3,7 +3,7 @@ title: "toes"
 metaTitle: "toes"
 metaDate: 4/15/2000
 metaDraft: false
-aliases: [ "/2000/04/toes.html" ]
+tags: [ "poetry" ]
 ---
 
 Of the days that dwell within 

@@ -4,7 +4,7 @@ metaTitle: "wishing and unwishing"
 metaDate: 2/3/2009
 metaDraft: false
 aliases: [ "/2009/02/wishing-and-unwishing.html" ]
-tags: ["belief","family","lif"]
+tags: ["belief","family","lïf"]
 ---
 
 my uncle once said something true.  

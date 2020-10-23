@@ -3,7 +3,7 @@ title: "Currying Favor with Partial Application to get JavaScript SQL"
 metaTitle: "Currying Favor with Partial Application to get JavaScript SQL"
 metaDate: 02/04/2017
 metaDraft: false
-tags: [ "currying", "javascript", "partial application" ]
+tags: [ "currying", "code", "partial application" ]
 ---
 
 _Editor’s Note: This is an old post from March of 2013, from an old blog. Apparently it still gets enough hits to need updating as links have changed. Re-posting it here with URL corrections._

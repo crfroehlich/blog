@@ -3,7 +3,7 @@ title: "Bush Repunctuates Education Law: \"No! Child... 'Left Behind'?\" Act"
 metaTitle: "Bush Repunctuates Education Law: \"No! Child... 'Left Behind'?\" Act"
 metaDate: 9/24/2007
 metaDraft: false
-aliases: [ "/2007/09/bush-repunctuates-education-law-child.html" ]
+tags: ["w"]
 ---
 
 A recent review of the "No Child Left Behind" law, enacted by Congress in 2004 and signed into law shortly thereafter by George W. Bush has revealed another startling example of Executive Privilege. A practice begun with Roosevelt, presidents have frequently amended bills upon signing them into law by annotating their own interpretations of the bill's intent. Left undiscovered until now, in part because Mr. Bush did not attach anything to the law but instead punctuated the title:  

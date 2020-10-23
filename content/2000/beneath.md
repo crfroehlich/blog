@@ -3,7 +3,7 @@ title: "beneath"
 metaTitle: "beneath"
 metaDate: 4/26/2000
 metaDraft: false
-aliases: [ "/2000/04/beneath.html" ]
+tags: ["poetry", "love"]
 ---
 
 At times I wish only that my heart would open inside my mind,

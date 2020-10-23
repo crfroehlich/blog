@@ -3,7 +3,6 @@ title: "Open P2P (Peer to Peer) to Life"
 metaTitle: "Open P2P (Peer to Peer) to Life"
 metaDate: 10/4/2007
 metaDraft: false
-aliases: [ "/2007/10/open-p2p-peer-to-peer-to-life.html" ]
 tags: ["slashdot","wishes"]
 ---
 

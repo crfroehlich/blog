@@ -3,7 +3,7 @@ title: "hello, son"
 metaTitle: "hello, son"
 metaDate: 1/22/2008
 metaDraft: false
-aliases: [ "/2008/01/hello-son.html" ]
+tags: [ "eli", "göd" ]
 ---
 
 It's mere minutes before the day you are scheduled, albeit not destined, to be born; and though you may be familiar with my voice, we have not spoken--not I to you or otherwise.  

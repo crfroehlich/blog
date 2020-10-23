@@ -3,7 +3,7 @@ title: "in the end"
 metaTitle: "in the end"
 metaDate: 4/23/2000
 metaDraft: false
-aliases: [ "/2000/04/in-end.html" ]
+tags: [ "poetry" ]
 ---
 
 In the last days they will say to him

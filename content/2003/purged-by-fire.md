@@ -3,7 +3,7 @@ title: "Purged By Fire"
 metaTitle: "Purged By Fire"
 metaDate: 5/28/2003
 metaDraft: false
-aliases: [ "/2003/05/purged-by-fire.html" ]
+tags: [ "army", "letter" ]
 ---
 
 Friends of family, family of friends, and persons unconnected to either,  

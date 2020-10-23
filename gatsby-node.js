@@ -37,7 +37,7 @@ exports.createPages = ({ graphql, actions }) => {
         `
       ).then(result => {
         if (result.errors) {
-          console.log(result.errors); // eslint-disable-line no-console
+          console.error(result.errors); // eslint-disable-line no-console
           reject(result.errors);
         }
 
@@ -58,7 +58,7 @@ exports.createPages = ({ graphql, actions }) => {
         // Make tag pages
         result.data.tagsGroup.group.forEach(tag => {
           createPage({
-            path: `/tags/${_.kebabCase(tag.fieldValue)}/`,
+            path: `/визуализации/${_.kebabCase(tag.fieldValue)}/`,
             component: tagTemplate,
             context: {
               tag: tag.fieldValue,
@@ -130,6 +130,12 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
       name: 'date',
       node,
       value: new Date(node.frontmatter.metaDate),
+    });
+
+    createNodeField({
+      name: 'tags',
+      node,
+      value: node.frontmatter.tags.toString().split(','),
     });
   }
 };

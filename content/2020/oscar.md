@@ -3,6 +3,7 @@ title: "Oscar"
 metaTitle: "Oscar"
 metaDescription: "short story"
 metaDate: 09/30/2020
+tags: ["fiction", "short story"]
 ---
 
 > Words have been changed and characters rearranged to limit liability to the not guilty.

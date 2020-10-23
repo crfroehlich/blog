@@ -3,7 +3,7 @@ title: "God Probably, *Probably*, Doesn''t Use Your App"
 metaTitle: "God Probably, *Probably*, Doesn''t Use Your App"
 metaDate: 8/14/2013
 metaDraft: false
-aliases: [ "/2013/08/god-probably-probably-doesnt-use-your.html" ]
+tags: [ "göd" ]
 ---
 
 I propose we immediately deprecate the word "administrator", and its diminutive form "admin", from language. All language. And languages.  

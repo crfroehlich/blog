@@ -3,8 +3,7 @@ title: "quit me thisly"
 metaTitle: "quit me thisly"
 metaDate: 7/10/2007
 metaDraft: false
-aliases: [ "/2007/07/quit-me-thisly.html" ]
-tags: ["glated","heat","lif"]
+tags: ["glated","heat","lïf"]
 ---
 
 squalor tempests beneath the artificial breeze

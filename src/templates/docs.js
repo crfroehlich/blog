@@ -12,9 +12,9 @@ export default class BlogDocument extends Component {
     
     const { mdx } = data;
 
-    if(path === '/tags') {
+    if(path === '/визуализации') {
       return <Chips props={this.props} />;
-    } else if(path.startsWith('/tags')) {
+    } else if(path.startsWith('/визуализации')) {
       return null;
     } else if (!data.site) {
       return <NotFound props={this.props} />;
@@ -42,6 +42,7 @@ export const pageQuery = graphql`
         title
         slug
         date
+        tags
       }
       body
       tableOfContents

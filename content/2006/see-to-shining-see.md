@@ -3,8 +3,7 @@ title: "See to Shining See"
 metaTitle: "See to Shining See"
 metaDate: 10/24/2006
 metaDraft: false
-aliases: [ "/2006/10/see-to-shining-see.html" ]
-tags: ["lif","anaxagoras"]
+tags: ["lïf","anaxagoras"]
 ---
 
 It takes a moment to find Calliope. Urgency predicates motion.  

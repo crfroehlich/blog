@@ -3,14 +3,12 @@ title: "blief or belf"
 metaTitle: "blief or belf"
 metaDate: 8/1/2008
 metaDraft: false
-aliases: [ "/2008/08/blief-or-belf.html" ]
-tags: ["belief","lif","good","god"]
+tags: ["belief","lïf","good","göd"]
 ---
 
 I encountered this on my YouTube browsing, a rendering of Penn Jillette's contribution to the NPR show, _This I Believe_:  
   
-["I Believe There Is No God"  
-](http://www.youtube.com/watch?v=U0hJRM8Xzvo)  
+["I Believe There Is No God"](http://www.youtube.com/watch?v=U0hJRM8Xzvo)  
   
 It seems interesting but not particularly compelling to redirect a rational ambivalence toward the existence of God to a concerned belief in his non-existence.  It's a seemingly subtle twist to transition from "I do not believe in God" to "I believe there is no God".  The former allows me to pursue other more interesting beliefs and frees me from a long and unnecessary argument which the latter seems destined to encourage.  That is not to suggest it's an  uninteresting or valueless argument or that I begin avoiding beliefs which are too cumbersome or uncomfortable to carry; only that in this case, it's unnecessary.  
   

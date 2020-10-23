@@ -3,7 +3,7 @@ title: "The Quick, Molting Sweat Lodge of the Soul"
 metaTitle: "The Quick, Molting Sweat Lodge of the Soul"
 metaDate: 4/7/2013
 metaDraft: false
-aliases: [ "/2013/04/the-quick-molting-sweat-lodge-of-soul.html" ]
+tags: [ "work" ]
 ---
 
 It was the spring of our discontent.  

@@ -3,7 +3,7 @@ title: "Can''t Talk No Jive"
 metaTitle: "Can''t Talk No Jive"
 metaDate: 12/3/2003
 metaDraft: false
-tags: ["russian","lif"]
+tags: ["россия","lïf"]
 ---
 
 Friends of Athens,

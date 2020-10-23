@@ -3,8 +3,7 @@ title: "like father like father"
 metaTitle: "like father like father"
 metaDate: 12/15/2008
 metaDraft: false
-aliases: [ "/2008/12/like-father-like-father.html" ]
-tags: ["family","fatherhood","lif","father"]
+tags: ["family","fatherhood","lïf","father"]
 ---
 
 heather and i ran into a woman who attends my father's church at the mall today.  "you don't look anything like your father," she said, "but you have your mother's smile."   

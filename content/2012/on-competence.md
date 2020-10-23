@@ -4,7 +4,7 @@ metaTitle: "On Competence"
 metaDate: 1/20/2012
 metaDraft: false
 aliases: [ "/2012/01/on-competence.html" ]
-tags: ["programming","competence","wat","lif","writing"]
+tags: ["programming","competence","wat","lïf","writing"]
 ---
 
 Years ago, one of my dearest friends, [Jennifer Elms](https://plus.google.com/100156336256357757639/posts), and I were discussing a [short bit of prose that I had written](https://docs.google.com/document/d/1j5VYxBe-6nTMMt8Gm4ajcoYjryVYjefDOrJDsMaEacI/edit). She had just finished reading it, and I had asked for her opinion.  

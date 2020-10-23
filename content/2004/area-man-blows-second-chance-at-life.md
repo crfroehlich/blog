@@ -3,7 +3,6 @@ title: "Area Man Blows Second Chance at Life, Hopes for Third"
 metaTitle: "Area Man Blows Second Chance at Life, Hopes for Third"
 metaDate: 6/3/2004
 metaDraft: false
-aliases: [ "/2004/06/area-man-blows-second-chance-at-life.html" ]
 tags: ["news","donald thisbit"]
 ---
 

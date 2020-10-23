@@ -3,7 +3,6 @@ title: "Area Man Confused By Obscure \"Mullis\" References"
 metaTitle: "Area Man Confused By Obscure \"Mullis\" References"
 metaDate: 7/17/2004
 metaDraft: false
-aliases: [ "/2004/07/area-man-confused-by-obscure-references.html" ]
 tags: ["baghdad","news"]
 ---
 

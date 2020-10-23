@@ -3,8 +3,7 @@ title: "this present opaqueness"
 metaTitle: "this present opaqueness"
 metaDate: 10/28/2008
 metaDraft: false
-aliases: [ "/2008/10/this-present-opaqueness.html" ]
-tags: ["cancer","lif","god"]
+tags: ["cancer","lïf","göd"]
 ---
 
 There was within me a quiet comfort in the belief that some all knowing force guided the hands of man in the daily doings of human kind, a relief and respite in the faith that it was not truly up to \*us\* to guide the resolutions of issues of strife and hunger and cruelty.  

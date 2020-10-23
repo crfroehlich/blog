@@ -3,7 +3,7 @@ title: "parched"
 metaTitle: "parched"
 metaDate: 4/25/2000
 metaDraft: false
-aliases: [ "/2000/04/parched.html" ]
+tags: [ "poetry" ]
 ---
 
 Where ever shall I go to find myself a drink

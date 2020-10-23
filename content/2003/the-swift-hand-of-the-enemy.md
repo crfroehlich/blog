@@ -3,7 +3,7 @@ title: "The Swift Hand of The Enemy (AKA Those Who Have Been Liberated)"
 metaTitle: "The Swift Hand of The Enemy (AKA Those Who Have Been Liberated)"
 metaDate: 10/4/2003
 metaDraft: false
-tags: ["baghdad","lif"]
+tags: ["baghdad","lïf"]
 ---
 
 Once more, I turn to your patient and receptive arms for comfort and consolation. I have endured hard times at the hand of my enemy, but I shill yet prevail. The past months have been rife with conflict, challenges, suffering and even--dare I say, triumphs. Adversity knows no limits and fears no shame. My current home of residence, the Ministry of the Interior, is to be turned over to the Iraqi people sometime this month. Here, I have endured running water and fairly consistent power. In the long nights that I have here spent, I have felt the cruel whip of addiction as I watched entire seasons of 24 on glorious DVD--without the luxury of surround sound. The forces of evil have seen to it that I eat more tender vitals than are my right.

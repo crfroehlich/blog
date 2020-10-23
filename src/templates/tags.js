@@ -3,12 +3,14 @@ import PropTypes from "prop-types"
 // Components
 import { Link, graphql } from "gatsby"
 const Tags = ({ pageContext, data }) => {
+  console.warn('THIS _should_ !not! *happen*');
+  
   const { tag } = pageContext
   const { edges, totalCount } = data.allMdx
   const tagHeader = `${totalCount} post${
     totalCount === 1 ? "" : "s"
   } tagged with "${tag}"`
-  console.log(data);
+ 
   return (
     <div>
       <h1>{tagHeader}</h1>
@@ -23,7 +25,7 @@ const Tags = ({ pageContext, data }) => {
           )
         })}
       </ul>
-      <Link to="/tags">All tags</Link>
+      <Link to="/визуализации">визуализации</Link>
     </div>
   )
 }
@@ -49,7 +51,8 @@ Tags.propTypes = {
     }),
   }),
 }
-export default Tags
+export default Tags;
+
 export const pageQuery = graphql`
   query($tag: String) {
     allMdx(

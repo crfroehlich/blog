@@ -1,9 +1,9 @@
 ---
-title: "Mussel"
-metaTitle: "Mussel"
+title: "Muscles"
+metaTitle: "Muscles"
 metaDate: 8/11/1998
 metaDraft: false
-aliases: [ "/1998/08/mussel.html" ]
+tags: ["muscle", "poetry"]
 ---
 
 Language's mildew, the sweet oysters who foam

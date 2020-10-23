@@ -3,7 +3,6 @@ title: "CBS Introduces \"Life on Demand\""
 metaTitle: "CBS Introduces \"Life on Demand\""
 metaDate: 7/3/2007
 metaDraft: false
-aliases: [ "/2007/07/cbs-introduces-on-demand.html" ]
 tags: ["news"]
 ---
 

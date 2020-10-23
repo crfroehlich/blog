@@ -3,7 +3,6 @@ title: "the folly of age"
 metaTitle: "the folly of age"
 metaDate: 11/7/2008
 metaDraft: false
-aliases: [ "/2008/11/the-folly-of-age.html" ]
 tags: ["politics","family","country"]
 ---
 
