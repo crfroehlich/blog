@@ -4,7 +4,7 @@ import MDXRenderer from 'gatsby-plugin-mdx/mdx-renderer';
 import NotFound from '../components/NotFound';
 import Chips from '../components/Chips';
 import PageWrapper from '../components/PageWrapper';
-
+import Cards from '../components/Cards';
 export default class BlogDocument extends Component {
   render() {
 
@@ -17,8 +17,8 @@ export default class BlogDocument extends Component {
     if(decodedPath === '/визуализации') {
 
       return <Chips props={this.props} />;
-    } else if(path.startsWith('/визуализации')) {
-      return null;
+    } else if(decodedPath.startsWith('/визуализации')) {
+      return <Cards props={this.props} />;
     } else if (!data.site) {
       return <NotFound props={this.props} />;
     } else {

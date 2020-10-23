@@ -1,13 +1,13 @@
-import React, { Component } from 'react';
-import { Layout, Link } from '$components';
-import { DisplayDate } from './link';
+import React from 'react';
+import { Layout } from './layout';
+import { DisplayDate, Link } from './link';
 import Helmet from 'react-helmet';
-import NextPrevious from '../components/NextPrevious';
+import NextPrevious from './NextPrevious';
 import config from '../../config';
-import { Edit, StyledHeading, StyledMainWrapper } from '../components/styles/Docs';
-import {ChipSet, Chip} from '@material/react-chips';
+import { Edit, StyledHeading, StyledMainWrapper } from './styles/Docs';
+import {ChipSet, Chip} from '@rmwc/chip';
 import { kebabCase } from 'lodash';
-const gitHub = require('../components/images/github.svg');
+const gitHub = require('./images/github.svg');
 
 const forcedNavOrder = config.sidebar.forcedNavOrder;
 
@@ -109,9 +109,9 @@ export const PageWrapper = ({ props, pageContent, pageTitle, showGithub }) => {
 
   const chips = (<ChipSet>
     {tags.map(tag => (
-      //<Link to={`/визуализации/${kebabCase(tag)}`} key={kebabCase(tag)}>
+      <Link to={`/визуализации/${kebabCase(tag)}`} key={kebabCase(tag)}>
         <Chip handleInteraction={() => {}} id={tag} label={tag} key={tag} />
-      //</Link>
+      </Link>
     ))}
     {mdx && (<DisplayDate date={date} />)}
  </ChipSet>);

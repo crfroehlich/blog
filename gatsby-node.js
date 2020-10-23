@@ -135,7 +135,7 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
     createNodeField({
       name: 'tags',
       node,
-      value: node.frontmatter.tags.toString().split(','),
+      value: (node.frontmatter.tags) ? node.frontmatter.tags.toString().split(',') : [],
     });
   }
 };

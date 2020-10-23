@@ -1,5 +1,7 @@
 import { injectGlobal } from 'emotion';
-import "@material/react-chips/dist/chips.css";
+import '@rmwc/card/styles';
+import "@rmwc/chip/styles";
+import '@rmwc/typography/styles';
 
 export const baseStyles = injectGlobal`
   @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap');
