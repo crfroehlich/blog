@@ -4,6 +4,7 @@ metaTitle: "Muscles"
 metaDate: 8/11/1998
 metaDraft: false
 tags: ["muscle", "poetry"]
+img: "oysters.jpg"
 ---
 
 Language's mildew, the sweet oysters who foam

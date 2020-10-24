@@ -4,6 +4,7 @@ metaTitle: "defer"
 metaDate: 4/21/2000
 metaDraft: false
 tags: [ "poetry" ]
+img: "coffee_snow.jpg"
 ---
 
 I didn't touch the coffee;

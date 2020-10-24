@@ -4,6 +4,7 @@ metaTitle: "Baal is Dead; I Killed Him"
 metaDate: 6/23/2004
 metaDraft: false
 tags: ["lïf", "göd"]
+img: "baal.jpeg"
 ---
 
 Babylon approaches slowly. Endless wasteland precedes barren desert and opens into more nothing than can be bottled and sold at next year’s federal auctions for the blind. Following that, water appears. With water comes green in every shade that life embraces.

@@ -4,6 +4,7 @@ metaTitle: "quit me thisly"
 metaDate: 7/10/2007
 metaDraft: false
 tags: ["glated","heat","lïf"]
+img: "zarathustra.jpg"
 ---
 
 squalor tempests beneath the artificial breeze

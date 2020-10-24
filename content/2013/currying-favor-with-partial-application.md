@@ -4,6 +4,7 @@ metaTitle: "Currying Favor with Partial Application to get JavaScript SQL"
 metaDate: 3/16/2013
 metaDraft: false
 tags: [ "code", "curry" ]
+img: "curry_favor.jpeg"
 ---
 
 There is a domain that attends to curry as one of the quintessential elements of regional cuisine. This is not that domain; though in this domain I would argue we need a paprika.

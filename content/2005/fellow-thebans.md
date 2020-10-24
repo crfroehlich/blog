@@ -4,6 +4,7 @@ metaTitle: "Fellow Thebans"
 metaDate: 8/24/2005
 metaDraft: false
 tags: ["lïf"]
+img: "theban.gif"
 ---
 
 This winter has been especially harsh and long. With temperatures plummeting to record lows and heat expenditures on the rise, I find myself with my fellow citizens: pulling the wool blanket a little bit closer, holding the hot chocolate a little bit longer, and above all, staying indoors as much as possible.
@@ -22,9 +23,9 @@ Nothing fosters enmity with your fellow man as much as the truth. Never tell him
 
 The results are never good.
 
-I must be off. I hope you all are well. Take care.  
+I must be off. I hope you all are well. Take care.
 
 “Chances are you are scared of fictions. Chances are you are only fleetingly happy. Chances are you know much less than you think you do. Chances are you feel a little guilty. Chances are you want people to lie to you. Perhaps the answer lies on the side of a coffee cup. You are lost.”
 
-The Way I See It # 23 by David Cross  
+The Way I See It # 23 by David Cross
 \-Found on the side of a Starbucks coffee cup

@@ -4,6 +4,7 @@ metaTitle: "adjustments"
 metaDate: 5/2/2000
 metaDraft: false
 tags: ["poetry", "spinning"]
+img: "movie_reel.png"
 ---
 
 When the world has begun to spin

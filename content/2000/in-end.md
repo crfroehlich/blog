@@ -4,6 +4,7 @@ metaTitle: "in the end"
 metaDate: 4/23/2000
 metaDraft: false
 tags: [ "poetry" ]
+img: "old_man.jpg"
 ---
 
 In the last days they will say to him

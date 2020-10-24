@@ -4,6 +4,7 @@ metaTitle: "earnest"
 metaDate: 4/22/2000
 metaDraft: false
 tags: [ "poetry" ]
+img: "anchor.jpg"
 ---
 
 How can we propose to fashion for ourselves life or livelihood - an attempt to

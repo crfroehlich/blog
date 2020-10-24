@@ -3,7 +3,8 @@ title: "linger"
 metaTitle: "linger"
 metaDate: 4/18/2000
 metaDraft: false
-tags: [ "poetry", "leafing" ]
+tags: [ "poetry", "leafing", "wading" ]
+img: "wading.jpg"
 ---
 
 If I leave today I have lost nothing

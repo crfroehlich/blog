@@ -4,6 +4,7 @@ metaTitle: "can't see my tale"
 metaDate: 10/9/2006
 metaDraft: false
 tags: ["obsequious","lïf"]
+img: "hunger.gif"
 ---
 
 Nothing.

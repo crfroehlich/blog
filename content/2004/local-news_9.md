@@ -4,6 +4,7 @@ metaTitle: "Local News"
 metaDate: 5/9/2004
 metaDraft: false
 tags: ["baghdad","news","donald thisbit"]
+img: "local_news_1.jpg"
 ---
 
 ## HEADLINES (Politics):

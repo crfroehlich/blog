@@ -3,7 +3,8 @@ title: "Code Generation: There and Back Again"
 metaTitle: "Code Generation: There and Back Again"
 metaDate: 10/24/2017
 metaDraft: false
-tags: [ "metadata", "retrospective", "code generation" ]
+tags: [ "metadata", "retrospective", "code", "generation" ]
+img: "there_and_back.jpg"
 ---
 
 I can’t remember a project (engineering or otherwise) during which I haven’t paused to ask myself: “Why did I design this thing that way?” Sometimes as a result of this introspection, I find myself feeling remorse or self-loathing, regret or the hollow embrace of ennui. Sometimes the buyer’s remorse can begin to settle in only after years of work. Sometimes the anthropomorphic representation of the design conceit simply lurks in the shadows sewing mischief as it’s able. I’ll defer to future versions of myself to conclude the relative merits or lack thereof of this particular set of concerns.

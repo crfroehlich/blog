@@ -4,6 +4,7 @@ metaTitle: "Public Concern Rises as Treatment of Prisoners Declines"
 metaDate: 5/28/2004
 metaDraft: false
 tags: ["baghdad","news","donald thisbit"]
+img: "children_jail.jpeg"
 ---
 
 Despite increased attention and criticism from the Press and the United Nations, conditions are worsening for Iraqi detainees. Sources on the ground have indicated that conditions vary from camp to camp; and, while most U.S. military forces fully comply with Geneva Convention regulations and the Law of Land Warfare, certain groups continue to ignore the policies and regulations of the U.S. government. Camp Duke, in particular, has seen a dramatic increase in the number of complaints from detainees. 

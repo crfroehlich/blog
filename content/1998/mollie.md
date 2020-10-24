@@ -4,6 +4,7 @@ metaTitle: "Mollie"
 metaDate: 8/11/1998
 metaDraft: false
 tags: ["cello", "poetry", "churches"]
+img: "cello.jpg"
 ---
 
 shake your hair back

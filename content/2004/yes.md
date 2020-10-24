@@ -4,6 +4,7 @@ metaTitle: "Yes!"
 metaDate: 4/25/2004
 metaDraft: false
 tags: ["letters","notes","lïf","farewell"]
+img: "no_face.png"
 ---
 
 Friends,

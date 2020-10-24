@@ -4,6 +4,7 @@ metaTitle: "beneath"
 metaDate: 4/26/2000
 metaDraft: false
 tags: ["poetry", "love"]
+img: "temple_of_doom_heart.jpg"
 ---
 
 At times I wish only that my heart would open inside my mind,
@@ -15,4 +16,4 @@ Why write and for what humanity? To be a child...
 To be again loved as a child; to again yearn for the self indulgence indulged a child...
     yet more than death waits
         for those who wait
-            for love  
+            for love

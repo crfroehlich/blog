@@ -1,9 +1,10 @@
 ---
-title: "Can''t Talk No Jive"
-metaTitle: "Can''t Talk No Jive"
+title: "Я не говорю по-испански"
+metaTitle: "Я не говорю по-испански"
 metaDate: 12/3/2003
 metaDraft: false
 tags: ["россия","lïf"]
+img: "cig_russian.jpg"
 ---
 
 Friends of Athens,

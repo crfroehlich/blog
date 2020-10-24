@@ -4,6 +4,7 @@ metaTitle: "It's that time when the world falls in love"
 metaDescription: "Ultrasound of Eli"
 metaDate: "07/09/2007"
 tags: ["eli"]
+img: "water_bear.jpeg"
 ---
 
 She sleeps with her mouth open and kicks when I brush against her legs. It's an effort not to want to gently touch her stomach.

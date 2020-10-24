@@ -4,6 +4,7 @@ metaTitle: "blastphemy"
 metaDate: 5/1/2000
 metaDraft: false
 tags: [ "blastphemy", "poetry" ]
+img: "blasphemy.jpg"
 ---
 
 Of all the emptiness and disdain -

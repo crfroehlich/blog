@@ -4,6 +4,7 @@ metaTitle: "Wishing Wells Away"
 metaDate: 11/5/2003
 metaDraft: false
 tags: ["lïf"]
+img: "rosebud.jpg"
 ---
 
 Comrades,

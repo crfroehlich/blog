@@ -4,6 +4,7 @@ metaTitle: "Meeting Melchizedek"
 metaDate: 07/14/2017
 metaDraft: false
 tags: [ "fiction", "short story" ]
+img: "old_army_foot_locker.jpg"
 ---
 
 My father lives in an old army footlocker that lies in the attic of our home. Faded, rusted and rotting. The box only remains standing by the support of the boxes at its sides. I’ve never moved him from his resting place, though I (did/will) at times want to attack him, shake him or simply feel his embrace.
