@@ -1,11 +1,12 @@
-require("dotenv").config();
-const queries = require("./src/utils/algolia");
+require('dotenv').config();
+const queries = require('./src/utils/algolia');
 
-const config = require("./config");
+const config = require('./config');
 
 const plugins = [
   'gatsby-plugin-sitemap',
   'gatsby-plugin-sharp',
+  'gatsby-transformer-remark',
   {
     resolve: `gatsby-plugin-layout`,
     options: {
@@ -15,9 +16,9 @@ const plugins = [
   'gatsby-plugin-emotion',
   'gatsby-plugin-react-helmet',
   {
-    resolve: "gatsby-source-filesystem",
+    resolve: 'gatsby-source-filesystem',
     options: {
-      name: "docs",
+      name: 'docs',
       path: `${__dirname}/content/`
     }
   },
@@ -26,7 +27,7 @@ const plugins = [
     options: {
       gatsbyRemarkPlugins: [
         {
-          resolve: "gatsby-remark-images",
+          resolve: 'gatsby-remark-images',
           options: {
             maxWidth: 1035,
             sizeByPixelDensity: true
@@ -36,7 +37,7 @@ const plugins = [
           resolve: 'gatsby-remark-copy-linked-files'
         }
       ],
-      extensions: [".mdx", ".md"]
+      extensions: ['.mdx', '.md']
     }
   },
   {
@@ -48,6 +49,59 @@ const plugins = [
       head: true,
       // enable ip anonymization
       anonymize: false,
+    },
+  },
+  {
+    resolve: `gatsby-plugin-feed`,
+    options: {
+      query: `
+        {
+          site {
+            siteMetadata {
+              title
+              description
+              siteUrl
+              site_url: siteUrl
+            }
+          }
+        }
+      `,
+      feeds: [
+        {
+          serialize: ({ query: { site, allMarkdownRemark } }) => {
+            return allMarkdownRemark.edges.map(edge => {
+              return Object.assign({}, edge.node.frontmatter, {
+                description: edge.node.excerpt,
+                date: edge.node.fields.date,
+                url: site.siteMetadata.siteUrl + edge.node.fields.slug,
+                guid: site.siteMetadata.siteUrl + edge.node.fields.slug,
+                custom_elements: [{ 'content:encoded': edge.node.html }],
+              })
+            })
+          },
+          query: `
+            {
+              allMarkdownRemark(
+                sort: { order: DESC, fields: [fields___date] },
+              ) {
+                edges {
+                  node {
+                    excerpt
+                    html
+                    fields {
+                      slug
+                      date
+                      title
+                    }
+                  }
+                }
+              }
+            }
+          `,
+          output: '/rss.xml',
+          title: 'Hiking My Desk RSS Feed',
+        },
+      ],
     },
   },
 ];

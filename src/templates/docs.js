@@ -19,12 +19,12 @@ export default class BlogDocument extends Component {
       return <Chips props={this.props} />;
     } else if(decodedPath.startsWith('/визуализации')) {
       return <Cards props={this.props} />;
-    } else if (!data.site) {
+    } else if (!data.site || !mdx) {
       return <NotFound props={this.props} />;
     } else {
       return <PageWrapper
         props={this.props}
-        pageContent={<MDXRenderer>{mdx.body}</MDXRenderer>}
+        pageContent={<MDXRenderer>{(mdx)? mdx.body : 'text'}</MDXRenderer>}
         showGithub={true}
       />
     }
