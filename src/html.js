@@ -38,27 +38,7 @@ export default class HTML extends React.Component {
               if(e.target && e.target.tagName.toLowerCase() === 'a'){
                 navBarClose();
               }
-            });
-            function addComments() {
-              try {
-                var nav = document.getElementsByClassName('addPaddTopBottom')[0];
-                if(!nav) {
-                  setTimeout(addComments, 1000);
-                } else {
-                  var script = document.createElement('script');
-                  script.src = 'https://utteranc.es/client.js';
-                  script.setAttribute('repo', 'crfroehlich/blog');
-                  script.setAttribute('issue-term', 'pathname');
-                  script.async = true;
-                  nav.appendChild(script);
-                }
-              } catch(e) {
-                console.error(e);
-                setTimeout(addComments, 1000);
-              }
-            }
-            //setTimeout(addComments, 500);
-            `,
+            });`,
             }}
           />
         </body>

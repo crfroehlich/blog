@@ -23,6 +23,13 @@ class Tools {
       }
     }
   }
+
+  getLocalDate(date) {
+    date = date || new Date();
+    return date.toLocaleDateString('ru-RU', {
+      weekday: 'long', year: 'numeric', month: '2-digit', day: '2-digit'
+    });
+  }
 }
 
 export const tools = new Tools();

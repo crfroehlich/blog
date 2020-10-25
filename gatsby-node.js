@@ -5,6 +5,7 @@ const path = require('path');
 const startCase = require('lodash.startcase');
 
 const config = require('./config');
+
 const _ = require('lodash');
 
 exports.createPages = ({ graphql, actions }) => {
@@ -24,6 +25,7 @@ exports.createPages = ({ graphql, actions }) => {
                     slug
                     date
                     tags
+                    img
                   }
                   body
                   tableOfContents
@@ -54,6 +56,7 @@ exports.createPages = ({ graphql, actions }) => {
         }
 
         const blogTemplate = path.resolve('./src/templates/docs.js');
+
         const tagTemplate = path.resolve("src/templates/tags.js")
 
         // Create blog posts pages.
@@ -102,9 +105,11 @@ exports.onCreateBabelConfig = ({ actions }) => {
 
 exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions;
+
 try {
   //if (node.internal.type === `Mdx`) {
     const parent = getNode(node.parent);
+
     if(parent) {
       let value = parent.relativePath.replace(parent.ext, '');
 
@@ -151,9 +156,18 @@ try {
         node,
         value: (node.frontmatter.tags) ? node.frontmatter.tags.toString().split(',') : [],
       });
+
+      const imagePath = node.frontmatter.img || 'card.png';
+
+      createNodeField({
+        name: 'img',
+        node,
+        value: `https://github.com/crfroehlich/cdn/raw/main/images/${imagePath}`,
+      });
     }
   } catch(e) {
     console.error(e);
+    throw e;
   }
   // } else {
   //   console.log(['node', node])

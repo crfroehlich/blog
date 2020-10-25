@@ -5,6 +5,7 @@ import NotFound from '../components/NotFound';
 import Chips from '../components/Chips';
 import PageWrapper from '../components/PageWrapper';
 import Cards from '../components/Cards';
+
 export default class BlogDocument extends Component {
   render() {
 
@@ -26,6 +27,7 @@ export default class BlogDocument extends Component {
         props={this.props}
         pageContent={<MDXRenderer>{(mdx)? mdx.body : 'text'}</MDXRenderer>}
         showGithub={true}
+        showComments={true}
       />
     }
   }
@@ -46,6 +48,7 @@ export const pageQuery = graphql`
         slug
         date
         tags
+        img
       }
       body
       tableOfContents
@@ -69,6 +72,7 @@ export const pageQuery = graphql`
             slug
             date
             tags
+            img
           }
           body
           tableOfContents

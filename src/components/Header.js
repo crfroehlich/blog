@@ -4,7 +4,7 @@ import { StaticQuery, graphql } from 'gatsby';
 import GitHubButton from 'react-github-btn';
 import Link from './link';
 import Loadable from 'react-loadable';
-
+import { Icon } from 'rmwc';
 import config from '../../config.js';
 import LoadingProvider from './mdxComponents/loading';
 import { DarkModeSwitch } from './DarkModeSwitch';
@@ -79,10 +79,6 @@ const Header = ({ location, isDarkThemeActive, toggleActiveTheme }) => (
       const logoImg = require('./images/logo.svg');
 
       const twitter = require('./images/twitter.svg');
-
-      const discordBrandsBlock = require('./images/discord-brands-block.svg');
-
-      const twitterBrandsBlock = require('./images/twitter-brands-block.svg');
 
       const {
         site: {
@@ -170,13 +166,11 @@ const Header = ({ location, isDarkThemeActive, toggleActiveTheme }) => (
                   <li className={'githubBtn'}>
                     <GitHubButton
                       href={githubUrl}
-                      data-show-count="true"
-                      aria-label="Star on GitHub"
-                    >
-                      Star
-                    </GitHubButton>
+                      aria-label="Follow"
+                    />
                   </li>
                 ) : null}
+                <li><Link to={'/rss.xml'}><Icon icon="rss_feed" /></Link></li>
                 <li>
                   <DarkModeSwitch
                     isDarkThemeActive={isDarkThemeActive}

@@ -5,13 +5,15 @@ import Helmet from 'react-helmet';
 import NextPrevious from './NextPrevious';
 import config from '../../config';
 import { Edit, StyledHeading, StyledMainWrapper } from './styles/Docs';
-import {ChipSet, Chip} from 'rmwc';
+import {BadgeAnchor, Badge, ChipSet, Chip} from 'rmwc';
 import { kebabCase } from 'lodash';
+import Comments from './Comments';
+
 const gitHub = require('./images/github.svg');
 
 const forcedNavOrder = config.sidebar.forcedNavOrder;
 
-export const PageWrapper = ({ props, pageContent, pageTitle, showGithub }) => {
+export const PageWrapper = ({ props, pageContent, pageTitle, showGithub, showComments }) => {
   const { data } = props;
 
   const {
@@ -109,11 +111,20 @@ export const PageWrapper = ({ props, pageContent, pageTitle, showGithub }) => {
 
   const chips = (<ChipSet>
     {tags.map(tag => (
-      <Link to={`/визуализации/${kebabCase(tag)}`} key={kebabCase(tag)}>
-        <Chip handleInteraction={() => {}} id={tag} label={tag} key={tag} />
+      <Link to={`/визуализации/${kebabCase(tag)}`}
+        key={kebabCase(tag)}
+        style={{ marginRight: '0.5rem' }}
+        >
+        <BadgeAnchor>
+          <Chip style={{ backgroundColor: '#1ed3c6', color: 'fff' }}
+            id={tag}
+            label={tag}
+          />
+          <Badge label={'0'} style={{ right: '-0.3rem', top: '-0.3rem' }}/>
+        </BadgeAnchor>
       </Link>
     ))}
-    {mdx && (<DisplayDate date={date} />)}
+    {mdx && (<DisplayDate style={{color: '#1ed3c6'}} date={date} />)}
  </ChipSet>);
 
   return (
@@ -139,6 +150,7 @@ export const PageWrapper = ({ props, pageContent, pageTitle, showGithub }) => {
           {chips}
           {body}
         </StyledMainWrapper>
+        { showComments && (<div id="comment_div"><Comments id={"comment_div"}/></div>)}
         <div className={'addPaddTopBottom'}>
           <NextPrevious mdx={mdx} nav={nav} />
         </div>

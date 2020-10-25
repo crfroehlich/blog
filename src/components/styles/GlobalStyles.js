@@ -266,10 +266,6 @@ export const baseStyles = injectGlobal`
     border: 0;
     display: flex;
     align-items: center;
-    box-shadow: -1px 0px 4px 1px rgba(175, 158, 232, 0.4);
-    -webkit-box-shadow: -1px 0px 4px 1px rgba(175, 158, 232, 0.4);
-    -moz-box-shadow: -1px 0px 4px 1px rgba(175, 158, 232, 0.8);
-    -o-box-shadow: -1px 0px 4px 1px rgba(175, 158, 232, 0.4);
     z-index: 1;
     padding: 15px;
     position: relative;
@@ -517,9 +513,8 @@ export const baseStyles = injectGlobal`
   .titleWrapper {
     display: flex;
     align-items: center;
-    padding-bottom: 40px;
-    border-bottom: 1px solid rgb(230, 236, 241);
-    margin-bottom: 32px;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
   }
 
   .gitBtn {
@@ -567,6 +562,8 @@ export const baseStyles = injectGlobal`
     margin-left: auto;
     margin-top: auto;
     margin-bottom: auto;
+    font-size: large;
+    color: #1ed3c6;
   }
   /* **************************** */
 
