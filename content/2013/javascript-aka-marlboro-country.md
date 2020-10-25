@@ -3,16 +3,17 @@ title: "JavaScript (aka Marlboro Country)"
 metaTitle: "JavaScript (aka Marlboro Country)"
 metaDate: 1/3/2013
 metaDraft: false
-aliases: [ "/2013/01/javascript-aka-marlboro-country.html" ]
+tags: [ "code" ]
+img: "marlboro_country.jpg"
 ---
 
 Sometimes JavaScript land just feels like Marlboro Country. The sales pitch certainly feels similar:
 
 
-[![](http://2.bp.blogspot.com/-qsB6FzFp-ZY/UNZaeopV0OI/AAAAAAABgJs/l-Mp646qn4Y/s320/marlboro89fire.jpg)](http://2.bp.blogspot.com/-qsB6FzFp-ZY/UNZaeopV0OI/AAAAAAABgJs/l-Mp646qn4Y/s1600/marlboro89fire.jpg)
+[![](https://github.com/crfroehlich/cdn/raw/main/images/marlboro_country_horse_rider.jpg)](https://github.com/crfroehlich/cdn/raw/main/images/marlboro_country_horse_rider.jpg)
 
 _Come to the hottest part of the United States. It's popular. It's everywhere. It's the future. Now: cover yourself in leather. Don't ask why. It's part of the feature set. Next: the temperature is 120 degrees, and you need to start a fire. It's not supposed to make sense, that's the point. You'll need to do this at noon every day. After about 10 days, you'll find yourself assaulting anyone \_not\_ starting noonday fires._
-[_![](http://2.bp.blogspot.com/-mWilarr7K0M/UNZf3shPYbI/AAAAAAABgJ4/ETZ7CjkkTTY/s1600/marlborochorserider.jpg)_](http://2.bp.blogspot.com/-mWilarr7K0M/UNZf3shPYbI/AAAAAAABgJ4/ETZ7CjkkTTY/s1600/marlborochorserider.jpg)
+[_![](https://github.com/crfroehlich/cdn/raw/main/images/marlboro_man.jpg)_](https://github.com/crfroehlich/cdn/raw/main/images/marlboro_man.jpg)
 _C'mon?! What's the worst that could happen?_
 _Imagine: right now, you could be riding across a brush fire.. or maybe it's a dust storm.. or maybe.. who knows? Everything's mutable! Ride across anything you want. Of course, you are limited to desert colors (obviously)._
 

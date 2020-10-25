@@ -3,7 +3,8 @@ title: "How to Lose an Employee in 10 Seconds or Less"
 metaTitle: "How to Lose an Employee in 10 Seconds or Less"
 metaDate: 01/16/2017
 metaDraft: false
-tags: [ "management", "leadership", "hiring" ]
+tags: [ "management", "leadership", "hiring", "work" ]
+img: "cabrera_coat_of_arms.jpg"
 ---
 
 The answer, contrary to what one might naively assume, is profoundly simple: stare your employee squarely in the face and say quite plainly and with complete sincerity, "Go fuck yourself." So long as you do not make the mistake of apologizing, you will be rid of the parasitic worm leaching funds from your company’s precious coffers in record time. True, the conversation (should we elect to elevate this pitiful exchange of syllables to such exalted status) might last a few moments longer — but the fatal blow will have been dealt.

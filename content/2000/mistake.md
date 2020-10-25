@@ -3,7 +3,8 @@ title: "mistake"
 metaTitle: "mistake"
 metaDate: 4/20/2000
 metaDraft: false
-aliases: [ "/2000/04/mistake.html" ]
+tags: [ "poetry" ]
+img: "smile.jpeg"
 ---
 
 of all the days of my

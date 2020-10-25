@@ -3,8 +3,8 @@ title: "Yes!"
 metaTitle: "Yes!"
 metaDate: 4/25/2004
 metaDraft: false
-aliases: [ "/2004/04/yes.html" ]
-tags: ["letters","notes","lif","farewell"]
+tags: ["letters","notes","lïf","farewell"]
+img: "no_face.png"
 ---
 
 Friends,

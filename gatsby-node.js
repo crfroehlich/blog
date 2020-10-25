@@ -6,6 +6,8 @@ const startCase = require('lodash.startcase');
 
 const config = require('./config');
 
+const _ = require('lodash');
+
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions;
 
@@ -19,31 +21,64 @@ exports.createPages = ({ graphql, actions }) => {
                 node {
                   fields {
                     id
-                  }
-                  tableOfContents
-                  fields {
+                    title
                     slug
+                    date
+                    tags
+                    img
+                  }
+                  body
+                  tableOfContents
+                  parent {
+                    ... on File {
+                      relativePath
+                    }
+                  }
+                  frontmatter {
+                    metaTitle
+                    metaDescription
+                    metaDate
                   }
                 }
+              }
+            },
+            tagsGroup: allMdx(limit: 2000) {
+              group(field: frontmatter___tags) {
+                fieldValue
               }
             }
           }
         `
       ).then(result => {
         if (result.errors) {
-          console.log(result.errors); // eslint-disable-line no-console
+          console.error(result.errors); // eslint-disable-line no-console
           reject(result.errors);
         }
+
+        const blogTemplate = path.resolve('./src/templates/docs.js');
+
+        const tagTemplate = path.resolve("src/templates/tags.js")
 
         // Create blog posts pages.
         result.data.allMdx.edges.forEach(({ node }) => {
           createPage({
             path: node.fields.slug ? node.fields.slug : '/',
-            component: path.resolve('./src/templates/docs.js'),
+            component: blogTemplate,
             context: {
               id: node.fields.id,
             },
           });
+        });
+
+        // Make tag pages
+        result.data.tagsGroup.group.forEach(tag => {
+          createPage({
+            path: `/визуализации/${_.kebabCase(tag.fieldValue)}/`,
+            component: tagTemplate,
+            context: {
+              tag: tag.fieldValue,
+            },
+          })
         });
       })
     );
@@ -71,27 +106,30 @@ exports.onCreateBabelConfig = ({ actions }) => {
 exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions;
 
-  if (node.internal.type === `Mdx`) {
+try {
+  //if (node.internal.type === `Mdx`) {
     const parent = getNode(node.parent);
 
-    let value = parent.relativePath.replace(parent.ext, '');
+    if(parent) {
+      let value = parent.relativePath.replace(parent.ext, '');
 
-    if (value === 'index') {
-      value = '';
-    }
+      if (value === 'index') {
+        value = '';
+      }
 
-    if (config.gatsby && config.gatsby.trailingSlash) {
-      createNodeField({
-        name: `slug`,
-        node,
-        value: value === '' ? `/` : `/${value}/`,
-      });
-    } else {
-      createNodeField({
-        name: `slug`,
-        node,
-        value: `/${value}`,
-      });
+      if (config.gatsby && config.gatsby.trailingSlash) {
+        createNodeField({
+          name: `slug`,
+          node,
+          value: value === '' ? `/` : `/${value}/`,
+        });
+      } else {
+        createNodeField({
+          name: `slug`,
+          node,
+          value: `/${value}`,
+        });
+      }
     }
 
     createNodeField({
@@ -100,16 +138,35 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
       value: node.id,
     });
 
-    createNodeField({
-      name: 'title',
-      node,
-      value: node.frontmatter.title || startCase(parent.name),
-    });
+    if(node.frontmatter) {
+      createNodeField({
+        name: 'title',
+        node,
+        value: node.frontmatter.title || startCase(parent.name),
+      });
 
-    createNodeField({
-      name: 'date',
-      node,
-      value: new Date(node.frontmatter.metaDate),
-    });
+      createNodeField({
+        name: 'date',
+        node,
+        value: new Date(node.frontmatter.metaDate),
+      });
+
+      createNodeField({
+        name: 'tags',
+        node,
+        value: (node.frontmatter.tags) ? node.frontmatter.tags.toString().split(',') : [],
+      });
+
+      const imagePath = node.frontmatter.img || 'card.png';
+
+      createNodeField({
+        name: 'img',
+        node,
+        value: `https://github.com/crfroehlich/cdn/raw/main/images/${imagePath}`,
+      });
+    }
+  } catch(e) {
+    console.error(e);
+    //throw e;
   }
 };

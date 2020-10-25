@@ -3,7 +3,8 @@ title: "on bubbles"
 metaTitle: "on bubbles"
 metaDate: 4/27/2000
 metaDraft: false
-aliases: [ "/2000/04/on-bubbles.html" ]
+tags: [ "poetry" ]
+img: "house_on_sand.jpg"
 ---
 
 How would one justify the extent of the madness -
@@ -38,7 +39,7 @@ How would one justify the extent of the madness -
     vanquish
 
   And when the thousands of admirers who had once graced
-    the presence of the house and worn her into something  
+    the presence of the house and worn her into something 
     fashionable suddenly become as mist, and rooms so long
     unused and filled with vague memories of once important things
     become too much to look at

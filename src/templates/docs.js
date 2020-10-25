@@ -1,130 +1,34 @@
 import React, { Component } from 'react';
-import Helmet from 'react-helmet';
 import { graphql } from 'gatsby';
 import MDXRenderer from 'gatsby-plugin-mdx/mdx-renderer';
+import NotFound from '../components/NotFound';
+import Chips from '../components/Chips';
+import PageWrapper from '../components/PageWrapper';
+import Cards from '../components/Cards';
 
-import { Layout, Link } from '$components';
-import NextPrevious from '../components/NextPrevious';
-import config from '../../config';
-import { Edit, StyledHeading, StyledMainWrapper } from '../components/styles/Docs';
-
-const forcedNavOrder = config.sidebar.forcedNavOrder;
-
-export default class MDXRuntimeTest extends Component {
+export default class BlogDocument extends Component {
   render() {
 
-    const { data } = this.props;
+    const { data, path } = this.props;
 
-    if (!data || !data.site) {
-      return (
-        <Layout {...this.props}>
-        <Helmet>
-          {metaTitle ? <title>{metaTitle}</title> : null}
-          {metaTitle ? <meta name="title" content={metaTitle} /> : null}
-          {metaDescription ? <meta name="description" content={metaDescription} /> : null}
-          {metaTitle ? <meta property="og:title" content={metaTitle} /> : null}
-          {metaDescription ? <meta property="og:description" content={metaDescription} /> : null}
-          <link rel="canonical" href={canonicalUrl} />
-        </Helmet>
-        <div className={'titleWrapper'}>
-          <StyledHeading>Trail Closed for Maintenance</StyledHeading>
-        </div>
-        <StyledMainWrapper>Sadly, your journey ends here. Go back to the beginning; consider the navel and its many wonders; cast your gaze inward and skyward and outbetween.</StyledMainWrapper>
-        <div className={'addPaddTopBottom'}>
-          <NextPrevious mdx={mdx} nav={nav} />
-        </div>
-      </Layout>);
+    const { mdx } = data;
+
+    const decodedPath = (decodeURIComponent) ? decodeURIComponent(path) : path;
+
+    if(decodedPath === '/визуализации') {
+      return <Chips props={this.props} />;
+    } else if(decodedPath.startsWith('/визуализации')) {
+      return <Cards props={this.props} />;
+    } else if (!data.site || !mdx) {
+      return <NotFound props={this.props} />;
+    } else {
+      return <PageWrapper
+        props={this.props}
+        pageContent={<MDXRenderer>{(mdx)? mdx.body : 'text'}</MDXRenderer>}
+        showGithub={true}
+        showComments={true}
+      />
     }
-    const {
-      allMdx,
-      mdx,
-      site: {
-        siteMetadata: { docsLocation, title },
-      },
-    } = data;
-
-    const gitHub = require('../components/images/github.svg');
-
-    const navItems = allMdx.edges
-      .map(({ node }) => node.fields.slug)
-      .filter(slug => slug !== '/')
-      .reverse()
-      .reduce(
-        (acc, cur) => {
-          if (forcedNavOrder.find(url => url === cur)) {
-            return { ...acc, [cur]: [cur] };
-          }
-
-          let prefix = cur.split('/')[1];
-
-          if (config.gatsby && config.gatsby.trailingSlash) {
-            prefix = prefix + '/';
-          }
-
-          if (prefix && forcedNavOrder.find(url => url === `/${prefix}`)) {
-            return { ...acc, [`/${prefix}`]: [...acc[`/${prefix}`], cur] };
-          } else {
-            return { ...acc, items: [...acc.items, cur] };
-          }
-        },
-        { items: [] }
-      );
-
-    const nav = forcedNavOrder
-      .reduce((acc, cur) => {
-        return acc.concat(navItems[cur]);
-      }, [])
-      .concat(navItems.items)
-      .map(slug => {
-        if (slug) {
-          const { node } = allMdx.edges.find(({ node }) => node.fields.slug === slug);
-          return node.fields;
-        }
-      }).sort((a, b) => new Date(b.date) - new Date(a.date));
-    // meta tags
-    const metaTitle = mdx.frontmatter.metaTitle;
-    const metaDescription = mdx.frontmatter.metaDescription;
-    const date = mdx.frontmatter.metaDate;
-
-    let canonicalUrl = config.gatsby.siteUrl;
-
-    canonicalUrl =
-      config.gatsby.pathPrefix !== '/' ? canonicalUrl + config.gatsby.pathPrefix : canonicalUrl;
-    canonicalUrl = canonicalUrl + mdx.fields.slug;
-
-    return (
-      <Layout {...this.props}>
-        <Helmet>
-          {metaTitle ? <title>{metaTitle}</title> : null}
-          {metaTitle ? <meta name="title" content={metaTitle} /> : null}
-          {metaDescription ? <meta name="description" content={metaDescription} /> : null}
-          {metaTitle ? <meta property="og:title" content={metaTitle} /> : null}
-          {metaDescription ? <meta property="og:description" content={metaDescription} /> : null}
-          {metaTitle ? <meta property="twitter:title" content={metaTitle} /> : null}
-          {metaDescription ? (
-            <meta property="twitter:description" content={metaDescription} />
-          ) : null}
-          <link rel="canonical" href={canonicalUrl} />
-        </Helmet>
-        <div className={'titleWrapper'}>
-          <StyledHeading>{mdx.fields.title}<span></span></StyledHeading>
-          <Edit className={'mobileView'}>
-            {docsLocation && (
-              <Link className={'gitBtn'} to={`${docsLocation}/${mdx.parent.relativePath}`}>
-                <img src={gitHub} alt={'Github logo'} /> Source
-              </Link>
-            )}
-          </Edit>
-        </div>
-        <StyledMainWrapper>
-          <MDXRenderer>{mdx.body}</MDXRenderer>
-          <i>{date}</i>
-        </StyledMainWrapper>
-        <div className={'addPaddTopBottom'}>
-          <NextPrevious mdx={mdx} nav={nav} />
-        </div>
-      </Layout>
-    );
   }
 }
 
@@ -142,6 +46,8 @@ export const pageQuery = graphql`
         title
         slug
         date
+        tags
+        img
       }
       body
       tableOfContents
@@ -160,11 +66,30 @@ export const pageQuery = graphql`
       edges {
         node {
           fields {
-            slug
+            id
             title
+            slug
             date
+            tags
+            img
+          }
+          body
+          tableOfContents
+          parent {
+            ... on File {
+              relativePath
+            }
+          }
+          frontmatter {
+            metaTitle
+            metaDescription
+            metaDate
           }
         }
+      }
+      group(field: frontmatter___tags) {
+        fieldValue
+        totalCount
       }
     }
   }

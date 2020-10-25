@@ -3,7 +3,8 @@ title: "Code Generation Fail: An all the king’s horses tragedy"
 metaTitle: "Code Generation Fail: An all the king’s horses tragedy"
 metaDate: 07/10/2019
 metaDraft: false
-tags: [ "metadata", "retrospective", "code generation" ]
+tags: [ "metadata", "retrospective", "code", "generation" ]
+img: "all_the_kings_horses.jpg"
 ---
 
 Sometimes best intentions and good ole fashioned elbow grease are no match against the tyrannical fist of Reality. In my [previous post](https://medium.com/@christopher.r.froehlich/code-generation-connecting-t4-to-entity-framework-core-654e2a0933e8), I discussed some of the initial ambitions and achievements in my attempt to convert the Entity Framework Core + MVC project into a dynamically generated template using T4. The good news? T4 is a perfectly adequate way to generate code from templates. The bad news? There is no way to make this completely integrated in a pure .NET Core project. What does this mean, and why is this a problem?

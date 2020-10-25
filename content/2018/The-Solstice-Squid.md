@@ -4,6 +4,7 @@ metaTitle: "The Solstice Squid"
 metaDate: 12/20/2018
 metaDraft: false
 tags: [ "solstice", "winter", "squid" ]
+img: "code_generation.png"
 ---
 
 The Squid (TS) lives at the South Pole; this much we know. How she came to live there or her reasons for making this her permanent place of residence, we do not; but we can perhaps draw some conclusions for her behavior from this simple fact.

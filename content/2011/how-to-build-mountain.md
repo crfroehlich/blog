@@ -3,17 +3,17 @@ title: "How to Build a Mountain"
 metaTitle: "How to Build a Mountain"
 metaDate: 5/26/2011
 metaDraft: false
-aliases: [ "/2011/05/how-to-build-mountain.html" ]
-tags: ["mountain","diy","standing desk"]
+tags: ["mountain","diy","standing", "desk"]
+img: "poka_dot_mountain.jpeg"
 ---
 
-The decision to climb [Mount Vesuvius](http://en.wikipedia.org/wiki/Mount_Vesuvius) probably does not come lightly to most. Our inner Ahab thirsts for our outer [toska](http://www.wordnik.com/words/toska), but what to do?  
-  
-  
-Fortunately, Olympus is [easier to build than to find](http://www.cfa.harvard.edu/news/2011/pr201116.html).   
-  
-  
-First, you need a free stretch of wall approximately 5' wide by 7' tall. This of course will vary according to your stature and appetite for adventure, so you should measure accordingly.  
+The decision to climb [Mount Vesuvius](http://en.wikipedia.org/wiki/Mount_Vesuvius) probably does not come lightly to most. Our inner Ahab thirsts for our outer [toska](http://www.wordnik.com/words/toska), but what to do?
+
+
+Fortunately, Olympus is [easier to build than to find](http://www.cfa.harvard.edu/news/2011/pr201116.html). 
+
+
+First, you need a free stretch of wall approximately 5' wide by 7' tall. This of course will vary according to your stature and appetite for adventure, so you should measure accordingly.
 
 1.  Standing with your legs apart, even with your shoulders. Hold an [imaginary notepad](http://www.amazon.com/She-Liked-Imaginary-Men-Notepad/dp/0811839656) in your hands, with your elbows in as if to write.
 2.  Measure (probably with the assistance of another person) the distance between your elbows. This (plus 6-12") is the width of your space.
@@ -54,7 +54,7 @@ Second, assembly the artillery.
 
 Third, call to arms.
 
-  
+
 
 The entire process should take no longer than 30-45 minutes. 
 
@@ -73,16 +73,16 @@ The entire process should take no longer than 30-45 minutes. 
 
 Fourth, regroup and flank.
 
-  
+
 
 You are now probably standing too close or uncomfortably too far away from your monitor. You need to extend the plank and free your visual cortex. This is likely a one-size-fits-none operation. I originally estimated that 36" was the ideal distance from standing position to monitor, but this was far too great on first pass. I had to slim down my keyboard platform to just under 24". To minimize your effort, use your adjustable height chair by placing it on a stool or raised platform. Place your keyboard on the seat of the chair, adjust to the right height, and move back and forth from your mountain until you determine the optimum distance.
 
-  
 
-Cut your plank accordingly. Leave a secondary piece at least 6"x3" to secure it against your keyboard platform. Align the two and drill aligned holes. Place the keyboard platform atop the heavy load shelf for the keyboard and hold the secondary piece below while you secure with bolts, washers and nuts. The best part of this design is that you can still adjust the entire platform without any dissembling.   
-  
-  
-Fifth. Grab your [harpoon gun](http://www.flickr.com/photos/dystopos/91980378/), your climbing gear, and a [towel](http://www.towelday.org/).   
-  
-  
+
+Cut your plank accordingly. Leave a secondary piece at least 6"x3" to secure it against your keyboard platform. Align the two and drill aligned holes. Place the keyboard platform atop the heavy load shelf for the keyboard and hold the secondary piece below while you secure with bolts, washers and nuts. The best part of this design is that you can still adjust the entire platform without any dissembling. 
+
+
+Fifth. Grab your [harpoon gun](http://www.flickr.com/photos/dystopos/91980378/), your climbing gear, and a [towel](http://www.towelday.org/). 
+
+
 Life has arrived you have arrived at destination life has arrived.

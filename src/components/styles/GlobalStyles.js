@@ -1,8 +1,10 @@
 import { injectGlobal } from 'emotion';
+import 'rmwc/dist/styles';
 
 export const baseStyles = injectGlobal`
   @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap');
   @import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600&display=swap');
+  @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
   * {
     margin: 0;
     padding: 0;
@@ -264,10 +266,6 @@ export const baseStyles = injectGlobal`
     border: 0;
     display: flex;
     align-items: center;
-    box-shadow: -1px 0px 4px 1px rgba(175, 158, 232, 0.4);
-    -webkit-box-shadow: -1px 0px 4px 1px rgba(175, 158, 232, 0.4);
-    -moz-box-shadow: -1px 0px 4px 1px rgba(175, 158, 232, 0.8);
-    -o-box-shadow: -1px 0px 4px 1px rgba(175, 158, 232, 0.4);
     z-index: 1;
     padding: 15px;
     position: relative;
@@ -320,7 +318,7 @@ export const baseStyles = injectGlobal`
     border: 0 !important;
     background-color: rgb(245, 247, 249); /* !important; */
   }
-  
+
   blockquote {
     color: rgb(116, 129, 141);
     margin: 0px 0px 24px;
@@ -515,9 +513,8 @@ export const baseStyles = injectGlobal`
   .titleWrapper {
     display: flex;
     align-items: center;
-    padding-bottom: 40px;
-    border-bottom: 1px solid rgb(230, 236, 241);
-    margin-bottom: 32px;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
   }
 
   .gitBtn {
@@ -558,6 +555,23 @@ export const baseStyles = injectGlobal`
     font-weight: 400;
   }
 
+  .blogDate {
+    text-alight: right;
+    float: right;
+    display: block;
+    margin-left: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    font-size: large;
+    color: #1ed3c6;
+  }
+
+  .truncate {
+    width: 240px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
   /* **************************** */
 
   .nextRightWrapper {

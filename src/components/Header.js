@@ -4,7 +4,7 @@ import { StaticQuery, graphql } from 'gatsby';
 import GitHubButton from 'react-github-btn';
 import Link from './link';
 import Loadable from 'react-loadable';
-
+import { Icon } from 'rmwc';
 import config from '../../config.js';
 import LoadingProvider from './mdxComponents/loading';
 import { DarkModeSwitch } from './DarkModeSwitch';
@@ -80,23 +80,17 @@ const Header = ({ location, isDarkThemeActive, toggleActiveTheme }) => (
 
       const twitter = require('./images/twitter.svg');
 
-      const discordBrandsBlock = require('./images/discord-brands-block.svg');
-
-      const twitterBrandsBlock = require('./images/twitter-brands-block.svg');
-
       const {
         site: {
           siteMetadata: { headerTitle, githubUrl, helpUrl, tweetText, logo, headerLinks },
         },
       } = data;
 
-      const finalLogoLink = logo.link !== '' ? logo.link : 'https://blog.luddites.me/';
-
       return (
         <div className={'navBarWrapper'}>
           <nav className={'navBarDefault'}>
             <div className={'navBarHeader'}>
-              <Link to={finalLogoLink} className={'navBarBrand'}>
+              <Link to={'/'} className={'navBarBrand'}>
                 <img
                   className={'img-responsive displayInline'}
                   src={logo.image !== '' ? logo.image : logoImg}
@@ -129,13 +123,11 @@ const Header = ({ location, isDarkThemeActive, toggleActiveTheme }) => (
                   if (link.link !== '' && link.text !== '') {
                     return (
                       <li key={key}>
-                        <a
+                        <Link
                           className="sidebarLink"
-                          href={link.link}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          dangerouslySetInnerHTML={{ __html: link.text }}
-                        />
+                          to={link.link}
+                          title={link.text }
+                        >{link.text}</Link>
                       </li>
                     );
                   }
@@ -174,13 +166,11 @@ const Header = ({ location, isDarkThemeActive, toggleActiveTheme }) => (
                   <li className={'githubBtn'}>
                     <GitHubButton
                       href={githubUrl}
-                      data-show-count="true"
-                      aria-label="Star on GitHub"
-                    >
-                      Star
-                    </GitHubButton>
+                      aria-label="Follow"
+                    />
                   </li>
                 ) : null}
+                <li><Link to={'/rss.xml'}><Icon icon="rss_feed" /></Link></li>
                 <li>
                   <DarkModeSwitch
                     isDarkThemeActive={isDarkThemeActive}

@@ -9,7 +9,7 @@ const config = {
   header: {
     logo: 'https://raw.githubusercontent.com/crfroehlich/cdn/main/images/luddite_logo.svg',
     logoLink: 'https://github.com/crfroehlich/',
-    title: 'LUDDITES, INC.',
+    title: 'ЛУДДИТЫ, INC.',
     githubUrl: 'https://github.com/crfroehlich/blog',
     helpUrl: '',
     tweetText: '',
@@ -20,7 +20,7 @@ const config = {
 		      </div>
 		    </a>
 		  </li>`,
-    links: [{ text: '', link: '' }],
+    links: [{ text: 'визуализации', link: '/визуализации' }],
     search: {
       enabled: true,
       indexName: 'blog',

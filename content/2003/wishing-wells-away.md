@@ -3,8 +3,8 @@ title: "Wishing Wells Away"
 metaTitle: "Wishing Wells Away"
 metaDate: 11/5/2003
 metaDraft: false
-aliases: [ "/2003/11/wishing-wells-away.html" ]
-tags: ["lif"]
+tags: ["lïf"]
+img: "rosebud.jpg"
 ---
 
 Comrades,

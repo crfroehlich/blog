@@ -3,7 +3,8 @@ title: "blastphemy"
 metaTitle: "blastphemy"
 metaDate: 5/1/2000
 metaDraft: false
-aliases: [ "/2000/05/blastphemy.html" ]
+tags: [ "blastphemy", "poetry" ]
+img: "blasphemy.jpg"
 ---
 
 Of all the emptiness and disdain -

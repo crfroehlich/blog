@@ -27,12 +27,12 @@ const SidebarLayout = ({ location }) => (
       let finalNavItems;
 
       if (allMdx.edges !== undefined && allMdx.edges.length > 0) {
-        const navItems = allMdx.edges.map((item, index) => {
+        allMdx.edges.map((item, index) => {
           let innerItems;
 
           if (item !== undefined) {
             if (
-              item.node.fields.slug === location.pathname ||
+              location.pathname.startsWith(item.node.fields.slug) ||
               config.gatsby.pathPrefix + item.node.fields.slug === location.pathname
             ) {
               if (item.node.tableOfContents.items) {
@@ -55,15 +55,16 @@ const SidebarLayout = ({ location }) => (
           }
         });
       }
-
       if (finalNavItems && finalNavItems.length) {
         return (
-          <Sidebar>
-            <ul className={'rightSideBarUL'}>
-              <li className={'rightSideTitle'}>CONTENTS</li>
-              {finalNavItems}
-            </ul>
-          </Sidebar>
+          <div>
+            <Sidebar>
+              <ul className={'rightSideBarUL'}>
+                <li className={'rightSideTitle'}>CONTENTS</li>
+                {finalNavItems}
+              </ul>
+            </Sidebar>
+          </div>
         );
       } else {
         return (

@@ -3,7 +3,8 @@ title: "Remoting: It’s even better and even worse than you expected"
 metaTitle: "Remoting: It’s even better and even worse than you expected"
 metaDate: 05/12/2018
 metaDraft: false
-tags: [ "remote work", "tech" ]
+tags: [ "remote", "work", "tech" ]
+img: "artic_station.jpg"
 ---
 
 Billions of gallons of ink have been spilled on this subject. Google if you want any other perspective. I think this one angle has received…
