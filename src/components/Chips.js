@@ -3,7 +3,6 @@ import PageWrapper from './PageWrapper';
 import KeywordCloud from 'react-keyword-cloud';
 
 export const Chips = ({ props }) => {
-  console.log(props)
   let {
     data: {
       allMdx: {

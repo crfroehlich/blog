@@ -113,8 +113,9 @@ export const PageWrapper = ({ props, pageContent, pageTitle, showGithub, showCom
 
   if(tags && tags.length > 0) {
     tags.forEach(t => {
-      window.allMdxGroup = allMdx.group;
-      chipMap[t] = allMdx.group.find(group => group.fieldValue === t).totalCount;
+      const tag = allMdx.group.find(group => group.fieldValue === t);
+
+      chipMap[t] = (tag) ? tag.totalCount : 1;
     })
   }
 

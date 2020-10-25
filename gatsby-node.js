@@ -167,9 +167,6 @@ try {
     }
   } catch(e) {
     console.error(e);
-    throw e;
+    //throw e;
   }
-  // } else {
-  //   console.log(['node', node])
-  // }
 };

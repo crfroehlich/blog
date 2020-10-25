@@ -4,7 +4,6 @@ import PageWrapper from './PageWrapper';
 import { Tooltip, CardMedia, Card, CardPrimaryAction, Typography, Grid, GridCell } from 'rmwc'
 
 export const Cards = ({ props }) => {
-  console.log(props)
   let {
     data: {
       allMdx: {
