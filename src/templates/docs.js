@@ -15,8 +15,9 @@ export default class BlogDocument extends Component {
 
     const decodedPath = (decodeURIComponent) ? decodeURIComponent(path) : path;
 
-    if(decodedPath === '/визуализации') {
+    console.log(this.props)
 
+    if(decodedPath === '/визуализации') {
       return <Chips props={this.props} />;
     } else if(decodedPath.startsWith('/визуализации')) {
       return <Cards props={this.props} />;

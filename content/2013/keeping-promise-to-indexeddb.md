@@ -3,7 +3,7 @@ title: "Keeping a Promise to IndexedDb"
 metaTitle: "Keeping a Promise to IndexedDb"
 metaDate: 8/18/2013
 metaDraft: false
-tags: ["persistence","grunt","zen","code","promises","lïf"]
+tags: ["persistence","zen","code","promises","lïf"]
 img: "trust_building.jpg"
 ---
 

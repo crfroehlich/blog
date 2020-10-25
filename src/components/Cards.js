@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from './link';
 import PageWrapper from './PageWrapper';
-import { Elevation, CardActions, CardActionButton, CardActionButtons, CardAction, CardActionItems, CardActionItem, CardActionIcon, CardActionIcons, CardMedia, Card, CardPrimaryAction, Typography, Grid, GridCell } from 'rmwc'
+import { Tooltip, CardMedia, Card, CardPrimaryAction, Typography, Grid, GridCell } from 'rmwc'
 
 export const Cards = ({ props }) => {
   console.log(props)
@@ -18,50 +18,69 @@ export const Cards = ({ props }) => {
 
   const title = parts[parts.length-1];
 
-  const [elevation, setElevation] = React.useState(0);
-
   const cards = (<Grid>
     {edges.map((e, i) => (
-        <GridCell span={8} key={`gridcell_${i}_${e.node.fields.id}`}>
+        <GridCell span={6} key={`gridcell_${i}_${e.node.fields.id}`}>
           <Link to={`${e.node.fields.slug}`}>
-            <Elevation z={elevation}
-              transition
-              onMouseOver={() => setElevation(24)}
-              onMouseOut={() => setElevation(0)}
-            >
-            <Card style={{ width: '20rem', height: '22rem' }}>
+          <Tooltip
+            align={'right'}
+            enterDelay={1000}
+            content={
+              <div
+                style={{
+                  display: 'flex',
+                  //alignItems: 'center',
+                  //justifyContent: 'center',
+                  background: '#ede7f3',
+                  width: '20rem',
+                  //height: '8rem',
+                  color: 'black',
+                  //borderRadius: '1px',
+                  //margin: '0 -3px'
+                  padding: '1rem,'
+                }}
+              >
+              <CardPrimaryAction>
+                  <div style={{ padding: '1rem' }}>
+                    <Typography use="headline5" tag="div">
+                      {e.node.fields.title}
+                    </Typography>
+                    <Typography use="body1" tag="p" theme="textSecondaryOnBackground">
+                      {e.node.excerpt}
+                    </Typography>
+                  </div>
+                </CardPrimaryAction>
+              </div>
+            }>
+            <Card style={{ width: '15rem' }}>
                 <CardPrimaryAction>
                   <CardMedia
                     sixteenByNine
-                    my-prop={e.node.fields.img}
                     style={{
                       backgroundImage: `url(${e.node.fields.img})`,
                       backgroundSize: 'fit'
                     }}
                   >
+                  <Typography
+                      use="subtitle2 truncate"
+                      tag="div"
+                      theme="textPrimaryOnDark"
+                      style={{
+                        padding: '0.5rem 1rem',
+                        backgroundImage:
+                          'linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.5) 100%)',
+                        bottom: '0',
+                        left: '0',
+                        right: '0',
+                        position: 'absolute'
+                      }}
+                    >
+                      {e.node.fields.title}
+                    </Typography>
                   </CardMedia>
-                  <Typography use="headline6"
-                    tag="h3"
-                    style={{
-                      color: '#1cd3c6',
-                      textAlign: 'left',
-                      paddingLeft: '1rem',
-                      //WebkitTextStroke: '0.02em black'
-                    }}>
-                    {e.node.fields.title}
-                  </Typography>
-                    <div style={{ padding: '1rem 1rem 1rem 1rem' }}>
-                      <Typography
-                        use="body1"
-                        tag="div"
-                        theme="textSecondaryOnBackground"
-                      >
-                        { e.node.excerpt }
-                      </Typography>
-                  </div>
                 </CardPrimaryAction>
               </Card>
-            </Elevation>
+            </Tooltip>
           </Link>
         </GridCell>
     ))}

@@ -109,6 +109,15 @@ export const PageWrapper = ({ props, pageContent, pageTitle, showGithub, showCom
     })
     .sort((a, b) => new Date(b.date) - new Date(a.date));
 
+  const chipMap = {};
+
+  if(tags && tags.length > 0) {
+    tags.forEach(t => {
+      window.allMdxGroup = allMdx.group;
+      chipMap[t] = allMdx.group.find(group => group.fieldValue === t).totalCount;
+    })
+  }
+
   const chips = (<ChipSet>
     {tags.map(tag => (
       <Link to={`/визуализации/${kebabCase(tag)}`}
@@ -120,7 +129,7 @@ export const PageWrapper = ({ props, pageContent, pageTitle, showGithub, showCom
             id={tag}
             label={tag}
           />
-          <Badge label={'0'} style={{ right: '-0.3rem', top: '-0.3rem' }}/>
+          <Badge label={chipMap[tag]} style={{ backgroundColor: 'cadetblue', right: '-0.3rem', top: '-0.3rem' }}/>
         </BadgeAnchor>
       </Link>
     ))}

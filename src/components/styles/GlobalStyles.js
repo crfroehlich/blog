@@ -565,6 +565,13 @@ export const baseStyles = injectGlobal`
     font-size: large;
     color: #1ed3c6;
   }
+
+  .truncate {
+    width: 240px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
   /* **************************** */
 
   .nextRightWrapper {
