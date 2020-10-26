@@ -28,6 +28,7 @@
     "gatsby-plugin-manifest": "^2.4.35",
     "gatsby-plugin-mdx": "^1.2.51",
     "gatsby-plugin-offline": "^3.2.37",
+    "gatsby-plugin-playground": "^1.0.6",
     "gatsby-plugin-react-helmet": "^3.3.14",
     "gatsby-plugin-remove-serviceworker": "^1.0.0",
     "gatsby-plugin-sharp": "^2.6.43",
@@ -64,7 +65,7 @@
     "serve": "gatsby build && gatsby serve",
     "format": "prettier --write \"src/**/*.{js,jsx,css,json}\"",
     "lint": "eslint --fix \"src/**/*.{js,jsx}\"",
-    "deploy": "yarn build && node publish.js"
+    "deploy": "yarn build && node build/publish.js"
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",

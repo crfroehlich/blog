@@ -6682,6 +6682,7 @@ __metadata:
     gatsby-plugin-manifest: ^2.4.35
     gatsby-plugin-mdx: ^1.2.51
     gatsby-plugin-offline: ^3.2.37
+    gatsby-plugin-playground: ^1.0.6
     gatsby-plugin-react-helmet: ^3.3.14
     gatsby-plugin-remove-serviceworker: ^1.0.0
     gatsby-plugin-remove-trailing-slashes: ^2.3.13
@@ -12132,6 +12133,17 @@ fsevents@~2.1.2:
   languageName: node
   linkType: hard
 
+"gatsby-plugin-playground@npm:^1.0.6":
+  version: 1.0.6
+  resolution: "gatsby-plugin-playground@npm:1.0.6"
+  dependencies:
+    "@babel/runtime": ^7.0.0
+    graphql-playground-middleware-express: ^1.7.8
+    lodash: ^4.17.10
+  checksum: 1df3250d9761b220c97e21b477975b6d15ae7f9723664f2b864d38de0eb718d7e710310f14c9152c6125280ac9eebb897751376c87181a7bf8662d56820a8169
+  languageName: node
+  linkType: hard
+
 "gatsby-plugin-react-helmet@npm:^3.3.14":
   version: 3.3.14
   resolution: "gatsby-plugin-react-helmet@npm:3.3.14"
@@ -13189,6 +13201,15 @@ fsevents@~2.1.2:
   languageName: node
   linkType: hard
 
+"graphql-playground-html@npm:^1.6.29":
+  version: 1.6.29
+  resolution: "graphql-playground-html@npm:1.6.29"
+  dependencies:
+    xss: ^1.0.6
+  checksum: 3958fd648b255ee3605c2e5c4899cc2b4eb593d4538dfaf82886fa032ee4bf81a52860adfd8ec6b8fba5af23397270dba96d51efae26a20e3f79c3af86775563
+  languageName: node
+  linkType: hard
+
 "graphql-playground-middleware-express@npm:^1.7.18":
   version: 1.7.21
   resolution: "graphql-playground-middleware-express@npm:1.7.21"
@@ -13197,6 +13218,17 @@ fsevents@~2.1.2:
   peerDependencies:
     express: ^4.16.2
   checksum: 6308c914fa93d6646b8d3a3d798479c3ef4d5aa530e62573a94f1e81e27cc4c903f15ea6a32a70f622b85396534ca47b0f4e2216896756b41368b314cd8978c1
+  languageName: node
+  linkType: hard
+
+"graphql-playground-middleware-express@npm:^1.7.8":
+  version: 1.7.22
+  resolution: "graphql-playground-middleware-express@npm:1.7.22"
+  dependencies:
+    graphql-playground-html: ^1.6.29
+  peerDependencies:
+    express: ^4.16.2
+  checksum: aa3c7cdca1f429bc6b6c2597290738141b015cf9a04ea859c2d9b58a825534dc677e4b1db51f9a0e12b76c447314301038d9a10a0bde2c1efe0a24201ee1b3e9
   languageName: node
   linkType: hard
 

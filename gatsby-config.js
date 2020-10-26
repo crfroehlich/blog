@@ -1,143 +1,29 @@
 require('dotenv').config();
-const queries = require('./src/utils/algolia');
 
 const config = require('./config');
 
-const plugins = [
-  'gatsby-plugin-sitemap',
-  'gatsby-plugin-sharp',
-  'gatsby-transformer-remark',
-  {
-    resolve: `gatsby-plugin-layout`,
-    options: {
-        component: require.resolve(`./src/templates/docs.js`)
-    }
-  },
+let plugins = [
   'gatsby-plugin-emotion',
+  'gatsby-plugin-playground',
+  'gatsby-plugin-playground',
   'gatsby-plugin-react-helmet',
-  {
-    resolve: 'gatsby-source-filesystem',
-    options: {
-      name: 'docs',
-      path: `${__dirname}/content/`
-    }
-  },
-  {
-    resolve: 'gatsby-plugin-mdx',
-    options: {
-      gatsbyRemarkPlugins: [
-        {
-          resolve: 'gatsby-remark-images',
-          options: {
-            maxWidth: 400,
-            sizeByPixelDensity: true
-          }
-        },
-        {
-          resolve: 'gatsby-remark-copy-linked-files'
-        }
-      ],
-      extensions: ['.mdx', '.md']
-    }
-  },
-  {
-    resolve: `gatsby-plugin-gtag`,
-    options: {
-      // your google analytics tracking id
-      trackingId: config.gatsby.gaTrackingId,
-      // Puts tracking script in the head instead of the body
-      head: true,
-      // enable ip anonymization
-      anonymize: false,
-    },
-  },
-  {
-    resolve: `gatsby-plugin-feed`,
-    options: {
-      query: `
-        {
-          site {
-            siteMetadata {
-              title
-              description
-              siteUrl
-              site_url: siteUrl
-            }
-          }
-        }
-      `,
-      feeds: [
-        {
-          serialize: ({ query: { site, allMarkdownRemark } }) => {
-            return allMarkdownRemark.edges.map(edge => {
-              return Object.assign({}, edge.node.frontmatter, {
-                description: edge.node.excerpt,
-                date: edge.node.fields.date,
-                url: site.siteMetadata.siteUrl + edge.node.fields.slug,
-                guid: site.siteMetadata.siteUrl + edge.node.fields.slug,
-                custom_elements: [{ 'content:encoded': edge.node.html }],
-              })
-            })
-          },
-          query: `
-            {
-              allMarkdownRemark(
-                sort: { order: DESC, fields: [fields___date] },
-              ) {
-                edges {
-                  node {
-                    excerpt
-                    html
-                    fields {
-                      slug
-                      date
-                      title
-                    }
-                  }
-                }
-              }
-            }
-          `,
-          output: '/rss.xml',
-          title: 'Hiking My Desk RSS Feed',
-        },
-      ],
-    },
-  },
+  'gatsby-plugin-remove-trailing-slashes',
+  'gatsby-plugin-sharp',
+  'gatsby-plugin-sitemap',
+  'gatsby-transformer-remark',
 ];
 
-// check and add algolia
-if (config.header.search && config.header.search.enabled) {
-  plugins.push({
-    resolve: `gatsby-plugin-algolia`,
-    options: {
-      appId: config.header.search.algoliaAppId, // algolia application id
-      apiKey: config.header.search.algoliaAdminKey, // algolia admin key to index
-      queries,
-      chunkSize: 10000, // default: 1000
-    }}
-  )
-}
-// check and add pwa functionality
-if (config.pwa && config.pwa.enabled && config.pwa.manifest) {
-  plugins.push({
-      resolve: `gatsby-plugin-manifest`,
-      options: {...config.pwa.manifest},
-  });
-  plugins.push({
-    resolve: 'gatsby-plugin-offline',
-    options: {
-      appendScript: require.resolve(`./src/custom-sw-code.js`),
-    },
-  });
-} else {
-  plugins.push('gatsby-plugin-remove-serviceworker');
-}
-
-// check and remove trailing slash
-if (config.gatsby && !config.gatsby.trailingSlash) {
-  plugins.push('gatsby-plugin-remove-trailing-slashes');
-}
+[
+  'content',
+  'google',
+  'layout',
+  'mdx',
+  'offline',
+  'rss',
+  'search',
+].forEach(p => {
+  plugins = plugins.concat(require(`./build/${p}`));
+})
 
 module.exports = {
   pathPrefix: config.gatsby.pathPrefix,

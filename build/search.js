@@ -1,4 +1,4 @@
-const config = require('../../config.js');
+const config = require('../config');
 
 const pageQuery = `{
   pages: allMdx {
@@ -13,7 +13,7 @@ const pageQuery = `{
         }
         frontmatter {
           title
-          metaDescription 
+          metaDescription
         }
         excerpt(pruneLength: 50000)
       }
@@ -41,4 +41,18 @@ const queries = [
   },
 ];
 
-module.exports = queries;
+const search = [];
+
+if (config.header.search && config.header.search.enabled) {
+  search.push({
+    resolve: `gatsby-plugin-algolia`,
+    options: {
+      appId: config.header.search.algoliaAppId, // algolia application id
+      apiKey: config.header.search.algoliaAdminKey, // algolia admin key to index
+      queries,
+      chunkSize: 10000, // default: 1000
+    }}
+  )
+}
+
+module.exports = search;
