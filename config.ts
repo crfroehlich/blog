@@ -1,5 +1,4 @@
-
-const config = {
+export const config = {
   gatsby: {
     pathPrefix: '/',
     siteUrl: 'https://blog.luddites.me',
@@ -40,7 +39,7 @@ const config = {
   },
   siteMetadata: {
     title: 'Christopher Froehlich\'s Blog | Hiking My Desk',
-    description: 'A blog apart ',
+    description: 'A blog apart',
     ogImage: null,
     docsLocation: 'https://github.com/crfroehlich/blog/tree/main/content',
     favicon: 'https://raw.githubusercontent.com/crfroehlich/cdn/main/images/luddite_favicon.svg',
@@ -65,5 +64,3 @@ const config = {
     },
   },
 };
-
-module.exports = config;

@@ -1,4 +1,4 @@
-const mdx = [{
+export const mdx = [{
   resolve: 'gatsby-plugin-mdx',
   options: {
     gatsbyRemarkPlugins: [
@@ -17,4 +17,4 @@ const mdx = [{
   }
 }];
 
-module.exports = mdx;
+export default mdx;

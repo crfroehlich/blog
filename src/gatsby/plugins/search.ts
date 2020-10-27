@@ -1,4 +1,4 @@
-const config = require('../config');
+import { config } from '../../../config';
 
 const pageQuery = `{
   pages: allMdx {
@@ -41,7 +41,7 @@ const queries = [
   },
 ];
 
-const search = [];
+export const search = [];
 
 if (config.header.search && config.header.search.enabled) {
   search.push({
@@ -55,4 +55,4 @@ if (config.header.search && config.header.search.enabled) {
   )
 }
 
-module.exports = search;
+export default search;

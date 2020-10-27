@@ -1,4 +1,4 @@
-const config = require('../config');
+import { config } from '../../../config';
 
 const sw = `
 workbox.routing.registerRoute(
@@ -9,7 +9,7 @@ workbox.routing.registerRoute(
 );
 `;
 
-const offline = [];
+export const offline = [];
 
 // check and add pwa functionality
 if (config.pwa && config.pwa.enabled && config.pwa.manifest) {
@@ -27,4 +27,4 @@ if (config.pwa && config.pwa.enabled && config.pwa.manifest) {
   offline.push('gatsby-plugin-remove-serviceworker');
 }
 
-module.exports = offline;
+export default offline;

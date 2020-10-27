@@ -35,6 +35,6 @@
     "dist"
   ],
   "include": [
-    "build/**/*"
+    "build/**/*", "src/gatsby/plugins/content.js"
   ]
 }

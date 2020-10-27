@@ -1,6 +1,6 @@
-const config = require('../config');
+import { config } from '../../../config';
 
-const google = [{
+export const google = [{
   resolve: `gatsby-plugin-gtag`,
   options: {
     trackingId: config.gatsby.gaTrackingId,
@@ -9,4 +9,4 @@ const google = [{
   },
 }];
 
-module.exports = google;
+export default google;

@@ -1,4 +1,4 @@
-const content = [{
+export const content = [{
   resolve: 'gatsby-source-filesystem',
   options: {
     name: 'docs',
@@ -6,4 +6,4 @@ const content = [{
   }
 }];
 
-module.exports = content;
+export default content;

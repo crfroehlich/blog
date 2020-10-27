@@ -1,45 +1,11 @@
-require('dotenv').config();
+'use strict';
 
-const config = require('./config');
+/**
+ * Run TypeScript code without compiling it
+ * Source-map-support mimics node's stack trace making debugging easier
+ * ts-node register helps compiling and importing TypeScript modules
+ */
+require('source-map-support').install();
+require('ts-node').register();
 
-let plugins = [
-  'gatsby-plugin-emotion',
-  'gatsby-plugin-playground',
-  'gatsby-plugin-playground',
-  'gatsby-plugin-react-helmet',
-  'gatsby-plugin-remove-trailing-slashes',
-  'gatsby-plugin-sharp',
-  'gatsby-plugin-sitemap',
-  'gatsby-transformer-remark',
-];
-
-[
-  'content',
-  'google',
-  'layout',
-  'mdx',
-  'offline',
-  'rss',
-  'search',
-].forEach(p => {
-  plugins = plugins.concat(require(`./build/${p}`));
-})
-
-module.exports = {
-  pathPrefix: config.gatsby.pathPrefix,
-  siteMetadata: {
-    title: config.siteMetadata.title,
-    description: config.siteMetadata.description,
-    docsLocation: config.siteMetadata.docsLocation,
-    ogImage: config.siteMetadata.ogImage,
-    favicon: config.siteMetadata.favicon,
-    logo: { link: config.header.logoLink ? config.header.logoLink : '/', image: config.header.logo }, // backwards compatible
-    headerTitle: config.header.title,
-    githubUrl: config.header.githubUrl,
-    helpUrl: config.header.helpUrl,
-    tweetText: config.header.tweetText,
-    headerLinks: config.header.links,
-    siteUrl: config.gatsby.siteUrl,
-  },
-  plugins: plugins
-};
+module.exports = require('./gatsby-config.ts');
