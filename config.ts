@@ -4,6 +4,7 @@ export const config = {
     siteUrl: 'https://blog.luddites.me',
     gaTrackingId: 'G-WZTYEG3VZJ',
     trailingSlash: false,
+    cdnUrl: 'https://raw.githubusercontent.com/crfroehlich/cdn/main/images/'
   },
   header: {
     logo: 'https://raw.githubusercontent.com/crfroehlich/cdn/main/images/luddite_logo.svg',
