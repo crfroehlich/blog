@@ -1,7 +1,7 @@
 import React from 'react';
-const githubIcon = require('./components/images/github.svg');
+import * as githubIcon from './components/images/github.svg';
 
-const GithubLink = ({ link, text }) => {
+export const GithubLink = ({ link, text }) => {
   return (
     <a href={link} className="githubSection">
       <img className="githubIcon" src={githubIcon} alt="github" />
