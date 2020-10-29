@@ -9,7 +9,6 @@ dotenv.config({
 
 let plugins: any[] = [
   'gatsby-plugin-emotion',
-  'gatsby-plugin-graphql-codegen',
   'gatsby-plugin-playground',
   'gatsby-plugin-playground',
   'gatsby-plugin-react-helmet',
@@ -17,6 +16,7 @@ let plugins: any[] = [
   'gatsby-plugin-sharp',
   'gatsby-plugin-sitemap',
   'gatsby-plugin-typegen',
+  'gatsby-plugin-typescript',
   'gatsby-transformer-remark',
 ];
 
