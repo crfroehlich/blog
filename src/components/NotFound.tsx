@@ -1,5 +1,5 @@
 import React from 'react';
-import Link from './link';
+import Link from './link.tsx';
 import PageWrapper from './PageWrapper';
 
 export const NotFound = ({ props }) => {

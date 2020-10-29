@@ -2,6 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 // Components
 import { Link, graphql } from "gatsby"
+
 const Tags = ({ pageContext, data }) => {
   console.warn('THIS _should_ !not! *happen*');
 

@@ -4858,6 +4858,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/anymatch@npm:*":
+  version: 1.3.1
+  resolution: "@types/anymatch@npm:1.3.1"
+  checksum: 1647865e528a168f66f57a077e9651c10a4c172b656cc3686fddf176555d42ca0a1647bfc626ea2fceb68fc7701426ab708224be1762b4a5216fe8368ffdba3c
+  languageName: node
+  linkType: hard
+
 "@types/axios@npm:^0.14.0":
   version: 0.14.0
   resolution: "@types/axios@npm:0.14.0"
@@ -5159,6 +5166,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/react-loadable@npm:^5.5.4":
+  version: 5.5.4
+  resolution: "@types/react-loadable@npm:5.5.4"
+  dependencies:
+    "@types/react": "*"
+    "@types/webpack": "*"
+  checksum: e430cfb9c9f976c918d9d47140043509ab721bd8f98410bfa5e46cb66225cab2444b0dd23e23ec66a1d751f73c1056bc921bbbc683614571fa909a56bf0c5517
+  languageName: node
+  linkType: hard
+
 "@types/react-redux@npm:^7.1.9":
   version: 7.1.9
   resolution: "@types/react-redux@npm:7.1.9"
@@ -5216,10 +5233,33 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/source-list-map@npm:*":
+  version: 0.1.2
+  resolution: "@types/source-list-map@npm:0.1.2"
+  checksum: 191f0e3b056b481e7a0bbb38f3d5b54b015556e38075726ca2637a35d3694df85cd16761b1b188729ac687a55aec3cbc2b07033ac090bcc13efe09ad10a3e935
+  languageName: node
+  linkType: hard
+
+"@types/tapable@npm:*":
+  version: 1.0.6
+  resolution: "@types/tapable@npm:1.0.6"
+  checksum: 01709a2f8dbea665a39c008ba6995c76210fabb52434815e7632c7fff22ecad1dd49a1d75b8f5b2e9b365c6d7a6407127bed834587df4777b800110c2a74fc36
+  languageName: node
+  linkType: hard
+
 "@types/tmp@npm:^0.0.33":
   version: 0.0.33
   resolution: "@types/tmp@npm:0.0.33"
   checksum: 93442cc384e3545e4ba625c74de37fa1011a82a440e6d762875db20977badaba5681ad20e88280727ca94777b37a030a421646ccd9187a39eae582d7012852d0
+  languageName: node
+  linkType: hard
+
+"@types/uglify-js@npm:*":
+  version: 3.11.1
+  resolution: "@types/uglify-js@npm:3.11.1"
+  dependencies:
+    source-map: ^0.6.1
+  checksum: 75f1c06245dc31cb44496a4f4b685d313863561892c9cb51e7ba3a90522d4775b276f0febf43b797102309cb44e2226fba15a08aa043cd2423455ff3662d4039
   languageName: node
   linkType: hard
 
@@ -5248,6 +5288,31 @@ __metadata:
     "@types/unist": "*"
     "@types/vfile-message": "*"
   checksum: 7434e3532cb43e2c6eac8dc465f14a7b56a73c4b394a0a757e15423d22844330309f77038debe09c4a5219bc6feda4388f9eb7c9161755933cf003558804db5e
+  languageName: node
+  linkType: hard
+
+"@types/webpack-sources@npm:*":
+  version: 2.0.0
+  resolution: "@types/webpack-sources@npm:2.0.0"
+  dependencies:
+    "@types/node": "*"
+    "@types/source-list-map": "*"
+    source-map: ^0.7.3
+  checksum: 90bb9ca408bb366f71e40136f92b1db8232981993022f94cbb7b962a2b1c1a34c4d9ae1b2242f9b29b9d04d5579539f41b477a77f8968b161d4bb8c3bec33f8a
+  languageName: node
+  linkType: hard
+
+"@types/webpack@npm:*":
+  version: 4.41.24
+  resolution: "@types/webpack@npm:4.41.24"
+  dependencies:
+    "@types/anymatch": "*"
+    "@types/node": "*"
+    "@types/tapable": "*"
+    "@types/uglify-js": "*"
+    "@types/webpack-sources": "*"
+    source-map: ^0.6.0
+  checksum: 2237901a976cab34c86aca729244f392af238d2a8ea53ffda8b9c00259f4d8b081b48fdd47bf159f3fda475621bfe7e8eb81076ec2252fa96dced5087be308e9
   languageName: node
   linkType: hard
 
@@ -7041,6 +7106,7 @@ __metadata:
     "@types/react": ^16.9.54
     "@types/react-dom": ^16.9.9
     "@types/react-helmet": ^6.1.0
+    "@types/react-loadable": ^5.5.4
     "@types/react-redux": ^7.1.9
     "@types/react-slick": ^0.23.4
     "@types/redux": ^3.6.0

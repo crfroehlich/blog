@@ -1,9 +1,9 @@
 import React from 'react';
 import { Layout } from './layout';
-import { DisplayDate, Link } from './link';
+import { DisplayDate, Link } from './link.tsx';
 import Helmet from 'react-helmet';
 import NextPrevious from './NextPrevious';
-import config from '../../config';
+import { config } from '../../config';
 import { Edit, StyledHeading, StyledMainWrapper } from './styles/Docs';
 import {BadgeAnchor, Badge, ChipSet, Chip} from 'rmwc';
 import { kebabCase } from 'lodash';

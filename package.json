@@ -13,6 +13,7 @@
     "@mdx-js/react": "^1.6.19",
     "@philpl/buble": "^0.19.7",
     "@playlyfe/gql": "^2.6.2",
+    "@types/react-loadable": "^5.5.4",
     "@typescript-eslint/parser": "^4.6.0",
     "algoliasearch": "^4.5.1",
     "chalk": "^4.1.0",

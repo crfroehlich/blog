@@ -8,8 +8,7 @@ import {
   connectStateResults,
 } from 'react-instantsearch-dom';
 import algoliasearch from 'algoliasearch/lite';
-import config from '../../../config.js';
-
+import { config } from '../../../config';
 import styled from '@emotion/styled';
 import { css } from '@emotion/core';
 import { PoweredBy } from './styles';

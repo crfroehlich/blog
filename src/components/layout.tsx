@@ -6,7 +6,7 @@ import ThemeProvider from './theme/themeProvider';
 import mdxComponents from './mdxComponents';
 import Sidebar from './sidebar';
 import RightSidebar from './rightSidebar';
-import config from '../../config.js';
+import { config } from '../../config';
 
 const Wrapper = styled('div')`
   display: flex;

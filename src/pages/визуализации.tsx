@@ -8,7 +8,7 @@ import kebabCase from "lodash/kebabCase"
 import { Helmet } from "react-helmet"
 import { Link, graphql } from "gatsby"
 
-const визуализации = ({
+export const визуализации = ({
   data: {
     allMdx: { group },
     site: {

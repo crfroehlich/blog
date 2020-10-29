@@ -1,5 +1,5 @@
 
-class Tools {
+export class Tools {
   _window;
 
   _document;
@@ -24,8 +24,7 @@ class Tools {
     }
   }
 
-  getLocalDate(date) {
-    date = date || new Date();
+  getLocalDate(date: Date = new Date()) {
     return date.toLocaleDateString('ru-RU', {
       weekday: 'long', year: 'numeric', month: '2-digit', day: '2-digit'
     });

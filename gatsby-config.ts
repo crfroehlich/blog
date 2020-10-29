@@ -1,7 +1,7 @@
 import dotenv from 'dotenv';
 import { config } from './config';
 import type { GatsbyConfig } from 'gatsby';
-import { content, google, layout, mdx, offline, rss, search } from './src/gatsby/plugins';
+import { content, google, mdx, offline, rss, search } from './src/gatsby/plugins';
 
 dotenv.config({
   path: `.env`,
@@ -22,7 +22,6 @@ let plugins: any[] = [
 
 plugins = plugins.concat(content);
 plugins = plugins.concat(google);
-plugins = plugins.concat(layout);
 plugins = plugins.concat(mdx);
 plugins = plugins.concat(offline);
 plugins = plugins.concat(rss);

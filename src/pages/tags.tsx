@@ -8,30 +8,32 @@ import kebabCase from "lodash/kebabCase"
 import { Helmet } from "react-helmet"
 import { Link, graphql } from "gatsby"
 
-const TagsPage = ({
+export const TagsPage = ({
   data: {
     allMdx: { group },
     site: {
       siteMetadata: { title },
     },
   },
-}) => (
-  <div>
-    <Helmet title={title} />
-    <div>
-      <h1>Tags</h1>
-      <ul>
-        {group.map(tag => (
-          <li key={tag.fieldValue}>
-            <Link to={`/визуализации/${kebabCase(tag.fieldValue)}/`}>
-              {tag.fieldValue} ({tag.totalCount})
-            </Link>
-          </li>
-        ))}
-      </ul>
-    </div>
-  </div>
-)
+}) => {
+    return (
+      <div>
+        <Helmet title={title} />
+        <div>
+          <h1>Tags</h1>
+          <ul>
+            {group.map((tag: any) => (
+              <li key={tag.fieldValue}>
+                <Link to={`/визуализации/${kebabCase(tag.fieldValue)}/`}>
+                  {tag.fieldValue} ({tag.totalCount})
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    )
+  }
 
 TagsPage.propTypes = {
   data: PropTypes.shape({

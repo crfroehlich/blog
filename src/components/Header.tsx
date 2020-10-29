@@ -5,7 +5,7 @@ import GitHubButton from 'react-github-btn';
 import Link from './link';
 import Loadable from 'react-loadable';
 import { Icon } from 'rmwc';
-import config from '../../config.js';
+import { config } from '../../config';
 import LoadingProvider from './mdxComponents/loading';
 import { DarkModeSwitch } from './DarkModeSwitch';
 
@@ -54,7 +54,7 @@ const StyledBgDiv = styled('div')`
 `;
 
 const Header = ({ location, isDarkThemeActive, toggleActiveTheme }) => (
-  <StaticQuery
+  <StaticQuery<GatsbyTypes.headerTitleQueryQuery>
     query={graphql`
       query headerTitleQuery {
         site {
