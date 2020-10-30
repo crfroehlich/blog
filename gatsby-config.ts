@@ -13,9 +13,13 @@ let plugins: any[] = [
   'gatsby-plugin-remove-trailing-slashes',
   'gatsby-plugin-sharp',
   'gatsby-plugin-sitemap',
-  'gatsby-plugin-typegen',
+  //'gatsby-plugin-typegen',
   'gatsby-plugin-ts',
   'gatsby-transformer-remark',
+  {
+    resolve: 'gatsby-plugin-codegen',
+    options: {},
+  },
 ];
 
 plugins = plugins.concat(content);

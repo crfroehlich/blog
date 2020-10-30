@@ -9,7 +9,7 @@ import {BadgeAnchor, Badge, ChipSet, Chip} from 'rmwc';
 import kebabCase from 'lodash/kebabCase';
 import Comments from './Comments';
 
-const gitHub = require('./images/github.svg');
+const gitHub = require('./images/github');
 
 const forcedNavOrder = config.sidebar.forcedNavOrder;
 

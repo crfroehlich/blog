@@ -7,43 +7,19 @@ import Header from '../Header';
 import { baseStyles } from '../styles/GlobalStyles';
 import { tools } from '../../utils/tools';
 
-class ThemeProvider extends React.Component {
-  state = {
-    isDarkThemeActive: true,
-  };
+class ThemeProvider extends React.Component<any> {
 
-  retrieveActiveTheme = () => {
-    const isDarkThemeActive = JSON.parse(tools.localStorage.getItem('isDarkThemeActive'));
-
-    if(this.state.isDarkThemeActive != isDarkThemeActive) {
-      this.setState({ isDarkThemeActive });
-    }
-  };
-
-  toggleActiveTheme = () => {
-    this.setState(prevState => ({ isDarkThemeActive: !prevState.isDarkThemeActive }));
-
-    tools.localStorage.setItem('isDarkThemeActive', JSON.stringify(!this.state.isDarkThemeActive));
-  };
-
-  render() {
-    this.retrieveActiveTheme();
+  render(): JSX.Element {
 
     const { children, location } = this.props;
-
-    const { isDarkThemeActive } = this.state;
-
-    const currentActiveTheme = isDarkThemeActive ? darkTheme : lightTheme;
 
     return (
       <div>
         <Global styles={baseStyles} />
         <Header
           location={location}
-          isDarkThemeActive={isDarkThemeActive}
-          toggleActiveTheme={this.toggleActiveTheme}
         />
-        <EmotionThemeProvider theme={currentActiveTheme}>{children}</EmotionThemeProvider>
+        <EmotionThemeProvider theme={darkTheme}>{children}</EmotionThemeProvider>
       </div>
     );
   }

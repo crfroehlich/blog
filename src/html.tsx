@@ -1,8 +1,16 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { config } from '../config';
 
-export default class HTML extends React.Component
+interface Props {
+  htmlAttributes?: React.HtmlHTMLAttributes<HTMLHtmlElement>
+  headComponents?: React.ReactNode
+  bodyAttributes?: React.HTMLAttributes<HTMLBodyElement>
+  preBodyComponents?: React.ReactNode
+  body: string
+  postBodyComponents?: React.ReactNode
+}
+
+export default class HTML extends React.Component<Props>
 {
   render(): JSX.Element {
     return (
@@ -56,12 +64,3 @@ export default class HTML extends React.Component
     );
   }
 }
-
-HTML.propTypes = {
-  htmlAttributes: PropTypes.object,
-  headComponents: PropTypes.array,
-  bodyAttributes: PropTypes.object,
-  preBodyComponents: PropTypes.array,
-  body: PropTypes.string,
-  postBodyComponents: PropTypes.array,
-};

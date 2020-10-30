@@ -1,5 +1,5 @@
 import React from 'react';
-import * as githubIcon from './components/images/github.svg';
+import { github as githubIcon } from './components/images';
 
 export const GithubLink = ({ link, text }) => {
   return (

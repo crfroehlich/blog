@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import { StaticQuery, graphql } from 'gatsby';
+import { StaticQuery, graphql, GatsbyTypes } from 'gatsby';
 import GitHubButton from 'react-github-btn';
 import Link from './link';
 import Loadable from 'react-loadable';
