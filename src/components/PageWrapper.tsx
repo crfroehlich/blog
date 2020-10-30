@@ -6,7 +6,7 @@ import NextPrevious from './NextPrevious';
 import { config } from '../../config';
 import { Edit, StyledHeading, StyledMainWrapper } from './styles/Docs';
 import {BadgeAnchor, Badge, ChipSet, Chip} from 'rmwc';
-import { kebabCase } from 'lodash';
+import kebabCase from 'lodash/kebabCase';
 import Comments from './Comments';
 
 const gitHub = require('./images/github.svg');

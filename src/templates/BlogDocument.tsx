@@ -1,13 +1,19 @@
-import React, { Component } from 'react';
+import React, { Component,  } from 'react';
 import { graphql } from 'gatsby';
 import MDXRenderer from 'gatsby-plugin-mdx/mdx-renderer';
 import NotFound from '../components/NotFound';
 import Chips from '../components/Chips';
 import PageWrapper from '../components/PageWrapper';
 import Cards from '../components/Cards';
+import { Query } from '../../graphql-types';
 
-export default class BlogDocument extends Component {
-  render() {
+interface IQueryProps {
+  data: Query;
+  path: string;
+}
+
+export default class BlogDocument extends Component<IQueryProps> {
+  render(): JSX.Element {
 
     const { data, path } = this.props;
 

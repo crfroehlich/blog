@@ -170,13 +170,6 @@ export const onCreateWebpackConfig: GatsbyNode["onCreateWebpackConfig"] = ({ act
   });
 };
 
-export const onCreateBabelConfig: GatsbyNode["onCreateBabelConfig"] = ({ actions }) => {
-  actions.setBabelPlugin({
-    name: '@babel/plugin-proposal-export-default-from',
-    options: {}
-  });
-};
-
 export const onCreateNode: GatsbyNode["onCreateNode"] = ({ node, getNode, actions }) => {
   const { createNodeField } = actions;
 
