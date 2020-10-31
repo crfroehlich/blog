@@ -3,10 +3,11 @@ import styled from '@emotion/styled';
 
 import CodeBlock from './codeBlock';
 import AnchorTag from './anchor';
+import { IStyle } from 'src/types/interfaces';
 
 const StyledPre = styled('pre')`
   padding: 16px;
-  background: ${props => props.theme.colors.preFormattedText};
+  background: ${(props: IStyle) => props.theme.colors.preFormattedText};
 `;
 
 export default {

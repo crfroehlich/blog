@@ -1,28 +1,22 @@
-import React, { useState, useEffect, createRef } from 'react';
+/** @jsx jsx */
+import { useState, useEffect, createRef } from 'react';
 import {
   InstantSearch,
   Index,
   Hits,
   Configure,
-  Pagination,
   connectStateResults,
 } from 'react-instantsearch-dom';
 import algoliasearch from 'algoliasearch/lite';
 import { config } from '../../../config';
 import styled from '@emotion/styled';
-import { css } from '@emotion/core';
 import { PoweredBy } from './styles';
-import { Search } from '@styled-icons/fa-solid/Search';
 import Input from './input';
 import * as hitComps from './hitComps';
-
-const SearchIcon = styled(Search)`
-  width: 1em;
-  pointer-events: none;
-`;
+import { IStyle } from 'src/types/interfaces';
 
 const HitsWrapper = styled.div`
-  display: ${props => (props.show ? `grid` : `none`)};
+  display: ${ (props: IStyle) => (props.show ? `grid` : `none`)};
   max-height: 80vh;
   overflow: scroll;
   z-index: 2;
@@ -43,15 +37,15 @@ const HitsWrapper = styled.div`
     width: 100%;
     max-width: 500px;
   }
-  border-radius: ${props => props.theme.smallBorderRadius};
+  border-radius: ${(props: IStyle) => props.theme.smallBorderRadius};
   > * + * {
     padding-top: 1em !important;
-    border-top: 2px solid ${props => props.theme.darkGray};
+    border-top: 2px solid ${(props: IStyle) => props.theme.darkGray};
   }
   li + li {
     margin-top: 0.7em;
     padding-top: 0.7em;
-    border-top: 1px solid ${props => props.theme.lightGray};
+    border-top: 1px solid ${(props: IStyle) => props.theme.lightGray};
   }
   * {
     margin-top: 0;
@@ -62,8 +56,8 @@ const HitsWrapper = styled.div`
     list-style: none;
   }
   mark {
-    color: ${props => props.theme.lightBlue};
-    background: ${props => props.theme.darkBlue};
+    color: ${(props: IStyle) => props.theme.lightBlue};
+    background: ${(props: IStyle) => props.theme.darkBlue};
   }
   header {
     display: flex;
@@ -71,9 +65,9 @@ const HitsWrapper = styled.div`
     margin-bottom: 0.3em;
     h3 {
       color: black;
-      background: ${props => props.theme.gray};
+      background: ${(props: IStyle) => props.theme.gray};
       padding: 0.1em 0.4em;
-      border-radius: ${props => props.theme.smallBorderRadius};
+      border-radius: ${(props: IStyle) => props.theme.smallBorderRadius};
     }
   }
   h3 {
@@ -100,7 +94,7 @@ const Results = connectStateResults(
     (searching && `Searching...`) || (res && res.nbHits === 0 && `No results for '${state.query}'`)
 );
 
-const useClickOutside = (ref, handler, events) => {
+const useClickOutside = (ref, handler, events = null) => {
   if (!events) events = [`mousedown`, `touchstart`];
   const detectClickOutside = event =>
     ref && ref.current && !ref.current.contains(event.target) && handler();
@@ -139,7 +133,7 @@ export default function SearchComponent({ indices, collapse, hitsAsGrid }) {
       <HitsWrapper
         className={'hitWrapper ' + displayResult}
         show={query.length > 0 && focus}
-        asGrid={hitsAsGrid}
+        data-asGrid={hitsAsGrid}
       >
         {indices.map(({ name, title, hitComp, type }) => {
           return (

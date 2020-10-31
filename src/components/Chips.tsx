@@ -1,8 +1,9 @@
 import React from 'react';
 import PageWrapper from './PageWrapper';
 import KeywordCloud from 'react-keyword-cloud';
+import { IProps } from 'src/types/interfaces';
 
-export const Chips = ({ props }) => {
+export const Chips: React.FC<IProps> = ({ props }) => {
   let {
     data: {
       allMdx: {

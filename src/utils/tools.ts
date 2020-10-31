@@ -18,7 +18,7 @@ export class Tools {
       return this._window.localStorage;
     } else {
       return {
-        getItem() { return '{ "isDarkThemeActive": true }'; },
+        getItem() { return '{ }'; },
         setItem() { },
       }
     }

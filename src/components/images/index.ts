@@ -1,5 +1,10 @@
 // @create-index
 
+declare module '*.png' {
+  const value: any;
+  export = value;
+}
+
 export { default as card } from './card.png';
 export { default as closed } from './closed.tsx';
 export { default as day } from './day.png';

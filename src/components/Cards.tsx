@@ -1,9 +1,10 @@
 import React from 'react';
-import Link from './link.tsx';
+import Link from './Link';
 import PageWrapper from './PageWrapper';
 import { Tooltip, CardMedia, Card, CardPrimaryAction, Typography, Grid, GridCell } from 'rmwc'
+import { IProps } from 'src/types/interfaces';
 
-export const Cards = ({ props }) => {
+export const Cards: React.FC<IProps> = ({ props }) => {
   let {
     data: {
       allMdx: {

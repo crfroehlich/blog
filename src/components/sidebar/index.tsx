@@ -4,6 +4,7 @@ import { StaticQuery, graphql } from 'gatsby';
 import styled from '@emotion/styled';
 import { ExternalLink } from 'react-feather';
 import {config} from '../../../config';
+import { Query } from 'graphql-types';
 
 // eslint-disable-next-line no-unused-vars
 const ListItem = styled(({ className, active, level, ...props }) => {
@@ -91,7 +92,7 @@ const Divider = styled(props => (
 `;
 
 const SidebarLayout = ({ location }) => (
-  <StaticQuery<GatsbyTypes.Query>
+  <StaticQuery<Query>
     query={graphql`
       query {
         allMdx {

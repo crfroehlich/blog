@@ -1,8 +1,9 @@
 import React from 'react';
-import Link from './link.tsx';
+import { IProps } from 'src/types/interfaces';
+import Link from './Link';
 import PageWrapper from './PageWrapper';
 
-export const NotFound = ({ props }) => {
+export const NotFound: React.FC<IProps> = ({ props }) => {
   const {
     path,
   } = props;

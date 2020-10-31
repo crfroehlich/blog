@@ -4,9 +4,11 @@ import { StaticQuery, graphql } from 'gatsby';
 // import Link from './link';
 import { config } from '../../config';
 import { Sidebar, ListItem } from './styles/Sidebar';
+import { Query } from 'graphql-types';
+import { IProps } from 'src/types/interfaces';
 
-export const SidebarLayout = ({ location }) => (
-  <StaticQuery<GatsbyTypes.Query>
+export const SidebarLayout: React.FC<IProps> = ({ location }) => (
+  <StaticQuery<Query>
     query={graphql`
       query {
         allMdx {
@@ -22,7 +24,6 @@ export const SidebarLayout = ({ location }) => (
       }
     `}
     render={({ allMdx }) => {
-      let navItems = [];
 
       let finalNavItems;
 

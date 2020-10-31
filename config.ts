@@ -33,7 +33,7 @@ export const config = {
     forcedNavOrder: ['/Welcome'],
     collapsedNav: [],
     links: [{ text: 'CRF', link: 'https://www.linkedin.com/in/christopherfroehlich/' }],
-    frontline: false,
+    frontLine: false,
     ignoreIndex: true,
     title:
       "<div>hiking</div><div class='greenCircle'></div><div>my</div><div class='greenCircle'></div><div>desk</div>",

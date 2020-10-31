@@ -12,7 +12,7 @@
     "@mdx-js/mdx": "^1.6.19",
     "@mdx-js/react": "^1.6.19",
     "@philpl/buble": "^0.19.7",
-    "@types/lodash": "^4.14.163",
+    "@types/lodash": "^4.14.164",
     "@types/react": "^16.9.55",
     "@types/react-dom": "^16.9.9",
     "@types/react-helmet": "^6.1.0",
@@ -90,6 +90,7 @@
     "react-typography": "^0.16.19",
     "redux": "^4.0.5",
     "rmwc": "^6.1.4",
+    "styled-components": "^5.2.1",
     "styled-icons": "^10.22.0",
     "ts-node": "^9.0.0",
     "typescript": "^4.0.5"

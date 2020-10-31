@@ -30,9 +30,9 @@ const CodeBlock = ({ children: exampleCode, ...props }) => {
     return <LoadableComponent code={exampleCode} />;
   } else {
     return (
-      <Highlight {...defaultProps} code={exampleCode} language="code" theme={prismTheme}>
+      <Highlight {...defaultProps} code={exampleCode} language={"typescript"} theme={prismTheme}>
         {({ className, style, tokens, getLineProps, getTokenProps }) => (
-          <pre className={className + ' pre'} style={style} p={3}>
+          <pre className={className + ' pre'} style={style} data-p="3">
             {cleanTokens(tokens).map((line, i) => {
               let lineClass = {};
 
@@ -54,11 +54,6 @@ const CodeBlock = ({ children: exampleCode, ...props }) => {
               const lineProps = getLineProps({ line, key: i });
 
               lineProps.style = lineClass;
-              const diffStyle = {
-                userSelect: 'none',
-                MozUserSelect: '-moz-none',
-                WebkitUserSelect: 'none',
-              };
 
               let splitToken;
 
@@ -67,7 +62,7 @@ const CodeBlock = ({ children: exampleCode, ...props }) => {
                   {line.map((token, key) => {
                     if (isDiff) {
                       if (
-                        (key === 0 || key === 1) &
+                        (key === 0 || key === 1) &&
                         (token.content.charAt(0) === '+' || token.content.charAt(0) === '-')
                       ) {
                         if (token.content.length > 1) {
@@ -84,13 +79,13 @@ const CodeBlock = ({ children: exampleCode, ...props }) => {
                             <React.Fragment key={token + key}>
                               <span
                                 {...getTokenProps({ token: firstChar, key })}
-                                style={diffStyle}
+                                style={{ userSelect: 'none', MozUserSelect: '-moz-none', WebkitUserSelect: 'none' }}
                               />
                               <span {...getTokenProps({ token: splitToken, key })} />
                             </React.Fragment>
                           );
                         } else {
-                          return <span {...getTokenProps({ token, key })} style={diffStyle} />;
+                          return <span {...getTokenProps({ token, key })} style={{ userSelect: 'none', MozUserSelect: '-moz-none', WebkitUserSelect: 'none' }} />;
                         }
                       }
                     }

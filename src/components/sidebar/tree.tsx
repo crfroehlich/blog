@@ -102,7 +102,7 @@ const calculateTreeData = edges => {
     }
     // sort items by date descending.
     prevItems.map(item => {
-      item.items = item.items.sort((a, b) => new Date(b.date) - new Date(a.date));
+      item.items = item.items.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
     });
 
     const slicedLength =

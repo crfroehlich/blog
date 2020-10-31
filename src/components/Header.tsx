@@ -1,13 +1,12 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import { StaticQuery, graphql, GatsbyTypes } from 'gatsby';
+import { StaticQuery, graphql } from 'gatsby';
 import GitHubButton from 'react-github-btn';
-import Link from './link';
+import Link from './Link';
 import Loadable from 'react-loadable';
 import { Icon } from 'rmwc';
 import { config } from '../../config';
 import LoadingProvider from './mdxComponents/loading';
-import { DarkModeSwitch } from './DarkModeSwitch';
 
 const help = require('./images/help.svg');
 
@@ -24,21 +23,23 @@ if (isSearchEnabled && config.header.search.indexName) {
 }
 
 import Sidebar from './sidebar';
+import { HeaderTitleQueryQuery } from 'graphql-types';
+import { IProps } from 'src/types/interfaces';
 
 const LoadableComponent = Loadable({
   loader: () => import('./search/index'),
   loading: LoadingProvider,
 });
 
-function myFunction() {
-  var x = document.getElementById('navbar');
+const setNavBar = () => {
+  const x = document.getElementById('navbar');
 
   if (x.className === 'topnav') {
     x.className += ' responsive';
   } else {
     x.className = 'topnav';
   }
-}
+};
 
 const StyledBgDiv = styled('div')`
   height: 60px;
@@ -46,15 +47,15 @@ const StyledBgDiv = styled('div')`
   background-color: #f8f8f8;
   position: relative;
   display: none;
-  background: ${props => (props.isDarkThemeActive ? '#001932' : undefined)};
+  background: #001932;
 
   @media (max-width: 767px) {
     display: block;
   }
 `;
 
-const Header = ({ location, isDarkThemeActive, toggleActiveTheme }) => (
-  <StaticQuery<GatsbyTypes.headerTitleQueryQuery>
+const Header: React.FC<IProps> = ({ location }) => (
+  <StaticQuery<HeaderTitleQueryQuery>
     query={graphql`
       query headerTitleQuery {
         site {
@@ -110,7 +111,7 @@ const Header = ({ location, isDarkThemeActive, toggleActiveTheme }) => (
             ) : null}
             {isSearchEnabled ? (
               <div className={'searchWrapper hiddenMobile navBarUL'}>
-                <LoadableComponent collapse={true} indices={searchIndices} />
+                <LoadableComponent collapse={true} indices={searchIndices} hitsAsGrid={''} />
               </div>
             ) : null}
             <div id="navbar" className={'topnav'}>
@@ -171,21 +172,15 @@ const Header = ({ location, isDarkThemeActive, toggleActiveTheme }) => (
                   </li>
                 ) : null}
                 <li><Link to={'/rss.xml'}><Icon icon="rss_feed" /></Link></li>
-                <li>
-                  <DarkModeSwitch
-                    isDarkThemeActive={isDarkThemeActive}
-                    toggleActiveTheme={toggleActiveTheme}
-                  />
-                </li>
               </ul>
             </div>
           </nav>
-          <StyledBgDiv isDarkThemeActive={isDarkThemeActive}>
+          <StyledBgDiv>
             <div className={'navBarDefault removePadd'}>
               <span
-                onClick={myFunction}
+                onClick={setNavBar}
                 className={'navBarToggle'}
-                onKeyDown={myFunction}
+                onKeyDown={setNavBar}
                 role="button"
                 tabIndex={0}
               >
@@ -196,7 +191,7 @@ const Header = ({ location, isDarkThemeActive, toggleActiveTheme }) => (
             </div>
             {isSearchEnabled ? (
               <div className={'searchWrapper'}>
-                <LoadableComponent collapse={true} indices={searchIndices} />
+                <LoadableComponent collapse={true} indices={searchIndices} hitsAsGrid={''} />
               </div>
             ) : null}
           </StyledBgDiv>

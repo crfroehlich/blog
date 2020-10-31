@@ -3,7 +3,7 @@ import { Link as GatsbyLink } from 'gatsby';
 import isAbsoluteUrl from 'is-absolute-url';
 import {tools} from '../utils/tools';
 
-export const Link = ({ to, ...props }) =>
+export const Link: React.FC<any> = ({ to, ...props }) =>
   isAbsoluteUrl(to) ? (
     <a href={to} {...props}>
       {props.children}
@@ -12,7 +12,7 @@ export const Link = ({ to, ...props }) =>
     <GatsbyLink to={to} {...props} />
   );
 
-export const DisplayDate = ({ date }) => {
+export const DisplayDate: React.FC<any> = ({ date }) => {
   return (<span
       className={'blogDate'}>
       {tools.getLocalDate(date)

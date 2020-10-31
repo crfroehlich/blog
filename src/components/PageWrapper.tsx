@@ -1,6 +1,6 @@
 import React from 'react';
-import { Layout } from './layout';
-import { DisplayDate, Link } from './link.tsx';
+import { Layout } from './Layout';
+import { DisplayDate, Link } from './Link';
 import Helmet from 'react-helmet';
 import NextPrevious from './NextPrevious';
 import { config } from '../../config';
@@ -8,12 +8,14 @@ import { Edit, StyledHeading, StyledMainWrapper } from './styles/Docs';
 import {BadgeAnchor, Badge, ChipSet, Chip} from 'rmwc';
 import kebabCase from 'lodash/kebabCase';
 import Comments from './Comments';
+import { IProps } from 'src/types/interfaces';
+import { INode } from 'src/gatsby/createPages';
 
 const gitHub = require('./images/github');
 
 const forcedNavOrder = config.sidebar.forcedNavOrder;
 
-export const PageWrapper = ({ props, pageContent, pageTitle, showGithub, showComments }) => {
+export const PageWrapper: React.FC<IProps> = ({ props, pageContent, pageTitle, showGithub, showComments }) => {
   const { data } = props;
 
   const {
@@ -67,7 +69,11 @@ export const PageWrapper = ({ props, pageContent, pageTitle, showGithub, showCom
   canonicalUrl = config.gatsby.pathPrefix !== '/' ? canonicalUrl + config.gatsby.pathPrefix : canonicalUrl;
   canonicalUrl = canonicalUrl + ((mdx) ? mdx.fields.slug : '');
 
-  let navItems = [];
+  interface IItems {
+    items: any[];
+  }
+
+  let navItems: IItems = { items: [] };
 
   if(allMdx && allMdx.edges) {
     navItems = allMdx.edges
@@ -107,7 +113,7 @@ export const PageWrapper = ({ props, pageContent, pageTitle, showGithub, showCom
         return node.fields;
       }
     })
-    .sort((a, b) => new Date(b.date) - new Date(a.date));
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
   const chipMap = {};
 
@@ -151,7 +157,7 @@ export const PageWrapper = ({ props, pageContent, pageTitle, showGithub, showCom
           <StyledHeading>{title}</StyledHeading>
           {showGithub && docsLocation &&
             (<Edit className={'mobileView'}>
-              <Link className={'gitBtn'} to={`${docsLocation}/${mdx.parent.relativePath}`}>
+              <Link className={'gitBtn'} to={`${docsLocation}/${(mdx.parent as INode)?.relativePath}`}>
                 <img src={gitHub} alt={'Github logo'} /> Source
               </Link>
             </Edit>)}
@@ -164,13 +170,6 @@ export const PageWrapper = ({ props, pageContent, pageTitle, showGithub, showCom
         <div className={'addPaddTopBottom'}>
           <NextPrevious mdx={mdx} nav={nav} />
         </div>
-        <script
-            defer
-            async={true}
-            src={'https://utteranc.es/client.js'}
-            repo={'crfroehlich/blog'}
-            issue-term={'pathname'}
-          />
       </Layout>
   );
 };

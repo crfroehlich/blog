@@ -5,14 +5,9 @@ import NotFound from '../components/NotFound';
 import Chips from '../components/Chips';
 import PageWrapper from '../components/PageWrapper';
 import Cards from '../components/Cards';
-import { Query } from '../../graphql-types';
+import { IPageProps } from 'src/types/interfaces';
 
-interface IQueryProps {
-  data: Query;
-  path: string;
-}
-
-export default class BlogDocument extends Component<IQueryProps> {
+export default class BlogDocument extends Component<IPageProps> {
   render(): JSX.Element {
 
     const { data, path } = this.props;
