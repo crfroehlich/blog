@@ -7,7 +7,7 @@ export const PageNotFound: React.FC<any> = ({ props }): JSX.Element => <NotFound
 export default PageNotFound;
 
 export const pageQuery = graphql`
-  query {
+  query Get404Query {
     site {
       siteMetadata {
         title

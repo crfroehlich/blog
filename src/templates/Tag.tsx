@@ -12,7 +12,7 @@ export class Tag extends Component<IPageProps> {
 export default Tag;
 
 export const pageQuery = graphql`
-  query($tag: String) {
+  query GetTagByNameQuery($tag: String) {
     site {
       siteMetadata {
         title

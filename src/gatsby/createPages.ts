@@ -22,7 +22,7 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions 
 
   const queryResult = await graphql<IQueryResult>(
     `
-      {
+      query PagesCategoriesQuery {
         allMdx {
           edges {
             node {

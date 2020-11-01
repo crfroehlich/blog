@@ -9,7 +9,7 @@ import { config } from '../../config';
 import LoadingProvider from './mdxComponents/loading';
 import Sidebar from './sidebar';
 import { HeaderTitleQueryQuery } from 'graphql-types';
-import { IProps } from '../types/interfaces';
+import { IProps } from 'src/types/interfaces';
 
 const help = require('./images/help.svg');
 

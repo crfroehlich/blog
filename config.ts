@@ -46,7 +46,7 @@ export const config = {
     favicon: 'https://raw.githubusercontent.com/crfroehlich/cdn/main/images/luddite_favicon.svg',
   },
   pwa: {
-    enabled: false, // disabling this will also remove the existing service worker.
+    enabled: true, // disabling this will also remove the existing service worker.
     manifest: {
       name: 'Hiking My Desk',
       short_name: 'HikingMyDesk',

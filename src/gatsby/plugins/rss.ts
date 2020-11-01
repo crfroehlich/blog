@@ -1,6 +1,7 @@
-export const rss = [{
-  resolve: `gatsby-plugin-feed`,
-  options: {
+export const rss = [
+  {
+    resolve: `gatsby-plugin-feed`,
+    options: {
       query: `
       {
           site {
@@ -14,17 +15,17 @@ export const rss = [{
       }
       `,
       feeds: [
-      {
+        {
           serialize: ({ query: { site, allMarkdownRemark } }) => {
-          return allMarkdownRemark.edges.map(edge => {
+            return allMarkdownRemark.edges.map((edge) => {
               return Object.assign({}, edge.node.frontmatter, {
-              description: edge.node.excerpt,
-              date: edge.node.fields.date,
-              url: site.siteMetadata.siteUrl + edge.node.fields.slug,
-              guid: site.siteMetadata.siteUrl + edge.node.fields.slug,
-              custom_elements: [{ 'content:encoded': edge.node.html }],
-              })
-          })
+                description: edge.node.excerpt,
+                date: edge.node.fields.date,
+                url: site.siteMetadata.siteUrl + edge.node.fields.slug,
+                guid: site.siteMetadata.siteUrl + edge.node.fields.slug,
+                custom_elements: [{ 'content:encoded': edge.node.html }],
+              });
+            });
           },
           query: `
           {
@@ -47,11 +48,10 @@ export const rss = [{
           `,
           output: '/rss.xml',
           title: 'Hiking My Desk RSS Feed',
-      },
+        },
       ],
     },
   },
 ];
-
 
 export default rss;

@@ -12,7 +12,7 @@ export class визуализации extends Component<IPageProps> {
 export default визуализации;
 
 export const pageQuery = graphql`
-  query {
+  query GetVisualizationsQuery {
     site {
       siteMetadata {
         title

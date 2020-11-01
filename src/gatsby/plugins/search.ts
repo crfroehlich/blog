@@ -21,7 +21,7 @@ const pageQuery = `{
   }
 }`;
 
-const flatten = arr =>
+const flatten = (arr) =>
   arr.map(({ node: { frontmatter, fields, ...rest } }) => ({
     ...frontmatter,
     ...fields,
@@ -51,8 +51,8 @@ if (config.header.search && config.header.search.enabled) {
       apiKey: config.header.search.algoliaAdminKey, // algolia admin key to index
       queries,
       chunkSize: 10000, // default: 1000
-    }}
-  )
+    },
+  });
 }
 
 export default search;

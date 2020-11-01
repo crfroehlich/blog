@@ -20,29 +20,6 @@ rules:
   lines-between-class-members:
     - error
     - always
-  padding-line-between-statements:
-    - error
-    - blankLine: always
-      prev:
-        - const
-        - let
-        - var
-      next: '*'
-    - blankLine: always
-      prev:
-        - const
-        - let
-        - var
-      next:
-        - const
-        - let
-        - var
-    - blankLine: always
-      prev: directive
-      next: '*'
-    - blankLine: any
-      prev: directive
-      next: directive
 parser: '@typescript-eslint/parser'
 parserOptions:
   ecmaVersion: 2019

@@ -10,7 +10,7 @@ import { IProps } from '../types/interfaces';
 export const SidebarLayout: React.FC<IProps> = ({ location }) => (
   <StaticQuery<Query>
     query={graphql`
-      query {
+      query GetSidebarQuery {
         allMdx {
           edges {
             node {

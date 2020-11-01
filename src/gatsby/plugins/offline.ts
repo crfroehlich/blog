@@ -14,14 +14,14 @@ export const offline = [];
 // check and add pwa functionality
 if (config.pwa && config.pwa.enabled && config.pwa.manifest) {
   offline.push({
-      resolve: `gatsby-plugin-manifest`,
-      options: {...config.pwa.manifest},
+    resolve: `gatsby-plugin-manifest`,
+    options: { ...config.pwa.manifest },
   });
   offline.push({
-      resolve: 'gatsby-plugin-offline',
-      options: {
+    resolve: 'gatsby-plugin-offline',
+    options: {
       appendScript: sw,
-      },
+    },
   });
 } else {
   offline.push('gatsby-plugin-remove-serviceworker');
