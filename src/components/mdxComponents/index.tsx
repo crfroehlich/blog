@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 
 import CodeBlock from './codeBlock';
 import AnchorTag from './anchor';
-import { IStyle } from 'src/types/interfaces';
+import { IStyle } from '../../types/interfaces';
 
 const StyledPre = styled('pre')`
   padding: 16px;

@@ -1,34 +1,27 @@
-import React, { Component,  } from 'react';
+import React, { Component } from 'react';
 import { graphql } from 'gatsby';
 import MDXRenderer from 'gatsby-plugin-mdx/mdx-renderer';
 import NotFound from '../components/NotFound';
-import Chips from '../components/Chips';
 import PageWrapper from '../components/PageWrapper';
-import Cards from '../components/Cards';
-import { IPageProps } from 'src/types/interfaces';
+import { IPageProps } from '../types/interfaces';
 
-export default class BlogDocument extends Component<IPageProps> {
+export default class Article extends Component<IPageProps> {
   render(): JSX.Element {
-
-    const { data, path } = this.props;
+    const { data } = this.props;
 
     const { mdx } = data;
 
-    const decodedPath = (decodeURIComponent) ? decodeURIComponent(path) : path;
-
-    if(decodedPath === '/визуализации') {
-      return <Chips props={this.props} />;
-    } else if(decodedPath.startsWith('/визуализации')) {
-      return <Cards props={this.props} />;
-    } else if (!data.site || !mdx) {
+    if (!data.site || !mdx) {
       return <NotFound props={this.props} />;
     } else {
-      return <PageWrapper
-        props={this.props}
-        pageContent={<MDXRenderer>{(mdx)? mdx.body : 'text'}</MDXRenderer>}
-        showGithub={true}
-        showComments={true}
-      />
+      return (
+        <PageWrapper
+          props={this.props}
+          pageContent={<MDXRenderer>{mdx ? mdx.body : 'text'}</MDXRenderer>}
+          showGithub={true}
+          showComments={true}
+        />
+      );
     }
   }
 }

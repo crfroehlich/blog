@@ -1,6 +1,5 @@
-/** @jsx jsx */
 import { connectSearchBox } from 'react-instantsearch-dom';
-import { IStyle } from 'src/types/interfaces';
+import { IStyle } from '../../types/interfaces';
 import styled from '@emotion/styled';
 import { Search } from '@styled-icons/fa-solid/Search';
 

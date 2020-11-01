@@ -1,14 +1,12 @@
 {
-  "name": "blog",
-  "description": "Blog built with Gatsby",
   "author": "Christopher Froehlich",
-  "version": "0.0.1",
   "dependencies": {
     "@emotion/core": "^10.0.35",
     "@emotion/styled": "^10.0.27",
     "@emotion/styled-base": "^10.0.31",
     "@graphql-codegen/cli": "^1.19.0",
     "@graphql-codegen/typescript": "^1.17.11",
+    "@luddites-me/ts-tools": "^1.1.2",
     "@mdx-js/mdx": "^1.6.19",
     "@mdx-js/react": "^1.6.19",
     "@philpl/buble": "^0.19.7",
@@ -95,16 +93,116 @@
     "ts-node": "^9.0.0",
     "typescript": "^4.0.5"
   },
+  "description": "Blog built with Gatsby",
+  "devDependencies": {
+    "@graphql-codegen/cli": "1.19.0",
+    "@graphql-codegen/introspection": "1.18.0",
+    "@graphql-codegen/typescript": "1.17.11",
+    "@graphql-codegen/typescript-graphql-files-modules": "1.18.0",
+    "@graphql-codegen/typescript-operations": "1.17.8",
+    "@graphql-codegen/typescript-react-apollo": "2.0.7"
+  },
+  "envDocumentation": {
+    "ALGOLIA_ADMIN_KEY": {
+      "description": "Please document the <ALGOLIA_ADMIN_KEY> variable"
+    },
+    "DOCS_CREATE_README_INDEX": {
+      "description": "Please document the <DOCS_CREATE_README_INDEX> variable"
+    },
+    "DOCS_CREATE_TOC": {
+      "description": "Please document the <DOCS_CREATE_TOC> variable"
+    },
+    "GATSBY_ALGOLIA_APP_ID": {
+      "description": "Please document the <GATSBY_ALGOLIA_APP_ID> variable"
+    },
+    "GATSBY_ALGOLIA_SEARCH_KEY": {
+      "description": "Please document the <GATSBY_ALGOLIA_SEARCH_KEY> variable"
+    },
+    "GH_PAGES": {
+      "description": "Please document the <GH_PAGES> variable"
+    },
+    "IGNORE_JSON_FILES": {
+      "description": "Please document the <IGNORE_JSON_FILES> variable"
+    },
+    "IGNORE_MARKDOWN_FILES": {
+      "description": "Please document the <IGNORE_MARKDOWN_FILES> variable"
+    },
+    "IGNORE_PEER_DEPENDENCIES": {
+      "description": "Please document the <IGNORE_PEER_DEPENDENCIES> variable"
+    },
+    "NODE_ENV": {
+      "description": "Please document the <NODE_ENV> variable"
+    },
+    "SYNC_PEER_DEPENDENCIES": {
+      "description": "Please document the <SYNC_PEER_DEPENDENCIES> variable"
+    }
+  },
   "license": "MIT",
   "main": "n/a",
+  "name": "blog",
   "scripts": {
-    "start": "gatsby develop",
     "build": "gatsby build",
-    "serve": "gatsby build && gatsby serve",
-    "format": "prettier --write \"src/**/*.{js,jsx,css,json}\"",
-    "lint": "eslint --fix \"src/**/*.{js,jsx}\"",
+    "build:prep": "yarn sortJson && yarn docs:standardize",
     "deploy": "yarn build && node build/publish.js",
-    "type-check": "tsc --noEmit",
-    "generate": "graphql-codegen"
-  }
+    "docs:standardize": "npx ./node_modules/@luddites-me/ts-tools/dist/readme/standardizeReadme.js",
+    "foo": "graphql-codegen --config codegen.yml",
+    "format": "prettier --write \"src/**/*.{js,jsx,css,json}\"",
+    "generate": "graphql-codegen",
+    "lint": "eslint --fix \"src/**/*.{js,jsx}\"",
+    "serve": "gatsby build && gatsby serve",
+    "sortJson": "npx ./node_modules/@luddites-me/ts-tools/dist/lint/sortJson.js",
+    "start": "gatsby develop",
+    "type-check": "tsc --noEmit"
+  },
+  "scriptsDocumentation": {
+    "build": {
+      "description": "Please document the <build> script.",
+      "dev": true
+    },
+    "build:prep": {
+      "description": "Please document the <build:prep> script.",
+      "dev": true
+    },
+    "deploy": {
+      "description": "Please document the <deploy> script.",
+      "dev": true
+    },
+    "docs:standardize": {
+      "description": "Please document the <docs:standardize> script.",
+      "dev": true
+    },
+    "foo": {
+      "description": "Please document the <foo> script.",
+      "dev": true
+    },
+    "format": {
+      "description": "Please document the <format> script.",
+      "dev": true
+    },
+    "generate": {
+      "description": "Please document the <generate> script.",
+      "dev": true
+    },
+    "lint": {
+      "description": "Please document the <lint> script.",
+      "dev": true
+    },
+    "serve": {
+      "description": "Please document the <serve> script.",
+      "dev": true
+    },
+    "sortJson": {
+      "description": "Please document the <sortJson> script.",
+      "dev": true
+    },
+    "start": {
+      "description": "Please document the <start> script.",
+      "dev": true
+    },
+    "type-check": {
+      "description": "Please document the <type-check> script.",
+      "dev": true
+    }
+  },
+  "version": "0.0.1"
 }

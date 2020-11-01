@@ -1,10 +1,8 @@
-import React from "react"
-import { graphql } from "gatsby"
+import React from 'react';
+import { graphql } from 'gatsby';
+import NotFound from '../components/NotFound';
 
-export const PageNotFound = () => (
-  <div>
-  </div>
-);
+export const PageNotFound: React.FC<any> = ({ props }): JSX.Element => <NotFound props={props} />;
 
 export default PageNotFound;
 
@@ -15,4 +13,5 @@ export const pageQuery = graphql`
         title
       }
     }
-  }`;
+  }
+`;

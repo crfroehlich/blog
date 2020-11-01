@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link as GatsbyLink } from 'gatsby';
 import isAbsoluteUrl from 'is-absolute-url';
-import {tools} from '../utils/tools';
+import { tools } from '../utils/tools';
 
 export const Link: React.FC<any> = ({ to, ...props }) =>
   isAbsoluteUrl(to) ? (
@@ -13,10 +13,7 @@ export const Link: React.FC<any> = ({ to, ...props }) =>
   );
 
 export const DisplayDate: React.FC<any> = ({ date }) => {
-  return (<span
-      className={'blogDate'}>
-      {tools.getLocalDate(date)
-    }</span>);
-}
+  return <span className={'blogDate'}>{tools.getLocalDate(date)}</span>;
+};
 
 export default Link;

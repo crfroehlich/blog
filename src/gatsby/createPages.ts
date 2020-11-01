@@ -3,102 +3,59 @@ import * as path from 'path';
 import kebabCase from 'lodash/kebabCase';
 import startCase from 'lodash/startCase';
 import chalk from 'chalk';
+import { getLogger } from '@luddites-me/ts-tools';
 import { config } from '../../config';
+import { IQueryResult, INode } from '../types/interfaces';
 
 require('gatsby-plugin-mdx/component-with-mdx-scope');
 
-const log = console.log;
+const log = getLogger();
 
-interface ICategory {
-  fieldValue?: string;
-}
-
-interface INodeFrontMatter {
-  title?: string;
-  metaTitle?: string;
-  metaDescription?: string;
-  metaDate?: string;
-  tags?: string;
-  img?: string;
-}
-
-interface INodeFields {
-  slug?: string;
-  id: number;
-  title?: string;
-  date?: string;
-  tags?: string;
-  img?: string;
-}
-
-export interface INode {
-  fields?: INodeFields;
-  ext?: string;
-  relativePath?: string;
-  body?: string;
-  tableOfContents?: string;
-  frontmatter?: INodeFrontMatter;
-  name?: string;
-}
-
-interface IEdges {
-  edges?: {
-    node?: INode;
-  }[];
-}
-
-interface IQueryResult {
-  allMarkdownRemark?: IEdges;
-  allMdx?: IEdges;
-  tagsGroup: {
-    group?: ICategory[];
-  };
-}
-
-export const createPages: GatsbyNode['createPages'] = async ({
-  graphql,
-  actions,
-}) => {
+export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions }) => {
   const { createPage } = actions;
 
-  const blogPost = path.resolve(`./src/templates/BlogDocument.tsx`);
-  const tagTemplate = path.resolve(`./src/templates/Tags.tsx`);
+  const templates = {
+    article: path.resolve('./src/templates/Article.tsx'),
+    tag: path.resolve(`./src/templates/Tag.tsx`),
+    визуализации: path.resolve('./src/templates/визуализации.tsx'),
+  };
 
   const queryResult = await graphql<IQueryResult>(
-    `{
-      allMdx {
-        edges {
-          node {
-            fields {
-              id
-              title
-              slug
-              date
-              tags
-              img
-            }
-            body
-            tableOfContents
-            parent {
-              ... on File {
-                relativePath
+    `
+      {
+        allMdx {
+          edges {
+            node {
+              fields {
+                id
+                title
+                slug
+                date
+                tags
+                img
               }
-            }
-            frontmatter {
-              metaTitle
-              metaDescription
-              metaDate
+              body
+              tableOfContents
+              parent {
+                ... on File {
+                  relativePath
+                }
+              }
+              frontmatter {
+                metaTitle
+                metaDescription
+                metaDate
+              }
             }
           }
         }
-      },
-      tagsGroup: allMdx(limit: 2000) {
-        group(field: frontmatter___tags) {
-          fieldValue
+        tagsGroup: allMdx(limit: 2000) {
+          group(field: frontmatter___tags) {
+            fieldValue
+          }
         }
       }
-    }
-  `,
+    `,
   );
 
   if (queryResult.errors) {
@@ -113,19 +70,21 @@ export const createPages: GatsbyNode['createPages'] = async ({
   const posts = queryResult?.data?.allMdx?.edges || [];
 
   posts.forEach((post, index) => {
-    const previous = index === posts.length - 1 ? null : posts[index + 1].node;
-    const next = index === 0 ? null : posts[index - 1].node;
+    const previous = index === posts.length - 1 ? null : (posts[index + 1].node as INode);
+
+    const next = index === 0 ? null : (posts[index - 1].node as INode);
 
     const node = post?.node;
-    const pagePath = node?.fields?.slug  || '/';
+
+    const pagePath = node?.fields?.slug || '/';
 
     if (!pagePath) {
-      return log(chalk.yellow(`Warning: Blog post has no path. Skipping...`));
+      return log.info(chalk.yellow('Warning: Blog post has no path. Skipping...'));
     }
 
     createPage({
       path: pagePath,
-      component: blogPost,
+      component: templates.article,
       context: {
         id: node?.fields?.id,
         slug: pagePath,
@@ -135,30 +94,36 @@ export const createPages: GatsbyNode['createPages'] = async ({
     });
   });
 
+  createPage({
+    path: `/визуализации/`,
+    component: templates.визуализации,
+    context: {},
+  });
+
   // Extract category data from query
   const tags = queryResult.data.tagsGroup?.group || [];
 
   if (tags.length === 0) {
-    return log(
+    return log.info(
       chalk.yellow(
-        `Warning: No categories were found in the blog. Skipping creating category pages.`,
+        'Warning: No categories were found in the blog. Skipping creating category pages.',
       ),
     );
   }
 
   // Make category pages
-  tags.forEach(tag => {
+  tags.forEach((node) => {
     createPage({
-      path: `/визуализации/${kebabCase(tag.fieldValue)}/`,
-      component: tagTemplate,
+      path: `/тег/${kebabCase(node.fieldValue)}/`,
+      component: templates.tag,
       context: {
-        tag: tag.fieldValue,
+        tag: node.fieldValue,
       },
-    })
+    });
   });
 };
 
-export const onCreateWebpackConfig: GatsbyNode["onCreateWebpackConfig"] = ({ actions }) => {
+export const onCreateWebpackConfig: GatsbyNode['onCreateWebpackConfig'] = ({ actions }) => {
   actions.setWebpackConfig({
     resolve: {
       modules: [path.resolve(__dirname, 'src'), 'node_modules'],
@@ -170,14 +135,14 @@ export const onCreateWebpackConfig: GatsbyNode["onCreateWebpackConfig"] = ({ act
   });
 };
 
-export const onCreateNode: GatsbyNode["onCreateNode"] = ({ node, getNode, actions }) => {
+export const onCreateNode: GatsbyNode['onCreateNode'] = ({ node, getNode, actions }) => {
   const { createNodeField } = actions;
 
   try {
-    //if (node.internal.type === `Mdx`) {
+    // if (node.internal.type === `Mdx`) {
     const parent = getNode(node.parent) as INode;
 
-    if(parent) {
+    if (parent) {
       let value = parent.relativePath.replace(parent.ext, '');
 
       if (value === 'index') {
@@ -186,13 +151,13 @@ export const onCreateNode: GatsbyNode["onCreateNode"] = ({ node, getNode, action
 
       if (config.gatsby && config.gatsby.trailingSlash) {
         createNodeField({
-          name: `slug`,
+          name: 'slug',
           node,
-          value: value === '' ? `/` : `/${value}/`,
+          value: value === '' ? '/' : `/${value}/`,
         });
       } else {
         createNodeField({
-          name: `slug`,
+          name: 'slug',
           node,
           value: `/${value}`,
         });
@@ -205,8 +170,9 @@ export const onCreateNode: GatsbyNode["onCreateNode"] = ({ node, getNode, action
       value: node.id,
     });
 
-    const frontmatter: INodeFrontMatter = node.frontmatter;
-    if(frontmatter) {
+    const { frontmatter } = node as INode;
+
+    if (frontmatter) {
       createNodeField({
         name: 'title',
         node,
@@ -233,8 +199,8 @@ export const onCreateNode: GatsbyNode["onCreateNode"] = ({ node, getNode, action
         value: `${config.gatsby.cdnUrl}${imagePath}`,
       });
     }
-  } catch(e) {
-    console.error(e);
-    //throw e;
+  } catch (e) {
+    log.error('Create node error', e);
+    // throw e;
   }
 };

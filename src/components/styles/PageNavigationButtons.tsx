@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { IStyle } from 'src/types/interfaces';
+import { IStyle } from '../../types/interfaces';
 
 export const StyledNextPrevious = styled('div')`
   margin: 0px;

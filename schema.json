@@ -3045,16 +3045,6 @@
               "defaultValue": null
             },
             {
-              "name": "metaDraft",
-              "description": "",
-              "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "BooleanQueryOperatorInput",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
               "name": "tags",
               "description": "",
               "type": {
@@ -3070,6 +3060,16 @@
               "type": {
                 "kind": "INPUT_OBJECT",
                 "name": "StringQueryOperatorInput",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "metaDraft",
+              "description": "",
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "BooleanQueryOperatorInput",
                 "ofType": null
               },
               "defaultValue": null
@@ -5346,18 +5346,6 @@
               "deprecationReason": null
             },
             {
-              "name": "metaDraft",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "SCALAR",
-                "name": "Boolean",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
               "name": "tags",
               "description": null,
               "args": [],
@@ -5380,6 +5368,18 @@
               "type": {
                 "kind": "SCALAR",
                 "name": "String",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "metaDraft",
+              "description": null,
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "Boolean",
                 "ofType": null
               },
               "isDeprecated": false,
@@ -7651,12 +7651,6 @@
               "deprecationReason": null
             },
             {
-              "name": "childMdx___frontmatter___metaDraft",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
               "name": "childMdx___frontmatter___tags",
               "description": null,
               "isDeprecated": false,
@@ -7664,6 +7658,12 @@
             },
             {
               "name": "childMdx___frontmatter___img",
+              "description": null,
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "childMdx___frontmatter___metaDraft",
               "description": null,
               "isDeprecated": false,
               "deprecationReason": null
@@ -19673,12 +19673,6 @@
               "deprecationReason": null
             },
             {
-              "name": "frontmatter___metaDraft",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
               "name": "frontmatter___tags",
               "description": null,
               "isDeprecated": false,
@@ -19686,6 +19680,12 @@
             },
             {
               "name": "frontmatter___img",
+              "description": null,
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "frontmatter___metaDraft",
               "description": null,
               "isDeprecated": false,
               "deprecationReason": null

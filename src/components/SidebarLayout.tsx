@@ -5,7 +5,7 @@ import { StaticQuery, graphql } from 'gatsby';
 import { config } from '../../config';
 import { Sidebar, ListItem } from './styles/Sidebar';
 import { Query } from 'graphql-types';
-import { IProps } from 'src/types/interfaces';
+import { IProps } from '../types/interfaces';
 
 export const SidebarLayout: React.FC<IProps> = ({ location }) => (
   <StaticQuery<Query>
@@ -39,7 +39,7 @@ export const SidebarLayout: React.FC<IProps> = ({ location }) => (
               if (item.node.tableOfContents.items) {
                 innerItems = item.node.tableOfContents.items.map((innerItem, index) => {
                   const itemId = innerItem.title
-                    ? innerItem.title.replace(/\s+/g, '').toLowerCase()
+                    ? innerItem.title?.replace(/\s+/g, '').toLowerCase()
                     : '#';
 
                   return (

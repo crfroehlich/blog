@@ -3,7 +3,7 @@ import Tree from './tree';
 import { StaticQuery, graphql } from 'gatsby';
 import styled from '@emotion/styled';
 import { ExternalLink } from 'react-feather';
-import {config} from '../../../config';
+import { config } from '../../../config';
 import { Query } from 'graphql-types';
 
 // eslint-disable-next-line no-unused-vars

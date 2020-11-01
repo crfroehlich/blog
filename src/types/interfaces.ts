@@ -49,3 +49,49 @@ export interface IStyle {
   active?: boolean;
   focus?: any;
 }
+
+export interface ICategory {
+  fieldValue?: string;
+}
+
+export interface INodeFrontMatter {
+  title?: string;
+  metaTitle?: string;
+  metaDescription?: string;
+  metaDate?: string;
+  tags?: string;
+  img?: string;
+}
+
+export interface INodeFields {
+  slug?: string;
+  id: number;
+  title?: string;
+  date?: string;
+  tags?: string;
+  img?: string;
+}
+
+export interface INode {
+  fields?: INodeFields;
+  ext?: string;
+  relativePath?: string;
+  body?: string;
+  tableOfContents?: string;
+  frontmatter?: INodeFrontMatter;
+  name?: string;
+}
+
+export interface IEdges {
+  edges?: {
+    node?: INode;
+  }[];
+}
+
+export interface IQueryResult {
+  allMarkdownRemark?: IEdges;
+  allMdx?: IEdges;
+  tagsGroup: {
+    group?: ICategory[];
+  };
+}

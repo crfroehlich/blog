@@ -7,12 +7,15 @@ import Loadable from 'react-loadable';
 import { Icon } from 'rmwc';
 import { config } from '../../config';
 import LoadingProvider from './mdxComponents/loading';
+import Sidebar from './sidebar';
+import { HeaderTitleQueryQuery } from 'graphql-types';
+import { IProps } from '../types/interfaces';
 
 const help = require('./images/help.svg');
 
 const isSearchEnabled = config.header.search && config.header.search.enabled ? true : false;
 
-let searchIndices = [];
+const searchIndices = [];
 
 if (isSearchEnabled && config.header.search.indexName) {
   searchIndices.push({
@@ -21,10 +24,6 @@ if (isSearchEnabled && config.header.search.indexName) {
     hitComp: `PageHit`,
   });
 }
-
-import Sidebar from './sidebar';
-import { HeaderTitleQueryQuery } from 'graphql-types';
-import { IProps } from 'src/types/interfaces';
 
 const LoadableComponent = Loadable({
   loader: () => import('./search/index'),
@@ -76,7 +75,7 @@ const Header: React.FC<IProps> = ({ location }) => (
         }
       }
     `}
-    render={data => {
+    render={(data) => {
       const logoImg = require('./images/logo.svg');
 
       const twitter = require('./images/twitter.svg');
@@ -111,7 +110,7 @@ const Header: React.FC<IProps> = ({ location }) => (
             ) : null}
             {isSearchEnabled ? (
               <div className={'searchWrapper hiddenMobile navBarUL'}>
-                <LoadableComponent collapse={true} indices={searchIndices} hitsAsGrid={''} />
+                <LoadableComponent collapse={true} indices={searchIndices} />
               </div>
             ) : null}
             <div id="navbar" className={'topnav'}>
@@ -124,11 +123,9 @@ const Header: React.FC<IProps> = ({ location }) => (
                   if (link.link !== '' && link.text !== '') {
                     return (
                       <li key={key}>
-                        <Link
-                          className="sidebarLink"
-                          to={link.link}
-                          title={link.text }
-                        >{link.text}</Link>
+                        <Link className="sidebarLink" to={link.link} title={link.text}>
+                          {link.text}
+                        </Link>
                       </li>
                     );
                   }
@@ -165,13 +162,14 @@ const Header: React.FC<IProps> = ({ location }) => (
                 ) : null}
                 {githubUrl !== '' ? (
                   <li className={'githubBtn'}>
-                    <GitHubButton
-                      href={githubUrl}
-                      aria-label="Follow"
-                    />
+                    <GitHubButton href={githubUrl} aria-label="Follow" />
                   </li>
                 ) : null}
-                <li><Link to={'/rss.xml'}><Icon icon="rss_feed" /></Link></li>
+                <li>
+                  <Link to={'/rss.xml'}>
+                    <Icon icon="rss_feed" />
+                  </Link>
+                </li>
               </ul>
             </div>
           </nav>
@@ -191,7 +189,7 @@ const Header: React.FC<IProps> = ({ location }) => (
             </div>
             {isSearchEnabled ? (
               <div className={'searchWrapper'}>
-                <LoadableComponent collapse={true} indices={searchIndices} hitsAsGrid={''} />
+                <LoadableComponent collapse={true} indices={searchIndices} />
               </div>
             ) : null}
           </StyledBgDiv>

@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { IStyle } from 'src/types/interfaces';
+import { IStyle } from '../../types/interfaces';
 
 export const StyledHeading = styled('h1')`
   font-size: 32px;
