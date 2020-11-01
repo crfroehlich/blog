@@ -153,7 +153,9 @@
     "serve": "gatsby build && gatsby serve",
     "sortJson": "npx ./node_modules/@luddites-me/ts-tools/dist/lint/sortJson.js",
     "start": "gatsby develop",
-    "type-check": "tsc --noEmit"
+    "type-check": "tsc --noEmit",
+    "debug:dev": "node --nolazy node_modules/.bin/gatsby develop --inspect-brk",
+    "debug:prod": "node --nolazy node_modules/.bin/gatsby build --inspect-brk"
   },
   "scriptsDocumentation": {
     "build": {

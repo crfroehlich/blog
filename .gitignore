@@ -133,3 +133,6 @@ dist
 
 # Code generated
 graphql-types.ts
+**/__generated__/**
+apollo.config.js
+schema.json
