@@ -1,14 +1,5 @@
 import { config } from '../../../config';
 
-const sw = `
-workbox.routing.registerRoute(
-  new RegExp('https:.*min.(css|js)'),
-  workbox.strategies.staleWhileRevalidate({
-    cacheName: 'cdn-cache',
-  })
-);
-`;
-
 export const offline = [];
 
 if (config.pwa?.manifest) {
@@ -25,7 +16,7 @@ if (config.pwa?.enabled) {
   offline.push({
     resolve: 'gatsby-plugin-offline',
     options: {
-      appendScript: sw,
+      appendScript: require.resolve('./workbox.js'),
     },
   });
 }

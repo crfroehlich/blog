@@ -24,9 +24,9 @@ export const config = {
     search: {
       enabled: true,
       indexName: 'blog',
-      algoliaAppId: env.ALGOLIA_APPLICATION_ID,
-      algoliaSearchKey: env.ALGOLIA_SEARCH_ONLY_API_KEY,
-      algoliaAdminKey: env.ALGOLIA_ADMIN_API_KEY,
+      algoliaAppId: process.env.ALGOLIA_APPLICATION_ID,
+      algoliaSearchKey: process.env.ALGOLIA_SEARCH_ONLY_API_KEY,
+      algoliaAdminKey: process.env.ALGOLIA_ADMIN_API_KEY,
     },
   },
   sidebar: {
