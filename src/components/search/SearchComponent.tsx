@@ -13,6 +13,7 @@ import { PoweredBy } from './styles';
 import Input from './input';
 import * as hitComps from './hitComps';
 import { IStyle } from '../../types/interfaces';
+import { Tools } from '../../utils';
 
 const HitsWrapper = styled.div`
   asgrid: true;
@@ -100,9 +101,11 @@ const useClickOutside = (ref, handler, events = null) => {
     ref && ref.current && !ref.current.contains(event.target) && handler();
 
   useEffect(() => {
-    for (const event of events) document.addEventListener(event, detectClickOutside);
+    const tools = new Tools();
+    for (const event of events) tools.getDocument()?.addEventListener(event, detectClickOutside);
     return () => {
-      for (const event of events) document.removeEventListener(event, detectClickOutside);
+      for (const event of events)
+        tools.getDocument()?.removeEventListener(event, detectClickOutside);
     };
   });
 };

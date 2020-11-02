@@ -9,7 +9,8 @@ import { config } from '../../config';
 import LoadingProvider from './mdxComponents/loading';
 import Sidebar from './sidebar';
 import { HeaderTitleQueryQuery } from 'graphql-types';
-import { IProps } from 'src/types/interfaces';
+import { IProps } from '../types/interfaces';
+import { Tools } from '../utils';
 
 const help = require('./images/help.svg');
 
@@ -26,12 +27,13 @@ if (isSearchEnabled && config.header.search.indexName) {
 }
 
 const LoadableComponent = Loadable({
-  loader: () => import('./search/index'),
+  loader: () => import('./search/SearchComponent'),
   loading: LoadingProvider,
 });
 
 const setNavBar = () => {
-  const x = document.getElementById('navbar');
+  const tools = new Tools();
+  const x = tools.getDocument()?.getElementById('navbar');
 
   if (x.className === 'topnav') {
     x.className += ' responsive';

@@ -1,14 +1,10 @@
-import dotenv from 'dotenv';
+import { loadEnv } from '@luddites-me/ts-tools';
+
+loadEnv();
+
 import { config } from './config';
 import type { GatsbyConfig } from 'gatsby';
 import { codegen, content, google, mdx, offline, rss, search } from './src/gatsby/plugins';
-import { getLogger } from '@luddites-me/ts-tools';
-
-dotenv.config({
-  path: `.env`,
-});
-
-const log = getLogger();
 
 let plugins: any[] = [
   'gatsby-plugin-catch-links',
@@ -22,9 +18,19 @@ let plugins: any[] = [
   'gatsby-transformer-remark',
   'gatsby-transformer-sharp',
   {
+    resolve: 'gatsby-plugin-bundle-stats',
+    options: {
+      compare: true,
+      outDir: '../artifacts',
+      stats: {
+        context: './src',
+      },
+    },
+  },
+  {
     resolve: 'gatsby-plugin-robots-txt',
     options: {
-      policy: [{ userAgent: '*', allow: '/', disallow: '/reading-list/' }],
+      policy: [{ userAgent: '*', allow: '/' }],
     },
   },
   {
@@ -51,7 +57,10 @@ export const gatsbyConfig: GatsbyConfig = {
     docsLocation: config.siteMetadata.docsLocation,
     ogImage: config.siteMetadata.ogImage,
     favicon: config.siteMetadata.favicon,
-    logo: { link: config.header.logoLink ? config.header.logoLink : '/', image: config.header.logo }, // backwards compatible
+    logo: {
+      link: config.header.logoLink ? config.header.logoLink : '/',
+      image: config.header.logo,
+    },
     headerTitle: config.header.title,
     githubUrl: config.header.githubUrl,
     helpUrl: config.header.helpUrl,
@@ -61,7 +70,5 @@ export const gatsbyConfig: GatsbyConfig = {
   },
   plugins,
 };
-
-log.info('config', JSON.stringify(gatsbyConfig));
 
 export default gatsbyConfig;

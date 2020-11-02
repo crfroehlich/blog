@@ -1,8 +1,9 @@
 import React from 'react';
 import OpenedSvg from '../images/opened';
 import ClosedSvg from '../images/closed';
-import {config} from '../../../config';
+import { config } from '../../../config';
 import Link from '../Link';
+import { Tools } from '../../utils';
 
 const TreeNode = ({ className = '', setCollapsed, collapsed, url, title, items, ...rest }) => {
   const isCollapsed = collapsed[url];
@@ -14,14 +15,10 @@ const TreeNode = ({ className = '', setCollapsed, collapsed, url, title, items, 
 
   const hasChildren = items.length !== 0;
 
-  let location;
-
-  if (typeof document != 'undefined') {
-    location = document.location;
-  }
+  const tools = new Tools();
+  const location = tools.getLocation();
   const active =
-    location && (location.pathname === url || location.pathname === config.gatsby.pathPrefix + url);
-
+    location?.pathname === url || location?.pathname === config?.gatsby?.pathPrefix + url;
   const calculatedClassName = `${className} item ${active ? 'active' : ''}`;
 
   return (
@@ -36,13 +33,9 @@ const TreeNode = ({ className = '', setCollapsed, collapsed, url, title, items, 
           ) : null}
         </a>
       )}
-      {title && !hasChildren && (
-        <Link to={url}>
-          {title}
-        </Link>
-      )}
+      {title && !hasChildren && <Link to={url}>{title}</Link>}
 
-    {!isCollapsed && hasChildren ? (
+      {!isCollapsed && hasChildren ? (
         <ul>
           {items.map((item, index) => (
             <TreeNode

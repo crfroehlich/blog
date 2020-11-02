@@ -3,13 +3,10 @@ import * as path from 'path';
 import kebabCase from 'lodash/kebabCase';
 import startCase from 'lodash/startCase';
 import chalk from 'chalk';
-import { getLogger } from '@luddites-me/ts-tools';
 import { config } from '../../config';
 import { IQueryResult, INode } from '../types/interfaces';
 
 require('gatsby-plugin-mdx/component-with-mdx-scope');
-
-const log = getLogger();
 
 export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions }) => {
   const { createPage } = actions;
@@ -79,7 +76,7 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions 
     const pagePath = node?.fields?.slug || '/';
 
     if (!pagePath) {
-      return log.info(chalk.yellow('Warning: Blog post has no path. Skipping...'));
+      return console.info(chalk.yellow('Warning: Blog post has no path. Skipping...'));
     }
 
     createPage({
@@ -104,7 +101,7 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions 
   const tags = queryResult.data.tagsGroup?.group || [];
 
   if (tags.length === 0) {
-    return log.info(
+    return console.info(
       chalk.yellow(
         'Warning: No categories were found in the blog. Skipping creating category pages.',
       ),
@@ -135,10 +132,16 @@ export const onCreateWebpackConfig: GatsbyNode['onCreateWebpackConfig'] = ({ act
   });
 };
 
+const uniqueTypes = [];
+
 export const onCreateNode: GatsbyNode['onCreateNode'] = ({ node, getNode, actions }) => {
   const { createNodeField } = actions;
 
   try {
+    if (uniqueTypes.find((t) => t === node.internal.type)) {
+      uniqueTypes.push(node.internal.type);
+      console.info(node.internal.type);
+    }
     // if (node.internal.type === `Mdx`) {
     const parent = getNode(node.parent) as INode;
 
@@ -200,7 +203,7 @@ export const onCreateNode: GatsbyNode['onCreateNode'] = ({ node, getNode, action
       });
     }
   } catch (e) {
-    log.error('Create node error', e);
+    console.error('Create node error', e);
     // throw e;
   }
 };

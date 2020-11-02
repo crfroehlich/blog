@@ -2,8 +2,11 @@ import React from 'react';
 import PageWrapper from './PageWrapper';
 import KeywordCloud from 'react-keyword-cloud';
 import { IProps } from '../types/interfaces';
+import { tools } from '../utils';
 
 export const Chips: React.FC<IProps> = ({ props }) => {
+  if (!tools.isBrowser()) return null;
+
   const {
     data: {
       allMdx: { group },

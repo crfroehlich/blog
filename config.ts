@@ -24,9 +24,9 @@ export const config = {
     search: {
       enabled: true,
       indexName: 'blog',
-      algoliaAppId: process.env.GATSBY_ALGOLIA_APP_ID,
-      algoliaSearchKey: process.env.GATSBY_ALGOLIA_SEARCH_KEY,
-      algoliaAdminKey: process.env.ALGOLIA_ADMIN_KEY,
+      algoliaAppId: env.ALGOLIA_APPLICATION_ID,
+      algoliaSearchKey: env.ALGOLIA_SEARCH_ONLY_API_KEY,
+      algoliaAdminKey: env.ALGOLIA_ADMIN_API_KEY,
     },
   },
   sidebar: {
@@ -48,20 +48,15 @@ export const config = {
   pwa: {
     enabled: true, // disabling this will also remove the existing service worker.
     manifest: {
+      background_color: '#6b37bf',
+      cache_busting_mode: 'query',
+      crossOrigin: 'use-credentials',
+      display: 'standalone',
+      icon: './static/favicon.svg',
       name: 'Hiking My Desk',
       short_name: 'HikingMyDesk',
       start_url: '/',
-      background_color: '#6b37bf',
       theme_color: '#6b37bf',
-      display: 'standalone',
-      crossOrigin: 'use-credentials',
-      icons: [
-        {
-          src: 'src/pwa-512.svg',
-          sizes: `512x512`,
-          type: `image/svg`,
-        },
-      ],
     },
   },
 };
