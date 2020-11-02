@@ -140,7 +140,7 @@
   "scripts": {
     "build": "gatsby build",
     "build:prep": "yarn sortJson && yarn docs:standardize",
-    "clean": "gatsby clean && rimraf .cache .tmp public",
+    "clean": "gatsby clean && rimraf .cache .tmp public __generated__ src/**/__generated__/**",
     "debug:dev": "node --nolazy node_modules/.bin/gatsby develop --inspect-brk",
     "debug:prod": "node --nolazy node_modules/.bin/gatsby build --inspect-brk",
     "deploy": "yarn build && node build/publish.js",
