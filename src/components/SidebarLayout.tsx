@@ -27,15 +27,16 @@ export const SidebarLayout: React.FC<IProps> = ({ location }) => (
 
       let finalNavItems;
 
-      if (allMdx.edges !== undefined && allMdx.edges.length > 0) {
+      if (allMdx.edges?.length > 0) {
         allMdx.edges.map((item, index) => {
           let innerItems;
 
-          if (item !== undefined) {
+          if (item !== undefined && item.node.fields.slug !== '/') {
             if (
               location.pathname.startsWith(item.node.fields.slug) ||
               config.gatsby.pathPrefix + item.node.fields.slug === location.pathname
             ) {
+              console.log([location.pathname, item.node.fields.slug])
               if (item.node.tableOfContents.items) {
                 innerItems = item.node.tableOfContents.items.map((innerItem, index) => {
                   const itemId = innerItem.title
@@ -56,7 +57,7 @@ export const SidebarLayout: React.FC<IProps> = ({ location }) => (
           }
         });
       }
-      if (finalNavItems && finalNavItems.length) {
+      if (finalNavItems?.length) {
         return (
           <div>
             <Sidebar>
