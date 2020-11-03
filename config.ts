@@ -52,7 +52,7 @@ export const config = {
       cache_busting_mode: 'query',
       crossOrigin: 'use-credentials',
       display: 'standalone',
-      icon: './static/favicon.svg',
+      icon: './content/assets/favicon.svg',
       name: 'Hiking My Desk',
       short_name: 'HikingMyDesk',
       start_url: '/',
@@ -60,3 +60,5 @@ export const config = {
     },
   },
 };
+
+export default config;
