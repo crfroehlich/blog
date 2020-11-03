@@ -3,14 +3,14 @@ export const content = [
     resolve: 'gatsby-source-filesystem',
     options: {
       name: 'docs',
-      path: `${__dirname}/../../../content/`,
+      path: `${__dirname}/../../../content/posts`,
     },
   },
   {
     resolve: 'gatsby-source-filesystem',
     options: {
       name: 'images',
-      path: `${__dirname}/../../../static/`,
+      path: `${__dirname}/../../../content/assets/images`,
     },
   },
 ];

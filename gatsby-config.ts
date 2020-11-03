@@ -1,10 +1,9 @@
-import { loadEnv } from '@luddites-me/ts-tools';
-
-loadEnv();
-
-import { config } from './config';
 import type { GatsbyConfig } from 'gatsby';
-import { codegen, content, google, mdx, offline, rss, search } from './src/gatsby/plugins';
+import * as env from './build/initEnv';
+import { config } from './config';
+import { codegen, content, fonts, google, mdx, offline, robots, rss, search, stats } from './src/gatsby/plugins';
+
+console.log([env, process.env]);
 
 let plugins: any[] = [
   'gatsby-plugin-catch-links',
@@ -17,44 +16,26 @@ let plugins: any[] = [
   'gatsby-plugin-ts',
   'gatsby-transformer-remark',
   'gatsby-transformer-sharp',
-  {
-    resolve: 'gatsby-plugin-bundle-stats',
-    options: {
-      compare: true,
-      outDir: '../artifacts',
-      stats: {
-        context: './src',
-      },
-    },
-  },
-  {
-    resolve: 'gatsby-plugin-robots-txt',
-    options: {
-      policy: [{ userAgent: '*', allow: '/' }],
-    },
-  },
-  {
-    resolve: `gatsby-plugin-google-fonts`,
-    options: {
-      fonts: [`Roboto\:300,400,500,700`, `Poppins\:300,400,500,600`],
-    },
-  },
 ];
 
 plugins = plugins.concat(codegen);
 plugins = plugins.concat(content);
+plugins = plugins.concat(fonts);
 plugins = plugins.concat(google);
 plugins = plugins.concat(mdx);
 plugins = plugins.concat(offline);
+plugins = plugins.concat(robots);
 plugins = plugins.concat(rss);
 plugins = plugins.concat(search);
+plugins = plugins.concat(stats);
 
 export const gatsbyConfig: GatsbyConfig = {
+  plugins,
   pathPrefix: config.gatsby.pathPrefix,
   siteMetadata: {
     title: config.siteMetadata.title,
     description: config.siteMetadata.description,
-    docsLocation: config.siteMetadata.docsLocation,  
+    docsLocation: config.siteMetadata.docsLocation,
     ogImage: config.siteMetadata.ogImage,
     favicon: config.siteMetadata.favicon,
     logo: {
@@ -68,7 +49,6 @@ export const gatsbyConfig: GatsbyConfig = {
     headerLinks: config.header.links,
     siteUrl: config.gatsby.siteUrl,
   },
-  plugins,
 };
 
 export default gatsbyConfig;
