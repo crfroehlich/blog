@@ -22,7 +22,7 @@ rules:
     - always
 parser: '@typescript-eslint/parser'
 parserOptions:
-  ecmaVersion: 2019
+  ecmaVersion: 11
   sourceType: module
   ecmaFeatures:
     jsx: true

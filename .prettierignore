@@ -1,5 +1,7 @@
+__generated__
 .cache
 .yarn
 package.json
 public
+src/**/__generated__/**
 yarn-lock.json

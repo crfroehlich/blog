@@ -1,7 +1,18 @@
 import type { GatsbyConfig } from 'gatsby';
 import * as env from './build/initEnv';
 import { config } from './config';
-import { codegen, content, fonts, google, mdx, offline, robots, rss, search, stats } from './src/gatsby/plugins';
+import {
+  codegen,
+  content,
+  fonts,
+  google,
+  mdx,
+  offline,
+  robots,
+  rss,
+  search,
+  stats,
+} from './src/gatsby/plugins';
 
 console.log([env, process.env]);
 
