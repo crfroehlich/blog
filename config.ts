@@ -4,10 +4,10 @@ export const config = {
     siteUrl: 'https://blog.luddites.me',
     gaTrackingId: 'G-WZTYEG3VZJ',
     trailingSlash: false,
-    cdnUrl: './static/'
+    cdnUrl: '/',
   },
   header: {
-    logo: './static/luddite_logo.svg',
+    logo: '/luddite_logo.svg',
     logoLink: 'https://github.com/crfroehlich/',
     title: 'ЛУДДИТЫ, INC.',
     githubUrl: 'https://github.com/crfroehlich/blog',
@@ -16,7 +16,7 @@ export const config = {
     social: `<li>
 		    <a href="https://twitter.com/tquestingbeast" target="_blank" rel="noopener">
 		      <div class="twitterBtn">
-		        <img src="./static/twitter_icon.svg" alt={'Discord'}/>
+		        <img src="/twitter_icon.svg" alt="twit"/>
 		      </div>
 		    </a>
 		  </li>`,
@@ -43,7 +43,7 @@ export const config = {
     description: 'A blog apart',
     ogImage: null,
     docsLocation: 'https://github.com/crfroehlich/blog/tree/main/content',
-    favicon: './static/luddite_favicon.svg',
+    favicon: '/favicon.svg',
   },
   pwa: {
     enabled: true, // disabling this will also remove the existing service worker.

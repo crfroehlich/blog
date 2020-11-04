@@ -6771,15 +6771,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react-redux@npm:^7.1.10":
-  version: 7.1.10
-  resolution: "@types/react-redux@npm:7.1.10"
+"@types/react-redux@npm:^7.1.11":
+  version: 7.1.11
+  resolution: "@types/react-redux@npm:7.1.11"
   dependencies:
     "@types/hoist-non-react-statics": ^3.3.0
     "@types/react": "*"
     hoist-non-react-statics: ^3.3.0
     redux: ^4.0.0
-  checksum: 3debc50d97ebbbda0e8fec1f14b037d161077007d22d5331d1f8b57ca1a18cda69a49f4ba6bfb7c543108c00a9f889417aad7fa3e30344d0694b9bfac75c9878
+  checksum: 981e91bc043132b3c94f3ac072be4f11f49e6a407d9c7a95ccb1dcb3432da9978d68d314eb0398090f60bb86aa6b237809427f6a7076885b1655f32e6a8c2ea8
   languageName: node
   linkType: hard
 
@@ -9259,7 +9259,7 @@ __metadata:
     "@types/react-dom": ^16.9.9
     "@types/react-helmet": ^6.1.0
     "@types/react-loadable": ^5.5.4
-    "@types/react-redux": ^7.1.10
+    "@types/react-redux": ^7.1.11
     "@types/react-slick": ^0.23.4
     "@types/redux": ^3.6.31
     "@typescript-eslint/parser": ^4.6.1
