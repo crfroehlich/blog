@@ -27,10 +27,10 @@
 <url> <loc>https://blog.luddites.me/2004/area-man-confused-by-obscure-references</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://blog.luddites.me/2004/baal-is-dead-i-killed-him</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://blog.luddites.me/2004/local-news</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://blog.luddites.me/2004/local-news_9</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://blog.luddites.me/2004/public-concern-rises-as-treatment-of</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://blog.luddites.me/2004/yes</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://blog.luddites.me/2004/local-news_9</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://blog.luddites.me/2005/eves-and-cusps</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://blog.luddites.me/2004/yes</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://blog.luddites.me/2005/fellow-thebans</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://blog.luddites.me/2005/great-tidings</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://blog.luddites.me/2005/i-fought-giant-lizard-today</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -57,12 +57,12 @@
 <url> <loc>https://blog.luddites.me/2007/greek-god-vows-to-avenge-son-death</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://blog.luddites.me/2007/its_that_time_when_the_world_falls_in_love</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://blog.luddites.me/2007/laziness-breeds</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://blog.luddites.me/2007/open-p2p-peer-to-peer-to-life</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://blog.luddites.me/2007/pope-announces-begins-at-lust</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://blog.luddites.me/2007/open-p2p-peer-to-peer-to-life</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://blog.luddites.me/2007/pope-announces-revolutionary-only</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://blog.luddites.me/2007/put-these-into-my-car</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://blog.luddites.me/2007/quit-me-thisly</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://blog.luddites.me/2007/thought-in-progress</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://blog.luddites.me/2007/put-these-into-my-car</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://blog.luddites.me/2007/thurgling</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://blog.luddites.me/2008/a-comment-on-comments</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://blog.luddites.me/2008/a-dark-in-shot</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -74,8 +74,8 @@
 <url> <loc>https://blog.luddites.me/2008/burning-bush</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://blog.luddites.me/2008/circles-twice-removed</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://blog.luddites.me/2008/eli-my-eli</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://blog.luddites.me/2008/for-your-bucket-of-thoughts</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://blog.luddites.me/2008/full-disclosure</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://blog.luddites.me/2008/for-your-bucket-of-thoughts</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://blog.luddites.me/2008/goodybye-randy-pausch</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://blog.luddites.me/2008/hello-son</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://blog.luddites.me/2008/hogwash</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -96,6 +96,7 @@
 <url> <loc>https://blog.luddites.me/2009/eli-walks</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://blog.luddites.me/2009/meeting_melchilzedek</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://blog.luddites.me/2009/palin-should-have-won</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://blog.luddites.me/2009/year-new</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://blog.luddites.me/2010/alas</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://blog.luddites.me/2010/if-it-looks-like-duck-and-walks-like</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://blog.luddites.me/2010/vancouver-winter-olympics-2010</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -115,8 +116,8 @@
 <url> <loc>https://blog.luddites.me/2012/complex-units-of-measure</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://blog.luddites.me/2012/how-to-subclass-array-not-really</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://blog.luddites.me/2012/on-competence</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://blog.luddites.me/2012/out_with_the_old_in_with_the_new_profile</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://blog.luddites.me/2012/performance-determinism-vs</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://blog.luddites.me/2012/out_with_the_old_in_with_the_new_profile</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://blog.luddites.me/2012/physical-books-and-such</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://blog.luddites.me/2012/the-cost-of-urgency</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://blog.luddites.me/2012/your-hyperbole-is-too-large</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -148,7 +149,6 @@
 <url> <loc>https://blog.luddites.me/2019/Code-Generation-Fail--An-all-the-king-s-horses-tragedy</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://blog.luddites.me/2020/blogging_to_the_oldies</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://blog.luddites.me/2020/oscar</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://blog.luddites.me/2009/year-new</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://blog.luddites.me/2009/wishing-and-unwishing</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://blog.luddites.me/2009/something-worth-sharing</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://blog.luddites.me/визуализации</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
