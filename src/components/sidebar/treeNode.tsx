@@ -1,6 +1,6 @@
 import React from 'react';
-import OpenedSvg from '../images/opened';
-import ClosedSvg from '../images/closed';
+import OpenedSvg from './opened';
+import ClosedSvg from './closed';
 import { config } from '../../../config';
 import Link from '../Link';
 import { Tools } from '../../utils';
@@ -8,10 +8,7 @@ import { Tools } from '../../utils';
 const TreeNode = ({ className = '', setCollapsed, collapsed, url, title, items, ...rest }) => {
   const isCollapsed = collapsed[url];
 
-  const collapse = () => {
-    //debugger
-    setCollapsed(url);
-  };
+  const collapse = () => setCollapsed(url);
 
   const hasChildren = items.length !== 0;
 

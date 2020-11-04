@@ -31,7 +31,6 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions 
                 tags
                 img
               }
-              body
               tableOfContents
               parent {
                 ... on File {
@@ -132,17 +131,17 @@ export const onCreateWebpackConfig: GatsbyNode['onCreateWebpackConfig'] = ({ act
   });
 };
 
-const uniqueTypes = [];
-
 export const onCreateNode: GatsbyNode['onCreateNode'] = ({ node, getNode, actions }) => {
   const { createNodeField } = actions;
 
   try {
-    if (uniqueTypes.find((t) => t === node.internal.type)) {
-      uniqueTypes.push(node.internal.type);
-      console.info(node.internal.type);
-    }
-    // if (node.internal.type === `Mdx`) {
+
+    const isContent =
+      node.internal.type.toLowerCase().indexOf('mdx') !== -1 ||
+      node.internal.type.toLowerCase().indexOf('markdown') !== -1;
+
+    if (!isContent) return;
+
     const parent = getNode(node.parent) as INode;
 
     if (parent) {
@@ -204,6 +203,5 @@ export const onCreateNode: GatsbyNode['onCreateNode'] = ({ node, getNode, action
     }
   } catch (e) {
     console.error('Create node error', e);
-    // throw e;
   }
 };

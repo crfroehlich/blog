@@ -12,8 +12,6 @@ import { HeaderTitleQueryQuery } from 'graphql-types';
 import { IProps } from '../types/interfaces';
 import { Tools } from '../utils';
 
-const help = require('./images/help.svg');
-
 const isSearchEnabled = config.header.search && config.header.search.enabled ? true : false;
 
 const searchIndices = [];
@@ -78,9 +76,6 @@ const Header: React.FC<IProps> = ({ location }) => (
       }
     `}
     render={(data) => {
-      const logoImg = require('./images/logo.svg');
-
-      const twitter = require('./images/twitter.svg');
 
       const {
         site: {
@@ -95,7 +90,7 @@ const Header: React.FC<IProps> = ({ location }) => (
               <Link to={'/'} className={'navBarBrand'}>
                 <img
                   className={'img-responsive displayInline'}
-                  src={logo.image !== '' ? logo.image : logoImg}
+                  src={logo.image !== '' ? logo.image : '../static/logo.svg'}
                   alt={'logo'}
                 />
               </Link>
@@ -135,7 +130,7 @@ const Header: React.FC<IProps> = ({ location }) => (
                 {helpUrl !== '' ? (
                   <li>
                     <a href={helpUrl}>
-                      <img src={help} alt={'Help icon'} />
+                      <img src={'../help.svg'} alt={'Help icon'} />
                     </a>
                   </li>
                 ) : null}
@@ -147,7 +142,7 @@ const Header: React.FC<IProps> = ({ location }) => (
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <img className={'shareIcon'} src={twitter} alt={'Twitter'} />
+                      <img className={'shareIcon'} src={'../twitter.svg'} alt={'Twitter'} />
                     </a>
                   </li>
                 ) : null}

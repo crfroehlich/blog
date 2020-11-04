@@ -6771,15 +6771,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react-redux@npm:^7.1.9":
-  version: 7.1.9
-  resolution: "@types/react-redux@npm:7.1.9"
+"@types/react-redux@npm:^7.1.10":
+  version: 7.1.10
+  resolution: "@types/react-redux@npm:7.1.10"
   dependencies:
     "@types/hoist-non-react-statics": ^3.3.0
     "@types/react": "*"
     hoist-non-react-statics: ^3.3.0
     redux: ^4.0.0
-  checksum: 061c4ef6af67f05e55d4304429d689a62f98a27e6b7ddebe25bd4d90229b6ae7508cd6d87aecc4c98ac9dccd1c09c8d6bd75ab395d71692f44d0fa0152c2f703
+  checksum: 3debc50d97ebbbda0e8fec1f14b037d161077007d22d5331d1f8b57ca1a18cda69a49f4ba6bfb7c543108c00a9f889417aad7fa3e30344d0694b9bfac75c9878
   languageName: node
   linkType: hard
 
@@ -9259,7 +9259,7 @@ __metadata:
     "@types/react-dom": ^16.9.9
     "@types/react-helmet": ^6.1.0
     "@types/react-loadable": ^5.5.4
-    "@types/react-redux": ^7.1.9
+    "@types/react-redux": ^7.1.10
     "@types/react-slick": ^0.23.4
     "@types/redux": ^3.6.31
     "@typescript-eslint/parser": ^4.6.1
@@ -9289,12 +9289,12 @@ __metadata:
     gatsby-plugin-layout: ^1.3.13
     gatsby-plugin-manifest: ^2.5.1
     gatsby-plugin-mdx: ^1.3.0
-    gatsby-plugin-offline: ^3.3.0
+    gatsby-plugin-offline: ^3.3.1
     gatsby-plugin-react-helmet: ^3.3.14
     gatsby-plugin-remove-serviceworker: ^1.0.0
     gatsby-plugin-remove-trailing-slashes: ^2.3.13
     gatsby-plugin-robots-txt: ^1.5.3
-    gatsby-plugin-sass: ^2.4.0
+    gatsby-plugin-sass: ^2.4.1
     gatsby-plugin-sharp: ^2.7.0
     gatsby-plugin-sitemap: ^2.5.0
     gatsby-plugin-ts: ^2.7.1
@@ -15651,9 +15651,9 @@ fsevents@~2.1.2:
   languageName: node
   linkType: hard
 
-"gatsby-plugin-offline@npm:^3.3.0":
-  version: 3.3.0
-  resolution: "gatsby-plugin-offline@npm:3.3.0"
+"gatsby-plugin-offline@npm:^3.3.1":
+  version: 3.3.1
+  resolution: "gatsby-plugin-offline@npm:3.3.1"
   dependencies:
     "@babel/runtime": ^7.11.2
     cheerio: ^1.0.0-rc.3
@@ -15664,7 +15664,7 @@ fsevents@~2.1.2:
     workbox-build: ^4.3.1
   peerDependencies:
     gatsby: ^2.4.0
-  checksum: ab128521cff3b61c53f31919113053fb0bfaffec99a4340553603f8458e2bece27f2ec1db18cf4d2ce675bdf8444b297aa33ce3995530a2ca6eb58596f6a8153
+  checksum: 2df43c60748287640f68a782e9ccb4c7d9f704cae83da92808e4af82f18df30b1aa41ac2f610b7b3c204442784c6ae48e45d012ea5880bc5fe6c7bb4533d01b1
   languageName: node
   linkType: hard
 
@@ -15728,16 +15728,16 @@ fsevents@~2.1.2:
   languageName: node
   linkType: hard
 
-"gatsby-plugin-sass@npm:^2.4.0":
-  version: 2.4.0
-  resolution: "gatsby-plugin-sass@npm:2.4.0"
+"gatsby-plugin-sass@npm:^2.4.1":
+  version: 2.4.1
+  resolution: "gatsby-plugin-sass@npm:2.4.1"
   dependencies:
     "@babel/runtime": ^7.11.2
     sass-loader: ^7.3.1
   peerDependencies:
     gatsby: ^2.0.0
     node-sass: ^4.9.0
-  checksum: addb7e41a77d971d4ee668bb85873bf79a3c33a723e8f6d0b155f3b7886720e612e8f78c5d624ee175cbcc889ea13e83ef976b0dd8a5e6bb39833b11787ccf14
+  checksum: 0487424e497abcc9181379e7460b5125e4f86e1f8a8f518a4bea0e735c56eb37638831487a6cd2875d79b069f84cb66815f70de10c5cf04427955f2b346c44e0
   languageName: node
   linkType: hard
 

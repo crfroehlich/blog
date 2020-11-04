@@ -10,8 +10,6 @@ import kebabCase from 'lodash/kebabCase';
 import Comments from './Comments';
 import { IProps, INode } from '../types/interfaces';
 
-const gitHub = require('./images/github.svg');
-
 const forcedNavOrder = config.sidebar.forcedNavOrder;
 
 export const PageWrapper: React.FC<IProps> = ({
@@ -163,7 +161,7 @@ export const PageWrapper: React.FC<IProps> = ({
               className={'gitBtn'}
               to={`${docsLocation}/${(mdx.parent as INode)?.relativePath}`}
             >
-              <img src={gitHub} alt={'Github logo'} /> Source
+              <img src={'../github.svg'} alt={'Github logo'} /> Source
             </Link>
           </Edit>
         )}
