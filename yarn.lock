@@ -6712,7 +6712,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:14.14.6":
+"@types/node@npm:14.14.6, @types/node@npm:^14.14.6":
   version: 14.14.6
   resolution: "@types/node@npm:14.14.6"
   checksum: 9b06b04ab2ae3761136fb39b573f95d90e748ebcf232e126304d642e4910039a74973547635729b627a0401791a1f2491aa9aa6d4d6bb80922a0b869a2731a63
@@ -9408,6 +9408,7 @@ __metadata:
     "@mdx-js/react": ^1.6.19
     "@philpl/buble": ^0.19.7
     "@types/lodash": ^4.14.164
+    "@types/node": ^14.14.6
     "@types/react": ^16.9.55
     "@types/react-dom": ^16.9.9
     "@types/react-helmet": ^6.1.0

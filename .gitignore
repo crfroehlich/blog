@@ -98,7 +98,6 @@ out
 
 # Nuxt.js build / generate output
 .nuxt
-dist
 
 # Gatsby files
 .cache/
@@ -133,7 +132,10 @@ dist
 
 # Code generated
 graphql-types.ts
+__generated__
 **/__generated__/**
 apollo.config.js
 schema.json
-artifacts/
+artifacts
+dist
+temp

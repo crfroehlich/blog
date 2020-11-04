@@ -25,7 +25,7 @@ export default class Article extends Component<IPageProps> {
   }
 }
 
-export const pageQuery = graphql`
+export const articleQuery = graphql`
   query GetPageByIdQuery($id: String!) {
     site {
       siteMetadata {

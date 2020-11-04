@@ -21,17 +21,17 @@
     // "composite": true,                     /* Enable project compilation */
     // "downlevelIteration": true,            /* Provide full support for iterables in 'for-of', spread, and destructuring when targeting 'ES5' or 'ES3'. */
     // "importHelpers": true,                 /* Import emit helpers from 'tslib'. */
-    // "outDir": "./",                        /* Redirect output structure to the directory. */
-    // "outFile": "./",                       /* Concatenate and emit output to single file. */
+    "outDir": "./dist",                       /* Redirect output structure to the directory. */
+    //"outFile": "./dist/index.ts",           /* Concatenate and emit output to single file. */
     // "rootDir": "./",                       /* Specify the root directory of input files. Use to control the output directory structure with --outDir. */
 
     /* Strict Type-Checking Options */
     // "alwaysStrict": true,                  /* Parse in strict mode and emit "use strict" for each source file. */
     "noEmitOnError": true,                    /* */
-    "noImplicitAny": false,                    /* Raise error on expressions and declarations with an implied 'any' type. */
+    "noImplicitAny": false,                   /* Raise error on expressions and declarations with an implied 'any' type. */
     "noLib": false,                           /* */
-    // "noImplicitThis": true,                /* Raise error on 'this' expressions with an implied 'any' type. */
-    // "strict": true                         /* Enable all strict type-checking options. */,
+    "noImplicitThis": true,                   /* Raise error on 'this' expressions with an implied 'any' type. */
+    //"strict": true                            /* Enable all strict type-checking options. */,
     // "strictBindCallApply": true,           /* Enable strict 'bind', 'call', and 'apply' methods on functions. */
     // "strictFunctionTypes": true,           /* Enable strict checking of function types. */
     // "strictNullChecks": true,              /* Enable strict null checks. */
@@ -66,5 +66,17 @@
     "emitDecoratorMetadata": true,            /* Enables experimental support for emitting type metadata for decorators. */
     "experimentalDecorators": true,           /* Enables experimental support for ES7 decorators. */
   },
-  "exclude": ["node_modules", "public", ".cache"]
+  "exclude": [
+    "__generated__",
+    ".cache",
+    ".yarn",
+    "artifacts",
+    "build",
+    "content",
+    "docs",
+    "node_modules",
+    "public",
+    "src/**__generated__/**",
+    "temp",
+  ],
 }

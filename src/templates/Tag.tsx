@@ -11,7 +11,7 @@ export class Tag extends Component<IPageProps> {
 
 export default Tag;
 
-export const pageQuery = graphql`
+export const tagQuery = graphql`
   query GetTagByNameQuery($tag: String) {
     site {
       siteMetadata {

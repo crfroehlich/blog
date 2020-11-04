@@ -81,6 +81,7 @@
     "@luddites-me/ts-tools": "^1.1.2",
     "@philpl/buble": "^0.19.7",
     "@types/lodash": "^4.14.164",
+    "@types/node": "^14.14.6",
     "@types/react": "^16.9.55",
     "@types/react-dom": "^16.9.9",
     "@types/react-helmet": "^6.1.0",
@@ -106,19 +107,60 @@
     "pretty-quick": "^3.1.0",
     "ts-node": "^9.0.0"
   },
-  "envDocumentation": {},
+  "envDocumentation": {
+    "ALGOLIA_ADMIN_API_KEY": {
+      "defaultValue": "x",
+      "description": "Admin API Key"
+    },
+    "ALGOLIA_APPLICATION_ID": {
+      "description": "Please document the <ALGOLIA_APPLICATION_ID> variable"
+    },
+    "ALGOLIA_SEARCH_ONLY_API_KEY": {
+      "description": "Please document the <ALGOLIA_SEARCH_ONLY_API_KEY> variable"
+    },
+    "DOCS_CREATE_README_INDEX": {
+      "description": "Please document the <DOCS_CREATE_README_INDEX> variable"
+    },
+    "DOCS_CREATE_TOC": {
+      "description": "Please document the <DOCS_CREATE_TOC> variable"
+    },
+    "GH_PAGES": {
+      "description": "Please document the <GH_PAGES> variable"
+    },
+    "IGNORE_MARKDOWN_FILES": {
+      "defaultValue": ".yarn,.vscode,.github,.tmp,temp,node_modules,.git,.cache,public",
+      "description": "A comma-delimited list of markdown files to exclude from processing"
+    },
+    "IGNORE_PEER_DEPENDENCIES": {
+      "defaultValue": "",
+      "description": "A list of packages to exclude from peer dependencies."
+    },
+    "NODE_ENV": {
+      "defaultValue": "dev",
+      "description": "Environment. Options are: dev, test and prod."
+    },
+    "SYNC_PEER_DEPENDENCIES": {
+      "defaultValue": true,
+      "description": "If true, sets all project dependencies as peer dependencies"
+    }
+  },
   "license": "MIT",
   "main": "n/a",
   "name": "blog",
   "scripts": {
     "build": "gatsby build",
     "build:codegen": "graphql-codegen",
-    "build:prep": "yarn sortJson && yarn docs:standardize",
-    "clean": "gatsby clean && rimraf .cache .tmp public __generated__ src/**/__generated__/**",
+    "build:prep": "yarn lint && yarn build:index && yarn docs:standardize",
+    "build:index": "npx cti create ./src -w -b",
+    "clean": "gatsby clean && rimraf .cache .tmp public __generated__ dist src/**/__generated__/**",
     "debug:dev": "node --nolazy node_modules/.bin/gatsby develop --inspect-brk",
     "debug:prod": "node --nolazy node_modules/.bin/gatsby build --inspect-brk",
     "deploy": "yarn build && node build/publish.js",
-    "docs:standardize": "npx ./node_modules/@luddites-me/ts-tools/dist/readme/standardizeReadme.js",
+    "docs:all": "yarn docs:standardize && yarn docs:api",
+    "docs:api": "rimraf dist && tsc -p tsconfig.tools.json && node ./node_modules/@luddites-me/ts-tools/dist/docs/generateApi.js --path=./api-extractor.json",
+    "docs:publish": "node ./node_modules/@luddites-me/ts-tools/dist/docs/generateApiDocs.js",
+    "docs:standardize": "node ./node_modules/@luddites-me/ts-tools/dist/readme/standardizeReadme.js",
+    "generate:exports": "npx cti create ./src -w -b",
     "lint": "pretty-quick --staged && yarn lint:sort && yarn lint:ts && yarn lint:pretty && yarn lint:md",
     "lint:md": "npx markdownlint ./content",
     "lint:pretty": "prettier --write \"src/**/*.{ts,tsx,css,json}\"",
@@ -130,31 +172,31 @@
   },
   "scriptsDocumentation": {
     "build": {
-      "description": "Assembles build scripts into a single js module with type definitions.",
+      "description": "Produces the production build of the site",
       "dev": false
     },
     "build:codegen": {
-      "description": "Please document the <build:codegen> script.",
+      "description": "Generate schema from GraphQL interfaces",
       "dev": true
     },
     "build:prep": {
-      "description": "Please document the <build:prep> script.",
+      "description": "Preps the codebase for building",
       "dev": true
     },
     "clean": {
-      "description": "Purges all temporary folders.",
+      "description": "Purges all temporary and generated folders/content",
       "dev": true
     },
     "debug:dev": {
-      "description": "Please document the <debug:dev> script.",
+      "description": "Start the app in development mode with the debugger attached",
       "dev": true
     },
     "debug:prod": {
-      "description": "Please document the <debug:prod> script.",
+      "description": "Start the app in production mode with the debugger attached",
       "dev": true
     },
     "deploy": {
-      "description": "Please document the <deploy> script.",
+      "description": "Publish the app to Github Pages",
       "dev": true
     },
     "docs:standardize": {
@@ -166,31 +208,31 @@
       "dev": true
     },
     "lint:md": {
-      "description": "Please document the <lint:md> script.",
+      "description": "Runs lint rules on the Markdown content",
       "dev": true
     },
     "lint:pretty": {
-      "description": "Please document the <lint:pretty> script.",
+      "description": "Run prettier rules and automatically fix content",
       "dev": true
     },
     "lint:sort": {
-      "description": "Please document the <lint:sort> script.",
+      "description": "Sorts all tracked JSON files",
       "dev": true
     },
     "lint:ts": {
-      "description": "Please document the <lint:ts> script.",
+      "description": "Runs ESLint on the TypeScript files",
       "dev": true
     },
     "lint:type-check": {
-      "description": "Please document the <lint:type-check> script.",
+      "description": "Runs the tsc compiler against the code",
       "dev": true
     },
     "serve": {
-      "description": "Please document the <serve> script.",
+      "description": "Starts the app in production mode",
       "dev": true
     },
     "start": {
-      "description": "Please document the <start> script.",
+      "description": "Starts the app in development mode",
       "dev": true
     }
   },
