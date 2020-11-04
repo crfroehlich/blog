@@ -1,10 +1,10 @@
 ---
-title: "How to Lose an Employee in 10 Seconds or Less"
-metaTitle: "How to Lose an Employee in 10 Seconds or Less"
+title: 'How to Lose an Employee in 10 Seconds or Less'
+metaTitle: 'How to Lose an Employee in 10 Seconds or Less'
 metaDate: 01/16/2017
 metaDraft: false
-tags: [ "management", "leadership", "hiring", "work" ]
-img: "cabrera_coat_of_arms.jpg"
+tags: ['management', 'leadership', 'hiring', 'work']
+img: 'cabrera_coat_of_arms.jpg'
 ---
 
 The answer, contrary to what one might naively assume, is profoundly simple: stare your employee squarely in the face and say quite plainly and with complete sincerity, "Go fuck yourself." So long as you do not make the mistake of apologizing, you will be rid of the parasitic worm leaching funds from your company’s precious coffers in record time. True, the conversation (should we elect to elevate this pitiful exchange of syllables to such exalted status) might last a few moments longer — but the fatal blow will have been dealt.
@@ -63,9 +63,9 @@ Pause.
 
 These feelings are incontrovertible, as all feelings are. Feelings are real, of course — but they needn’t be overly burdened with facts. I doubt very much that anything can be done to argue with them or mutate them in any way; however, we can (I hope) process them better in the future. Thanks to retrospection, I can add one hugely valuable lesson to that list of hard lessons that only experience can supply: **“Don’t make drastic life decisions when you are living in your parent’s basement.”** Variations include:
 
-*   Don’t make drastic life decisions in the middle of a divorce
-*   Don’t make drastic life decisions while the bank is foreclosing on your house
-*   Don’t make drastic life decisions in the middle of winter in Ithaca, NY
+- Don’t make drastic life decisions in the middle of a divorce
+- Don’t make drastic life decisions while the bank is foreclosing on your house
+- Don’t make drastic life decisions in the middle of winter in Ithaca, NY
 
 Resume.
 

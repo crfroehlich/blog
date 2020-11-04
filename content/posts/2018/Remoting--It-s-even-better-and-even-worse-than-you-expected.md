@@ -1,10 +1,10 @@
 ---
-title: "Remoting: It’s even better and even worse than you expected"
-metaTitle: "Remoting: It’s even better and even worse than you expected"
+title: 'Remoting: It’s even better and even worse than you expected'
+metaTitle: 'Remoting: It’s even better and even worse than you expected'
 metaDate: 05/12/2018
 metaDraft: false
-tags: [ "remote", "work", "tech" ]
-img: "artic_station.jpg"
+tags: ['remote', 'work', 'tech']
+img: 'artic_station.jpg'
 ---
 
 Billions of gallons of ink have been spilled on this subject. Google if you want any other perspective. I think this one angle has received…
@@ -13,10 +13,10 @@ Billions of gallons of ink have been spilled on this subject. Google if you want
 
 I’ve had this thought rolling around in my head since at least November of last year. Previous title ideas included:
 
-*   Remoting: the terrific highs and terrible lows.
-*   513 things you didn’t know about Remoting but wished you did before you started.
-*   Remoting sucks. This is why you should do it.
-*   Want to hate yourself a little? Try remoting.
+- Remoting: the terrific highs and terrible lows.
+- 513 things you didn’t know about Remoting but wished you did before you started.
+- Remoting sucks. This is why you should do it.
+- Want to hate yourself a little? Try remoting.
 
 I jest. I’m only 3/8 serious. It’s important to be accurate when you work in the field of bioinformatics and statistical analysis.
 

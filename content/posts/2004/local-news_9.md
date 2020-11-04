@@ -1,27 +1,27 @@
 ---
-title: "Local News"
-metaTitle: "Local News"
+title: 'Local News'
+metaTitle: 'Local News'
 metaDate: 5/9/2004
 metaDraft: false
-tags: ["baghdad","news","donald thisbit"]
-img: "local_news_1.jpg"
+tags: ['baghdad', 'news', 'donald thisbit']
+img: 'local_news_1.jpg'
 ---
 
-## HEADLINES (Politics):
+## HEADLINES (Politics)
 
 Bush pledges to change the way things is. (Page 3)
 
 “We have a duty to reform. In fact, I promise to reform the process of reform. More than that, if re-elected, I promise to change the way things were happening. Furthermore…”
 
-## HEADLINES (Science):
+## HEADLINES (Science)
 
 BREAKING: Chicken confesses, “I came first.” (Page 7)
 
-## HEADLINES (Law):
+## HEADLINES (Law)
 
 BREAKING: Egg sues chicken for slander. (Page 9)
 
-## COVER STORY:
+## COVER STORY
 
 Canadian Mounties Affirm: “We Always Get Our Enemy (AKA Those Who Have Been Liberated).”
 

@@ -88,9 +88,11 @@
     "@types/react-redux": "^7.1.11",
     "@types/react-slick": "^0.23.4",
     "@types/redux": "^3.6.31",
+    "@typescript-eslint/eslint-plugin": "^4.6.1",
     "@typescript-eslint/parser": "^4.6.1",
     "chalk": "^4.1.0",
     "eslint": "^7.12.1",
+    "eslint-config-airbnb-base": "^14.2.0",
     "eslint-config-prettier": "^6.15.0",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-jsx-a11y": "^6.4.1",
@@ -98,67 +100,41 @@
     "eslint-plugin-react": "^7.21.5",
     "gatsby-cli": "^2.12.115",
     "gh-pages": "^3.1.0",
+    "husky": "^4.3.0",
+    "lint-staged": "^10.5.1",
     "prettier": "^2.1.2",
+    "pretty-quick": "^3.1.0",
     "ts-node": "^9.0.0"
   },
-  "envDocumentation": {
-    "ALGOLIA_ADMIN_API_KEY": {
-      "defaultValue": "x",
-      "description": "Admin API Key"
-    },
-    "ALGOLIA_APPLICATION_ID": {
-      "description": "Please document the <ALGOLIA_APPLICATION_ID> variable"
-    },
-    "ALGOLIA_SEARCH_ONLY_API_KEY": {
-      "description": "Please document the <ALGOLIA_SEARCH_ONLY_API_KEY> variable"
-    },
-    "DOCS_CREATE_README_INDEX": {
-      "description": "Please document the <DOCS_CREATE_README_INDEX> variable"
-    },
-    "DOCS_CREATE_TOC": {
-      "description": "Please document the <DOCS_CREATE_TOC> variable"
-    },
-    "GH_PAGES": {
-      "description": "Please document the <GH_PAGES> variable"
-    },
-    "IGNORE_JSON_FILES": {
-      "description": "Please document the <IGNORE_JSON_FILES> variable"
-    },
-    "IGNORE_MARKDOWN_FILES": {
-      "description": "Please document the <IGNORE_MARKDOWN_FILES> variable"
-    },
-    "IGNORE_PEER_DEPENDENCIES": {
-      "description": "Please document the <IGNORE_PEER_DEPENDENCIES> variable"
-    },
-    "NODE_ENV": {
-      "description": "Please document the <NODE_ENV> variable"
-    },
-    "SYNC_PEER_DEPENDENCIES": {
-      "description": "Please document the <SYNC_PEER_DEPENDENCIES> variable"
-    }
-  },
+  "envDocumentation": {},
   "license": "MIT",
   "main": "n/a",
   "name": "blog",
   "scripts": {
     "build": "gatsby build",
+    "build:codegen": "graphql-codegen",
     "build:prep": "yarn sortJson && yarn docs:standardize",
     "clean": "gatsby clean && rimraf .cache .tmp public __generated__ src/**/__generated__/**",
     "debug:dev": "node --nolazy node_modules/.bin/gatsby develop --inspect-brk",
     "debug:prod": "node --nolazy node_modules/.bin/gatsby build --inspect-brk",
     "deploy": "yarn build && node build/publish.js",
     "docs:standardize": "npx ./node_modules/@luddites-me/ts-tools/dist/readme/standardizeReadme.js",
-    "format": "prettier --write \"src/**/*.{ts,tsx,css,json}\"",
-    "generate": "graphql-codegen",
-    "lint": "eslint --fix \"src/**/*.{ts,tsx}\"",
+    "lint": "pretty-quick --staged && yarn lint:sort && yarn lint:ts && yarn lint:pretty && yarn lint:md",
+    "lint:md": "npx markdownlint ./content",
+    "lint:pretty": "prettier --write \"src/**/*.{ts,tsx,css,json}\"",
+    "lint:sort": "npx ./node_modules/@luddites-me/ts-tools/dist/lint/sortJson.js",
+    "lint:ts": "eslint --cache --fix \"src/**/*.{ts,tsx}\"",
+    "lint:type-check": "tsc --noEmit",
     "serve": "gatsby build && gatsby serve",
-    "sortJson": "npx ./node_modules/@luddites-me/ts-tools/dist/lint/sortJson.js",
-    "start": "gatsby develop",
-    "type-check": "tsc --noEmit"
+    "start": "gatsby develop"
   },
   "scriptsDocumentation": {
     "build": {
-      "description": "Please document the <build> script.",
+      "description": "Assembles build scripts into a single js module with type definitions.",
+      "dev": false
+    },
+    "build:codegen": {
+      "description": "Please document the <build:codegen> script.",
       "dev": true
     },
     "build:prep": {
@@ -166,7 +142,7 @@
       "dev": true
     },
     "clean": {
-      "description": "Please document the <clean> script.",
+      "description": "Purges all temporary folders.",
       "dev": true
     },
     "debug:dev": {
@@ -182,35 +158,39 @@
       "dev": true
     },
     "docs:standardize": {
-      "description": "Please document the <docs:standardize> script.",
-      "dev": true
-    },
-    "format": {
-      "description": "Please document the <format> script.",
-      "dev": true
-    },
-    "generate": {
-      "description": "Please document the <generate> script.",
+      "description": "Creates or updates a new readme with a standard set of readme sections, including a toc, yarn script documentation, links to repo documentation files and \"The Unlicense\" license.",
       "dev": true
     },
     "lint": {
-      "description": "Please document the <lint> script.",
+      "description": "Lints the codebase.",
+      "dev": true
+    },
+    "lint:md": {
+      "description": "Please document the <lint:md> script.",
+      "dev": true
+    },
+    "lint:pretty": {
+      "description": "Please document the <lint:pretty> script.",
+      "dev": true
+    },
+    "lint:sort": {
+      "description": "Please document the <lint:sort> script.",
+      "dev": true
+    },
+    "lint:ts": {
+      "description": "Please document the <lint:ts> script.",
+      "dev": true
+    },
+    "lint:type-check": {
+      "description": "Please document the <lint:type-check> script.",
       "dev": true
     },
     "serve": {
       "description": "Please document the <serve> script.",
       "dev": true
     },
-    "sortJson": {
-      "description": "Please document the <sortJson> script.",
-      "dev": true
-    },
     "start": {
       "description": "Please document the <start> script.",
-      "dev": true
-    },
-    "type-check": {
-      "description": "Please document the <type-check> script.",
       "dev": true
     }
   },

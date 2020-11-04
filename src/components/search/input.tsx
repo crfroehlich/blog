@@ -1,7 +1,7 @@
 import { connectSearchBox } from 'react-instantsearch-dom';
-import { IStyle } from '../../types/interfaces';
 import styled from '@emotion/styled';
 import { Search } from '@styled-icons/fa-solid/Search';
+import { IStyle } from '../../types/interfaces';
 
 const SearchIcon = styled(Search)`
   width: 1em;
@@ -32,7 +32,7 @@ const Form = styled.form`
 `;
 
 export default connectSearchBox(({ refine, ...rest }) => {
-  const preventSubmit = e => {
+  const preventSubmit = (e) => {
     e.preventDefault();
   };
 
@@ -44,7 +44,7 @@ export default connectSearchBox(({ refine, ...rest }) => {
         type="text"
         placeholder="Search"
         aria-label="Search"
-        onChange={e => refine(e.target.value)}
+        onChange={(e) => refine(e.target.value)}
         {...rest}
       />
     </Form>

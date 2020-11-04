@@ -1,19 +1,18 @@
 ---
-title: "JavaScript (aka Marlboro Country)"
-metaTitle: "JavaScript (aka Marlboro Country)"
+title: 'JavaScript (aka Marlboro Country)'
+metaTitle: 'JavaScript (aka Marlboro Country)'
 metaDate: 1/3/2013
 metaDraft: false
-tags: [ "code" ]
-img: "marlboro_country.jpg"
+tags: ['code']
+img: 'marlboro_country.jpg'
 ---
 
 Sometimes JavaScript land just feels like Marlboro Country. The sales pitch certainly feels similar:
 
-
-[![](https://github.com/crfroehlich/cdn/raw/main/images/marlboro_country_horse_rider.jpg)](https://github.com/crfroehlich/cdn/raw/main/images/marlboro_country_horse_rider.jpg)
+![marlboro country horse rider](https://github.com/crfroehlich/cdn/raw/main/images/marlboro_country_horse_rider.jpg)
 
 _Come to the hottest part of the United States. It's popular. It's everywhere. It's the future. Now: cover yourself in leather. Don't ask why. It's part of the feature set. Next: the temperature is 120 degrees, and you need to start a fire. It's not supposed to make sense, that's the point. You'll need to do this at noon every day. After about 10 days, you'll find yourself assaulting anyone \_not\_ starting noonday fires._
-[_![](https://github.com/crfroehlich/cdn/raw/main/images/marlboro_man.jpg)_](https://github.com/crfroehlich/cdn/raw/main/images/marlboro_man.jpg)
+![marlboro man](https://github.com/crfroehlich/cdn/raw/main/images/marlboro_man.jpg)
 _C'mon?! What's the worst that could happen?_
 _Imagine: right now, you could be riding across a brush fire.. or maybe it's a dust storm.. or maybe.. who knows? Everything's mutable! Ride across anything you want. Of course, you are limited to desert colors (obviously)._
 
@@ -27,15 +26,15 @@ The municipal "we" begin with a simple function:
 
 ```js
 function doVerbOnNoun(aThing) {
-    console.group(aThing);
+  console.group(aThing);
 
-    //In theory, if(aThing) should be equivalent to if(true == aThing)
-    if(aThing) {
-        console.log('Verbing on ' + aThing);
-    } else {
-        console.log('Not verbing on ' + aThing);
-    }
-    console.groupEnd(aThing);
+  //In theory, if(aThing) should be equivalent to if(true == aThing)
+  if (aThing) {
+    console.log('Verbing on ' + aThing);
+  } else {
+    console.log('Not verbing on ' + aThing);
+  }
+  console.groupEnd(aThing);
 }
 ```
 
@@ -76,28 +75,28 @@ To my mind, this is irrational, unsettling and in possible violation of the laws
 
 ```js
 doVerbOnNoun({}); //We verbed
-console.assert({} == true, "{} != true"); //Assertion fails
-console.assert({} == false, "{} != false"); //Assertion fails
+console.assert({} == true, '{} != true'); //Assertion fails
+console.assert({} == false, '{} != false'); //Assertion fails
 ```
 
 Clearly, loose truthy evaluation is not part of the algorithm of the single parameter if() statement. The multinational we can exercise some futility by instrumenting doVerbOnNoun with some diagnostics:
 
 ```js
 function doVerbOnNoun(aThing) {
-    console.group(aThing);
+  console.group(aThing);
 
-    if(aThing) {
-        console.log('Verbing on ' + aThing);
-    } else {
-        console.log('Not verbing on ' + aThing);
-    }
+  if (aThing) {
+    console.log('Verbing on ' + aThing);
+  } else {
+    console.log('Not verbing on ' + aThing);
+  }
 
-    console.log(!aThing, 'evaluating (!' + aThing + ')');
-    console.log(false != aThing, 'evaluating (' + aThing + ' != false)');
-    console.log(false != (false == aThing), 'evaluating (false != (false == ' + aThing + ')');
-    console.log(true == aThing, 'evaluating (' + aThing + ' == true)');
+  console.log(!aThing, 'evaluating (!' + aThing + ')');
+  console.log(false != aThing, 'evaluating (' + aThing + ' != false)');
+  console.log(false != (false == aThing), 'evaluating (false != (false == ' + aThing + ')');
+  console.log(true == aThing, 'evaluating (' + aThing + ' == true)');
 
-    console.groupEnd(aThing);
+  console.groupEnd(aThing);
 }
 ```
 
@@ -112,12 +111,14 @@ What of [ToBoolean](http://www.ecma-international.org/ecma-262/5.1/#sec-9.2), yo
 
 ```js
 var ToBoolean = function (val) {
-    return (val !== false &&
-            val !== 0 &&
-            val !== '' &&
-            val !== null &&
-            val !== undefined &&
-            (typeof val !== 'number' || !isNaN(val)));
+  return (
+    val !== false &&
+    val !== 0 &&
+    val !== '' &&
+    val !== null &&
+    val !== undefined &&
+    (typeof val !== 'number' || !isNaN(val))
+  );
 };
 ```
 

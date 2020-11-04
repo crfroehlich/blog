@@ -7,9 +7,8 @@ const AnchorTag = ({ children: link, ...props }) => {
         {link}
       </a>
     );
-  } else {
-    return null;
   }
+  return null;
 };
 
 export default AnchorTag;

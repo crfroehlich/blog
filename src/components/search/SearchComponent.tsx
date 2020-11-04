@@ -7,8 +7,8 @@ import {
   connectStateResults,
 } from 'react-instantsearch-dom';
 import algoliasearch from 'algoliasearch/lite';
-import { config } from '../../../config';
 import styled from '@emotion/styled';
+import { config } from '../../../config';
 import { PoweredBy } from './styles';
 import Input from './input';
 import * as hitComps from './hitComps';
@@ -133,7 +133,7 @@ export const SearchComponent = ({ indices, collapse }) => {
       root={{ Root, props: { ref } }}
     >
       <Input onFocus={() => setFocus(true)} {...{ collapse, focus }} />
-      <HitsWrapper className={'hitWrapper ' + displayResult} show={query.length > 0 && focus}>
+      <HitsWrapper className={`hitWrapper ${displayResult}`} show={query.length > 0 && focus}>
         {indices.map(({ name, hitComp }) => {
           return (
             <Index key={name} indexName={name}>

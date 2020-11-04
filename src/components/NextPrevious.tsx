@@ -4,7 +4,7 @@ import Link from './Link';
 import { StyledNextPrevious } from './styles/PageNavigationButtons';
 
 const NextPrevious = ({ mdx, nav }) => {
-  if(!nav || !mdx) return <div/>;
+  if (!nav || !mdx) return <div />;
 
   let currentIndex = 0;
 
@@ -13,7 +13,7 @@ const NextPrevious = ({ mdx, nav }) => {
       currentIndex = index;
     }
   });
-  let locale = 'ru-RU';
+  const locale = 'ru-RU';
 
   const getNav = (offset) => nav[currentIndex + offset];
 
@@ -22,32 +22,34 @@ const NextPrevious = ({ mdx, nav }) => {
   const getNavNext = () => getNav(1);
 
   const getDate = (offset) =>
-    new Date(getNav(offset).date)
-    .toLocaleDateString(locale, {
-      weekday: 'long', year: 'numeric', month: '2-digit', day: '2-digit'
+    new Date(getNav(offset).date).toLocaleDateString(locale, {
+      weekday: 'long',
+      year: 'numeric',
+      month: '2-digit',
+      day: '2-digit',
     });
 
   const getTitle = (offset) => {
     let title = getNav(offset).title.trim();
 
     // TODO: compute the total length of left/right and set accordingly
-    if(offset === 1 && title.length > 38) {
-      title = title.substr(0,34).trim() + '…';
+    if (offset === 1 && title.length > 38) {
+      title = `${title.substr(0, 34).trim()}…`;
     }
-    if(offset === -1 && title.length > 41) {
-      title = title.substr(0,38).trim() + '…';
+    if (offset === -1 && title.length > 41) {
+      title = `${title.substr(0, 38).trim()}…`;
     }
     return title;
-  }
+  };
 
-  let nextInfo = getNav(1);
+  const nextInfo = getNav(1);
 
-  let previousInfo = getNav(-1);
+  const previousInfo = getNav(-1);
 
   return (
     <StyledNextPrevious>
       {previousInfo && currentIndex >= 0 ? (
-        <Link to={getNavPrev().slug} title={getNavPrev().title} className={'previousBtn'} >
+        <Link to={getNavPrev().slug} title={getNavPrev().title} className={'previousBtn'}>
           <div className={'leftArrow'}>
             <svg
               preserveAspectRatio="xMidYMid meet"
@@ -110,7 +112,6 @@ const NextPrevious = ({ mdx, nav }) => {
           </div>
         </Link>
       ) : null}
-
     </StyledNextPrevious>
   );
 };

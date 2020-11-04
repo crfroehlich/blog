@@ -1,16 +1,15 @@
 import React, { useState } from 'react';
-import {config} from '../../../config';
+import { config } from '../../../config';
 import TreeNode from './treeNode';
 
-const calculateTreeData = edges => {
-
+const calculateTreeData = (edges) => {
   const originalData = config.sidebar.ignoreIndex
     ? edges.filter(
         ({
           node: {
             fields: { slug },
           },
-        }) => slug !== '/'
+        }) => slug !== '/',
       )
     : edges;
 
@@ -21,7 +20,7 @@ const calculateTreeData = edges => {
         node: {
           fields: { slug, title, date },
         },
-      }
+      },
     ) => {
       const parts = slug.split('/');
 
@@ -30,7 +29,7 @@ const calculateTreeData = edges => {
       const slicedParts =
         config.gatsby && config.gatsby.trailingSlash ? parts.slice(1, -2) : parts.slice(1, -1);
 
-      let path = [];
+      const path = [];
 
       for (const part of slicedParts) {
         let tmp = prevItems && prevItems.find(({ label }) => label == part);
@@ -41,7 +40,7 @@ const calculateTreeData = edges => {
             tmp.items = [];
           }
         } else {
-          tmp = { label: part, title: part, url: '#'+path.join('/'), items: [] };
+          tmp = { label: part, title: part, url: `#${path.join('/')}`, items: [] };
           prevItems.push(tmp);
         }
         prevItems = tmp.items;
@@ -65,7 +64,7 @@ const calculateTreeData = edges => {
       }
       return accu;
     },
-    { items: [] }
+    { items: [] },
   );
 
   const {
@@ -76,7 +75,7 @@ const calculateTreeData = edges => {
 
   if (config.gatsby && config.gatsby.trailingSlash) {
   }
-  //tmp.reverse();
+  // tmp.reverse();
   return tmp.reduce((accu, slug) => {
     const parts = slug.split('/');
 
@@ -86,7 +85,7 @@ const calculateTreeData = edges => {
       config.gatsby && config.gatsby.trailingSlash ? parts.slice(1, -2) : parts.slice(1, -1);
 
     for (const part of slicedParts) {
-      let tmp = prevItems.find(item => item && item.label == part);
+      let tmp = prevItems.find((item) => item && item.label == part);
 
       if (tmp) {
         if (!tmp.items) {
@@ -101,8 +100,10 @@ const calculateTreeData = edges => {
       }
     }
     // sort items by date descending.
-    prevItems.map(item => {
-      item.items = item.items.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+    prevItems.map((item) => {
+      item.items = item.items.sort(
+        (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
+      );
     });
 
     const slicedLength =
@@ -118,13 +119,13 @@ const calculateTreeData = edges => {
 };
 
 const Tree = ({ edges }) => {
-  let [treeData] = useState(() => {
+  const [treeData] = useState(() => {
     return calculateTreeData(edges);
   });
 
   const defaultCollapsed = {};
 
-  treeData.items.forEach(item => {
+  treeData.items.forEach((item) => {
     if (item.url === '/wecome' || item.label === 'Welcome' || item.title === 'Welcome') {
       defaultCollapsed[item.url] = false;
     } else {
@@ -133,8 +134,8 @@ const Tree = ({ edges }) => {
   });
   const [collapsed, setCollapsed] = useState(defaultCollapsed);
 
-  treeData.items = treeData.items.sort(function(a, b) {
-    switch( a.title.localeCompare(b.title, 'en', { numeric: true })) {
+  treeData.items = treeData.items.sort(function (a, b) {
+    switch (a.title.localeCompare(b.title, 'en', { numeric: true })) {
       case -1:
         return 1;
       case 1:
@@ -144,7 +145,7 @@ const Tree = ({ edges }) => {
     }
   });
 
-  const toggle = url => {
+  const toggle = (url) => {
     setCollapsed({
       ...collapsed,
       [url]: !collapsed[url],

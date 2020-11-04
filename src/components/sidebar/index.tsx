@@ -1,10 +1,10 @@
 import React from 'react';
-import Tree from './tree';
 import { StaticQuery, graphql } from 'gatsby';
 import styled from '@emotion/styled';
 import { ExternalLink } from 'react-feather';
-import { config } from '../../../config';
 import { Query } from 'graphql-types';
+import { config } from '../../../config';
+import Tree from './tree';
 
 // eslint-disable-next-line no-unused-vars
 const ListItem = styled(({ className, active, level, ...props }) => {

@@ -135,7 +135,6 @@ export const onCreateNode: GatsbyNode['onCreateNode'] = ({ node, getNode, action
   const { createNodeField } = actions;
 
   try {
-
     const isContent =
       node.internal.type.toLowerCase().indexOf('mdx') !== -1 ||
       node.internal.type.toLowerCase().indexOf('markdown') !== -1;

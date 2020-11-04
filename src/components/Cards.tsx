@@ -1,7 +1,7 @@
 import React from 'react';
+import { Tooltip, CardMedia, Card, CardPrimaryAction, Typography, Grid, GridCell } from 'rmwc';
 import Link from './Link';
 import PageWrapper from './PageWrapper';
-import { Tooltip, CardMedia, Card, CardPrimaryAction, Typography, Grid, GridCell } from 'rmwc';
 import { IProps } from '../types/interfaces';
 
 export const Cards: React.FC<IProps> = ({ props }) => {
@@ -28,14 +28,14 @@ export const Cards: React.FC<IProps> = ({ props }) => {
                 <div
                   style={{
                     display: 'flex',
-                    //alignItems: 'center',
-                    //justifyContent: 'center',
+                    // alignItems: 'center',
+                    // justifyContent: 'center',
                     background: '#ede7f3',
                     width: '20rem',
-                    //height: '8rem',
+                    // height: '8rem',
                     color: 'black',
-                    //borderRadius: '1px',
-                    //margin: '0 -3px'
+                    // borderRadius: '1px',
+                    // margin: '0 -3px'
                     padding: '1rem,',
                   }}
                 >

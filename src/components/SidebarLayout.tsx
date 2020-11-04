@@ -2,9 +2,9 @@ import React from 'react';
 import { StaticQuery, graphql } from 'gatsby';
 
 // import Link from './link';
+import { Query } from 'graphql-types';
 import { config } from '../../config';
 import { Sidebar, ListItem } from './styles/Sidebar';
-import { Query } from 'graphql-types';
 import { IProps } from '../types/interfaces';
 
 export const SidebarLayout: React.FC<IProps> = ({ location }) => (
@@ -24,7 +24,6 @@ export const SidebarLayout: React.FC<IProps> = ({ location }) => (
       }
     `}
     render={({ allMdx }) => {
-
       let finalNavItems;
 
       if (allMdx.edges?.length > 0) {
@@ -36,7 +35,7 @@ export const SidebarLayout: React.FC<IProps> = ({ location }) => (
               location.pathname.startsWith(item.node.fields.slug) ||
               config.gatsby.pathPrefix + item.node.fields.slug === location.pathname
             ) {
-              console.log([location.pathname, item.node.fields.slug])
+              console.log([location.pathname, item.node.fields.slug]);
               if (item.node.tableOfContents.items) {
                 innerItems = item.node.tableOfContents.items.map((innerItem, index) => {
                   const itemId = innerItem.title
@@ -68,13 +67,12 @@ export const SidebarLayout: React.FC<IProps> = ({ location }) => (
             </Sidebar>
           </div>
         );
-      } else {
-        return (
-          <Sidebar>
-            <ul></ul>
-          </Sidebar>
-        );
       }
+      return (
+        <Sidebar>
+          <ul></ul>
+        </Sidebar>
+      );
     }}
   />
 );

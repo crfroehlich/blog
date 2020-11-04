@@ -1,5 +1,5 @@
-import { Query } from "graphql-types";
 import { Location as HLocation } from 'history';
+import { Query } from '../../graphql-types';
 
 export interface IPageProps {
   data: Query;

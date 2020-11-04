@@ -5,7 +5,7 @@ import PageWrapper from './PageWrapper';
 
 export const NotFound: React.FC<IProps> = ({ props }) => {
   if (!props) return null;
-  
+
   const { path } = props;
 
   const fourOhFour = (

@@ -1,10 +1,10 @@
 ---
-title: "Code Generation Fail: An all the king’s horses tragedy"
-metaTitle: "Code Generation Fail: An all the king’s horses tragedy"
+title: 'Code Generation Fail: An all the king’s horses tragedy'
+metaTitle: 'Code Generation Fail: An all the king’s horses tragedy'
 metaDate: 07/10/2019
 metaDraft: false
-tags: [ "metadata", "retrospective", "code", "generation" ]
-img: "all_the_kings_horses.jpg"
+tags: ['metadata', 'retrospective', 'code', 'generation']
+img: 'all_the_kings_horses.jpg'
 ---
 
 Sometimes best intentions and good ole fashioned elbow grease are no match against the tyrannical fist of Reality. In my [previous post](https://medium.com/@christopher.r.froehlich/code-generation-connecting-t4-to-entity-framework-core-654e2a0933e8), I discussed some of the initial ambitions and achievements in my attempt to convert the Entity Framework Core + MVC project into a dynamically generated template using T4. The good news? T4 is a perfectly adequate way to generate code from templates. The bad news? There is no way to make this completely integrated in a pure .NET Core project. What does this mean, and why is this a problem?
@@ -60,7 +60,8 @@ Now, all reference binaries will be copied into the build output directory.
 Next, the challenge of resolving the path to that output directory can be solved as well. A custom mapping is required, which is also possible with a little XML markup:
 
 ```xml
-<PropertyGroup>       <targetFolder>$(MSBuildProjectDirectory)\\..\\CodeGeneration\\bin\\netstandard2.0</targetFolder>
+<PropertyGroup>
+  <targetFolder>$(MSBuildProjectDirectory)\\..\\CodeGeneration\\bin\\netstandard2.0</targetFolder>
 </PropertyGroup>
 <ItemGroup>
   <T4ParameterValues Include="targetFolder">
@@ -102,9 +103,9 @@ Once all these pieces are in place, msbuild should **just work**.
 
 References:
 
-*   [T4 Parameter Directive](https://docs.microsoft.com/en-us/visualstudio/modeling/t4-parameter-directive?view=vs-2019)
-*   [Pass build context data into the templates](https://docs.microsoft.com/en-us/visualstudio/modeling/code-generation-in-a-build-process?view=vs-2019#parameters)
-*   [TransformOnBuild](https://github.com/clariuslabs/TransformOnBuild) (I didn’t end up using this solution, but exploring the project helped me resolve some issues)
+- [T4 Parameter Directive](https://docs.microsoft.com/en-us/visualstudio/modeling/t4-parameter-directive?view=vs-2019)
+- [Pass build context data into the templates](https://docs.microsoft.com/en-us/visualstudio/modeling/code-generation-in-a-build-process?view=vs-2019#parameters)
+- [TransformOnBuild](https://github.com/clariuslabs/TransformOnBuild) (I didn’t end up using this solution, but exploring the project helped me resolve some issues)
 
 ### My Struggle
 
@@ -112,29 +113,29 @@ The next time I run into this class of problem, I definitely want to track all o
 
 Incomplete Solutions:
 
-*   [Re-implementation of T4 in Mono](https://github.com/mono/t4)
-*   [T4 Templates at Build Time with Dotnet Core](https://notquitepure.info/2018/12/12/T4-Templates-at-Build-Time-With-Dotnet-Core/)
-*   [T4Executer](https://marketplace.visualstudio.com/items?itemName=TimMaes.ttexecuter)
+- [Re-implementation of T4 in Mono](https://github.com/mono/t4)
+- [T4 Templates at Build Time with Dotnet Core](https://notquitepure.info/2018/12/12/T4-Templates-at-Build-Time-With-Dotnet-Core/)
+- [T4Executer](https://marketplace.visualstudio.com/items?itemName=TimMaes.ttexecuter)
 
 Relevant GitHub Issues:
 
-*   [dotnet build fails to generate TypeGeneration.cs on linux](https://github.com/xamarin/TorchSharp/issues/27)
-*   [Add MSBuild targets package](https://github.com/mono/t4/issues/12)
-*   [Several FileNotFoundException using Newtonsoft.Json inside T4 template](https://github.com/dotnet/core/issues/2743)
-*   [FileNotFoundException (System.Runtime, Version=4.2.1.0) when reflecting in T4 template](https://github.com/dotnet/core/issues/2000)
-*   [Package type ‘DotnetCliTool’ is not supported by project](https://github.com/nil4/dotnet-transform-xdt/issues/16)
-*   [PlatformNotSupportedException with dotnet-t4-project-tool](https://github.com/mono/t4/issues/42)
-*   [build failing — and what worked for me](https://github.com/dotnet-websharper/core/issues/903)
+- [dotnet build fails to generate TypeGeneration.cs on linux](https://github.com/xamarin/TorchSharp/issues/27)
+- [Add MSBuild targets package](https://github.com/mono/t4/issues/12)
+- [Several FileNotFoundException using Newtonsoft.Json inside T4 template](https://github.com/dotnet/core/issues/2743)
+- [FileNotFoundException (System.Runtime, Version=4.2.1.0) when reflecting in T4 template](https://github.com/dotnet/core/issues/2000)
+- [Package type ‘DotnetCliTool’ is not supported by project](https://github.com/nil4/dotnet-transform-xdt/issues/16)
+- [PlatformNotSupportedException with dotnet-t4-project-tool](https://github.com/mono/t4/issues/42)
+- [build failing — and what worked for me](https://github.com/dotnet-websharper/core/issues/903)
 
 Relevant StackOverflow Issues:
 
-*   [T4 subtemplates TransformText() not working](https://stackoverflow.com/questions/17170080/t4-subtemplates-transformtext-not-working)
-*   [TextTemplating target in a .Net Core project](https://stackoverflow.com/questions/47691299/texttemplating-target-in-a-net-core-project)
-*   [The imported project “C:\\Program Files\\dotnet\\sdk\\2.1.201\\Microsoft\\VisualStudio\\v15.0\\WebApplications\\Microsoft.WebApplication.targets” was not found](https://stackoverflow.com/questions/50471751/the-imported-project-c-program-files-dotnet-sdk-2-1-201-microsoft-visualstudio)
+- [T4 subtemplates TransformText() not working](https://stackoverflow.com/questions/17170080/t4-subtemplates-transformtext-not-working)
+- [TextTemplating target in a .Net Core project](https://stackoverflow.com/questions/47691299/texttemplating-target-in-a-net-core-project)
+- [The imported project “C:\\Program Files\\dotnet\\sdk\\2.1.201\\Microsoft\\VisualStudio\\v15.0\\WebApplications\\Microsoft.WebApplication.targets” was not found](https://stackoverflow.com/questions/50471751/the-imported-project-c-program-files-dotnet-sdk-2-1-201-microsoft-visualstudio)
 
 Microsoft Docs:
 
-*   [TextTransformation Class](https://docs.microsoft.com/en-us/dotnet/api/microsoft.visualstudio.texttemplating.texttransformation?view=visualstudiosdk-2019)
-*   [FileNotFoundException (System.Runtime, Version=4.2.1.0) when reflecting in T4 template in .NET Core 2.1 app](https://developercommunity.visualstudio.com/idea/535990/filenotfoundexception-systemruntime-version4210-wh.html)
+- [TextTransformation Class](https://docs.microsoft.com/en-us/dotnet/api/microsoft.visualstudio.texttemplating.texttransformation?view=visualstudiosdk-2019)
+- [FileNotFoundException (System.Runtime, Version=4.2.1.0) when reflecting in T4 template in .NET Core 2.1 app](https://developercommunity.visualstudio.com/idea/535990/filenotfoundexception-systemruntime-version4210-wh.html)
 
 As always, I hope this has helped someone with a similar quest. Please feel free to correct anything I have missed, suggest corrections or alternatives, or otherwise reach out to collaborate on solutions for this journey.

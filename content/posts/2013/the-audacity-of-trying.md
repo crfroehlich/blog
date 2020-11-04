@@ -1,16 +1,15 @@
 ---
-title: "The Audacity of Trying"
-metaTitle: "The Audacity of Trying"
+title: 'The Audacity of Trying'
+metaTitle: 'The Audacity of Trying'
 metaDate: 11/9/2013
 metaDraft: false
-tags: ["cable","economy","donald thisbit","liberation"]
-img: "corporate_overlords.jpg"
+tags: ['cable', 'economy', 'donald thisbit', 'liberation']
+img: 'corporate_overlords.jpg'
 ---
 
 Money (the desire for money), we might naively think, is the great unifier. We all want it, as much of it as we can get, at the lowest level of effort. [Incorporated Individuals](http://www.murrayhillincforcongress.com/) tend to thirst for it a little more than their non-incorporated peers. Only a few elites have come to realize that something greater than money exists; while the rest of us waste our effort in the acquisition of valued assets, this enlightened Select seeks out the superior resource: [power](http://www.imdb.com/title/tt1856010/quotes?item=qt1869599). The company of these persons understands that power achieved is little without frequent demonstrations of power wielded.
 
 Enter [+Time Warner Cable](http://plus.google.com/102458054933108009560). They understand that profit is secondary to [subjugating their domain](http://www.dslreports.com/shownews/Press-Suddenly-Notices-Time-Warner-Cable-a-Predatory-Monopoly-125211), [keeping the serfs in place](http://www.techdirt.com/blog/?company=time+warner+cable), and [keeping the bar resting squarely on the shoulders of its many fiefdoms](http://mitchribar.com/2013/02/time-warner-cable-sucks-for-youtube-twitchtv/).
-
 
 Naturally, we don't go to TWC to _buy_ services. We humbly approach them: low-crawling backwards, prostrate, repentant and humble in order to _beg_ for the chance to buy services. I do not expect to succeed the first or second nor even the third time in this quest to become worthy enough to suckle broadband from TWC's righteous teat.
 
@@ -32,6 +31,6 @@ November 8th: Mrs. Thisbit blesses my request for upgrade via online chat. My mo
 
 A few hours later, TWC restored my modem and my service. Since I work from home and spend significant time screen sharing and on calls, upload speed is quite important. While I did begin to see speeds closer to the [promised 5Mbps](http://www.timewarnercable.com/en/residential-home/internet/internet-service-plans.html), my download speeds dropped to ~10Mbps.
 
-In the end, TWC allowed me to shift 5Mbps from my download to my upload for an extra $30/month. The phone number on my account is still wrong, I still don't know my PIN, and I have no hope of ever getting the promotional Samsung Galaxy Tab 3; but I have been purged of much sin.
+In the end, TWC allowed me to shift 5Mbps from my download to my upload for an extra \$30/month. The phone number on my account is still wrong, I still don't know my PIN, and I have no hope of ever getting the promotional Samsung Galaxy Tab 3; but I have been purged of much sin.
 
 I better understand my place in the world, and I respect TWC now more than ever.

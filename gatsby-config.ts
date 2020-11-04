@@ -1,4 +1,4 @@
-import type { GatsbyConfig } from 'gatsby';
+import type { GatsbyConfig, PluginRef } from 'gatsby';
 import * as env from './build/initEnv';
 import { config } from './config';
 import {
@@ -16,7 +16,7 @@ import {
 
 console.log([env, process.env]);
 
-let plugins: any[] = [
+let plugins: Array<PluginRef> = [
   'gatsby-plugin-catch-links',
   'gatsby-plugin-dark-mode',
   'gatsby-plugin-emotion',

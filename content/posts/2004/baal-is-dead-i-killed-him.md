@@ -1,10 +1,10 @@
 ---
-title: "Baal is Dead; I Killed Him"
-metaTitle: "Baal is Dead; I Killed Him"
+title: 'Baal is Dead; I Killed Him'
+metaTitle: 'Baal is Dead; I Killed Him'
 metaDate: 6/23/2004
 metaDraft: false
-tags: ["lïf", "göd"]
-img: "baal.jpeg"
+tags: ['lïf', 'göd']
+img: 'baal.jpeg'
 ---
 
 Babylon approaches slowly. Endless wasteland precedes barren desert and opens into more nothing than can be bottled and sold at next year’s federal auctions for the blind. Following that, water appears. With water comes green in every shade that life embraces.
@@ -19,16 +19,16 @@ I could describe the rubble for days; but I’ll share the pictures instead, onc
 
 Guidelines for surviving a real, Arabic marketplace:
 
-1.  Hit the first merchant that greets you as hard as you can. Hopefully, you can bring him to his knees. Should another merchant greet you, repeat the process until no one speaks to you.
-2.  Young boys who speak Arabic and English linger about to sell their services. They will rob you blind. Hire one. The alternative is not pretty.
-3.  Remember that both “no” and “yes” mean, “yes” in Arabic. There is no word for “no” that Arabs understand in any language, so your best bet it to resort to physical violence.
-4.  Carry your wallet in your hand and keep a firm grip on it. Wear clothing with as few pockets as possible. Vendors will put jewelry into your pockets and demand money from you later.
-5.  Remember that no matter how low you barter the price, you are still being robbed.
-6.  No matter what you do, you have been robbed.
+1. Hit the first merchant that greets you as hard as you can. Hopefully, you can bring him to his knees. Should another merchant greet you, repeat the process until no one speaks to you.
+1. Young boys who speak Arabic and English linger about to sell their services. They will rob you blind. Hire one. The alternative is not pretty.
+1. Remember that both “no” and “yes” mean, “yes” in Arabic. There is no word for “no” that Arabs understand in any language, so your best bet it to resort to physical violence.
+1. Carry your wallet in your hand and keep a firm grip on it. Wear clothing with as few pockets as possible. Vendors will put jewelry into your pockets and demand money from you later.
+1. Remember that no matter how low you barter the price, you are still being robbed.
+1. No matter what you do, you have been robbed.
 
-I followed the standard military directions to the market, “Down that aways a bit, can’t miss it;” and I almost passed by this odd series of hovels, the walls of which were decked like patchwork with blankets and clothes. If a young lad had not attached himself to me, I would not have recognized the place for what it was.  
+I followed the standard military directions to the market, “Down that aways a bit, can’t miss it;” and I almost passed by this odd series of hovels, the walls of which were decked like patchwork with blankets and clothes. If a young lad had not attached himself to me, I would not have recognized the place for what it was.
 
-Stepping low through the doorway, you step through a portal into another dimension of another universe. A thousand merchants with their wares attempt to rob you simultaneously. I have nightmares about this place. I spent $50, and I’m not even sure what I bought. The little boy assured me that it was quality. So, I have an unquantifiable amount of quality somewhere on my person. That’s reassuring.
+Stepping low through the doorway, you step through a portal into another dimension of another universe. A thousand merchants with their wares attempt to rob you simultaneously. I have nightmares about this place. I spent \$50, and I’m not even sure what I bought. The little boy assured me that it was quality. So, I have an unquantifiable amount of quality somewhere on my person. That’s reassuring.
 
 Finally, I ate lunch on the bank of the river that passes through Babylon. Someone, somewhere in the military has taste, for they built the chow hall in the best possible place. Quite a day.
 

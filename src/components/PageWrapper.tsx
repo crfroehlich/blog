@@ -1,16 +1,16 @@
 import React from 'react';
+import Helmet from 'react-helmet';
+import { BadgeAnchor, Badge, ChipSet, Chip } from 'rmwc';
+import kebabCase from 'lodash/kebabCase';
 import { Layout } from './Layout';
 import { DisplayDate, Link } from './Link';
-import Helmet from 'react-helmet';
 import NextPrevious from './NextPrevious';
 import { config } from '../../config';
 import { Edit, StyledHeading, StyledMainWrapper } from './styles/Docs';
-import { BadgeAnchor, Badge, ChipSet, Chip } from 'rmwc';
-import kebabCase from 'lodash/kebabCase';
 import Comments from './Comments';
 import { IProps, INode } from '../types/interfaces';
 
-const forcedNavOrder = config.sidebar.forcedNavOrder;
+const { forcedNavOrder } = config.sidebar;
 
 export const PageWrapper: React.FC<IProps> = ({
   props,
@@ -23,13 +23,13 @@ export const PageWrapper: React.FC<IProps> = ({
 
   const { allMdx, mdx } = data;
 
-  let site,
-    siteMetadata,
-    title = pageTitle,
-    body,
-    docsLocation,
-    date = new Date(),
-    tags = [];
+  let site;
+  let siteMetadata;
+  let title = pageTitle;
+  let body;
+  let docsLocation;
+  let date = new Date();
+  let tags = [];
 
   if (data && data.site) {
     site = data.site;
@@ -68,7 +68,7 @@ export const PageWrapper: React.FC<IProps> = ({
 
   canonicalUrl =
     config.gatsby.pathPrefix !== '/' ? canonicalUrl + config.gatsby.pathPrefix : canonicalUrl;
-  canonicalUrl = canonicalUrl + (mdx ? mdx.fields.slug : '');
+  canonicalUrl += mdx ? mdx.fields.slug : '';
 
   interface IItems {
     items: any[];
@@ -90,14 +90,13 @@ export const PageWrapper: React.FC<IProps> = ({
           let prefix = cur.split('/')[1];
 
           if (config.gatsby && config.gatsby.trailingSlash) {
-            prefix = prefix + '/';
+            prefix += '/';
           }
 
           if (prefix && forcedNavOrder.find((url) => url === `/${prefix}`)) {
             return { ...acc, [`/${prefix}`]: [...acc[`/${prefix}`], cur] };
-          } else {
-            return { ...acc, items: [...acc.items, cur] };
           }
+          return { ...acc, items: [...acc.items, cur] };
         },
         { items: [] },
       );

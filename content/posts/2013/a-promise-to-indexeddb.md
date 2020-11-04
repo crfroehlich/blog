@@ -1,15 +1,13 @@
 ---
-title: "A Promise to IndexedDb"
-metaTitle: "A Promise to IndexedDb"
+title: 'A Promise to IndexedDb'
+metaTitle: 'A Promise to IndexedDb'
 metaDate: 6/26/2013
 metaDraft: false
-tags: [ "promises", "code", "persistence" ]
-img: "promises.jpeg"
+tags: ['promises', 'code', 'persistence']
+img: 'promises.jpeg'
 ---
 
 Quite a bit of my free time in the last 8 months has slipped away into [OJ](http://somecallmechief.github.io/oj/), my solution to the hell of dynamic form creation (based on arbitrary data inputs and accordingly arbitrary data outputs). Folks at [WuFoo](http://www.wufoo.com/) and [Bootsnip](https://bootsnipp.com/index.php/forms) have some nice prototypes of runtime manipulatable engines; while each looks like excellent work, neither solves my problem of generating entire workflows based on data. I want the data to drive the UI; the UI should simply read the data and generate the necessary rich form content necessary to provide slick, intuitive, addictive user experiences.
-
-
 
 In the pursuit of this heffalump, I had recently been working on decomposing [Martin Orth](http://www.youtube.com/user/karnevalCom)'s [query builder](http://www.youtube.com/watch?v=QJwlEry_ER4) into classes in the OJ framework (see it on [Github](https://github.com/somecallmechief/oj), in [NPM](https://npmjs.org/package/ojs), and collaborate with me in [Cloud9](https://c9.io/somecallmechief/oj)). This body of work depends upon [ExtJs](http://www.sencha.com/products/extjs), which is a powerful but extraordinarily inscrutable framework. I spend a frustrating amount of time comparing the inputs into Ext from OJ vs the inputs in Sencha's examples or their documentation. It's tedious and fragile as seeming minor changes can produce difficult to track bugs which go unobserved across several commits.
 
@@ -29,7 +27,9 @@ You'll need:
 This is the API that I wanted to call:
 
 ```js
-var tableName = 'messages', dbName = 'diagnostics', dbVersion = 1;
+var tableName = 'messages',
+  dbName = 'diagnostics',
+  dbVersion = 1;
 
 //Create a new DB manager instance
 var newDbMgr = initDb();
@@ -44,8 +44,28 @@ newDbMgr.ddl.createIndex(tableName, 'timeid', 'time');
 newDbMgr.ddl.createIndex(tableName, 'usernameid', 'user.name');
 
 //Insert some data
-newDbMgr.insert(tableName, {message: { time: new Date(), text: { fault: Faker.Lorem.words(), subject: Faker.Lorem.sentence(), description: Faker.Lorem.paragraph() }, user: Faker.Helpers.createCard() } });
-newDbMgr.insert(tableName, {message: { time: new Date(), text: { fault: Faker.Lorem.words(), subject: Faker.Lorem.sentence(), description: Faker.Lorem.paragraph() }, user: Faker.Helpers.createCard() } });
+newDbMgr.insert(tableName, {
+  message: {
+    time: new Date(),
+    text: {
+      fault: Faker.Lorem.words(),
+      subject: Faker.Lorem.sentence(),
+      description: Faker.Lorem.paragraph(),
+    },
+    user: Faker.Helpers.createCard(),
+  },
+});
+newDbMgr.insert(tableName, {
+  message: {
+    time: new Date(),
+    text: {
+      fault: Faker.Lorem.words(),
+      subject: Faker.Lorem.sentence(),
+      description: Faker.Lorem.paragraph(),
+    },
+    user: Faker.Helpers.createCard(),
+  },
+});
 
 //Query the data
 var results = newDbMgr.select('message').from(tableName).where('user.name', '=', 'Bob');
@@ -142,35 +162,37 @@ Once the connection wrapper is defined, I can encapsulate some of the DDL operat
 
 ```js
 //private implementation method
-var createTableImpl = function(dbWrapper, db, tableName, tablePkColumnName, autoIncrement) {
- //The call to createObjectStore is synchronous--the table is immediately returned
- var table = db.createObjectStore(tableName, { keyPath: tablePkColumnName, autoIncrement: false !== autoIncrement });
- //Cache the table instance for future reference
- dbWrapper.schema.add(tableName, table);
- return table;
+var createTableImpl = function (dbWrapper, db, tableName, tablePkColumnName, autoIncrement) {
+  //The call to createObjectStore is synchronous--the table is immediately returned
+  var table = db.createObjectStore(tableName, {
+    keyPath: tablePkColumnName,
+    autoIncrement: false !== autoIncrement,
+  });
+  //Cache the table instance for future reference
+  dbWrapper.schema.add(tableName, table);
+  return table;
 };
 
 //public method. DDL operations can only happen as part of the versioning event.
 //Add the call to create the table to a schema scripts collection which the IndexedDb versioner will iterate.
-var createTable = function(dbWrapper, tableName, tablePkColumnName, autoIncrement) {
- //Create a new promise
- var deferred = Q.defer();
- //Push this method into the scripts collection
- schemaScripts.push(function(db) {
-  try {
-   //Create the table
-   var objectStore = createTableImpl(dbWrapper, db, tableName, tablePkColumnName, autoIncrement);
-   //Resolve the promise successful with the table
-   deferred.resolve(objectStore);
-
-  } catch(e) {
-   console.log(e, e.stack);
-   //Resolve the promise failed
-   deferred.reject(new Error('Could not create a new table', e));
-  }
-  return dbWrapper.schema\[tableName\];
- });
- return deferred.promise;
+var createTable = function (dbWrapper, tableName, tablePkColumnName, autoIncrement) {
+  //Create a new promise
+  var deferred = Q.defer();
+  //Push this method into the scripts collection
+  schemaScripts.push(function (db) {
+    try {
+      //Create the table
+      var objectStore = createTableImpl(dbWrapper, db, tableName, tablePkColumnName, autoIncrement);
+      //Resolve the promise successful with the table
+      deferred.resolve(objectStore);
+    } catch (e) {
+      console.log(e, e.stack);
+      //Resolve the promise failed
+      deferred.reject(new Error('Could not create a new table', e));
+    }
+    return dbWrapper.schemaschema\[tableNametableName\];
+  });
+  return deferred.promise;
 };
 ```
 
@@ -180,34 +202,35 @@ At any rate, the above is just enough to create some indexedDb tables. Next, the
 
 ```js
 //Private implementation method
-var createIndexImpl = function(dbWrapper, tableName, columnName, indexName, isUnique) {
- //No need to wait on transaction, we have (or should have) the table in memory
- var table = dbWrapper.schema\[tableName\];
- //Create the new index and return it immediately (happens synchronously)
- //It would be nice to cache the index on the cached table instance, but that table instance is actually an indexedDb object and I don't want to mutate--nor do I want to refactor anything at the moment. So eat the cost of fetching a handle on indexes later. Told-you-so's expected.
- return table.createIndex(columnName, indexName || columnName + 'Idx', { unique: true !== isUnique });
+var createIndexImpl = function (dbWrapper, tableName, columnName, indexName, isUnique) {
+  //No need to wait on transaction, we have (or should have) the table in memory
+  var table = dbWrapper.schemaschema\[tableNametableName\];
+  //Create the new index and return it immediately (happens synchronously)
+  //It would be nice to cache the index on the cached table instance, but that table instance is actually an indexedDb object and I don't want to mutate--nor do I want to refactor anything at the moment. So eat the cost of fetching a handle on indexes later. Told-you-so's expected.
+  return table.createIndex(columnName, indexName || columnName + 'Idx', {
+    unique: true !== isUnique,
+  });
 };
 
 //public method. DDL operations can only happen as part of the versioning event.
 //Add the call to create the index to a schema scripts collection which the IndexedDb versioner will iterate.
-var createIndex = function(dbWrapper, tableName, columnName, indexName, isUnique) {
- //Create a new promise
- var deferred = Q.defer();
- //Push this method into the scripts collection
- schemaScripts.push(function() {
-  try {
-   var index = createIndexImpl(dbWrapper, tableName, columnName, indexName, isUnique);
-   //Resolve the promise successful with the new index
-   deferred.resolve(index);
-
-  } catch(e) {
-   console.log(e, e.stack);
-   //Fail the promise
-   deferred.reject(new Error('Could not create a new index', e));
-  }
-  return dbWrapper.schema\[tableName\];
- });
- return deferred.promise;
+var createIndex = function (dbWrapper, tableName, columnName, indexName, isUnique) {
+  //Create a new promise
+  var deferred = Q.defer();
+  //Push this method into the scripts collection
+  schemaScripts.push(function () {
+    try {
+      var index = createIndexImpl(dbWrapper, tableName, columnName, indexName, isUnique);
+      //Resolve the promise successful with the new index
+      deferred.resolve(index);
+    } catch (e) {
+      console.log(e, e.stack);
+      //Fail the promise
+      deferred.reject(new Error('Could not create a new index', e));
+    }
+    return dbWrapper.schemaschema\[tableNametableName\];
+  });
+  return deferred.promise;
 };
 ```
 
@@ -215,62 +238,63 @@ Very much like the createTable method before it, the createIndex method hooks in
 
 ```js
 var obj = {
-    str: '',
-    num: 0,
-    arr: \[\],
-    obj1: {
-        str1: '',
-        obj2: {
-            str2: ''
-        }
-    }
-}
+  str: '',
+  num: 0,
+  arr: \[\],
+  obj1: {
+    str1: '',
+    obj2: {
+      str2: '',
+    },
+  },
+};
 ```
 
 So an index on "str2" is as simple as defining an index on "obj1.obj2.str2". This took me quite a bit of trial and error, so I think it's worth highlighting how the pathing to an index works.
 
-Finally (for the purpose of this post), you need a way to insert data into the store. 
+Finally (for the purpose of this post), you need a way to insert data into the store.
 
 ```js
 //Private implementation method, doesn't yet conform to standard \*Impl paradigm. It's ok; I'm ok; you're ok.
-var insertImpl = function(tableName, records) {
- //Promise to insert the data
- var deferred = Q.defer();
+var insertImpl = function (tableName, records) {
+  //Promise to insert the data
+  var deferred = Q.defer();
 
- try {
-  //Get a new transaction on the table. This is an insert, so 'readwrite' is implicitly understood by the caller.
-  var transaction = db.transaction(\[tableName\], 'readwrite');
+  try {
+    //Get a new transaction on the table. This is an insert, so 'readwrite' is implicitly understood by the caller.
+    var transaction = db.transaction(\[tableNametableName\], 'readwrite');
 
-  //Get the object store from the transaction (gods forbid we fetched it from our own handle on the object store...and how the hell does this thing manage concurrency?!)
-  var objectStore = transaction.objectStore(tableName);
-  //Insert the new records
-  n$.each(records, function(rec) {
-   objectStore.add(rec);
-  });
-  //Resolve the promise
-  deferred.resolve(true);
- } catch(e) {
-  console.log(e, e.stack);
-  //Fail the promise
-  deferred.reject(new Error('Could not insert records',e));
- }
- //Return the promise
- return deferred.promise;
+    //Get the object store from the transaction (gods forbid we fetched it from our own handle on the object store...and how the hell does this thing manage concurrency?!)
+    var objectStore = transaction.objectStore(tableName);
+    //Insert the new records
+    n$.each(records, function (rec) {
+      objectStore.add(rec);
+    });
+    //Resolve the promise
+    deferred.resolve(true);
+  } catch (e) {
+    console.log(e, e.stack);
+    //Fail the promise
+    deferred.reject(new Error('Could not insert records', e));
+  }
+  //Return the promise
+  return deferred.promise;
 };
 
 //Public insert method
-var insert = function(tableName, records) {
- var ret = function() {
-  return insertImpl(tableName, records);
- };
- //If we have a db instance or if the initial connection promise is resolved (succeeded), then it is safe to insert immediately
- if(db || connectPromise.isResolved()) {
-  ret();
- } else { //else wait for the connection promise to resolve and then do the insert (this seems to be the normal use case)
-  connectPromise.then(ret);
- }
- //Nothing worth returning at this time
- //return ret.promise;
+var insert = function (tableName, records) {
+  var ret = function () {
+    return insertImpl(tableName, records);
+  };
+  //If we have a db instance or if the initial connection promise is resolved (succeeded), then it is safe to insert immediately
+  if (db || connectPromise.isResolved()) {
+    ret();
+  } else {
+    //else wait for the connection promise to resolve and then do the insert (this seems to be the normal use case)
+    connectPromise.then(ret);
+  }
+  //Nothing worth returning at this time
+  //return ret.promise;
 };
 ```
 
@@ -281,166 +305,175 @@ This whole abstraction needs to be lazy, and there is another round of refactori
 I hope to have JsPerf tests and an expanded API for my next post. Until then, I'll leave you with the full example code:
 
 ```js
-var initDb = (function() {
- var name, version, db, connectPromise, upgradeIsRequired = false;
- var schemaScripts = \[\];
+var initDb = (function () {
+  var name,
+    version,
+    db,
+    connectPromise,
+    upgradeIsRequired = false;
+  var schemaScripts = \[\];
 
- var connect = function(dbName, dbVersion, dbOnUpgrade) {
-  upgradeIsRequired = (!connectPromise || dbName !== name || dbVersion !== version);
-  if(upgradeIsRequired) {
-   var deferred = Q.defer();
+  var connect = function (dbName, dbVersion, dbOnUpgrade) {
+    upgradeIsRequired = !connectPromise || dbName !== name || dbVersion !== version;
+    if (upgradeIsRequired) {
+      var deferred = Q.defer();
 
-   connectPromise = deferred.promise;
+      connectPromise = deferred.promise;
 
-    version = dbVersion || 1;
-    name = dbName;
-    dbOnUpgrade = dbOnUpgrade || function() {};
+      version = dbVersion || 1;
+      name = dbName;
+      dbOnUpgrade = dbOnUpgrade || function () {};
 
-    var request = window.indexedDB.open(name, version);
+      var request = window.indexedDB.open(name, version);
 
-    request.onblocked = function(event) {
-     db.close();
-     alert("A new version of this page is ready. Please reload!");
-    };
+      request.onblocked = function (event) {
+        db.close();
+        alert('A new version of this page is ready. Please reload!');
+      };
 
-    request.onerror = function(event) {
-     deferred.reject(new Error("Database error: " + event.target.errorCode));
-     if(db) {
-      db.close();
-     }
-    };
-    request.onsuccess = function(event) {
-     db = request.result;
-     deferred.resolve(db);
-    };
-    request.onupgradeneeded = function(event) {
-     db = event.target.result;
+      request.onerror = function (event) {
+        deferred.reject(new Error('Database error: ' + event.target.errorCode));
+        if (db) {
+          db.close();
+        }
+      };
+      request.onsuccess = function (event) {
+        db = request.result;
+        deferred.resolve(db);
+      };
+      request.onupgradeneeded = function (event) {
+        db = event.target.result;
 
-     if(schemaScripts.length > 0) {
-      n$.each(schemaScripts, function(script) {
-       //debugger;
-       script(db);
-      });
-     }
+        if (schemaScripts.length > 0) {
+          n$.each(schemaScripts, function (script) {
+            //debugger;
+            script(db);
+          });
+        }
 
-     dbOnUpgrade(db);
-    };
-
-
-  }
-  return connectPromise;
- };
-
- var disconnect = function() {
-  if(connectPromise.isFulfilled()) {
-   db.close();
-  } else if(db) {
-   connectPromise.done(db.close);
-  }
- };
-
- var createTableImpl = function(dbWrapper, db, tableName, tablePkColumnName, autoIncrement) {
-  var table = db.createObjectStore(tableName, { keyPath: tablePkColumnName, autoIncrement: false !== autoIncrement });
-  dbWrapper.schema.add(tableName, table);
-  return table;
- };
-
- var createTable = function(dbWrapper, tableName, tablePkColumnName, autoIncrement) {
-  var deferred = Q.defer();
-  schemaScripts.push(function(db) {
-   try {
-    var objectStore = createTableImpl(dbWrapper, db, tableName, tablePkColumnName, autoIncrement);
-    deferred.resolve(objectStore);
-
-   } catch(e) {
-    console.log(e, e.stack);
-    deferred.reject(new Error('Could not create a new table', e));
-   }
-   return dbWrapper.schema\[tableName\];
-  });
-  return deferred.promise;
- };
-
- var createIndexImpl = function(dbWrapper, tableName, columnName, indexName, isUnique) {
-  var table = dbWrapper.schema\[tableName\];
-  return table.createIndex(columnName, indexName || columnName + 'Idx', { unique: true !== isUnique });
- };
-
- var createIndex = function(dbWrapper, tableName, columnName, indexName, isUnique) {
-  var deferred = Q.defer();
-
-  schemaScripts.push(function() {
-   try {
-    var index = createIndexImpl(dbWrapper, tableName, columnName, indexName, isUnique);
-    deferred.resolve(index);
-
-   } catch(e) {
-    console.log(e, e.stack);
-    deferred.reject(new Error('Could not create a new index', e));
-   }
-   return dbWrapper.schema\[tableName\];
-  });
-  return deferred.promise;
- };
-
- var insertImpl = function(tableName, records) {
-  var deferred = Q.defer();
-
-  try {
-   var transaction = db.transaction(\[tableName\], 'readwrite');
-
-   var objectStore = transaction.objectStore(tableName);
-   n$.each(records, function(rec) {
-    objectStore.add(rec);
-   });
-
-   deferred.resolve(true);
-  } catch(e) {
-   console.log(e, e.stack);
-   deferred.reject(new Error('Could not insert records',e));
-  }
-
-  return deferred.promise;
- };
-
- var insert = function(tableName, records) {
-  var ret = function() {
-   return insertImpl(tableName, records);
+        dbOnUpgrade(db);
+      };
+    }
+    return connectPromise;
   };
-  if(db || connectPromise.isResolved()) {
-   ret();
-  } else {
-   connectPromise.then(ret);
-  }
-  //return ret.promise;
- };
 
- return function() {
+  var disconnect = function () {
+    if (connectPromise.isFulfilled()) {
+      db.close();
+    } else if (db) {
+      connectPromise.done(db.close);
+    }
+  };
 
-  var ret = n$.object();
-  ret.add('connect', connect);
-  ret.add('disconnect', disconnect);
-  ret.add('schema', n$.object());
-  ret.add('ddl', {
-   createTable: function(tableName, tablePkColumnName, autoIncrement) {
-    var args = Array.prototype.slice.call(arguments, 0);
-    args.unshift(ret);
-    return createTable.apply(this, args);
-   },
-   dropTable: function(tableName) {
-    var args = Array.prototype.slice.call(arguments, 0);
-    args.unshift(ret);
-    return createTable.apply(this, args);
-   },
-   createIndex: function(tableName, columnName, indexName, isUnique) {
-    var args = Array.prototype.slice.call(arguments, 0);
-    args.unshift(ret);
-    return createIndex.apply(this, args);
-   }
-  });
-  ret.add('insert', insert);
-  return ret;
- };
+  var createTableImpl = function (dbWrapper, db, tableName, tablePkColumnName, autoIncrement) {
+    var table = db.createObjectStore(tableName, {
+      keyPath: tablePkColumnName,
+      autoIncrement: false !== autoIncrement,
+    });
+    dbWrapper.schema.add(tableName, table);
+    return table;
+  };
 
-}());
+  var createTable = function (dbWrapper, tableName, tablePkColumnName, autoIncrement) {
+    var deferred = Q.defer();
+    schemaScripts.push(function (db) {
+      try {
+        var objectStore = createTableImpl(
+          dbWrapper,
+          db,
+          tableName,
+          tablePkColumnName,
+          autoIncrement,
+        );
+        deferred.resolve(objectStore);
+      } catch (e) {
+        console.log(e, e.stack);
+        deferred.reject(new Error('Could not create a new table', e));
+      }
+      return dbWrapper.schemaschema\[tableNametableName\];
+    });
+    return deferred.promise;
+  };
+
+  var createIndexImpl = function (dbWrapper, tableName, columnName, indexName, isUnique) {
+    var table = dbWrapper.schemaschema\[tableNametableName\];
+    return table.createIndex(columnName, indexName || columnName + 'Idx', {
+      unique: true !== isUnique,
+    });
+  };
+
+  var createIndex = function (dbWrapper, tableName, columnName, indexName, isUnique) {
+    var deferred = Q.defer();
+
+    schemaScripts.push(function () {
+      try {
+        var index = createIndexImpl(dbWrapper, tableName, columnName, indexName, isUnique);
+        deferred.resolve(index);
+      } catch (e) {
+        console.log(e, e.stack);
+        deferred.reject(new Error('Could not create a new index', e));
+      }
+      return dbWrapper.schemaschema\[tableNametableName\];
+    });
+    return deferred.promise;
+  };
+
+  var insertImpl = function (tableName, records) {
+    var deferred = Q.defer();
+
+    try {
+      var transaction = db.transaction(\[tableNametableName\], 'readwrite');
+
+      var objectStore = transaction.objectStore(tableName);
+      n$.each(records, function (rec) {
+        objectStore.add(rec);
+      });
+
+      deferred.resolve(true);
+    } catch (e) {
+      console.log(e, e.stack);
+      deferred.reject(new Error('Could not insert records', e));
+    }
+
+    return deferred.promise;
+  };
+
+  var insert = function (tableName, records) {
+    var ret = function () {
+      return insertImpl(tableName, records);
+    };
+    if (db || connectPromise.isResolved()) {
+      ret();
+    } else {
+      connectPromise.then(ret);
+    }
+    //return ret.promise;
+  };
+
+  return function () {
+    var ret = n$.object();
+    ret.add('connect', connect);
+    ret.add('disconnect', disconnect);
+    ret.add('schema', n$.object());
+    ret.add('ddl', {
+      createTable: function (tableName, tablePkColumnName, autoIncrement) {
+        var args = Array.prototype.slice.call(arguments, 0);
+        args.unshift(ret);
+        return createTable.apply(this, args);
+      },
+      dropTable: function (tableName) {
+        var args = Array.prototype.slice.call(arguments, 0);
+        args.unshift(ret);
+        return createTable.apply(this, args);
+      },
+      createIndex: function (tableName, columnName, indexName, isUnique) {
+        var args = Array.prototype.slice.call(arguments, 0);
+        args.unshift(ret);
+        return createIndex.apply(this, args);
+      },
+    });
+    ret.add('insert', insert);
+    return ret;
+  };
+})();
 ```

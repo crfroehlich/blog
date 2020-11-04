@@ -1,25 +1,32 @@
 ---
 extends:
-  - 'plugin:react/recommended'
+  - 'airbnb-base'
   - 'plugin:@typescript-eslint/recommended'
-  - 'prettier/@typescript-eslint'
-  - 'plugin:prettier/recommended'
+  - 'plugin:import/errors'
+  - 'plugin:import/typescript'
+  - 'plugin:import/warnings'
   - 'plugin:jsx-a11y/recommended'
-  - prettier
-  - prettier/react
+  - 'plugin:prettier/recommended'
+  - 'plugin:react/recommended'
+  - 'prettier'
+  - 'prettier/@typescript-eslint'
+  - 'prettier/react'
 plugins:
-  - react
-  - import
-  - jsx-a11y
+  - '@typescript-eslint'
+  - 'import'
+  - 'jsx-a11y'
+  - 'react'
 settings:
   react:
     version: detect
 rules:
-  react/prop-types: 0
-  react/react-in-jsx-scope: 'off'
+  import/extensions: 0
   lines-between-class-members:
     - error
     - always
+  prettier/prettier: 'error'
+  react/prop-types: 0
+  react/react-in-jsx-scope: 'off'
 parser: '@typescript-eslint/parser'
 parserOptions:
   ecmaVersion: 11

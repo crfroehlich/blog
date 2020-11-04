@@ -1,10 +1,10 @@
 ---
-title: "Code Generation: Connecting T4 to Entity Framework Core"
-metaTitle: "CCode Generation: Connecting T4 to Entity Framework Core"
+title: 'Code Generation: Connecting T4 to Entity Framework Core'
+metaTitle: 'CCode Generation: Connecting T4 to Entity Framework Core'
 metaDate: 07/08/2019
 metaDraft: false
-tags: [ "metadata", "retrospective", "code", "generation" ]
-img: "code_generation.png"
+tags: ['metadata', 'retrospective', 'code', 'generation']
+img: 'code_generation.png'
 ---
 
 I have enjoyed working with [T4](https://docs.microsoft.com/en-us/visualstudio/modeling/code-generation-and-t4-text-templates?view=vs-2019) in my .NET projects, and I have wanted to start exploring Entity Framework Core with ASP.NET Core. Fortunately, Microsoft has an excellent [suite of tutorials](https://docs.asp.net/en/latest/data/ef-mvc/intro.html) which makes it dead simple to get a sample project up and running. I jumped straight to the end and began by copying down the project code from the [ASP.NET Core Documentation](https://github.com/aspnet/AspNetCore.Docs/tree/master/aspnetcore/data/ef-mvc/intro/samples/cu-final) repo and I started my own git repo my new and intuitively named [AutoEcMvc](https://github.com/crfroehlich/AutoEcMvc) (Automatic EF Core over MVC) project. I even went the extra mile and set up a free Azure account to host the project at [https://autoecmvc.luddites.me](https://autoecmvc.luddites.me/). The challenges of connecting the GitHub project to a CI/CD pipeline for hosting on Azure will be addressed in a follow up blog post.
@@ -17,12 +17,12 @@ T4 is one code generation/templating solution that can help us solve this proble
 
 A few goals and guiding principles that I have applied:
 
-*   Code Generation should live in a separate project from the main application projects. This becomes essential as if your generated code does not compile, you can quickly get stuck in a chicken/egg/rooster situation where you cannot compile to fix the compile.
-*   All code templates should use structure data format for defining how to generate code. For this project, I use JSON files which represent each unique entity to be translated into actual project code.
-*   Use partial classes everywhere possible to allow extension and custom properties logic.
-*   Use abstract base classes to allow injecting custom logic inside the generated code. This is critical if you need custom logic to execute inside a constructor, for example, and do not want to overly complicate the templates.
-*   Keep as much business logic out of the template as possible.
-*   Separate generated code from user code and annotate generated code appropriately.
+- Code Generation should live in a separate project from the main application projects. This becomes essential as if your generated code does not compile, you can quickly get stuck in a chicken/egg/rooster situation where you cannot -pile to fix the compile.
+- All code templates should use structure data format for defining how to generate code. For this project, I use JSON files which represent each unique entity to be translated into actual project code.
+- Use partial classes everywhere possible to allow extension and custom properties logic.
+- Use abstract base classes to allow injecting custom logic inside the generated code. This is critical if you need custom logic to execute inside a constructor, for example, and do not want to overly complicate the templates.
+- Keep as much business logic out of the template as possible.
+- Separate generated code from user code and annotate generated code appropriately.
 
 If you look through the structure of [AutoEcMvc](https://github.com/crfroehlich/AutoEcMvc), you’ll notice that there are two main projects: AutoEcMvc, which is the app that gets deployed and CodeGeneration, which is just the templating logic. I picked .NET Standard as the project type for CodeGeneration, as I ran into numerous issues trying to get the project working using .NET Core. I will revisit that in the near future.
 
@@ -50,7 +50,7 @@ Each entity has a collection of columns, and a column looks like:
 "Type": "string"
 ```
 
-Honestly, it took quite a few iterations before I landed on the current data structure — and there is still quite a bit of cruft that can be removed to polish this. I started with the model classes, because they are the simplest and require the least amount of logic overall. I opted to use a numbered naming convention for the templates as a clue to the developer on the order in which things should be done: note this is simply an opinion and has no effect on the text transform step of compile — these templates can (and should always be able to) be transformed in any order. So [02\_models.tt](https://github.com/crfroehlich/AutoEcMvc/blob/master/CodeGeneration/Transforms/templates/02_Models.tt) is the first step of the process.
+Honestly, it took quite a few iterations before I landed on the current data structure — and there is still quite a bit of cruft that can be removed to polish this. I started with the model classes, because they are the simplest and require the least amount of logic overall. I opted to use a numbered naming convention for the templates as a clue to the developer on the order in which things should be done: note this is simply an opinion and has no effect on the text transform step of compile — these templates can (and should always be able to) be transformed in any order. So [02_models.tt](https://github.com/crfroehlich/AutoEcMvc/blob/master/CodeGeneration/Transforms/templates/02_Models.tt) is the first step of the process.
 
 First, include our imports for T4:
 

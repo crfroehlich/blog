@@ -1,4 +1,3 @@
-
 export class Tools {
   _window;
 
@@ -9,25 +8,24 @@ export class Tools {
   }
 
   init() {
-    if (!this._window && typeof window != 'undefined') {
+    if (!this._window && typeof window !== 'undefined') {
       this._window = window;
     }
-    if (!this._document && typeof document != 'undefined') {
+    if (!this._document && typeof document !== 'undefined') {
       this._document = document;
     }
   }
 
   get localStorage() {
-    if(this._window) {
+    if (this._window) {
       return this._window.localStorage;
-    } else {
-      return {
-        getItem() {
-          return '{ }';
-        },
-        setItem() {},
-      };
     }
+    return {
+      getItem() {
+        return '{ }';
+      },
+      setItem() {},
+    };
   }
 
   getLocalDate(date: Date = new Date()): string {

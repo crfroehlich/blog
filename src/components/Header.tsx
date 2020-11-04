@@ -2,17 +2,17 @@ import React from 'react';
 import styled from '@emotion/styled';
 import { StaticQuery, graphql } from 'gatsby';
 import GitHubButton from 'react-github-btn';
-import Link from './Link';
 import Loadable from 'react-loadable';
 import { Icon } from 'rmwc';
+import { HeaderTitleQueryQuery } from 'graphql-types';
+import Link from './Link';
 import { config } from '../../config';
 import LoadingProvider from './mdxComponents/loading';
 import Sidebar from './sidebar';
-import { HeaderTitleQueryQuery } from 'graphql-types';
 import { IProps } from '../types/interfaces';
 import { Tools } from '../utils';
 
-const isSearchEnabled = config.header.search && config.header.search.enabled ? true : false;
+const isSearchEnabled = !!(config.header.search && config.header.search.enabled);
 
 const searchIndices = [];
 
@@ -76,7 +76,6 @@ const Header: React.FC<IProps> = ({ location }) => (
       }
     `}
     render={(data) => {
-
       const {
         site: {
           siteMetadata: { headerTitle, githubUrl, helpUrl, tweetText, logo, headerLinks },
@@ -138,7 +137,7 @@ const Header: React.FC<IProps> = ({ location }) => (
                 {tweetText !== '' ? (
                   <li>
                     <a
-                      href={'https://twitter.com/intent/tweet?&text=' + tweetText}
+                      href={`https://twitter.com/intent/tweet?&text=${tweetText}`}
                       target="_blank"
                       rel="noopener noreferrer"
                     >

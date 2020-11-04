@@ -13,16 +13,15 @@ export default class Article extends Component<IPageProps> {
 
     if (!data.site || !mdx) {
       return <NotFound props={this.props} />;
-    } else {
-      return (
-        <PageWrapper
-          props={this.props}
-          pageContent={<MDXRenderer>{mdx ? mdx.body : 'text'}</MDXRenderer>}
-          showGithub={true}
-          showComments={true}
-        />
-      );
     }
+    return (
+      <PageWrapper
+        props={this.props}
+        pageContent={<MDXRenderer>{mdx ? mdx.body : 'text'}</MDXRenderer>}
+        showGithub={true}
+        showComments={true}
+      />
+    );
   }
 }
 

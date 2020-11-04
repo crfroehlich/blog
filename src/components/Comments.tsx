@@ -32,7 +32,7 @@ const Commento = ({ id }) => {
     if (!document) {
       return;
     }
-    
+
     // In case our #commento container exists we can add our commento script
     if (document.getElementById('commento')) {
       insertScript(`https://home.luddites.me/js/commento.js`, `commento-script`, document.body);
@@ -41,7 +41,7 @@ const Commento = ({ id }) => {
     return () => removeScript(`commento-script`, document.body);
   }, [id]);
 
-  return <div id={`commento`} />
+  return <div id={`commento`} />;
 };
 
 export default Commento;

@@ -2,16 +2,15 @@ import React from 'react';
 import { config } from '../config';
 
 interface Props {
-  htmlAttributes?: React.HtmlHTMLAttributes<HTMLHtmlElement>
-  headComponents?: React.ReactNode
-  bodyAttributes?: React.HTMLAttributes<HTMLBodyElement>
-  preBodyComponents?: React.ReactNode
-  body: string
-  postBodyComponents?: React.ReactNode
+  htmlAttributes?: React.HtmlHTMLAttributes<HTMLHtmlElement>;
+  headComponents?: React.ReactNode;
+  bodyAttributes?: React.HTMLAttributes<HTMLBodyElement>;
+  preBodyComponents?: React.ReactNode;
+  body: string;
+  postBodyComponents?: React.ReactNode;
 }
 
-export default class HTML extends React.Component<Props>
-{
+export default class HTML extends React.Component<Props> {
   render(): JSX.Element {
     return (
       <html {...this.props.htmlAttributes} lang="en">
