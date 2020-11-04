@@ -1,3 +1,5 @@
+import { IPluginRefOptions, PluginRef } from 'gatsby';
+
 export interface PluginCodegenOptions {
   // Name of the generated apollo config file
   apolloConfigFile?: string;
@@ -26,7 +28,7 @@ export interface PluginCodegenOptions {
   plugins?: unknown[];
 }
 
-const defaultOptions: PluginCodegenOptions = {
+const defaultOptions: IPluginRefOptions = {
   apolloConfigFile: 'apollo.config.js',
   addTypename: false,
   excludes: [],
@@ -48,7 +50,7 @@ const defaultOptions: PluginCodegenOptions = {
   watch: false,
 };
 
-export const codegen = [
+export const codegen: PluginRef[] = [
   {
     resolve: 'gatsby-plugin-codegen',
     options: defaultOptions,
