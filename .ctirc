@@ -13,7 +13,8 @@
     '.cache',
     '.yarn',
     'content',
-    'static'
+    'static',
+    'gatsby'
   ],
   fileExcludePatterns: ['*.test.ts', '*.test', '*.feature.ts'],
   fileFirst: false,
