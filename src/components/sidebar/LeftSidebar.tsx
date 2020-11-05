@@ -7,7 +7,7 @@ import { config } from '../../../config';
 import { Tree } from './Tree';
 
 // eslint-disable-next-line no-unused-vars
-export const ListItem = styled(({ className, active, level, ...props }) => {
+const ListItem = styled(({ className, active, level, ...props }) => {
   return (
     <li className={className}>
       <a href={props.to} {...props} target="_blank" rel="noopener noreferrer">
@@ -46,7 +46,7 @@ export const ListItem = styled(({ className, active, level, ...props }) => {
   }
 `;
 
-export const Sidebar = styled('aside')`
+const Sidebar = styled('aside')`
   width: 100%;
   height: 100vh;
   overflow: auto;

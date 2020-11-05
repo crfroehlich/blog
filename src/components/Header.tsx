@@ -1,10 +1,9 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import { StaticQuery, graphql } from 'gatsby';
-import GitHubButton from 'react-github-btn';
 import Loadable from 'react-loadable';
-import { Icon } from 'rmwc';
-import { HeaderTitleQueryQuery } from '../../graphql-types';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTwitter, faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { faRss } from '@fortawesome/free-solid-svg-icons';
 import { Link } from './Link';
 import { config } from '../../config';
 import { LoadingProvider } from './misc/LoadingProvider';
@@ -54,145 +53,97 @@ const StyledBgDiv = styled('div')`
 `;
 
 export const Header: React.FC<IProps> = ({ location }) => (
-  <StaticQuery<HeaderTitleQueryQuery>
-    query={graphql`
-      query headerTitleQuery {
-        site {
-          siteMetadata {
-            headerTitle
-            githubUrl
-            helpUrl
-            tweetText
-            logo {
-              link
-              image
-            }
-            headerLinks {
-              link
-              text
-            }
-          }
-        }
-      }
-    `}
-    render={(data) => {
-      const {
-        site: {
-          siteMetadata: { headerTitle, githubUrl, helpUrl, tweetText, logo, headerLinks },
-        },
-      } = data;
-
-      return (
-        <div className={'navBarWrapper'}>
-          <nav className={'navBarDefault'}>
-            <div className={'navBarHeader'}>
-              <Link to={'/'} className={'navBarBrand'}>
-                <img
-                  className={'img-responsive displayInline'}
-                  src={logo.image !== '' ? logo.image : '../static/logo.svg'}
-                  alt={'logo'}
-                />
-              </Link>
-              <div
-                className={'headerTitle displayInline'}
-                dangerouslySetInnerHTML={{ __html: headerTitle }}
-              />
-            </div>
-            {config.header.social ? (
-              <ul
-                className="socialWrapper visibleMobileView"
-                dangerouslySetInnerHTML={{ __html: config.header.social }}
-              ></ul>
-            ) : null}
-            {isSearchEnabled ? (
-              <div className={'searchWrapper hiddenMobile navBarUL'}>
-                <LoadableComponent collapse={true} indices={searchIndices} />
-              </div>
-            ) : null}
-            <div id="navbar" className={'topnav'}>
-              <div className={'visibleMobile'}>
-                <LeftSidebar location={location} />
-                <hr />
-              </div>
-              <ul className={'navBarUL navBarNav navBarULRight'}>
-                {headerLinks.map((link, key) => {
-                  if (link.link !== '' && link.text !== '') {
-                    return (
-                      <li key={key}>
-                        <Link className="sidebarLink" to={link.link} title={link.text}>
-                          {link.text}
-                        </Link>
-                      </li>
-                    );
-                  }
-                })}
-                {helpUrl !== '' ? (
-                  <li>
-                    <a href={helpUrl}>
-                      <img src={'../help.svg'} alt={'Help icon'} />
-                    </a>
-                  </li>
-                ) : null}
-
-                {tweetText !== '' ? (
-                  <li>
-                    <a
-                      href={`https://twitter.com/intent/tweet?&text=${tweetText}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <img className={'shareIcon'} src={'../twitter.svg'} alt={'Twitter'} />
-                    </a>
-                  </li>
-                ) : null}
-                {tweetText !== '' || githubUrl !== '' ? (
-                  <li className="divider hiddenMobile"></li>
-                ) : null}
-                {config.header.social ? (
-                  <li className={'hiddenMobile'}>
-                    <ul
-                      className="socialWrapper"
-                      dangerouslySetInnerHTML={{ __html: config.header.social }}
-                    ></ul>
-                  </li>
-                ) : null}
-                {githubUrl !== '' ? (
-                  <li className={'githubBtn'}>
-                    <GitHubButton href={githubUrl} aria-label="Follow" />
-                  </li>
-                ) : null}
-                <li>
-                  <Link to={'/rss.xml'}>
-                    <Icon icon="rss_feed" />
-                  </Link>
-                </li>
-              </ul>
-            </div>
-          </nav>
-          <StyledBgDiv>
-            <div className={'navBarDefault removePadd'}>
-              <span
-                onClick={setNavBar}
-                className={'navBarToggle'}
-                onKeyDown={setNavBar}
-                role="button"
-                tabIndex={0}
-              >
-                <span className={'iconBar'}></span>
-                <span className={'iconBar'}></span>
-                <span className={'iconBar'}></span>
-              </span>
-            </div>
-            {isSearchEnabled ? (
-              <div className={'searchWrapper'}>
-                <LoadableComponent collapse={true} indices={searchIndices} />
-              </div>
-            ) : null}
-          </StyledBgDiv>
+  <div className={'navBarWrapper'}>
+    <nav className={'navBarDefault'}>
+      <div className={'navBarHeader'}>
+        <Link to={'/'} className={'navBarBrand'}>
+          <img className={'img-responsive displayInline'} src={config.header.logo} alt={'logo'} />
+        </Link>
+        <div
+          className={'headerTitle displayInline'}
+          dangerouslySetInnerHTML={{ __html: config.header.title }}
+        />
+      </div>
+      {/* {config.header.social ? (
+          <ul
+            className="socialWrapper visibleMobileView"
+            dangerouslySetInnerHTML={{ __html: config.header.social }}
+          ></ul>
+        ) : null} */}
+      {isSearchEnabled ? (
+        <div className={'searchWrapper hiddenMobile navBarUL'}>
+          <LoadableComponent collapse={true} indices={searchIndices} />
         </div>
-      );
-    }}
-  />
+      ) : null}
+      <div id="navbar" className={'topnav'}>
+        <div className={'visibleMobile'}>
+          <LeftSidebar location={location} />
+          <hr />
+        </div>
+        <ul className={'navBarUL navBarNav navBarULRight'}>
+          {config.header.links.map((link, key) => (
+            <li key={key}>
+              <Link className="sidebarLink" to={link.link} title={link.text}>
+                {link.text}
+              </Link>
+            </li>
+          ))}
+          {config.header.tweetText !== '' ? (
+            <li>
+              <Link to={`https://twitter.com/intent/tweet?&text=${config.header.tweetText}`}>
+                <FontAwesomeIcon icon={faTwitter} />
+              </Link>
+            </li>
+          ) : null}
+          {config.header.tweetText !== '' || config.header.githubUrl !== '' ? (
+            <li className="divider hiddenMobile"></li>
+          ) : null}
+
+          <li className={'hiddenMobile githubBtn'}>
+            <Link to={config.header.githubUrl} aria-label="Follow">
+              <FontAwesomeIcon icon={faGithub} />
+            </Link>
+          </li>
+
+          <li>
+            <Link to={config.header.twitterUrl}>
+              <FontAwesomeIcon icon={faTwitter} />
+            </Link>
+          </li>
+          <li>
+            <Link to={config.header.linkedInUrl}>
+              <FontAwesomeIcon icon={faLinkedin} />
+            </Link>
+          </li>
+          <li>
+            <Link to={'/rss.xml'}>
+              <FontAwesomeIcon icon={faRss} />
+            </Link>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <StyledBgDiv>
+      <div className={'navBarDefault removePadd'}>
+        <span
+          onClick={setNavBar}
+          className={'navBarToggle'}
+          onKeyDown={setNavBar}
+          role="button"
+          tabIndex={0}
+        >
+          <span className={'iconBar'}></span>
+          <span className={'iconBar'}></span>
+          <span className={'iconBar'}></span>
+        </span>
+      </div>
+      {isSearchEnabled ? (
+        <div className={'searchWrapper'}>
+          <LoadableComponent collapse={true} indices={searchIndices} />
+        </div>
+      ) : null}
+    </StyledBgDiv>
+  </div>
 );
 
 export default Header;

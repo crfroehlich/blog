@@ -12,14 +12,9 @@ export const config = {
     title: 'ЛУДДИТЫ, INC.',
     githubUrl: 'https://github.com/crfroehlich/blog',
     helpUrl: '',
-    tweetText: '',
-    social: `<li>
-		    <a href="https://twitter.com/tquestingbeast" target="_blank" rel="noopener">
-		      <div class="twitterBtn">
-		        <img src="/twitter_icon.svg" alt="twit"/>
-		      </div>
-		    </a>
-		  </li>`,
+    tweetText: "T'was...",
+    twitterUrl: 'https://twitter.com/tquestingbeast',
+    linkedInUrl: 'https://www.linkedin.com/in/christopherfroehlich/',
     links: [{ text: 'визуализации', link: '/визуализации' }],
     search: {
       enabled: true,
@@ -39,7 +34,7 @@ export const config = {
       "<div>hiking</div><div class='greenCircle'></div><div>my</div><div class='greenCircle'></div><div>desk</div>",
   },
   siteMetadata: {
-    title: 'Christopher Froehlich\'s Blog | Hiking My Desk',
+    title: "Christopher Froehlich's Blog | Hiking My Desk",
     description: 'A blog apart',
     ogImage: null,
     docsLocation: 'https://github.com/crfroehlich/blog/tree/main/content',
