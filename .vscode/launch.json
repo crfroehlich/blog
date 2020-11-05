@@ -2,10 +2,20 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "name": "Attach",
+      "port": 9229,
+      "request": "attach",
+      "skipFiles": ["<node_internals>/**"],
+      "type": "pwa-node"
+    },
+    {
       "name": "Gatsby develop",
       "type": "pwa-node",
       "request": "launch",
-      "program": "${workspaceRoot}/node_modules/.bin/gatsby",
+      "program": "${workspaceRoot}/node_modules/gatsby/dist/bin/gatsby",
+      "windows": {
+        "program": "${workspaceRoot}/node_modules/gatsby/dist/bin/gatsby"
+      },
       "args": ["develop"],
       "runtimeArgs": ["--nolazy"],
       "console": "integratedTerminal"
