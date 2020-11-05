@@ -24,7 +24,7 @@ const removeScript = (id, parentElement) => {
 };
 
 // The actual component
-const Commento = ({ id }) => {
+export const Comments = ({ id }) => {
   useEffect(() => {
     // If there's no document there's nothing to do for us
     const tools = new Tools();
@@ -44,4 +44,4 @@ const Commento = ({ id }) => {
   return <div id={`commento`} />;
 };
 
-export default Commento;
+export default Comments;

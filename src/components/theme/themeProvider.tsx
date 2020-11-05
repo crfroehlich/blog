@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { ThemeProvider as EmotionThemeProvider } from 'emotion-theming';
 import { Global } from '@emotion/core';
-import Header from '../Header';
-import { baseStyles } from '../styles/GlobalStyles';
+import { Header } from '../Header';
+import { BaseStyles } from '../styles/BaseStyles';
 
 export const darkTheme = {
   fonts: {
@@ -23,7 +23,7 @@ export class ThemeProvider extends React.Component<any> {
 
     return (
       <div>
-        <Global styles={baseStyles} />
+        <Global styles={BaseStyles} />
         <Header location={location} />
         <EmotionThemeProvider theme={darkTheme}>{children}</EmotionThemeProvider>
       </div>

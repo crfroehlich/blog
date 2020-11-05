@@ -2,7 +2,7 @@ import * as React from 'react';
 import Highlight, { defaultProps } from 'prism-react-renderer';
 import prismTheme from 'prism-react-renderer/themes/vsDark';
 import Loadable from 'react-loadable';
-import LoadingProvider from './loading';
+import LoadingProvider from './LoadingProvider';
 
 /** Removes the last token from a code example if it's empty. */
 function cleanTokens(tokens) {
@@ -25,7 +25,7 @@ const LoadableComponent = Loadable({
 });
 
 /* eslint-disable react/jsx-key */
-const CodeBlock = ({ children: exampleCode, ...props }) => {
+export const CodeBlock = ({ children: exampleCode, ...props }) => {
   if (props['react-live']) {
     return <LoadableComponent code={exampleCode} />;
   }

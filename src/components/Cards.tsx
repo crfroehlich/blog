@@ -1,7 +1,7 @@
 import React from 'react';
 import { Tooltip, CardMedia, Card, CardPrimaryAction, Typography, Grid, GridCell } from 'rmwc';
-import Link from './Link';
-import PageWrapper from './PageWrapper';
+import { Link } from './Link';
+import { PageWrapper } from './PageWrapper';
 import { IProps } from '../types/interfaces';
 
 export const Cards: React.FC<IProps> = ({ props }) => {

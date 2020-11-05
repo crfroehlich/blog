@@ -1,7 +1,7 @@
 import React from 'react';
 import { config } from '../config';
 
-interface Props {
+export interface Props {
   htmlAttributes?: React.HtmlHTMLAttributes<HTMLHtmlElement>;
   headComponents?: React.ReactNode;
   bodyAttributes?: React.HTMLAttributes<HTMLBodyElement>;
@@ -10,7 +10,7 @@ interface Props {
   postBodyComponents?: React.ReactNode;
 }
 
-export default class HTML extends React.Component<Props> {
+export class HTML extends React.Component<Props> {
   render(): JSX.Element {
     return (
       <html {...this.props.htmlAttributes} lang="en">
@@ -63,3 +63,5 @@ export default class HTML extends React.Component<Props> {
     );
   }
 }
+
+export default HTML;

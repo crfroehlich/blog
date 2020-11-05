@@ -1,11 +1,19 @@
 import React from 'react';
-import OpenedSvg from './opened';
-import ClosedSvg from './closed';
+import { OpenedSvg } from './OpenedSvg';
+import { ClosedSvg } from './ClosedSvg';
 import { config } from '../../../config';
-import Link from '../Link';
+import { Link } from '../Link';
 import { Tools } from '../../utils';
 
-const TreeNode = ({ className = '', setCollapsed, collapsed, url, title, items, ...rest }) => {
+export const TreeNode = ({
+  className = '',
+  setCollapsed,
+  collapsed,
+  url,
+  title,
+  items,
+  ...rest
+}) => {
   const isCollapsed = collapsed[url];
 
   const collapse = () => setCollapsed(url);

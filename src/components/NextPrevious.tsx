@@ -1,9 +1,9 @@
 import React from 'react';
-import Link from './Link';
+import { Link } from './Link';
 
-import { StyledNextPrevious } from './styles/PageNavigationButtons';
+import { StyledNextPrevious } from './styles/StyledNextPrevious';
 
-const NextPrevious = ({ mdx, nav }) => {
+export const NextPrevious = ({ mdx, nav }) => {
   if (!nav || !mdx) return <div />;
 
   let currentIndex = 0;

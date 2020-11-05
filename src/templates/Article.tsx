@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { graphql } from 'gatsby';
 import MDXRenderer from 'gatsby-plugin-mdx/mdx-renderer';
-import NotFound from '../components/NotFound';
-import PageWrapper from '../components/PageWrapper';
+import { NotFound } from '../components/NotFound';
+import { PageWrapper } from '../components/PageWrapper';
 import { IPageProps } from '../types/interfaces';
 
 export default class Article extends Component<IPageProps> {

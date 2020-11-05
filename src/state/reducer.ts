@@ -10,7 +10,7 @@ export interface IDefaultAction {
   type: string;
 }
 
-const reducer = (state = initialState, action: IDefaultAction): IState => {
+export const reducer = (state = initialState, action: IDefaultAction): IState => {
   switch (action.type) {
     case 'ADD_POST_START': {
       const newState = { ...state, addedPost: true };

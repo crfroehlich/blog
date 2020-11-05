@@ -31,7 +31,7 @@ const Form = styled.form`
   }
 `;
 
-export default connectSearchBox(({ refine, ...rest }) => {
+export const ConnectSearchBox = connectSearchBox(({ refine, ...rest }) => {
   const preventSubmit = (e) => {
     e.preventDefault();
   };
@@ -50,3 +50,5 @@ export default connectSearchBox(({ refine, ...rest }) => {
     </Form>
   );
 });
+
+export default ConnectSearchBox;

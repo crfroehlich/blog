@@ -4,10 +4,10 @@ import { BadgeAnchor, Badge, ChipSet, Chip } from 'rmwc';
 import kebabCase from 'lodash/kebabCase';
 import { Layout } from './Layout';
 import { DisplayDate, Link } from './Link';
-import NextPrevious from './NextPrevious';
+import { NextPrevious } from './NextPrevious';
 import { config } from '../../config';
 import { Edit, StyledHeading, StyledMainWrapper } from './styles/Docs';
-import Comments from './Comments';
+import { Comments } from './Comments';
 import { IProps, INode } from '../types/interfaces';
 
 const { forcedNavOrder } = config.sidebar;

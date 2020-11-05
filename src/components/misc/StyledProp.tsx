@@ -1,16 +1,16 @@
 import React from 'react';
 import styled from '@emotion/styled';
 
-import CodeBlock from './codeBlock';
-import AnchorTag from './anchor';
+import { CodeBlock } from './CodeBlock';
+import { AnchorTag } from './AnchorTag';
 import { IStyle } from '../../types/interfaces';
 
-const StyledPre = styled('pre')`
+export const StyledPre = styled('pre')`
   padding: 16px;
   background: ${(props: IStyle) => props.theme.colors.preFormattedText};
 `;
 
-export default {
+export const StyledProp = {
   h1: (props) => (
     <h1 className="heading1" id={props.children.replace(/\s+/g, '').toLowerCase()} {...props} />
   ),
@@ -43,3 +43,5 @@ export default {
   // TODO add `li`
   // TODO add `table`
 };
+
+export default StyledProp;

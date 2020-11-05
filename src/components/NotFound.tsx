@@ -1,7 +1,7 @@
 import React from 'react';
 import { IProps } from '../types/interfaces';
-import Link from './Link';
-import PageWrapper from './PageWrapper';
+import { Link } from './Link';
+import { PageWrapper } from './PageWrapper';
 
 export const NotFound: React.FC<IProps> = ({ props }) => {
   if (!props) return null;

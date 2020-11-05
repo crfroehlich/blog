@@ -1,6 +1,6 @@
 import React from 'react';
 import KeywordCloud from 'react-keyword-cloud';
-import PageWrapper from './PageWrapper';
+import { PageWrapper } from './PageWrapper';
 import { IProps } from '../types/interfaces';
 import { tools } from '../utils';
 

@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import { MDXProvider } from '@mdx-js/react';
-import ThemeProvider from './theme/themeProvider';
-import mdxComponents from './mdxComponents';
-import Sidebar from './sidebar';
-import RightSidebar from './SidebarLayout';
+import { ThemeProvider } from './theme/ThemeProvider';
+import mdxComponents from './misc/StyledProp';
+import { LeftSidebar } from './sidebar/LeftSidebar';
+import { RightSidebar } from './RightSidebar';
 import { config } from '../../config';
 import { ILayoutProps, IStyle } from '../types/interfaces';
 
@@ -67,7 +67,7 @@ export const Layout: React.FC<ILayoutProps> = ({ children, location }) => (
     <MDXProvider components={mdxComponents}>
       <Wrapper>
         <LeftSideBarWidth className={'hiddenMobile'}>
-          <Sidebar location={location} />
+          <LeftSidebar location={location} />
         </LeftSideBarWidth>
         {config.sidebar.title ? (
           <div

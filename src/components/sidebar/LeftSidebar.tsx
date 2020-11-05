@@ -2,12 +2,12 @@ import React from 'react';
 import { StaticQuery, graphql } from 'gatsby';
 import styled from '@emotion/styled';
 import { ExternalLink } from 'react-feather';
-import { Query } from 'graphql-types';
+import { Query } from '../../../graphql-types';
 import { config } from '../../../config';
-import Tree from './tree';
+import { Tree } from './Tree';
 
 // eslint-disable-next-line no-unused-vars
-const ListItem = styled(({ className, active, level, ...props }) => {
+export const ListItem = styled(({ className, active, level, ...props }) => {
   return (
     <li className={className}>
       <a href={props.to} {...props} target="_blank" rel="noopener noreferrer">
@@ -46,7 +46,7 @@ const ListItem = styled(({ className, active, level, ...props }) => {
   }
 `;
 
-const Sidebar = styled('aside')`
+export const Sidebar = styled('aside')`
   width: 100%;
   height: 100vh;
   overflow: auto;
@@ -75,7 +75,7 @@ const Sidebar = styled('aside')`
   }
 `;
 
-const Divider = styled((props) => (
+export const Divider = styled((props) => (
   <li {...props}>
     <hr />
   </li>
@@ -91,7 +91,7 @@ const Divider = styled((props) => (
   }
 `;
 
-const SidebarLayout = ({ location }) => (
+export const LeftSidebar = ({ location }) => (
   <StaticQuery<Query>
     query={graphql`
       query GetSidebarLayoutQuery {
@@ -131,4 +131,4 @@ const SidebarLayout = ({ location }) => (
   />
 );
 
-export default SidebarLayout;
+export default LeftSidebar;

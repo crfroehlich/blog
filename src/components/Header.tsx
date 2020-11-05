@@ -4,11 +4,11 @@ import { StaticQuery, graphql } from 'gatsby';
 import GitHubButton from 'react-github-btn';
 import Loadable from 'react-loadable';
 import { Icon } from 'rmwc';
-import { HeaderTitleQueryQuery } from 'graphql-types';
-import Link from './Link';
+import { HeaderTitleQueryQuery } from '../../graphql-types';
+import { Link } from './Link';
 import { config } from '../../config';
-import LoadingProvider from './mdxComponents/loading';
-import Sidebar from './sidebar';
+import { LoadingProvider } from './misc/LoadingProvider';
+import { LeftSidebar } from './sidebar/LeftSidebar';
 import { IProps } from '../types/interfaces';
 import { Tools } from '../utils';
 
@@ -53,7 +53,7 @@ const StyledBgDiv = styled('div')`
   }
 `;
 
-const Header: React.FC<IProps> = ({ location }) => (
+export const Header: React.FC<IProps> = ({ location }) => (
   <StaticQuery<HeaderTitleQueryQuery>
     query={graphql`
       query headerTitleQuery {
@@ -111,7 +111,7 @@ const Header: React.FC<IProps> = ({ location }) => (
             ) : null}
             <div id="navbar" className={'topnav'}>
               <div className={'visibleMobile'}>
-                <Sidebar location={location} />
+                <LeftSidebar location={location} />
                 <hr />
               </div>
               <ul className={'navBarUL navBarNav navBarULRight'}>
