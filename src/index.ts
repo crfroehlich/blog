@@ -1,5 +1,4 @@
 export * from './components';
-export * from './pages';
 export * from './state';
 export * from './templates';
 export * from './types';
