@@ -88,23 +88,11 @@ export const Header: React.FC<IProps> = ({ location }) => (
               </Link>
             </li>
           ))}
-          {config.header.tweetText !== '' ? (
-            <li>
-              <Link to={`https://twitter.com/intent/tweet?&text=${config.header.tweetText}`}>
-                <FontAwesomeIcon icon={faTwitter} />
-              </Link>
-            </li>
-          ) : null}
-          {config.header.tweetText !== '' || config.header.githubUrl !== '' ? (
-            <li className="divider hiddenMobile"></li>
-          ) : null}
-
           <li className={'hiddenMobile githubBtn'}>
             <Link to={config.header.githubUrl} aria-label="Follow">
               <FontAwesomeIcon icon={faGithub} />
             </Link>
           </li>
-
           <li>
             <Link to={config.header.twitterUrl}>
               <FontAwesomeIcon icon={faTwitter} />

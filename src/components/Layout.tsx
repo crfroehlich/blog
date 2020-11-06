@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import { MDXProvider } from '@mdx-js/react';
-import { ThemeProvider } from './theme/ThemeProvider';
+import { DarkTheme } from './theme/DarkTheme';
 import mdxComponents from './misc/StyledProp';
 import { LeftSidebar } from './sidebar/LeftSidebar';
 import { RightSidebar } from './RightSidebar';
@@ -63,7 +63,7 @@ const RightSideBarWidth = styled('div')`
 `;
 
 export const Layout: React.FC<ILayoutProps> = ({ children, location }) => (
-  <ThemeProvider location={location}>
+  <DarkTheme location={location}>
     <MDXProvider components={mdxComponents}>
       <Wrapper>
         <LeftSideBarWidth className={'hiddenMobile'}>
@@ -83,7 +83,7 @@ export const Layout: React.FC<ILayoutProps> = ({ children, location }) => (
         </RightSideBarWidth>
       </Wrapper>
     </MDXProvider>
-  </ThemeProvider>
+  </DarkTheme>
 );
 
 export default Layout;

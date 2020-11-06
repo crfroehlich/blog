@@ -14,7 +14,8 @@
     '.yarn',
     'content',
     'static',
-    'gatsby'
+    'gatsby',
+    'pages'
   ],
   fileExcludePatterns: ['*.test.ts', '*.test', '*.feature.ts'],
   fileFirst: false,

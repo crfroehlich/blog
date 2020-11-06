@@ -4,7 +4,7 @@ import { Global } from '@emotion/core';
 import { Header } from '../Header';
 import { BaseStyles } from '../styles/BaseStyles';
 
-export const darkTheme = {
+const theme = {
   fonts: {
     mono: '"SF Mono", "Roboto Mono", Menlo, monospace',
   },
@@ -17,7 +17,7 @@ export const darkTheme = {
   },
 };
 
-export class ThemeProvider extends React.Component<any> {
+export class DarkTheme extends React.Component<any> {
   render(): JSX.Element {
     const { children, location } = this.props;
 
@@ -25,10 +25,10 @@ export class ThemeProvider extends React.Component<any> {
       <div>
         <Global styles={BaseStyles} />
         <Header location={location} />
-        <EmotionThemeProvider theme={darkTheme}>{children}</EmotionThemeProvider>
+        <EmotionThemeProvider theme={theme}>{children}</EmotionThemeProvider>
       </div>
     );
   }
 }
 
-export default ThemeProvider;
+export default DarkTheme;
