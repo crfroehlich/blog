@@ -17,7 +17,7 @@ export default class Article extends Component<IPageProps> {
     return (
       <PageWrapper
         props={this.props}
-        pageContent={<MDXRenderer>{mdx ? mdx.body : 'text'}</MDXRenderer>}
+        pageContent={<MDXRenderer>{mdx.body}</MDXRenderer>}
         showGithub={true}
         showComments={true}
       />

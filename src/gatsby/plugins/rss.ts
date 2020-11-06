@@ -35,17 +35,17 @@ export const rss = [
               ) {
                 edges {
                   node {
-                  excerpt
-                  html
-                  fields {
-                    slug
-                    date
-                    title
+                    excerpt
+                    body
+                    fields {
+                      slug
+                      date
+                      title
+                    }
                   }
                 }
               }
             }
-          }
           `,
           output: '/rss.xml',
           title: 'Hiking My Desk RSS Feed',

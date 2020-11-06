@@ -18,7 +18,7 @@ export const TreeNode = ({
 
   const collapse = () => setCollapsed(url);
 
-  const hasChildren = items.length !== 0;
+  const hasChildren = items?.length !== 0;
 
   const tools = new Tools();
   const location = tools.getLocation();

@@ -16,18 +16,6 @@ export class Tools {
     }
   }
 
-  get localStorage() {
-    if (this._window) {
-      return this._window.localStorage;
-    }
-    return {
-      getItem() {
-        return '{ }';
-      },
-      setItem() {},
-    };
-  }
-
   getLocalDate(date: Date = new Date()): string {
     return date.toLocaleDateString('ru-RU', {
       weekday: 'long',
