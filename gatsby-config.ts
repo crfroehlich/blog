@@ -25,7 +25,6 @@ let plugins: Array<PluginRef> = [
   'gatsby-plugin-sharp',
   'gatsby-plugin-sitemap',
   'gatsby-plugin-ts',
-  'gatsby-transformer-remark',
   'gatsby-transformer-sharp',
 ];
 

@@ -1,6 +1,6 @@
 import { config } from '../../../config';
 
-const pageQuery = `{
+const pageQuery = `query GeSearchQuery {
   pages: allMdx {
     edges {
       node {

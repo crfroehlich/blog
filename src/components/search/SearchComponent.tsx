@@ -130,7 +130,7 @@ export const SearchComponent = ({ indices, collapse }) => {
     <InstantSearch
       searchClient={searchClient}
       indexName={indices[0].name}
-      onSearchStateChange={({ query }) => setQuery(query)}
+      onSearchStateChange={setQuery}
       root={{ Root, props: { ref } }}
     >
       <ConnectSearchBox onFocus={() => setFocus(true)} {...{ collapse, focus }} />

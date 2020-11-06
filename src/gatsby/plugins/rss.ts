@@ -3,21 +3,21 @@ export const rss = [
     resolve: `gatsby-plugin-feed`,
     options: {
       query: `
-      {
+        query GetRssFeedQuery {
           site {
-          siteMetadata {
+            siteMetadata {
               title
               description
               siteUrl
               site_url: siteUrl
+            }
           }
-          }
-      }
+        }
       `,
       feeds: [
         {
-          serialize: ({ query: { site, allMarkdownRemark } }) => {
-            return allMarkdownRemark.edges.map((edge) => {
+          serialize: ({ query: { site, allMdx } }) => {
+            return allMdx.edges.map((edge) => {
               return {
                 ...edge.node.frontmatter,
                 description: edge.node.excerpt,
@@ -29,22 +29,22 @@ export const rss = [
             });
           },
           query: `
-          {
-              allMarkdownRemark(
-              sort: { order: DESC, fields: [fields___date] },
+          query GetAllRssMdxQuery {
+              allMdx(
+                sort: { order: DESC, fields: [fields___date] },
               ) {
-              edges {
+                edges {
                   node {
                   excerpt
                   html
                   fields {
-                      slug
-                      date
-                      title
+                    slug
+                    date
+                    title
                   }
-                  }
+                }
               }
-              }
+            }
           }
           `,
           output: '/rss.xml',
