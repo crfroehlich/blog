@@ -18,6 +18,7 @@ export interface IProps {
 export interface ILayoutProps {
   location?: WindowLocation;
   children?: any;
+  theme?: any;
 }
 
 export type WindowLocation = Window['location'] & HLocation;

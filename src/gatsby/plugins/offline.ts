@@ -2,17 +2,17 @@ import { config } from '../../../config';
 
 export const offline = [];
 
-if (config.pwa?.manifest) {
+if (config.offline?.manifest) {
   const manifest = {
     resolve: `gatsby-plugin-manifest`,
-    options: { ...config.pwa.manifest },
+    options: { ...config.offline.manifest },
   };
-  if (config.pwa?.enabled) {
+  if (config.offline?.enabled) {
     manifest.options.cache_busting_mode = 'none';
   }
   offline.push(manifest);
 }
-if (config.pwa?.enabled) {
+if (config.offline?.enabled) {
   offline.push({
     resolve: 'gatsby-plugin-offline',
     options: {

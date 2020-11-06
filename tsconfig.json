@@ -21,7 +21,7 @@
     // "composite": true,                     /* Enable project compilation */
     // "downlevelIteration": true,            /* Provide full support for iterables in 'for-of', spread, and destructuring when targeting 'ES5' or 'ES3'. */
     // "importHelpers": true,                 /* Import emit helpers from 'tslib'. */
-    "outDir": "./dist",                       /* Redirect output structure to the directory. */
+    // "outDir": "./dist",                    /* Redirect output structure to the directory. */
     //"outFile": "./dist/index.ts",           /* Concatenate and emit output to single file. */
     // "rootDir": "./",                       /* Specify the root directory of input files. Use to control the output directory structure with --outDir. */
 

@@ -3,9 +3,10 @@ import KeywordCloud from 'react-keyword-cloud';
 import { PageWrapper } from './PageWrapper';
 import { IProps } from '../types/interfaces';
 import { tools } from '../utils';
+import { Empty } from './Empty';
 
-export const Chips: React.FC<IProps> = ({ props }) => {
-  if (!tools.isBrowser()) return null;
+export const Chips: React.FC<IProps> = ({ props }): JSX.Element => {
+  if (!tools.isBrowser()) return <Empty />;
 
   const {
     data: {
@@ -13,7 +14,6 @@ export const Chips: React.FC<IProps> = ({ props }) => {
     },
   } = props;
 
-  // group = group.filter(a => a.totalCount > 1);
   group.sort((a, b) => b.totalCount - a.totalCount);
 
   const cloud = (

@@ -17,18 +17,16 @@ const theme = {
   },
 };
 
-export class DarkTheme extends React.Component<any> {
-  render(): JSX.Element {
-    const { children, location } = this.props;
+export const DarkTheme: React.FC<any> = (props): JSX.Element => {
+  const { children, location } = props;
 
-    return (
-      <div>
-        <Global styles={BaseStyles} />
-        <Header location={location} />
-        <EmotionThemeProvider theme={theme}>{children}</EmotionThemeProvider>
-      </div>
-    );
-  }
-}
+  return (
+    <div>
+      <Global styles={BaseStyles} />
+      <Header location={location} />
+      <EmotionThemeProvider theme={theme}>{children}</EmotionThemeProvider>
+    </div>
+  );
+};
 
 export default DarkTheme;

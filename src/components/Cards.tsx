@@ -4,7 +4,7 @@ import { Link } from './Link';
 import { PageWrapper } from './PageWrapper';
 import { IProps } from '../types/interfaces';
 
-export const Cards: React.FC<IProps> = ({ props }) => {
+export const Cards: React.FC<IProps> = ({ props }): JSX.Element => {
   const {
     data: {
       allMdx: { edges },

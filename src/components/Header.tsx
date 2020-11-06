@@ -52,7 +52,7 @@ const StyledBgDiv = styled('div')`
   }
 `;
 
-export const Header: React.FC<IProps> = ({ location }) => (
+export const Header: React.FC<IProps> = ({ location }): JSX.Element => (
   <div className={'navBarWrapper'}>
     <nav className={'navBarDefault'}>
       <div className={'navBarHeader'}>
@@ -64,12 +64,6 @@ export const Header: React.FC<IProps> = ({ location }) => (
           dangerouslySetInnerHTML={{ __html: config.header.title }}
         />
       </div>
-      {/* {config.header.social ? (
-          <ul
-            className="socialWrapper visibleMobileView"
-            dangerouslySetInnerHTML={{ __html: config.header.social }}
-          ></ul>
-        ) : null} */}
       {isSearchEnabled ? (
         <div className={'searchWrapper hiddenMobile navBarUL'}>
           <LoadableComponent collapse={true} indices={searchIndices} />

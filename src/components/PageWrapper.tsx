@@ -18,7 +18,7 @@ export const PageWrapper: React.FC<IProps> = ({
   pageTitle,
   showGithub,
   showComments,
-}) => {
+}): JSX.Element => {
   const { data } = props;
 
   const { allMdx, mdx } = data;

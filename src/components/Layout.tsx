@@ -62,7 +62,7 @@ const RightSideBarWidth = styled('div')`
   width: 224px;
 `;
 
-export const Layout: React.FC<ILayoutProps> = ({ children, location }) => (
+export const Layout: React.FC<ILayoutProps> = ({ children, location }): JSX.Element => (
   <DarkTheme location={location}>
     <MDXProvider components={mdxComponents}>
       <Wrapper>

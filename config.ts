@@ -40,8 +40,8 @@ export const config = {
     docsLocation: 'https://github.com/crfroehlich/blog/tree/main/content',
     favicon: '/favicon.svg',
   },
-  pwa: {
-    enabled: true, // disabling this will also remove the existing service worker.
+  offline: {
+    enabled: false, // disabling this will also remove the existing service worker.
     manifest: {
       background_color: '#6b37bf',
       cache_busting_mode: 'query',

@@ -2,8 +2,13 @@ import * as React from 'react';
 import { ThemeProvider as EmotionThemeProvider } from 'emotion-theming';
 import { Theme } from './Theme';
 import { Header } from './Header';
+import { ILayoutProps } from '../types';
 
-export const ThemeProvider = ({ children, theme = {}, location }) => (
+export const ThemeProvider: React.FC<ILayoutProps> = ({
+  children,
+  theme = {},
+  location,
+}): JSX.Element => (
   <div>
     <Header location={location} />
     <EmotionThemeProvider theme={{ ...Theme, ...theme }}>{children}</EmotionThemeProvider>

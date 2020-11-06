@@ -1,27 +1,31 @@
 import React from 'react';
+import { Mdx, MdxFields } from '../../graphql-types';
 import { Link } from './Link';
 
 import { StyledNextPrevious } from './styles/StyledNextPrevious';
 
-export const NextPrevious = ({ mdx, nav }) => {
+interface INextPrev {
+  mdx: Mdx;
+  nav: MdxFields[];
+}
+
+export const NextPrevious: React.FC<INextPrev> = ({ mdx, nav }): JSX.Element => {
   if (!nav || !mdx) return <div />;
 
   let currentIndex = 0;
 
-  nav.map((el, index) => {
-    if (el && el.slug === mdx.fields.slug) {
-      currentIndex = index;
-    }
-  });
+  const match = nav.find((el) => el?.slug === mdx.fields.slug);
+  if (match) currentIndex = nav.indexOf(match);
+
   const locale = 'ru-RU';
 
-  const getNav = (offset) => nav[currentIndex + offset];
+  const getNav = (offset: number) => nav[currentIndex + offset];
 
   const getNavPrev = () => getNav(-1);
 
   const getNavNext = () => getNav(1);
 
-  const getDate = (offset) =>
+  const getDate = (offset: number): string =>
     new Date(getNav(offset).date).toLocaleDateString(locale, {
       weekday: 'long',
       year: 'numeric',
@@ -29,7 +33,7 @@ export const NextPrevious = ({ mdx, nav }) => {
       day: '2-digit',
     });
 
-  const getTitle = (offset) => {
+  const getTitle = (offset: number) => {
     let title = getNav(offset).title.trim();
 
     // TODO: compute the total length of left/right and set accordingly

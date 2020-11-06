@@ -7,7 +7,7 @@ import { config } from '../../config';
 import { Sidebar, ListItem } from './styles/Sidebar';
 import { IProps } from '../types/interfaces';
 
-export const RightSidebar: React.FC<IProps> = ({ location }) => (
+export const RightSidebar: React.FC<IProps> = ({ location }): JSX.Element => (
   <StaticQuery<Query>
     query={graphql`
       query GetSidebarQuery {
