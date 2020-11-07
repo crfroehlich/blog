@@ -78,4 +78,4 @@ Still, much remains todo if I want to consider this feature complete:
 - Refactor the whole thing to TypeScript, because {reasons}.
 - Refactor the whole thing from TypeScript to Rust, because...why not?
 
-If any of this has been interesting, please let me know in the comments or in [the code, which is the blog, which is the code, which...](https://github.com/crfroehlich/blog)!
+If any of this has been interesting, please let me know in the comments or in [the code, which is the blog, which is the code, which...](https://github.com/crfroehlich/blog)!  
