@@ -29,14 +29,14 @@ If you look through the structure of [AutoEcMvc](https://github.com/crfroehlich/
 Perhaps the single most import part of code gen is the structured data format in use. I need to be able to map my JSON back to a C# class that can be used deterministically in T4, so my [Course](https://github.com/crfroehlich/AutoEcMvc/blob/master/CodeGeneration/Transforms/schema/Course.json) class is defined in JSON as:
 
 ```json
-  "Description": "A course represents a college course that a student can take",
-  "DisplayName": "Title",
-  "HasControllers": true,
-  "ControllerMethods": \[ "Index", "Details", "Create", "Edit", "Delete" \],
-  "Name": "Course",
-  "DatabaseGeneratedOption": "None",
-  "PrimaryKeyDisplayName": "Number",
-  "Columns": \[...\]
+"Description": "A course represents a college course that a student can take",
+"DisplayName": "Title",
+"HasControllers": true,
+"ControllerMethods": [ "Index", "Details", "Create", "Edit", "Delete" ],
+"Name": "Course",
+"DatabaseGeneratedOption": "None",
+"PrimaryKeyDisplayName": "Number",
+"Columns": [...]
 ```
 
 Each entity has a collection of columns, and a column looks like:
@@ -60,7 +60,7 @@ You’ll notice that I frequently start an opening tag immediately after a closi
 
 Second, load our schema from JSON:
 
-```c#
+```csharp
 var tables = BuildMethods.GetJsonFilesAsTables(Path.GetDirectoryName(Host.TemplateFile) + "\\\\..\\\\schema");
 foreach(var table in tables) {
 ```

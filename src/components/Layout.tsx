@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import { MDXProvider } from '@mdx-js/react';
-import { DarkTheme } from './theme/DarkTheme';
-import mdxComponents from './misc/StyledProp';
+import { DarkTheme } from './styles/DarkTheme';
+import mdxComponents from './styles/StyledProp';
 import { LeftSidebar } from './sidebar/LeftSidebar';
 import { RightSidebar } from './RightSidebar';
 import { config } from '../../config';

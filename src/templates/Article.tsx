@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { graphql } from 'gatsby';
 import MDXRenderer from 'gatsby-plugin-mdx/mdx-renderer';
-import { NotFound } from '../components/NotFound';
 import { PageWrapper } from '../components/PageWrapper';
 import { IPageProps } from '../types/interfaces';
+import { Empty } from '../components/Empty';
 
 export default class Article extends Component<IPageProps> {
   render(): JSX.Element {
@@ -11,17 +11,30 @@ export default class Article extends Component<IPageProps> {
 
     const { mdx } = data;
 
-    if (!data.site || !mdx) {
-      return <NotFound props={this.props} />;
+    let pageContent = <Empty />;
+
+    if (data.site) {
+      if (mdx?.body) {
+        pageContent = <MDXRenderer>{mdx.body}</MDXRenderer>;
+      }
     }
-    return (
-      <PageWrapper
-        props={this.props}
-        pageContent={<MDXRenderer>{mdx.body}</MDXRenderer>}
-        showGithub={true}
-        showComments={true}
-      />
-    );
+
+    let ret = <Empty />;
+    try {
+      ret = (
+        <PageWrapper
+          props={this.props}
+          pageContent={pageContent}
+          showGithub={true}
+          showComments={true}
+        />
+      );
+    } catch (e) {
+      console.error(e);
+      debugger;
+    }
+
+    return ret;
   }
 }
 
@@ -49,11 +62,6 @@ export const articleQuery = graphql`
           relativePath
         }
       }
-      frontmatter {
-        metaTitle
-        metaDescription
-        metaDate
-      }
     }
     allMdx {
       edges {
@@ -63,20 +71,11 @@ export const articleQuery = graphql`
             title
             slug
             date
-            tags
-            img
           }
-          body
-          tableOfContents
           parent {
             ... on File {
               relativePath
             }
-          }
-          frontmatter {
-            metaTitle
-            metaDescription
-            metaDate
           }
         }
       }

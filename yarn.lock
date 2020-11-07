@@ -9399,7 +9399,6 @@ __metadata:
     "@types/react": ^16.9.55
     "@types/react-dom": ^16.9.9
     "@types/react-helmet": ^6.1.0
-    "@types/react-loadable": ^5.5.4
     "@types/react-redux": ^7.1.11
     "@types/react-slick": ^0.23.4
     "@types/redux": ^3.6.31
@@ -9473,7 +9472,6 @@ __metadata:
     react-instantsearch-dom: ^6.8.2
     react-keyword-cloud: 1.0.3
     react-live: ^2.2.2
-    react-loadable: ^5.5.0
     react-redux: ^7.2.2
     react-slick: ^0.27.12
     react-typography: ^0.16.19
@@ -25608,7 +25606,7 @@ fsevents@~2.1.2:
   languageName: node
   linkType: hard
 
-"prop-types@npm:15.x, prop-types@npm:^15.5.0, prop-types@npm:^15.5.10, prop-types@npm:^15.5.7, prop-types@npm:^15.5.8, prop-types@npm:^15.6.1, prop-types@npm:^15.7.2":
+"prop-types@npm:15.x, prop-types@npm:^15.5.10, prop-types@npm:^15.5.7, prop-types@npm:^15.5.8, prop-types@npm:^15.6.1, prop-types@npm:^15.7.2":
   version: 15.7.2
   resolution: "prop-types@npm:15.7.2"
   dependencies:
@@ -26302,17 +26300,6 @@ fsevents@~2.1.2:
     react-simple-code-editor: ^0.10.0
     unescape: ^1.0.1
   checksum: 409ce44a30af3cec1999c42984475b57ff3e32524a7913eecbef7028339ab23af57c95f41c14c24da7a6f3bb642af25c040935f38deba506bccff39597091774
-  languageName: node
-  linkType: hard
-
-"react-loadable@npm:^5.5.0":
-  version: 5.5.0
-  resolution: "react-loadable@npm:5.5.0"
-  dependencies:
-    prop-types: ^15.5.0
-  peerDependencies:
-    react: "*"
-  checksum: fb14650fe86f20c2554e3645482ed67eb4ce0e46d72e06f91a7f57739e90b1b42c31e8597d7d415ee69bc16f85211bafec7b24ddadd7f3fe72c176f45931158d
   languageName: node
   linkType: hard
 

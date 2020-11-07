@@ -1,15 +1,14 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import Loadable from 'react-loadable';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTwitter, faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { faRss } from '@fortawesome/free-solid-svg-icons';
 import { Link } from './Link';
 import { config } from '../../config';
-import { LoadingProvider } from './misc/LoadingProvider';
 import { LeftSidebar } from './sidebar/LeftSidebar';
 import { IProps } from '../types/interfaces';
 import { Tools } from '../utils';
+import { SearchComponent } from './search/SearchComponent';
 
 const isSearchEnabled = !!(config.header.search && config.header.search.enabled);
 
@@ -22,11 +21,6 @@ if (isSearchEnabled && config.header.search.indexName) {
     hitComp: `PageHit`,
   });
 }
-
-const LoadableComponent = Loadable({
-  loader: () => import('./search/SearchComponent'),
-  loading: LoadingProvider,
-});
 
 const setNavBar = () => {
   const tools = new Tools();
@@ -66,7 +60,7 @@ export const Header: React.FC<IProps> = ({ location }): JSX.Element => (
       </div>
       {isSearchEnabled ? (
         <div className={'searchWrapper hiddenMobile navBarUL'}>
-          <LoadableComponent collapse={true} indices={searchIndices} />
+          <SearchComponent collapse={true} indices={searchIndices} />
         </div>
       ) : null}
       <div id="navbar" className={'topnav'}>
@@ -121,7 +115,7 @@ export const Header: React.FC<IProps> = ({ location }): JSX.Element => (
       </div>
       {isSearchEnabled ? (
         <div className={'searchWrapper'}>
-          <LoadableComponent collapse={true} indices={searchIndices} />
+          <SearchComponent collapse={true} indices={searchIndices} />
         </div>
       ) : null}
     </StyledBgDiv>

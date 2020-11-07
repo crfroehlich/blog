@@ -63,12 +63,7 @@ export const StyledMainWrapper = styled.div`
   }
 
   code {
-    border: 1px solid #ede7f3;
-    border-radius: 4px;
-    padding: 2px 6px;
-    font-size: 0.9375em;
-
-    background: ${(props: IStyle) => props.theme.colors.background};
+    border-radius: 10px;
   }
 
   @media (max-width: 767px) {

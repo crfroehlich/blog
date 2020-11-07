@@ -11,12 +11,6 @@ export const wrapRootElement: React.FC<any> = ({ element }) => {
 };
 
 export const onServiceWorkerUpdateReady = () => {
-  const answer = window.confirm(
-    `This tutorial has been updated. ` +
-      `Reload to display the latest version?`
-  )
-
-  if (answer === true) {
-    window.location.reload()
-  }
-}
+  console.log(`This page has been updated. ${new Date().toLocaleTimeString()}`);
+  //window.location.reload();
+};

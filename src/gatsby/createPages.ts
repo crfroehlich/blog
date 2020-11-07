@@ -20,7 +20,7 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions 
   const queryResult = await graphql<IQueryResult>(
     `
       query PagesCategoriesQuery {
-        allMdx {
+        allPages: allMdx {
           edges {
             node {
               fields {
@@ -31,7 +31,6 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions 
                 tags
                 img
               }
-              tableOfContents
               parent {
                 ... on File {
                   relativePath
@@ -63,7 +62,7 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions 
   }
 
   // Create blog posts pages.
-  const posts = queryResult?.data?.allMdx?.edges || [];
+  const posts = queryResult?.data?.allPages?.edges || [];
 
   posts.forEach((post, index) => {
     const previous = index === posts.length - 1 ? null : (posts[index + 1].node as INode);

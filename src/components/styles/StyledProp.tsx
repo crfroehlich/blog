@@ -1,13 +1,13 @@
 import React from 'react';
 import styled from '@emotion/styled';
 
-import { CodeBlock } from './CodeBlock';
-import { AnchorTag } from './AnchorTag';
-import { IStyle } from '../../types/interfaces';
+import { AnchorTag } from '../AnchorTag';
+//import { IStyle } from '../../types/interfaces';
 
 export const StyledPre = styled('pre')`
-  padding: 16px;
-  background: ${(props: IStyle) => props.theme.colors.preFormattedText};
+  padding: 1px;
+  background-color: #000;
+  border-radius: 25px;
 `;
 
 export const StyledProp = {
@@ -30,12 +30,6 @@ export const StyledProp = {
     <h6 className="heading6" id={props.children.replace(/\s+/g, '').toLowerCase()} {...props} />
   ),
   p: (props) => <p className="paragraph" {...props} />,
-  pre: (props) => (
-    <StyledPre>
-      <pre {...props} />
-    </StyledPre>
-  ),
-  code: CodeBlock,
   a: AnchorTag,
   // TODO add `img`
   // TODO add `blockquote`

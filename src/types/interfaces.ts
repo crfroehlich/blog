@@ -77,7 +77,8 @@ export interface INode {
   fields?: INodeFields;
   ext?: string;
   relativePath?: string;
-  body?: string;
+  body?: any;
+  html?: string;
   tableOfContents?: string;
   frontmatter?: INodeFrontMatter;
   name?: string;
@@ -91,6 +92,7 @@ export interface IEdges {
 
 export interface IQueryResult {
   allMarkdownRemark?: IEdges;
+  allPages?: IEdges;
   allMdx?: IEdges;
   tagsGroup: {
     group?: ICategory[];

@@ -45,10 +45,8 @@ export const PageWrapper: React.FC<IProps> = ({
   }
 
   if (mdx) {
-    if (mdx.frontmatter) {
-      title = mdx.frontmatter.metaTitle || title;
-      description = mdx.frontmatter.metaDescription || title;
-    }
+    title = mdx.fields.title || title;
+    description = mdx.frontmatter?.metaDescription || title;
     if (!body) {
       body = mdx.body;
     }
@@ -109,7 +107,6 @@ export const PageWrapper: React.FC<IProps> = ({
     .map((slug) => {
       if (slug) {
         const { node } = allMdx.edges.find(({ node }) => node.fields.slug === slug);
-
         return node.fields;
       }
     })
@@ -158,7 +155,7 @@ export const PageWrapper: React.FC<IProps> = ({
           <Edit className={'mobileView'}>
             <Link
               className={'gitBtn'}
-              to={`${docsLocation}/${(mdx.parent as INode)?.relativePath}`}
+              to={`${docsLocation}/${(mdx?.parent as INode)?.relativePath}`}
             >
               <img src={'../github.svg'} alt={'Github logo'} /> Source
             </Link>
