@@ -8,6 +8,7 @@ extends:
   - 'plugin:jsx-a11y/recommended'
   - 'plugin:prettier/recommended'
   - 'plugin:react/recommended'
+  - 'plugin:sonarjs/recommended'
   - 'prettier'
   - 'prettier/@typescript-eslint'
   - 'prettier/react'
@@ -16,6 +17,8 @@ plugins:
   - 'import'
   - 'jsx-a11y'
   - 'react'
+  - sonarjs
+  - markdown
 settings:
   react:
     version: detect

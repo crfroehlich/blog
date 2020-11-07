@@ -2,7 +2,7 @@ import React from 'react';
 import styled from '@emotion/styled';
 
 import { AnchorTag } from '../AnchorTag';
-//import { IStyle } from '../../types/interfaces';
+// import { IStyle } from '../../types/interfaces';
 
 export const StyledPre = styled('pre')`
   padding: 1px;
