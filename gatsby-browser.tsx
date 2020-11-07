@@ -12,5 +12,4 @@ export const wrapRootElement: React.FC<any> = ({ element }) => {
 
 export const onServiceWorkerUpdateReady = () => {
   console.log(`This page has been updated. ${new Date().toLocaleTimeString()}`);
-  //window.location.reload();
 };

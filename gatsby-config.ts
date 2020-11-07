@@ -1,6 +1,6 @@
 import type { GatsbyConfig, PluginRef } from 'gatsby';
-import env from './build/initEnv';
-import { config } from './config';
+import { env } from './build/initEnv';
+import { getConfig } from './config';
 import {
   codegen,
   content,
@@ -14,7 +14,7 @@ import {
   stats,
 } from './src/gatsby/plugins';
 
-console.log(env.ALGOLIA_ADMIN_API_KEY);
+const config = getConfig(env);
 
 let plugins: Array<PluginRef> = [
   'gatsby-plugin-catch-links',

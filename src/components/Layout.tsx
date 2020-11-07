@@ -5,7 +5,6 @@ import { DarkTheme } from './styles/DarkTheme';
 import mdxComponents from './styles/StyledProp';
 import { LeftSidebar } from './sidebar/LeftSidebar';
 import { RightSidebar } from './RightSidebar';
-import { config } from '../../config';
 import { ILayoutProps, IStyle } from '../types/interfaces';
 
 const Wrapper = styled('div')`
@@ -69,12 +68,6 @@ export const Layout: React.FC<ILayoutProps> = ({ children, location }): JSX.Elem
         <LeftSideBarWidth className={'hiddenMobile'}>
           <LeftSidebar location={location} />
         </LeftSideBarWidth>
-        {config.sidebar.title ? (
-          <div
-            className={'sidebarTitle sideBarShow'}
-            dangerouslySetInnerHTML={{ __html: config.sidebar.title }}
-          />
-        ) : null}
         <Content>
           <MaxWidth>{children}</MaxWidth>
         </Content>

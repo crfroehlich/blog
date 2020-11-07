@@ -43,7 +43,7 @@ const queries = [
 
 export const search = [];
 
-if (config.header.search && config.header.search.enabled) {
+if (config.header?.search?.enabled) {
   search.push({
     resolve: `gatsby-plugin-algolia`,
     options: {
