@@ -131,7 +131,6 @@ out
 .pnp.*
 
 # Code generated
-graphql-types.ts
 __generated__
 **/__generated__/**
 apollo.config.js

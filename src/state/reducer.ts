@@ -13,12 +13,10 @@ export interface IDefaultAction {
 export const reducer = (state = initialState, action: IDefaultAction): IState => {
   switch (action.type) {
     case 'ADD_POST_START': {
-      const newState = { ...state, addedPost: true };
-      return newState;
+      return { ...state, addedPost: true };
     }
     case 'ADD_POST_FINISH': {
-      const newState = { ...state, addedPost: false };
-      return newState;
+      return { ...state, addedPost: false };
     }
     default:
       return state;
