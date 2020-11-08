@@ -1,9 +1,7 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTwitter, faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
-import { faRss } from '@fortawesome/free-solid-svg-icons';
 import { Link } from './Link';
+import { getIcon, ICON } from './Icon';
 import { config } from '../../config';
 import { LeftSidebar } from './sidebar/LeftSidebar';
 import { IProps } from '../types/interfaces';
@@ -78,23 +76,17 @@ export const Header: React.FC<IProps> = ({ location }): JSX.Element => (
           ))}
           <li className={'hiddenMobile githubBtn'}>
             <Link to={config.header.githubUrl} aria-label="Follow">
-              <FontAwesomeIcon icon={faGithub} />
+              {getIcon(ICON.GITHUB)}
             </Link>
           </li>
           <li>
-            <Link to={config.header.twitterUrl}>
-              <FontAwesomeIcon icon={faTwitter} />
-            </Link>
+            <Link to={config.header.twitterUrl}>{getIcon(ICON.TWITTER)}</Link>
           </li>
           <li>
-            <Link to={config.header.linkedInUrl}>
-              <FontAwesomeIcon icon={faLinkedin} />
-            </Link>
+            <Link to={config.header.linkedInUrl}>{getIcon(ICON.LINKEDIN)}</Link>
           </li>
           <li>
-            <Link to={'/rss.xml'}>
-              <FontAwesomeIcon icon={faRss} />
-            </Link>
+            <Link to={'/rss.xml'}>{getIcon(ICON.RSS)}</Link>
           </li>
         </ul>
       </div>

@@ -22,6 +22,7 @@ let plugins: Array<PluginRef> = [
   'gatsby-plugin-emotion',
   'gatsby-plugin-react-helmet',
   'gatsby-plugin-remove-trailing-slashes',
+  'gatsby-plugin-sass',
   'gatsby-plugin-sharp',
   'gatsby-plugin-sitemap',
   'gatsby-plugin-ts',

@@ -4,6 +4,7 @@ import 'prismjs/plugins/line-numbers/prism-line-numbers.css';
 import 'prismjs/plugins/command-line/prism-command-line.css';
 
 export const BaseStyles: any = injectGlobal`
+
   * {
     margin: 0;
     padding: 0;
@@ -317,7 +318,9 @@ export const BaseStyles: any = injectGlobal`
     border: 0 !important;
     background-color: rgb(245, 247, 249); /* !important; */
   }
-
+  .sidebarOR {
+    padding-top: 1.1em;
+  }
   blockquote {
     color: rgb(116, 129, 141);
     margin: 0px 0px 24px;
