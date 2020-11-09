@@ -10,10 +10,9 @@ export default class Article extends Component<IPageProps> {
     const { data } = this.props;
 
     const { mdx } = data;
-
     let pageContent = <Empty />;
 
-    if (data.site && mdx?.body) {
+    if (data?.site && mdx?.body) {
       pageContent = <MDXRenderer>{mdx.body}</MDXRenderer>;
     }
 
@@ -55,44 +54,7 @@ export const articleQuery = graphql`
       body
       tableOfContents
     }
-    nextPrev: allMdx(filter: { id: { eq: $id } }) {
-      edges {
-        node {
-          fields {
-            id
-            title
-            slug
-            date
-          }
-        }
-        next {
-          fields {
-            id
-            title
-            slug
-            date
-          }
-        }
-        previous {
-          fields {
-            id
-            title
-            slug
-            date
-          }
-        }
-      }
-    }
     allMdx {
-      edges {
-        node {
-          fields {
-            title
-            slug
-            date
-          }
-        }
-      }
       group(field: frontmatter___tags) {
         fieldValue
         totalCount

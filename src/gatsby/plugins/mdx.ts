@@ -1,5 +1,7 @@
-export const mdx = [
-  {
+import { addConfig } from '../../../config';
+
+export const addMdx: addConfig = (config, plugins): void => {
+  plugins.push({
     resolve: 'gatsby-plugin-mdx',
     options: {
       gatsbyRemarkPlugins: [
@@ -23,7 +25,5 @@ export const mdx = [
       ],
       extensions: ['.mdx', '.md'],
     },
-  },
-];
-
-export default mdx;
+  });
+};

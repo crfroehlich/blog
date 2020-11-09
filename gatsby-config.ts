@@ -2,21 +2,21 @@ import type { GatsbyConfig, PluginRef } from 'gatsby';
 import { env } from './build/initEnv';
 import { getConfig } from './config';
 import {
-  codegen,
-  content,
-  fonts,
-  google,
-  mdx,
-  offline,
-  robots,
-  rss,
-  search,
-  stats,
+  addCodegen,
+  addContent,
+  addFonts,
+  addGoogle,
+  addMdx,
+  addOffline,
+  addRobots,
+  addRss,
+  addSearch,
+  addStats,
 } from './src/gatsby/plugins';
 
 const config = getConfig(env);
 
-let plugins: Array<PluginRef> = [
+const plugins: Array<PluginRef> = [
   'gatsby-plugin-catch-links',
   'gatsby-plugin-dark-mode',
   'gatsby-plugin-emotion',
@@ -29,16 +29,16 @@ let plugins: Array<PluginRef> = [
   'gatsby-transformer-sharp',
 ];
 
-plugins = plugins.concat(codegen);
-plugins = plugins.concat(content);
-plugins = plugins.concat(fonts);
-plugins = plugins.concat(google);
-plugins = plugins.concat(mdx);
-plugins = plugins.concat(offline);
-plugins = plugins.concat(robots);
-plugins = plugins.concat(rss);
-plugins = plugins.concat(search);
-plugins = plugins.concat(stats);
+addCodegen(config, plugins);
+addContent(config, plugins);
+addFonts(config, plugins);
+addGoogle(config, plugins);
+addMdx(config, plugins);
+addOffline(config, plugins);
+addRobots(config, plugins);
+addRss(config, plugins);
+addSearch(config, plugins);
+addStats(config, plugins);
 
 export const gatsbyConfig: GatsbyConfig = {
   plugins,

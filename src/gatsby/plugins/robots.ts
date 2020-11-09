@@ -1,8 +1,10 @@
-export const robots = {
-  resolve: 'gatsby-plugin-robots-txt',
-  options: {
-    policy: [{ userAgent: '*', allow: '/' }],
-  },
-};
+import { addConfig } from '../../../config';
 
-export default robots;
+export const addRobots: addConfig = (config, plugins): void => {
+  plugins.push({
+    resolve: 'gatsby-plugin-robots-txt',
+    options: {
+      policy: [{ userAgent: '*', allow: '/' }],
+    },
+  });
+};

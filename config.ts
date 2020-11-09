@@ -1,3 +1,5 @@
+import { PluginRef } from 'gatsby';
+
 /* eslint-disable camelcase */
 export interface IConfig {
   gatsby: Gatsby;
@@ -139,4 +141,4 @@ export const getConfig = (env?: any) => {
 
 export const config = getConfig();
 
-export default config;
+export type addConfig = (conf: IConfig, plugins: Array<PluginRef>) => void;

@@ -4,6 +4,11 @@ import { Query } from '../../graphql-types';
 export interface IPageProps {
   data: Query;
   path: string;
+  pageContext: {
+    next: INode;
+    previous: INode;
+    slug: string;
+  };
 }
 
 export interface IProps {

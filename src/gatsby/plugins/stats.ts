@@ -1,12 +1,14 @@
-export const stats = {
-  resolve: 'gatsby-plugin-bundle-stats',
-  options: {
-    compare: true,
-    outDir: '../artifacts',
-    stats: {
-      context: './src',
-    },
-  },
-};
+import { addConfig } from '../../../config';
 
-export default stats;
+export const addStats: addConfig = (config, plugins): void => {
+  plugins.push({
+    resolve: 'gatsby-plugin-bundle-stats',
+    options: {
+      compare: true,
+      outDir: '../artifacts',
+      stats: {
+        context: './src',
+      },
+    },
+  });
+};

@@ -17,7 +17,7 @@ export const PageWrapper: React.FC<IProps> = ({
   showGithub,
   showComments,
 }): JSX.Element => {
-  const { data } = props;
+  const { data, pageContext } = props;
 
   const { allMdx, mdx } = data;
 
@@ -28,11 +28,9 @@ export const PageWrapper: React.FC<IProps> = ({
   let docsLocation;
   let date = new Date();
   let tags = [];
-  const nextPrev = { edges: [] };
-  const next = nextPrev?.edges[0]?.next;
-  const prev = nextPrev?.edges[0]?.previous;
+  const { next, previous } = pageContext;
 
-  if (data && data.site) {
+  if (data?.site) {
     site = data.site;
     siteMetadata = site.siteMetadata;
     docsLocation = siteMetadata.docsLocation;
@@ -129,7 +127,7 @@ export const PageWrapper: React.FC<IProps> = ({
         </div>
       )}
       <div className={'addPaddTopBottom'}>
-        <NextPrevious next={next} prev={prev} />
+        <NextPrevious next={next} prev={previous} />
       </div>
     </Layout>
   );

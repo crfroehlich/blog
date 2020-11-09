@@ -1,5 +1,7 @@
-export const rss = [
-  {
+import { addConfig } from '../../../config';
+
+export const addRss: addConfig = (config, plugins): void => {
+  plugins.push({
     resolve: `gatsby-plugin-feed`,
     options: {
       query: `
@@ -52,7 +54,5 @@ export const rss = [
         },
       ],
     },
-  },
-];
-
-export default rss;
+  });
+};

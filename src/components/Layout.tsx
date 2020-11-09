@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 import { MDXProvider } from '@mdx-js/react';
 import { DarkTheme } from './styles/DarkTheme';
 import mdxComponents from './styles/StyledProp';
-//import { LeftSidebar } from './sidebar/LeftSidebar';
+// import { LeftSidebar } from './sidebar/LeftSidebar';
 import { RightSidebar } from './RightSidebar';
 import { ILayoutProps, IStyle } from '../types/interfaces';
 import { NewSidebar } from './sidebar/NewSidebar';
