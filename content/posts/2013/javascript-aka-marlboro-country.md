@@ -1,10 +1,13 @@
 ---
-title: 'JavaScript (aka Marlboro Country)'
-metaTitle: 'JavaScript (aka Marlboro Country)'
-metaDate: 1/3/2013
-metaDraft: false
-tags: ['code']
-img: 'marlboro_country.jpg'
+date: 1/3/2013
+description: >-
+  Sometimes JavaScript land just feels like Marlboro Country The sales pitch
+  certainly feels similar...
+draft: false
+img: marlboro_country.jpg
+tags:
+  - code
+title: JavaScript (aka Marlboro Country)
 ---
 
 Sometimes JavaScript land just feels like Marlboro Country. The sales pitch certainly feels similar:

@@ -1,10 +1,11 @@
 ---
-title: "mistake"
-metaTitle: "mistake"
-metaDate: 4/20/2000
-metaDraft: false
-tags: [ "poetry" ]
-img: "smile.jpeg"
+date: 4/20/2000
+description: of all the days of my...
+draft: false
+img: smile.jpeg
+tags:
+  - poetry
+title: mistake
 ---
 
 of all the days of my

@@ -1,10 +1,16 @@
 ---
-title: 'How to Build a Mountain'
-metaTitle: 'How to Build a Mountain'
-metaDate: 5/26/2011
-metaDraft: false
-tags: ['mountain', 'diy', 'standing', 'desk']
-img: 'poka_dot_mountain.jpeg'
+date: 5/26/2011
+description: >-
+  The decision to climb [Mount Vesuvius]httpenwikipediaorgwikiMountVesuvius
+  probably does not come lig...
+draft: false
+img: poka_dot_mountain.jpeg
+tags:
+  - mountain
+  - diy
+  - standing
+  - desk
+title: How to Build a Mountain
 ---
 
 The decision to climb [Mount Vesuvius](http://en.wikipedia.org/wiki/Mount_Vesuvius) probably does not come lightly to most. Our inner Ahab thirsts for our outer [toska](http://www.wordnik.com/words/toska), but what to do?

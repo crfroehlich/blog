@@ -1,10 +1,12 @@
 ---
-title: "tails of the apocalypse"
-metaTitle: "tails of the apocalypse"
-metaDate: 8/29/2006
-metaDraft: false
-tags: ["gimel","lïf"]
-img: "bukowski.png"
+date: 8/29/2006
+description: Bukowski we miss hating you...
+draft: false
+img: bukowski.png
+tags:
+  - gimel
+  - lïf
+title: tails of the apocalypse
 ---
 
 Bukowski, we miss hating you.

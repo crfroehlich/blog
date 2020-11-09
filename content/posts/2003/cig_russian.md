@@ -1,10 +1,12 @@
 ---
-title: "Я не говорю по-испански"
-metaTitle: "Я не говорю по-испански"
-metaDate: 12/3/2003
-metaDraft: false
-tags: ["россия","lïf"]
-img: "cig_russian.jpg"
+date: 12/3/2003
+description: Friends of Athens...
+draft: false
+img: cig_russian.jpg
+tags:
+  - россия
+  - lïf
+title: Я не говорю по-испански
 ---
 
 Friends of Athens,

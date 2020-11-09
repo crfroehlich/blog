@@ -1,10 +1,13 @@
 ---
-title: "quit me thisly"
-metaTitle: "quit me thisly"
-metaDate: 7/10/2007
-metaDraft: false
-tags: ["glated","heat","lïf"]
-img: "zarathustra.jpg"
+date: 7/10/2007
+description: squalor tempests beneath the artificial breeze...
+draft: false
+img: zarathustra.jpg
+tags:
+  - glated
+  - heat
+  - lïf
+title: quit me thisly
 ---
 
 squalor tempests beneath the artificial breeze

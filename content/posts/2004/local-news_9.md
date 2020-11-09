@@ -1,10 +1,13 @@
 ---
-title: 'Local News'
-metaTitle: 'Local News'
-metaDate: 5/9/2004
-metaDraft: false
-tags: ['baghdad', 'news', 'donald thisbit']
-img: 'local_news_1.jpg'
+date: 5/9/2004
+description: HEADLINES Politics...
+draft: false
+img: local_news_1.jpg
+tags:
+  - baghdad
+  - news
+  - donald thisbit
+title: Local News
 ---
 
 ## HEADLINES (Politics)

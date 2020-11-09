@@ -1,10 +1,13 @@
 ---
+date: 7/28/2013
+description: "Last year I saw\_[+Paul Irish]httpplusgooglecom113127438179392830442's introduction to [Yeoman]httpye..."
+draft: false
+img: grunt.jpg
+subtitle: ' Importing an Existing Project'
+tags:
+  - tools
+  - code
 title: 'Making Sense of Grunt: Importing an Existing Project'
-metaTitle: 'Making Sense of Grunt: Importing an Existing Project'
-metaDate: 7/28/2013
-metaDraft: false
-tags: ['tools', 'code']
-img: 'grunt.jpg'
 ---
 
 Last year, I saw [+Paul Irish](http://plus.google.com/113127438179392830442)'s introduction to [Yeoman](http://yeoman.io/) in [the Google I/O 2012 session](http://www.youtube.com/watch?v=Mk-tFn2Ix6g), and I instantly knew that I was fundamentally doing something wrong. Yeoman did not exist yet; but it was easy to find Grunt, which was already close to being well baked. However. All of the documentation for [Grunt](http://gruntjs.com/), its cousin [Brunch](http://brunch.io/), and the now available Yeoman seems to be geared toward starting new projects.

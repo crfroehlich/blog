@@ -1,10 +1,13 @@
 ---
-title: 'A Promise to IndexedDb'
-metaTitle: 'A Promise to IndexedDb'
-metaDate: 6/26/2013
-metaDraft: false
-tags: ['promises', 'code', 'persistence']
-img: 'promises.jpeg'
+date: 6/26/2013
+description: "Quite a bit of my free time in the last 8 months has slipped away into\_[OJ]httpsomecallmechiefgithub..."
+draft: false
+img: promises.jpeg
+tags:
+  - promises
+  - code
+  - persistence
+title: A Promise to IndexedDb
 ---
 
 Quite a bit of my free time in the last 8 months has slipped away into [OJ](http://somecallmechief.github.io/oj/), my solution to the hell of dynamic form creation (based on arbitrary data inputs and accordingly arbitrary data outputs). Folks at [WuFoo](http://www.wufoo.com/) and [Bootsnip](https://bootsnipp.com/index.php/forms) have some nice prototypes of runtime manipulatable engines; while each looks like excellent work, neither solves my problem of generating entire workflows based on data. I want the data to drive the UI; the UI should simply read the data and generate the necessary rich form content necessary to provide slick, intuitive, addictive user experiences.
@@ -190,7 +193,7 @@ var createTable = function (dbWrapper, tableName, tablePkColumnName, autoIncreme
       //Resolve the promise failed
       deferred.reject(new Error('Could not create a new table', e));
     }
-    return dbWrapper.schemaschema\[tableNametableName\];
+    return dbWrapper.schemaschemaschemaschema\[tableNametableNametableNametableName\];
   });
   return deferred.promise;
 };
@@ -204,7 +207,7 @@ At any rate, the above is just enough to create some indexedDb tables. Next, the
 //Private implementation method
 var createIndexImpl = function (dbWrapper, tableName, columnName, indexName, isUnique) {
   //No need to wait on transaction, we have (or should have) the table in memory
-  var table = dbWrapper.schemaschema\[tableNametableName\];
+  var table = dbWrapper.schemaschemaschemaschema\[tableNametableNametableNametableName\];
   //Create the new index and return it immediately (happens synchronously)
   //It would be nice to cache the index on the cached table instance, but that table instance is actually an indexedDb object and I don't want to mutate--nor do I want to refactor anything at the moment. So eat the cost of fetching a handle on indexes later. Told-you-so's expected.
   return table.createIndex(columnName, indexName || columnName + 'Idx', {
@@ -228,7 +231,7 @@ var createIndex = function (dbWrapper, tableName, columnName, indexName, isUniqu
       //Fail the promise
       deferred.reject(new Error('Could not create a new index', e));
     }
-    return dbWrapper.schemaschema\[tableNametableName\];
+    return dbWrapper.schemaschemaschemaschema\[tableNametableNametableNametableName\];
   });
   return deferred.promise;
 };
@@ -262,7 +265,7 @@ var insertImpl = function (tableName, records) {
 
   try {
     //Get a new transaction on the table. This is an insert, so 'readwrite' is implicitly understood by the caller.
-    var transaction = db.transaction(\[tableNametableName\], 'readwrite');
+    var transaction = db.transaction(\[tableNametableNametableNametableName\], 'readwrite');
 
     //Get the object store from the transaction (gods forbid we fetched it from our own handle on the object store...and how the hell does this thing manage concurrency?!)
     var objectStore = transaction.objectStore(tableName);
@@ -390,13 +393,13 @@ var initDb = (function () {
         console.log(e, e.stack);
         deferred.reject(new Error('Could not create a new table', e));
       }
-      return dbWrapper.schemaschema\[tableNametableName\];
+      return dbWrapper.schemaschemaschemaschema\[tableNametableNametableNametableName\];
     });
     return deferred.promise;
   };
 
   var createIndexImpl = function (dbWrapper, tableName, columnName, indexName, isUnique) {
-    var table = dbWrapper.schemaschema\[tableNametableName\];
+    var table = dbWrapper.schemaschemaschemaschema\[tableNametableNametableNametableName\];
     return table.createIndex(columnName, indexName || columnName + 'Idx', {
       unique: true !== isUnique,
     });
@@ -413,7 +416,7 @@ var initDb = (function () {
         console.log(e, e.stack);
         deferred.reject(new Error('Could not create a new index', e));
       }
-      return dbWrapper.schemaschema\[tableNametableName\];
+      return dbWrapper.schemaschemaschemaschema\[tableNametableNametableNametableName\];
     });
     return deferred.promise;
   };
@@ -422,7 +425,7 @@ var initDb = (function () {
     var deferred = Q.defer();
 
     try {
-      var transaction = db.transaction(\[tableNametableName\], 'readwrite');
+      var transaction = db.transaction(\[tableNametableNametableNametableName\], 'readwrite');
 
       var objectStore = transaction.objectStore(tableName);
       n$.each(records, function (rec) {

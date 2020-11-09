@@ -9302,6 +9302,7 @@ __metadata:
     gh-pages: ^3.1.0
     google-fonts-plugin: ^5.0.2
     graphql: ^15.4.0
+    gray-matter: 4.0.2
     husky: ^4.3.0
     is-absolute-url: ^3.0.3
     lint-staged: ^10.5.1
@@ -17116,7 +17117,7 @@ fsevents@~2.1.2:
   languageName: node
   linkType: hard
 
-"gray-matter@npm:^4.0.2":
+"gray-matter@npm:4.0.2, gray-matter@npm:^4.0.2":
   version: 4.0.2
   resolution: "gray-matter@npm:4.0.2"
   dependencies:

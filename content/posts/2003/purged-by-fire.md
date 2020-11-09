@@ -1,10 +1,12 @@
 ---
-title: "Purged By Fire"
-metaTitle: "Purged By Fire"
-metaDate: 5/28/2003
-metaDraft: false
-tags: [ "army", "letter" ]
-img: "army_letter.jpg"
+date: 5/28/2003
+description: Friends of family family of friends and persons unconnected to either...
+draft: false
+img: army_letter.jpg
+tags:
+  - army
+  - letter
+title: Purged By Fire
 ---
 
 Friends of family, family of friends, and persons unconnected to either,

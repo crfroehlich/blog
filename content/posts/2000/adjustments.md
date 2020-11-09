@@ -1,10 +1,12 @@
 ---
-title: "adjustments"
-metaTitle: "adjustments"
-metaDate: 5/2/2000
-metaDraft: false
-tags: ["poetry", "spinning"]
-img: "movie_reel.png"
+date: 5/2/2000
+description: When the world has begun to spin...
+draft: false
+img: movie_reel.png
+tags:
+  - poetry
+  - spinning
+title: adjustments
 ---
 
 When the world has begun to spin

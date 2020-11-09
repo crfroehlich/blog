@@ -1,10 +1,13 @@
 ---
-title: "The Quick, Molting Sweat Lodge of the Soul"
-metaTitle: "The Quick, Molting Sweat Lodge of the Soul"
-metaDate: 4/7/2013
-metaDraft: false
-tags: [ "work", "sweat", "lodge" ]
-img: "sweat_lodge.jpg"
+date: 4/7/2013
+description: It was the spring of our discontent...
+draft: false
+img: sweat_lodge.jpg
+tags:
+  - work
+  - sweat
+  - lodge
+title: 'The Quick, Molting Sweat Lodge of the Soul'
 ---
 
 It was the spring of our discontent.

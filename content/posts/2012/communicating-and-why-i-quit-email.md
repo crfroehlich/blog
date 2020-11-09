@@ -1,10 +1,15 @@
 ---
-title: 'Communicating and Why I Quit Email (Episode 1)'
-metaTitle: 'Communicating and Why I Quit Email (Episode 1)'
-metaDate: 7/8/2012
-metaDraft: false
-tags: ['lïf', 'communication', 'email']
-img: 'without_a_parachute.jpg'
+date: 7/8/2012
+description: >-
+  In the early 90s the constraints imposed by dialup speeds made email my
+  primary interface for intera...
+draft: false
+img: without_a_parachute.jpg
+tags:
+  - lïf
+  - communication
+  - email
+title: Communicating and Why I Quit Email (Episode 1)
 ---
 
 In the early 90s, the constraints imposed by dial-up speeds made email my primary interface for interacting with the Internet. Services like Juno made it even easier to connect, subscribe to listservs, and to surf the self-curated content that was the Web--in my inbox. Had I been born a little earlier than 1980 or had I a more computer-sciency bias imposed by my parents or peers, I might just as easily started with Usenet. But. I did not, and email was my entry point to online communications.

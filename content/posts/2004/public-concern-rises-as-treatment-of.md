@@ -1,13 +1,18 @@
 ---
-title: "Public Concern Rises as Treatment of Prisoners Declines"
-metaTitle: "Public Concern Rises as Treatment of Prisoners Declines"
-metaDate: 5/28/2004
-metaDraft: false
-tags: ["baghdad","news","donald thisbit"]
-img: "children_jail.jpeg"
+date: 5/28/2004
+description: >-
+  Despite increased attention and criticism from the Press and the United
+  Nations conditions are worse...
+draft: false
+img: children_jail.jpeg
+tags:
+  - baghdad
+  - news
+  - donald thisbit
+title: Public Concern Rises as Treatment of Prisoners Declines
 ---
 
-Despite increased attention and criticism from the Press and the United Nations, conditions are worsening for Iraqi detainees. Sources on the ground have indicated that conditions vary from camp to camp; and, while most U.S. military forces fully comply with Geneva Convention regulations and the Law of Land Warfare, certain groups continue to ignore the policies and regulations of the U.S. government. Camp Duke, in particular, has seen a dramatic increase in the number of complaints from detainees. 
+Despite increased attention and criticism from the Press and the United Nations, conditions are worsening for Iraqi detainees. Sources on the ground have indicated that conditions vary from camp to camp; and, while most U.S. military forces fully comply with Geneva Convention regulations and the Law of Land Warfare, certain groups continue to ignore the policies and regulations of the U.S. government. Camp Duke, in particular, has seen a dramatic increase in the number of complaints from detainees.
 
 An overhead view of the camp reveals with startling clarity the dark underbelly of the military. Crude tents, supplied with air conditioning, shower trailers and toilets sit surrounded by menacing concertina wire and tireless military police guards. Detainees must sometimes travel over 15 feet through the brutal Iraqi heat to use the supplied latrines, but the brutality does not end there.
 

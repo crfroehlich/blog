@@ -1,10 +1,14 @@
 ---
-title: "Remember to Look Up and Write Down"
-metaTitle: "Remember to Look Up and Write Down"
-metaDate: 7/25/2011
-metaDraft: false
-tags: [ "lïf", "writing" ]
-img: "sally_ride.jpg"
+date: 7/25/2011
+description: >-
+  To hike the mountain of lïf is to know peace You the hiker cease to move You
+  are motionless but the ...
+draft: false
+img: sally_ride.jpg
+tags:
+  - lïf
+  - writing
+title: Remember to Look Up and Write Down
 ---
 
 To hike the mountain of lïf is to know peace. You, the hiker, cease to move. You are motionless, but the world begins to move around you. To hike lïf is to become truly still.
@@ -15,7 +19,7 @@ In many cases, this is the part of the virtue of the hike. In others, some of th
 
 Perhaps. And perhaps not.
 
-I recently heard an episode of _[Wait, Wait, Don't Tell Me](http://www.npr.org/programs/wait-wait-dont-tell-me/),_ [which posed a question](http://www.npr.org/2011/05/28/136716752/chef-bob-waggoner-plays-not-my-job): "Over in Iceland, if you stop in for dinner with some friends, they might give you some Hakarl, which is a delicacy made of shark. If you're eating Hakarl for the first time, you might get what advice on how to eat it? A, hold your nose as you eat it. B, make sure you have a bucket near by or C, get very drunk first."
+I recently heard an episode of *[Wait, Wait, Don't Tell Me](http://www.npr.org/programs/wait-wait-dont-tell-me/),* [which posed a question](http://www.npr.org/2011/05/28/136716752/chef-bob-waggoner-plays-not-my-job): "Over in Iceland, if you stop in for dinner with some friends, they might give you some Hakarl, which is a delicacy made of shark. If you're eating Hakarl for the first time, you might get what advice on how to eat it? A, hold your nose as you eat it. B, make sure you have a bucket near by or C, get very drunk first."
 
 While I passively retained the humorous impression this trivia question imparted, my memory stored only a few keywords: the show title, "pickled shark fin" ("pickled" and "fin" not even in the question proper, inferred through external knowledge), and "[drunk](http://shirt.woot.com/Shirts/the-binge)". From this terribly fragmented data set, I have been utterly incapable of reconstructing even a cheap knock-off of the original quote.
 

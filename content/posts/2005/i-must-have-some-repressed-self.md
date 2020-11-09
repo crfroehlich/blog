@@ -1,10 +1,15 @@
 ---
-title: "\"W\"it"
-metaTitle: "\"W\"it"
-metaDate: 11/15/2005
-metaDraft: false
-tags: ["pillaging","lïf","dreams"]
-img: "dream_invaders.jpg"
+date: 11/15/2005
+description: >-
+  I must have some repressed selfloathing because my brain unleashed a fury of
+  W’s drivel in my dream ...
+draft: false
+img: dream_invaders.jpg
+tags:
+  - pillaging
+  - lïf
+  - dreams
+title: '"W"it'
 ---
 
 I must have some repressed self-loathing, because my brain unleashed a fury of W’s drivel in my dream last night. I wish I could remember more of it, but the only phrase that remains (and picture him with his usual…

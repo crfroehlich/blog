@@ -1,10 +1,16 @@
 ---
-title: "Arkhē by Heraclitus of Ephesus"
-metaTitle: "Arkhē by Heraclitus of Ephesus"
-metaDate: 07/14/2017
-metaDraft: false
-tags: [ "fiction", "translation", "ελλάς", "short story" ]
-img: "blood_sunset.jpg"
+date: 07/14/2017
+description: >-
+  The mechanic paused to wipe the grease from his hands across the murky surface
+  of his coveralls befo...
+draft: false
+img: blood_sunset.jpg
+tags:
+  - fiction
+  - translation
+  - ελλάς
+  - short story
+title: Arkhē by Heraclitus of Ephesus
 ---
 
 The mechanic paused to wipe the grease from his hands across the murky surface of his coveralls before he grabbed the x-ray from the rack overhead. A cigarette clung precariously to his bottom lip as he held the x-ray up against the light of a lone, white light bulb swinging at the end of a length of electrical wire. Looking away from the x-ray toward a chart posted against the wall, the mechanic walked steadily towards the man on the operating table.

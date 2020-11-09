@@ -1,10 +1,16 @@
 ---
-title: "Currying Favor with Partial Application to get JavaScript SQL"
-metaTitle: "Currying Favor with Partial Application to get JavaScript SQL"
-metaDate: 02/04/2017
-metaDraft: false
-tags: [ "currying", "code", "partial", "application" ]
-img: "curry_favor.jpeg"
+date: 02/04/2017
+description: >-
+  Editor’s Note This is an old post from March of 2013 from an old blog
+  Apparently it still gets enoug...
+draft: false
+img: curry_favor.jpeg
+tags:
+  - currying
+  - code
+  - partial
+  - application
+title: Currying Favor with Partial Application to get JavaScript SQL
 ---
 
 _Editor’s Note: This is an old post from March of 2013, from an old blog. Apparently it still gets enough hits to need updating as links have changed. Re-posting it here with URL corrections._
@@ -20,62 +26,62 @@ But this is not yet-another-indoctrination on the subject. Defer to the authorit
 Once you’ve apprehended grokation of the concepts, it should be straightforward to see the implementation of a few partial application standard methods: [map](http://en.wikipedia.org/wiki/Map_%28higher-order_function%29), [filter](http://en.wikipedia.org/wiki/Filter_%28higher-order_function%29) and [fold](http://en.wikipedia.org/wiki/Fold_%28higher-order_function%29). Lots of libraries have already done the diligence and written these for us but for the sake of having something to write, let’s implement them again (In the real world, you’re better off taking what [functional js](http://wiht.link/FunctionalJS) or [wu.js](http://fitzgen.github.com/wu.js) have already built)!
 
 function curryLeft(func) {
-   var slice = Array.prototype.slice;
-   var args = slice.call(arguments, 1);
-   return function() {
-       return func.apply(this, args.concat(slice.call(arguments, 0)));
+var slice = Array.prototype.slice;
+var args = slice.call(arguments, 1);
+return function() {
+return func.apply(this, args.concat(slice.call(arguments, 0)));
 
-   }
+}
 }
 
 function foldLeft(func,newArray,oldArray) {
-    var accumulation = newArray;
-    each(oldArray, function(val) {
-        accumulation = func(accumulation, val);
-    });
-    return accumulation;
+var accumulation = newArray;
+each(oldArray, function(val) {
+accumulation = func(accumulation, val);
+});
+return accumulation;
 
 }
 
 function map(func, array) {
-    var onIteration = function(accumulation, val) {
-        return accumulation.concat(func(val));
-    };
-    return foldLeft(onIteration, \[\], array)
+var onIteration = function(accumulation, val) {
+return accumulation.concat(func(val));
+};
+return foldLeft(onIteration, \[\], array)
 }
 
 function filter(func, array) {
-    var onIteration = function(accumulation, val) {
-        if(func(val)) {
-            return accumulation.concat(val);
-        } else {
-            return accumulation;
-        }
-    };
-    return foldLeft(onIteration, \[\], array)
+var onIteration = function(accumulation, val) {
+if(func(val)) {
+return accumulation.concat(val);
+} else {
+return accumulation;
+}
+};
+return foldLeft(onIteration, \[\], array)
 }
 
 With just these, we can do something that’s almost cool. We can extend the native Array class to add some new methods:
 
 Object.defineProperties(Array.prototype, {
-    '\_where': {
-        value: function(func) {
-            return filter(func, this);
-        }
-    },
-    '\_select': {
-        value: function(func) {
-            return map(func, this);
-        }
-    }
+'\_where': {
+value: function(func) {
+return filter(func, this);
+}
+},
+'\_select': {
+value: function(func) {
+return map(func, this);
+}
+}
 });
 
 At this point, given an instance of an Array (thanks to [Faker](https://github.com/marak/Faker.js/)), like:
 
 var somePeople = \[
-    {"FirstName":"Cristina", "LastName":"Quigley", "PhoneNumber":"1-189-868-2830", "Email":"Imelda@lourdes.ca", "Id":0},
-    {"FirstName":"Eriberto", "LastName":"Bailey", "PhoneNumber":"1-749-549-2050 x36612", "Email":"Pamela\_Gaylord@ludie.net", "Id":1},
-    {"FirstName":"Amina", "LastName":"Schaden", "PhoneNumber":"463-301-9579 x9511", "Email":"Conner\_Gusikowski@jolie.tv", "Id":2}\];
+{"FirstName":"Cristina", "LastName":"Quigley", "PhoneNumber":"1-189-868-2830", "Email":"Imelda@lourdes.ca", "Id":0},
+{"FirstName":"Eriberto", "LastName":"Bailey", "PhoneNumber":"1-749-549-2050 x36612", "Email":"Pamela\_Gaylord@ludie.net", "Id":1},
+{"FirstName":"Amina", "LastName":"Schaden", "PhoneNumber":"463-301-9579 x9511", "Email":"Conner\_Gusikowski@jolie.tv", "Id":2}\];
 
 If we wanted to select the FirstName of each record, we could do something crude like:
 
@@ -84,21 +90,21 @@ somePeople.\_select(function(row) { return row.FirstName });
 But this is still too obtuse. With a little curry, we can make it better. We used partial application to get to ‘\_select’, but we can switch gears to curry to get a better query mechanism. First, let’s define a query method: _Update: we technically don’t need curry here, as we’re not abstracting the ‘query’ object as a parameter. Thanks to Thomas Burette in the comments_.
 
 var query = function(array) {
-    var tables = \[\];
-    tables.push(array);
-    var \_query = {
-        tables: tables,
-        from: from,
-        select: select,
-        run: run
-    };
-    return \_query;
+var tables = \[\];
+tables.push(array);
+var \_query = {
+tables: tables,
+from: from,
+select: select,
+run: run
+};
+return \_query;
 };
 
 select and from methods are straightforward:
 
 function select() {
-    var query = this;
+var query = this;
 
     var slice = Array.prototype.slice;
     var args = slice.call(arguments, 0);
@@ -107,22 +113,23 @@ function select() {
         query.columns.push(argumentValue);
     });
     return query;
+
 }
 
 function from(array) {
-    var query = this;
-    query.tables.push(array);
-    return query;
+var query = this;
+query.tables.push(array);
+return query;
 }
 
 which then only leaves execution. I’ve deliberately not optimized this method for the purpose of illustration: in the absence of the tools, this is what such code looks like. Look at the redundancy and duplication. Marvel at the inelegance. [Appreciate the fact that it works](http://prog21.dadgum.com/169.html).
 
 function run() {
-    var query = this;
-    var ret = \[\];
-    if (query.columns.length > 0) {
-        var results = \[\];
-        each(query.columns, function(columnName) {
+var query = this;
+var ret = \[\];
+if (query.columns.length > 0) {
+var results = \[\];
+each(query.columns, function(columnName) {
 
             each(query.tables, function(tbl) {
                 if (Array.isArray(tbl)) {
@@ -164,6 +171,7 @@ function run() {
 
     }
     return returnRows;
+
 }
 
 Now, this yields a syntax which looks a lot more like SQL:

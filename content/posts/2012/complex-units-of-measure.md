@@ -1,13 +1,17 @@
 ---
-title: "Complex Units of Measure"
-metaTitle: "Complex Units of Measure"
-metaDate: 10/2/2012
-metaDraft: false
-tags: [ "lïf", "home" ]
-img: "wereworlf_dad.jpg"
+date: 10/2/2012
+description: >-
+  I embrace the [Stevie's Home]httpwwwthesneezecommtarchives000831php approach
+  to life and my return h...
+draft: false
+img: wereworlf_dad.jpg
+tags:
+  - lïf
+  - home
+title: Complex Units of Measure
 ---
 
-I embrace the [Stevie's Home](http://www.thesneeze.com/mt-archives/000831.php) approach to life, and my return home from work usually looks more like a cathartic reconciliation between Carnivorous Vulgaris and Accelleratii Incredibus than a rational re entry to domestic life. On Monday, immobilized by my three pronged, [patent-pending](http://www.techdirt.com/articles/20121001/11435420558/why-it-could-make-sense-to-get-rid-patents-entirely-even-if-they-work-few-cases.shtml), tickle attack, Eli cried out, "Dad!! I exercise _EVERY DAY_. Why can't I escape?"
+I embrace the [Stevie's Home](http://www.thesneeze.com/mt-archives/000831.php) approach to life, and my return home from work usually looks more like a cathartic reconciliation between Carnivorous Vulgaris and Accelleratii Incredibus than a rational re entry to domestic life. On Monday, immobilized by my three pronged, [patent-pending](http://www.techdirt.com/articles/20121001/11435420558/why-it-could-make-sense-to-get-rid-patents-entirely-even-if-they-work-few-cases.shtml), tickle attack, Eli cried out, "Dad!! I exercise *EVERY DAY*. Why can't I escape?"
 
 It's a wonderful question and a brilliant insight into the meta data of life. Why can't a 4 year old beat his father at the ol bear-hug/tickle-match? If the Olympics were an actual competition of sport, it's the sort of question you might hear in comparing the competence of two athletes. In fitness, we are near rivals except for the subfields affected by mass: Eli would need at least 3x his current mass to even pose a credible challenge. Yet in agility, core muscle strength, speed and dexterity, we are relatively equal when evaluated proportional to our weight. He is impacted by experience: he lacks muscle memory, endurance and accuracy, but these can be mitigated in young athletes by a greater supply of energy, irrational optimism and emotional charge.
 

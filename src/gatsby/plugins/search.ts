@@ -14,7 +14,10 @@ export const addSearch: addConfig = (config, plugins): void => {
           }
           frontmatter {
             title
-            metaDescription
+            subtitle
+            tags
+            img
+            date
           }
           excerpt(pruneLength: 50000)
         }

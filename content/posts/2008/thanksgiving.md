@@ -1,10 +1,15 @@
 ---
-title: "Thanksgiving"
-metaTitle: "Thanksgiving"
-metaDate: 11/26/2008
-metaDraft: false
-tags: ["thanksgiving","lïf","holiday"]
-img: "tofurkey.jpeg"
+date: 11/26/2008
+description: >-
+  I read a bit recently that described thanks as gratitude for that which one
+  did not earn to which I ...
+draft: false
+img: tofurkey.jpeg
+tags:
+  - thanksgiving
+  - lïf
+  - holiday
+title: Thanksgiving
 ---
 
 I read a bit recently that described thanks as gratitude for that which one did not earn (to which I would also attach, 'deserve'). In my mind, this perfectly fits the Pilgrim's myth which we iterate each year at this time: the benevolent stranger gives the weary passenger a bed, a roof, and a loaf of bread. The myth survives (I hope), because it still occurs. Those without obvious merit and means are given means without regard for merit.

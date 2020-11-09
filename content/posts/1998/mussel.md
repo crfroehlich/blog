@@ -1,10 +1,12 @@
 ---
-title: "Muscles"
-metaTitle: "Muscles"
-metaDate: 8/11/1998
-metaDraft: false
-tags: ["muscle", "poetry"]
-img: "oysters.jpg"
+date: 8/11/1998
+description: Language's mildew the sweet oysters who foam...
+draft: false
+img: oysters.jpg
+tags:
+  - muscle
+  - poetry
+title: Muscles
 ---
 
 Language's mildew, the sweet oysters who foam

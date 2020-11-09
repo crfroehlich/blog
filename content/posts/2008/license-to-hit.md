@@ -1,10 +1,13 @@
 ---
-title: "License to *hit"
-metaTitle: "License to *hit"
-metaDate: 11/21/2008
-metaDraft: false
-tags: ["hatred","family","lïf"]
-img: "broken_family_tree.jpg"
+date: 11/21/2008
+description: The subject of the latest email from Dean Indulging him...
+draft: false
+img: broken_family_tree.jpg
+tags:
+  - hatred
+  - family
+  - lïf
+title: License to *hit
 ---
 
 The subject of the latest email from Dean. Indulging him:

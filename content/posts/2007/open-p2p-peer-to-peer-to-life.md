@@ -1,10 +1,15 @@
 ---
-title: "Open P2P (Peer to Peer) to Life"
-metaTitle: "Open P2P (Peer to Peer) to Life"
-metaDate: 10/4/2007
-metaDraft: false
-tags: ["slashdot","wishes","tech"]
-img: "death_ray.jpg"
+date: 10/4/2007
+description: >-
+  I'm just one fellow and not terribly educated at that so my opinions may not
+  be grounded in actualit...
+draft: false
+img: death_ray.jpg
+tags:
+  - slashdot
+  - wishes
+  - tech
+title: Open P2P (Peer to Peer) to Life
 ---
 
 I'm just one fellow, and not terribly educated at that; so my opinions may not be grounded in actuality. Nonetheless, I've been thinking of a few ideas, wondering if anyone else has thought of them and if they're any good.

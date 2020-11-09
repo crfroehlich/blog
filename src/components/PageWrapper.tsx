@@ -37,7 +37,6 @@ export const PageWrapper: React.FC<IProps> = ({
   }
 
   title = title || 'No Title';
-  let description = title;
 
   if (pageContent) {
     body = pageContent;
@@ -45,7 +44,6 @@ export const PageWrapper: React.FC<IProps> = ({
 
   if (mdx) {
     title = mdx.fields.title || title;
-    description = mdx.frontmatter?.metaDescription || title;
     if (!body) {
       body = mdx.body;
     }
@@ -99,9 +97,7 @@ export const PageWrapper: React.FC<IProps> = ({
       <Helmet>
         <title>{title}</title>
         <meta name="title" content={title} />
-        <meta name="description" content={description} />
         <meta property="og:title" content={title} />
-        <meta property="og:description" content={description} />
         <link rel="canonical" href={canonicalUrl} />
       </Helmet>
       <div className={'titleWrapper'}>

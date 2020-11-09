@@ -1,10 +1,12 @@
 ---
-title: "beneath"
-metaTitle: "beneath"
-metaDate: 4/26/2000
-metaDraft: false
-tags: ["poetry", "love"]
-img: "temple_of_doom_heart.jpg"
+date: 4/26/2000
+description: At times I wish only that my heart would open inside my mind...
+draft: false
+img: temple_of_doom_heart.jpg
+tags:
+  - poetry
+  - love
+title: beneath
 ---
 
 At times I wish only that my heart would open inside my mind,

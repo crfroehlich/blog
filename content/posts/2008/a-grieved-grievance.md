@@ -1,10 +1,15 @@
 ---
-title: "a grieved grievance"
-metaTitle: "a grieved grievance"
-metaDate: 7/19/2008
-metaDraft: false
-tags: ["tech", "logging", "fruit"]
-img: "apple_blackberry.jpg"
+date: 7/19/2008
+description: >-
+  I've been very excited about upgrading my iPhone to the new iPhone 3G This
+  morning I called the Appl...
+draft: false
+img: apple_blackberry.jpg
+tags:
+  - tech
+  - logging
+  - fruit
+title: a grieved grievance
 ---
 
 I've been very excited about upgrading my iPhone to the new iPhone 3G. This morning, I called the Apple Store at the Syracuse, NY mall to see if any were in stock. Lo, 16GB Whites were in stock. So, I packed up the family for a trip to the mall and drove the 2 hours to Syracuse. Eagerly, I went into the Apple store and boldly asked, "Please, sell me an iPhone."

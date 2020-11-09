@@ -1,10 +1,16 @@
 ---
-title: "Some People Climb Everest; I Hike My Desk"
-metaTitle: "Some People Climb Everest; I Hike My Desk"
-metaDate: 5/19/2011
-metaDraft: false
-tags: ["hiking","tenzing norgay","optimism","desk"]
-img: "that_silly_man.png"
+date: 5/19/2011
+description: >-
+  It's been said that behind every great man is a [Tenzing
+  Norgay]httpenwikipediaorgwikiTenzingNorgay ...
+draft: false
+img: that_silly_man.png
+tags:
+  - hiking
+  - tenzing norgay
+  - optimism
+  - desk
+title: Some People Climb Everest; I Hike My Desk
 ---
 
 It's been said that behind every great man is a [Tenzing Norgay](http://en.wikipedia.org/wiki/Tenzing_Norgay). Behind me are ten.

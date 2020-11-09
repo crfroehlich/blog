@@ -1,10 +1,13 @@
 ---
-title: "Fellow Thebans"
-metaTitle: "Fellow Thebans"
-metaDate: 8/24/2005
-metaDraft: false
-tags: ["lïf"]
-img: "theban.gif"
+date: 8/24/2005
+description: >-
+  This winter has been especially harsh and long With temperatures plummeting to
+  record lows and heat ...
+draft: false
+img: theban.gif
+tags:
+  - lïf
+title: Fellow Thebans
 ---
 
 This winter has been especially harsh and long. With temperatures plummeting to record lows and heat expenditures on the rise, I find myself with my fellow citizens: pulling the wool blanket a little bit closer, holding the hot chocolate a little bit longer, and above all, staying indoors as much as possible.

@@ -1,10 +1,15 @@
 ---
-title: "this present opaqueness"
-metaTitle: "this present opaqueness"
-metaDate: 10/28/2008
-metaDraft: false
-tags: ["cancer","lïf","göd"]
-img: "losing_my_religion.jpg"
+date: 10/28/2008
+description: >-
+  There was within me a quiet comfort in the belief that some all knowing force
+  guided the hands of ma...
+draft: false
+img: losing_my_religion.jpg
+tags:
+  - cancer
+  - lïf
+  - göd
+title: this present opaqueness
 ---
 
 There was within me a quiet comfort in the belief that some all knowing force guided the hands of man in the daily doings of human kind, a relief and respite in the faith that it was not truly up to \*us\* to guide the resolutions of issues of strife and hunger and cruelty.

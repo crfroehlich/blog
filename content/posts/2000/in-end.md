@@ -1,10 +1,11 @@
 ---
-title: "in the end"
-metaTitle: "in the end"
-metaDate: 4/23/2000
-metaDraft: false
-tags: [ "poetry" ]
-img: "old_man.jpg"
+date: 4/23/2000
+description: In the last days they will say to him...
+draft: false
+img: old_man.jpg
+tags:
+  - poetry
+title: in the end
 ---
 
 In the last days they will say to him
@@ -12,8 +13,8 @@ In the last days they will say to him
     of the world,
         saying,
 
-    "Did we not speak of this to you?
-    You stand alone, and when we turn to leave - 
+"Did we not speak of this to you?
+    You stand alone, and when we turn to leave -
     you will die without even a twitch
         from the nose of God.
     The world moves on, moves on - old man.
@@ -30,10 +31,10 @@ their presence.
 Sitting on his perch on the edge of the world,
 in the last throne room of the last stronghold where
     the earth still ends in a shower of
-    mist and foam and power into a 
+    mist and foam and power into a
     dark unknown,
 watching the fangs of unnamed leviathans
-    gnawing at the surface of the deep - 
+    gnawing at the surface of the deep -
 he will rise up and set sail from the brink,
     perhaps allowing himself a glance backward
     at a world gone strange,

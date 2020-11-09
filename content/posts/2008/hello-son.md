@@ -1,10 +1,14 @@
 ---
-title: "hello, son"
-metaTitle: "hello, son"
-metaDate: 1/22/2008
-metaDraft: false
-tags: [ "eli", "göd" ]
-img: "bow.png"
+date: 1/22/2008
+description: >-
+  It's mere minutes before the day you are scheduled albeit not destined to be
+  born and though you may...
+draft: false
+img: bow.png
+tags:
+  - eli
+  - göd
+title: 'hello, son'
 ---
 
 It's mere minutes before the day you are scheduled, albeit not destined, to be born; and though you may be familiar with my voice, we have not spoken--not I to you or otherwise.

@@ -1,17 +1,20 @@
 ---
-title: "Blogging to the Oldies"
-metaTitle: "Blogging to the Oldies"
-metaDescription: "blogging, tech"
-metaDate: 10/04/2020
-tags: ["logging", "code", "tech"]
-img: "blogging_to_the_oldies.jpg"
+date: 10/04/2020
+description: Reality Meet Opportunity...
+draft: false
+img: blogging_to_the_oldies.jpg
+tags:
+  - logging
+  - code
+  - tech
+title: Blogging to the Oldies
 ---
 
 ## Reality, Meet Opportunity
 
 For quite a while now, I have wanted to update my blog, do some more writing (both personally and professionally) and generally flex some unused muscles a bit. Fortuna often has sadistic tendencies as some can attest. Consider the recent toppling of the [NS8 empire](https://www.sec.gov/litigation/litreleases/2020/lr24905.htm) [1](https://www.wsj.com/articles/former-head-of-cyber-fraud-detection-startup-ns8-arrested-on-fraud-charges-11600469207), [2](https://www.pacermonitor.com/public/case/36301258/United_States_Securities_and_Exchange_Commission_v_Rogas_et_al), [3](https://www.forbes.com/sites/davidjeans/2020/09/18/how-a-cyber-fraud-company-ceo-raised-123-million-in-months---and-got-arrested-for-fraud/amp), [4](https://www.reviewjournal.com/business/sec-charges-former-ceo-of-tech-company-with-fraud-2123503/), [5](https://www.justice.gov/usao-sdny/press-release/file/1317641/download), [6](https://www.linkedin.com/pulse/ns8-demonstrates-how-employment-data-can-valuable-richard-stiennon) and a [great fall of nepotism](https://www.formds.com/issuers/ns8-inc) with [recent developments](https://www.justice.gov/usao/justice-101/preliminary-hearing) and [former employee actions](https://www.reviewjournal.com/business/laid-off-workers-sue-tech-company-citing-lack-of-advance-notice-2124501/). So many links to criminal conspiracy to defraud and so little daylight; regardless, I have had more than a little time to navel gaze in recent weeks.
 
-I've long been frustrated by the available tools for blogging. Some of these goals compete with each other and some are onerous due to costs--I want as much of my platform to be free (both as in beer and as in speech) as possible *and* I want as much control over my platform as possible *and* I want to have features like commenting and search and analytics *and* there can be no ads and the word *Jekyll* may not be invoked. I have an old [Blogger site](https://hiking.luddites.me), which I desperately want to retire; and I have a [Medium site](https://medium.com/@christopher.r.froehlich) which I am increasingly frustrated with: from the inability to post articles in the past to Mediums idiotic approach to monetization--what was initially cool about medium is no longer interesting to me.
+I've long been frustrated by the available tools for blogging. Some of these goals compete with each other and some are onerous due to costs--I want as much of my platform to be free (both as in beer and as in speech) as possible _and_ I want as much control over my platform as possible _and_ I want to have features like commenting and search and analytics _and_ there can be no ads and the word _Jekyll_ may not be invoked. I have an old [Blogger site](https://hiking.luddites.me), which I desperately want to retire; and I have a [Medium site](https://medium.com/@christopher.r.froehlich) which I am increasingly frustrated with: from the inability to post articles in the past to Mediums idiotic approach to monetization--what was initially cool about medium is no longer interesting to me.
 
 So I set out to figure out how to create the blog platform you, dear reader, are currently (hopefully) enjoying.
 
@@ -78,4 +81,4 @@ Still, much remains todo if I want to consider this feature complete:
 - Refactor the whole thing to TypeScript, because {reasons}.
 - Refactor the whole thing from TypeScript to Rust, because...why not?
 
-If any of this has been interesting, please let me know in the comments or in [the code, which is the blog, which is the code, which...](https://github.com/crfroehlich/blog)!  
+If any of this has been interesting, please let me know in the comments or in [the code, which is the blog, which is the code, which...](https://github.com/crfroehlich/blog)!

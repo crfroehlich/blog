@@ -1,10 +1,12 @@
 ---
-title: "Physical Books (and Such)"
-metaTitle: "Physical Books (and Such)"
-metaDate: 5/24/2012
-metaDraft: false
-tags: ["inventory", "meandering"]
-img: "minecraft_desert_island.png"
+date: 5/24/2012
+description: I don't read as many books as I used to and I wonder why...
+draft: false
+img: minecraft_desert_island.png
+tags:
+  - inventory
+  - meandering
+title: Physical Books (and Such)
 ---
 
 I don't read as many books as I used to, and I wonder why.

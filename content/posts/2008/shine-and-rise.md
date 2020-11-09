@@ -1,10 +1,15 @@
 ---
-title: "shine and rise"
-metaTitle: "shine and rise"
-metaDate: 10/29/2008
-metaDraft: false
-tags: ["mournings","lïf","eli"]
-img: "filming_fake_sunrise.jpg"
+date: 10/29/2008
+description: >-
+  mornings are like little deaths the gaping jawl of the reaper his teeth both
+  rotting and sharpened l...
+draft: false
+img: filming_fake_sunrise.jpg
+tags:
+  - mournings
+  - lïf
+  - eli
+title: shine and rise
 ---
 
 mornings are like little deaths; the gaping jawl of the reaper, his teeth both rotting and sharpened, looming above the head of the wakened, threating to consume it

@@ -1,10 +1,15 @@
 ---
-title: "i pity them"
-metaTitle: "i pity them"
-metaDate: 11/22/2008
-metaDraft: false
-tags: ["politics","family","lïf"]
-img: "pity.jpg"
+date: 11/22/2008
+description: >-
+  family is a strange thing this is overly generic family is an evolved concept
+  evolved out of necessi...
+draft: false
+img: pity.jpg
+tags:
+  - politics
+  - family
+  - lïf
+title: i pity them
 ---
 
 family is a strange thing. this is overly generic. family is an evolved concept, evolved out of necessity for the preservation of species. it is both a biological connection between generations and a social grouping, collecting different biological chains together into one label. this can be extraordinarily useful as members of the group assist the survival of each other.

@@ -1,10 +1,11 @@
 ---
-title: "awesome pitiable envy"
-metaTitle: "awesome pitiable envy"
-metaDate: 7/25/2008
-metaDraft: false
-tags: ["poetry"]
-img: "termites.jpg"
+date: 7/25/2008
+description: ants tunnel into the crops eroding the soil and spoiling the harvest...
+draft: false
+img: termites.jpg
+tags:
+  - poetry
+title: awesome pitiable envy
 ---
 
 ants tunnel into the crops, eroding the soil and spoiling the harvest

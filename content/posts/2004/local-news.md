@@ -1,10 +1,13 @@
 ---
-title: 'Local News'
-metaTitle: 'Local News'
-metaDate: 5/15/2004
-metaDraft: false
-tags: ['baghdad', 'news', 'donald thisbit']
-img: 'local_news_2.png'
+date: 5/15/2004
+description: HEADLINES Mullis Sightings in HongKong Continue page 7...
+draft: false
+img: local_news_2.png
+tags:
+  - baghdad
+  - news
+  - donald thisbit
+title: Local News
 ---
 
 ## HEADLINES: Mullis Sightings in Hong-Kong Continue (page 7)

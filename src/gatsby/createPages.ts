@@ -37,9 +37,11 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions 
                 }
               }
               frontmatter {
-                metaTitle
-                metaDescription
-                metaDate
+                title
+                subtitle
+                date
+                tags
+                img
               }
             }
           }
@@ -141,6 +143,9 @@ export const onCreateNode: GatsbyNode['onCreateNode'] = ({ node, getNode, action
     if (!isContent) return;
 
     const parent = getNode(node.parent) as INode;
+    const { frontmatter } = node as INode;
+
+    if (frontmatter.draft === true) return;
 
     if (parent) {
       let value = parent.relativePath.replace(parent.ext, '');
@@ -170,7 +175,18 @@ export const onCreateNode: GatsbyNode['onCreateNode'] = ({ node, getNode, action
       value: node.id,
     });
 
-    const { frontmatter } = node as INode;
+    let tags = [];
+    if (Array.isArray(frontmatter.tags)) {
+      tags = frontmatter.tags;
+    } else {
+      tags = frontmatter?.tags?.toString().split(',');
+    }
+
+    let date = new Date(frontmatter?.date);
+    if (Number.isNaN(date.getTime())) {
+      date = new Date();
+    }
+    const year = date.getFullYear();
 
     if (frontmatter) {
       createNodeField({
@@ -182,13 +198,31 @@ export const onCreateNode: GatsbyNode['onCreateNode'] = ({ node, getNode, action
       createNodeField({
         name: 'date',
         node,
-        value: new Date(frontmatter?.metaDate),
+        value: date,
+      });
+
+      createNodeField({
+        name: 'year',
+        node,
+        value: year,
+      });
+
+      createNodeField({
+        name: 'description',
+        node,
+        value: frontmatter?.description,
+      });
+
+      createNodeField({
+        name: 'subtitle',
+        node,
+        value: frontmatter?.subtitle,
       });
 
       createNodeField({
         name: 'tags',
         node,
-        value: frontmatter?.tags?.toString().split(','),
+        value: tags,
       });
 
       const imagePath = frontmatter?.img || 'card.png';

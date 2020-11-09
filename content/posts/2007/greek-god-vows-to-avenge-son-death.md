@@ -1,10 +1,14 @@
 ---
-title: "Greek God Vows to Avenge Son's Death"
-metaTitle: "Greek God Vows to Avenge Son's Death"
-metaDate: 9/9/2007
-metaDraft: false
-tags: ["news","lïf"]
-img: "the_furies.png"
+date: 9/9/2007
+description: >-
+  Greek god Apollo vowed today to AP reporter Donald Thisbit to prosecute Zeus
+  king of the gods to the...
+draft: false
+img: the_furies.png
+tags:
+  - news
+  - lïf
+title: Greek God Vows to Avenge Son's Death
 ---
 
 Greek god Apollo vowed today to AP reporter, Donald Thisbit, to prosecute Zeus, king of the gods, to the full extent of the law for the unlawful execution of Apollo's son, Asclepius. While the case has been dormant due to a lack of evidence for over 2,500 years, Apollo feels certain he can convince district attorneys to reopen the case as more and more gods seek returns on the unlawful killing(s) of their siblings, spouses, parents and children.

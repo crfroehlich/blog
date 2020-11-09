@@ -1,10 +1,14 @@
 ---
-title: "The Audacity of Despair"
-metaTitle: "The Audacity of Despair"
-metaDate: 9/6/2011
-metaDraft: false
-tags: ["lïf", "logging"]
-img: "saying_goodbye.jpg"
+date: 9/6/2011
+description: >-
+  I began this over one year ago July 28 2010 but never finished I've lost the
+  creative tingle herebut...
+draft: false
+img: saying_goodbye.jpg
+tags:
+  - lïf
+  - logging
+title: The Audacity of Despair
 ---
 
 I began this over one year ago (July 28, 2010), but never finished. I've lost the creative tingle, here--but rather than trash the bit, I'll post it. It's raw, but there's a rough in its diamond.

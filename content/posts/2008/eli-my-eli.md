@@ -1,10 +1,15 @@
 ---
-title: "Eli, my Eli"
-metaTitle: "Eli, my Eli"
-metaDate: 2/23/2008
-metaDraft: false
-tags: ["hello","lïf","eli"]
-img: "elohim.jpg"
+date: 2/23/2008
+description: >-
+  It is almost a month since you were born We have taken many pictures of your
+  progress and it is a jo...
+draft: false
+img: elohim.jpg
+tags:
+  - hello
+  - lïf
+  - eli
+title: 'Eli, my Eli'
 ---
 
 It is almost a month since you were born. We have taken many pictures of your progress, and it is a joy to watch you grow day by daily.

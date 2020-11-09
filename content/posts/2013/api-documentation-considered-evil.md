@@ -1,10 +1,17 @@
 ---
-title: 'From JsDoc to Github Pages in 27 easy steps (aka API Documentation Considered Evil)?'
-metaTitle: 'From JsDoc to Github Pages in 27 easy steps (aka API Documentation Considered Evil)?'
-metaDate: 7/6/2013
-metaDraft: false
-tags: ['code', 'api', 'docs']
-img: 'api_map.jpeg'
+date: 7/6/2013
+description: >-
+  I ask the question because I assume it must be considered evilon the
+  subsequent assumption that if i...
+draft: false
+img: api_map.jpeg
+tags:
+  - code
+  - api
+  - docs
+title: >-
+  From JsDoc to Github Pages in 27 easy steps (aka API Documentation Considered
+  Evil)?
 ---
 
 I ask the question, because I assume it must be (considered evil)--on the subsequent assumption that if it were not (considered evil) that _someone_, **somewhere**, somehow would have made it easy. I had a simple vision: take JsDocs from my [project](https://github.com/somecallmechief/oj), convert them to an [API document](https://github.com/jsdoc3/jsdoc), publish that document to my [Github pages](http://somecallmechief.github.io/oj/) place.

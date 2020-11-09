@@ -1,10 +1,15 @@
 ---
-title: 'Good Reads'
-metaTitle: 'Good Reads'
-metaDate: 1/13/2013
-metaDraft: false
-tags: ['work', 'competence', 'code']
-img: 'heart_of_darkness.jpg'
+date: 1/13/2013
+description: >-
+  Of the part of the day I don't spend eating sleeping or enjoyingsurviving my
+  family [I spend it in r...
+draft: false
+img: heart_of_darkness.jpg
+tags:
+  - work
+  - competence
+  - code
+title: Good Reads
 ---
 
 Of the part of the day I don't spend eating, sleeping or enjoying/surviving my family, [I spend it in roughly equal parts](https://www.rescuetime.com/) reading and writing. While [my reading habits have evolved](http://objrefnotset.blogspot.com/2012/05/impulse-and-optimism.html), the relative quality of what I end up reading has varied very little over the years. Most of what I read is just... ok. I think it's nearly always possible to profit from everything read (assuming some discretion is applied upfront)--even if the effect is merely the intellectual equivalent to eating celery.

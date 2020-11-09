@@ -1,10 +1,14 @@
 ---
-title: "Area Man Blows Second Chance at Life, Hopes for Third"
-metaTitle: "Area Man Blows Second Chance at Life, Hopes for Third"
-metaDate: 6/3/2004
-metaDraft: false
-tags: ["news","donald thisbit"]
-img: "blow_chance.jpg"
+date: 6/3/2004
+description: >-
+  Area man Donald Thisbit appeared shaken Wednesday afternoon after his close
+  encounter with death "I ...
+draft: false
+img: blow_chance.jpg
+tags:
+  - news
+  - donald thisbit
+title: 'Area Man Blows Second Chance at Life, Hopes for Third'
 ---
 
 Area man, Donald Thisbit, appeared shaken Wednesday afternoon after his close encounter with death. "I feel like I've been given a second chance at life," Thisbit told reporters. "I mean, if my friends hadn't pointed out the cholesterol content of that Burger King Whopper (tm) to me, I might not be here right now. I was moments away from biting into certain death, when heaven smiled upon me. I know now that I have to give back some of what's been given to me."
@@ -13,6 +17,6 @@ Thisbit's wife expressed concern; however, as days passed and Donald exhibited n
 
 Thisbit defended his choices since the near-accident, suggesting that he was mentally harnessing his energies to do something big, something really big for mankind. "It's a difficult change to go through, from being a chartered accountant one minute to a death-defying miracle-man the next. It may take me awhile to adjust to my new responsibilities."
 
-  Thisbit did confess that he was finding it difficult to focus on his new tasks, "People just don't understand. They expect you to pick up and carry on the way you did before. But you can't. Cleaning dishes, going to work, waking up before noon--these are things for the man without a global mission." Thisbit's wife commented, "If he needs inspiration, I can give him another close encounter with death that he won't walk away from."
+Thisbit did confess that he was finding it difficult to focus on his new tasks, "People just don't understand. They expect you to pick up and carry on the way you did before. But you can't. Cleaning dishes, going to work, waking up before noon--these are things for the man without a global mission." Thisbit's wife commented, "If he needs inspiration, I can give him another close encounter with death that he won't walk away from."
 
 \--Sun Times

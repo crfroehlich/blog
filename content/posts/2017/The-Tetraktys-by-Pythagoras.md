@@ -1,10 +1,15 @@
 ---
-title: "The Tetraktys by Pythagoras"
-metaTitle: "The Tetraktys by Pythagoras"
-metaDate: 07/15/2017
-metaDraft: false
-tags: [ "fiction", "translation", "ελλάς" ]
-img: "tetraktys.jpg"
+date: 07/15/2017
+description: >-
+  Mr George Pyncheon bolted upright in bed and stared at the ceiling for a
+  moment before he reached to...
+draft: false
+img: tetraktys.jpg
+tags:
+  - fiction
+  - translation
+  - ελλάς
+title: The Tetraktys by Pythagoras
 ---
 
 Mr. George Pyncheon bolted upright in bed and stared at the ceiling for a moment, before he reached to the corner stand at his bedside to pick up the phone. His fingers trembled in the spaces between the buttons on the phone as he hastily tried to dial his office. The trembling in his fingers had shifted to his voice.

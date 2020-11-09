@@ -1,10 +1,12 @@
 ---
-title: 'The Greatest Heist Ever Conceived'
-metaTitle: 'The Greatest Heist Ever Conceived'
-metaDate: 1/31/2013
-metaDraft: false
-tags: ['code', 'copyleft']
-img: 'wilcox_train_robbery.jpg'
+date: 1/31/2013
+description: The Heist...
+draft: false
+img: wilcox_train_robbery.jpg
+tags:
+  - code
+  - copyleft
+title: The Greatest Heist Ever Conceived
 ---
 
 ### The Heist

@@ -1,10 +1,17 @@
 ---
-title: "Put These Into My Car"
-metaTitle: "Put These Into My Car"
-metaDate: 10/5/2007
-metaDraft: false
-tags: ["slashdot","wishes", "tech", "pie", "sky"]
-img: "pie_in_sky.jpg"
+date: 10/5/2007
+description: >-
+  Every day that I drive stuck in traffic I find myself wishing for little
+  thingsoften simple things t...
+draft: false
+img: pie_in_sky.jpg
+tags:
+  - slashdot
+  - wishes
+  - tech
+  - pie
+  - sky
+title: Put These Into My Car
 ---
 
 Every day that I drive, stuck in traffic, I find myself wishing for little things--often simple things to make my drive faster, safer, more enjoyable. I doubt anyone's listening, but by golly gershwin I'm going to write them down.

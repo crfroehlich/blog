@@ -1,10 +1,15 @@
 ---
-title: "Trail Mix"
-metaTitle: "Trail Mix"
-metaDate: 5/20/2011
-metaDraft: false
-tags: ["spam","trail", "mix"]
-img: "burger.jpeg"
+date: 5/20/2011
+description: >-
+  What hiker does not need nourishment on the journey toward nirvana? Google has
+  some advice in the fo...
+draft: false
+img: burger.jpeg
+tags:
+  - spam
+  - trail
+  - mix
+title: Trail Mix
 ---
 
 What hiker does not need nourishment on the journey toward nirvana? Google has some advice in the form of advertisements, should one be so bold as to enter their spam folder.

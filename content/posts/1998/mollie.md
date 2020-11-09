@@ -1,10 +1,13 @@
 ---
-title: "Mollie"
-metaTitle: "Mollie"
-metaDate: 8/11/1998
-metaDraft: false
-tags: ["cello", "poetry", "churches"]
-img: "cello.jpg"
+date: 8/11/1998
+description: shake your hair back...
+draft: false
+img: cello.jpg
+tags:
+  - cello
+  - poetry
+  - churches
+title: Mollie
 ---
 
 shake your hair back

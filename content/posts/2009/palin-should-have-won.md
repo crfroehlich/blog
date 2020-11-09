@@ -1,10 +1,13 @@
 ---
-title: "palin should have won"
-metaTitle: "palin should have won"
-metaDate: 2/28/2009
-metaDraft: false
-tags: [ "regret" ]
-img: "lisa_simpson.jpg"
+date: 2/28/2009
+description: >-
+  at the end of the day obama cannot be all of the things he promised to be be
+  the person we imagined ...
+draft: false
+img: lisa_simpson.jpg
+tags:
+  - regret
+title: palin should have won
 ---
 
 at the end of the day, obama cannot be all of the things he promised to be, be the person we imagined him to be, or create a world that mirrors our dreams for an obama-lead nation.  he has already failed to deliver on much of his platform, from his promises of openness and transparency to his pledge to drive reform like a wedge into the body of this government.

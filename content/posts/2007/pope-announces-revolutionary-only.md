@@ -1,10 +1,14 @@
 ---
-title: "Pope Announces Revolutionary \"Abstinence Only Education\""
-metaTitle: "Pope Announces Revolutionary \"Abstinence Only Education\""
-metaDate: 9/24/2007
-metaDraft: false
-tags: ["news", "pope"]
-img: "vandyke.jpg"
+date: 9/24/2007
+description: >-
+  In a radical move from the Vatican parttime Archbishop Donald Thisbit told
+  Reuters reporters this mo...
+draft: false
+img: vandyke.jpg
+tags:
+  - news
+  - pope
+title: Pope Announces Revolutionary "Abstinence Only Education"
 ---
 
 In a radical move from the Vatican, part-time Archbishop Donald Thisbit told Reuters reporters this morning, "It is time to take a program that has worked effectively for 6,000 years and adapt it to a changing world. 'Abstinence Only' has defeated AIDS; 'Abstinence Only' has cured deformed relationship patterns, and the Vatican today believes that education itself may only need abstinence."

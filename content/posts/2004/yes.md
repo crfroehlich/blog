@@ -1,10 +1,16 @@
 ---
-title: "Yes!"
-metaTitle: "Yes!"
-metaDate: 4/25/2004
-metaDraft: false
-tags: ["letters","notes","lïf","farewell"]
-img: "no_face.png"
+date: 4/25/2004
+description: >-
+  FriendsIn one sense I have been training for today my entire Army career
+  Recline in your comfortable...
+draft: false
+img: no_face.png
+tags:
+  - letters
+  - notes
+  - lïf
+  - farewell
+title: Yes!
 ---
 
 Friends,
@@ -25,24 +31,24 @@ Mom and Dad: Stay safe. New York is a war zone. Temperatures are rising, make su
 
 [+David Freeman](http://plus.google.com/115520614256251875629): I had a dream that you got back together with...What's the scoop? Send me some obscure music.
 
-Daniel Zeke Balan: Don't get deployed. Say hello to the wife. Here's my belated 2003 top 5 lists: 
-    Movies: 
-        1. Lost in Translation, 
-        2. Once Upon a Time in the West, 
-        3. Ishtar, 
-        4. Two Towers (Extended Version), 
-        5. 21 Grams. 
-    Music: 
-        1. Hot Water Music (can't remember album name), 
-        2. Modest Mouse, Moon and Antarctica (it's been on the list for years now.. can't take it off), 
-        3. Rolling Stones -- Exile on Main Street, 
-        4. Blind Melon -- Blind Melon, 
-        5. The Shins -- Chutes Too Narrow. 
-     Books: 
-        1. Ecclesiastes (of the Old Testament), 
-        2. Life of Pi (because I absolutely hated it, and 5 people have sent me copies of it since I deployed), 
-        3. My Life and Hard Times -- James Thurber, 
-        4. The Complete Idiot's Guide to Learning Russian -- Me, 
+Daniel Zeke Balan: Don't get deployed. Say hello to the wife. Here's my belated 2003 top 5 lists:
+    Movies:
+        1. Lost in Translation,
+        2. Once Upon a Time in the West,
+        3. Ishtar,
+        4. Two Towers (Extended Version),
+        5. 21 Grams.
+    Music:
+        1. Hot Water Music (can't remember album name),
+        2. Modest Mouse, Moon and Antarctica (it's been on the list for years now.. can't take it off),
+        3. Rolling Stones -- Exile on Main Street,
+        4. Blind Melon -- Blind Melon,
+        5. The Shins -- Chutes Too Narrow.
+     Books:
+        1. Ecclesiastes (of the Old Testament),
+        2. Life of Pi (because I absolutely hated it, and 5 people have sent me copies of it since I deployed),
+        3. My Life and Hard Times -- James Thurber,
+        4. The Complete Idiot's Guide to Learning Russian -- Me,
         5. The Republic -- Plato (because I hated it more than the Life of Pi).
 
 [+Craig Amundson](http://plus.google.com/116595610024483461595): How's the rebel rousing going? I've lost your address--the few letters I sent you bounced back. I should still get mail, so send me another letter and I'll reply with as much promptness as I can muster.

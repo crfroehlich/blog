@@ -1,10 +1,13 @@
 ---
-title: "circles twice removed"
-metaTitle: "circles twice removed"
-metaDate: 7/9/2008
-metaDraft: false
-tags: ["musing","lïf","eli"]
-img: "twin_stars.jpeg"
+date: 7/9/2008
+description: "Time bends in unpredictable ways with children\_ Eli is almost 6 months old and he's the most amazing..."
+draft: false
+img: twin_stars.jpeg
+tags:
+  - musing
+  - lïf
+  - eli
+title: circles twice removed
 ---
 
 Time bends in unpredictable ways with children.  Eli is almost 6 months old, and he's the most amazing little person, which always strikes me as an odd thing to realize.  It seems like there's this wealth of common knowledge, generally in these seemingly obvious observations, "Children change your life", "My child is the best thing to ever happen" or any number of different (even radically different) observations, which are impossible to apprehend (or at least I chose not to try) in the absence of the actual experience.

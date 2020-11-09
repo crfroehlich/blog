@@ -1,10 +1,12 @@
 ---
-title: "can't see my tale"
-metaTitle: "can't see my tale"
-metaDate: 10/9/2006
-metaDraft: false
-tags: ["obsequious","lïf"]
-img: "hunger.gif"
+date: 10/9/2006
+description: NothingEverything...
+draft: false
+img: hunger.gif
+tags:
+  - obsequious
+  - lïf
+title: can't see my tale
 ---
 
 Nothing.

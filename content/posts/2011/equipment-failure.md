@@ -1,10 +1,13 @@
 ---
-title: "Equipment Failure"
-metaTitle: "Equipment Failure"
-metaDate: 5/21/2011
-metaDraft: false
-tags: ["hiking","failure","equipment"]
-img: "foot_prints.jpg"
+date: 5/21/2011
+description: "When you've been hiking as long as I have you know instinctively that\_[equipment failure is a guaran..."
+draft: false
+img: foot_prints.jpg
+tags:
+  - hiking
+  - failure
+  - equipment
+title: Equipment Failure
 ---
 
 When you've been hiking as long as I have, you know instinctively that [equipment failure is a guarantee](https://www.huffpost.com/entry/playstation-network-down-may-15_n_862212). Since the early days of my hiking career, I have kept a vigilant log of my successes based on the readings of my trusty pedometer. Yesterday, after a catastrophic mid-afternoon pedometer failure, I lost all of the data for the day's progress.

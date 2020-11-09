@@ -1,10 +1,15 @@
 ---
-title: "Out With the Old, In With the New (Profile)"
-metaTitle: "Out With the Old, In With the New (Profile)"
-metaDescription: "work"
-metaDate: "01/24/2012"
-tags: ["logging", "social", "media"]
-img: "immaculate_conception.jpg"
+date: 01/24/2012
+description: >-
+  At the launch meeting for our new team blog [Object Reference Not
+  Set]httpobjrefnotsetblogspotcom we...
+draft: false
+img: immaculate_conception.jpg
+tags:
+  - logging
+  - social
+  - media
+title: 'Out With the Old, In With the New (Profile)'
 ---
 
 At the launch meeting for our new team blog, [Object Reference Not Set](http://objrefnotset.blogspot.com/), we pledged to enforce only one rule:

@@ -1,10 +1,16 @@
 ---
-title: "blief or belf"
-metaTitle: "blief or belf"
-metaDate: 8/1/2008
-metaDraft: false
-tags: ["belief","lïf","good","göd"]
-img: "corn_god.jpg"
+date: 8/1/2008
+description: >-
+  I encountered this on my YouTube browsing a rendering of Penn Jillette's
+  contribution to the NPR sho...
+draft: false
+img: corn_god.jpg
+tags:
+  - belief
+  - lïf
+  - good
+  - göd
+title: blief or belf
 ---
 
 I encountered this on my YouTube browsing, a rendering of Penn Jillette's contribution to the NPR show, _This I Believe_:

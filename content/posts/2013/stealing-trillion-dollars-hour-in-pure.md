@@ -1,10 +1,12 @@
 ---
-title: 'Stealing a Trillion Dollars an Hour in Pure JavaScript'
-metaTitle: 'Stealing a Trillion Dollars an Hour in Pure JavaScript'
-metaDate: 1/31/2013
-metaDraft: false
-tags: ['code', 'copyleft']
-img: 'fort_knox.jpg'
+date: 1/31/2013
+description: The Heist...
+draft: false
+img: fort_knox.jpg
+tags:
+  - code
+  - copyleft
+title: Stealing a Trillion Dollars an Hour in Pure JavaScript
 ---
 
 ### The Heist

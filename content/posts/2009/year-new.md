@@ -1,10 +1,12 @@
 ---
-title: "year, new"
-metaTitle: "year, new"
-metaDate: 1/2/2009
-metaDraft: false
-tags: [ "war", "lïf" ]
-img: "drone_protest.jpeg"
+date: 1/2/2009
+description: "I still remember the faces of the men we killed\_ Men women children\_ Chicken farmers most of them..."
+draft: false
+img: drone_protest.jpeg
+tags:
+  - war
+  - lïf
+title: 'year, new'
 ---
 
 I still remember the faces of the men we killed.  Men, women, children.  Chicken farmers, most of them.

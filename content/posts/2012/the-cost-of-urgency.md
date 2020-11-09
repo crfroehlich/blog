@@ -1,10 +1,16 @@
 ---
-title: "The Cost of Urgency"
-metaTitle: "The Cost of Urgency"
-metaDate: 4/25/2012
-metaDraft: false
-tags: ["work", "sandstorm", "action", "reaction"]
-img: "is_it_safe.jpg"
+date: 4/25/2012
+description: >-
+  Sandstorms are spectacular creatures From lessthanether they arise demolish
+  and vanish...
+draft: false
+img: is_it_safe.jpg
+tags:
+  - work
+  - sandstorm
+  - action
+  - reaction
+title: The Cost of Urgency
 ---
 
 Sandstorms are spectacular creatures. From less-than-ether, they arise, demolish and vanish.

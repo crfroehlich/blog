@@ -21,7 +21,7 @@ export const tagQuery = graphql`
     }
     allMdx(
       limit: 2000
-      sort: { fields: [frontmatter___metaDate], order: DESC }
+      sort: { fields: [frontmatter___date], order: DESC }
       filter: { frontmatter: { tags: { in: [$tag] } } }
     ) {
       totalCount

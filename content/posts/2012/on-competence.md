@@ -1,11 +1,17 @@
 ---
-title: "On Competence"
-metaTitle: "On Competence"
-metaDate: 1/20/2012
-metaDraft: false
-aliases: [ "/2012/01/on-competence.html" ]
-tags: ["programming","competence","wat","lïf","writing"]
-img: "monty_python_gumby.jpg"
+date: 1/20/2012
+description: >-
+  Years ago one of my dearest friends [Jennifer
+  Elms]httpsplusgooglecom100156336256357757639posts and ...
+draft: false
+img: monty_python_gumby.jpg
+tags:
+  - programming
+  - competence
+  - wat
+  - lïf
+  - writing
+title: On Competence
 ---
 
 Years ago, one of my dearest friends, [Jennifer Elms](https://plus.google.com/100156336256357757639/posts), and I were discussing a [short bit of prose that I had written](https://docs.google.com/document/d/1j5VYxBe-6nTMMt8Gm4ajcoYjryVYjefDOrJDsMaEacI/edit). She had just finished reading it, and I had asked for her opinion.

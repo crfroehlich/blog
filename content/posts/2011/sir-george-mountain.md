@@ -1,10 +1,11 @@
 ---
-title: "Sir George Mountain"
-metaTitle: "Sir George Mountain"
-metaDate: 5/20/2011
-metaDraft: false
-tags: [ "mountain" ]
-img: "sunset_on_everest.jpeg"
+date: 5/20/2011
+description: Reflection...
+draft: false
+img: sunset_on_everest.jpeg
+tags:
+  - mountain
+title: Sir George Mountain
 ---
 
 Reflection

@@ -1,10 +1,14 @@
 ---
-title: 'Currying Favor with Partial Application to get JavaScript SQL'
-metaTitle: 'Currying Favor with Partial Application to get JavaScript SQL'
-metaDate: 3/16/2013
-metaDraft: false
-tags: ['code', 'curry']
-img: 'curry_favor.jpeg'
+date: 3/16/2013
+description: >-
+  There is a domain that attends to curry as one of the quintessential elements
+  of regional cuisine Th...
+draft: false
+img: curry_favor.jpeg
+tags:
+  - code
+  - curry
+title: Currying Favor with Partial Application to get JavaScript SQL
 ---
 
 There is a domain that attends to curry as one of the quintessential elements of regional cuisine. This is not that domain; though in this domain I would argue we need a paprika.
@@ -57,12 +61,12 @@ With just these, we can do something that's almost cool. We can extend the nativ
 
 ```js
 Object.defineProperties(Array.prototype, {
-  '_where': {
+  _where: {
     value: function (func) {
       return filter(func, this);
     },
   },
-  '_select': {
+  _select: {
     value: function (func) {
       return map(func, this);
     },

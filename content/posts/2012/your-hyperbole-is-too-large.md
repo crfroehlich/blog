@@ -1,10 +1,16 @@
 ---
-title: "Your Hyperbole is Too Large"
-metaTitle: "Your Hyperbole is Too Large"
-metaDate: 6/16/2012
-metaDraft: false
-tags: ["film", "reviews", "hyper", "bole"]
-img: "starship_titanic.jpg"
+date: 6/16/2012
+description: >-
+  A confluence of events have me pondering a kernel of an idea [Prometheus
+  decapitated anticipation]ht...
+draft: false
+img: starship_titanic.jpg
+tags:
+  - film
+  - reviews
+  - hyper
+  - bole
+title: Your Hyperbole is Too Large
 ---
 
 A confluence of events have me pondering a kernel of an idea. [Prometheus decapitated anticipation](http://www.sabotagetimes.com/tv-film/prometheus-reviewed-save-yourself-the-money-watch-alien-on-dvd-instead/), and even the experience of watching the film rivaled the [Astor Theater's recent fail](http://astortheatreblog.wordpress.com/2012/01/26/what-happened-last-night/).Then I read Jame's post, [Your Coding Philosophies are Irrelevant](http://prog21.dadgum.com/142.html), which triggered a thought.

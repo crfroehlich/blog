@@ -1,10 +1,13 @@
 ---
-title: "Lamplight"
-metaTitle: "Lamplight"
-metaDescription: "poetry"
-metaDate: 08/11/1998
-tags: ["poetry", "lamps", "highschool"]
-img: "lamppost.jpg"
+date: 08/11/1998
+description: The lamplight it plays with your mind dances from its...
+draft: false
+img: lamppost.jpg
+tags:
+  - poetry
+  - lamps
+  - highschool
+title: Lamplight
 ---
 
 The lamplight.. it plays with your mind, dances from its

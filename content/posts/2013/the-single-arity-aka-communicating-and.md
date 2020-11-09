@@ -1,17 +1,23 @@
 ---
-title: "The Single Arity (aka Communicating and why I Quit Email: Series Finale)"
-metaTitle: "The Single Arity (aka Communicating and why I Quit Email: Series Finale)"
-metaDate: 3/28/2013
-metaDraft: false
-tags: ["email","communication","lïf"]
-img: "sweat_lodge.jpg"
+date: 3/28/2013
+description: >-
+  Aside In all I'd much rather elaborate on [wheres joins and orders
+  by]httphikingludditesme201303curr...
+draft: false
+img: sweat_lodge.jpg
+subtitle: ' Series Finale)'
+tags:
+  - email
+  - communication
+  - lïf
+title: 'The Single Arity (aka Communicating and why I Quit Email: Series Finale)'
 ---
 
 _Aside: In all, I'd much rather elaborate on [wheres, joins, and orders by](http://hiking.luddites.me/2013/03/currying-favor-with-partial-application.html), but I have a few unfinished pieces. So on with it._
 
 Laying here as I fade in and out of scope over the waves of recovery from back surgery, and in the quiet of these moments, I can enjoy the blissful roar of silence as it screams past my bedroom windows: the silence only an empty inbox can deliver. I started contemplating [an email-abandon-ship (Part 1)](http://hiking.luddites.me/2012/07/communicating-and-why-i-quit-email.html) a little short of a year ago. I let it simmer, and shortly after last September, [I pulled the plug completely (Part 2)](http://hiking.luddites.me/2012/09/communicating-and-why-i-quit-email.html).
 
-Ultimately, I think I've proved my hypothesis: as a medium of communication, email is exactly as useful as flinging a fortune cookie into the ocean and hoping for a response. Email guarantees only two things: your fortune will go _somewhere;_ and wherever it does go, it will probably arrive soggy.
+Ultimately, I think I've proved my hypothesis: as a medium of communication, email is exactly as useful as flinging a fortune cookie into the ocean and hoping for a response. Email guarantees only two things: your fortune will go *somewhere;* and wherever it does go, it will probably arrive soggy.
 
 With your head tilted at just the right angle, it's an interesting phenomenon. From an implementation perspective, it's very nearly like Microsoft's decision [to reverse engineer JavaScript into JScript](http://javascript.crockford.com/popular.html) for Internet Explorer while faithfully and painfully preserving all of its bugs (I believe [+Douglas Crockford](http://plus.google.com/118095276221607585885)'s actual quote is in [episode 2](http://www.youtube.com/watch?v=RO1Wnu-xKoY)). It's as if the e-postal express pioneers in the early email client space deliberately preserved all of the faults of asynchronous analog communication for the digital revolution. Not satisfied with that, they added spam.
 

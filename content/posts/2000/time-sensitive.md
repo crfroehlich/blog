@@ -1,10 +1,11 @@
 ---
-title: "time sensitive"
-metaTitle: "time sensitive"
-metaDate: 4/26/2000
-metaDraft: false
-tags: [ "poetry" ]
-img: "sleight_of_hand.jpeg"
+date: 4/26/2000
+description: WHAT?is truth...
+draft: false
+img: sleight_of_hand.jpeg
+tags:
+  - poetry
+title: time sensitive
 ---
 
 **_WHAT?_**

@@ -12,17 +12,17 @@ export interface IPageProps {
 }
 
 export interface IProps {
-  props?: IPageProps;
+  location?: WindowLocation;
   pageContent?: JSX.Element;
   pageTitle?: string;
-  showGithub?: boolean;
+  props?: IPageProps;
   showComments?: boolean;
-  location?: WindowLocation;
+  showGithub?: boolean;
 }
 
 export interface ILayoutProps {
-  location?: WindowLocation;
   children?: any;
+  location?: WindowLocation;
   theme?: any;
 }
 
@@ -30,30 +30,30 @@ export type WindowLocation = Window['location'] & HLocation;
 
 export interface IColors {
   background?: string;
-  text?: string;
-  preFormattedText?: string;
-  link?: string;
   heading?: string;
+  link?: string;
+  preFormattedText?: string;
+  text?: string;
 }
 
 export interface ITheme {
   colors?: IColors;
-  smallBorderRadius?: string | number;
-  gray?: string;
   darkBlue?: string;
+  darkGray?: string;
+  gray?: string;
   lightBlue?: string;
   lightGray?: string;
-  darkGray?: string;
   shortTrans?: string | boolean;
+  smallBorderRadius?: string | number;
   veryLightGray?: string;
 }
 
 export interface IStyle {
-  theme?: ITheme;
-  show?: string | boolean;
-  level?: number;
   active?: boolean;
   focus?: any;
+  level?: number;
+  show?: string | boolean;
+  theme?: ITheme;
 }
 
 export interface ICategory {
@@ -61,32 +61,33 @@ export interface ICategory {
 }
 
 export interface INodeFrontMatter {
-  title?: string;
-  metaTitle?: string;
-  metaDescription?: string;
-  metaDate?: string;
-  tags?: string;
+  date?: Date | string;
+  description?: string;
+  draft: boolean;
   img?: string;
+  subtitle?: string;
+  tags?: string[] | string;
+  title?: string;
 }
 
 export interface INodeFields {
-  slug?: string;
-  id: number;
-  title?: string;
   date?: string;
-  tags?: string;
+  id: number;
   img?: string;
+  slug?: string;
+  tags?: string;
+  title?: string;
 }
 
 export interface INode {
-  fields?: INodeFields;
-  ext?: string;
-  relativePath?: string;
   body?: any;
-  html?: string;
-  tableOfContents?: string;
+  ext?: string;
+  fields?: INodeFields;
   frontmatter?: INodeFrontMatter;
+  html?: string;
   name?: string;
+  relativePath?: string;
+  tableOfContents?: string;
 }
 
 export interface IEdges {
@@ -97,8 +98,8 @@ export interface IEdges {
 
 export interface IQueryResult {
   allMarkdownRemark?: IEdges;
-  allPages?: IEdges;
   allMdx?: IEdges;
+  allPages?: IEdges;
   tagsGroup: {
     group?: ICategory[];
   };
