@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import { Link } from './Link';
-import { getIcon, ICON } from './Icon';
+import { getIcon } from './Icon';
 import { config } from '../../config';
 import { LeftSidebar } from './sidebar/LeftSidebar';
 import { IProps } from '../types/interfaces';
@@ -76,17 +76,17 @@ export const Header: React.FC<IProps> = ({ location }): JSX.Element => (
           ))}
           <li className={'hiddenMobile githubBtn'}>
             <Link to={config.header.githubUrl} aria-label="Follow">
-              {getIcon(ICON.GITHUB)}
+              {getIcon({ icon: ['fab', 'github'] })}
             </Link>
           </li>
           <li>
-            <Link to={config.header.twitterUrl}>{getIcon(ICON.TWITTER)}</Link>
+            <Link to={config.header.twitterUrl}>{getIcon({ icon: ['fab', 'twitter'] })}</Link>
           </li>
           <li>
-            <Link to={config.header.linkedInUrl}>{getIcon(ICON.LINKEDIN)}</Link>
+            <Link to={config.header.linkedInUrl}>{getIcon({ icon: ['fab', 'linkedin'] })}</Link>
           </li>
           <li>
-            <Link to={'/rss.xml'}>{getIcon(ICON.RSS)}</Link>
+            <Link to={'/rss.xml'}>{getIcon({ icon: 'rss' })}</Link>
           </li>
         </ul>
       </div>

@@ -7,21 +7,21 @@ import {
   SidebarContent,
   SidebarFooter,
 } from 'react-pro-sidebar';
-import { getIcon, ICON } from '../Icon';
+import { getIcon } from '../Icon';
 import { Link } from '../Link';
 
 export const NewSidebar = (): JSX.Element => (
   <ProSidebar className={'sidebarOR'}>
     <SidebarContent>
       <Menu iconShape="square">
-        <MenuItem icon={getIcon(ICON.RUBLE_SIGN, { size: '2x' })}>
+        <MenuItem icon={getIcon({ icon: 'ruble-sign', size: '2x' })}>
           <Link to={'/'} title={'Home'}>
             <div>Home</div>
           </Link>
         </MenuItem>
-        <SubMenu title="Archives" icon={getIcon(ICON.GITHUB)}>
+        <SubMenu title="Archives" icon={getIcon({ icon: 'archive', size: '2x' })}>
           <MenuItem>2020</MenuItem>
-          <SubMenu title="October" icon={getIcon(ICON.GITHUB)}>
+          <SubMenu title="October">
             <MenuItem>10</MenuItem>
             <MenuItem>09</MenuItem>
           </SubMenu>

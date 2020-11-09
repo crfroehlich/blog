@@ -2175,6 +2175,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@fortawesome/free-brands-svg-icons@npm:^5.15.1":
+  version: 5.15.1
+  resolution: "@fortawesome/free-brands-svg-icons@npm:5.15.1::__archiveUrl=https%3A%2F%2Fnpm.fontawesome.com%2F%40fortawesome%2Ffree-brands-svg-icons%2F-%2F5.15.1%2Ffree-brands-svg-icons-5.15.1.tgz"
+  dependencies:
+    "@fortawesome/fontawesome-common-types": ^0.2.32
+  checksum: d6d0544d2428a2cdca8308a4a0d4c8f7eb10b3b9f1aa04c26e58f310d909201e316253d6bdb8d31cca21e8633060f5b342fc68a7e8d11cf6d6289e23cc0a94d2
+  languageName: node
+  linkType: hard
+
 "@fortawesome/pro-duotone-svg-icons@npm:^5.15.1":
   version: 5.15.1
   resolution: "@fortawesome/pro-duotone-svg-icons@npm:5.15.1::__archiveUrl=https%3A%2F%2Fnpm.fontawesome.com%2F%40fortawesome%2Fpro-duotone-svg-icons%2F-%2F5.15.1%2Fpro-duotone-svg-icons-5.15.1.tgz"
@@ -9215,6 +9224,7 @@ __metadata:
     "@emotion/styled-base": ^10.0.31
     "@fortawesome/fontawesome-pro": ^5.15.1
     "@fortawesome/fontawesome-svg-core": ^1.2.32
+    "@fortawesome/free-brands-svg-icons": ^5.15.1
     "@fortawesome/pro-duotone-svg-icons": ^5.15.1
     "@fortawesome/pro-light-svg-icons": ^5.15.1
     "@fortawesome/pro-regular-svg-icons": ^5.15.1
