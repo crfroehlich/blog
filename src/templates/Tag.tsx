@@ -36,11 +36,6 @@ export const tagQuery = graphql`
             tags
             img
           }
-          frontmatter {
-            metaTitle
-            metaDescription
-            metaDate
-          }
         }
       }
       group(field: frontmatter___tags) {

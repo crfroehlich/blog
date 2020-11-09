@@ -1,59 +1,34 @@
 import React from 'react';
-import { Mdx, MdxFields } from '../../graphql-types';
 import { Link } from './Link';
-
+import { INode } from '../types';
 import { StyledNextPrevious } from './styles/StyledNextPrevious';
 
 interface INextPrev {
-  mdx: Mdx;
-  nav: MdxFields[];
+  next: INode;
+  prev: INode;
 }
 
-export const NextPrevious: React.FC<INextPrev> = ({ mdx, nav }): JSX.Element => {
-  if (!nav || !mdx) return <div />;
-
-  let currentIndex = 0;
-
-  const match = nav.find((el) => el?.slug === mdx.fields.slug);
-  if (match) currentIndex = nav.indexOf(match);
+export const NextPrevious: React.FC<INextPrev> = ({ next, prev }): JSX.Element => {
+  if (!next || !prev) return <div />;
 
   const locale = 'ru-RU';
 
-  const getNav = (offset: number) => nav[currentIndex + offset];
-
-  const getNavPrev = () => getNav(-1);
-
-  const getNavNext = () => getNav(1);
-
-  const getDate = (offset: number): string =>
-    new Date(getNav(offset).date).toLocaleDateString(locale, {
+  const getDate = (node: INode): string =>
+    new Date(node.fields.date).toLocaleDateString(locale, {
       weekday: 'long',
       year: 'numeric',
       month: '2-digit',
       day: '2-digit',
     });
 
-  const getTitle = (offset: number) => {
-    let title = getNav(offset).title.trim();
-
-    // TODO: compute the total length of left/right and set accordingly
-    if (offset === 1 && title.length > 38) {
-      title = `${title.substr(0, 34).trim()}…`;
-    }
-    if (offset === -1 && title.length > 41) {
-      title = `${title.substr(0, 38).trim()}…`;
-    }
-    return title;
+  const getTitle = (node: INode) => {
+    return node?.fields.title.trim();
   };
-
-  const nextInfo = getNav(1);
-
-  const previousInfo = getNav(-1);
 
   return (
     <StyledNextPrevious>
-      {previousInfo && currentIndex >= 0 ? (
-        <Link to={getNavPrev().slug} title={getNavPrev().title} className={'previousBtn'}>
+      {prev?.fields ? (
+        <Link to={prev.fields.slug} title={prev.fields.title} className={'previousBtn'}>
           <div className={'leftArrow'}>
             <svg
               preserveAspectRatio="xMidYMid meet"
@@ -76,22 +51,22 @@ export const NextPrevious: React.FC<INextPrev> = ({ mdx, nav }): JSX.Element => 
           </div>
           <div className={'preRightWrapper'}>
             <div className={'smallContent'}>
-              <span>{getDate(-1)}</span>
+              <span>{getDate(prev)}</span>
             </div>
             <div className={'nextPreviousTitle'}>
-              <span>{getTitle(-1)}</span>
+              <span>{getTitle(prev)}</span>
             </div>
           </div>
         </Link>
       ) : null}
-      {nextInfo && currentIndex >= 0 ? (
-        <Link to={getNavNext().slug} title={getNavNext().title} className={'nextBtn'}>
+      {next?.fields ? (
+        <Link to={next.fields.slug} title={next.fields.title} className={'nextBtn'}>
           <div className={'nextRightWrapper'}>
             <div className={'smallContent'}>
-              <span>{getDate(1)}</span>
+              <span>{getDate(next)}</span>
             </div>
             <div className={'nextPreviousTitle'}>
-              <span>{getTitle(1)}</span>
+              <span>{getTitle(next)}</span>
             </div>
           </div>
           <div className={'rightArrow'}>

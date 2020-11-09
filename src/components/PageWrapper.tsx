@@ -10,8 +10,6 @@ import { Edit, StyledHeading, StyledMainWrapper } from './styles/Docs';
 import { Comments } from './Comments';
 import { IProps, INode } from '../types/interfaces';
 
-const { forcedNavOrder } = config.sidebar;
-
 export const PageWrapper: React.FC<IProps> = ({
   props,
   pageContent,
@@ -30,6 +28,9 @@ export const PageWrapper: React.FC<IProps> = ({
   let docsLocation;
   let date = new Date();
   let tags = [];
+  const nextPrev = { edges: [] };
+  const next = nextPrev?.edges[0]?.next;
+  const prev = nextPrev?.edges[0]?.previous;
 
   if (data && data.site) {
     site = data.site;
@@ -67,50 +68,6 @@ export const PageWrapper: React.FC<IProps> = ({
   canonicalUrl =
     config.gatsby.pathPrefix !== '/' ? canonicalUrl + config.gatsby.pathPrefix : canonicalUrl;
   canonicalUrl += mdx ? mdx.fields.slug : '';
-
-  interface IItems {
-    items: any[];
-  }
-
-  let navItems: IItems = { items: [] };
-
-  if (allMdx && allMdx.edges) {
-    navItems = allMdx.edges
-      .map(({ node }) => node.fields.slug)
-      .filter((slug) => slug !== '/')
-      .reverse()
-      .reduce(
-        (acc, cur) => {
-          if (forcedNavOrder.find((url) => url === cur)) {
-            return { ...acc, [cur]: [cur] };
-          }
-
-          let prefix = cur.split('/')[1];
-
-          if (config.gatsby && config.gatsby.trailingSlash) {
-            prefix += '/';
-          }
-
-          if (prefix && forcedNavOrder.find((url) => url === `/${prefix}`)) {
-            return { ...acc, [`/${prefix}`]: [...acc[`/${prefix}`], cur] };
-          }
-          return { ...acc, items: [...acc.items, cur] };
-        },
-        { items: [] },
-      );
-  }
-  const nav = forcedNavOrder
-    .reduce((acc, cur) => {
-      return acc.concat(navItems[cur]);
-    }, [])
-    .concat(navItems.items)
-    .map((slug) => {
-      if (slug) {
-        const { node } = allMdx.edges.find(({ node }) => node.fields.slug === slug);
-        return node.fields;
-      }
-    })
-    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
   const chipMap = {};
 
@@ -172,7 +129,7 @@ export const PageWrapper: React.FC<IProps> = ({
         </div>
       )}
       <div className={'addPaddTopBottom'}>
-        <NextPrevious mdx={mdx} nav={nav} />
+        <NextPrevious next={next} prev={prev} />
       </div>
     </Layout>
   );

@@ -4,22 +4,21 @@ import {
   Menu,
   MenuItem,
   SubMenu,
-  SidebarHeader,
   SidebarContent,
   SidebarFooter,
 } from 'react-pro-sidebar';
 import { getIcon, ICON } from '../Icon';
+import { Link } from '../Link';
 
 export const NewSidebar = (): JSX.Element => (
   <ProSidebar className={'sidebarOR'}>
-    <SidebarHeader>
-      {/**
-       *  You can add a header for the sidebar ex: logo
-       */}
-    </SidebarHeader>
     <SidebarContent>
-      <Menu className={'sidebarOR'} iconShape="square">
-        <MenuItem icon={getIcon(ICON.RUBLE_SIGN)}>Home</MenuItem>
+      <Menu iconShape="square">
+        <MenuItem icon={getIcon(ICON.RUBLE_SIGN, { size: '2x' })}>
+          <Link to={'/'} title={'Home'}>
+            <div>Home</div>
+          </Link>
+        </MenuItem>
         <SubMenu title="Archives" icon={getIcon(ICON.GITHUB)}>
           <MenuItem>2020</MenuItem>
           <SubMenu title="October" icon={getIcon(ICON.GITHUB)}>

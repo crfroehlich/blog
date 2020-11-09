@@ -1,5 +1,5 @@
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { FontAwesomeIcon, FontAwesomeIconProps } from '@fortawesome/react-fontawesome';
 import {
   faTwitter,
   faGithub,
@@ -16,7 +16,7 @@ export enum ICON {
   RUBLE_SIGN = 'rublesign',
 }
 
-export const getIcon = (icon: ICON): JSX.Element => {
+export const getIcon = (icon: ICON, props?: Partial<FontAwesomeIconProps>): JSX.Element => {
   let ico: IconDefinition = faGithub;
 
   switch (icon) {
@@ -39,5 +39,5 @@ export const getIcon = (icon: ICON): JSX.Element => {
       ico = faArchive;
       break;
   }
-  return <FontAwesomeIcon icon={ico} />;
+  return <FontAwesomeIcon icon={ico} {...props} />;
 };

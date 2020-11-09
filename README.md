@@ -38,7 +38,7 @@ First
   - Default Value: "undefined"
 - `DOCS_CREATE_TOC`: Please document the <DOCS_CREATE_TOC> variable
   - Default Value: "undefined"
-- `GH_PAGES`: Please document the <GH_PAGES> variable
+- `GH_ACCESS_TOKEN`: Please document the <GH_ACCESS_TOKEN> variable
   - Default Value: "undefined"
 - `IGNORE_MARKDOWN_FILES`: A comma-delimited list of markdown files to exclude from processing
   - Default Value: ".yarn,.vscode,.github,.tmp,temp,node_modules,.git,.cache,public"

@@ -13,10 +13,8 @@ export default class Article extends Component<IPageProps> {
 
     let pageContent = <Empty />;
 
-    if (data.site) {
-      if (mdx?.body) {
-        pageContent = <MDXRenderer>{mdx.body}</MDXRenderer>;
-      }
+    if (data.site && mdx?.body) {
+      pageContent = <MDXRenderer>{mdx.body}</MDXRenderer>;
     }
 
     let ret = <Empty />;
@@ -31,7 +29,6 @@ export default class Article extends Component<IPageProps> {
       );
     } catch (e) {
       console.error(e);
-      debugger;
     }
 
     return ret;
@@ -57,13 +54,8 @@ export const articleQuery = graphql`
       }
       body
       tableOfContents
-      parent {
-        ... on File {
-          relativePath
-        }
-      }
     }
-    allMdx {
+    nextPrev: allMdx(filter: { id: { eq: $id } }) {
       edges {
         node {
           fields {
@@ -72,10 +64,32 @@ export const articleQuery = graphql`
             slug
             date
           }
-          parent {
-            ... on File {
-              relativePath
-            }
+        }
+        next {
+          fields {
+            id
+            title
+            slug
+            date
+          }
+        }
+        previous {
+          fields {
+            id
+            title
+            slug
+            date
+          }
+        }
+      }
+    }
+    allMdx {
+      edges {
+        node {
+          fields {
+            title
+            slug
+            date
           }
         }
       }

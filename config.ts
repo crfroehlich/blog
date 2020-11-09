@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 export interface IConfig {
   gatsby: Gatsby;
   header: Header;
@@ -119,7 +120,7 @@ export const getConfig = (env?: any) => {
       favicon: '/favicon.svg',
     },
     offline: {
-      enabled: false, // disabling this will also remove the existing service worker.
+      enabled: true, // disabling this will also remove the existing service worker.
       manifest: {
         background_color: '#6b37bf',
         cache_busting_mode: 'query',

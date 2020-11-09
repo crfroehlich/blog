@@ -3,9 +3,10 @@ import styled from '@emotion/styled';
 import { MDXProvider } from '@mdx-js/react';
 import { DarkTheme } from './styles/DarkTheme';
 import mdxComponents from './styles/StyledProp';
-import { LeftSidebar } from './sidebar/LeftSidebar';
+//import { LeftSidebar } from './sidebar/LeftSidebar';
 import { RightSidebar } from './RightSidebar';
 import { ILayoutProps, IStyle } from '../types/interfaces';
+import { NewSidebar } from './sidebar/NewSidebar';
 
 const Wrapper = styled('div')`
   display: flex;
@@ -66,7 +67,7 @@ export const Layout: React.FC<ILayoutProps> = ({ children, location }): JSX.Elem
     <MDXProvider components={mdxComponents}>
       <Wrapper>
         <LeftSideBarWidth className={'hiddenMobile'}>
-          <LeftSidebar location={location} />
+          <NewSidebar />
         </LeftSideBarWidth>
         <Content>
           <MaxWidth>{children}</MaxWidth>

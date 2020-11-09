@@ -226,10 +226,9 @@ export const BaseStyles: any = injectGlobal`
   .headerTitle {
     height: auto;
     font-size: 16px;
-    line-height: 1.5;
-    font-weight: 300;
+    line-height: 1;
+    font-weight: 500;
     color: #fff !important;
-    margin-top: 16px;
     text-transform: uppercase;
   }
   .headerTitle a {
@@ -320,6 +319,7 @@ export const BaseStyles: any = injectGlobal`
   }
   .sidebarOR {
     padding-top: 1.1em;
+    font-size: 20px;
   }
   blockquote {
     color: rgb(116, 129, 141);
@@ -767,6 +767,9 @@ export const BaseStyles: any = injectGlobal`
     .headerTitle {
       padding-right: 50px;
       font-size: 16px;
+      font-weight: 500;
+      line-height: 1;
+      margin-top: 0px;
     }
     .navBarBrand {
       min-height: 40px;
