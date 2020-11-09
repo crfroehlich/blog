@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from './Link';
 import { INode } from '../types';
 import { StyledNextPrevious } from './styles/StyledNextPrevious';
+import { getIcon } from './Icon';
 
 interface INextPrev {
   next: INode;
@@ -29,26 +30,7 @@ export const NextPrevious: React.FC<INextPrev> = ({ next, prev }): JSX.Element =
     <StyledNextPrevious>
       {prev?.fields ? (
         <Link to={prev.fields.slug} title={prev.fields.title} className={'previousBtn'}>
-          <div className={'leftArrow'}>
-            <svg
-              preserveAspectRatio="xMidYMid meet"
-              height="1em"
-              width="1em"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              stroke="currentColor"
-              className="_13gjrqj"
-            >
-              <g>
-                <line x1="19" y1="12" x2="5" y2="12" />
-                <polyline points="12 19 5 12 12 5" />
-              </g>
-            </svg>
-          </div>
+          {getIcon({ icon: ['fas', 'arrow-alt-left'], size: 'lg', style: { paddingLeft: '5px' } })}
           <div className={'preRightWrapper'}>
             <div className={'smallContent'}>
               <span>{getDate(prev)}</span>
@@ -69,26 +51,11 @@ export const NextPrevious: React.FC<INextPrev> = ({ next, prev }): JSX.Element =
               <span>{getTitle(next)}</span>
             </div>
           </div>
-          <div className={'rightArrow'}>
-            <svg
-              preserveAspectRatio="xMidYMid meet"
-              height="1em"
-              width="1em"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              stroke="currentColor"
-              className="_13gjrqj"
-            >
-              <g>
-                <line x1="5" y1="12" x2="19" y2="12" />
-                <polyline points="12 5 19 12 12 19" />
-              </g>
-            </svg>
-          </div>
+          {getIcon({
+            icon: ['fas', 'arrow-alt-right'],
+            size: 'lg',
+            style: { paddingRight: '5px' },
+          })}
         </Link>
       ) : null}
     </StyledNextPrevious>
