@@ -9,6 +9,7 @@ import { config } from '../../config';
 import { Edit, StyledHeading, StyledMainWrapper } from './styles/Docs';
 import { Comments } from './Comments';
 import { IProps, INode } from '../types/interfaces';
+import { getIcon } from './Icon';
 
 export const PageWrapper: React.FC<IProps> = ({
   props,
@@ -108,7 +109,8 @@ export const PageWrapper: React.FC<IProps> = ({
               className={'gitBtn'}
               to={`${docsLocation}/${(mdx?.parent as INode)?.relativePath}`}
             >
-              <img src={'../github.svg'} alt={'Github logo'} /> Source
+              {getIcon({ icon: ['fab', 'github'] })}
+              <div style={{ paddingLeft: '5px' }}>Source</div>
             </Link>
           </Edit>
         )}

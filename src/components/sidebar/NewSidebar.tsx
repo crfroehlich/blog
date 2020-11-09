@@ -1,3 +1,4 @@
+import { graphql, StaticQuery } from 'gatsby';
 import React from 'react';
 import {
   ProSidebar,
@@ -7,6 +8,7 @@ import {
   SidebarContent,
   SidebarFooter,
 } from 'react-pro-sidebar';
+import { Query } from '../../../graphql-types';
 import { getIcon } from '../Icon';
 import { Link } from '../Link';
 
@@ -34,4 +36,37 @@ export const NewSidebar = (): JSX.Element => (
        */}
     </SidebarFooter>
   </ProSidebar>
+);
+
+export const noSidebar = () => (
+  <StaticQuery<Query>
+    query={graphql`
+      query GetNewSidebarLayoutQuery {
+        allMdx(sort: { fields: fields___date, order: DESC }) {
+          group(field: fields___year) {
+            edges {
+              node {
+                fields {
+                  date
+                  description
+                  id
+                  img
+                  slug
+                  subtitle
+                  tags
+                  title
+                  year
+                }
+              }
+            }
+            fieldValue
+          }
+        }
+      }
+    `}
+    render={({ allMdx }) => {
+      console.log(allMdx);
+      return <NewSidebar />;
+    }}
+  />
 );

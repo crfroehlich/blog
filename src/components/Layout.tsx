@@ -6,7 +6,7 @@ import mdxComponents from './styles/StyledProp';
 // import { LeftSidebar } from './sidebar/LeftSidebar';
 import { RightSidebar } from './RightSidebar';
 import { ILayoutProps, IStyle } from '../types/interfaces';
-import { NewSidebar } from './sidebar/NewSidebar';
+import { noSidebar } from './sidebar/NewSidebar';
 
 const Wrapper = styled('div')`
   display: flex;
@@ -66,9 +66,7 @@ export const Layout: React.FC<ILayoutProps> = ({ children, location }): JSX.Elem
   <DarkTheme location={location}>
     <MDXProvider components={mdxComponents}>
       <Wrapper>
-        <LeftSideBarWidth className={'hiddenMobile'}>
-          <NewSidebar />
-        </LeftSideBarWidth>
+        <LeftSideBarWidth className={'hiddenMobile'}>{noSidebar()}</LeftSideBarWidth>
         <Content>
           <MaxWidth>{children}</MaxWidth>
         </Content>
