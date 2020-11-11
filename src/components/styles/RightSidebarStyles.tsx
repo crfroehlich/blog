@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import { IStyle } from '../../types/interfaces';
 
-export const Sidebar = styled('aside')`
+export const RightSidebarStyles = styled('aside')`
   width: 100%;
   border-right: 1px solid #ede7f3;
   height: 100vh;
@@ -53,7 +53,7 @@ export const Sidebar = styled('aside')`
   }
 `;
 
-export const ListItem = styled(({ className, active, level, ...props }) => {
+export const ListItemStyles = styled(({ className, active, level, ...props }) => {
   return (
     <li className={className}>
       <a href={props.to} {...props}>

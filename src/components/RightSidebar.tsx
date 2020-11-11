@@ -4,7 +4,7 @@ import { StaticQuery, graphql } from 'gatsby';
 // import Link from './link';
 import { Query } from '../../graphql-types';
 import { config } from '../../config';
-import { Sidebar, ListItem } from './styles/Sidebar';
+import { RightSidebarStyles, ListItemStyles } from './styles/RightSidebarStyles';
 import { IProps } from '../types/interfaces';
 
 export const RightSidebar: React.FC<IProps> = ({ location }): JSX.Element => (
@@ -42,9 +42,9 @@ export const RightSidebar: React.FC<IProps> = ({ location }): JSX.Element => (
                     : '#';
 
                   return (
-                    <ListItem key={i} to={`#${itemId}`} level={1}>
+                    <ListItemStyles key={i} to={`#${itemId}`} level={1}>
                       {innerItem.title}
-                    </ListItem>
+                    </ListItemStyles>
                   );
                 });
               }
@@ -58,19 +58,19 @@ export const RightSidebar: React.FC<IProps> = ({ location }): JSX.Element => (
       if (finalNavItems?.length) {
         return (
           <div>
-            <Sidebar>
+            <RightSidebarStyles>
               <ul className={'rightSideBarUL'}>
                 <li className={'rightSideTitle'}>CONTENTS</li>
                 {finalNavItems}
               </ul>
-            </Sidebar>
+            </RightSidebarStyles>
           </div>
         );
       }
       return (
-        <Sidebar>
+        <RightSidebarStyles>
           <ul></ul>
-        </Sidebar>
+        </RightSidebarStyles>
       );
     }}
   />

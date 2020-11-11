@@ -3,12 +3,11 @@ import styled from '@emotion/styled';
 import { Link } from './Link';
 import { getIcon } from './Icon';
 import { config } from '../../config';
-import { LeftSidebar } from './sidebar/LeftSidebar';
 import { IProps } from '../types/interfaces';
 import { Tools } from '../utils';
 import { SearchComponent } from './search/SearchComponent';
 
-const isSearchEnabled = !!(config.header.search && config.header.search.enabled);
+const isSearchEnabled = config.header?.search?.enabled === true;
 
 const searchIndices = [];
 
@@ -44,74 +43,72 @@ const StyledBgDiv = styled('div')`
   }
 `;
 
-export const Header: React.FC<IProps> = ({ location }): JSX.Element => (
-  <div className={'navBarWrapper'}>
-    <nav className={'navBarDefault'}>
-      <div className={'navBarHeader'}>
-        <Link to={'/'} className={'navBarBrand'}>
-          <img className={'img-responsive displayInline'} src={config.header.logo} alt={'logo'} />
-        </Link>
-        <div
-          className={'headerTitle displayInline'}
-          dangerouslySetInnerHTML={{ __html: config.header.title }}
-        />
-      </div>
-      {isSearchEnabled ? (
-        <div className={'searchWrapper hiddenMobile navBarUL'}>
-          <SearchComponent collapse={true} indices={searchIndices} />
+export const Header: React.FC<IProps> = (): JSX.Element => {
+  return (
+    <div className={'navBarWrapper'}>
+      <nav className={'navBarDefault'}>
+        <div className={'navBarHeader'}>
+          <Link to={'/'} className={'navBarBrand'}>
+            <img className={'img-responsive displayInline'} src={config.header.logo} alt={'logo'} />
+          </Link>
+          <div
+            className={'headerTitle displayInline'}
+            dangerouslySetInnerHTML={{ __html: config.header.title }}
+          />
         </div>
-      ) : null}
-      <div id="navbar" className={'topnav'}>
-        <div className={'visibleMobile'}>
-          <LeftSidebar location={location} />
-          <hr />
-        </div>
-        <ul className={'navBarUL navBarNav navBarULRight'}>
-          {config.header.links.map((link, key) => (
-            <li key={key}>
-              <Link className="sidebarLink" to={link.link} title={link.text}>
-                {link.text}
+        {isSearchEnabled ? (
+          <div className={'searchWrapper hiddenMobile navBarUL'}>
+            <SearchComponent collapse={true} indices={searchIndices} />
+          </div>
+        ) : null}
+        <div id="navbar" className={'topnav'}>
+          <ul className={'navBarUL navBarNav navBarULRight'}>
+            {config.header.links.map((link, key) => (
+              <li key={key}>
+                <Link className="sidebarLink" to={link.link} title={link.text}>
+                  {link.text}
+                </Link>
+              </li>
+            ))}
+            <li className={'hiddenMobile githubBtn'}>
+              <Link to={config.header.githubUrl} aria-label="Follow">
+                {getIcon({ icon: ['fab', 'github'] })}
               </Link>
             </li>
-          ))}
-          <li className={'hiddenMobile githubBtn'}>
-            <Link to={config.header.githubUrl} aria-label="Follow">
-              {getIcon({ icon: ['fab', 'github'] })}
-            </Link>
-          </li>
-          <li>
-            <Link to={config.header.twitterUrl}>{getIcon({ icon: ['fab', 'twitter'] })}</Link>
-          </li>
-          <li>
-            <Link to={config.header.linkedInUrl}>{getIcon({ icon: ['fab', 'linkedin'] })}</Link>
-          </li>
-          <li>
-            <Link to={'/rss.xml'}>{getIcon({ icon: 'rss' })}</Link>
-          </li>
-        </ul>
-      </div>
-    </nav>
-    <StyledBgDiv>
-      <div className={'navBarDefault removePadd'}>
-        <span
-          onClick={setNavBar}
-          className={'navBarToggle'}
-          onKeyDown={setNavBar}
-          role="button"
-          tabIndex={0}
-        >
-          <span className={'iconBar'}></span>
-          <span className={'iconBar'}></span>
-          <span className={'iconBar'}></span>
-        </span>
-      </div>
-      {isSearchEnabled ? (
-        <div className={'searchWrapper'}>
-          <SearchComponent collapse={true} indices={searchIndices} />
+            <li>
+              <Link to={config.header.twitterUrl}>{getIcon({ icon: ['fab', 'twitter'] })}</Link>
+            </li>
+            <li>
+              <Link to={config.header.linkedInUrl}>{getIcon({ icon: ['fab', 'linkedin'] })}</Link>
+            </li>
+            <li>
+              <Link to={'/rss.xml'}>{getIcon({ icon: 'rss' })}</Link>
+            </li>
+          </ul>
         </div>
-      ) : null}
-    </StyledBgDiv>
-  </div>
-);
+      </nav>
+      <StyledBgDiv>
+        <div className={'navBarDefault removePadd'}>
+          <span
+            onClick={setNavBar}
+            className={'navBarToggle'}
+            onKeyDown={setNavBar}
+            role="button"
+            tabIndex={0}
+          >
+            <span className={'iconBar'}></span>
+            <span className={'iconBar'}></span>
+            <span className={'iconBar'}></span>
+          </span>
+        </div>
+        {isSearchEnabled ? (
+          <div className={'searchWrapper'}>
+            <SearchComponent collapse={true} indices={searchIndices} />
+          </div>
+        ) : null}
+      </StyledBgDiv>
+    </div>
+  );
+};
 
 export default Header;

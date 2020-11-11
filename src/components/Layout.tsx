@@ -1,81 +1,109 @@
-import React from 'react';
-import styled from '@emotion/styled';
+import React, { useState } from 'react';
 import { MDXProvider } from '@mdx-js/react';
+import { graphql, useStaticQuery } from 'gatsby';
+import { once } from 'lodash';
 import { DarkTheme } from './styles/DarkTheme';
 import mdxComponents from './styles/StyledProp';
-// import { LeftSidebar } from './sidebar/LeftSidebar';
 import { RightSidebar } from './RightSidebar';
-import { ILayoutProps, IStyle } from '../types/interfaces';
-import { noSidebar } from './sidebar/NewSidebar';
+import { ILayoutProps } from '../types/interfaces';
+import { LeftSidebar } from './LeftSidebar';
+import { Wrapper, LeftSideBarWidth, Content, MaxWidth, RightSideBarWidth } from './styles';
 
-const Wrapper = styled('div')`
-  display: flex;
-  justify-content: space-between;
-  background: ${({ theme }: IStyle) => theme.colors.background};
+const getSideBarData = once(() => {
+  const { allMdx } = useStaticQuery(
+    graphql`
+      query GetNewSidebarLayoutQuery {
+        allMdx(
+          filter: { fields: { slug: { ne: "/" } } }
+          sort: { fields: fields___date, order: DESC }
+        ) {
+          group(field: fields___year) {
+            edges {
+              node {
+                fields {
+                  date
+                  description
+                  id
+                  img
+                  slug
+                  subtitle
+                  tags
+                  title
+                  year
+                }
+              }
+            }
+            fieldValue
+          }
+        }
+      }
+    `,
+  );
+  const archive = allMdx.group.sort((a, b) => {
+    switch (a.fieldValue.localeCompare(b.fieldValue, 'en', { numeric: true })) {
+      case -1:
+        return 1;
+      case 1:
+        return -1;
+      default:
+        return 0;
+    }
+  });
+  const ret = {
+    archive,
+    open: true,
+  };
+  ret.archive = ret.archive.map((g) => {
+    return {
+      open: false,
+      year: +g.fieldValue,
+      articles: g.edges.map((e) => {
+        return {
+          date: new Date(e.node.fields.date),
+          description: e.node.fields.description,
+          id: e.node.fields.id,
+          img: e.node.fields.img,
+          slug: e.node.fields.slug,
+          subtitle: e.node.fields.subtitle,
+          tags: e.node.fields.tags,
+          title: e.node.fields.title,
+          year: e.node.fields.year,
+          active: false,
+        };
+      }),
+    };
+  });
+  return ret;
+});
 
-  .sideBarUL li a {
-    color: ${({ theme }: IStyle) => theme.colors.text};
-  }
+export const Layout: React.FC<ILayoutProps> = ({ children, location }): JSX.Element => {
+  const [collapsed] = useState(false);
+  const [toggled, setToggled] = useState(false);
+  const [sidebar, setSidebar] = useState(getSideBarData());
 
-  .sideBarUL .item > a:hover {
-    background-color: #1ed3c6;
-    color: #fff !important;
-
-    /* background: #F8F8F8 */
-  }
-
-  @media only screen and (max-width: 767px) {
-    display: block;
-  }
-`;
-
-const Content = styled('main')`
-  display: flex;
-  flex-grow: 1;
-  margin: 0px 88px;
-  padding-top: 3rem;
-  background: ${({ theme }: IStyle) => theme.colors.background};
-
-  table tr {
-    background: ${({ theme }: IStyle) => theme.colors.background};
-  }
-
-  @media only screen and (max-width: 1023px) {
-    padding-left: 0;
-    margin: 0 10px;
-    padding-top: 3rem;
-  }
-`;
-
-const MaxWidth = styled('div')`
-  @media only screen and (max-width: 50rem) {
-    width: 100%;
-    position: relative;
-  }
-`;
-
-const LeftSideBarWidth = styled('div')`
-  width: 298px;
-`;
-
-const RightSideBarWidth = styled('div')`
-  width: 224px;
-`;
-
-export const Layout: React.FC<ILayoutProps> = ({ children, location }): JSX.Element => (
-  <DarkTheme location={location}>
-    <MDXProvider components={mdxComponents}>
-      <Wrapper>
-        <LeftSideBarWidth className={'hiddenMobile'}>{noSidebar()}</LeftSideBarWidth>
-        <Content>
-          <MaxWidth>{children}</MaxWidth>
-        </Content>
-        <RightSideBarWidth className={'hiddenMobile'}>
-          <RightSidebar location={location} />
-        </RightSideBarWidth>
-      </Wrapper>
-    </MDXProvider>
-  </DarkTheme>
-);
+  return (
+    <DarkTheme location={location}>
+      <MDXProvider components={mdxComponents}>
+        <Wrapper>
+          <LeftSideBarWidth className={'hiddenMobile'}>
+            <LeftSidebar
+              sidebar={sidebar}
+              collapsed={collapsed}
+              toggled={toggled}
+              handleToggleSidebar={setToggled}
+              setSidebar={setSidebar}
+            />
+          </LeftSideBarWidth>
+          <Content>
+            <MaxWidth>{children}</MaxWidth>
+          </Content>
+          <RightSideBarWidth className={'hiddenMobile'}>
+            <RightSidebar location={location} />
+          </RightSideBarWidth>
+        </Wrapper>
+      </MDXProvider>
+    </DarkTheme>
+  );
+};
 
 export default Layout;

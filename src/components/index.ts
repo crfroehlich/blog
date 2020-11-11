@@ -1,5 +1,5 @@
 export * from './search';
-export * from './sidebar';
+export * from './LeftSidebar';
 export * from './styles';
 export * from './AnchorTag';
 export * from './Cards';
