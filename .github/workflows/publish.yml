@@ -24,6 +24,8 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - run: npm install -g gatsby-cli yarn
     - run: yarn install
+      env:
+        FA_PRO_NPM_TOKEN: ${{ secrets.FA_PRO_NPM_TOKEN }}
     - run: yarn build
       env:
         ALGOLIA_ADMIN_API_KEY: ${{ secrets.ALGOLIA_ADMIN_API_KEY }}
