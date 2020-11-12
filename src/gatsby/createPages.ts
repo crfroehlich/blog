@@ -3,10 +3,12 @@ import * as path from 'path';
 import kebabCase from 'lodash/kebabCase';
 import startCase from 'lodash/startCase';
 import chalk from 'chalk';
-import { config } from '../../config';
+import { getConfig } from '../../config';
 import { IQueryResult, INode } from '../types/interfaces';
 
 require('gatsby-plugin-mdx/component-with-mdx-scope');
+
+const config = getConfig();
 
 export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions }) => {
   const { createPage } = actions;

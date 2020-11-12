@@ -8,7 +8,7 @@ import {
 } from 'react-instantsearch-dom';
 import algoliasearch from 'algoliasearch/lite';
 import styled from '@emotion/styled';
-import { config } from '../../../config';
+import { getConfig } from '../../../config';
 import { PoweredBy } from './PoweredBy';
 import { ConnectSearchBox } from './ConnectSearchBox';
 import * as PageHit from './PageHit';
@@ -110,6 +110,8 @@ const useClickOutside = (ref, handler, events = [`mousedown`, `touchstart`]) => 
     };
   });
 };
+
+const config = getConfig();
 
 const searchClient = algoliasearch(
   config.header.search.algoliaAppId,

@@ -5,11 +5,13 @@ import kebabCase from 'lodash/kebabCase';
 import { Layout } from './Layout';
 import { DisplayDate, Link } from './Link';
 import { NextPrevious } from './NextPrevious';
-import { config } from '../../config';
+import { getConfig } from '../../config';
 import { Edit, StyledHeading, StyledMainWrapper } from './styles/Docs';
 import { Comments } from './Comments';
 import { IProps, INode } from '../types/interfaces';
 import { Icon } from './Icon';
+
+const config = getConfig();
 
 export const PageWrapper: React.FC<IProps> = ({
   props,

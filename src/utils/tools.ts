@@ -3,6 +3,8 @@ export class Tools {
 
   _document;
 
+  _process;
+
   constructor() {
     this.init();
   }
@@ -13,6 +15,9 @@ export class Tools {
     }
     if (!this._document && typeof document !== 'undefined') {
       this._document = document;
+    }
+    if (!this._process && typeof process !== 'undefined') {
+      this._process = process;
     }
   }
 
@@ -35,10 +40,14 @@ export class Tools {
     return this._document?.location || this?._window?.location || null;
   }
 
+  getEnv(): any {
+    this.init();
+    return this._process?.env || {};
+  }
+
   isBrowser() {
     return this.getLocation() !== null;
   }
 }
 
 export const tools = new Tools();
-export default tools;

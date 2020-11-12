@@ -1,4 +1,5 @@
 import { PluginRef } from 'gatsby';
+import { tools } from './src/utils';
 
 /* eslint-disable camelcase */
 export interface IConfig {
@@ -78,8 +79,19 @@ export interface SiteMetadata {
 
 let siteConfig: IConfig | null = null;
 
-export const getConfig = (env?: any) => {
-  if (!env && siteConfig) return siteConfig;
+export const getConfig = (env: any = tools.getEnv()) => {
+  if (siteConfig?.header?.search?.enabled) return siteConfig;
+
+  let { ALGOLIA_ADMIN_API_KEY, ALGOLIA_APPLICATION_ID, ALGOLIA_SEARCH_ONLY_API_KEY } = env;
+  if(!ALGOLIA_ADMIN_API_KEY && process?.env) {
+    ALGOLIA_ADMIN_API_KEY = process.env.ALGOLIA_ADMIN_API_KEY;
+  }
+  if(!ALGOLIA_APPLICATION_ID && process?.env) {
+    ALGOLIA_APPLICATION_ID = process.env.ALGOLIA_APPLICATION_ID;
+  }
+  if(!ALGOLIA_SEARCH_ONLY_API_KEY && process?.env) {
+    ALGOLIA_SEARCH_ONLY_API_KEY = process.env.ALGOLIA_SEARCH_ONLY_API_KEY;
+  }
 
   siteConfig = {
     gatsby: {
@@ -100,11 +112,11 @@ export const getConfig = (env?: any) => {
       linkedInUrl: 'https://www.linkedin.com/in/christopherfroehlich/',
       links: [{ text: 'визуализации', link: '/визуализации' }],
       search: {
-        enabled: true,
+        algoliaAdminKey: ALGOLIA_ADMIN_API_KEY,
+        algoliaAppId: ALGOLIA_APPLICATION_ID,
+        algoliaSearchKey: ALGOLIA_SEARCH_ONLY_API_KEY,
+        enabled: ALGOLIA_APPLICATION_ID?.length > 0,
         indexName: 'blog',
-        algoliaAppId: env?.ALGOLIA_APPLICATION_ID,
-        algoliaSearchKey: env?.ALGOLIA_SEARCH_ONLY_API_KEY,
-        algoliaAdminKey: env?.ALGOLIA_ADMIN_API_KEY,
       },
     },
     sidebar: {
@@ -136,9 +148,8 @@ export const getConfig = (env?: any) => {
       },
     },
   };
+  console.log(siteConfig.header.search)
   return siteConfig;
 };
-
-export const config = getConfig();
 
 export type addConfig = (conf: IConfig, plugins: Array<PluginRef>) => void;

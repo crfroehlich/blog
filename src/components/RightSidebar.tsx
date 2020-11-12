@@ -3,9 +3,11 @@ import { StaticQuery, graphql } from 'gatsby';
 
 // import Link from './link';
 import { Query } from '../../graphql-types';
-import { config } from '../../config';
+import { getConfig } from '../../config';
 import { RightSidebarStyles, ListItemStyles } from './styles/RightSidebarStyles';
 import { IProps } from '../types/interfaces';
+
+const config = getConfig();
 
 export const RightSidebar: React.FC<IProps> = ({ location }): JSX.Element => (
   <StaticQuery<Query>
