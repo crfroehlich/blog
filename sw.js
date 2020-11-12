@@ -27,20 +27,26 @@ workbox.core.clientsClaim();
  */
 self.__precacheManifest = [
   {
-    "url": "webpack-runtime-0d1a477abaa1962329a5.js"
+    "url": "webpack-runtime-6c0f1f75a4cbe52bab5f.js"
   },
   {
-    "url": "framework-1bcdbcdd30f43763a25c.js"
+    "url": "styles.01e3df6cf28f076ca6e2.css"
   },
   {
-    "url": "app-b625c1b942fd4584e789.js"
+    "url": "styles-407fe62976dc5310c43e.js"
+  },
+  {
+    "url": "framework-fc1db31f678bd7aa66d8.js"
+  },
+  {
+    "url": "app-4a25cc7799498a90f3e1.js"
   },
   {
     "url": "offline-plugin-app-shell-fallback/index.html",
-    "revision": "c50c5f398a3430ba7dcf11f0aac39bbe"
+    "revision": "9e9c3d5f6a9b30571890b29571a75771"
   },
   {
-    "url": "component---cache-caches-gatsby-plugin-offline-app-shell-js-241020a1cf7d0f317bbe.js"
+    "url": "component---cache-caches-gatsby-plugin-offline-app-shell-js-780d0321bb4481125aff.js"
   },
   {
     "url": "page-data/offline-plugin-app-shell-fallback/page-data.json",
@@ -48,10 +54,10 @@ self.__precacheManifest = [
   },
   {
     "url": "page-data/app-data.json",
-    "revision": "aede82e32b9e94d3f7ac2408219fdd0e"
+    "revision": "f43ca40831eb49c5a434f66785114661"
   },
   {
-    "url": "polyfill-5204fa10d5950c3006a4.js"
+    "url": "polyfill-d39c39557977124f8b46.js"
   },
   {
     "url": "manifest.webmanifest",
@@ -147,7 +153,7 @@ const navigationRoute = new NavigationRoute(async ({ event }) => {
   // Check for resources + the app bundle
   // The latter may not exist if the SW is updating to a new version
   const resources = await idbKeyval.get(`resources:${pathname}`)
-  if (!resources || !(await caches.match(`/app-b625c1b942fd4584e789.js`))) {
+  if (!resources || !(await caches.match(`/app-4a25cc7799498a90f3e1.js`))) {
     return await fetch(event.request)
   }
 
@@ -170,9 +176,10 @@ workbox.routing.registerRoute(navigationRoute)
 // this route is used when performing a non-navigation request (e.g. fetch)
 workbox.routing.registerRoute(/\/.gatsby-plugin-offline:.+/, handleAPIRequest)
 
+/* eslint-disable no-undef */
 workbox.routing.registerRoute(
   new RegExp('https:.*min.(css|js)'),
   workbox.strategies.staleWhileRevalidate({
     cacheName: 'cdn-cache',
-  });
+  }),
 );
