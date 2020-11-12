@@ -86,6 +86,11 @@ export const Header: React.FC<IProps> = (): JSX.Element => {
               </Link>
             </li>
             <li>
+              <Link to={config.header.linkedInUrl}>
+                <Icon {...{ icon: ['fal', 'treasure-chest'] }} />
+              </Link>
+            </li>
+            <li>
               <Link to={'/rss.xml'}>
                 <Icon {...{ icon: 'rss' }} />
               </Link>
