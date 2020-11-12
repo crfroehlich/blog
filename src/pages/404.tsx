@@ -1,6 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import NotFound from '../components/NotFound';
+import { NotFound } from '../components/NotFound';
 
 export const PageNotFound: React.FC<any> = ({ props }): JSX.Element => <NotFound props={props} />;
 

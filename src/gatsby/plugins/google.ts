@@ -1,14 +1,12 @@
-import { config } from '../../../config';
+import { addConfig } from '../../../config';
 
-export const google = [
-  {
+export const addGoogle: addConfig = (config, plugins): void => {
+  plugins.push({
     resolve: `gatsby-plugin-gtag`,
     options: {
       trackingId: config.gatsby.gaTrackingId,
       head: true,
       anonymize: false,
     },
-  },
-];
-
-export default google;
+  });
+};
