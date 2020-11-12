@@ -7,11 +7,11 @@ import {
   connectStateResults,
 } from 'react-instantsearch-dom';
 import algoliasearch from 'algoliasearch/lite';
-import { config } from '../../../config';
 import styled from '@emotion/styled';
-import { PoweredBy } from './styles';
-import Input from './input';
-import * as hitComps from './hitComps';
+import { config } from '../../../config';
+import { PoweredBy } from './PoweredBy';
+import { ConnectSearchBox } from './ConnectSearchBox';
+import * as PageHit from './PageHit';
 import { IStyle } from '../../types/interfaces';
 import { Tools } from '../../utils';
 
@@ -95,17 +95,18 @@ const Results = connectStateResults(
     (searching && `Searching...`) || (res && res.nbHits === 0 && `No results for '${state.query}'`),
 );
 
-const useClickOutside = (ref, handler, events = null) => {
-  if (!events) events = [`mousedown`, `touchstart`];
+const useClickOutside = (ref, handler, events = [`mousedown`, `touchstart`]) => {
   const detectClickOutside = (event) =>
     ref && ref.current && !ref.current.contains(event.target) && handler();
 
   useEffect(() => {
     const tools = new Tools();
-    for (const event of events) tools.getDocument()?.addEventListener(event, detectClickOutside);
+    events.forEach((event) => tools.getDocument()?.addEventListener(event, detectClickOutside));
+
     return () => {
-      for (const event of events)
-        tools.getDocument()?.removeEventListener(event, detectClickOutside);
+      events.forEach((event) =>
+        tools.getDocument()?.removeEventListener(event, detectClickOutside),
+      );
     };
   });
 };
@@ -129,16 +130,16 @@ export const SearchComponent = ({ indices, collapse }) => {
     <InstantSearch
       searchClient={searchClient}
       indexName={indices[0].name}
-      onSearchStateChange={({ query }) => setQuery(query)}
+      onSearchStateChange={setQuery}
       root={{ Root, props: { ref } }}
     >
-      <Input onFocus={() => setFocus(true)} {...{ collapse, focus }} />
-      <HitsWrapper className={'hitWrapper ' + displayResult} show={query.length > 0 && focus}>
+      <ConnectSearchBox onFocus={() => setFocus(true)} {...{ collapse, focus }} />
+      <HitsWrapper className={`hitWrapper ${displayResult}`} show={query.length > 0 && focus}>
         {indices.map(({ name, hitComp }) => {
           return (
             <Index key={name} indexName={name}>
               <Results />
-              <Hits hitComponent={hitComps[hitComp](() => setFocus(false))} />
+              <Hits hitComponent={PageHit[hitComp](() => setFocus(false))} />
             </Index>
           );
         })}

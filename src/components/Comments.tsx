@@ -23,8 +23,11 @@ const removeScript = (id, parentElement) => {
   }
 };
 
-// The actual component
-const Commento = ({ id }) => {
+interface IComment {
+  id: string;
+}
+
+export const Comments: React.FC<IComment> = ({ id }) => {
   useEffect(() => {
     // If there's no document there's nothing to do for us
     const tools = new Tools();
@@ -32,16 +35,18 @@ const Commento = ({ id }) => {
     if (!document) {
       return;
     }
-    
+
     // In case our #commento container exists we can add our commento script
     if (document.getElementById('commento')) {
       insertScript(`https://home.luddites.me/js/commento.js`, `commento-script`, document.body);
     }
     // Cleanup; remove the script from the page
-    return () => removeScript(`commento-script`, document.body);
+    return (): void => {
+      removeScript(`commento-script`, document.body);
+    };
   }, [id]);
 
-  return <div id={`commento`} />
+  return <div id={`commento`} />;
 };
 
-export default Commento;
+export default Comments;

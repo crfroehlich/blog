@@ -1,116 +1,63 @@
 import React from 'react';
-import Link from './Link';
+import { Link } from './Link';
+import { INode } from '../types';
+import { StyledNextPrevious } from './styles/StyledNextPrevious';
+import { Icon } from './Icon';
 
-import { StyledNextPrevious } from './styles/PageNavigationButtons';
+interface INextPrev {
+  next: INode;
+  prev: INode;
+}
 
-const NextPrevious = ({ mdx, nav }) => {
-  if(!nav || !mdx) return <div/>;
+export const NextPrevious: React.FC<INextPrev> = ({ next, prev }): JSX.Element => {
+  if (!next || !prev) return <div />;
 
-  let currentIndex = 0;
+  const locale = 'ru-RU';
 
-  nav.map((el, index) => {
-    if (el && el.slug === mdx.fields.slug) {
-      currentIndex = index;
-    }
-  });
-  let locale = 'ru-RU';
-
-  const getNav = (offset) => nav[currentIndex + offset];
-
-  const getNavPrev = () => getNav(-1);
-
-  const getNavNext = () => getNav(1);
-
-  const getDate = (offset) =>
-    new Date(getNav(offset).date)
-    .toLocaleDateString(locale, {
-      weekday: 'long', year: 'numeric', month: '2-digit', day: '2-digit'
+  const getDate = (node: INode): string =>
+    new Date(node.fields.date).toLocaleDateString(locale, {
+      weekday: 'long',
+      year: 'numeric',
+      month: '2-digit',
+      day: '2-digit',
     });
 
-  const getTitle = (offset) => {
-    let title = getNav(offset).title.trim();
-
-    // TODO: compute the total length of left/right and set accordingly
-    if(offset === 1 && title.length > 38) {
-      title = title.substr(0,34).trim() + '…';
-    }
-    if(offset === -1 && title.length > 41) {
-      title = title.substr(0,38).trim() + '…';
-    }
-    return title;
-  }
-
-  let nextInfo = getNav(1);
-
-  let previousInfo = getNav(-1);
+  const getTitle = (node: INode) => {
+    return node?.fields.title.trim();
+  };
 
   return (
     <StyledNextPrevious>
-      {previousInfo && currentIndex >= 0 ? (
-        <Link to={getNavPrev().slug} title={getNavPrev().title} className={'previousBtn'} >
-          <div className={'leftArrow'}>
-            <svg
-              preserveAspectRatio="xMidYMid meet"
-              height="1em"
-              width="1em"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              stroke="currentColor"
-              className="_13gjrqj"
-            >
-              <g>
-                <line x1="19" y1="12" x2="5" y2="12" />
-                <polyline points="12 19 5 12 12 5" />
-              </g>
-            </svg>
-          </div>
+      {prev?.fields ? (
+        <Link to={prev.fields.slug} title={prev.fields.title} className={'previousBtn'}>
+          {Icon({ icon: ['fas', 'arrow-alt-left'], size: 'lg', style: { paddingLeft: '5px' } })}
           <div className={'preRightWrapper'}>
             <div className={'smallContent'}>
-              <span>{getDate(-1)}</span>
+              <span>{getDate(prev)}</span>
             </div>
             <div className={'nextPreviousTitle'}>
-              <span>{getTitle(-1)}</span>
+              <span>{getTitle(prev)}</span>
             </div>
           </div>
         </Link>
       ) : null}
-      {nextInfo && currentIndex >= 0 ? (
-        <Link to={getNavNext().slug} title={getNavNext().title} className={'nextBtn'}>
+      {next?.fields ? (
+        <Link to={next.fields.slug} title={next.fields.title} className={'nextBtn'}>
           <div className={'nextRightWrapper'}>
             <div className={'smallContent'}>
-              <span>{getDate(1)}</span>
+              <span>{getDate(next)}</span>
             </div>
             <div className={'nextPreviousTitle'}>
-              <span>{getTitle(1)}</span>
+              <span>{getTitle(next)}</span>
             </div>
           </div>
-          <div className={'rightArrow'}>
-            <svg
-              preserveAspectRatio="xMidYMid meet"
-              height="1em"
-              width="1em"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              stroke="currentColor"
-              className="_13gjrqj"
-            >
-              <g>
-                <line x1="5" y1="12" x2="19" y2="12" />
-                <polyline points="12 5 19 12 12 19" />
-              </g>
-            </svg>
-          </div>
+          {Icon({
+            icon: ['fas', 'arrow-alt-right'],
+            size: 'lg',
+            style: { paddingRight: '5px' },
+          })}
         </Link>
       ) : null}
-
     </StyledNextPrevious>
   );
 };

@@ -11,7 +11,7 @@ export class визуализации extends Component<IPageProps> {
 
 export default визуализации;
 
-export const pageQuery = graphql`
+export const визуализацииQuery = graphql`
   query GetVisualizationsQuery {
     site {
       siteMetadata {

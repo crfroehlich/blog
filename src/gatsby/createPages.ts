@@ -20,7 +20,7 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions 
   const queryResult = await graphql<IQueryResult>(
     `
       query PagesCategoriesQuery {
-        allMdx {
+        allPages: allMdx {
           edges {
             node {
               fields {
@@ -31,17 +31,17 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions 
                 tags
                 img
               }
-              body
-              tableOfContents
               parent {
                 ... on File {
                   relativePath
                 }
               }
               frontmatter {
-                metaTitle
-                metaDescription
-                metaDate
+                title
+                subtitle
+                date
+                tags
+                img
               }
             }
           }
@@ -49,6 +49,7 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions 
         tagsGroup: allMdx(limit: 2000) {
           group(field: frontmatter___tags) {
             fieldValue
+            totalCount
           }
         }
       }
@@ -64,16 +65,31 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions 
   }
 
   // Create blog posts pages.
-  const posts = queryResult?.data?.allMdx?.edges || [];
+  const posts = queryResult?.data?.allPages?.edges || [];
+
+  // Extract category data from query
+  const tags = queryResult.data.tagsGroup?.group || [];
 
   posts.forEach((post, index) => {
-    const previous = index === posts.length - 1 ? null : (posts[index + 1].node as INode);
+    const prevNode = index === posts.length - 1 ? posts[0].node : posts[index + 1].node;
+    const previous = prevNode as INode;
 
-    const next = index === 0 ? null : (posts[index - 1].node as INode);
+    const nextNode = index === 0 ? posts[posts.length - 1].node : posts[index - 1].node;
+    const next = nextNode as INode;
 
     const node = post?.node;
 
     const pagePath = node?.fields?.slug || '/';
+
+    const nodeTags = node?.fields?.tags || [];
+    const pageTags = [];
+    nodeTags.forEach((t) => {
+      const grp = tags.find((g) => g.fieldValue === t);
+      pageTags.push({
+        name: grp?.fieldValue,
+        count: grp?.totalCount,
+      });
+    });
 
     if (!pagePath) {
       return console.info(chalk.yellow('Warning: Blog post has no path. Skipping...'));
@@ -87,6 +103,7 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions 
         slug: pagePath,
         previous,
         next,
+        pageTags,
       },
     });
   });
@@ -96,9 +113,6 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions 
     component: templates.визуализации,
     context: {},
   });
-
-  // Extract category data from query
-  const tags = queryResult.data.tagsGroup?.group || [];
 
   if (tags.length === 0) {
     return console.info(
@@ -132,18 +146,20 @@ export const onCreateWebpackConfig: GatsbyNode['onCreateWebpackConfig'] = ({ act
   });
 };
 
-const uniqueTypes = [];
-
 export const onCreateNode: GatsbyNode['onCreateNode'] = ({ node, getNode, actions }) => {
   const { createNodeField } = actions;
 
   try {
-    if (uniqueTypes.find((t) => t === node.internal.type)) {
-      uniqueTypes.push(node.internal.type);
-      console.info(node.internal.type);
-    }
-    // if (node.internal.type === `Mdx`) {
+    const isContent =
+      node.internal.type.toLowerCase().indexOf('mdx') !== -1 ||
+      node.internal.type.toLowerCase().indexOf('markdown') !== -1;
+
+    if (!isContent) return;
+
     const parent = getNode(node.parent) as INode;
+    const { frontmatter } = node as INode;
+
+    if (frontmatter.draft === true) return;
 
     if (parent) {
       let value = parent.relativePath.replace(parent.ext, '');
@@ -173,7 +189,18 @@ export const onCreateNode: GatsbyNode['onCreateNode'] = ({ node, getNode, action
       value: node.id,
     });
 
-    const { frontmatter } = node as INode;
+    let tags = [];
+    if (Array.isArray(frontmatter.tags)) {
+      tags = frontmatter.tags;
+    } else {
+      tags = frontmatter?.tags?.toString().split(',');
+    }
+
+    let date = new Date(frontmatter?.date);
+    if (Number.isNaN(date.getTime())) {
+      date = new Date();
+    }
+    const year = date.getFullYear();
 
     if (frontmatter) {
       createNodeField({
@@ -185,13 +212,31 @@ export const onCreateNode: GatsbyNode['onCreateNode'] = ({ node, getNode, action
       createNodeField({
         name: 'date',
         node,
-        value: new Date(frontmatter?.metaDate),
+        value: date,
+      });
+
+      createNodeField({
+        name: 'year',
+        node,
+        value: year,
+      });
+
+      createNodeField({
+        name: 'description',
+        node,
+        value: frontmatter?.description,
+      });
+
+      createNodeField({
+        name: 'subtitle',
+        node,
+        value: frontmatter?.subtitle,
       });
 
       createNodeField({
         name: 'tags',
         node,
-        value: frontmatter?.tags?.toString().split(','),
+        value: tags,
       });
 
       const imagePath = frontmatter?.img || 'card.png';
@@ -204,6 +249,5 @@ export const onCreateNode: GatsbyNode['onCreateNode'] = ({ node, getNode, action
     }
   } catch (e) {
     console.error('Create node error', e);
-    // throw e;
   }
 };

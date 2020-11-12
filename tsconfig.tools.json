@@ -1,0 +1,19 @@
+// prettier-ignore
+{
+  "compilerOptions": {
+    "declaration": true,
+    "declarationMap": true,
+    "emitDeclarationOnly": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "noEmit": false,
+    "noEmitOnError": false,
+    "outDir": "./dist",
+    "removeComments": false,
+    "sourceMap": true,
+    "target": "ESNEXT",
+    "typeRoots": ["@types", "node_modules/@types"]
+  },
+  "include": [ "src/**/*", "index.ts" ],
+  "extends": "./tsconfig.json"
+}

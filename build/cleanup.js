@@ -1,75 +1,75 @@
 const glob = require('glob');
-const readline = require('readline');
-const {readFileSync, writeFileSync } = require('fs');
+const { readFileSync, writeFileSync } = require('fs');
+const matter = require('gray-matter');
+const sortedJson = require('sorted-json');
 
 const GLOB_OPTIONS = {
-    dot: true,
-    ignore: [
-        '.circleci/**',
-        '.vscode/**',
-        'coverage/**',
-        'dist/**',
-        'node_modules/**',
-        'nyc_output/**',
-        'tsconfig.json',
-        '**/test-data/**',
-    ],
-    realPath: true,
+  dot: true,
+  ignore: [
+    '.circleci/**',
+    '.vscode/**',
+    'coverage/**',
+    'dist/**',
+    'node_modules/**',
+    'nyc_output/**',
+    'tsconfig.json',
+    '**/test-data/**',
+  ],
+  realPath: true,
 };
-  
-  glob('**/*.md', GLOB_OPTIONS, (er, files) => {
 
-    let stop = 0;
+const cleanup = (er, files) => {
+  files.forEach((fileName) => {
+    const md = readFileSync(fileName, 'utf-8');
 
-    files.forEach((fileName) => {
-        stop += 1;
-        //if(stop > 3) return;
+    function firstFourLines(file, options) {
+      let excerpt = '';
+      let i = 0;
+      let content = file.content.split('\n');
+      while (excerpt.length < 10) {
+        excerpt += content[i].trim().replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g, '');
+        i += 1;
+      }
+      file.excerpt = `${excerpt.trim().slice(0, 100)}...`;
+    }
 
-        const md = readFileSync(fileName, 'utf-8');
-        const lines = md.split('\r\n');
-        if(lines[0].startsWith('---')) {
-            let i = 1;
-            let nextLine = lines[i];
-            
-            while(nextLine && !nextLine.startsWith('---')) {
-                const parts = nextLine.split(': ');
-                if(parts[0].startsWith('aliases')) {
-
-                }
-                else if(parts[0].startsWith('tags')) {
-                    parts[0] = parts[0].trim();
-                    let tags = '["' + parts[1].toString().slice(1,-1).split(', ').join('","') + '"]'.replace('""', '"');
-                    parts[1] = tags;
-                } else {
-                    if(parts[0].trim() === 'date') {
-                        parts[0] = 'metaDate';
-                        parts[1] = new Date(parts[1]).toLocaleDateString();
-                    }
-                    else if(parts[1].startsWith('"') && parts[1].endsWith('"')) {
-                        //nada
-                    }
-                    else if(parts[1].startsWith("'") && parts[1].endsWith("'")) {
-                        parts[1] = '"' + parts[1].slice(1,-1) + '"';
-                    }
-                    
-                    if(parts[0].trim() === 'title') {
-                        parts[1] += '\r\nmetaTitle: ' + parts[1];
-                    }
-                    if(parts[0].trim() === 'description') {
-                        parts[0] = 'metaDescription';
-                    }
-                    if(parts[0].trim() === 'draft') {
-                        parts[0] = 'metaDraft';
-                    }
-                }
-
-                lines[i] = parts.join(': ');
-                i += 1;
-                nextLine = lines[i];
-            }
-            writeFileSync(fileName, lines.join('\n'));
-        } 
-        
-    });
-
+    const grey = matter(md, { excerpt: firstFourLines });
+    const frontmatter = grey.data;
+    if (frontmatter.metaDescription) {
+      delete frontmatter.metaDescription;
+    }
+    frontmatter.description = grey.excerpt;
+    if (frontmatter.metaTitle) {
+      if (!frontmatter.title) {
+        frontmatter.title = frontmatter.metaTitle;
+      }
+      delete frontmatter.metaTitle;
+    }
+    if (!frontmatter.tags || frontmatter.tags.length === 0) {
+      frontmatter.tags = ['void'];
+    }
+    if (frontmatter.metaDate) {
+      frontmatter.date = frontmatter.metaDate;
+      delete frontmatter.metaDate;
+    }
+    if (!frontmatter.date) {
+      frontmatter.date = new Date().toLocaleDateString();
+    }
+    if (frontmatter.draft !== false || fileName.endsWith('.bak')) {
+      frontmatter.draft = true;
+    }
+    const subtitle = frontmatter.title.split(':')[1];
+    if (subtitle) {
+      frontmatter.subtitle = subtitle;
+    }
+    if (frontmatter.aliases) {
+      delete frontmatter.aliases;
+    }
+    const output = matter.stringify(grey.content, sortedJson.sortify(frontmatter));
+    writeFileSync(fileName, output);
   });
+};
+
+glob('content/**/*.md', GLOB_OPTIONS, cleanup);
+glob('content/**/*.mdx', GLOB_OPTIONS, cleanup);
+//glob('content/**/*.bak', GLOB_OPTIONS, cleanup);

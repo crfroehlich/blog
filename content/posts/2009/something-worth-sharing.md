@@ -1,0 +1,11 @@
+---
+date: 7/16/2009
+description: "At times it becomes difficult to create for one's self\_ It then helps to find others with your own v..."
+draft: false
+img: prosperity_club.png
+tags:
+  - sharing
+title: something worth sharing
+---
+
+At times, it becomes difficult to create for one's self.  It then helps to find others with your own vision.

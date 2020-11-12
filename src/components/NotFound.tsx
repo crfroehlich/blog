@@ -1,11 +1,12 @@
 import React from 'react';
 import { IProps } from '../types/interfaces';
-import Link from './Link';
-import PageWrapper from './PageWrapper';
+import { Empty } from './Empty';
+import { Link } from './Link';
+import { PageWrapper } from './PageWrapper';
 
-export const NotFound: React.FC<IProps> = ({ props }) => {
-  if (!props) return null;
-  
+export const NotFound: React.FC<IProps> = ({ props }): JSX.Element => {
+  if (!props) return <Empty />;
+
   const { path } = props;
 
   const fourOhFour = (

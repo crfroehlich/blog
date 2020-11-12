@@ -11,7 +11,7 @@ export class Tag extends Component<IPageProps> {
 
 export default Tag;
 
-export const pageQuery = graphql`
+export const tagQuery = graphql`
   query GetTagByNameQuery($tag: String) {
     site {
       siteMetadata {
@@ -21,7 +21,7 @@ export const pageQuery = graphql`
     }
     allMdx(
       limit: 2000
-      sort: { fields: [frontmatter___metaDate], order: DESC }
+      sort: { fields: [frontmatter___date], order: DESC }
       filter: { frontmatter: { tags: { in: [$tag] } } }
     ) {
       totalCount
@@ -35,11 +35,6 @@ export const pageQuery = graphql`
             date
             tags
             img
-          }
-          frontmatter {
-            metaTitle
-            metaDescription
-            metaDate
           }
         }
       }

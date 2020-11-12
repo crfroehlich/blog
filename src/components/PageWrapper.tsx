@@ -1,18 +1,15 @@
 import React from 'react';
-import { Layout } from './Layout';
-import { DisplayDate, Link } from './Link';
 import Helmet from 'react-helmet';
-import NextPrevious from './NextPrevious';
-import { config } from '../../config';
-import { Edit, StyledHeading, StyledMainWrapper } from './styles/Docs';
 import { BadgeAnchor, Badge, ChipSet, Chip } from 'rmwc';
 import kebabCase from 'lodash/kebabCase';
-import Comments from './Comments';
+import { Layout } from './Layout';
+import { DisplayDate, Link } from './Link';
+import { NextPrevious } from './NextPrevious';
+import { config } from '../../config';
+import { Edit, StyledHeading, StyledMainWrapper } from './styles/Docs';
+import { Comments } from './Comments';
 import { IProps, INode } from '../types/interfaces';
-
-const gitHub = require('./images/github.svg');
-
-const forcedNavOrder = config.sidebar.forcedNavOrder;
+import { Icon } from './Icon';
 
 export const PageWrapper: React.FC<IProps> = ({
   props,
@@ -20,45 +17,31 @@ export const PageWrapper: React.FC<IProps> = ({
   pageTitle,
   showGithub,
   showComments,
-}) => {
-  const { data } = props;
+}): JSX.Element => {
+  const {
+    data: { mdx, site },
+    pageContext: { next, previous, pageTags },
+  } = props;
 
-  const { allMdx, mdx } = data;
-
-  let site,
-    siteMetadata,
-    title = pageTitle,
-    body,
-    docsLocation,
-    date = new Date(),
-    tags = [];
-
-  if (data && data.site) {
-    site = data.site;
-    siteMetadata = site.siteMetadata;
-    docsLocation = siteMetadata.docsLocation;
-  }
+  const siteMetadata = site?.siteMetadata;
+  let title = pageTitle;
+  let body;
+  const docsLocation = siteMetadata?.docsLocation;
+  let date = new Date();
 
   title = title || 'No Title';
-  let description = title;
 
   if (pageContent) {
     body = pageContent;
   }
 
   if (mdx) {
-    if (mdx.frontmatter) {
-      title = mdx.frontmatter.metaTitle || title;
-      description = mdx.frontmatter.metaDescription || title;
-    }
+    title = mdx.fields.title || title;
     if (!body) {
       body = mdx.body;
     }
     if (mdx.fields.date) {
       date = new Date(mdx.fields.date);
-    }
-    if (mdx.fields.tags) {
-      tags = mdx.fields.tags;
     }
   }
 
@@ -70,72 +53,20 @@ export const PageWrapper: React.FC<IProps> = ({
 
   canonicalUrl =
     config.gatsby.pathPrefix !== '/' ? canonicalUrl + config.gatsby.pathPrefix : canonicalUrl;
-  canonicalUrl = canonicalUrl + (mdx ? mdx.fields.slug : '');
-
-  interface IItems {
-    items: any[];
-  }
-
-  let navItems: IItems = { items: [] };
-
-  if (allMdx && allMdx.edges) {
-    navItems = allMdx.edges
-      .map(({ node }) => node.fields.slug)
-      .filter((slug) => slug !== '/')
-      .reverse()
-      .reduce(
-        (acc, cur) => {
-          if (forcedNavOrder.find((url) => url === cur)) {
-            return { ...acc, [cur]: [cur] };
-          }
-
-          let prefix = cur.split('/')[1];
-
-          if (config.gatsby && config.gatsby.trailingSlash) {
-            prefix = prefix + '/';
-          }
-
-          if (prefix && forcedNavOrder.find((url) => url === `/${prefix}`)) {
-            return { ...acc, [`/${prefix}`]: [...acc[`/${prefix}`], cur] };
-          } else {
-            return { ...acc, items: [...acc.items, cur] };
-          }
-        },
-        { items: [] },
-      );
-  }
-  const nav = forcedNavOrder
-    .reduce((acc, cur) => {
-      return acc.concat(navItems[cur]);
-    }, [])
-    .concat(navItems.items)
-    .map((slug) => {
-      if (slug) {
-        const { node } = allMdx.edges.find(({ node }) => node.fields.slug === slug);
-
-        return node.fields;
-      }
-    })
-    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
-
-  const chipMap = {};
-
-  if (tags && tags.length > 0) {
-    tags.forEach((t) => {
-      const tag = allMdx.group.find((group) => group.fieldValue === t);
-
-      chipMap[t] = tag ? tag.totalCount : 1;
-    });
-  }
+  canonicalUrl += mdx ? mdx.fields.slug : '';
 
   const chips = (
     <ChipSet>
-      {tags.map((tag) => (
-        <Link to={`/тег/${kebabCase(tag)}`} key={kebabCase(tag)} style={{ marginRight: '0.5rem' }}>
+      {pageTags?.map((tag) => (
+        <Link
+          to={`/тег/${kebabCase(tag.name)}`}
+          key={kebabCase(tag.name)}
+          style={{ marginRight: '0.5rem' }}
+        >
           <BadgeAnchor>
-            <Chip style={{ backgroundColor: '#1ed3c6', color: 'fff' }} id={tag} label={tag} />
+            <Chip style={{ backgroundColor: '#1ed3c6', color: 'fff' }} label={tag.name} />
             <Badge
-              label={chipMap[tag]}
+              label={tag.count}
               style={{ backgroundColor: 'cadetblue', right: '-0.3rem', top: '-0.3rem' }}
             />
           </BadgeAnchor>
@@ -150,9 +81,7 @@ export const PageWrapper: React.FC<IProps> = ({
       <Helmet>
         <title>{title}</title>
         <meta name="title" content={title} />
-        <meta name="description" content={description} />
         <meta property="og:title" content={title} />
-        <meta property="og:description" content={description} />
         <link rel="canonical" href={canonicalUrl} />
       </Helmet>
       <div className={'titleWrapper'}>
@@ -161,9 +90,10 @@ export const PageWrapper: React.FC<IProps> = ({
           <Edit className={'mobileView'}>
             <Link
               className={'gitBtn'}
-              to={`${docsLocation}/${(mdx.parent as INode)?.relativePath}`}
+              to={`${docsLocation}/${(mdx?.parent as INode)?.relativePath}`}
             >
-              <img src={gitHub} alt={'Github logo'} /> Source
+              {Icon({ icon: ['fab', 'github'] })}
+              <div style={{ paddingLeft: '5px' }}>Source</div>
             </Link>
           </Edit>
         )}
@@ -178,7 +108,7 @@ export const PageWrapper: React.FC<IProps> = ({
         </div>
       )}
       <div className={'addPaddTopBottom'}>
-        <NextPrevious mdx={mdx} nav={nav} />
+        <NextPrevious next={next} prev={previous} />
       </div>
     </Layout>
   );
