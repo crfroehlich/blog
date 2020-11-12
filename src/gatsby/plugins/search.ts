@@ -1,50 +1,53 @@
-import { config } from '../../../config';
+import { addConfig } from '../../../config';
 
-const pageQuery = `{
-  pages: allMdx {
-    edges {
-      node {
-        objectID: id
-        fields {
-          slug
+export const addSearch: addConfig = (config, plugins): void => {
+  const pageQuery = `query GetSearchQuery {
+    pages: allMdx {
+      edges {
+        node {
+          objectID: id
+          fields {
+            slug
+          }
+          headings {
+            value
+          }
+          frontmatter {
+            title
+            subtitle
+            tags
+            img
+            date
+          }
+          excerpt(pruneLength: 50000)
         }
-        headings {
-          value
-        }
-        frontmatter {
-          title
-          metaDescription
-        }
-        excerpt(pruneLength: 50000)
       }
     }
-  }
-}`;
+  }`;
 
-const flatten = (arr) =>
-  arr.map(({ node: { frontmatter, fields, ...rest } }) => ({
-    ...frontmatter,
-    ...fields,
-    ...rest,
-  }));
+  const flatten = (arr) =>
+    arr.map(({ node: { frontmatter, fields, ...rest } }) => ({
+      ...frontmatter,
+      ...fields,
+      ...rest,
+    }));
 
-const settings = { attributesToSnippet: [`excerpt:20`] };
+  const settings = { attributesToSnippet: [`excerpt:20`] };
 
-const indexName = config.header.search ? config.header.search.indexName : '';
+  const indexName = config.header.search ? config.header.search.indexName : '';
 
-const queries = [
-  {
-    query: pageQuery,
-    transformer: ({ data }) => flatten(data.pages.edges),
-    indexName: `${indexName}`,
-    settings,
-  },
-];
+  const queries = [
+    {
+      query: pageQuery,
+      transformer: ({ data }) => flatten(data.pages.edges),
+      indexName: `${indexName}`,
+      settings,
+    },
+  ];
 
-export const search = [];
+  if (config.header?.search?.enabled !== true) return;
 
-if (config.header.search && config.header.search.enabled) {
-  search.push({
+  plugins.push({
     resolve: `gatsby-plugin-algolia`,
     options: {
       appId: config.header.search.algoliaAppId, // algolia application id
@@ -53,6 +56,4 @@ if (config.header.search && config.header.search.enabled) {
       chunkSize: 10000, // default: 1000
     },
   });
-}
-
-export default search;
+};

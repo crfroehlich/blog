@@ -1,6 +1,8 @@
 import { loadEnv } from '@luddites-me/ts-tools';
+import { getConfig } from './config';
 
-loadEnv();
+const env = loadEnv();
+getConfig(env);
 
 export {
   createPages,

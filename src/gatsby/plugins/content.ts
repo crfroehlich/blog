@@ -1,18 +1,11 @@
-export const content = [
-  {
+import { addConfig } from '../../../config';
+
+export const addContent: addConfig = (config, plugins): void => {
+  plugins.push({
     resolve: 'gatsby-source-filesystem',
     options: {
       name: 'docs',
-      path: `${__dirname}/../../../content/`,
+      path: `${__dirname}/../../../content/posts`,
     },
-  },
-  {
-    resolve: 'gatsby-source-filesystem',
-    options: {
-      name: 'images',
-      path: `${__dirname}/../../../static/`,
-    },
-  },
-];
-
-export default content;
+  });
+};

@@ -1,60 +1,52 @@
-import { loadEnv } from '@luddites-me/ts-tools';
+import type { GatsbyConfig, PluginRef } from 'gatsby';
+import { env } from './build/initEnv';
+import { getConfig } from './config';
+import {
+  addCodegen,
+  addContent,
+  addFonts,
+  addGoogle,
+  addMdx,
+  addOffline,
+  addRobots,
+  addRss,
+  addSearch,
+  addStats,
+} from './src/gatsby/plugins';
 
-loadEnv();
+const config = getConfig(env);
 
-import { config } from './config';
-import type { GatsbyConfig } from 'gatsby';
-import { codegen, content, google, mdx, offline, rss, search } from './src/gatsby/plugins';
-
-let plugins: any[] = [
+const plugins: Array<PluginRef> = [
   'gatsby-plugin-catch-links',
   'gatsby-plugin-dark-mode',
   'gatsby-plugin-emotion',
   'gatsby-plugin-react-helmet',
   'gatsby-plugin-remove-trailing-slashes',
+  'gatsby-plugin-sass',
   'gatsby-plugin-sharp',
   'gatsby-plugin-sitemap',
   'gatsby-plugin-ts',
-  'gatsby-transformer-remark',
   'gatsby-transformer-sharp',
-  {
-    resolve: 'gatsby-plugin-bundle-stats',
-    options: {
-      compare: true,
-      outDir: '../artifacts',
-      stats: {
-        context: './src',
-      },
-    },
-  },
-  {
-    resolve: 'gatsby-plugin-robots-txt',
-    options: {
-      policy: [{ userAgent: '*', allow: '/' }],
-    },
-  },
-  {
-    resolve: `gatsby-plugin-google-fonts`,
-    options: {
-      fonts: [`Roboto\:300,400,500,700`, `Poppins\:300,400,500,600`],
-    },
-  },
 ];
 
-plugins = plugins.concat(codegen);
-plugins = plugins.concat(content);
-plugins = plugins.concat(google);
-plugins = plugins.concat(mdx);
-plugins = plugins.concat(offline);
-plugins = plugins.concat(rss);
-plugins = plugins.concat(search);
+addCodegen(config, plugins);
+addContent(config, plugins);
+addFonts(config, plugins);
+addGoogle(config, plugins);
+addMdx(config, plugins);
+addOffline(config, plugins);
+addRobots(config, plugins);
+addRss(config, plugins);
+addSearch(config, plugins);
+addStats(config, plugins);
 
 export const gatsbyConfig: GatsbyConfig = {
+  plugins,
   pathPrefix: config.gatsby.pathPrefix,
   siteMetadata: {
     title: config.siteMetadata.title,
     description: config.siteMetadata.description,
-    docsLocation: config.siteMetadata.docsLocation,  
+    docsLocation: config.siteMetadata.docsLocation,
     ogImage: config.siteMetadata.ogImage,
     favicon: config.siteMetadata.favicon,
     logo: {
@@ -68,7 +60,6 @@ export const gatsbyConfig: GatsbyConfig = {
     headerLinks: config.header.links,
     siteUrl: config.gatsby.siteUrl,
   },
-  plugins,
 };
 
 export default gatsbyConfig;

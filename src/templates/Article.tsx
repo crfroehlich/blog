@@ -1,32 +1,39 @@
 import React, { Component } from 'react';
 import { graphql } from 'gatsby';
 import MDXRenderer from 'gatsby-plugin-mdx/mdx-renderer';
-import NotFound from '../components/NotFound';
-import PageWrapper from '../components/PageWrapper';
+import { PageWrapper } from '../components/PageWrapper';
 import { IPageProps } from '../types/interfaces';
+import { Empty } from '../components/Empty';
 
 export default class Article extends Component<IPageProps> {
   render(): JSX.Element {
     const { data } = this.props;
-
     const { mdx } = data;
+    let pageContent = <Empty />;
 
-    if (!data.site || !mdx) {
-      return <NotFound props={this.props} />;
-    } else {
-      return (
+    if (data?.site && mdx?.body) {
+      pageContent = <MDXRenderer>{mdx.body}</MDXRenderer>;
+    }
+
+    let ret = <Empty />;
+    try {
+      ret = (
         <PageWrapper
           props={this.props}
-          pageContent={<MDXRenderer>{mdx ? mdx.body : 'text'}</MDXRenderer>}
+          pageContent={pageContent}
           showGithub={true}
           showComments={true}
         />
       );
+    } catch (e) {
+      console.error(e);
     }
+
+    return ret;
   }
 }
 
-export const pageQuery = graphql`
+export const articleQuery = graphql`
   query GetPageByIdQuery($id: String!) {
     site {
       siteMetadata {
@@ -45,46 +52,6 @@ export const pageQuery = graphql`
       }
       body
       tableOfContents
-      parent {
-        ... on File {
-          relativePath
-        }
-      }
-      frontmatter {
-        metaTitle
-        metaDescription
-        metaDate
-      }
-    }
-    allMdx {
-      edges {
-        node {
-          fields {
-            id
-            title
-            slug
-            date
-            tags
-            img
-          }
-          body
-          tableOfContents
-          parent {
-            ... on File {
-              relativePath
-            }
-          }
-          frontmatter {
-            metaTitle
-            metaDescription
-            metaDate
-          }
-        }
-      }
-      group(field: frontmatter___tags) {
-        fieldValue
-        totalCount
-      }
     }
   }
 `;

@@ -10,15 +10,13 @@ export interface IDefaultAction {
   type: string;
 }
 
-const reducer = (state = initialState, action: IDefaultAction): IState => {
+export const reducer = (state = initialState, action: IDefaultAction): IState => {
   switch (action.type) {
     case 'ADD_POST_START': {
-      const newState = Object.assign({}, state, { addedPost: true });
-      return newState;
+      return { ...state, addedPost: true };
     }
     case 'ADD_POST_FINISH': {
-      const newState = Object.assign({}, state, { addedPost: false });
-      return newState;
+      return { ...state, addedPost: false };
     }
     default:
       return state;

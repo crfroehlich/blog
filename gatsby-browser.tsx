@@ -2,6 +2,7 @@ import * as React from 'react';
 import { Provider } from 'react-redux';
 
 import configureStore from './src/state/store';
+import './src/components/styles/sass/sidebar.scss';
 
 // wrap the app with redux provider
 export const wrapRootElement: React.FC<any> = ({ element }) => {
@@ -10,13 +11,6 @@ export const wrapRootElement: React.FC<any> = ({ element }) => {
   return <Provider store={store}>{element}</Provider>;
 };
 
-export const onServiceWorkerUpdateReady = () => {
-  const answer = window.confirm(
-    `This tutorial has been updated. ` +
-      `Reload to display the latest version?`
-  )
-
-  if (answer === true) {
-    window.location.reload()
-  }
-}
+export const onServiceWorkerUpdateReady = (): void => {
+  console.log(`This page has been updated. ${new Date().toLocaleTimeString()}`);
+};
