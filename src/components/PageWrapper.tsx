@@ -9,7 +9,7 @@ import { config } from '../../config';
 import { Edit, StyledHeading, StyledMainWrapper } from './styles/Docs';
 import { Comments } from './Comments';
 import { IProps, INode } from '../types/interfaces';
-import { getIcon } from './Icon';
+import { Icon } from './Icon';
 
 export const PageWrapper: React.FC<IProps> = ({
   props,
@@ -18,24 +18,16 @@ export const PageWrapper: React.FC<IProps> = ({
   showGithub,
   showComments,
 }): JSX.Element => {
-  const { data, pageContext } = props;
+  const {
+    data: { mdx, site },
+    pageContext: { next, previous, pageTags },
+  } = props;
 
-  const { allMdx, mdx } = data;
-
-  let site;
-  let siteMetadata;
+  const siteMetadata = site?.siteMetadata;
   let title = pageTitle;
   let body;
-  let docsLocation;
+  const docsLocation = siteMetadata?.docsLocation;
   let date = new Date();
-  let tags = [];
-  const { next, previous } = pageContext;
-
-  if (data?.site) {
-    site = data.site;
-    siteMetadata = site.siteMetadata;
-    docsLocation = siteMetadata.docsLocation;
-  }
 
   title = title || 'No Title';
 
@@ -51,9 +43,6 @@ export const PageWrapper: React.FC<IProps> = ({
     if (mdx.fields.date) {
       date = new Date(mdx.fields.date);
     }
-    if (mdx.fields.tags) {
-      tags = mdx.fields.tags;
-    }
   }
 
   if (!title && siteMetadata) {
@@ -66,24 +55,18 @@ export const PageWrapper: React.FC<IProps> = ({
     config.gatsby.pathPrefix !== '/' ? canonicalUrl + config.gatsby.pathPrefix : canonicalUrl;
   canonicalUrl += mdx ? mdx.fields.slug : '';
 
-  const chipMap = {};
-
-  if (tags && tags.length > 0) {
-    tags.forEach((t) => {
-      const tag = allMdx.group.find((group) => group.fieldValue === t);
-
-      chipMap[t] = tag ? tag.totalCount : 1;
-    });
-  }
-
   const chips = (
     <ChipSet>
-      {tags.map((tag) => (
-        <Link to={`/тег/${kebabCase(tag)}`} key={kebabCase(tag)} style={{ marginRight: '0.5rem' }}>
+      {pageTags?.map((tag) => (
+        <Link
+          to={`/тег/${kebabCase(tag.name)}`}
+          key={kebabCase(tag.name)}
+          style={{ marginRight: '0.5rem' }}
+        >
           <BadgeAnchor>
-            <Chip style={{ backgroundColor: '#1ed3c6', color: 'fff' }} id={tag} label={tag} />
+            <Chip style={{ backgroundColor: '#1ed3c6', color: 'fff' }} label={tag.name} />
             <Badge
-              label={chipMap[tag]}
+              label={tag.count}
               style={{ backgroundColor: 'cadetblue', right: '-0.3rem', top: '-0.3rem' }}
             />
           </BadgeAnchor>
@@ -109,7 +92,7 @@ export const PageWrapper: React.FC<IProps> = ({
               className={'gitBtn'}
               to={`${docsLocation}/${(mdx?.parent as INode)?.relativePath}`}
             >
-              {getIcon({ icon: ['fab', 'github'] })}
+              {Icon({ icon: ['fab', 'github'] })}
               <div style={{ paddingLeft: '5px' }}>Source</div>
             </Link>
           </Edit>

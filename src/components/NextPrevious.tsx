@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from './Link';
 import { INode } from '../types';
 import { StyledNextPrevious } from './styles/StyledNextPrevious';
-import { getIcon } from './Icon';
+import { Icon } from './Icon';
 
 interface INextPrev {
   next: INode;
@@ -30,7 +30,7 @@ export const NextPrevious: React.FC<INextPrev> = ({ next, prev }): JSX.Element =
     <StyledNextPrevious>
       {prev?.fields ? (
         <Link to={prev.fields.slug} title={prev.fields.title} className={'previousBtn'}>
-          {getIcon({ icon: ['fas', 'arrow-alt-left'], size: 'lg', style: { paddingLeft: '5px' } })}
+          {Icon({ icon: ['fas', 'arrow-alt-left'], size: 'lg', style: { paddingLeft: '5px' } })}
           <div className={'preRightWrapper'}>
             <div className={'smallContent'}>
               <span>{getDate(prev)}</span>
@@ -51,7 +51,7 @@ export const NextPrevious: React.FC<INextPrev> = ({ next, prev }): JSX.Element =
               <span>{getTitle(next)}</span>
             </div>
           </div>
-          {getIcon({
+          {Icon({
             icon: ['fas', 'arrow-alt-right'],
             size: 'lg',
             style: { paddingRight: '5px' },

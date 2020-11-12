@@ -7,7 +7,8 @@ import {
   SidebarContent,
   SidebarFooter,
 } from 'react-pro-sidebar';
-import { getIcon } from './Icon';
+import { debounce} from 'lodash';
+import { Icon } from './Icon';
 import { Link } from './Link';
 import { getYearOfThe } from '../utils';
 
@@ -18,20 +19,12 @@ export const LeftSidebar = ({
   handleToggleSidebar,
   setSidebar,
 }): JSX.Element => {
-  const onNodeExpand = (e, node) => {
+  const onNodeClick = debounce((e, node) => {
     node.open = !node.open;
-
-    //setSidebar(sidebar);
-    return true;
-  };
-
-  const onNodeActivate = (e, node) => {
     node.active = !node.active;
-    //setSidebar(sidebar);
+    setSidebar(sidebar);
     return true;
-  };
-
-  console.log(sidebar);
+  }, 300);
 
   return (
     <ProSidebar
@@ -43,42 +36,51 @@ export const LeftSidebar = ({
     >
       <SidebarContent>
         <Menu iconShape="square">
-          <MenuItem icon={getIcon({ icon: 'ruble-sign', size: 'lg' })}>
+          <MenuItem icon={Icon({ icon: 'ruble-sign', size: 'lg' })}>
             <Link to={'/'} title={'Home'}>
               <div>Home</div>
             </Link>
           </MenuItem>
-          <div onClick={(e) => onNodeExpand(e, sidebar)}>
-            <SubMenu title="Archives" icon={getIcon({ icon: 'archive', size: 'lg' })} open={true}>
-              {sidebar.archive.map((group, i) => {
-                return (
-                  <div onClick={(e) => onNodeExpand(e, sidebar)} key={`${i}_${group.year}`}>
-                    <SubMenu
-                      title={group.year}
-                      icon={getIcon({ icon: getYearOfThe(group.year).font, size: 'lg' })}
-                      open={group.open}
-                    >
-                      {group.articles
-                        .sort((a, b) => a.date.getTime() - b.date.getTime())
-                        .map((node, j) => {
-                          return (
-                            <MenuItem key={`${j}_${node.slug}`} active={node.active}>
-                              <Link
-                                to={node.slug}
-                                title={node.title}
-                                onClick={(e) => onNodeActivate(e, node)}
-                              >
-                                <div>{node.title}</div>
-                              </Link>
-                            </MenuItem>
-                          );
-                        })}
-                    </SubMenu>
-                  </div>
-                );
-              })}
-            </SubMenu>
-          </div>
+          <SubMenu
+            title={<span onClick={(e) => onNodeClick(e, sidebar)}>Archive</span>}
+            icon={<Icon {...{ icon: 'archive', size: 'lg' }} />}
+            defaultOpen={true}
+          >
+            {sidebar.archive.map((group, i) => {
+              return (
+                <SubMenu
+                  title={<span onClick={(e) => onNodeClick(e, group)}>{group.year}</span>}
+                  icon={
+                    <Icon
+                      {...{
+                        icon: getYearOfThe(group.year).font,
+                        size: 'lg',
+                        onClick: (e) => onNodeClick(e, group),
+                      }}
+                    />
+                  }
+                  defaultOpen={group.open}
+                  key={`${i}_${group.year}`}
+                >
+                  {group.articles
+                    .sort((a, b) => a.date.getTime() - b.date.getTime())
+                    .map((node, j) => {
+                      return (
+                        <MenuItem key={`${j}_${node.slug}`} active={node.active}>
+                          <Link
+                            to={node.slug}
+                            title={node.title}
+                            onClick={(e) => onNodeClick(e, node)}
+                          >
+                            <div>{node.title}</div>
+                          </Link>
+                        </MenuItem>
+                      );
+                    })}
+                </SubMenu>
+              );
+            })}
+          </SubMenu>
         </Menu>
       </SidebarContent>
       <SidebarFooter>

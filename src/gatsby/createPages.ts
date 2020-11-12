@@ -49,6 +49,7 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions 
         tagsGroup: allMdx(limit: 2000) {
           group(field: frontmatter___tags) {
             fieldValue
+            totalCount
           }
         }
       }
@@ -66,14 +67,29 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions 
   // Create blog posts pages.
   const posts = queryResult?.data?.allPages?.edges || [];
 
-  posts.forEach((post, index) => {
-    const previous = index === posts.length - 1 ? null : (posts[index + 1].node as INode);
+  // Extract category data from query
+  const tags = queryResult.data.tagsGroup?.group || [];
 
-    const next = index === 0 ? null : (posts[index - 1].node as INode);
+  posts.forEach((post, index) => {
+    const prevNode = index === posts.length - 1 ? posts[0].node : posts[index + 1].node;
+    const previous = prevNode as INode;
+
+    const nextNode = index === 0 ? posts[posts.length - 1].node : posts[index - 1].node;
+    const next = nextNode as INode;
 
     const node = post?.node;
 
     const pagePath = node?.fields?.slug || '/';
+
+    const nodeTags = node?.fields?.tags || [];
+    const pageTags = [];
+    nodeTags.forEach((t) => {
+      const grp = tags.find((g) => g.fieldValue === t);
+      pageTags.push({
+        name: grp?.fieldValue,
+        count: grp?.totalCount,
+      });
+    });
 
     if (!pagePath) {
       return console.info(chalk.yellow('Warning: Blog post has no path. Skipping...'));
@@ -87,6 +103,7 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions 
         slug: pagePath,
         previous,
         next,
+        pageTags,
       },
     });
   });
@@ -96,9 +113,6 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions 
     component: templates.визуализации,
     context: {},
   });
-
-  // Extract category data from query
-  const tags = queryResult.data.tagsGroup?.group || [];
 
   if (tags.length === 0) {
     return console.info(

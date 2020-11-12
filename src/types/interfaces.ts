@@ -8,6 +8,7 @@ export interface IPageProps {
     next: INode;
     previous: INode;
     slug: string;
+    pageTags: any[];
   };
 }
 
@@ -58,6 +59,7 @@ export interface IStyle {
 
 export interface ICategory {
   fieldValue?: string;
+  totalCount?: number;
 }
 
 export interface INodeFrontMatter {
@@ -75,7 +77,7 @@ export interface INodeFields {
   id: number;
   img?: string;
   slug?: string;
-  tags?: string;
+  tags?: string[];
   title?: string;
 }
 

@@ -8,7 +8,6 @@ import { Empty } from '../components/Empty';
 export default class Article extends Component<IPageProps> {
   render(): JSX.Element {
     const { data } = this.props;
-
     const { mdx } = data;
     let pageContent = <Empty />;
 
@@ -53,12 +52,6 @@ export const articleQuery = graphql`
       }
       body
       tableOfContents
-    }
-    allMdx {
-      group(field: frontmatter___tags) {
-        fieldValue
-        totalCount
-      }
     }
   }
 `;

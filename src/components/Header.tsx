@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import { Link } from './Link';
-import { getIcon } from './Icon';
+import { Icon } from './Icon';
 import { config } from '../../config';
 import { IProps } from '../types/interfaces';
 import { Tools } from '../utils';
@@ -72,17 +72,23 @@ export const Header: React.FC<IProps> = (): JSX.Element => {
             ))}
             <li className={'hiddenMobile githubBtn'}>
               <Link to={config.header.githubUrl} aria-label="Follow">
-                {getIcon({ icon: ['fab', 'github'] })}
+                <Icon {...{ icon: ['fab', 'github'] }} />
               </Link>
             </li>
             <li>
-              <Link to={config.header.twitterUrl}>{getIcon({ icon: ['fab', 'twitter'] })}</Link>
+              <Link to={config.header.twitterUrl}>
+                <Icon {...{ icon: ['fab', 'twitter'] }} />
+              </Link>
             </li>
             <li>
-              <Link to={config.header.linkedInUrl}>{getIcon({ icon: ['fab', 'linkedin'] })}</Link>
+              <Link to={config.header.linkedInUrl}>
+                <Icon {...{ icon: ['fab', 'linkedin'] }} />
+              </Link>
             </li>
             <li>
-              <Link to={'/rss.xml'}>{getIcon({ icon: 'rss' })}</Link>
+              <Link to={'/rss.xml'}>
+                <Icon {...{ icon: 'rss' }} />
+              </Link>
             </li>
           </ul>
         </div>

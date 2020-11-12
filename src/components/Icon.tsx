@@ -9,4 +9,6 @@ import { far } from '@fortawesome/pro-regular-svg-icons';
 
 library.add(fab, fad, fas, fal, far);
 
-export const getIcon = (props: FontAwesomeIconProps): JSX.Element => <FontAwesomeIcon {...props} />;
+export const Icon: React.FC<FontAwesomeIconProps> = (props): JSX.Element => (
+  <FontAwesomeIcon {...props} />
+);
