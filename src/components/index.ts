@@ -14,4 +14,5 @@ export * from './NextPrevious';
 export * from './NotFound';
 export * from './PageWrapper';
 export * from './RightSidebar';
+export * from './Theme';
 export * from './ThemeProvider';
