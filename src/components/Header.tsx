@@ -2,13 +2,13 @@ import React from 'react';
 import styled from '@emotion/styled';
 import { Link } from './Link';
 import { Icon } from './Icon';
-import { config } from '../../config';
+import { getConfig } from '../../config';
 import { IProps } from '../types/interfaces';
 import { Tools } from '../utils';
 import { SearchComponent } from './search/SearchComponent';
 
-const isSearchEnabled = config.header?.search?.enabled === true;
-
+const config = getConfig();
+const isSearchEnabled = config.header?.search?.enabled;
 const searchIndices = [];
 
 if (isSearchEnabled && config.header.search.indexName) {

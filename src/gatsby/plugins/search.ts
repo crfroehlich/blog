@@ -45,7 +45,7 @@ export const addSearch: addConfig = (config, plugins): void => {
     },
   ];
 
-  if (config.header?.search?.enabled !== true) return;
+  if (config.header.search.algoliaAppId?.length > 0) return;
 
   plugins.push({
     resolve: `gatsby-plugin-algolia`,
@@ -54,6 +54,11 @@ export const addSearch: addConfig = (config, plugins): void => {
       apiKey: config.header.search.algoliaAdminKey, // algolia admin key to index
       queries,
       chunkSize: 10000, // default: 1000
+      indexName: 'blog',
+      enablePartialUpdates: true,
+      matchFields: ['slug', 'modified'], // Array<String> default: ['modified']
+      concurrentQueries: false, // default: true
+      skipIndexing: true, // default: false, useful for e.g. preview deploys or local development
     },
   });
 };
