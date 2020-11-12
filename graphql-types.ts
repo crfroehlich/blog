@@ -26,6 +26,16 @@ export type Scalars = {
 
 
 
+export type BlurredOptions = {
+  /** Width of the generated low-res preview. Default is 20px */
+  width?: Maybe<Scalars['Int']>;
+  /**
+   * Force the output format for the low-res preview. Default is to use the same
+   * format as the input. You should rarely need to change this
+   */
+  toFormat?: Maybe<ImageFormat>;
+};
+
 export type BooleanQueryOperatorInput = {
   eq?: Maybe<Scalars['Boolean']>;
   ne?: Maybe<Scalars['Boolean']>;
@@ -559,7 +569,7 @@ export type FileFieldsEnum =
   | 'childImageSharp___sizes___originalName'
   | 'childImageSharp___sizes___presentationWidth'
   | 'childImageSharp___sizes___presentationHeight'
-  | 'childImageSharp___gatsbyImage___imageData'
+  | 'childImageSharp___gatsbyImageData'
   | 'childImageSharp___original___width'
   | 'childImageSharp___original___height'
   | 'childImageSharp___original___src'
@@ -861,6 +871,7 @@ export type ImageFit =
 
 export type ImageFormat = 
   | 'NO_CHANGE'
+  | 'AUTO'
   | 'JPG'
   | 'PNG'
   | 'WEBP';
@@ -873,7 +884,7 @@ export type ImageLayout =
 export type ImagePlaceholder = 
   | 'DOMINANT_COLOR'
   | 'TRACED_SVG'
-  | 'BASE64'
+  | 'BLURRED'
   | 'NONE';
 
 export type ImageSharp = Node & {
@@ -883,7 +894,7 @@ export type ImageSharp = Node & {
   fluid?: Maybe<ImageSharpFluid>;
   /** @deprecated Sizes was deprecated in Gatsby v2. It's been renamed to "fluid" https://example.com/write-docs-and-fix-this-example-link */
   sizes?: Maybe<ImageSharpSizes>;
-  gatsbyImage?: Maybe<ImageSharpGatsbyImage>;
+  gatsbyImageData: Scalars['JSON'];
   original?: Maybe<ImageSharpOriginal>;
   resize?: Maybe<ImageSharpResize>;
   id: Scalars['ID'];
@@ -989,34 +1000,24 @@ export type ImageSharpSizesArgs = {
 };
 
 
-export type ImageSharpGatsbyImageArgs = {
+export type ImageSharpGatsbyImageDataArgs = {
   layout?: Maybe<ImageLayout>;
   maxWidth?: Maybe<Scalars['Int']>;
   maxHeight?: Maybe<Scalars['Int']>;
   width?: Maybe<Scalars['Int']>;
   height?: Maybe<Scalars['Int']>;
   placeholder?: Maybe<ImagePlaceholder>;
+  blurredOptions?: Maybe<BlurredOptions>;
   tracedSVGOptions?: Maybe<Potrace>;
-  webP?: Maybe<Scalars['Boolean']>;
+  formats?: Maybe<Array<Maybe<ImageFormat>>>;
   outputPixelDensities?: Maybe<Array<Maybe<Scalars['Float']>>>;
   sizes?: Maybe<Scalars['String']>;
-  base64Width?: Maybe<Scalars['Int']>;
-  grayscale?: Maybe<Scalars['Boolean']>;
-  jpegProgressive?: Maybe<Scalars['Boolean']>;
-  pngCompressionSpeed?: Maybe<Scalars['Int']>;
-  duotone?: Maybe<DuotoneGradient>;
   quality?: Maybe<Scalars['Int']>;
-  jpegQuality?: Maybe<Scalars['Int']>;
-  pngQuality?: Maybe<Scalars['Int']>;
-  webpQuality?: Maybe<Scalars['Int']>;
-  toFormat?: Maybe<ImageFormat>;
-  toFormatBase64?: Maybe<ImageFormat>;
-  cropFocus?: Maybe<ImageCropFocus>;
-  fit?: Maybe<ImageFit>;
+  jpgOptions?: Maybe<JpgOptions>;
+  pngOptions?: Maybe<PngOptions>;
+  webpOptions?: Maybe<WebPOptions>;
+  transformOptions?: Maybe<TransformOptions>;
   background?: Maybe<Scalars['String']>;
-  rotate?: Maybe<Scalars['Int']>;
-  trim?: Maybe<Scalars['Float']>;
-  srcSetBreakpoints?: Maybe<Array<Maybe<Scalars['Int']>>>;
 };
 
 
@@ -1114,7 +1115,7 @@ export type ImageSharpFieldsEnum =
   | 'sizes___originalName'
   | 'sizes___presentationWidth'
   | 'sizes___presentationHeight'
-  | 'gatsbyImage___imageData'
+  | 'gatsbyImageData'
   | 'original___width'
   | 'original___height'
   | 'original___src'
@@ -1216,7 +1217,7 @@ export type ImageSharpFilterInput = {
   resolutions?: Maybe<ImageSharpResolutionsFilterInput>;
   fluid?: Maybe<ImageSharpFluidFilterInput>;
   sizes?: Maybe<ImageSharpSizesFilterInput>;
-  gatsbyImage?: Maybe<ImageSharpGatsbyImageFilterInput>;
+  gatsbyImageData?: Maybe<JsonQueryOperatorInput>;
   original?: Maybe<ImageSharpOriginalFilterInput>;
   resize?: Maybe<ImageSharpResizeFilterInput>;
   id?: Maybe<StringQueryOperatorInput>;
@@ -1279,14 +1280,6 @@ export type ImageSharpFluidFilterInput = {
   originalName?: Maybe<StringQueryOperatorInput>;
   presentationWidth?: Maybe<IntQueryOperatorInput>;
   presentationHeight?: Maybe<IntQueryOperatorInput>;
-};
-
-export type ImageSharpGatsbyImage = {
-  imageData: Scalars['JSON'];
-};
-
-export type ImageSharpGatsbyImageFilterInput = {
-  imageData?: Maybe<JsonQueryOperatorInput>;
 };
 
 export type ImageSharpGroupConnection = {
@@ -1420,6 +1413,11 @@ export type IntQueryOperatorInput = {
   lte?: Maybe<Scalars['Int']>;
   in?: Maybe<Array<Maybe<Scalars['Int']>>>;
   nin?: Maybe<Array<Maybe<Scalars['Int']>>>;
+};
+
+export type JpgOptions = {
+  quality?: Maybe<Scalars['Int']>;
+  progressive?: Maybe<Scalars['Boolean']>;
 };
 
 
@@ -1755,6 +1753,11 @@ export type PageInfo = {
   totalCount: Scalars['Int'];
 };
 
+export type PngOptions = {
+  quality?: Maybe<Scalars['Int']>;
+  compressionSpeed?: Maybe<Scalars['Int']>;
+};
+
 export type Potrace = {
   turnPolicy?: Maybe<PotraceTurnPolicy>;
   turdSize?: Maybe<Scalars['Float']>;
@@ -1949,7 +1952,7 @@ export type QueryImageSharpArgs = {
   resolutions?: Maybe<ImageSharpResolutionsFilterInput>;
   fluid?: Maybe<ImageSharpFluidFilterInput>;
   sizes?: Maybe<ImageSharpSizesFilterInput>;
-  gatsbyImage?: Maybe<ImageSharpGatsbyImageFilterInput>;
+  gatsbyImageData?: Maybe<JsonQueryOperatorInput>;
   original?: Maybe<ImageSharpOriginalFilterInput>;
   resize?: Maybe<ImageSharpResizeFilterInput>;
   id?: Maybe<StringQueryOperatorInput>;
@@ -2767,12 +2770,6 @@ export type SitePageFieldsEnum =
   | 'pluginCreator___pluginOptions___feeds___query'
   | 'pluginCreator___pluginOptions___feeds___output'
   | 'pluginCreator___pluginOptions___feeds___title'
-  | 'pluginCreator___pluginOptions___appId'
-  | 'pluginCreator___pluginOptions___apiKey'
-  | 'pluginCreator___pluginOptions___queries'
-  | 'pluginCreator___pluginOptions___queries___query'
-  | 'pluginCreator___pluginOptions___queries___indexName'
-  | 'pluginCreator___pluginOptions___chunkSize'
   | 'pluginCreator___pluginOptions___compare'
   | 'pluginCreator___pluginOptions___outDir'
   | 'pluginCreator___pluginOptions___stats___context'
@@ -3021,13 +3018,6 @@ export type SitePluginFieldsEnum =
   | 'pluginOptions___feeds___query'
   | 'pluginOptions___feeds___output'
   | 'pluginOptions___feeds___title'
-  | 'pluginOptions___appId'
-  | 'pluginOptions___apiKey'
-  | 'pluginOptions___queries'
-  | 'pluginOptions___queries___query'
-  | 'pluginOptions___queries___indexName'
-  | 'pluginOptions___queries___settings___attributesToSnippet'
-  | 'pluginOptions___chunkSize'
   | 'pluginOptions___compare'
   | 'pluginOptions___outDir'
   | 'pluginOptions___stats___context'
@@ -3197,10 +3187,6 @@ export type SitePluginPluginOptions = {
   policy?: Maybe<Array<Maybe<SitePluginPluginOptionsPolicy>>>;
   query?: Maybe<Scalars['String']>;
   feeds?: Maybe<Array<Maybe<SitePluginPluginOptionsFeeds>>>;
-  appId?: Maybe<Scalars['String']>;
-  apiKey?: Maybe<Scalars['String']>;
-  queries?: Maybe<Array<Maybe<SitePluginPluginOptionsQueries>>>;
-  chunkSize?: Maybe<Scalars['Int']>;
   compare?: Maybe<Scalars['Boolean']>;
   outDir?: Maybe<Scalars['String']>;
   stats?: Maybe<SitePluginPluginOptionsStats>;
@@ -3277,10 +3263,6 @@ export type SitePluginPluginOptionsFilterInput = {
   policy?: Maybe<SitePluginPluginOptionsPolicyFilterListInput>;
   query?: Maybe<StringQueryOperatorInput>;
   feeds?: Maybe<SitePluginPluginOptionsFeedsFilterListInput>;
-  appId?: Maybe<StringQueryOperatorInput>;
-  apiKey?: Maybe<StringQueryOperatorInput>;
-  queries?: Maybe<SitePluginPluginOptionsQueriesFilterListInput>;
-  chunkSize?: Maybe<IntQueryOperatorInput>;
   compare?: Maybe<BooleanQueryOperatorInput>;
   outDir?: Maybe<StringQueryOperatorInput>;
   stats?: Maybe<SitePluginPluginOptionsStatsFilterInput>;
@@ -3306,30 +3288,6 @@ export type SitePluginPluginOptionsPolicyFilterInput = {
 
 export type SitePluginPluginOptionsPolicyFilterListInput = {
   elemMatch?: Maybe<SitePluginPluginOptionsPolicyFilterInput>;
-};
-
-export type SitePluginPluginOptionsQueries = {
-  query?: Maybe<Scalars['String']>;
-  indexName?: Maybe<Scalars['String']>;
-  settings?: Maybe<SitePluginPluginOptionsQueriesSettings>;
-};
-
-export type SitePluginPluginOptionsQueriesFilterInput = {
-  query?: Maybe<StringQueryOperatorInput>;
-  indexName?: Maybe<StringQueryOperatorInput>;
-  settings?: Maybe<SitePluginPluginOptionsQueriesSettingsFilterInput>;
-};
-
-export type SitePluginPluginOptionsQueriesFilterListInput = {
-  elemMatch?: Maybe<SitePluginPluginOptionsQueriesFilterInput>;
-};
-
-export type SitePluginPluginOptionsQueriesSettings = {
-  attributesToSnippet?: Maybe<Array<Maybe<Scalars['String']>>>;
-};
-
-export type SitePluginPluginOptionsQueriesSettingsFilterInput = {
-  attributesToSnippet?: Maybe<StringQueryOperatorInput>;
 };
 
 export type SitePluginPluginOptionsStats = {
@@ -3413,6 +3371,19 @@ export type StringQueryOperatorInput = {
   nin?: Maybe<Array<Maybe<Scalars['String']>>>;
   regex?: Maybe<Scalars['String']>;
   glob?: Maybe<Scalars['String']>;
+};
+
+export type TransformOptions = {
+  grayscale?: Maybe<Scalars['Boolean']>;
+  duotone?: Maybe<DuotoneGradient>;
+  rotate?: Maybe<Scalars['Int']>;
+  trim?: Maybe<Scalars['Float']>;
+  cropFocus?: Maybe<ImageCropFocus>;
+  fit?: Maybe<ImageFit>;
+};
+
+export type WebPOptions = {
+  quality?: Maybe<Scalars['Int']>;
 };
 
 export type GetNewSidebarLayoutQueryQueryVariables = Exact<{ [key: string]: never; }>;

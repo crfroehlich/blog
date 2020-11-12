@@ -79,17 +79,17 @@ export interface SiteMetadata {
 
 let siteConfig: IConfig | null = null;
 
-export const getConfig = (env: any = tools.getEnv()) => {
+export const getConfig = (env: any = tools.getEnv()): IConfig => {
   if (siteConfig?.header?.search?.enabled) return siteConfig;
 
   let { ALGOLIA_ADMIN_API_KEY, ALGOLIA_APPLICATION_ID, ALGOLIA_SEARCH_ONLY_API_KEY } = env;
-  if(!ALGOLIA_ADMIN_API_KEY && process?.env) {
+  if (!ALGOLIA_ADMIN_API_KEY && process?.env) {
     ALGOLIA_ADMIN_API_KEY = process.env.ALGOLIA_ADMIN_API_KEY;
   }
-  if(!ALGOLIA_APPLICATION_ID && process?.env) {
+  if (!ALGOLIA_APPLICATION_ID && process?.env) {
     ALGOLIA_APPLICATION_ID = process.env.ALGOLIA_APPLICATION_ID;
   }
-  if(!ALGOLIA_SEARCH_ONLY_API_KEY && process?.env) {
+  if (!ALGOLIA_SEARCH_ONLY_API_KEY && process?.env) {
     ALGOLIA_SEARCH_ONLY_API_KEY = process.env.ALGOLIA_SEARCH_ONLY_API_KEY;
   }
 
@@ -148,7 +148,6 @@ export const getConfig = (env: any = tools.getEnv()) => {
       },
     },
   };
-  console.log(siteConfig.header.search)
   return siteConfig;
 };
 
