@@ -1899,6 +1899,8 @@ export type QueryAllDirectoryArgs = {
 export type QuerySiteArgs = {
   buildTime?: Maybe<DateQueryOperatorInput>;
   siteMetadata?: Maybe<SiteSiteMetadataFilterInput>;
+  port?: Maybe<IntQueryOperatorInput>;
+  host?: Maybe<StringQueryOperatorInput>;
   pathPrefix?: Maybe<StringQueryOperatorInput>;
   polyfill?: Maybe<BooleanQueryOperatorInput>;
   id?: Maybe<StringQueryOperatorInput>;
@@ -2038,6 +2040,8 @@ export type QueryAllSitePluginArgs = {
 export type Site = Node & {
   buildTime?: Maybe<Scalars['Date']>;
   siteMetadata?: Maybe<SiteSiteMetadata>;
+  port?: Maybe<Scalars['Int']>;
+  host?: Maybe<Scalars['String']>;
   pathPrefix?: Maybe<Scalars['String']>;
   polyfill?: Maybe<Scalars['Boolean']>;
   id: Scalars['ID'];
@@ -2251,6 +2255,8 @@ export type SiteFieldsEnum =
   | 'siteMetadata___headerLinks___text'
   | 'siteMetadata___headerLinks___link'
   | 'siteMetadata___siteUrl'
+  | 'port'
+  | 'host'
   | 'pathPrefix'
   | 'polyfill'
   | 'id'
@@ -2343,6 +2349,8 @@ export type SiteFieldsEnum =
 export type SiteFilterInput = {
   buildTime?: Maybe<DateQueryOperatorInput>;
   siteMetadata?: Maybe<SiteSiteMetadataFilterInput>;
+  port?: Maybe<IntQueryOperatorInput>;
+  host?: Maybe<StringQueryOperatorInput>;
   pathPrefix?: Maybe<StringQueryOperatorInput>;
   polyfill?: Maybe<BooleanQueryOperatorInput>;
   id?: Maybe<StringQueryOperatorInput>;
@@ -2708,10 +2716,6 @@ export type SitePageFieldsEnum =
   | 'pluginCreator___resolve'
   | 'pluginCreator___name'
   | 'pluginCreator___version'
-  | 'pluginCreator___pluginOptions___sourceMap'
-  | 'pluginCreator___pluginOptions___autoLabel'
-  | 'pluginCreator___pluginOptions___labelFormat'
-  | 'pluginCreator___pluginOptions___cssPropOptimization'
   | 'pluginCreator___pluginOptions___indentedSyntax'
   | 'pluginCreator___pluginOptions___indentType'
   | 'pluginCreator___pluginOptions___indentWidth'
@@ -2776,6 +2780,10 @@ export type SitePageFieldsEnum =
   | 'pluginCreator___pluginOptions___allExtensions'
   | 'pluginCreator___pluginOptions___isTSX'
   | 'pluginCreator___pluginOptions___jsxPragma'
+  | 'pluginCreator___pluginOptions___sourceMap'
+  | 'pluginCreator___pluginOptions___autoLabel'
+  | 'pluginCreator___pluginOptions___labelFormat'
+  | 'pluginCreator___pluginOptions___cssPropOptimization'
   | 'pluginCreator___nodeAPIs'
   | 'pluginCreator___browserAPIs'
   | 'pluginCreator___ssrAPIs'
@@ -2962,10 +2970,6 @@ export type SitePluginFieldsEnum =
   | 'resolve'
   | 'name'
   | 'version'
-  | 'pluginOptions___sourceMap'
-  | 'pluginOptions___autoLabel'
-  | 'pluginOptions___labelFormat'
-  | 'pluginOptions___cssPropOptimization'
   | 'pluginOptions___indentedSyntax'
   | 'pluginOptions___indentType'
   | 'pluginOptions___indentWidth'
@@ -3031,6 +3035,10 @@ export type SitePluginFieldsEnum =
   | 'pluginOptions___allExtensions'
   | 'pluginOptions___isTSX'
   | 'pluginOptions___jsxPragma'
+  | 'pluginOptions___sourceMap'
+  | 'pluginOptions___autoLabel'
+  | 'pluginOptions___labelFormat'
+  | 'pluginOptions___cssPropOptimization'
   | 'nodeAPIs'
   | 'browserAPIs'
   | 'ssrAPIs'
@@ -3143,10 +3151,6 @@ export type SitePluginPackageJsonPeerDependenciesFilterListInput = {
 };
 
 export type SitePluginPluginOptions = {
-  sourceMap?: Maybe<Scalars['Boolean']>;
-  autoLabel?: Maybe<Scalars['Boolean']>;
-  labelFormat?: Maybe<Scalars['String']>;
-  cssPropOptimization?: Maybe<Scalars['Boolean']>;
   indentedSyntax?: Maybe<Scalars['Boolean']>;
   indentType?: Maybe<Scalars['String']>;
   indentWidth?: Maybe<Scalars['Int']>;
@@ -3204,6 +3208,10 @@ export type SitePluginPluginOptions = {
   allExtensions?: Maybe<Scalars['Boolean']>;
   isTSX?: Maybe<Scalars['Boolean']>;
   jsxPragma?: Maybe<Scalars['String']>;
+  sourceMap?: Maybe<Scalars['Boolean']>;
+  autoLabel?: Maybe<Scalars['Boolean']>;
+  labelFormat?: Maybe<Scalars['String']>;
+  cssPropOptimization?: Maybe<Scalars['Boolean']>;
 };
 
 export type SitePluginPluginOptionsFeeds = {
@@ -3223,10 +3231,6 @@ export type SitePluginPluginOptionsFeedsFilterListInput = {
 };
 
 export type SitePluginPluginOptionsFilterInput = {
-  sourceMap?: Maybe<BooleanQueryOperatorInput>;
-  autoLabel?: Maybe<BooleanQueryOperatorInput>;
-  labelFormat?: Maybe<StringQueryOperatorInput>;
-  cssPropOptimization?: Maybe<BooleanQueryOperatorInput>;
   indentedSyntax?: Maybe<BooleanQueryOperatorInput>;
   indentType?: Maybe<StringQueryOperatorInput>;
   indentWidth?: Maybe<IntQueryOperatorInput>;
@@ -3284,6 +3288,10 @@ export type SitePluginPluginOptionsFilterInput = {
   allExtensions?: Maybe<BooleanQueryOperatorInput>;
   isTSX?: Maybe<BooleanQueryOperatorInput>;
   jsxPragma?: Maybe<StringQueryOperatorInput>;
+  sourceMap?: Maybe<BooleanQueryOperatorInput>;
+  autoLabel?: Maybe<BooleanQueryOperatorInput>;
+  labelFormat?: Maybe<StringQueryOperatorInput>;
+  cssPropOptimization?: Maybe<BooleanQueryOperatorInput>;
 };
 
 export type SitePluginPluginOptionsPolicy = {

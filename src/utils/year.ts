@@ -13,67 +13,67 @@ interface IMap {
 const calendar: IMap = {
   13: {
     name: 'Abacus',
-    font: ['fad', 'abacus'],
+    font: ['fas', 'abacus'],
     sequence: 13,
   },
   12: {
     name: 'Scarf',
-    font: ['fad', 'scarf'],
+    font: ['fas', 'scarf'],
     sequence: 12,
   },
   11: {
     name: 'Space Cat',
-    font: ['fad', 'cat-space'],
+    font: ['fas', 'cat-space'],
     sequence: 11,
   },
   10: {
     name: 'Axe',
-    font: ['fad', 'axe'],
+    font: ['fas', 'axe'],
     sequence: 10,
   },
   9: {
     name: 'Poison',
-    font: ['fad', 'flask-poison'],
+    font: ['fas', 'flask-poison'],
     sequence: 9,
   },
   8: {
     name: 'Mountains',
-    font: ['fad', 'mountains'],
+    font: ['fas', 'mountains'],
     sequence: 8,
   },
   7: {
     name: 'Coffee Pot',
-    font: ['fad', 'coffee-pot'],
+    font: ['fas', 'coffee-pot'],
     sequence: 7,
   },
   6: {
     name: 'Money',
-    font: ['fad', 'money-check'],
+    font: ['fas', 'money-check'],
     sequence: 6,
   },
   5: {
     name: 'Honey Badger',
-    font: ['fad', 'badger-honey'],
+    font: ['fas', 'badger-honey'],
     sequence: 5,
   },
   4: {
     name: 'Podium',
-    font: ['fad', 'podium'],
+    font: ['fas', 'podium'],
     sequence: 4,
   },
   3: {
     name: 'Rook',
-    font: ['fad', 'chess-rook'],
+    font: ['fas', 'chess-rook'],
     sequence: 3,
   },
   2: {
     name: 'Scarecrow',
-    font: ['fad', 'scarecrow'],
+    font: ['fas', 'scarecrow'],
     sequence: 2,
   },
   1: {
     name: 'Baby',
-    font: ['fad', 'baby-carriage'],
+    font: ['fas', 'baby-carriage'],
     sequence: 1,
   },
 };

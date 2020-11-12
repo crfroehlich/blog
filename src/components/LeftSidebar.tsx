@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/click-events-have-key-events */
 import React from 'react';
 import {
   ProSidebar,
@@ -7,7 +8,6 @@ import {
   SidebarContent,
   SidebarFooter,
 } from 'react-pro-sidebar';
-import { debounce} from 'lodash';
 import { Icon } from './Icon';
 import { Link } from './Link';
 import { getYearOfThe } from '../utils';
@@ -19,13 +19,12 @@ export const LeftSidebar = ({
   handleToggleSidebar,
   setSidebar,
 }): JSX.Element => {
-  const onNodeClick = debounce((e, node) => {
+  const onNodeClick = (e, node) => {
     node.open = !node.open;
     node.active = !node.active;
     setSidebar(sidebar);
     return true;
-  }, 300);
-
+  };
   return (
     <ProSidebar
       className={'sidebarOR'}
@@ -41,46 +40,55 @@ export const LeftSidebar = ({
               <div>Home</div>
             </Link>
           </MenuItem>
-          <SubMenu
-            title={<span onClick={(e) => onNodeClick(e, sidebar)}>Archive</span>}
-            icon={<Icon {...{ icon: 'archive', size: 'lg' }} />}
-            defaultOpen={true}
-          >
-            {sidebar.archive.map((group, i) => {
-              return (
-                <SubMenu
-                  title={<span onClick={(e) => onNodeClick(e, group)}>{group.year}</span>}
-                  icon={
-                    <Icon
-                      {...{
-                        icon: getYearOfThe(group.year).font,
-                        size: 'lg',
-                        onClick: (e) => onNodeClick(e, group),
-                      }}
-                    />
-                  }
-                  defaultOpen={group.open}
-                  key={`${i}_${group.year}`}
-                >
-                  {group.articles
-                    .sort((a, b) => a.date.getTime() - b.date.getTime())
-                    .map((node, j) => {
-                      return (
-                        <MenuItem key={`${j}_${node.slug}`} active={node.active}>
-                          <Link
-                            to={node.slug}
-                            title={node.title}
-                            onClick={(e) => onNodeClick(e, node)}
-                          >
-                            <div>{node.title}</div>
-                          </Link>
-                        </MenuItem>
-                      );
-                    })}
-                </SubMenu>
-              );
-            })}
-          </SubMenu>
+          {sidebar.sections.map((s, si) => {
+            return (
+              <SubMenu
+                title={<div {...{ onClick: (e) => onNodeClick(e, s) }}>{s.name}</div>}
+                icon={<Icon {...{ icon: s.icon, size: 'lg' }} />}
+                defaultOpen={s.open}
+                key={`${si}_${s.name}`}
+              >
+                {s.articles.map((group, i) => {
+                  return (
+                    <SubMenu
+                      title={<div {...{ onClick: (e) => onNodeClick(e, group) }}>{group.year}</div>}
+                      icon={
+                        <Icon
+                          {...{
+                            icon: getYearOfThe(group.year).font,
+                            size: 'lg',
+                            onClick: (e) => onNodeClick(e, group),
+                          }}
+                        />
+                      }
+                      defaultOpen={group.open}
+                      key={`${i}_${group.year}`}
+                    >
+                      {group.posts
+                        .sort((a, b) => a.date.getTime() - b.date.getTime())
+                        .map((node, j) => {
+                          return (
+                            <MenuItem
+                              key={`${j}_${node.slug}`}
+                              active={node.active}
+                              {...{ onClick: (e) => onNodeClick(e, node) }}
+                            >
+                              <Link
+                                to={node.slug}
+                                title={node.title}
+                                {...{ onClick: (e) => onNodeClick(e, node) }}
+                              >
+                                <div>{node.title}</div>
+                              </Link>
+                            </MenuItem>
+                          );
+                        })}
+                    </SubMenu>
+                  );
+                })}
+              </SubMenu>
+            );
+          })}
         </Menu>
       </SidebarContent>
       <SidebarFooter>
