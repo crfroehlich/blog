@@ -1,8 +1,13 @@
 import * as React from 'react';
 import { ThemeProvider as EmotionThemeProvider } from 'emotion-theming';
-import { Theme } from './Theme';
 import { Header } from './Header';
 import { ILayoutProps } from '../types';
+
+export const Theme = {
+  fonts: {
+    mono: '"SF Mono", "Roboto Mono", Menlo, monospace',
+  },
+};
 
 export const ThemeProvider: React.FC<ILayoutProps> = ({
   children,

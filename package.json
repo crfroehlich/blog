@@ -121,22 +121,27 @@
   "envDocumentation": {
     "ALGOLIA_ADMIN_API_KEY": {
       "defaultValue": "x",
-      "description": "Admin API Key"
+      "description": "Algolia Search Admin API Key"
     },
     "ALGOLIA_APPLICATION_ID": {
-      "description": "Please document the <ALGOLIA_APPLICATION_ID> variable"
+      "defaultValue": "x",
+      "description": "Algolia Search Application Id"
     },
     "ALGOLIA_SEARCH_ONLY_API_KEY": {
-      "description": "Please document the <ALGOLIA_SEARCH_ONLY_API_KEY> variable"
+      "defaultValue": "x",
+      "description": "Alogolia Search API Key"
     },
     "DOCS_CREATE_README_INDEX": {
-      "description": "Please document the <DOCS_CREATE_README_INDEX> variable"
+      "defaultValue": true,
+      "description": "If true, creates an index in the main README file for all markdown content"
     },
     "DOCS_CREATE_TOC": {
-      "description": "Please document the <DOCS_CREATE_TOC> variable"
+      "defaultValue": false,
+      "description": "If true, create a Table of Contents for each markdown file"
     },
     "GH_ACCESS_TOKEN": {
-      "description": "Please document the <GH_ACCESS_TOKEN> variable"
+      "defaultValue": "x",
+      "description": "A read-write access token used for CI/CD"
     },
     "IGNORE_MARKDOWN_FILES": {
       "defaultValue": ".yarn,.vscode,.github,.tmp,temp,node_modules,.git,.cache,public",
@@ -151,7 +156,7 @@
       "description": "Environment. Options are: dev, test and prod."
     },
     "SYNC_PEER_DEPENDENCIES": {
-      "defaultValue": true,
+      "defaultValue": false,
       "description": "If true, sets all project dependencies as peer dependencies"
     }
   },
@@ -171,7 +176,6 @@
     "docs:api": "rimraf dist && tsc -p tsconfig.tools.json && node ./node_modules/@luddites-me/ts-tools/dist/docs/generateApi.js --path=./api-extractor.json",
     "docs:publish": "node ./node_modules/@luddites-me/ts-tools/dist/docs/generateApiDocs.js",
     "docs:standardize": "node ./node_modules/@luddites-me/ts-tools/dist/readme/standardizeReadme.js",
-    "generate:exports": "npx cti create ./src -w -b",
     "lint": "pretty-quick --staged && yarn lint:sort && yarn lint:ts && yarn lint:pretty",
     "lint:md": "npx markdownlint ./content",
     "lint:pretty": "prettier --write \"src/**/*.{ts,tsx,css,json}\"",
@@ -247,5 +251,5 @@
       "dev": true
     }
   },
-  "version": "0.0.1"
+  "version": "0.9.2"
 }

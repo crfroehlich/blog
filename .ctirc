@@ -15,7 +15,8 @@
     'content',
     'static',
     'gatsby',
-    'pages'
+    'pages',
+    'sass'
   ],
   fileExcludePatterns: ['*.test.ts', '*.test', '*.feature.ts'],
   fileFirst: false,
