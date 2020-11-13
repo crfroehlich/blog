@@ -1,81 +1,48 @@
 import React from 'react';
-import { StaticQuery, graphql } from 'gatsby';
-
-// import Link from './link';
-import { Query } from '../../graphql-types';
-import { getConfig } from '../../config';
 import { RightSidebarStyles, ListItemStyles } from './styles/RightSidebarStyles';
-import { IProps } from '../types/interfaces';
+import { IPageProps } from '../types/interfaces';
 
-const config = getConfig();
+export const RightSidebar: React.FC<IPageProps> = (props): JSX.Element => {
+  const {
+    pageContext: { toc },
+  } = props;
 
-export const RightSidebar: React.FC<IProps> = ({ location }): JSX.Element => (
-  <StaticQuery<Query>
-    query={graphql`
-      query GetSidebarQuery {
-        allMdx {
-          edges {
-            node {
-              fields {
-                slug
-              }
-              tableOfContents
-            }
-          }
-        }
+  const menu = toc?.content?.map((item, i) => {
+    return (
+      <ListItemStyles key={i} to={item.id} level={1}>
+        {item.name}
+      </ListItemStyles>
+    );
+  });
+  let title = '';
+
+  switch (toc?.type) {
+    case 'Article':
+      if (toc.content?.length > 0) {
+        title = 'CONTENTS';
       }
-    `}
-    render={({ allMdx }) => {
-      let finalNavItems;
-
-      if (allMdx.edges?.length > 0) {
-        allMdx.edges.map((item) => {
-          let innerItems;
-
-          if (item !== undefined && item.node.fields.slug !== '/') {
-            if (
-              location.pathname.startsWith(item.node.fields.slug) ||
-              config.gatsby.pathPrefix + item.node.fields.slug === location.pathname
-            ) {
-              if (item.node.tableOfContents.items) {
-                innerItems = item.node.tableOfContents.items.map((innerItem, i) => {
-                  const itemId = innerItem.title
-                    ? innerItem.title?.replace(/\s+/g, '').toLowerCase()
-                    : '#';
-
-                  return (
-                    <ListItemStyles key={i} to={`#${itemId}`} level={1}>
-                      {innerItem.title}
-                    </ListItemStyles>
-                  );
-                });
-              }
-            }
-          }
-          if (innerItems) {
-            finalNavItems = innerItems;
-          }
-        });
+      break;
+    case 'Tag':
+      if (toc.content?.length > 0) {
+        title = 'TAGS';
       }
-      if (finalNavItems?.length) {
-        return (
-          <div>
-            <RightSidebarStyles>
-              <ul className={'rightSideBarUL'}>
-                <li className={'rightSideTitle'}>CONTENTS</li>
-                {finalNavItems}
-              </ul>
-            </RightSidebarStyles>
-          </div>
-        );
-      }
-      return (
-        <RightSidebarStyles>
-          <ul></ul>
-        </RightSidebarStyles>
-      );
-    }}
-  />
-);
+      break;
+    case 'Visualization':
+      break;
+    default:
+      break;
+  }
+
+  const header = title ? <li className={'rightSideTitle'}>{title}</li> : <div />;
+
+  return (
+    <RightSidebarStyles>
+      <ul className={'rightSideBarUL'}>
+        {header}
+        {menu}
+      </ul>
+    </RightSidebarStyles>
+  );
+};
 
 export default RightSidebar;

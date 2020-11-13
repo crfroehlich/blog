@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 import { Link } from './Link';
 import { Icon } from './Icon';
 import { getConfig } from '../../config';
-import { IProps } from '../types/interfaces';
+import { IPageProps } from '../types/interfaces';
 import { Tools } from '../utils';
 import { SearchComponent } from './search/SearchComponent';
 
@@ -43,7 +43,7 @@ const StyledBgDiv = styled('div')`
   }
 `;
 
-export const Header: React.FC<IProps> = (): JSX.Element => {
+export const Header: React.FC<IPageProps> = (): JSX.Element => {
   return (
     <div className={'navBarWrapper'}>
       <nav className={'navBarDefault'}>

@@ -14,7 +14,7 @@ const insertScript = (src, id, parentElement) => {
 };
 
 // Helper to remove scripts from our page
-const removeScript = (id, parentElement) => {
+const removeScript = (id, parentElement): void => {
   const tools = new Tools();
   const script = tools.getDocument()?.getElementById(id);
 
@@ -41,12 +41,8 @@ export const Comments: React.FC<IComment> = ({ id }) => {
       insertScript(`https://home.luddites.me/js/commento.js`, `commento-script`, document.body);
     }
     // Cleanup; remove the script from the page
-    return (): void => {
-      removeScript(`commento-script`, document.body);
-    };
+    removeScript(`commento-script`, document.body);
   }, [id]);
 
   return <div id={`commento`} />;
 };
-
-export default Comments;

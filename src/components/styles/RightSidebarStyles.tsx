@@ -13,7 +13,7 @@ export const RightSidebarStyles = styled('aside')`
   position: sticky;
   top: 0;
 
-  background: ${(props: IStyle) => props.theme.colors.background};
+  background: ${(props: IStyle) => props.theme?.colors?.background};
 
   .rightSideTitle {
     font-size: 10px;
@@ -25,7 +25,7 @@ export const RightSidebarStyles = styled('aside')`
     border-left: 1px solid #e6ecf1;
     border-left-color: rgb(230, 236, 241);
 
-    color: ${(props: IStyle) => props.theme.colors.text};
+    color: ${(props: IStyle) => props.theme?.colors?.text};
   }
 
   .rightSideBarUL {
@@ -44,7 +44,7 @@ export const RightSidebarStyles = styled('aside')`
     line-height: 1.5;
     padding: 7px 24px 7px 16px;
 
-    color: ${(props: IStyle) => props.theme.colors.text};
+    color: ${(props: IStyle) => props.theme?.colors?.text};
   }
 
   @media only screen and (max-width: 50rem) {

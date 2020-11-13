@@ -10,7 +10,7 @@ export const StyledHeading = styled('h1')`
   flex: 1;
   margin-top: 0;
   padding-top: 0;
-  color: ${(props: IStyle) => props.theme.colors.heading};
+  color: ${(props: IStyle) => props.theme?.colors?.heading};
 `;
 
 export const Edit = styled('div')`
@@ -40,7 +40,7 @@ export const Edit = styled('div')`
 
 export const StyledMainWrapper = styled.div`
   max-width: 750px;
-  color: ${(props: IStyle) => props.theme.colors.text};
+  color: ${(props: IStyle) => props.theme?.colors?.text};
 
   ul,
   ol {
@@ -59,7 +59,7 @@ export const StyledMainWrapper = styled.div`
 
   a {
     transition: color 0.15s;
-    color: ${(props: IStyle) => props.theme.colors.link};
+    color: ${(props: IStyle) => props.theme?.colors?.link};
   }
 
   code {

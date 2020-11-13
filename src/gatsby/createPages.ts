@@ -2,10 +2,11 @@ import { GatsbyNode } from 'gatsby';
 import * as path from 'path';
 import kebabCase from 'lodash/kebabCase';
 import startCase from 'lodash/startCase';
-import chalk from 'chalk';
 import { getConfig } from '../../config';
 import { IQueryResult, INode } from '../types/interfaces';
+import Logger from '../utils/logger';
 
+require('@hot-loader/react-dom');
 require('gatsby-plugin-mdx/component-with-mdx-scope');
 
 const config = getConfig();
@@ -33,6 +34,7 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions 
                 tags
                 img
               }
+              tableOfContents
               parent {
                 ... on File {
                   relativePath
@@ -94,7 +96,7 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions 
     });
 
     if (!pagePath) {
-      return console.info(chalk.yellow('Warning: Blog post has no path. Skipping...'));
+      return Logger.info('Warning: Blog post has no path. Skipping...');
     }
 
     createPage({
@@ -106,6 +108,16 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions 
         previous,
         next,
         pageTags,
+        toc: {
+          type: 'Article',
+          content: node?.tableOfContents?.items?.map((item) => {
+            return {
+              id: `#${item.title?.replace(/\s+/g, '').toLowerCase()}`,
+              name: item.title,
+            };
+          }),
+        },
+        title: node?.fields?.title,
       },
     });
   });
@@ -113,16 +125,30 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions 
   createPage({
     path: `/визуализации/`,
     component: templates.визуализации,
-    context: {},
+    context: {
+      toc: {
+        type: 'Visualization',
+        content: [],
+      },
+      title: 'Visualizations',
+    },
   });
 
   if (tags.length === 0) {
-    return console.info(
-      chalk.yellow(
-        'Warning: No categories were found in the blog. Skipping creating category pages.',
-      ),
+    return Logger.info(
+      'Warning: No categories were found in the blog. Skipping creating category pages.',
     );
   }
+
+  const tagToc = {
+    type: 'Tag',
+    content: tags
+      .filter((tag) => tag.totalCount > 1)
+      .sort((a, b) => b.totalCount - a.totalCount)
+      .map((tag) => {
+        return { id: `/тег/${tag.fieldValue}`, name: `${tag.fieldValue} (${tag.totalCount})` };
+      }),
+  };
 
   // Make category pages
   tags.forEach((node) => {
@@ -131,6 +157,8 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions 
       component: templates.tag,
       context: {
         tag: node.fieldValue,
+        toc: tagToc,
+        title: node.fieldValue,
       },
     });
   });
@@ -143,6 +171,7 @@ export const onCreateWebpackConfig: GatsbyNode['onCreateWebpackConfig'] = ({ act
       alias: {
         $components: path.resolve(__dirname, 'src/components'),
         buble: '@philpl/buble', // to reduce bundle size
+        'react-dom': '@hot-loader/react-dom',
       },
     },
   });
@@ -250,6 +279,6 @@ export const onCreateNode: GatsbyNode['onCreateNode'] = ({ node, getNode, action
       });
     }
   } catch (e) {
-    console.error('Create node error', e);
+    Logger.error('Create node error', e);
   }
 };
