@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { MDXProvider } from '@mdx-js/react';
 import mdxComponents from './styles/StyledProp';
 import { RightSidebar } from './RightSidebar';
-import { ILayoutProps } from '../types';
+import { IPageProps } from '../types';
 import { LeftSidebar } from './LeftSidebar';
 import { SEO } from './SEO';
 import {
@@ -15,12 +15,14 @@ import {
 } from './styles';
 import { getSideBarData } from '../utils';
 
-export const Layout: React.FC<ILayoutProps> = ({ children, location }): JSX.Element => {
+export const Layout: React.FC<IPageProps> = (props): JSX.Element => {
   const [sidebar] = useState(getSideBarData());
 
+  const { children } = props;
+
   return (
-    <DarkTheme location={location}>
-      <SEO location={location} />
+    <DarkTheme {...props}>
+      <SEO {...props} />
       <MDXProvider components={mdxComponents}>
         <Wrapper>
           <LeftSideBarWidth className={'hiddenMobile'}>
@@ -30,7 +32,7 @@ export const Layout: React.FC<ILayoutProps> = ({ children, location }): JSX.Elem
             <MaxWidth>{children}</MaxWidth>
           </Content>
           <RightSideBarWidth className={'hiddenMobile'}>
-            <RightSidebar location={location} />
+            <RightSidebar {...props} />
           </RightSideBarWidth>
         </Wrapper>
       </MDXProvider>

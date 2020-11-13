@@ -1,37 +1,19 @@
-import React, { useState } from 'react';
-import { graphql, useStaticQuery } from 'gatsby';
+import React from 'react';
 import { Helmet } from 'react-helmet';
-import { getConfig } from '../../config';
+import { IPageProps } from '../types';
 
-const config = getConfig();
-
-export const SEO = ({ location }): JSX.Element => {
-  const { site } = useStaticQuery(
-    graphql`
-      query GetSiteQuery {
-        site {
-          siteMetadata {
-            title
-            docsLocation
-          }
-        }
-      }
-    `,
-  );
-
-  useState(site);
-
-  const title = '';
-  const slug = '';
-
-  const canonicalUrl = location?.path || `${config.gatsby.siteUrl}${slug || ''}`;
+export const SEO: React.FC<IPageProps> = (props): JSX.Element => {
+  const {
+    location,
+    pageContext: { title },
+  } = props;
 
   return (
     <Helmet>
       <title>{title}</title>
       <meta name="title" content={title} />
       <meta property="og:title" content={title} />
-      <link rel="canonical" href={canonicalUrl} />
+      <link rel="canonical" href={location.href} />
     </Helmet>
   );
 };

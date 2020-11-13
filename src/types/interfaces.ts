@@ -9,6 +9,11 @@ export interface IPageProps {
     previous: INode;
     slug: string;
     pageTags: any[];
+    toc: {
+      type: 'Article' | 'Tag' | 'Visualization';
+      content: any;
+    };
+    title: string;
   };
   pageTags: any;
   site: {
@@ -16,20 +21,11 @@ export interface IPageProps {
       docsLocation: any;
     };
   };
-}
-
-export interface IProps {
   location?: WindowLocation;
   pageContent?: JSX.Element;
   pageTitle?: string;
   props?: IPageProps;
-  showComments?: boolean;
-  showGithub?: boolean;
-}
-
-export interface ILayoutProps {
   children?: any;
-  location?: WindowLocation;
   theme?: any;
 }
 
@@ -95,7 +91,9 @@ export interface INode {
   html?: string;
   name?: string;
   relativePath?: string;
-  tableOfContents?: string;
+  tableOfContents?: {
+    items?: any[];
+  };
 }
 
 export interface IEdges {

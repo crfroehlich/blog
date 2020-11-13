@@ -3,6 +3,7 @@ import { ThemeProvider as EmotionThemeProvider } from 'emotion-theming';
 import { Global } from '@emotion/core';
 import { Header } from '../Header';
 import { BaseStyles } from './BaseStyles';
+import { IPageProps } from '../../types';
 
 const theme = {
   fonts: {
@@ -17,13 +18,13 @@ const theme = {
   },
 };
 
-export const DarkTheme: React.FC<any> = (props): JSX.Element => {
-  const { children, location } = props;
+export const DarkTheme: React.FC<IPageProps> = (props): JSX.Element => {
+  const { children } = props;
 
   return (
     <div>
       <Global styles={BaseStyles} />
-      <Header location={location} />
+      <Header {...props} />
       <EmotionThemeProvider theme={theme}>{children}</EmotionThemeProvider>
     </div>
   );

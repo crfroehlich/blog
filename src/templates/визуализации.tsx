@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { graphql } from 'gatsby';
 import KeywordCloud from 'react-keyword-cloud';
+import { navigate } from 'gatsby';
 import { IPageProps } from '../types';
 import { StyledHeading, StyledMainWrapper } from '../components';
 import { tools } from '../utils';
@@ -39,8 +40,9 @@ export default class визуализации extends Component<IPageProps> {
             font={'popper'}
             // spiral={'rectangular'}
             // fontSize={(node) => 1.01 * node.value}
-            // onKeyWordClick={console.info}
+            onKeyWordClick={(el) => navigate(`/тег/${el.text}`)}
             // onKeyWordMouseOver={console.info}
+            // onKeyWordMouseOut={console.info}
           />
         </StyledMainWrapper>
       </div>

@@ -1,21 +1,20 @@
 import * as React from 'react';
 import { ThemeProvider as EmotionThemeProvider } from 'emotion-theming';
 import { Header } from './Header';
-import { ILayoutProps } from '../types';
+import { IPageProps } from '../types';
 
-export const Theme = {
+const Theme = {
   fonts: {
     mono: '"SF Mono", "Roboto Mono", Menlo, monospace',
   },
 };
 
-export const ThemeProvider: React.FC<ILayoutProps> = ({
-  children,
-  theme = {},
-  location,
-}): JSX.Element => (
-  <div>
-    <Header location={location} />
-    <EmotionThemeProvider theme={{ ...Theme, ...theme }}>{children}</EmotionThemeProvider>
-  </div>
-);
+export const ThemeProvider: React.FC<IPageProps> = (props): JSX.Element => {
+  const { children, theme } = props;
+  return (
+    <div>
+      <Header {...props} />
+      <EmotionThemeProvider theme={{ ...Theme, ...theme }}>{children}</EmotionThemeProvider>
+    </div>
+  );
+};
