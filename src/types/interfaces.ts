@@ -10,6 +10,12 @@ export interface IPageProps {
     slug: string;
     pageTags: any[];
   };
+  pageTags: any;
+  site: {
+    siteMetadata: {
+      docsLocation: any;
+    };
+  };
 }
 
 export interface IProps {

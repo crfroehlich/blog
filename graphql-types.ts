@@ -2719,6 +2719,10 @@ export type SitePageFieldsEnum =
   | 'pluginCreator___resolve'
   | 'pluginCreator___name'
   | 'pluginCreator___version'
+  | 'pluginCreator___pluginOptions___sourceMap'
+  | 'pluginCreator___pluginOptions___autoLabel'
+  | 'pluginCreator___pluginOptions___labelFormat'
+  | 'pluginCreator___pluginOptions___cssPropOptimization'
   | 'pluginCreator___pluginOptions___indentedSyntax'
   | 'pluginCreator___pluginOptions___indentType'
   | 'pluginCreator___pluginOptions___indentWidth'
@@ -2777,10 +2781,6 @@ export type SitePageFieldsEnum =
   | 'pluginCreator___pluginOptions___allExtensions'
   | 'pluginCreator___pluginOptions___isTSX'
   | 'pluginCreator___pluginOptions___jsxPragma'
-  | 'pluginCreator___pluginOptions___sourceMap'
-  | 'pluginCreator___pluginOptions___autoLabel'
-  | 'pluginCreator___pluginOptions___labelFormat'
-  | 'pluginCreator___pluginOptions___cssPropOptimization'
   | 'pluginCreator___nodeAPIs'
   | 'pluginCreator___browserAPIs'
   | 'pluginCreator___ssrAPIs'
@@ -2967,6 +2967,10 @@ export type SitePluginFieldsEnum =
   | 'resolve'
   | 'name'
   | 'version'
+  | 'pluginOptions___sourceMap'
+  | 'pluginOptions___autoLabel'
+  | 'pluginOptions___labelFormat'
+  | 'pluginOptions___cssPropOptimization'
   | 'pluginOptions___indentedSyntax'
   | 'pluginOptions___indentType'
   | 'pluginOptions___indentWidth'
@@ -3025,10 +3029,6 @@ export type SitePluginFieldsEnum =
   | 'pluginOptions___allExtensions'
   | 'pluginOptions___isTSX'
   | 'pluginOptions___jsxPragma'
-  | 'pluginOptions___sourceMap'
-  | 'pluginOptions___autoLabel'
-  | 'pluginOptions___labelFormat'
-  | 'pluginOptions___cssPropOptimization'
   | 'nodeAPIs'
   | 'browserAPIs'
   | 'ssrAPIs'
@@ -3141,6 +3141,10 @@ export type SitePluginPackageJsonPeerDependenciesFilterListInput = {
 };
 
 export type SitePluginPluginOptions = {
+  sourceMap?: Maybe<Scalars['Boolean']>;
+  autoLabel?: Maybe<Scalars['Boolean']>;
+  labelFormat?: Maybe<Scalars['String']>;
+  cssPropOptimization?: Maybe<Scalars['Boolean']>;
   indentedSyntax?: Maybe<Scalars['Boolean']>;
   indentType?: Maybe<Scalars['String']>;
   indentWidth?: Maybe<Scalars['Int']>;
@@ -3194,10 +3198,6 @@ export type SitePluginPluginOptions = {
   allExtensions?: Maybe<Scalars['Boolean']>;
   isTSX?: Maybe<Scalars['Boolean']>;
   jsxPragma?: Maybe<Scalars['String']>;
-  sourceMap?: Maybe<Scalars['Boolean']>;
-  autoLabel?: Maybe<Scalars['Boolean']>;
-  labelFormat?: Maybe<Scalars['String']>;
-  cssPropOptimization?: Maybe<Scalars['Boolean']>;
 };
 
 export type SitePluginPluginOptionsFeeds = {
@@ -3217,6 +3217,10 @@ export type SitePluginPluginOptionsFeedsFilterListInput = {
 };
 
 export type SitePluginPluginOptionsFilterInput = {
+  sourceMap?: Maybe<BooleanQueryOperatorInput>;
+  autoLabel?: Maybe<BooleanQueryOperatorInput>;
+  labelFormat?: Maybe<StringQueryOperatorInput>;
+  cssPropOptimization?: Maybe<BooleanQueryOperatorInput>;
   indentedSyntax?: Maybe<BooleanQueryOperatorInput>;
   indentType?: Maybe<StringQueryOperatorInput>;
   indentWidth?: Maybe<IntQueryOperatorInput>;
@@ -3270,10 +3274,6 @@ export type SitePluginPluginOptionsFilterInput = {
   allExtensions?: Maybe<BooleanQueryOperatorInput>;
   isTSX?: Maybe<BooleanQueryOperatorInput>;
   jsxPragma?: Maybe<StringQueryOperatorInput>;
-  sourceMap?: Maybe<BooleanQueryOperatorInput>;
-  autoLabel?: Maybe<BooleanQueryOperatorInput>;
-  labelFormat?: Maybe<StringQueryOperatorInput>;
-  cssPropOptimization?: Maybe<BooleanQueryOperatorInput>;
 };
 
 export type SitePluginPluginOptionsPolicy = {
@@ -3386,14 +3386,6 @@ export type WebPOptions = {
   quality?: Maybe<Scalars['Int']>;
 };
 
-export type GetNewSidebarLayoutQueryQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-export type GetNewSidebarLayoutQueryQuery = { allMdx: { group: Array<(
-      Pick<MdxGroupConnection, 'fieldValue'>
-      & { edges: Array<{ node: { fields?: Maybe<Pick<MdxFields, 'date' | 'description' | 'id' | 'img' | 'slug' | 'subtitle' | 'tags' | 'title' | 'year'>> } }> }
-    )> } };
-
 export type GetSidebarQueryQueryVariables = Exact<{ [key: string]: never; }>;
 
 
@@ -3401,6 +3393,11 @@ export type GetSidebarQueryQuery = { allMdx: { edges: Array<{ node: (
         Pick<Mdx, 'tableOfContents'>
         & { fields?: Maybe<Pick<MdxFields, 'slug'>> }
       ) }> } };
+
+export type GetSiteQueryQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type GetSiteQueryQuery = { site?: Maybe<{ siteMetadata?: Maybe<Pick<SiteSiteMetadata, 'title' | 'docsLocation'>> }> };
 
 export type PagesCategoriesQueryQueryVariables = Exact<{ [key: string]: never; }>;
 
@@ -3417,7 +3414,7 @@ export type GetPageByIdQueryQueryVariables = Exact<{
 }>;
 
 
-export type GetPageByIdQueryQuery = { site?: Maybe<{ siteMetadata?: Maybe<Pick<SiteSiteMetadata, 'title' | 'docsLocation'>> }>, mdx?: Maybe<(
+export type GetPageByIdQueryQuery = { mdx?: Maybe<(
     Pick<Mdx, 'body' | 'tableOfContents'>
     & { fields?: Maybe<Pick<MdxFields, 'id' | 'title' | 'slug' | 'date' | 'tags' | 'img'>> }
   )> };
@@ -3427,15 +3424,23 @@ export type GetTagByNameQueryQueryVariables = Exact<{
 }>;
 
 
-export type GetTagByNameQueryQuery = { site?: Maybe<{ siteMetadata?: Maybe<Pick<SiteSiteMetadata, 'title' | 'docsLocation'>> }>, allMdx: (
+export type GetTagByNameQueryQuery = { allMdx: (
     Pick<MdxConnection, 'totalCount'>
     & { edges: Array<{ node: (
         Pick<Mdx, 'excerpt'>
         & { fields?: Maybe<Pick<MdxFields, 'id' | 'title' | 'slug' | 'date' | 'tags' | 'img'>> }
-      ) }>, group: Array<Pick<MdxGroupConnection, 'fieldValue' | 'totalCount'>> }
+      ) }> }
   ) };
 
 export type GetVisualizationsQueryQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type GetVisualizationsQueryQuery = { site?: Maybe<{ siteMetadata?: Maybe<Pick<SiteSiteMetadata, 'title'>> }>, allMdx: { group: Array<Pick<MdxGroupConnection, 'fieldValue' | 'totalCount'>> } };
+export type GetVisualizationsQueryQuery = { allMdx: { group: Array<Pick<MdxGroupConnection, 'fieldValue' | 'totalCount'>> } };
+
+export type GetNewSidebarLayoutQueryQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type GetNewSidebarLayoutQueryQuery = { allMdx: { group: Array<(
+      Pick<MdxGroupConnection, 'fieldValue'>
+      & { edges: Array<{ node: { fields?: Maybe<Pick<MdxFields, 'date' | 'description' | 'id' | 'img' | 'slug' | 'subtitle' | 'tags' | 'title' | 'year'>> } }> }
+    )> } };

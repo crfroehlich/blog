@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
-import React from 'react';
+import React, { useRef } from 'react';
 import {
   ProSidebar,
   Menu,
@@ -12,13 +12,16 @@ import { Icon } from './Icon';
 import { Link } from './Link';
 import { getYearOfThe } from '../utils';
 
-export const LeftSidebar = ({ sidebar, setSidebar }): JSX.Element => {
+export const LeftSidebar = ({ sidebar }): JSX.Element => {
+  const data = useRef(sidebar);
+
   const onNodeClick = (e, node) => {
     node.open = !node.open;
     node.active = !node.active;
-    setSidebar(sidebar);
+    // setSidebar(sidebar);
     return true;
   };
+
   return (
     <ProSidebar className={'sidebarOR'} breakPoint={'md'}>
       <SidebarContent>
@@ -28,7 +31,7 @@ export const LeftSidebar = ({ sidebar, setSidebar }): JSX.Element => {
               <div>Home</div>
             </Link>
           </MenuItem>
-          {sidebar.sections.map((s, si) => {
+          {data.current.sections.map((s, si) => {
             return (
               <SubMenu
                 title={<div {...{ onClick: (e) => onNodeClick(e, s) }}>{s.name}</div>}

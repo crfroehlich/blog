@@ -46,5 +46,3 @@ export const Comments: React.FC<IComment> = ({ id }) => {
 
   return <div id={`commento`} />;
 };
-
-export default Comments;
