@@ -6,6 +6,7 @@ import chalk from 'chalk';
 import { getConfig } from '../../config';
 import { IQueryResult, INode } from '../types/interfaces';
 
+require('@hot-loader/react-dom');
 require('gatsby-plugin-mdx/component-with-mdx-scope');
 
 const config = getConfig();
@@ -143,6 +144,7 @@ export const onCreateWebpackConfig: GatsbyNode['onCreateWebpackConfig'] = ({ act
       alias: {
         $components: path.resolve(__dirname, 'src/components'),
         buble: '@philpl/buble', // to reduce bundle size
+        'react-dom': '@hot-loader/react-dom',
       },
     },
   });

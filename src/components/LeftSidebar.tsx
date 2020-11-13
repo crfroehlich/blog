@@ -12,13 +12,7 @@ import { Icon } from './Icon';
 import { Link } from './Link';
 import { getYearOfThe } from '../utils';
 
-export const LeftSidebar = ({
-  sidebar,
-  collapsed,
-  toggled,
-  handleToggleSidebar,
-  setSidebar,
-}): JSX.Element => {
+export const LeftSidebar = ({ sidebar, setSidebar }): JSX.Element => {
   const onNodeClick = (e, node) => {
     node.open = !node.open;
     node.active = !node.active;
@@ -26,13 +20,7 @@ export const LeftSidebar = ({
     return true;
   };
   return (
-    <ProSidebar
-      className={'sidebarOR'}
-      collapsed={collapsed}
-      toggled={toggled}
-      onToggle={handleToggleSidebar}
-      breakPoint={'md'}
-    >
+    <ProSidebar className={'sidebarOR'} breakPoint={'md'}>
       <SidebarContent>
         <Menu iconShape="square">
           <MenuItem icon={Icon({ icon: 'ruble-sign', size: 'lg' })}>

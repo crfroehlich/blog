@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { graphql } from 'gatsby';
 import MDXRenderer from 'gatsby-plugin-mdx/mdx-renderer';
-import { PageWrapper } from '../components/PageWrapper';
+import { ArticleWrapper } from '../components/ArticleWrapper';
 import { IPageProps } from '../types/interfaces';
 import { Empty } from '../components/Empty';
 
@@ -18,7 +18,7 @@ export default class Article extends Component<IPageProps> {
     let ret = <Empty />;
     try {
       ret = (
-        <PageWrapper
+        <ArticleWrapper
           props={this.props}
           pageContent={pageContent}
           showGithub={true}
