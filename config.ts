@@ -148,6 +148,7 @@ export const getConfig = (env: any = tools.getEnv()): IConfig => {
       },
     },
   };
+  console.log(siteConfig.header.search)
   return siteConfig;
 };
 
