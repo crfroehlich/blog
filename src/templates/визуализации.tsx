@@ -2,11 +2,12 @@ import React, { Component } from 'react';
 import { graphql } from 'gatsby';
 import KeywordCloud from 'react-keyword-cloud';
 import { IPageProps } from '../types';
-import { Layout, StyledHeading, StyledMainWrapper, SEO } from '../components';
+import { StyledHeading, StyledMainWrapper } from '../components';
+import { tools } from '../utils';
 
 export default class визуализации extends Component<IPageProps> {
   render(): JSX.Element {
-    // if (!tools.isBrowser()) return <Empty />;
+    if (!tools.isBrowser()) return <div />;
 
     const {
       data: {
@@ -18,8 +19,7 @@ export default class визуализации extends Component<IPageProps> {
 
     const title = 'Fancy. Thinking the beast was something we could kill...';
     return (
-      <Layout {...this.props}>
-        <SEO title={title} slug={'визуализации'} />
+      <div>
         <div className={'titleWrapper'}>
           <StyledHeading>{title}</StyledHeading>
         </div>
@@ -43,7 +43,7 @@ export default class визуализации extends Component<IPageProps> {
             // onKeyWordMouseOver={console.info}
           />
         </StyledMainWrapper>
-      </Layout>
+      </div>
     );
   }
 }

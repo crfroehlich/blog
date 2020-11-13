@@ -5,7 +5,7 @@ import { getConfig } from '../../config';
 
 const config = getConfig();
 
-export const SEO = ({ title, slug }): JSX.Element => {
+export const SEO = ({ location }): JSX.Element => {
   const { site } = useStaticQuery(
     graphql`
       query GetSiteQuery {
@@ -21,7 +21,10 @@ export const SEO = ({ title, slug }): JSX.Element => {
 
   useState(site);
 
-  const canonicalUrl = `${config.gatsby.siteUrl}${slug || ''}`;
+  const title = '';
+  const slug = '';
+
+  const canonicalUrl = location?.path || `${config.gatsby.siteUrl}${slug || ''}`;
 
   return (
     <Helmet>

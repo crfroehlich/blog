@@ -28,8 +28,8 @@ export const StyledNextPrevious = styled('div')`
     box-shadow: rgba(116, 129, 141, 0.1) 0px 3px 8px 0px;
     text-decoration: none;
 
-    background-color: ${(props: IStyle) => props.theme.colors.background};
-    color: ${(props: IStyle) => props.theme.colors.text};
+    background-color: ${(props: IStyle) => props.theme?.colors?.background};
+    color: ${(props: IStyle) => props.theme?.colors?.text};
   }
 
   .nextBtn {
@@ -50,8 +50,8 @@ export const StyledNextPrevious = styled('div')`
     box-shadow: rgba(116, 129, 141, 0.1) 0px 3px 8px 0px;
     text-decoration: none;
 
-    background-color: ${(props: IStyle) => props.theme.colors.background};
-    color: ${(props: IStyle) => props.theme.colors.text};
+    background-color: ${(props: IStyle) => props.theme?.colors?.background};
+    color: ${(props: IStyle) => props.theme?.colors?.text};
   }
 
   .nextBtn:hover,

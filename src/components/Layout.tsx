@@ -2,8 +2,9 @@ import React, { useState } from 'react';
 import { MDXProvider } from '@mdx-js/react';
 import mdxComponents from './styles/StyledProp';
 import { RightSidebar } from './RightSidebar';
-import { ILayoutProps } from '../types/interfaces';
+import { ILayoutProps } from '../types';
 import { LeftSidebar } from './LeftSidebar';
+import { SEO } from './SEO';
 import {
   Wrapper,
   LeftSideBarWidth,
@@ -19,6 +20,7 @@ export const Layout: React.FC<ILayoutProps> = ({ children, location }): JSX.Elem
 
   return (
     <DarkTheme location={location}>
+      <SEO location={location} />
       <MDXProvider components={mdxComponents}>
         <Wrapper>
           <LeftSideBarWidth className={'hiddenMobile'}>

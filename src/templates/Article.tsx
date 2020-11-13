@@ -9,10 +9,8 @@ import {
   DisplayDate,
   Edit,
   Icon,
-  Layout,
   Link,
   NextPrevious,
-  SEO,
   StyledHeading,
   StyledMainWrapper,
 } from '../components';
@@ -29,10 +27,9 @@ export default class Article extends Component<IPageProps> {
     const { mdx } = data;
     const { title } = mdx.fields;
     const date = new Date(mdx.fields.date);
-    console.log(this.props)
+
     return (
-      <Layout {...this.props}>
-        <SEO title={title} slug={mdx.fields.slug} />
+      <div>
         <div className={'titleWrapper'}>
           <StyledHeading>{title}</StyledHeading>
           <Edit className={'mobileView'}>
@@ -72,7 +69,7 @@ export default class Article extends Component<IPageProps> {
         <div className={'addPaddTopBottom'}>
           <NextPrevious next={next} prev={previous} />
         </div>
-      </Layout>
+      </div>
     );
   }
 }

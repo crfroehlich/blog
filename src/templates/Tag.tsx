@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { graphql } from 'gatsby';
 import { Tooltip, CardMedia, Card, CardPrimaryAction, Typography, Grid, GridCell } from 'rmwc';
-import { Link, Layout, StyledHeading, StyledMainWrapper, SEO } from '../components';
+import { Link, StyledHeading, StyledMainWrapper } from '../components';
 import { IPageProps } from '../types/interfaces';
 
 export default class Tag extends Component<IPageProps> {
@@ -17,8 +17,7 @@ export default class Tag extends Component<IPageProps> {
     const title = parts[parts.length - 1];
 
     return (
-      <Layout {...this.props}>
-        <SEO title={title} slug={title} />
+      <div>
         <div className={'titleWrapper'}>
           <StyledHeading>{title}</StyledHeading>
         </div>
@@ -92,7 +91,7 @@ export default class Tag extends Component<IPageProps> {
             ))}
           </Grid>
         </StyledMainWrapper>
-      </Layout>
+      </div>
     );
   }
 }
