@@ -143,7 +143,7 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions 
   const tagToc = {
     type: 'Tag',
     content: tags
-      .filter((tag) => tag.totalCount > 1)
+      .filter((tag) => tag.totalCount > 2)
       .sort((a, b) => b.totalCount - a.totalCount)
       .map((tag) => {
         return { id: `/тег/${tag.fieldValue}`, name: `${tag.fieldValue} (${tag.totalCount})` };
