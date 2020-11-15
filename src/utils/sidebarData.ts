@@ -113,7 +113,7 @@ export const buildSidebar = (mdx, src): ISidebar => {
     sections: [recent, archive, source],
     open: true,
   };
-  console.log(ret)
+  console.log(ret);
   return ret;
 };
 
@@ -148,7 +148,10 @@ export const getSideBarData = once(
               fieldValue
             }
           }
-          allSrc: allMdx(filter: {fileAbsolutePath: {glob: "**/content/src/**"}}, sort: {fields: slug}) {
+          allSrc: allMdx(
+            filter: { fileAbsolutePath: { glob: "**/content/src/**" } }
+            sort: { fields: slug }
+          ) {
             edges {
               node {
                 fields {

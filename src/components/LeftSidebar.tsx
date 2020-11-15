@@ -12,8 +12,6 @@ import { Icon } from './Icon';
 import { Link } from './Link';
 import { getYearOfThe } from '../utils';
 
-
-
 export const LeftSidebar = ({ sidebar }): JSX.Element => {
   const data = useRef(sidebar);
 
@@ -24,25 +22,19 @@ export const LeftSidebar = ({ sidebar }): JSX.Element => {
   };
 
   const getSourceMenu = (menu) => {
-    console.log(menu)
-    if(!menu) return;
+    console.log(menu);
+    if (!menu) return;
 
-    if(menu.slug) {
+    if (menu.slug) {
       return (
-        <MenuItem
-          active={menu.active}
-          {...{ onClick: (e) => onNodeClick(e, menu) }}
-        >
-          <Link
-            to={menu.slug}
-            title={menu.title}
-            {...{ onClick: (e) => onNodeClick(e, menu) }}
-          >
+        <MenuItem active={menu.active} {...{ onClick: (e) => onNodeClick(e, menu) }}>
+          <Link to={menu.slug} title={menu.title} {...{ onClick: (e) => onNodeClick(e, menu) }}>
             <div>{menu.title}</div>
           </Link>
         </MenuItem>
       );
-    } else if (menu.links) {
+    }
+    if (menu.links) {
       return (
         <SubMenu
           title={<div {...{ onClick: (e) => onNodeClick(e, menu) }}>{menu.name}</div>}

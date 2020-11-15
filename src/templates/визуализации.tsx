@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { graphql } from 'gatsby';
+import { graphql, navigate } from 'gatsby';
 import KeywordCloud from 'react-keyword-cloud';
-import { navigate } from 'gatsby';
+
 import { IPageProps } from '../types';
 import { StyledHeading, StyledMainWrapper } from '../components';
 import { tools } from '../utils';
