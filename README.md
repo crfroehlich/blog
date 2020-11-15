@@ -40,6 +40,16 @@ First
   - Default Value: "false"
 - `GH_ACCESS_TOKEN`: A read-write access token used for CI/CD
   - Default Value: "x"
+- `ALGOLIA_APPLICATION_ID`: Please document the <ALGOLIA_APPLICATION_ID> variable
+  - Default Value: "undefined"
+- `ALGOLIA_SEARCH_ONLY_API_KEY`: Please document the <ALGOLIA_SEARCH_ONLY_API_KEY> variable
+  - Default Value: "undefined"
+- `DOCS_CREATE_README_INDEX`: Please document the <DOCS_CREATE_README_INDEX> variable
+  - Default Value: "undefined"
+- `DOCS_CREATE_TOC`: Please document the <DOCS_CREATE_TOC> variable
+  - Default Value: "undefined"
+- `GH_ACCESS_TOKEN`: Please document the <GH_ACCESS_TOKEN> variable
+  - Default Value: "undefined"
 - `IGNORE_MARKDOWN_FILES`: A comma-delimited list of markdown files to exclude from processing
   - Default Value: ".yarn,.vscode,.github,.tmp,temp,node_modules,.git,.cache,public"
 - `IGNORE_PEER_DEPENDENCIES`: A list of packages to exclude from peer dependencies.
