@@ -21,7 +21,6 @@ export const LeftSidebar = ({ sidebar }): JSX.Element => {
     // setSidebar(sidebar);
     return true;
   };
-
   return (
     <ProSidebar className={'sidebarOR'} breakPoint={'md'}>
       <SidebarContent>
