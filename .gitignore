@@ -138,3 +138,4 @@ schema.json
 artifacts
 dist
 temp
+content/src

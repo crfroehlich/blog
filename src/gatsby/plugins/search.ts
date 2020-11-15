@@ -2,7 +2,7 @@ import { addConfig } from '../../../config';
 
 export const addSearch: addConfig = (config, plugins): void => {
   const pageQuery = `query GetSearchQuery {
-    pages: allMdx {
+    pages: allMdx(filter: { fileAbsolutePath: { glob: "**/content/posts/**" } }) {
       edges {
         node {
           objectID: id

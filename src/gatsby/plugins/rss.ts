@@ -33,7 +33,8 @@ export const addRss: addConfig = (config, plugins): void => {
           query: `
           query GetAllRssMdxQuery {
               allMdx(
-                sort: { order: DESC, fields: [fields___date] },
+                filter: { fileAbsolutePath: { glob: "**/content/posts/**" } }
+                sort: { order: DESC, fields: [fields___date] }
               ) {
                 edges {
                   node {

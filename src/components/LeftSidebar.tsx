@@ -12,14 +12,46 @@ import { Icon } from './Icon';
 import { Link } from './Link';
 import { getYearOfThe } from '../utils';
 
+
+
 export const LeftSidebar = ({ sidebar }): JSX.Element => {
   const data = useRef(sidebar);
 
   const onNodeClick = (e, node) => {
     node.open = !node.open;
     node.active = !node.active;
-    // setSidebar(sidebar);
     return true;
+  };
+
+  const getSourceMenu = (menu) => {
+    console.log(menu)
+    if(!menu) return;
+
+    if(menu.slug) {
+      return (
+        <MenuItem
+          active={menu.active}
+          {...{ onClick: (e) => onNodeClick(e, menu) }}
+        >
+          <Link
+            to={menu.slug}
+            title={menu.title}
+            {...{ onClick: (e) => onNodeClick(e, menu) }}
+          >
+            <div>{menu.title}</div>
+          </Link>
+        </MenuItem>
+      );
+    } else if (menu.links) {
+      return (
+        <SubMenu
+          title={<div {...{ onClick: (e) => onNodeClick(e, menu) }}>{menu.name}</div>}
+          defaultOpen={menu.open}
+        >
+          {menu.links.map(getSourceMenu)}
+        </SubMenu>
+      );
+    }
   };
 
   return (
@@ -39,7 +71,7 @@ export const LeftSidebar = ({ sidebar }): JSX.Element => {
                 defaultOpen={s.open}
                 key={`${si}_${s.name}`}
               >
-                {s.articles.map((group, i) => {
+                {s.articles?.map((group, i) => {
                   return (
                     <SubMenu
                       title={<div {...{ onClick: (e) => onNodeClick(e, group) }}>{group.year}</div>}
@@ -77,6 +109,7 @@ export const LeftSidebar = ({ sidebar }): JSX.Element => {
                     </SubMenu>
                   );
                 })}
+                {getSourceMenu(s.source)}
               </SubMenu>
             );
           })}

@@ -2,6 +2,8 @@ import React from 'react';
 import { RightSidebarStyles, ListItemStyles } from './styles/RightSidebarStyles';
 import { IPageProps } from '../types/interfaces';
 
+const config = getConfig();
+
 export const RightSidebar: React.FC<IPageProps> = (props): JSX.Element => {
   const {
     pageContext: { toc },
