@@ -22,7 +22,7 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - run: npm install -g gatsby-cli yarn
+    - run: npm install -g gatsby-cli yarn rimraf
     - run: yarn install
       env:
         FA_PRO_NPM_TOKEN: ${{ secrets.FA_PRO_NPM_TOKEN }}
