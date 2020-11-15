@@ -4,9 +4,4 @@ import { getConfig } from './config';
 const env = loadEnv();
 getConfig(env);
 
-export {
-  createPages,
-  onCreateNode,
-  onCreateBabelConfig,
-  onCreateWebpackConfig,
-} from './src/gatsby/createPages';
+export { createPages, onCreateNode, onCreateWebpackConfig } from './src/gatsby';

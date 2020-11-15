@@ -52,7 +52,7 @@ export default class визуализации extends Component<IPageProps> {
 
 export const визуализацииQuery = graphql`
   query GetVisualizationsQuery {
-    allMdx {
+    allMdx(filter: { fileAbsolutePath: { glob: "**/content/posts/**" } }) {
       group(field: frontmatter___tags) {
         fieldValue
         totalCount

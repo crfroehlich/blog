@@ -10,11 +10,8 @@ export default class Tag extends Component<IPageProps> {
       data: {
         allMdx: { edges },
       },
-      path,
+      pageContext: { title },
     } = this.props;
-
-    const parts = path.split('/');
-    const title = parts[parts.length - 1];
 
     return (
       <div>
@@ -100,7 +97,10 @@ export const tagQuery = graphql`
   query GetTagByNameQuery($tag: String) {
     allMdx(
       sort: { fields: [frontmatter___date], order: DESC }
-      filter: { frontmatter: { tags: { in: [$tag] } } }
+      filter: {
+        fileAbsolutePath: { glob: "**/content/posts/**" }
+        frontmatter: { tags: { in: [$tag] } }
+      }
     ) {
       totalCount
       edges {

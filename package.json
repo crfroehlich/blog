@@ -165,11 +165,12 @@
   "main": "n/a",
   "name": "blog",
   "scripts": {
-    "build": "gatsby build",
+    "build": "yarn build:src && gatsby build",
     "build:codegen": "graphql-codegen",
     "build:prep": "yarn lint && yarn build:index && yarn docs:standardize",
+    "build:src": "rimraf content/src && node ./build/source.js",
     "build:index": "npx cti create ./src -w -b",
-    "clean": "gatsby clean && rimraf .cache .tmp public __generated__ dist src/**/__generated__/**",
+    "clean": "gatsby clean && rimraf .cache .tmp public __generated__ dist content/src src/**/__generated__/**",
     "debug:dev": "node --nolazy node_modules/.bin/gatsby develop --inspect-brk",
     "debug:prod": "node --nolazy node_modules/.bin/gatsby build --inspect-brk",
     "deploy": "yarn build && node build/publish.js",
@@ -184,7 +185,7 @@
     "lint:ts": "eslint --cache --fix \"src/**/*.{ts,tsx}\"",
     "lint:type-check": "tsc --noEmit",
     "serve": "gatsby build && gatsby serve",
-    "start": "gatsby develop"
+    "start": "yarn build:src && gatsby develop"
   },
   "scriptsDocumentation": {
     "build": {

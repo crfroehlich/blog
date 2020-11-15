@@ -1,21 +1,19 @@
 import { GatsbyNode } from 'gatsby';
 import * as path from 'path';
 import kebabCase from 'lodash/kebabCase';
-import startCase from 'lodash/startCase';
-import { getConfig } from '../../config';
 import { IQueryResult, INode } from '../types/interfaces';
-import Logger from '../utils/logger';
+import Logger from '../utils/Logger';
 
 require('@hot-loader/react-dom');
 require('gatsby-plugin-mdx/component-with-mdx-scope');
-
-const config = getConfig();
 
 export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions }) => {
   const { createPage } = actions;
 
   const templates = {
     article: path.resolve('./src/templates/Article.tsx'),
+    label: path.resolve('./src/templates/Label.tsx'),
+    source: path.resolve('./src/templates/Source.tsx'),
     tag: path.resolve(`./src/templates/Tag.tsx`),
     визуализации: path.resolve('./src/templates/визуализации.tsx'),
   };
@@ -23,7 +21,7 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions 
   const queryResult = await graphql<IQueryResult>(
     `
       query PagesCategoriesQuery {
-        allPages: allMdx {
+        allPages: allMdx(filter: { fileAbsolutePath: { glob: "**/content/posts/**" } }) {
           edges {
             node {
               fields {
@@ -56,6 +54,39 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions 
             totalCount
           }
         }
+        allSrc: allMdx(filter: { fileAbsolutePath: { glob: "**/content/src/**" } }) {
+          edges {
+            node {
+              fields {
+                id
+                title
+                slug
+                created
+                updated
+                github
+                labels
+              }
+              parent {
+                ... on File {
+                  relativePath
+                }
+              }
+              frontmatter {
+                title
+                github
+                created
+                updated
+                labels
+              }
+            }
+          }
+        }
+        labelsGroup: allMdx(limit: 2000) {
+          group(field: frontmatter___labels) {
+            fieldValue
+            totalCount
+          }
+        }
       }
     `,
   );
@@ -71,8 +102,8 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions 
   // Create blog posts pages.
   const posts = queryResult?.data?.allPages?.edges || [];
 
-  // Extract category data from query
-  const tags = queryResult.data.tagsGroup?.group || [];
+  // Extract tag data from query
+  const tags = queryResult?.data?.tagsGroup?.group || [];
 
   posts.forEach((post, index) => {
     const prevNode = index === posts.length - 1 ? posts[0].node : posts[index + 1].node;
@@ -118,10 +149,50 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions 
           }),
         },
         title: node?.fields?.title,
+        type: 'Article',
       },
     });
   });
 
+  // Create source code pages
+  const source = queryResult?.data?.allSrc?.edges || [];
+
+  // Extract tag data from query
+  const labels = queryResult.data.labelsGroup?.group || [];
+
+  source.forEach((src) => {
+    const node = src?.node;
+
+    const pagePath = node?.fields?.slug;
+
+    const nodeLabels = node?.fields?.labels || [];
+    const pageLabels = [];
+    nodeLabels.forEach((t) => {
+      const grp = labels.find((g) => g.fieldValue === t);
+      pageLabels.push({
+        name: grp?.fieldValue,
+        count: grp?.totalCount,
+      });
+    });
+
+    if (!pagePath) {
+      return Logger.info('Warning: Source code has no path. Skipping...');
+    }
+
+    createPage({
+      path: pagePath,
+      component: templates.source,
+      context: {
+        id: node?.fields?.id,
+        slug: pagePath,
+        pageLabels,
+        type: 'Source',
+        title: node?.fields?.title,
+      },
+    });
+  });
+
+  // Create visualizations page
   createPage({
     path: `/визуализации/`,
     component: templates.визуализации,
@@ -136,7 +207,7 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions 
 
   if (tags.length === 0) {
     return Logger.info(
-      'Warning: No categories were found in the blog. Skipping creating category pages.',
+      'Warning: No categories were found in the blog. Skipping creating тег pages.',
     );
   }
 
@@ -162,123 +233,23 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions 
       },
     });
   });
-};
 
-export const onCreateWebpackConfig: GatsbyNode['onCreateWebpackConfig'] = ({ actions }) => {
-  actions.setWebpackConfig({
-    resolve: {
-      modules: [path.resolve(__dirname, 'src'), 'node_modules'],
-      alias: {
-        $components: path.resolve(__dirname, 'src/components'),
-        buble: '@philpl/buble', // to reduce bundle size
-        'react-dom': '@hot-loader/react-dom',
+  if (labels.length === 0) {
+    return Logger.info(
+      'Warning: No labels were found in the source code. Skipping creating этикетка pages.',
+    );
+  }
+
+  // Make category pages
+  labels.forEach((node) => {
+    createPage({
+      path: `/этикетка/${kebabCase(node.fieldValue)}/`,
+      component: templates.label,
+      context: {
+        label: node.fieldValue,
+        title: node.fieldValue,
       },
-    },
+    });
   });
 };
 
-export const onCreateNode: GatsbyNode['onCreateNode'] = ({ node, getNode, actions }) => {
-  const { createNodeField } = actions;
-
-  try {
-    const isContent =
-      node.internal.type.toLowerCase().indexOf('mdx') !== -1 ||
-      node.internal.type.toLowerCase().indexOf('markdown') !== -1;
-
-    if (!isContent) return;
-
-    const parent = getNode(node.parent) as INode;
-    const { frontmatter } = node as INode;
-
-    if (frontmatter.draft === true) return;
-
-    if (parent) {
-      let value = parent.relativePath.replace(parent.ext, '');
-
-      if (value === 'index') {
-        value = '';
-      }
-
-      if (config.gatsby && config.gatsby.trailingSlash) {
-        createNodeField({
-          name: 'slug',
-          node,
-          value: value === '' ? '/' : `/${value}/`,
-        });
-      } else {
-        createNodeField({
-          name: 'slug',
-          node,
-          value: `/${value}`,
-        });
-      }
-    }
-
-    createNodeField({
-      name: 'id',
-      node,
-      value: node.id,
-    });
-
-    let tags = [];
-    if (Array.isArray(frontmatter.tags)) {
-      tags = frontmatter.tags;
-    } else {
-      tags = frontmatter?.tags?.toString().split(',');
-    }
-
-    let date = new Date(frontmatter?.date);
-    if (Number.isNaN(date.getTime())) {
-      date = new Date();
-    }
-    const year = date.getFullYear();
-
-    if (frontmatter) {
-      createNodeField({
-        name: 'title',
-        node,
-        value: frontmatter?.title || startCase(parent?.name),
-      });
-
-      createNodeField({
-        name: 'date',
-        node,
-        value: date,
-      });
-
-      createNodeField({
-        name: 'year',
-        node,
-        value: year,
-      });
-
-      createNodeField({
-        name: 'description',
-        node,
-        value: frontmatter?.description,
-      });
-
-      createNodeField({
-        name: 'subtitle',
-        node,
-        value: frontmatter?.subtitle,
-      });
-
-      createNodeField({
-        name: 'tags',
-        node,
-        value: tags,
-      });
-
-      const imagePath = frontmatter?.img || 'card.png';
-
-      createNodeField({
-        name: 'img',
-        node,
-        value: `${config.gatsby.cdnUrl}${imagePath}`,
-      });
-    }
-  } catch (e) {
-    Logger.error('Create node error', e);
-  }
-};

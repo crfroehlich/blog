@@ -5,17 +5,18 @@ export interface IPageProps {
   data: Query;
   path: string;
   pageContext: {
-    next: INode;
-    previous: INode;
+    next?: INode;
+    previous?: INode;
     slug: string;
-    pageTags: any[];
-    toc: {
+    pageTags?: any[];
+    pageLabels?: any[];
+    toc?: {
       type: 'Article' | 'Tag' | 'Visualization';
       content: any;
     };
     title: string;
   };
-  pageTags: any;
+  pageTags?: any;
   site: {
     siteMetadata: {
       docsLocation: any;
@@ -65,22 +66,31 @@ export interface ICategory {
 }
 
 export interface INodeFrontMatter {
+  created?: Date;
   date?: Date | string;
   description?: string;
   draft: boolean;
+  github?: string;
   img?: string;
+  labels?: string[] | string;
   subtitle?: string;
   tags?: string[] | string;
   title?: string;
+  updated?: Date;
 }
 
 export interface INodeFields {
+  created?: string;
   date?: string;
+  github?: string;
   id: number;
   img?: string;
+  labels?: string[];
   slug?: string;
   tags?: string[];
   title?: string;
+  type: 'Article' | 'Source';
+  updated?: string;
 }
 
 export interface INode {
@@ -106,6 +116,10 @@ export interface IQueryResult {
   allMarkdownRemark?: IEdges;
   allMdx?: IEdges;
   allPages?: IEdges;
+  allSrc?: IEdges;
+  labelsGroup: {
+    group?: ICategory[];
+  };
   tagsGroup: {
     group?: ICategory[];
   };

@@ -3,40 +3,25 @@ import { graphql } from 'gatsby';
 import MDXRenderer from 'gatsby-plugin-mdx/mdx-renderer';
 import { BadgeAnchor, Badge, ChipSet, Chip } from 'rmwc';
 import kebabCase from 'lodash/kebabCase';
-import { IPageProps, INode } from '../types/interfaces';
-import {
-  Comments,
-  DisplayDate,
-  Edit,
-  Icon,
-  Link,
-  NextPrevious,
-  StyledHeading,
-  StyledMainWrapper,
-} from '../components';
-import { getConfig } from '../../config';
+import { IPageProps } from '../types/interfaces';
+import { DisplayDate, Edit, Icon, Link, StyledHeading, StyledMainWrapper } from '../components';
 
-const config = getConfig();
-
-export default class Article extends Component<IPageProps> {
+export default class Source extends Component<IPageProps> {
   render(): JSX.Element {
     const {
       data,
-      pageContext: { next, previous, pageTags },
+      pageContext: { pageLabels },
     } = this.props;
     const { mdx } = data;
-    const { title } = mdx.fields;
-    const date = new Date(mdx.fields.date);
+    const { title, github } = mdx.fields;
+    const updated = new Date(mdx.fields.updated);
 
     return (
       <div>
         <div className={'titleWrapper'}>
           <StyledHeading>{title}</StyledHeading>
           <Edit className={'mobileView'}>
-            <Link
-              className={'gitBtn'}
-              to={`${config.siteMetadata.docsLocation}/${(mdx?.parent as INode)?.relativePath}`}
-            >
+            <Link className={'gitBtn'} to={github}>
               {Icon({ icon: ['fab', 'github'] })}
               <div style={{ paddingLeft: '5px' }}>Source</div>
             </Link>
@@ -44,48 +29,44 @@ export default class Article extends Component<IPageProps> {
         </div>
         <StyledMainWrapper>
           <ChipSet>
-            {pageTags?.map((tag) => (
+            {pageLabels.map((label) => (
               <Link
-                to={`/тег/${kebabCase(tag.name)}`}
-                key={kebabCase(tag.name)}
+                to={`/этикетка/${kebabCase(label.name)}`}
+                key={kebabCase(label.name)}
                 style={{ marginRight: '0.5rem' }}
               >
                 <BadgeAnchor>
-                  <Chip style={{ backgroundColor: '#1ed3c6', color: 'fff' }} label={tag.name} />
+                  <Chip style={{ backgroundColor: '#1ed3c6', color: 'fff' }} label={label.name} />
                   <Badge
-                    label={tag.count}
+                    label={label.count}
                     style={{ backgroundColor: 'cadetblue', right: '-0.3rem', top: '-0.3rem' }}
                   />
                 </BadgeAnchor>
               </Link>
             ))}
-            <DisplayDate style={{ color: '#1ed3c6' }} date={date} />
+            <DisplayDate style={{ color: '#1ed3c6' }} date={updated} />
           </ChipSet>
           <MDXRenderer>{mdx.body}</MDXRenderer>
         </StyledMainWrapper>
-        <div id="comment_div">
-          <Comments id={'comment_div'} />
-        </div>
-        <div className={'addPaddTopBottom'}>
-          <NextPrevious next={next} prev={previous} />
-        </div>
       </div>
     );
   }
 }
 
-export const articleQuery = graphql`
-  query GetArticeByIdQuery($id: String!) {
+export const sourceQuery = graphql`
+  query GetSourceByIdQuery($id: String!) {
     mdx(fields: { id: { eq: $id } }) {
       fields {
         id
         title
         slug
-        date
-        tags
-        img
+        created
+        updated
+        github
+        labels
       }
       body
+      tableOfContents
     }
   }
 `;
