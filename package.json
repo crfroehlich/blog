@@ -177,6 +177,7 @@
     "docs:api": "rimraf dist && tsc -p tsconfig.tools.json && node ./node_modules/@luddites-me/ts-tools/dist/docs/generateApi.js --path=./api-extractor.json",
     "docs:publish": "node ./node_modules/@luddites-me/ts-tools/dist/docs/generateApiDocs.js",
     "docs:standardize": "node ./node_modules/@luddites-me/ts-tools/dist/readme/standardizeReadme.js",
+    "generate:exports": "npx cti create ./src -w -b",
     "lint": "pretty-quick --staged && yarn lint:sort && yarn lint:ts && yarn lint:pretty",
     "lint:md": "npx markdownlint ./content",
     "lint:pretty": "prettier --write \"src/**/*.{ts,tsx,css,json}\"",
