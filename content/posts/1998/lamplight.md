@@ -2,7 +2,7 @@
 date: 08/11/1998
 description: The lamplight it plays with your mind dances from its...
 draft: false
-img: lamppost.jpg
+img: ../../assets/images/lamppost.jpg
 tags:
   - poetry
   - lamps
