@@ -1,4 +1,5 @@
 ---
+background: ../../assets/images/twin_stars.jpeg
 date: 7/9/2008
 description: "Time bends in unpredictable ways with children\_ Eli is almost 6 months old and he's the most amazing..."
 draft: false

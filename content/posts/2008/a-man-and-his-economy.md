@@ -1,4 +1,5 @@
 ---
+background: ../../assets/images/jim_cramer.png
 date: 10/21/2008
 description: >-
   [money management]httpsgithubcomcrfroehlichcdnrawmainimagesIMG1158JPG It's

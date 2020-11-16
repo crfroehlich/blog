@@ -1,4 +1,5 @@
 ---
+background: ../../assets/images/pie_in_sky.jpg
 date: 10/5/2007
 description: >-
   Every day that I drive stuck in traffic I find myself wishing for little

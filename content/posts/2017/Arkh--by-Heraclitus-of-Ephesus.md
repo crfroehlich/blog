@@ -1,4 +1,5 @@
 ---
+background: ../../assets/images/blood_sunset.jpg
 date: 07/14/2017
 description: >-
   The mechanic paused to wipe the grease from his hands across the murky surface

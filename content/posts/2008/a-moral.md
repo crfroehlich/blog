@@ -1,4 +1,5 @@
 ---
+background: ../../assets/images/sons_of_thunder.jpg
 date: 12/18/2008
 description: >-
   in elementary school the 'they' that we remember vaguely as anything other

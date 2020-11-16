@@ -1,4 +1,5 @@
 ---
+background: ../../assets/images/carbondioxide.png
 date: 9/27/2007
 description: >-
   Relative Motors today announced plans to cut carbon emissions in half by

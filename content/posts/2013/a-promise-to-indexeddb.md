@@ -1,4 +1,5 @@
 ---
+background: ../../assets/images/promises.jpeg
 date: 6/26/2013
 description: "Quite a bit of my free time in the last 8 months has slipped away into\_[OJ]httpsomecallmechiefgithub..."
 draft: false

@@ -1,4 +1,5 @@
 ---
+background: ../../assets/images/sloth.jpg
 date: 4/15/2000
 description: Of the days that dwell within...
 draft: false

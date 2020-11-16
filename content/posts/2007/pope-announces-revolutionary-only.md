@@ -1,4 +1,5 @@
 ---
+background: ../../assets/images/vandyke.jpg
 date: 9/24/2007
 description: >-
   In a radical move from the Vatican parttime Archbishop Donald Thisbit told

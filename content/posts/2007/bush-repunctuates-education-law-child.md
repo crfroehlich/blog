@@ -1,4 +1,5 @@
 ---
+background: ../../assets/images/child_lost.jpg
 date: 9/24/2007
 description: >-
   A recent review of the "No Child Left Behind" law enacted by Congress in 2004

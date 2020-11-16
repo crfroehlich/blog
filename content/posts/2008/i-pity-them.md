@@ -1,4 +1,5 @@
 ---
+background: ../../assets/images/pity.jpg
 date: 11/22/2008
 description: >-
   family is a strange thing this is overly generic family is an evolved concept

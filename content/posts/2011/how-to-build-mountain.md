@@ -1,4 +1,5 @@
 ---
+background: ../../assets/images/poka_dot_mountain.jpeg
 date: 5/26/2011
 description: >-
   The decision to climb [Mount Vesuvius]httpenwikipediaorgwikiMountVesuvius

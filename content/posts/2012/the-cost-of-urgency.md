@@ -1,4 +1,5 @@
 ---
+background: ../../assets/images/is_it_safe.jpg
 date: 4/25/2012
 description: >-
   Sandstorms are spectacular creatures From lessthanether they arise demolish

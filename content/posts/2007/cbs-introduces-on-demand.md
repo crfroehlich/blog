@@ -1,4 +1,5 @@
 ---
+background: ../../assets/images/the_apprentice.jpg
 date: 7/3/2007
 description: >-
   In the absence of truly innovative reality TV programming CBS executives

@@ -1,4 +1,5 @@
 ---
+background: ../../assets/images/ducky.jpg
 date: 11/24/2008
 description: >-
   Selfconsciousness is generally loathsome though it doesn't stop me from

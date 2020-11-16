@@ -1,4 +1,5 @@
 ---
+background: ../../assets/images/marlboro_country.jpg
 date: 1/3/2013
 description: >-
   Sometimes JavaScript land just feels like Marlboro Country The sales pitch

@@ -1,4 +1,5 @@
 ---
+background: ../../assets/images/wereworlf_dad.jpg
 date: 10/2/2012
 description: >-
   I embrace the [Stevie's Home]httpwwwthesneezecommtarchives000831php approach

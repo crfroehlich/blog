@@ -1,4 +1,5 @@
 ---
+background: ../../assets/images/rosebud.jpg
 date: 11/5/2003
 description: >-
   ComradesI have remained static while the location around me has changed Gone

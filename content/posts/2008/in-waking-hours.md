@@ -1,4 +1,5 @@
 ---
+background: ../../assets/images/30_rock_cookie_jars.jpg
 date: 6/19/2008
 description: >-
   There is within me this horribly perverse desire to hoard away little minutes

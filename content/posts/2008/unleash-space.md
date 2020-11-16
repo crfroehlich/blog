@@ -1,4 +1,5 @@
 ---
+background: ../../assets/images/free_the_airwaves.jpg
 date: 10/23/2008
 description: >-
   [[FreeTheAirwavescom]httpwwwfreetheairwavescomimagesblogbadgesbadge2revjpg]httpswebarchiveorgweb2009...

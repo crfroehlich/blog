@@ -113,7 +113,6 @@ export const buildSidebar = (mdx, src): ISidebar => {
     sections: [recent, archive, source],
     open: true,
   };
-  console.log(ret);
   return ret;
 };
 

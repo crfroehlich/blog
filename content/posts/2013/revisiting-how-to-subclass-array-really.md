@@ -1,4 +1,5 @@
 ---
+background: ../../assets/images/you_know_for_kids.jpg
 date: 3/17/2013
 description: "Update\_[+Axel Rauschmayer]httpplusgooglecom110516491705475800224\_has an [even more succinct post on ..."
 draft: false

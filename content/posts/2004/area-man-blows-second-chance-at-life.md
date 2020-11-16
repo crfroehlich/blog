@@ -1,4 +1,5 @@
 ---
+background: ../../assets/images/blow_chance.jpg
 date: 6/3/2004
 description: >-
   Area man Donald Thisbit appeared shaken Wednesday afternoon after his close

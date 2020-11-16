@@ -1,4 +1,5 @@
 ---
+background: ../../assets/images/mumia.jpg
 date: 7/17/2004
 description: >-
   Area man CSM Blackwood has been reported interrogating the portojohn guards

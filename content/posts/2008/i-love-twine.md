@@ -1,4 +1,5 @@
 ---
+background: ../../assets/images/web.jpg
 date: 5/21/2008
 description: >-
   from the knots it forms in my

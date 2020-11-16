@@ -22,12 +22,15 @@ export const LeftSidebar = ({ sidebar }): JSX.Element => {
   };
 
   const getSourceMenu = (menu) => {
-    console.log(menu);
-    if (!menu) return;
+    if (!menu) return <div />;
 
     if (menu.slug) {
       return (
-        <MenuItem active={menu.active} {...{ onClick: (e) => onNodeClick(e, menu) }}>
+        <MenuItem
+          active={menu.active}
+          {...{ onClick: (e) => onNodeClick(e, menu) }}
+          key={menu.slug}
+        >
           <Link to={menu.slug} title={menu.title} {...{ onClick: (e) => onNodeClick(e, menu) }}>
             <div>{menu.title}</div>
           </Link>

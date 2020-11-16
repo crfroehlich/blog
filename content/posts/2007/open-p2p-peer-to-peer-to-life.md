@@ -1,4 +1,5 @@
 ---
+background: ../../assets/images/death_ray.jpg
 date: 10/4/2007
 description: >-
   I'm just one fellow and not terribly educated at that so my opinions may not

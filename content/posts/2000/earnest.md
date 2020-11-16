@@ -1,4 +1,5 @@
 ---
+background: ../../assets/images/anchor.jpg
 date: 4/22/2000
 description: >-
   How can we propose to fashion for ourselves life or livelihood  an attempt

@@ -1,4 +1,5 @@
 ---
+background: ../../assets/images/tetraktys.jpg
 date: 07/15/2017
 description: >-
   Mr George Pyncheon bolted upright in bed and stared at the ceiling for a

@@ -1,4 +1,5 @@
 ---
+background: ../../assets/images/old_army_foot_locker.jpg
 date: 07/14/2017
 description: >-
   My father lives in an old army footlocker that lies in the attic of our home

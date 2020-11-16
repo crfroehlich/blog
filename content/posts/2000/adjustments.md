@@ -1,4 +1,5 @@
 ---
+background: ../../assets/images/movie_reel.png
 date: 5/2/2000
 description: When the world has begun to spin...
 draft: false

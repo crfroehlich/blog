@@ -1,4 +1,5 @@
 ---
+background: ../../assets/images/microwave.jpg
 date: 7/14/2006
 description: >-
   The moon was gold like violets in February and the grass green like radishes

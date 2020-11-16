@@ -1,4 +1,5 @@
 ---
+background: ../../assets/images/gurglingbasin.jpg
 date: 8/19/2007
 description: >-
   It comes at that time in the early morning when the throat clenches about the

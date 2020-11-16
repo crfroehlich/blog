@@ -1,4 +1,5 @@
 ---
+background: ../../assets/images/lisa_simpson.jpg
 date: 2/28/2009
 description: >-
   at the end of the day obama cannot be all of the things he promised to be be

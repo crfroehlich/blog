@@ -1,4 +1,5 @@
 ---
+background: ../../assets/images/burger.jpeg
 date: 5/20/2011
 description: >-
   What hiker does not need nourishment on the journey toward nirvana? Google has

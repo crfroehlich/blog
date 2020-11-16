@@ -1,4 +1,5 @@
 ---
+background: ../../assets/images/drone_protest.jpeg
 date: 1/2/2009
 description: "I still remember the faces of the men we killed\_ Men women children\_ Chicken farmers most of them..."
 draft: false

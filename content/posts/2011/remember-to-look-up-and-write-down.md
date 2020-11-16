@@ -1,4 +1,5 @@
 ---
+background: ../../assets/images/sally_ride.jpg
 date: 7/25/2011
 description: >-
   To hike the mountain of lïf is to know peace You the hiker cease to move You

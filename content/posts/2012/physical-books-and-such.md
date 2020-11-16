@@ -1,4 +1,5 @@
 ---
+background: ../../assets/images/minecraft_desert_island.png
 date: 5/24/2012
 description: I don't read as many books as I used to and I wonder why...
 draft: false

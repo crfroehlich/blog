@@ -1,4 +1,5 @@
 ---
+background: ../../assets/images/the_furies.png
 date: 9/9/2007
 description: >-
   Greek god Apollo vowed today to AP reporter Donald Thisbit to prosecute Zeus

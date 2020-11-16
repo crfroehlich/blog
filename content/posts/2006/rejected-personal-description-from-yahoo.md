@@ -1,4 +1,5 @@
 ---
+background: ../../assets/images/yahoo_dating.jpg
 date: 5/28/2006
 description: >-
   Introductions are best done at 15000 feet in a C130 preparing to dive into an

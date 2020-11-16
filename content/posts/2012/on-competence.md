@@ -1,4 +1,5 @@
 ---
+background: ../../assets/images/monty_python_gumby.jpg
 date: 1/20/2012
 description: >-
   Years ago one of my dearest friends [Jennifer

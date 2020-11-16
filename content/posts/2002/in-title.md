@@ -1,4 +1,5 @@
 ---
+background: ../../assets/images/lazy_susan_chess.jpg
 date: 6/19/2002
 description: >-
   It’s easy to forget the important things while you drink As you sit on the

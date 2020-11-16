@@ -1,4 +1,5 @@
 ---
+background: ../../assets/images/bow.png
 date: 1/22/2008
 description: >-
   It's mere minutes before the day you are scheduled albeit not destined to be

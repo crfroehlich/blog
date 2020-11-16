@@ -1,4 +1,5 @@
 ---
+background: ../../assets/images/leg_lamp.jpg
 date: 8/28/2006
 description: >-
   There's a moment when you first stumble down the stairs in the morning and

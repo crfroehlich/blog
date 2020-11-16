@@ -1,4 +1,5 @@
 ---
+background: ../../assets/images/spock_screams.jpg
 date: 11/8/2008
 description: "never before and never since have I awoken with the force of another man's fist in my face\_ there is..."
 draft: false

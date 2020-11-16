@@ -1,4 +1,5 @@
 ---
+background: ../../assets/images/local_news_1.jpg
 date: 5/9/2004
 description: HEADLINES Politics...
 draft: false

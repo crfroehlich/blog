@@ -1,4 +1,5 @@
 ---
+background: ../../assets/images/horse_and_his_boy.jpeg
 date: 8/16/2003
 description: >-
   Lest you in your idle wonderings throughout the day chance upon the grave and

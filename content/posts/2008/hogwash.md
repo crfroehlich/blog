@@ -1,4 +1,5 @@
 ---
+background: ../../assets/images/poppycock.jpg
 date: 11/10/2008
 description: >-
   It's strange that in the largest and first economic crisis of our century the

@@ -1,4 +1,5 @@
 ---
+background: ../../assets/images/pogo_stick_race_catherine_lawhon.jpg
 date: 10/11/2011
 description: No one is first and you're last...
 draft: false

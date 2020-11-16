@@ -1,4 +1,5 @@
 ---
+background: ../../assets/images/code_generation.png
 date: 07/08/2019
 description: >-
   I have enjoyed working with

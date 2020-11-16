@@ -1,4 +1,5 @@
 ---
+background: ../../assets/images/edge_of_the_world.jpg
 date: 3/16/2011
 description: >-
   The world is a small flat rock which rests evenly in the palm of your hand As

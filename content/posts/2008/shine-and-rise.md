@@ -1,4 +1,5 @@
 ---
+background: ../../assets/images/filming_fake_sunrise.jpg
 date: 10/29/2008
 description: >-
   mornings are like little deaths the gaping jawl of the reaper his teeth both

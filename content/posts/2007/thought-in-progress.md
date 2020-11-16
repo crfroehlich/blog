@@ -1,4 +1,5 @@
 ---
+background: ../../assets/images/traffic.jpg
 date: 12/15/2007
 description: >-
   I opened his heart on the kitchen counter this morning with a pairing knife

@@ -1,4 +1,5 @@
 ---
+background: ../../assets/images/army_letter.jpg
 date: 5/28/2003
 description: Friends of family family of friends and persons unconnected to either...
 draft: false

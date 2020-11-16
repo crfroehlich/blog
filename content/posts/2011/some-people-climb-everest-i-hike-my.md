@@ -1,4 +1,5 @@
 ---
+background: ../../assets/images/that_silly_man.png
 date: 5/19/2011
 description: >-
   It's been said that behind every great man is a [Tenzing

@@ -1,4 +1,5 @@
 ---
+background: ../../assets/images/saying_goodbye.jpg
 date: 9/6/2011
 description: >-
   I began this over one year ago July 28 2010 but never finished I've lost the

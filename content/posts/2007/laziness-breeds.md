@@ -1,4 +1,5 @@
 ---
+background: ../../assets/images/ultrasound.jpg
 date: 8/3/2007
 description: >-
   [image not

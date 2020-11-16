@@ -1,4 +1,5 @@
 ---
+background: ../../assets/images/hemmingway_signed.jpg
 date: 7/6/2003
 description: >-
   The time will come dear friends when I shall be forced to recount the long

@@ -1,4 +1,5 @@
 ---
+background: ../../assets/images/washed_up.jpg
 date: 4/6/2011
 description: >-
   Uncle Petrov once swore that snow in April forebode a good summer catch

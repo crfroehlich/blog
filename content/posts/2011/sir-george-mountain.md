@@ -1,4 +1,5 @@
 ---
+background: ../../assets/images/sunset_on_everest.jpeg
 date: 5/20/2011
 description: Reflection...
 draft: false

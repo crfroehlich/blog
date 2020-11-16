@@ -1,4 +1,5 @@
 ---
+background: ../../assets/images/oscar.jpg
 date: 09/30/2020
 description: >-
   textWords have been changed and characters rearranged to limit liability to

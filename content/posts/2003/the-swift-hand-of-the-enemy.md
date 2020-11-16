@@ -1,4 +1,5 @@
 ---
+background: ../../assets/images/ministry_of_interior.png
 date: 10/4/2003
 description: >-
   Once more I turn to your patient and receptive arms for comfort and

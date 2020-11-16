@@ -710,8 +710,44 @@ export type FileFieldsEnum =
   | 'childMdx___frontmatter___description'
   | 'childMdx___frontmatter___draft'
   | 'childMdx___frontmatter___img'
-  | 'childMdx___frontmatter___tags'
   | 'childMdx___frontmatter___subtitle'
+  | 'childMdx___frontmatter___tags'
+  | 'childMdx___frontmatter___background___sourceInstanceName'
+  | 'childMdx___frontmatter___background___absolutePath'
+  | 'childMdx___frontmatter___background___relativePath'
+  | 'childMdx___frontmatter___background___extension'
+  | 'childMdx___frontmatter___background___size'
+  | 'childMdx___frontmatter___background___prettySize'
+  | 'childMdx___frontmatter___background___modifiedTime'
+  | 'childMdx___frontmatter___background___accessTime'
+  | 'childMdx___frontmatter___background___changeTime'
+  | 'childMdx___frontmatter___background___birthTime'
+  | 'childMdx___frontmatter___background___root'
+  | 'childMdx___frontmatter___background___dir'
+  | 'childMdx___frontmatter___background___base'
+  | 'childMdx___frontmatter___background___ext'
+  | 'childMdx___frontmatter___background___name'
+  | 'childMdx___frontmatter___background___relativeDirectory'
+  | 'childMdx___frontmatter___background___dev'
+  | 'childMdx___frontmatter___background___mode'
+  | 'childMdx___frontmatter___background___nlink'
+  | 'childMdx___frontmatter___background___uid'
+  | 'childMdx___frontmatter___background___gid'
+  | 'childMdx___frontmatter___background___rdev'
+  | 'childMdx___frontmatter___background___ino'
+  | 'childMdx___frontmatter___background___atimeMs'
+  | 'childMdx___frontmatter___background___mtimeMs'
+  | 'childMdx___frontmatter___background___ctimeMs'
+  | 'childMdx___frontmatter___background___atime'
+  | 'childMdx___frontmatter___background___mtime'
+  | 'childMdx___frontmatter___background___ctime'
+  | 'childMdx___frontmatter___background___birthtime'
+  | 'childMdx___frontmatter___background___birthtimeMs'
+  | 'childMdx___frontmatter___background___blksize'
+  | 'childMdx___frontmatter___background___blocks'
+  | 'childMdx___frontmatter___background___publicURL'
+  | 'childMdx___frontmatter___background___id'
+  | 'childMdx___frontmatter___background___children'
   | 'childMdx___frontmatter___created'
   | 'childMdx___frontmatter___updated'
   | 'childMdx___frontmatter___github'
@@ -1549,8 +1585,71 @@ export type MdxFieldsEnum =
   | 'frontmatter___description'
   | 'frontmatter___draft'
   | 'frontmatter___img'
-  | 'frontmatter___tags'
   | 'frontmatter___subtitle'
+  | 'frontmatter___tags'
+  | 'frontmatter___background___sourceInstanceName'
+  | 'frontmatter___background___absolutePath'
+  | 'frontmatter___background___relativePath'
+  | 'frontmatter___background___extension'
+  | 'frontmatter___background___size'
+  | 'frontmatter___background___prettySize'
+  | 'frontmatter___background___modifiedTime'
+  | 'frontmatter___background___accessTime'
+  | 'frontmatter___background___changeTime'
+  | 'frontmatter___background___birthTime'
+  | 'frontmatter___background___root'
+  | 'frontmatter___background___dir'
+  | 'frontmatter___background___base'
+  | 'frontmatter___background___ext'
+  | 'frontmatter___background___name'
+  | 'frontmatter___background___relativeDirectory'
+  | 'frontmatter___background___dev'
+  | 'frontmatter___background___mode'
+  | 'frontmatter___background___nlink'
+  | 'frontmatter___background___uid'
+  | 'frontmatter___background___gid'
+  | 'frontmatter___background___rdev'
+  | 'frontmatter___background___ino'
+  | 'frontmatter___background___atimeMs'
+  | 'frontmatter___background___mtimeMs'
+  | 'frontmatter___background___ctimeMs'
+  | 'frontmatter___background___atime'
+  | 'frontmatter___background___mtime'
+  | 'frontmatter___background___ctime'
+  | 'frontmatter___background___birthtime'
+  | 'frontmatter___background___birthtimeMs'
+  | 'frontmatter___background___blksize'
+  | 'frontmatter___background___blocks'
+  | 'frontmatter___background___publicURL'
+  | 'frontmatter___background___childImageSharp___gatsbyImageData'
+  | 'frontmatter___background___childImageSharp___id'
+  | 'frontmatter___background___childImageSharp___children'
+  | 'frontmatter___background___id'
+  | 'frontmatter___background___parent___id'
+  | 'frontmatter___background___parent___children'
+  | 'frontmatter___background___children'
+  | 'frontmatter___background___children___id'
+  | 'frontmatter___background___children___children'
+  | 'frontmatter___background___internal___content'
+  | 'frontmatter___background___internal___contentDigest'
+  | 'frontmatter___background___internal___description'
+  | 'frontmatter___background___internal___fieldOwners'
+  | 'frontmatter___background___internal___ignoreType'
+  | 'frontmatter___background___internal___mediaType'
+  | 'frontmatter___background___internal___owner'
+  | 'frontmatter___background___internal___type'
+  | 'frontmatter___background___childMdx___rawBody'
+  | 'frontmatter___background___childMdx___fileAbsolutePath'
+  | 'frontmatter___background___childMdx___slug'
+  | 'frontmatter___background___childMdx___body'
+  | 'frontmatter___background___childMdx___excerpt'
+  | 'frontmatter___background___childMdx___headings'
+  | 'frontmatter___background___childMdx___html'
+  | 'frontmatter___background___childMdx___mdxAST'
+  | 'frontmatter___background___childMdx___tableOfContents'
+  | 'frontmatter___background___childMdx___timeToRead'
+  | 'frontmatter___background___childMdx___id'
+  | 'frontmatter___background___childMdx___children'
   | 'frontmatter___created'
   | 'frontmatter___updated'
   | 'frontmatter___github'
@@ -1710,8 +1809,9 @@ export type MdxFrontmatter = {
   description?: Maybe<Scalars['String']>;
   draft?: Maybe<Scalars['Boolean']>;
   img?: Maybe<Scalars['String']>;
-  tags?: Maybe<Array<Maybe<Scalars['String']>>>;
   subtitle?: Maybe<Scalars['String']>;
+  tags?: Maybe<Array<Maybe<Scalars['String']>>>;
+  background?: Maybe<File>;
   created?: Maybe<Scalars['String']>;
   updated?: Maybe<Scalars['String']>;
   github?: Maybe<Scalars['String']>;
@@ -1724,8 +1824,9 @@ export type MdxFrontmatterFilterInput = {
   description?: Maybe<StringQueryOperatorInput>;
   draft?: Maybe<BooleanQueryOperatorInput>;
   img?: Maybe<StringQueryOperatorInput>;
-  tags?: Maybe<StringQueryOperatorInput>;
   subtitle?: Maybe<StringQueryOperatorInput>;
+  tags?: Maybe<StringQueryOperatorInput>;
+  background?: Maybe<FileFilterInput>;
   created?: Maybe<StringQueryOperatorInput>;
   updated?: Maybe<StringQueryOperatorInput>;
   github?: Maybe<StringQueryOperatorInput>;
@@ -3685,7 +3786,7 @@ export type GetTagByNameQueryQuery = { allMdx: (
     Pick<MdxConnection, 'totalCount'>
     & { edges: Array<{ node: (
         Pick<Mdx, 'excerpt'>
-        & { fields?: Maybe<Pick<MdxFields, 'id' | 'title' | 'slug' | 'date' | 'tags' | 'img'>> }
+        & { fields?: Maybe<Pick<MdxFields, 'id' | 'title' | 'slug' | 'date' | 'tags' | 'img'>>, frontmatter?: Maybe<{ background?: Maybe<{ childImageSharp?: Maybe<{ fluid?: Maybe<Pick<ImageSharpFluid, 'base64' | 'aspectRatio' | 'src' | 'srcSet' | 'sizes'>> }> }> }> }
       ) }> }
   ) };
 

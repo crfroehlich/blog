@@ -1,4 +1,5 @@
 ---
+background: ../../assets/images/zarathustra.jpg
 date: 7/10/2007
 description: squalor tempests beneath the artificial breeze...
 draft: false

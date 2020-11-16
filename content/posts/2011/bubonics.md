@@ -1,4 +1,5 @@
 ---
+background: ../../assets/images/womb_of_arrogance.jpg
 date: 11/22/2011
 description: >-
   The [illfated knol

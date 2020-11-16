@@ -1,4 +1,5 @@
 ---
+background: ../../assets/images/losing_my_religion.jpg
 date: 10/28/2008
 description: >-
   There was within me a quiet comfort in the belief that some all knowing force

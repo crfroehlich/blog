@@ -1,4 +1,5 @@
 ---
+background: ../../assets/images/all_the_kings_horses.jpg
 date: 07/10/2019
 description: >-
   Sometimes best intentions and good ole fashioned elbow grease are no match

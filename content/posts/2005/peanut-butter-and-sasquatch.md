@@ -1,4 +1,5 @@
 ---
+background: ../../assets/images/ellipse.png
 date: 10/11/2005
 description: >-
   So little has happened in the last 48 hours that I cannot use few enough words

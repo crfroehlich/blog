@@ -1,4 +1,5 @@
 ---
+background: ../../assets/images/fallujah_play.jpg
 date: 10/5/2007
 description: >-
   Ithaca College today had the audacity to introduce and screen a film as a

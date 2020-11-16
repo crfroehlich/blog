@@ -1,4 +1,5 @@
 ---
+background: ../../assets/images/war_dog.jpg
 date: 10/25/2006
 description: >-
   [image not

@@ -1,4 +1,5 @@
 ---
+background: ../../assets/images/komodo.jpeg
 date: 9/15/2005
 description: >-
   I knew going into that den of fear that my battle would not be one of

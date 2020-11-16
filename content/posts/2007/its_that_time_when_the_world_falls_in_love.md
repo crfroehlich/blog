@@ -1,4 +1,5 @@
 ---
+background: ../../assets/images/water_bear.jpeg
 date: 07/09/2007
 description: >-
   She sleeps with her mouth open and kicks when I brush against her legs It's an

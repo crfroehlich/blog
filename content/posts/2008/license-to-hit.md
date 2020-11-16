@@ -1,4 +1,5 @@
 ---
+background: ../../assets/images/broken_family_tree.jpg
 date: 11/21/2008
 description: The subject of the latest email from Dean Indulging him...
 draft: false

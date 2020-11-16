@@ -1,4 +1,5 @@
 ---
+background: ../../assets/images/curry_favor.jpeg
 date: 3/16/2013
 description: >-
   There is a domain that attends to curry as one of the quintessential elements

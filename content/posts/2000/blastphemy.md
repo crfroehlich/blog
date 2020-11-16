@@ -1,4 +1,5 @@
 ---
+background: ../../assets/images/blasphemy.jpg
 date: 5/1/2000
 description: Of all the emptiness and disdain...
 draft: false

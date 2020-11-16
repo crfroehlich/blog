@@ -1,8 +1,9 @@
-import React, { Component } from 'react';
 import { graphql } from 'gatsby';
-import { Tooltip, CardMedia, Card, CardPrimaryAction, Typography, Grid, GridCell } from 'rmwc';
+import React, { Component } from 'react';
+import { Card, CardPrimaryAction, Grid, GridCell, Tooltip, Typography } from 'rmwc';
 import { Link, StyledHeading, StyledMainWrapper } from '../components';
 import { IPageProps } from '../types/interfaces';
+import Img from 'gatsby-image';
 
 export default class Tag extends Component<IPageProps> {
   render(): JSX.Element {
@@ -56,10 +57,10 @@ export default class Tag extends Component<IPageProps> {
                   >
                     <Card style={{ width: '15rem' }}>
                       <CardPrimaryAction>
-                        <CardMedia
+                        {/* <CardMedia
                           sixteenByNine
                           style={{
-                            backgroundImage: `url(${e.node.fields.img})`,
+                            backgroundImage: `url(${e.node.frontmatter.background.childImageSharp.fluid.base64})`,
                             backgroundSize: 'fit',
                           }}
                         >
@@ -79,7 +80,25 @@ export default class Tag extends Component<IPageProps> {
                           >
                             {e.node.fields.title}
                           </Typography>
-                        </CardMedia>
+                        </CardMedia> */}
+                        <Img fluid={e.node.frontmatter.background.childImageSharp.fluid} />
+
+                        <Typography
+                            use="subtitle2 truncate"
+                            tag="div"
+                            theme="textPrimaryOnDark"
+                            style={{
+                              padding: '0.5rem 1rem',
+                              backgroundImage:
+                                'linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.5) 100%)',
+                              bottom: '0',
+                              left: '0',
+                              right: '0',
+                              position: 'absolute',
+                            }}
+                          >
+                            {e.node.fields.title}
+                          </Typography>
                       </CardPrimaryAction>
                     </Card>
                   </Tooltip>
@@ -113,6 +132,19 @@ export const tagQuery = graphql`
             date
             tags
             img
+          }
+          frontmatter {
+            background {
+              childImageSharp {
+                fluid(maxWidth: 200, maxHeight: 100) {
+                  base64
+                  aspectRatio
+                  src
+                  srcSet
+                  sizes
+                }
+              }
+            }
           }
         }
       }

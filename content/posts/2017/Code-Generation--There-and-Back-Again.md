@@ -1,4 +1,5 @@
 ---
+background: ../../assets/images/there_and_back.jpg
 date: 10/24/2017
 description: >-
   I can’t remember a project engineering or otherwise during which I haven’t

@@ -1,4 +1,5 @@
 ---
+background: ../../assets/images/curry_favor.jpeg
 date: 02/04/2017
 description: >-
   Editor’s Note This is an old post from March of 2013 from an old blog

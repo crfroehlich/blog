@@ -1,4 +1,5 @@
 ---
+background: ../../assets/images/artic_station.jpg
 date: 05/12/2018
 description: >-
   Billions of gallons of ink have been spilled on this subject Google if you
