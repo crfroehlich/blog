@@ -5,7 +5,7 @@ import { Header } from '../Header';
 import { BaseStyles } from './BaseStyles';
 import { IPageProps } from '../../types';
 
-const theme = {
+export const theme = {
   fonts: {
     mono: '"SF Mono", "Roboto Mono", Menlo, monospace',
   },

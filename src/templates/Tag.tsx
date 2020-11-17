@@ -4,6 +4,7 @@ import React, { Component } from 'react';
 import { Card, CardPrimaryAction, Grid, GridCell, Tooltip, Typography } from 'rmwc';
 import { Link, StyledHeading, StyledMainWrapper } from '../components';
 import { IPageProps } from '../types/interfaces';
+
 export default class Tag extends Component<IPageProps> {
   render(): JSX.Element {
     const {
@@ -41,16 +42,13 @@ export default class Tag extends Component<IPageProps> {
                           padding: '1rem,',
                         }}
                       >
-                        <CardPrimaryAction>
-                          <div style={{ padding: '1rem' }}>
-                            <Typography use="headline5" tag="div">
-                              {e.node.fields.title}
-                            </Typography>
-                            <Typography use="body1" tag="p" theme="textSecondaryOnBackground">
-                              {e.node.excerpt}
-                            </Typography>
-                          </div>
-                        </CardPrimaryAction>
+                        <Img fluid={e.node.frontmatter.background?.childImageSharp.fluid} />
+                        <Typography use="headline5" tag="div">
+                          {e.node.fields.title}
+                        </Typography>
+                        <Typography use="body1" tag="p" theme="textSecondaryOnBackground">
+                          {e.node.excerpt}
+                        </Typography>
                       </div>
                     }
                   >

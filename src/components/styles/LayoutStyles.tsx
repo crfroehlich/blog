@@ -1,13 +1,13 @@
 import styled from '@emotion/styled';
-import { IStyle } from '../../types/interfaces';
+import { theme } from './DarkTheme';
 
 export const Wrapper = styled('div')`
   display: flex;
   justify-content: space-between;
-  background: ${({ theme }: IStyle) => theme.colors?.background};
+  background: ${theme.colors.background};
 
   .sideBarUL li a {
-    color: ${({ theme }: IStyle) => theme.colors?.text};
+    color: ${theme.colors.text};
   }
 
   .sideBarUL .item > a:hover {
@@ -27,10 +27,10 @@ export const Content = styled('main')`
   flex-grow: 1;
   margin: 0px 88px;
   padding-top: 3rem;
-  background: ${({ theme }: IStyle) => theme.colors?.background};
+  background: ${theme.colors.background};
 
   table tr {
-    background: ${({ theme }: IStyle) => theme.colors?.background};
+    background: ${theme.colors.background};
   }
 
   @media only screen and (max-width: 1023px) {

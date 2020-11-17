@@ -1,5 +1,5 @@
 ---
-background: ../../assets/images/theban.png
+background: ../../assets/images/thebans.jpg
 date: 8/24/2005
 description: >-
   This winter has been especially harsh and long With temperatures plummeting to
