@@ -90,7 +90,7 @@ export const buildSidebar = (mdx, src): ISidebar => {
 
   const archive: ISection = {
     active: false,
-    articles: allArticles.slice(3, allArticles.length - 1).map(flatten),
+    articles: allArticles.slice(2, allArticles.length).map(flatten),
     icon: ['fas', 'treasure-chest'],
     name: 'Alcoves',
     open: false,

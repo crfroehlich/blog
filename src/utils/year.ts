@@ -11,6 +11,26 @@ interface IMap {
 }
 
 const calendar: IMap = {
+  17: {
+    name: 'Pie',
+    font: ['fas', 'pie'],
+    sequence: 17,
+  },
+  16: {
+    name: 'Pi',
+    font: ['fas', 'pi'],
+    sequence: 16,
+  },
+  15: {
+    name: 'Luchador',
+    font: ['fas', 'luchador'],
+    sequence: 15,
+  },
+  14: {
+    name: 'No-Fi',
+    font: ['fas', 'wifi-slash'],
+    sequence: 14,
+  },
   13: {
     name: 'Abacus',
     font: ['fas', 'abacus'],
