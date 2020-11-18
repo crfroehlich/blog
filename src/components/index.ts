@@ -10,4 +10,5 @@ export * from './RightSidebar';
 export * from './search';
 export * from './SEO';
 export * from './styles';
+export * from './TagSet';
 export * from './ThemeProvider';
