@@ -5,25 +5,9 @@ import { Card, CardPrimaryAction, Grid, GridCell, Tooltip, Typography } from 'rm
 import { Link, StyledHeading, StyledMainWrapper } from '../components';
 import { IPageProps } from '../types/interfaces';
 
-export default class Tag extends Component<IPageProps> {
-  render(): JSX.Element {
-    const {
-      data: {
-        allMdx: { edges },
-      },
-      pageContext: { title },
-    } = this.props;
-
-    return (
-      <div>
-        <div className={'titleWrapper'}>
-          <StyledHeading>{title}</StyledHeading>
-        </div>
-        <StyledMainWrapper>
-          <Grid>
-            {edges.map((e, i) => (
-              <GridCell span={6} key={`gridcell_${i}_${e.node.fields.id}`}>
-                <Link to={`${e.node.fields.slug}`}>
+const makeCell = ({e, i}) => {
+  return (
+<Link to={`${e.node.fields.slug}`}>
                   <Tooltip
                     align={'right'}
                     enterDelay={1000}
@@ -78,6 +62,28 @@ export default class Tag extends Component<IPageProps> {
                     </Card>
                   </Tooltip>
                 </Link>
+  );
+}
+
+export default class Tag extends Component<IPageProps> {
+  render(): JSX.Element {
+    const {
+      data: {
+        allMdx: { edges },
+      },
+      pageContext: { title },
+    } = this.props;
+
+    return (
+      <div>
+        <div className={'titleWrapper'}>
+          <StyledHeading>{title}</StyledHeading>
+        </div>
+        <StyledMainWrapper>
+          <Grid>
+            {edges.map((e, i) => (
+              <GridCell span={6} key={`gridcell_${i}_${e.node.fields.id}`}>
+                {makeCell({e:e, i:i})}
               </GridCell>
             ))}
           </Grid>

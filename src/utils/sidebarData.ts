@@ -99,7 +99,7 @@ export const buildSidebar = (mdx, src): ISidebar => {
   const source: ISection = {
     active: false,
     source: buildSrc(src),
-    icon: ['fas', 'soup'],
+    icon: ['fas', 'book-spells'],
     name: 'Source Code',
     open: false,
   };
