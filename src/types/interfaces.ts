@@ -66,12 +66,12 @@ export interface ICategory {
 }
 
 export interface INodeFrontMatter {
+  background?: any;
   created?: Date;
   date?: Date | string;
   description?: string;
   draft: boolean;
   github?: string;
-  background?: any;
   labels?: string[];
   subtitle?: string;
   tags?: string[];
@@ -80,11 +80,12 @@ export interface INodeFrontMatter {
 }
 
 export interface INodeFields {
+  background?: any;
   created?: string;
   date?: string;
+  description?: string;
   github?: string;
   id: number;
-  background?: any;
   labels?: string[];
   slug?: string;
   tags?: string[];

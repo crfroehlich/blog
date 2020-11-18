@@ -10,7 +10,6 @@ export const addMdx: addConfig = (config, plugins): void => {
           options: {
             maxWidth: 590,
             linkImagesToOriginal: true,
-            sizeByPixelDensity: true,
           },
         },
         {

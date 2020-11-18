@@ -2266,8 +2266,6 @@ export type QueryAllDirectoryArgs = {
 export type QuerySiteArgs = {
   buildTime?: Maybe<DateQueryOperatorInput>;
   siteMetadata?: Maybe<SiteSiteMetadataFilterInput>;
-  port?: Maybe<IntQueryOperatorInput>;
-  host?: Maybe<StringQueryOperatorInput>;
   pathPrefix?: Maybe<StringQueryOperatorInput>;
   polyfill?: Maybe<BooleanQueryOperatorInput>;
   id?: Maybe<StringQueryOperatorInput>;
@@ -2424,8 +2422,6 @@ export type QueryAllSitePluginArgs = {
 export type Site = Node & {
   buildTime?: Maybe<Scalars['Date']>;
   siteMetadata?: Maybe<SiteSiteMetadata>;
-  port?: Maybe<Scalars['Int']>;
-  host?: Maybe<Scalars['String']>;
   pathPrefix?: Maybe<Scalars['String']>;
   polyfill?: Maybe<Scalars['Boolean']>;
   id: Scalars['ID'];
@@ -2639,8 +2635,6 @@ export type SiteFieldsEnum =
   | 'siteMetadata___headerLinks___text'
   | 'siteMetadata___headerLinks___link'
   | 'siteMetadata___siteUrl'
-  | 'port'
-  | 'host'
   | 'pathPrefix'
   | 'polyfill'
   | 'id'
@@ -2733,8 +2727,6 @@ export type SiteFieldsEnum =
 export type SiteFilterInput = {
   buildTime?: Maybe<DateQueryOperatorInput>;
   siteMetadata?: Maybe<SiteSiteMetadataFilterInput>;
-  port?: Maybe<IntQueryOperatorInput>;
-  host?: Maybe<StringQueryOperatorInput>;
   pathPrefix?: Maybe<StringQueryOperatorInput>;
   polyfill?: Maybe<BooleanQueryOperatorInput>;
   id?: Maybe<StringQueryOperatorInput>;
@@ -2897,15 +2889,47 @@ export type SitePageContextNextTableOfContentsItemsFilterListInput = {
 export type SitePageContextNextTableOfContentsItemsItems = {
   url?: Maybe<Scalars['String']>;
   title?: Maybe<Scalars['String']>;
+  items?: Maybe<Array<Maybe<SitePageContextNextTableOfContentsItemsItemsItems>>>;
 };
 
 export type SitePageContextNextTableOfContentsItemsItemsFilterInput = {
   url?: Maybe<StringQueryOperatorInput>;
   title?: Maybe<StringQueryOperatorInput>;
+  items?: Maybe<SitePageContextNextTableOfContentsItemsItemsItemsFilterListInput>;
 };
 
 export type SitePageContextNextTableOfContentsItemsItemsFilterListInput = {
   elemMatch?: Maybe<SitePageContextNextTableOfContentsItemsItemsFilterInput>;
+};
+
+export type SitePageContextNextTableOfContentsItemsItemsItems = {
+  url?: Maybe<Scalars['String']>;
+  title?: Maybe<Scalars['String']>;
+  items?: Maybe<Array<Maybe<SitePageContextNextTableOfContentsItemsItemsItemsItems>>>;
+};
+
+export type SitePageContextNextTableOfContentsItemsItemsItemsFilterInput = {
+  url?: Maybe<StringQueryOperatorInput>;
+  title?: Maybe<StringQueryOperatorInput>;
+  items?: Maybe<SitePageContextNextTableOfContentsItemsItemsItemsItemsFilterListInput>;
+};
+
+export type SitePageContextNextTableOfContentsItemsItemsItemsFilterListInput = {
+  elemMatch?: Maybe<SitePageContextNextTableOfContentsItemsItemsItemsFilterInput>;
+};
+
+export type SitePageContextNextTableOfContentsItemsItemsItemsItems = {
+  url?: Maybe<Scalars['String']>;
+  title?: Maybe<Scalars['String']>;
+};
+
+export type SitePageContextNextTableOfContentsItemsItemsItemsItemsFilterInput = {
+  url?: Maybe<StringQueryOperatorInput>;
+  title?: Maybe<StringQueryOperatorInput>;
+};
+
+export type SitePageContextNextTableOfContentsItemsItemsItemsItemsFilterListInput = {
+  elemMatch?: Maybe<SitePageContextNextTableOfContentsItemsItemsItemsItemsFilterInput>;
 };
 
 export type SitePageContextPageLabels = {
@@ -3015,15 +3039,47 @@ export type SitePageContextPreviousTableOfContentsItemsFilterListInput = {
 export type SitePageContextPreviousTableOfContentsItemsItems = {
   url?: Maybe<Scalars['String']>;
   title?: Maybe<Scalars['String']>;
+  items?: Maybe<Array<Maybe<SitePageContextPreviousTableOfContentsItemsItemsItems>>>;
 };
 
 export type SitePageContextPreviousTableOfContentsItemsItemsFilterInput = {
   url?: Maybe<StringQueryOperatorInput>;
   title?: Maybe<StringQueryOperatorInput>;
+  items?: Maybe<SitePageContextPreviousTableOfContentsItemsItemsItemsFilterListInput>;
 };
 
 export type SitePageContextPreviousTableOfContentsItemsItemsFilterListInput = {
   elemMatch?: Maybe<SitePageContextPreviousTableOfContentsItemsItemsFilterInput>;
+};
+
+export type SitePageContextPreviousTableOfContentsItemsItemsItems = {
+  url?: Maybe<Scalars['String']>;
+  title?: Maybe<Scalars['String']>;
+  items?: Maybe<Array<Maybe<SitePageContextPreviousTableOfContentsItemsItemsItemsItems>>>;
+};
+
+export type SitePageContextPreviousTableOfContentsItemsItemsItemsFilterInput = {
+  url?: Maybe<StringQueryOperatorInput>;
+  title?: Maybe<StringQueryOperatorInput>;
+  items?: Maybe<SitePageContextPreviousTableOfContentsItemsItemsItemsItemsFilterListInput>;
+};
+
+export type SitePageContextPreviousTableOfContentsItemsItemsItemsFilterListInput = {
+  elemMatch?: Maybe<SitePageContextPreviousTableOfContentsItemsItemsItemsFilterInput>;
+};
+
+export type SitePageContextPreviousTableOfContentsItemsItemsItemsItems = {
+  url?: Maybe<Scalars['String']>;
+  title?: Maybe<Scalars['String']>;
+};
+
+export type SitePageContextPreviousTableOfContentsItemsItemsItemsItemsFilterInput = {
+  url?: Maybe<StringQueryOperatorInput>;
+  title?: Maybe<StringQueryOperatorInput>;
+};
+
+export type SitePageContextPreviousTableOfContentsItemsItemsItemsItemsFilterListInput = {
+  elemMatch?: Maybe<SitePageContextPreviousTableOfContentsItemsItemsItemsItemsFilterInput>;
 };
 
 export type SitePageContextToc = {
@@ -4006,7 +4062,7 @@ export type GetTagByNameQueryQuery = { allMdx: (
     Pick<MdxConnection, 'totalCount'>
     & { edges: Array<{ node: (
         Pick<Mdx, 'excerpt'>
-        & { fields?: Maybe<Pick<MdxFields, 'id' | 'title' | 'slug' | 'date' | 'tags'>>, frontmatter?: Maybe<{ background?: Maybe<{ childImageSharp?: Maybe<{ fluid?: Maybe<Pick<ImageSharpFluid, 'base64' | 'aspectRatio' | 'src' | 'srcSet' | 'sizes'>> }> }> }> }
+        & { fields?: Maybe<Pick<MdxFields, 'id' | 'title' | 'slug' | 'date' | 'tags' | 'description'>>, frontmatter?: Maybe<{ background?: Maybe<{ childImageSharp?: Maybe<{ fluid?: Maybe<Pick<ImageSharpFluid, 'base64' | 'aspectRatio' | 'src' | 'srcSet' | 'sizes'>> }> }> }> }
       ) }> }
   ) };
 

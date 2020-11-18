@@ -1,97 +1,146 @@
-import { graphql } from 'gatsby';
+// import Card from '@material-ui/core/Card';
+// import CardActionArea from '@material-ui/core/CardActionArea';
+// import CardContent from '@material-ui/core/CardContent';
+// import Grid from '@material-ui/core/Grid';
+import {
+  Card,
+  CardActionArea,
+  CardActions,
+  CardContent,
+  Collapse,
+  createStyles,
+  Grid,
+  IconButton,
+  makeStyles,
+  Theme,
+  Typography,
+} from '@material-ui/core';
+// import { makeStyles } from '@material-ui/core/styles';
+import clsx from 'clsx';
+import { graphql, navigate } from 'gatsby';
 import Img from 'gatsby-image';
-import React, { Component } from 'react';
-import { Card, CardPrimaryAction, Grid, GridCell, Tooltip, Typography } from 'rmwc';
-import { Link, StyledHeading, StyledMainWrapper } from '../components';
-import { IPageProps } from '../types/interfaces';
+import React, { FC, useState } from 'react';
+import { DisplayDate, Icon, IPageProps, StyledHeading, StyledMainWrapper } from '..';
+// import { IPageProps } from '../types/interfaces';
 
-const makeCell = ({e, i}) => {
+const getCardStyles = makeStyles((theme: Theme) =>
+  createStyles({
+    root: {
+      maxWidth: 345,
+      color: theme.palette.text.secondary,
+      backgroundColor: '#d1d2d3',
+    },
+    media: {
+      height: 0,
+      paddingTop: '56.25%', // 16:9
+    },
+    expand: {
+      transform: 'rotate(0deg)',
+      marginLeft: 'auto',
+      transition: theme.transitions.create('transform', {
+        duration: theme.transitions.duration.complex,
+      }),
+    },
+    expandOpen: {
+      transform: 'rotate(180deg)',
+    },
+    paper: {
+      padding: theme.spacing(1),
+      textAlign: 'left',
+      color: theme.palette.text.secondary,
+    },
+    grid: {
+      flexGrow: 1,
+    },
+    description: {
+      width: '250',
+      whiteSpace: 'nowrap',
+      overflow: 'hidden',
+      textOverflow: 'ellipsis',
+    },
+  }),
+);
+
+const GridCard = ({ edge, idx }) => {
+  const [expanded, setExpanded] = useState(false);
+  const classes = getCardStyles();
+
+  const handleExpandClick = () => setExpanded(!expanded);
+  const handleNavigate = () => navigate(edge.node.fields.slug);
+
   return (
-<Link to={`${e.node.fields.slug}`}>
-                  <Tooltip
-                    align={'right'}
-                    enterDelay={1000}
-                    content={
-                      <div
-                        style={{
-                          display: 'flex',
-                          // alignItems: 'center',
-                          // justifyContent: 'center',
-                          background: '#ede7f3',
-                          width: '20rem',
-                          // height: '8rem',
-                          color: 'black',
-                          // borderRadius: '1px',
-                          // margin: '0 -3px'
-                          padding: '1rem,',
-                        }}
-                      >
-                        <Img fluid={e.node.frontmatter.background?.childImageSharp.fluid} />
-                        <Typography use="headline5" tag="div">
-                          {e.node.fields.title}
-                        </Typography>
-                        <Typography use="body1" tag="p" theme="textSecondaryOnBackground">
-                          {e.node.excerpt}
-                        </Typography>
-                      </div>
-                    }
-                  >
-                    <Card style={{ width: '15rem' }}>
-                      <CardPrimaryAction>
-                        <Img
-                          fluid={e.node.frontmatter.background?.childImageSharp.fluid}
-                          alt={e.node.fields.title}
-                        />
-                        <Typography
-                          use="subtitle2 truncate"
-                          tag="div"
-                          theme="textPrimaryOnDark"
-                          style={{
-                            padding: '0.5rem 1rem',
-                            backgroundImage:
-                              'linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.5) 100%)',
-                            bottom: '0',
-                            left: '0',
-                            right: '0',
-                            position: 'absolute',
-                          }}
-                        >
-                          {e.node.fields.title}
-                        </Typography>
-                      </CardPrimaryAction>
-                    </Card>
-                  </Tooltip>
-                </Link>
+    <Grid item xs={6} key={`gridcell_${idx}_${edge.node.fields.id}`}>
+      <Card className={classes.root} variant="elevation">
+        <CardActionArea onClick={handleNavigate}>
+          <Img fluid={edge.node.frontmatter.background?.childImageSharp.fluid} />
+          <CardContent>
+            <Typography gutterBottom variant="h5" component="h2">
+              {edge.node.fields.title}
+            </Typography>
+            <Typography
+              variant="body2"
+              color="textSecondary"
+              component="p"
+              className={classes.description}
+            >
+              {edge.node.fields.description}
+            </Typography>
+          </CardContent>
+        </CardActionArea>
+        <CardActions disableSpacing>
+          <IconButton>
+            <DisplayDate style={{ color: '#0000008A' }} date={new Date(edge.node.fields.date)} />
+          </IconButton>
+          <IconButton
+            className={clsx(classes.expand, {
+              [classes.expandOpen]: expanded,
+            })}
+            onClick={handleExpandClick}
+            aria-expanded={expanded}
+            aria-label="show more"
+          >
+            {expanded ? <Icon icon={'angle-up'} /> : <Icon icon={'angle-down'} />}
+          </IconButton>
+        </CardActions>
+        <Collapse in={expanded} timeout="auto" unmountOnExit>
+          <CardContent>
+            <Typography paragraph>{edge.node.excerpt.replace('\n', '<br>')}</Typography>
+          </CardContent>
+        </Collapse>
+      </Card>
+    </Grid>
   );
-}
+};
 
-export default class Tag extends Component<IPageProps> {
-  render(): JSX.Element {
-    const {
-      data: {
-        allMdx: { edges },
-      },
-      pageContext: { title },
-    } = this.props;
+export const Tag: FC<IPageProps> = (props): JSX.Element => {
+  const {
+    data: {
+      allMdx: { edges },
+    },
+    pageContext: { title },
+  } = props;
 
-    return (
-      <div>
-        <div className={'titleWrapper'}>
-          <StyledHeading>{title}</StyledHeading>
-        </div>
-        <StyledMainWrapper>
-          <Grid>
+  const classes = getCardStyles();
+
+  return (
+    <div>
+      <div className={'titleWrapper'}>
+        <StyledHeading>{title}</StyledHeading>
+      </div>
+      <StyledMainWrapper>
+        <div className={classes.grid}>
+          <Grid container spacing={3}>
             {edges.map((e, i) => (
-              <GridCell span={6} key={`gridcell_${i}_${e.node.fields.id}`}>
-                {makeCell({e:e, i:i})}
-              </GridCell>
+              <GridCard edge={e} idx={i} key={`gridcard_${i}_${e.node.fields.id}`} />
             ))}
           </Grid>
-        </StyledMainWrapper>
-      </div>
-    );
-  }
-}
+        </div>
+      </StyledMainWrapper>
+    </div>
+  );
+};
+
+export default Tag;
 
 export const tagQuery = graphql`
   query GetTagByNameQuery($tag: String) {
@@ -112,11 +161,12 @@ export const tagQuery = graphql`
             slug
             date
             tags
+            description
           }
           frontmatter {
             background {
               childImageSharp {
-                fluid(maxWidth: 200, maxHeight: 100) {
+                fluid(maxWidth: 345, maxHeight: 180) {
                   base64
                   aspectRatio
                   src

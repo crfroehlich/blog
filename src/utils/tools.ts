@@ -22,12 +22,16 @@ export class Tools {
   }
 
   getLocalDate(date: Date = new Date()): string {
-    return date.toLocaleDateString('ru-RU', {
-      weekday: 'long',
-      year: 'numeric',
-      month: '2-digit',
-      day: '2-digit',
-    });
+    let ret = '';
+    try {
+      ret = date?.toLocaleDateString('ru-RU', {
+        weekday: 'long',
+        year: 'numeric',
+        month: '2-digit',
+        day: '2-digit',
+      });
+    } catch(e) {}
+    return ret;
   }
 
   getDocument(): any {

@@ -1,5 +1,4 @@
 import { injectGlobal } from 'emotion';
-import 'rmwc/dist/styles';
 import 'prismjs/plugins/line-numbers/prism-line-numbers.css';
 import 'prismjs/plugins/command-line/prism-command-line.css';
 
