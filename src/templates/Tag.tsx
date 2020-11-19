@@ -1,10 +1,9 @@
 import { graphql } from 'gatsby';
+import Img from 'gatsby-image';
 import React, { Component } from 'react';
 import { Card, CardPrimaryAction, Grid, GridCell, Tooltip, Typography } from 'rmwc';
 import { Link, StyledHeading, StyledMainWrapper } from '../components';
 import { IPageProps } from '../types/interfaces';
-import Img from 'gatsby-image';
-
 export default class Tag extends Component<IPageProps> {
   render(): JSX.Element {
     const {
@@ -57,26 +56,26 @@ export default class Tag extends Component<IPageProps> {
                   >
                     <Card style={{ width: '15rem' }}>
                       <CardPrimaryAction>
-                        <Img 
-                          fluid={e.node.frontmatter.background.childImageSharp.fluid} 
+                        <Img
+                          fluid={e.node.frontmatter.background?.childImageSharp.fluid}
                           alt={e.node.fields.title}
                         />
                         <Typography
-                            use="subtitle2 truncate"
-                            tag="div"
-                            theme="textPrimaryOnDark"
-                            style={{
-                              padding: '0.5rem 1rem',
-                              backgroundImage:
-                                'linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.5) 100%)',
-                              bottom: '0',
-                              left: '0',
-                              right: '0',
-                              position: 'absolute',
-                            }}
-                          >
-                            {e.node.fields.title}
-                          </Typography>
+                          use="subtitle2 truncate"
+                          tag="div"
+                          theme="textPrimaryOnDark"
+                          style={{
+                            padding: '0.5rem 1rem',
+                            backgroundImage:
+                              'linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.5) 100%)',
+                            bottom: '0',
+                            left: '0',
+                            right: '0',
+                            position: 'absolute',
+                          }}
+                        >
+                          {e.node.fields.title}
+                        </Typography>
                       </CardPrimaryAction>
                     </Card>
                   </Tooltip>

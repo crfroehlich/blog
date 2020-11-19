@@ -28,6 +28,8 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions 
                 id
                 title
                 slug
+                date
+                tags
               }
               tableOfContents
               parent {

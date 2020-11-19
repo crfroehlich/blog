@@ -144,7 +144,7 @@ export const getConfig = (env: any = tools.getEnv()): IConfig => {
         cache_busting_mode: 'query',
         crossOrigin: 'use-credentials',
         display: 'standalone',
-        icon: './content/assets/favicon.svg',
+        icon: './static/favicon.svg',
         name: 'Hiking My Desk',
         short_name: 'HikingMyDesk',
         start_url: '/',

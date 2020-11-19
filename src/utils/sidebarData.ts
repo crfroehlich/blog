@@ -1,6 +1,5 @@
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
 import { graphql, useStaticQuery } from 'gatsby';
-import { once } from 'lodash';
 
 export interface ISection {
   active: boolean;
@@ -30,22 +29,17 @@ export const buildSidebar = (mdx, src): ISidebar => {
 
   const flatten = (g) => {
     return {
-      year: g.fieldValue,
-      open: false,
       active: false,
+      open: false,
+      year: g.fieldValue,
       posts: g.edges.map((e) => {
         return {
+          active: false,
           date: new Date(e.node.fields.date),
-          description: e.node.fields.description,
-          id: e.node.fields.id,
-          background: e.node.frontmatter.background,
+          open: false,
           slug: e.node.fields.slug,
-          subtitle: e.node.fields.subtitle,
-          tags: e.node.fields.tags,
           title: e.node.fields.title,
           year: e.node.fields.year,
-          active: false,
-          open: false,
         };
       }),
     };
@@ -109,72 +103,52 @@ export const buildSidebar = (mdx, src): ISidebar => {
     name: 'Source Code',
     open: false,
   };
-  const ret = {
+  return {
     sections: [recent, archive, source],
     open: true,
   };
-  return ret;
 };
 
-export const getSideBarData = once(
-  (): ISidebar => {
-    const { allMdx, allSrc } = useStaticQuery(
-      graphql`
-        query GetNewSidebarLayoutQuery {
-          allMdx(
-            filter: {
-              fileAbsolutePath: { glob: "**/content/posts/**" }
-              fields: { slug: { ne: "/" } }
-            }
-            sort: { fields: fields___date, order: DESC }
-          ) {
-            group(field: fields___year) {
-              edges {
-                node {
-                  fields {
-                    date
-                    description
-                    id
-                    slug
-                    subtitle
-                    tags
-                    title
-                    year
-                  }
-                  frontmatter {
-                    background {
-                      childImageSharp {
-                        fluid(maxWidth: 200, maxHeight: 100) {
-                          base64
-                          aspectRatio
-                          src
-                          srcSet
-                          sizes
-                        }
-                      }
-                    }
-                  }
-                }
-              }
-              fieldValue
-            }
+export const getSideBarData = (): ISidebar => {
+  const { allMdx, allSrc } = useStaticQuery(
+    graphql`
+      query GetNewSidebarLayoutQuery {
+        allMdx(
+          filter: {
+            fileAbsolutePath: { glob: "**/content/posts/**" }
+            fields: { slug: { ne: "/" } }
           }
-          allSrc: allMdx(
-            filter: { fileAbsolutePath: { glob: "**/content/src/**" } }
-            sort: { fields: slug }
-          ) {
+          sort: { fields: fields___date, order: DESC }
+        ) {
+          group(field: fields___year) {
             edges {
               node {
                 fields {
                   slug
                   title
+                  year
+                  date
                 }
+              }
+            }
+            fieldValue
+          }
+        }
+        allSrc: allMdx(
+          filter: { fileAbsolutePath: { glob: "**/content/src/**" } }
+          sort: { fields: slug }
+        ) {
+          edges {
+            node {
+              fields {
+                slug
+                title
               }
             }
           }
         }
-      `,
-    );
-    return buildSidebar(allMdx, allSrc);
-  },
-);
+      }
+    `,
+  );
+  return buildSidebar(allMdx, allSrc);
+};
