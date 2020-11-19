@@ -30,7 +30,6 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions 
                 slug
                 date
                 tags
-                img
               }
               tableOfContents
               parent {
@@ -43,7 +42,6 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions 
                 subtitle
                 date
                 tags
-                img
               }
             }
           }

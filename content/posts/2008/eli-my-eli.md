@@ -1,10 +1,10 @@
 ---
+background: ../../assets/images/elohim.jpg
 date: 2/23/2008
 description: >-
   It is almost a month since you were born We have taken many pictures of your
   progress and it is a jo...
 draft: false
-img: elohim.jpg
 tags:
   - hello
   - lïf

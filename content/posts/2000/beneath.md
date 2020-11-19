@@ -1,8 +1,8 @@
 ---
+background: ../../assets/images/temple_of_doom_heart.jpg
 date: 4/26/2000
 description: At times I wish only that my heart would open inside my mind...
 draft: false
-img: temple_of_doom_heart.jpg
 tags:
   - poetry
   - love

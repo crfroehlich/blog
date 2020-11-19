@@ -1,10 +1,10 @@
 ---
+background: ../../assets/images/sweat_lodge.jpg
 date: 3/28/2013
 description: >-
   Aside In all I'd much rather elaborate on [wheres joins and orders
   by]httphikingludditesme201303curr...
 draft: false
-img: sweat_lodge.jpg
 subtitle: ' Series Finale)'
 tags:
   - email

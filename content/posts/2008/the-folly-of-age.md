@@ -1,10 +1,10 @@
 ---
+background: ../../assets/images/lamps_on_ceiling.jpg
 date: 11/7/2008
 description: >-
   My brother Timothy wise beyond his years hipped me to an [email conversation
   with our grandparents]h...
 draft: false
-img: lamps_on_ceiling.jpg
 tags:
   - politics
   - family

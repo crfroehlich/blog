@@ -1,10 +1,10 @@
 ---
+background: ../../assets/images/war_dog.jpg
 date: 10/25/2006
 description: >-
   [image not
   found]httpbp3bloggercomNHWs1LwT47sRosjmwKHc8IAAAAAAAADbIunStJ3EBvvAs1600hIMG0029jpg...
 draft: false
-img: war_dog.jpg
 tags:
   - fury
   - lïf

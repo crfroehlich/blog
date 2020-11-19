@@ -1,10 +1,10 @@
 ---
+background: ../../assets/images/fortune_teller.jpg
 date: 10/18/2007
 description: >-
   "The end of the day comes closer to my ear and whispers casually that she'll
   be leaving me alone"...
 draft: false
-img: fortune_teller.jpg
 tags:
   - poetry
 title: forgotten futures

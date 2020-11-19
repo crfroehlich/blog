@@ -1,5 +1,3 @@
-export * from './search';
-export * from './styles';
 export * from './AnchorTag';
 export * from './Comments';
 export * from './Header';
@@ -9,5 +7,8 @@ export * from './LeftSidebar';
 export * from './Link';
 export * from './NextPrevious';
 export * from './RightSidebar';
+export * from './search';
 export * from './SEO';
+export * from './styles';
+export * from './TagSet';
 export * from './ThemeProvider';

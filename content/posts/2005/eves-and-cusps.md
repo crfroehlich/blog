@@ -1,10 +1,10 @@
 ---
+background: ../../assets/images/alley.jpg
 date: 12/16/2005
 description: >-
   I lost my accent in the gutter of an alleyway in Germany a town called Hof
   which literally or otherw...
 draft: false
-img: alley.jpg
 tags:
   - deutschland
   - lïf

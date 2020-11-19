@@ -1,8 +1,8 @@
 ---
+background: ../../assets/images/cig_russian.jpg
 date: 12/3/2003
 description: Friends of Athens...
 draft: false
-img: cig_russian.jpg
 tags:
   - россия
   - lïf

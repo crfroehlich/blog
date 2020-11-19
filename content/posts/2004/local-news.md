@@ -1,8 +1,8 @@
 ---
+background: ../../assets/images/local_news_2.png
 date: 5/15/2004
 description: HEADLINES Mullis Sightings in HongKong Continue page 7...
 draft: false
-img: local_news_2.png
 tags:
   - baghdad
   - news

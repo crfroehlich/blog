@@ -1,6 +1,7 @@
 # Hiking My Desk - The Blog
 
-![Published](https://github.com/crfroehlich/blog/workflows/Publish/badge.svg)|![CodeQL](https://github.com/crfroehlich/blog/workflows/CodeQL/badge.svg)
+![Published](https://github.com/crfroehlich/blog/workflows/Publish/badge.svg)|![CodeQL](https://github.com/crfroehlich/blog/workflows/CodeQL/badge.svg)[![RelativeCI](https://badges.relative-ci.com/badges/FhGivCfBUxY4hemDJ4Rr?branch=master)](https://app.relative-ci.com/projects/FhGivCfBUxY4hemDJ4Rr)
+
 This is the repo behind [the blog](https://blog.luddites.me).
 
 ## Attributions

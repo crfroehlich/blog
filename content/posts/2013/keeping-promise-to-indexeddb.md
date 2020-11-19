@@ -1,8 +1,8 @@
 ---
+background: ../../assets/images/trust_building.jpg
 date: 8/18/2013
 description: "APIs are hellish things inconstant moons inconsistent interfaces intolerable\_incompatibility If you ..."
 draft: false
-img: trust_building.jpg
 tags:
   - persistence
   - zen

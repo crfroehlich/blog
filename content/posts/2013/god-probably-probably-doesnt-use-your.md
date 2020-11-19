@@ -1,14 +1,14 @@
 ---
+background: ../../assets/images/god.jpg
 date: 8/14/2013
 description: >-
   I propose we immediately deprecate the word "administrator" and its diminutive
   form "admin" from lan...
 draft: false
-img: god.jpg
 tags:
   - göd
   - code
-title: "God Probably, *Probably*, Doesn''t Use Your App"
+title: 'God Probably, *Probably*, Doesn''''t Use Your App'
 ---
 
 I propose we immediately deprecate the word "administrator", and its diminutive form "admin", from language. All language. And languages.

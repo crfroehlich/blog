@@ -1,10 +1,10 @@
 ---
+background: ../../assets/images/30_rock_cookie_jars.jpg
 date: 6/19/2008
 description: >-
   There is within me this horribly perverse desire to hoard away little minutes
   here and thither for m...
 draft: false
-img: 30_rock_cookie_jars.jpg
 tags:
   - home
   - lïf

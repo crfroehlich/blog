@@ -1,10 +1,10 @@
 ---
+background: ../../assets/images/the_birth_of_buddha.jpg
 date: 11/25/2005
 description: >-
   It is I think significant that certain days stand out in memory and beckon for
   our attention and ref...
 draft: false
-img: the_birth_of_buddha.jpg
 tags:
   - lïf
   - holiday

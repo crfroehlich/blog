@@ -1,8 +1,8 @@
 ---
+background: ../../assets/images/hunger.jpg
 date: 10/9/2006
 description: NothingEverything...
 draft: false
-img: hunger.gif
 tags:
   - obsequious
   - lïf

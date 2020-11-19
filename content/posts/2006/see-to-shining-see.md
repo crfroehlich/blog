@@ -1,8 +1,8 @@
 ---
+background: ../../assets/images/calliope.jpeg
 date: 10/24/2006
 description: It takes a moment to find Calliope Urgency predicates motion...
 draft: false
-img: calliope.jpeg
 tags:
   - lïf
   - anaxagoras

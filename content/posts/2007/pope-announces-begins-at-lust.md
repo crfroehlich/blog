@@ -4,7 +4,7 @@ description: >-
   Parttime Vice Cardinal at the Vatican Donald Thisbit revealed to AP reporters
   this morning the resul...
 draft: false
-img: ''
+background: '../../assets/images/lust.webp'
 subtitle: ' "Life Begins at Lust"'
 tags:
   - news

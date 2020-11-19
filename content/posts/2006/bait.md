@@ -1,10 +1,10 @@
 ---
+background: ../../assets/images/minpin.jpg
 date: 5/28/2006
 description: >-
   So in a bold move yesterday morning Jen tore into the guest bathroom adjacent
   to the guest bedroom w...
 draft: false
-img: minpin.jpg
 tags:
   - dog
   - lïf

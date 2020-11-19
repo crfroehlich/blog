@@ -1,10 +1,10 @@
 ---
+background: ../../assets/images/code_generation.png
 date: 07/08/2019
 description: >-
   I have enjoyed working with
   [T4]httpsdocsmicrosoftcomenusvisualstudiomodelingcodegenerationandt4text...
 draft: false
-img: code_generation.png
 subtitle: ' Connecting T4 to Entity Framework Core'
 tags:
   - metadata

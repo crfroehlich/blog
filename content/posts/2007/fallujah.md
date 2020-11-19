@@ -1,10 +1,10 @@
 ---
+background: ../../assets/images/fallujah_play.jpg
 date: 10/5/2007
 description: >-
   Ithaca College today had the audacity to introduce and screen a film as a
   documentary "Fallujah" I a...
 draft: false
-img: fallujah_play.jpg
 tags:
   - baghdad
   - lïf

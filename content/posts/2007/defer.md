@@ -1,8 +1,8 @@
 ---
+background: ../../assets/images/coffee_snow.jpg
 date: 4/21/2000
 description: I didn't touch the coffee...
 draft: false
-img: coffee_snow.jpg
 tags:
   - poetry
 title: defer

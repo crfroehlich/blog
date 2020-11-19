@@ -1,10 +1,10 @@
 ---
+background: ../../assets/images/children_jail.jpeg
 date: 5/28/2004
 description: >-
   Despite increased attention and criticism from the Press and the United
   Nations conditions are worse...
 draft: false
-img: children_jail.jpeg
 tags:
   - baghdad
   - news

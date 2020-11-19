@@ -1,10 +1,10 @@
 ---
+background: ../../assets/images/corporate_overlords.jpg
 date: 11/9/2013
 description: >-
   Money the desire for money we might naively think is the great unifier We all
   want it as much of it ...
 draft: false
-img: corporate_overlords.jpg
 tags:
   - cable
   - economy

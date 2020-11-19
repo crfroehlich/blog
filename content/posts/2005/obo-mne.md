@@ -1,10 +1,10 @@
 ---
+background: ../../assets/images/talk_to_myself.jpg
 date: 12/13/2005
 description: >-
   I talk to myself when I feel awkward I say the things that I want to say to
   the people involved past...
 draft: false
-img: talk_to_myself.jpg
 tags:
   - lïf
   - honesty

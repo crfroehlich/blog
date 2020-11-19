@@ -1,10 +1,10 @@
 ---
+background: ../../assets/images/cabrera_coat_of_arms.jpg
 date: 01/16/2017
 description: >-
   The answer contrary to what one might naively assume is profoundly simple
   stare your employee square...
 draft: false
-img: cabrera_coat_of_arms.jpg
 tags:
   - management
   - leadership

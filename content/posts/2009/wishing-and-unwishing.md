@@ -1,8 +1,8 @@
 ---
+background: ../../assets/images/old_well.jpg
 date: 2/3/2009
 description: my uncle once said something true...
 draft: false
-img: old_well.jpg
 tags:
   - belief
   - family

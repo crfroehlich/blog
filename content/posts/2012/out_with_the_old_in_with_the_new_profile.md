@@ -1,10 +1,10 @@
 ---
+background: ../../assets/images/immaculate_conception.jpg
 date: 01/24/2012
 description: >-
   At the launch meeting for our new team blog [Object Reference Not
   Set]httpobjrefnotsetblogspotcom we...
 draft: false
-img: immaculate_conception.jpg
 tags:
   - logging
   - social

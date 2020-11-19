@@ -1,14 +1,14 @@
 ---
+background: ../../assets/images/ducktape.jpeg
 date: 2/10/2010
 description: >-
   I grew up writing laundry lists and never developed an adequate talent for
   other forms of literature...
 draft: false
-img: ducktape.jpeg
 tags:
   - lïf
   - logging
-title: "if it looks like a duck and walks like a duck, let''s call it a moose"
+title: 'if it looks like a duck and walks like a duck, let''''s call it a moose'
 ---
 
 I grew up writing laundry lists and never developed an adequate talent for other forms of literature.  The lists I gathered into bundles, which I stacked neatly in the corners of the attic of my parents' home.  What happened to them afterward, I couldn't begin to speculate.

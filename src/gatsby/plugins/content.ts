@@ -16,4 +16,12 @@ export const addContent: addConfig = (config, plugins): void => {
       path: `${__dirname}/../../../content/src`,
     },
   });
+  
+  plugins.push({
+    resolve: 'gatsby-source-filesystem',
+    options: {
+      name: 'assets',
+      path: `${__dirname}/../../../content/assets`,
+    },
+  });
 };

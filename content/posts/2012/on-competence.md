@@ -1,10 +1,10 @@
 ---
+background: ../../assets/images/monty_python_gumby.jpg
 date: 1/20/2012
 description: >-
   Years ago one of my dearest friends [Jennifer
   Elms]httpsplusgooglecom100156336256357757639posts and ...
 draft: false
-img: monty_python_gumby.jpg
 tags:
   - programming
   - competence

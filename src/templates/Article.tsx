@@ -1,18 +1,16 @@
 import React, { Component } from 'react';
 import { graphql } from 'gatsby';
 import MDXRenderer from 'gatsby-plugin-mdx/mdx-renderer';
-import { BadgeAnchor, Badge, ChipSet, Chip } from 'rmwc';
-import kebabCase from 'lodash/kebabCase';
 import { IPageProps, INode } from '../types/interfaces';
 import {
   Comments,
-  DisplayDate,
   Edit,
   Icon,
   Link,
   NextPrevious,
   StyledHeading,
   StyledMainWrapper,
+  TagSet,
 } from '../components';
 import { getConfig } from '../../config';
 
@@ -43,24 +41,7 @@ export default class Article extends Component<IPageProps> {
           </Edit>
         </div>
         <StyledMainWrapper>
-          <ChipSet>
-            {pageTags?.map((tag) => (
-              <Link
-                to={`/тег/${kebabCase(tag.name)}`}
-                key={kebabCase(tag.name)}
-                style={{ marginRight: '0.5rem' }}
-              >
-                <BadgeAnchor>
-                  <Chip style={{ backgroundColor: '#1ed3c6', color: 'fff' }} label={tag.name} />
-                  <Badge
-                    label={tag.count}
-                    style={{ backgroundColor: 'cadetblue', right: '-0.3rem', top: '-0.3rem' }}
-                  />
-                </BadgeAnchor>
-              </Link>
-            ))}
-            <DisplayDate style={{ color: '#1ed3c6' }} date={date} />
-          </ChipSet>
+          <TagSet tags={pageTags} linkPrefix={'тег'} date={date} />
           <MDXRenderer>{mdx.body}</MDXRenderer>
         </StyledMainWrapper>
         <div id="comment_div">
@@ -83,7 +64,19 @@ export const articleQuery = graphql`
         slug
         date
         tags
-        img
+      }
+      frontmatter {
+        background {
+          childImageSharp {
+            fluid(maxWidth: 200, maxHeight: 100) {
+              base64
+              aspectRatio
+              src
+              srcSet
+              sizes
+            }
+          }
+        }
       }
       body
     }

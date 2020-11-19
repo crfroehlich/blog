@@ -1,10 +1,10 @@
 ---
+background: ../../assets/images/wile_e.png
 date: 3/28/2006
 description: >-
   It comes in those moments between 315 and the wailing of the next door
   neighbor's newborn tapioca ch...
 draft: false
-img: wile_e.png
 tags:
   - pregnant
   - lïf

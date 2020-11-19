@@ -1,10 +1,10 @@
 ---
+background: ../../assets/images/ducky.jpg
 date: 11/24/2008
 description: >-
   Selfconsciousness is generally loathsome though it doesn't stop me from
   trepidating on its doorstep ...
 draft: false
-img: ducky.jpg
 tags:
   - mind
   - lïf

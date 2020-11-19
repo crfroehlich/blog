@@ -1,8 +1,8 @@
 ---
+background: ../../assets/images/cello.jpg
 date: 8/11/1998
 description: shake your hair back...
 draft: false
-img: cello.jpg
 tags:
   - cello
   - poetry

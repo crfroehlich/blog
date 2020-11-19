@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
 import { graphql } from 'gatsby';
 import MDXRenderer from 'gatsby-plugin-mdx/mdx-renderer';
-import { BadgeAnchor, Badge, ChipSet, Chip } from 'rmwc';
-import kebabCase from 'lodash/kebabCase';
 import { IPageProps } from '../types/interfaces';
-import { DisplayDate, Edit, Icon, Link, StyledHeading, StyledMainWrapper } from '../components';
+import { Edit, Icon, Link, StyledHeading, StyledMainWrapper, TagSet } from '../components';
 
 export default class Source extends Component<IPageProps> {
   render(): JSX.Element {
@@ -28,24 +26,7 @@ export default class Source extends Component<IPageProps> {
           </Edit>
         </div>
         <StyledMainWrapper>
-          <ChipSet>
-            {pageLabels.map((label) => (
-              <Link
-                to={`/этикетка/${kebabCase(label.name)}`}
-                key={kebabCase(label.name)}
-                style={{ marginRight: '0.5rem' }}
-              >
-                <BadgeAnchor>
-                  <Chip style={{ backgroundColor: '#1ed3c6', color: 'fff' }} label={label.name} />
-                  <Badge
-                    label={label.count}
-                    style={{ backgroundColor: 'cadetblue', right: '-0.3rem', top: '-0.3rem' }}
-                  />
-                </BadgeAnchor>
-              </Link>
-            ))}
-            <DisplayDate style={{ color: '#1ed3c6' }} date={updated} />
-          </ChipSet>
+          <TagSet tags={pageLabels} linkPrefix="этикетка" date={updated} />
           <MDXRenderer>{mdx.body}</MDXRenderer>
         </StyledMainWrapper>
       </div>

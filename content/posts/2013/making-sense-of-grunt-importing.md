@@ -1,8 +1,8 @@
 ---
+background: ../../assets/images/grunt.jpg
 date: 7/28/2013
 description: "Last year I saw\_[+Paul Irish]httpplusgooglecom113127438179392830442's introduction to [Yeoman]httpye..."
 draft: false
-img: grunt.jpg
 subtitle: ' Importing an Existing Project'
 tags:
   - tools

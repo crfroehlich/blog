@@ -1,10 +1,10 @@
 ---
+background: ../../assets/images/no_face.png
 date: 4/25/2004
 description: >-
   FriendsIn one sense I have been training for today my entire Army career
   Recline in your comfortable...
 draft: false
-img: no_face.png
 tags:
   - letters
   - notes

@@ -22,16 +22,18 @@ const cleanup = (er, files) => {
   files.forEach((fileName) => {
     const md = readFileSync(fileName, 'utf-8');
 
-    function firstFourLines(file, options) {
+    const firstFourLines = (file) => {
       let excerpt = '';
       let i = 0;
-      let content = file.content.split('\n');
+      const content = file.content.split('\n');
       while (excerpt.length < 10) {
-        excerpt += content[i].trim().replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g, '');
+        if (content[i]?.indexOf('```') === -1) {
+          excerpt += content[i]?.trim().replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g, '');
+        }
         i += 1;
       }
       file.excerpt = `${excerpt.trim().slice(0, 100)}...`;
-    }
+    };
 
     const grey = matter(md, { excerpt: firstFourLines });
     const frontmatter = grey.data;
@@ -65,7 +67,14 @@ const cleanup = (er, files) => {
     if (frontmatter.aliases) {
       delete frontmatter.aliases;
     }
-    const output = matter.stringify(grey.content, sortedJson.sortify(frontmatter));
+    if (frontmatter.img) {
+      frontmatter.background = `../../assets/images/${frontmatter.img}`;
+      delete frontmatter.img;
+    }
+    const output = matter.stringify(
+      grey.content.replaceAll('\n', '<br>\n'),
+      sortedJson.sortify(frontmatter),
+    );
     writeFileSync(fileName, output);
   });
 };

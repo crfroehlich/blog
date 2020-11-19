@@ -1,10 +1,10 @@
 ---
+background: ../../assets/images/womb_of_arrogance.jpg
 date: 11/22/2011
 description: >-
   The [illfated knol
   project]httpwwwtechdirtcomarticles2011011915120412735failureknolshowsagainthatbig...
 draft: false
-img: womb_of_arrogance.jpg
 tags:
   - titanic
   - death

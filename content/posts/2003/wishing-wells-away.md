@@ -1,10 +1,10 @@
 ---
+background: ../../assets/images/rosebud.jpg
 date: 11/5/2003
 description: >-
   ComradesI have remained static while the location around me has changed Gone
   are the steelreinforced...
 draft: false
-img: rosebud.jpg
 tags:
   - lïf
 title: Wishing Wells Away

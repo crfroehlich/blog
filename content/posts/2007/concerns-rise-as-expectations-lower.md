@@ -1,10 +1,10 @@
 ---
+background: ../../assets/images/get_used_to_disappointment.jpg
 date: 9/7/2007
 description: >-
   Area residents of Watkins Glen Arizona today noted increasing concern over
   their own lowered expecta...
 draft: false
-img: get_used_to_disappointment.jpg
 tags:
   - news
 title: Concerns Rise as Expectations Lower

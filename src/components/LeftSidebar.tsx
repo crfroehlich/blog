@@ -21,13 +21,16 @@ export const LeftSidebar = ({ sidebar }): JSX.Element => {
     return true;
   };
 
-  const getSourceMenu = (menu) => {
-    console.log(menu);
-    if (!menu) return;
+  const getSourceMenu = (menu, idx = 0): JSX.Element => {
+    if (!menu) return <div />;
 
     if (menu.slug) {
       return (
-        <MenuItem active={menu.active} {...{ onClick: (e) => onNodeClick(e, menu) }}>
+        <MenuItem
+          active={menu.active}
+          {...{ onClick: (e) => onNodeClick(e, menu) }}
+          key={`${idx}_${menu.slug}`}
+        >
           <Link to={menu.slug} title={menu.title} {...{ onClick: (e) => onNodeClick(e, menu) }}>
             <div>{menu.title}</div>
           </Link>
@@ -39,11 +42,54 @@ export const LeftSidebar = ({ sidebar }): JSX.Element => {
         <SubMenu
           title={<div {...{ onClick: (e) => onNodeClick(e, menu) }}>{menu.name}</div>}
           defaultOpen={menu.open}
+          key={`${idx}_${menu.name}`}
         >
           {menu.links.map(getSourceMenu)}
         </SubMenu>
       );
     }
+  };
+
+  const getArticlesMenu = (menu): JSX.Element => {
+    if (!menu) return <div />;
+    return menu.map((group, i) => {
+      return (
+        <SubMenu
+          title={<div {...{ onClick: (e) => onNodeClick(e, group) }}>{group.year}</div>}
+          icon={
+            <Icon
+              {...{
+                icon: getYearOfThe(group.year).font,
+                size: 'lg',
+                onClick: (e) => onNodeClick(e, group),
+              }}
+            />
+          }
+          defaultOpen={group.open}
+          key={`${i}_${group.year}`}
+        >
+          {group.posts
+            .sort((a, b) => a.date.getTime() - b.date.getTime())
+            .map((node, j) => {
+              return (
+                <MenuItem
+                  key={`${j}_${node.slug}`}
+                  active={node.active}
+                  {...{ onClick: (e) => onNodeClick(e, node) }}
+                >
+                  <Link
+                    to={node.slug}
+                    title={node.title}
+                    {...{ onClick: (e) => onNodeClick(e, node) }}
+                  >
+                    <div>{node.title}</div>
+                  </Link>
+                </MenuItem>
+              );
+            })}
+        </SubMenu>
+      );
+    });
   };
 
   return (
@@ -63,45 +109,8 @@ export const LeftSidebar = ({ sidebar }): JSX.Element => {
                 defaultOpen={s.open}
                 key={`${si}_${s.name}`}
               >
-                {s.articles?.map((group, i) => {
-                  return (
-                    <SubMenu
-                      title={<div {...{ onClick: (e) => onNodeClick(e, group) }}>{group.year}</div>}
-                      icon={
-                        <Icon
-                          {...{
-                            icon: getYearOfThe(group.year).font,
-                            size: 'lg',
-                            onClick: (e) => onNodeClick(e, group),
-                          }}
-                        />
-                      }
-                      defaultOpen={group.open}
-                      key={`${i}_${group.year}`}
-                    >
-                      {group.posts
-                        .sort((a, b) => a.date.getTime() - b.date.getTime())
-                        .map((node, j) => {
-                          return (
-                            <MenuItem
-                              key={`${j}_${node.slug}`}
-                              active={node.active}
-                              {...{ onClick: (e) => onNodeClick(e, node) }}
-                            >
-                              <Link
-                                to={node.slug}
-                                title={node.title}
-                                {...{ onClick: (e) => onNodeClick(e, node) }}
-                              >
-                                <div>{node.title}</div>
-                              </Link>
-                            </MenuItem>
-                          );
-                        })}
-                    </SubMenu>
-                  );
-                })}
-                {getSourceMenu(s.source)}
+                {s.articles && getArticlesMenu(s.articles)}
+                {s.source && getSourceMenu(s.source)}
               </SubMenu>
             );
           })}

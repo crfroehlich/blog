@@ -1,10 +1,10 @@
 ---
+background: ../../assets/images/mouse_mirror.jpg
 date: 5/25/2011
 description: >-
   My hike today spanned the 3500 km of the Appalachian Trail The journey I
   embarked when I began hikin...
 draft: false
-img: mouse_mirror.jpg
 tags:
   - meaning
   - journey

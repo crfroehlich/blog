@@ -1,8 +1,8 @@
 ---
+background: ../../assets/images/old_man.jpg
 date: 4/23/2000
 description: In the last days they will say to him...
 draft: false
-img: old_man.jpg
 tags:
   - poetry
 title: in the end

@@ -1,10 +1,10 @@
 ---
+background: ../../assets/images/dream_invaders.jpg
 date: 11/15/2005
 description: >-
   I must have some repressed selfloathing because my brain unleashed a fury of
   W’s drivel in my dream ...
 draft: false
-img: dream_invaders.jpg
 tags:
   - pillaging
   - lïf

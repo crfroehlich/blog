@@ -1,10 +1,10 @@
 ---
+background: ../../assets/images/api_map.jpeg
 date: 7/6/2013
 description: >-
   I ask the question because I assume it must be considered evilon the
   subsequent assumption that if i...
 draft: false
-img: api_map.jpeg
 tags:
   - code
   - api

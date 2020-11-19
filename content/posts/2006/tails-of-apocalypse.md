@@ -1,8 +1,8 @@
 ---
+background: ../../assets/images/bukowski.png
 date: 8/29/2006
 description: Bukowski we miss hating you...
 draft: false
-img: bukowski.png
 tags:
   - gimel
   - lïf

@@ -1,10 +1,10 @@
 ---
+background: ../../assets/images/tofurkey.jpeg
 date: 11/26/2008
 description: >-
   I read a bit recently that described thanks as gratitude for that which one
   did not earn to which I ...
 draft: false
-img: tofurkey.jpeg
 tags:
   - thanksgiving
   - lïf

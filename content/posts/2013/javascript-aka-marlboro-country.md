@@ -1,10 +1,10 @@
 ---
+background: ../../assets/images/marlboro_country.jpg
 date: 1/3/2013
 description: >-
   Sometimes JavaScript land just feels like Marlboro Country The sales pitch
   certainly feels similar...
 draft: false
-img: marlboro_country.jpg
 tags:
   - code
 title: JavaScript (aka Marlboro Country)

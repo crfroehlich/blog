@@ -1,10 +1,10 @@
 ---
+background: ../../assets/images/artic_station.jpg
 date: 05/12/2018
 description: >-
   Billions of gallons of ink have been spilled on this subject Google if you
   want any other perspectiv...
 draft: false
-img: artic_station.jpg
 subtitle: ' It’s even better and even worse than you expected'
 tags:
   - remote

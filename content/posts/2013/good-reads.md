@@ -1,10 +1,10 @@
 ---
+background: ../../assets/images/heart_of_darkness.jpg
 date: 1/13/2013
 description: >-
   Of the part of the day I don't spend eating sleeping or enjoyingsurviving my
   family [I spend it in r...
 draft: false
-img: heart_of_darkness.jpg
 tags:
   - work
   - competence

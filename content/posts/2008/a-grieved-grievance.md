@@ -1,10 +1,10 @@
 ---
+background: ../../assets/images/apple_blackberry.jpg
 date: 7/19/2008
 description: >-
   I've been very excited about upgrading my iPhone to the new iPhone 3G This
   morning I called the Appl...
 draft: false
-img: apple_blackberry.jpg
 tags:
   - tech
   - logging

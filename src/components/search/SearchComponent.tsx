@@ -1,19 +1,19 @@
-import { useState, useEffect, createRef } from 'react';
+import styled from '@emotion/styled';
+import algoliasearch from 'algoliasearch/lite';
+import { createRef, useEffect, useState } from 'react';
 import {
-  InstantSearch,
-  Index,
-  Hits,
   Configure,
   connectStateResults,
+  Hits,
+  Index,
+  InstantSearch,
 } from 'react-instantsearch-dom';
-import algoliasearch from 'algoliasearch/lite';
-import styled from '@emotion/styled';
 import { getConfig } from '../../../config';
-import { PoweredBy } from './PoweredBy';
-import { ConnectSearchBox } from './ConnectSearchBox';
-import * as PageHit from './PageHit';
 import { IStyle } from '../../types/interfaces';
 import { Tools } from '../../utils';
+import { ConnectSearchBox } from './ConnectSearchBox';
+import * as PageHit from './PageHit';
+import { PoweredBy } from './PoweredBy';
 
 const HitsWrapper = styled.div`
   asgrid: true;

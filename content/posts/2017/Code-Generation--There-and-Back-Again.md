@@ -1,10 +1,10 @@
 ---
+background: ../../assets/images/there_and_back.jpg
 date: 10/24/2017
 description: >-
   I can’t remember a project engineering or otherwise during which I haven’t
   paused to ask myself “Why...
 draft: false
-img: there_and_back.jpg
 subtitle: ' There and Back Again'
 tags:
   - metadata

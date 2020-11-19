@@ -1,10 +1,10 @@
 ---
+background: ../../assets/images/baal.jpeg
 date: 6/23/2004
 description: >-
   Babylon approaches slowly Endless wasteland precedes barren desert and opens
   into more nothing than ...
 draft: false
-img: baal.jpeg
 tags:
   - lïf
   - göd
