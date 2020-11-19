@@ -14,9 +14,9 @@
 <url> <loc>https://blog.luddites.me/2000/on-bubbles</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://blog.luddites.me/2000/parched</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://blog.luddites.me/2000/time-sensitive</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://blog.luddites.me/2000/toes</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://blog.luddites.me/2002/in-title</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://blog.luddites.me/2003/cig_russian</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://blog.luddites.me/2000/toes</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://blog.luddites.me/2003/one-last-hoorah</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://blog.luddites.me/2003/purged-by-fire</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://blog.luddites.me/2003/story-of-boy-and-his-ambition</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -96,11 +96,11 @@
 <url> <loc>https://blog.luddites.me/2009/eli-walks</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://blog.luddites.me/2009/meeting_melchilzedek</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://blog.luddites.me/2009/palin-should-have-won</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://blog.luddites.me/2010/if-it-looks-like-duck-and-walks-like</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://blog.luddites.me/2010/vancouver-winter-olympics-2010</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://blog.luddites.me/2010/alas</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://blog.luddites.me/2010/if-it-looks-like-duck-and-walks-like</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://blog.luddites.me/2011/bubonics</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://blog.luddites.me/2011/equipment-failure</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://blog.luddites.me/2010/vancouver-winter-olympics-2010</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://blog.luddites.me/2011/how-to-build-mountain</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://blog.luddites.me/2011/one-man-hiking-his-desk-makes-journey</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://blog.luddites.me/2011/remember-to-look-up-and-write-down</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -148,8 +148,8 @@
 <url> <loc>https://blog.luddites.me/2019/Code-Generation-Fail--An-all-the-king-s-horses-tragedy</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://blog.luddites.me/2020/blogging_to_the_oldies</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://blog.luddites.me/2020/oscar</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://blog.luddites.me/2009/wishing-and-unwishing</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://blog.luddites.me/2009/something-worth-sharing</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://blog.luddites.me/2009/wishing-and-unwishing</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://blog.luddites.me/2009/year-new</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://blog.luddites.me/html</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://blog.luddites.me/components/AnchorTag</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -163,8 +163,8 @@
 <url> <loc>https://blog.luddites.me/components/RightSidebar</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://blog.luddites.me/components/SEO</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://blog.luddites.me/components/ThemeProvider</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://blog.luddites.me/gatsby/createPages</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://blog.luddites.me/gatsby/createNode</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://blog.luddites.me/gatsby/createPages</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://blog.luddites.me/gatsby/createWebpackConfig</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://blog.luddites.me/pages/404</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://blog.luddites.me/state/reducer</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
