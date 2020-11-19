@@ -3,7 +3,6 @@ background: ../../assets/images/stevens_last_night.png
 date: 5/16/2003
 description: Friends of the US Armed Forces...
 draft: false
-img: stevens_last_night.png
 tags:
   - army
   - lïf

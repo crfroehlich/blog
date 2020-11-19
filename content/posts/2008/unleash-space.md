@@ -4,7 +4,6 @@ date: 10/23/2008
 description: >-
   [[FreeTheAirwavescom]httpwwwfreetheairwavescomimagesblogbadgesbadge2revjpg]httpswebarchiveorgweb2009...
 draft: false
-img: free_the_airwaves.jpg
 tags:
   - free
 title: unleash the space

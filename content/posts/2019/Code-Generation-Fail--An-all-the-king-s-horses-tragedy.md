@@ -5,7 +5,6 @@ description: >-
   Sometimes best intentions and good ole fashioned elbow grease are no match
   against the tyrannical fi...
 draft: false
-img: all_the_kings_horses.jpg
 subtitle: ' An all the king’s horses tragedy'
 tags:
   - metadata

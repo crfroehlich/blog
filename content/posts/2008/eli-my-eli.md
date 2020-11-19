@@ -5,7 +5,6 @@ description: >-
   It is almost a month since you were born We have taken many pictures of your
   progress and it is a jo...
 draft: false
-img: elohim.jpg
 tags:
   - hello
   - lïf

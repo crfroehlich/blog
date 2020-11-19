@@ -5,7 +5,6 @@ description: >-
   This winter has been especially harsh and long With temperatures plummeting to
   record lows and heat ...
 draft: false
-img: theban.png
 tags:
   - lïf
 title: Fellow Thebans

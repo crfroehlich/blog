@@ -5,7 +5,6 @@ description: >-
   I have enjoyed working with
   [T4]httpsdocsmicrosoftcomenusvisualstudiomodelingcodegenerationandt4text...
 draft: false
-img: code_generation.png
 subtitle: ' Connecting T4 to Entity Framework Core'
 tags:
   - metadata

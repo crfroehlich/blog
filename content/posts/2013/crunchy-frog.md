@@ -3,7 +3,6 @@ background: ../../assets/images/crunchy_frog.jpg
 date: 5/21/2013
 description: "I was musing over the usual eloquence of Mr Hague's recent post\_[Stumbling Into the Cold Expanse of ..."
 draft: false
-img: crunchy_frog.jpg
 tags:
   - code
 title: Crunchy Frog

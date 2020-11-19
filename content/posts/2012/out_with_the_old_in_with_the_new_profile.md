@@ -5,7 +5,6 @@ description: >-
   At the launch meeting for our new team blog [Object Reference Not
   Set]httpobjrefnotsetblogspotcom we...
 draft: false
-img: immaculate_conception.jpg
 tags:
   - logging
   - social

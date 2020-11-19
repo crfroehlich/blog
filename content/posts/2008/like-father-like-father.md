@@ -3,7 +3,6 @@ background: ../../assets/images/mirror.jpg
 date: 12/15/2008
 description: "heather and i ran into a woman who attends my father's church at the mall today\_ \"you don't look any..."
 draft: false
-img: mirror.jpg
 tags:
   - family
   - fatherhood

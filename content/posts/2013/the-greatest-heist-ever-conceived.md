@@ -3,7 +3,6 @@ background: ../../assets/images/wilcox_train_robbery.jpg
 date: 1/31/2013
 description: The Heist...
 draft: false
-img: wilcox_train_robbery.jpg
 tags:
   - code
   - copyleft

@@ -83,7 +83,19 @@ export const articleQuery = graphql`
         slug
         date
         tags
-        img
+      }
+      frontmatter {
+        background {
+          childImageSharp {
+            fluid(maxWidth: 200, maxHeight: 100) {
+              base64
+              aspectRatio
+              src
+              srcSet
+              sizes
+            }
+          }
+        }
       }
       body
     }

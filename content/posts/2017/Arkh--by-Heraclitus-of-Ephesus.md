@@ -5,7 +5,6 @@ description: >-
   The mechanic paused to wipe the grease from his hands across the murky surface
   of his coveralls befo...
 draft: false
-img: blood_sunset.jpg
 tags:
   - fiction
   - translation

@@ -5,7 +5,6 @@ description: >-
   My father lives in an old army footlocker that lies in the attic of our home
   Faded rusted and rottin...
 draft: false
-img: old_army_foot_locker.jpg
 tags:
   - fiction
   - short story

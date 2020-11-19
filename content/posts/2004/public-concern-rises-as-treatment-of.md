@@ -5,7 +5,6 @@ description: >-
   Despite increased attention and criticism from the Press and the United
   Nations conditions are worse...
 draft: false
-img: children_jail.jpeg
 tags:
   - baghdad
   - news

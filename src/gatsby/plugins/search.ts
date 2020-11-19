@@ -16,7 +16,17 @@ export const addSearch: addConfig = (config, plugins): void => {
             title
             subtitle
             tags
-            img
+            background {
+              childImageSharp {
+                fluid(maxWidth: 200, maxHeight: 100) {
+                  base64
+                  aspectRatio
+                  src
+                  srcSet
+                  sizes
+                }
+              }
+            }
             date
           }
           excerpt(pruneLength: 50000)

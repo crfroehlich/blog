@@ -5,7 +5,6 @@ description: >-
   There's a moment when you first stumble down the stairs in the morning and
   collapse into the kitchen...
 draft: false
-img: leg_lamp.jpg
 tags:
   - thwibbt
   - lïf

@@ -5,7 +5,6 @@ description: >-
   [image not
   found]httpbp0bloggercomNHWs1LwT47sRrLIcqG62mIAAAAAAAADlcSawVTgr4PZ4s1600hPeanut+at+15+Wee...
 draft: false
-img: ultrasound.jpg
 tags:
   - lollygagging
   - lïf

@@ -5,7 +5,6 @@ description: >-
   It's been said that behind every great man is a [Tenzing
   Norgay]httpenwikipediaorgwikiTenzingNorgay ...
 draft: false
-img: that_silly_man.png
 tags:
   - hiking
   - tenzing norgay

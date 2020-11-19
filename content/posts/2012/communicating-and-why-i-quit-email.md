@@ -5,7 +5,6 @@ description: >-
   In the early 90s the constraints imposed by dialup speeds made email my
   primary interface for intera...
 draft: false
-img: without_a_parachute.jpg
 tags:
   - lïf
   - communication

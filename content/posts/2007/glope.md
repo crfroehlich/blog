@@ -5,7 +5,6 @@ description: >-
   An inadequately funded urchin tottled toward the slow gaze of despair Not
   glancing upward from its o...
 draft: false
-img: sea_urchins.jpg
 tags:
   - poetry
 title: glope

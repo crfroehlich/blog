@@ -5,7 +5,6 @@ description: >-
   The moon was gold like violets in February and the grass green like radishes
   pulled from the dark re...
 draft: false
-img: microwave.jpg
 tags:
   - lïf
   - eggplant

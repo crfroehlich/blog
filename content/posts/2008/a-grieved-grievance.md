@@ -5,7 +5,6 @@ description: >-
   I've been very excited about upgrading my iPhone to the new iPhone 3G This
   morning I called the Appl...
 draft: false
-img: apple_blackberry.jpg
 tags:
   - tech
   - logging

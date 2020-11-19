@@ -71,10 +71,10 @@ export interface INodeFrontMatter {
   description?: string;
   draft: boolean;
   github?: string;
-  img?: string;
-  labels?: string[] | string;
+  background?: any;
+  labels?: string[];
   subtitle?: string;
-  tags?: string[] | string;
+  tags?: string[];
   title?: string;
   updated?: Date;
 }
@@ -84,7 +84,7 @@ export interface INodeFields {
   date?: string;
   github?: string;
   id: number;
-  img?: string;
+  background?: any;
   labels?: string[];
   slug?: string;
   tags?: string[];

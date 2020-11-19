@@ -5,7 +5,6 @@ description: >-
   Update I don't recommend following the advice in this post The 5minuteago
   version of my self was hat...
 draft: false
-img: matris.png
 tags:
   - class
   - code

@@ -5,7 +5,6 @@ description: >-
   The decision to climb [Mount Vesuvius]httpenwikipediaorgwikiMountVesuvius
   probably does not come lig...
 draft: false
-img: poka_dot_mountain.jpeg
 tags:
   - mountain
   - diy

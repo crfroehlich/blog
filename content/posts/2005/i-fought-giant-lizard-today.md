@@ -5,7 +5,6 @@ description: >-
   I knew going into that den of fear that my battle would not be one of
   fortunate ease At first he clu...
 draft: false
-img: komodo.jpeg
 tags:
   - lïf
 title: I fought the giant lizard today

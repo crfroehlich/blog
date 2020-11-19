@@ -5,7 +5,6 @@ description: >-
   mornings are like little deaths the gaping jawl of the reaper his teeth both
   rotting and sharpened l...
 draft: false
-img: filming_fake_sunrise.jpg
 tags:
   - mournings
   - lïf

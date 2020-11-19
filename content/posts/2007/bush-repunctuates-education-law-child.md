@@ -5,7 +5,6 @@ description: >-
   A recent review of the "No Child Left Behind" law enacted by Congress in 2004
   and signed into law sh...
 draft: false
-img: child_lost.jpg
 subtitle: ' "No! Child... ''Left Behind''?" Act'
 tags:
   - w

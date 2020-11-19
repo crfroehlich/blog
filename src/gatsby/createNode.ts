@@ -108,13 +108,6 @@ export const onCreateNode: GatsbyNode['onCreateNode'] = ({ node, getNode, action
           value: frontmatter.subtitle,
         });
       }
-      if (frontmatter.img) {
-        createNodeField({
-          name: 'img',
-          node,
-          value: `${config.gatsby.cdnUrl}${frontmatter.img}`,
-        });
-      }
 
       execInScope(() => {
         let labels;

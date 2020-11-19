@@ -5,7 +5,6 @@ description: >-
   Years ago one of my dearest friends [Jennifer
   Elms]httpsplusgooglecom100156336256357757639posts and ...
 draft: false
-img: monty_python_gumby.jpg
 tags:
   - programming
   - competence

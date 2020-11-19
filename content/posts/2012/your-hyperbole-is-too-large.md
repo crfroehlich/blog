@@ -5,7 +5,6 @@ description: >-
   A confluence of events have me pondering a kernel of an idea [Prometheus
   decapitated anticipation]ht...
 draft: false
-img: starship_titanic.jpg
 tags:
   - film
   - reviews

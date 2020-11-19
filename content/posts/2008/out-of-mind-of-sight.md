@@ -5,7 +5,6 @@ description: >-
   Selfconsciousness is generally loathsome though it doesn't stop me from
   trepidating on its doorstep ...
 draft: false
-img: ducky.jpg
 tags:
   - mind
   - lïf

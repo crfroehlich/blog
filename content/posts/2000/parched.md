@@ -3,7 +3,6 @@ background: ../../assets/images/dancing.jpg
 date: 4/25/2000
 description: Where ever shall I go to find myself a drink...
 draft: false
-img: dancing.jpg
 tags:
   - poetry
 title: parched

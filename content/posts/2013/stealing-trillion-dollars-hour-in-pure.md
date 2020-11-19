@@ -3,7 +3,6 @@ background: ../../assets/images/fort_knox.jpg
 date: 1/31/2013
 description: The Heist...
 draft: false
-img: fort_knox.jpg
 tags:
   - code
   - copyleft

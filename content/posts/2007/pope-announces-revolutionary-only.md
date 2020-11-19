@@ -5,7 +5,6 @@ description: >-
   In a radical move from the Vatican parttime Archbishop Donald Thisbit told
   Reuters reporters this mo...
 draft: false
-img: vandyke.jpg
 tags:
   - news
   - pope

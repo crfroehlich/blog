@@ -3,7 +3,6 @@ background: ../../assets/images/blogging_to_the_oldies.jpg
 date: 10/04/2020
 description: Reality Meet Opportunity...
 draft: false
-img: blogging_to_the_oldies.jpg
 tags:
   - logging
   - code

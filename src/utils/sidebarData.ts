@@ -38,7 +38,7 @@ export const buildSidebar = (mdx, src): ISidebar => {
           date: new Date(e.node.fields.date),
           description: e.node.fields.description,
           id: e.node.fields.id,
-          img: e.node.fields.img,
+          background: e.node.frontmatter.background,
           slug: e.node.fields.slug,
           subtitle: e.node.fields.subtitle,
           tags: e.node.fields.tags,
@@ -135,12 +135,24 @@ export const getSideBarData = once(
                     date
                     description
                     id
-                    img
                     slug
                     subtitle
                     tags
                     title
                     year
+                  }
+                  frontmatter {
+                    background {
+                      childImageSharp {
+                        fluid(maxWidth: 200, maxHeight: 100) {
+                          base64
+                          aspectRatio
+                          src
+                          srcSet
+                          sizes
+                        }
+                      }
+                    }
                   }
                 }
               }

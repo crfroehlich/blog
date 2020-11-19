@@ -5,7 +5,6 @@ description: >-
   Editor’s Note This is an old post from March of 2013 from an old blog
   Apparently it still gets enoug...
 draft: false
-img: curry_favor.jpeg
 tags:
   - currying
   - code

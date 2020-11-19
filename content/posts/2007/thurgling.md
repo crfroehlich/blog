@@ -5,7 +5,6 @@ description: >-
   It comes at that time in the early morning when the throat clenches about the
   fist and a fast cry su...
 draft: false
-img: gurglingbasin.jpg
 tags:
   - republicans
   - lïf

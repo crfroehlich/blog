@@ -5,7 +5,6 @@ description: >-
   textWords have been changed and characters rearranged to limit liability to
   the not guilty...
 draft: false
-img: oscar.jpg
 tags:
   - fiction
   - short story

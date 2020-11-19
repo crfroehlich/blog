@@ -5,7 +5,6 @@ description: >-
   in elementary school the 'they' that we remember vaguely as anything other
   than 'me' called me Son o...
 draft: false
-img: sons_of_thunder.jpg
 tags:
   - ought
   - lïf

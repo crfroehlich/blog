@@ -5,7 +5,6 @@ description: >-
   FriendsIn one sense I have been training for today my entire Army career
   Recline in your comfortable...
 draft: false
-img: no_face.png
 tags:
   - letters
   - notes

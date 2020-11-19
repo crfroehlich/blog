@@ -5,7 +5,6 @@ description: >-
   [David Ungar]httpenwikipediaorgwikiDavidUngar cocreator of
   [Self]httpselflanguageorg the forefather ...
 draft: false
-img: quarter_mile_at_a_time.jpg
 tags:
   - code
   - measurements

@@ -5,7 +5,6 @@ description: >-
   Relative Motors today announced plans to cut carbon emissions in half by
   converting dangerous carbon...
 draft: false
-img: carbondioxide.png
 tags:
   - donald thisbit
   - news

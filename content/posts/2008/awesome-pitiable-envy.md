@@ -3,7 +3,6 @@ background: ../../assets/images/termites.jpg
 date: 7/25/2008
 description: ants tunnel into the crops eroding the soil and spoiling the harvest...
 draft: false
-img: termites.jpg
 tags:
   - poetry
 title: awesome pitiable envy

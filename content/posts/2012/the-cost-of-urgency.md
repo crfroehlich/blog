@@ -5,7 +5,6 @@ description: >-
   Sandstorms are spectacular creatures From lessthanether they arise demolish
   and vanish...
 draft: false
-img: is_it_safe.jpg
 tags:
   - work
   - sandstorm

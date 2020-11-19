@@ -5,7 +5,6 @@ description: >-
   She sleeps with her mouth open and kicks when I brush against her legs It's an
   effort not to want to...
 draft: false
-img: water_bear.jpeg
 tags:
   - eli
 title: It's that time when the world falls in love

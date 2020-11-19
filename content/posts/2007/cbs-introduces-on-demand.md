@@ -5,7 +5,6 @@ description: >-
   In the absence of truly innovative reality TV programming CBS executives
   propose to cross the entert...
 draft: false
-img: the_apprentice.jpg
 tags:
   - news
 title: CBS Introduces "Life on Demand"

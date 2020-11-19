@@ -5,7 +5,6 @@ description: >-
   What hiker does not need nourishment on the journey toward nirvana? Google has
   some advice in the fo...
 draft: false
-img: burger.jpeg
 tags:
   - spam
   - trail

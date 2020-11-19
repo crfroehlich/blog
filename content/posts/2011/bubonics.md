@@ -5,7 +5,6 @@ description: >-
   The [illfated knol
   project]httpwwwtechdirtcomarticles2011011915120412735failureknolshowsagainthatbig...
 draft: false
-img: womb_of_arrogance.jpg
 tags:
   - titanic
   - death

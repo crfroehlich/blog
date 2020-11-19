@@ -5,7 +5,6 @@ description: >-
   I'm just one fellow and not terribly educated at that so my opinions may not
   be grounded in actualit...
 draft: false
-img: death_ray.jpg
 tags:
   - slashdot
   - wishes

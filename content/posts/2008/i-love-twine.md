@@ -5,7 +5,6 @@ description: >-
   from the knots it forms in my
   [drawers]httpwwwsciencenewsorgarticles20071222bob11asp...
 draft: false
-img: web.jpg
 tags:
   - semantics
   - vapor

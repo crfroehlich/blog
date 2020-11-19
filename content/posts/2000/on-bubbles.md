@@ -3,7 +3,6 @@ background: ../../assets/images/house_on_sand.jpg
 date: 4/27/2000
 description: How would one justify the extent of the madness...
 draft: false
-img: house_on_sand.jpg
 tags:
   - poetry
 title: on bubbles

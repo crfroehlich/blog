@@ -5,7 +5,6 @@ description: >-
   I propose we immediately deprecate the word "administrator" and its diminutive
   form "admin" from lan...
 draft: false
-img: god.jpg
 tags:
   - göd
   - code

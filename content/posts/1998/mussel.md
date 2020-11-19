@@ -3,7 +3,6 @@ background: ../../assets/images/oysters.jpg
 date: 8/11/1998
 description: Language's mildew the sweet oysters who foam...
 draft: false
-img: oysters.jpg
 tags:
   - muscle
   - poetry

@@ -5,7 +5,6 @@ description: >-
   It’s easy to forget the important things while you drink As you sit on the
   edge of the balcony cares...
 draft: false
-img: lazy_susan_chess.jpg
 tags:
   - poetry
 title: In Title

@@ -5,7 +5,6 @@ description: >-
   The world is a small flat rock which rests evenly in the palm of your hand As
   you toss it lightly in...
 draft: false
-img: edge_of_the_world.jpg
 tags:
   - poetry
 title: this is the end of the world

@@ -57,32 +57,10 @@ export default class Tag extends Component<IPageProps> {
                   >
                     <Card style={{ width: '15rem' }}>
                       <CardPrimaryAction>
-                        {/* <CardMedia
-                          sixteenByNine
-                          style={{
-                            backgroundImage: `url(${e.node.frontmatter.background.childImageSharp.fluid.base64})`,
-                            backgroundSize: 'fit',
-                          }}
-                        >
-                          <Typography
-                            use="subtitle2 truncate"
-                            tag="div"
-                            theme="textPrimaryOnDark"
-                            style={{
-                              padding: '0.5rem 1rem',
-                              backgroundImage:
-                                'linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.5) 100%)',
-                              bottom: '0',
-                              left: '0',
-                              right: '0',
-                              position: 'absolute',
-                            }}
-                          >
-                            {e.node.fields.title}
-                          </Typography>
-                        </CardMedia> */}
-                        <Img fluid={e.node.frontmatter.background.childImageSharp.fluid} />
-
+                        <Img 
+                          fluid={e.node.frontmatter.background.childImageSharp.fluid} 
+                          alt={e.node.fields.title}
+                        />
                         <Typography
                             use="subtitle2 truncate"
                             tag="div"
@@ -131,7 +109,6 @@ export const tagQuery = graphql`
             slug
             date
             tags
-            img
           }
           frontmatter {
             background {

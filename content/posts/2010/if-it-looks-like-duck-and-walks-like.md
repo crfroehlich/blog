@@ -5,7 +5,6 @@ description: >-
   I grew up writing laundry lists and never developed an adequate talent for
   other forms of literature...
 draft: false
-img: ducktape.jpeg
 tags:
   - lïf
   - logging

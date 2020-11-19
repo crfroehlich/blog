@@ -5,7 +5,6 @@ description: >-
   ComradesI have remained static while the location around me has changed Gone
   are the steelreinforced...
 draft: false
-img: rosebud.jpg
 tags:
   - lïf
 title: Wishing Wells Away

@@ -5,7 +5,6 @@ description: >-
   How can we propose to fashion for ourselves life or livelihood  an attempt
   to...
 draft: false
-img: anchor.jpg
 tags:
   - poetry
 title: earnest

@@ -5,7 +5,6 @@ description: >-
   Of the part of the day I don't spend eating sleeping or enjoyingsurviving my
   family [I spend it in r...
 draft: false
-img: heart_of_darkness.jpg
 tags:
   - work
   - competence

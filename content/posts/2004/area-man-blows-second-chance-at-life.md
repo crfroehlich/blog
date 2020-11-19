@@ -5,7 +5,6 @@ description: >-
   Area man Donald Thisbit appeared shaken Wednesday afternoon after his close
   encounter with death "I ...
 draft: false
-img: blow_chance.jpg
 tags:
   - news
   - donald thisbit

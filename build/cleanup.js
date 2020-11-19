@@ -67,6 +67,7 @@ const cleanup = (er, files) => {
     }
     if (frontmatter.img) {
       frontmatter.background = `../../assets/images/${frontmatter.img}`;
+      delete frontmatter.img;
     }
     const output = matter.stringify(grey.content, sortedJson.sortify(frontmatter));
     writeFileSync(fileName, output);

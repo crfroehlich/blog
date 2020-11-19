@@ -5,7 +5,6 @@ description: >-
   The time will come dear friends when I shall be forced to recount the long
   stories of my youth spent...
 draft: false
-img: hemmingway_signed.jpg
 tags:
   - baghdad
   - lïf

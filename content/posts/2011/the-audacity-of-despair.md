@@ -5,7 +5,6 @@ description: >-
   I began this over one year ago July 28 2010 but never finished I've lost the
   creative tingle herebut...
 draft: false
-img: saying_goodbye.jpg
 tags:
   - lïf
   - logging

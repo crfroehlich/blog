@@ -5,7 +5,6 @@ description: >-
   family is a strange thing this is overly generic family is an evolved concept
   evolved out of necessi...
 draft: false
-img: pity.jpg
 tags:
   - politics
   - family

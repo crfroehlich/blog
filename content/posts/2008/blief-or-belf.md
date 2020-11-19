@@ -5,7 +5,6 @@ description: >-
   I encountered this on my YouTube browsing a rendering of Penn Jillette's
   contribution to the NPR sho...
 draft: false
-img: corn_god.jpg
 tags:
   - belief
   - lïf

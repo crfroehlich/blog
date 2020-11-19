@@ -5,7 +5,6 @@ description: >-
   [money management]httpsgithubcomcrfroehlichcdnrawmainimagesIMG1158JPG It's
   hard times for the discer...
 draft: false
-img: jim_cramer.png
 tags:
   - eli
   - economics

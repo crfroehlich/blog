@@ -5,7 +5,6 @@ description: >-
   I embrace the [Stevie's Home]httpwwwthesneezecommtarchives000831php approach
   to life and my return h...
 draft: false
-img: wereworlf_dad.jpg
 tags:
   - lïf
   - home

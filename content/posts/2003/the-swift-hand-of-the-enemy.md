@@ -5,7 +5,6 @@ description: >-
   Once more I turn to your patient and receptive arms for comfort and
   consolation I have endured hard ...
 draft: false
-img: ministry_of_interior.png
 tags:
   - baghdad
   - lïf

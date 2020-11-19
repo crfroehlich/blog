@@ -3,7 +3,6 @@ background: ../../assets/images/to_the_side.jpg
 date: 9/11/2008
 description: "I wonder if teething is nature's way of driving parents towards insanity\_ I remember times looking a..."
 draft: false
-img: to_the_side.jpg
 tags:
   - peas
   - carrots

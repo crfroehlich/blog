@@ -5,7 +5,6 @@ description: >-
   It's mere minutes before the day you are scheduled albeit not destined to be
   born and though you may...
 draft: false
-img: bow.png
 tags:
   - eli
   - göd

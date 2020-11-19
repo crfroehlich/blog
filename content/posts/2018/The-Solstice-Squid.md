@@ -5,7 +5,6 @@ description: >-
   The Squid TS lives at the South Pole this much we know How she came to live
   there or her reasons for...
 draft: false
-img: code_generation.png
 tags:
   - solstice
   - winter

@@ -5,7 +5,6 @@ description: >-
   If you ask the Jew the average practicing Jew or even a cross section of Rabis
   on the question of th...
 draft: false
-img: bucket_holes.jpeg
 tags:
   - ugliness
   - damnation
