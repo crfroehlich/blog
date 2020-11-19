@@ -82,15 +82,19 @@ let siteConfig: IConfig | null = null;
 export const getConfig = (env: any = tools.getEnv()): IConfig => {
   if (siteConfig?.header?.search?.enabled) return siteConfig;
 
-  let { ALGOLIA_ADMIN_API_KEY, ALGOLIA_APPLICATION_ID, ALGOLIA_SEARCH_ONLY_API_KEY } = env;
-  if (!ALGOLIA_ADMIN_API_KEY && process?.env) {
-    ALGOLIA_ADMIN_API_KEY = process.env.ALGOLIA_ADMIN_API_KEY;
+  let {
+    GATSBY_ALGOLIA_ADMIN_API_KEY,
+    GATSBY_ALGOLIA_APPLICATION_ID,
+    GATSBY_ALGOLIA_SEARCH_ONLY_API_KEY,
+  } = env;
+  if (!GATSBY_ALGOLIA_ADMIN_API_KEY && process?.env) {
+    GATSBY_ALGOLIA_ADMIN_API_KEY = process.env.GATSBY_ALGOLIA_ADMIN_API_KEY;
   }
-  if (!ALGOLIA_APPLICATION_ID && process?.env) {
-    ALGOLIA_APPLICATION_ID = process.env.ALGOLIA_APPLICATION_ID;
+  if (!GATSBY_ALGOLIA_APPLICATION_ID && process?.env) {
+    GATSBY_ALGOLIA_APPLICATION_ID = process.env.GATSBY_ALGOLIA_APPLICATION_ID;
   }
-  if (!ALGOLIA_SEARCH_ONLY_API_KEY && process?.env) {
-    ALGOLIA_SEARCH_ONLY_API_KEY = process.env.ALGOLIA_SEARCH_ONLY_API_KEY;
+  if (!GATSBY_ALGOLIA_SEARCH_ONLY_API_KEY && process?.env) {
+    GATSBY_ALGOLIA_SEARCH_ONLY_API_KEY = process.env.GATSBY_ALGOLIA_SEARCH_ONLY_API_KEY;
   }
 
   siteConfig = {
@@ -112,10 +116,10 @@ export const getConfig = (env: any = tools.getEnv()): IConfig => {
       linkedInUrl: 'https://www.linkedin.com/in/christopherfroehlich/',
       links: [{ text: 'визуализации', link: '/визуализации' }],
       search: {
-        algoliaAdminKey: ALGOLIA_ADMIN_API_KEY,
-        algoliaAppId: ALGOLIA_APPLICATION_ID,
-        algoliaSearchKey: ALGOLIA_SEARCH_ONLY_API_KEY,
-        enabled: ALGOLIA_APPLICATION_ID?.length > 0,
+        algoliaAdminKey: GATSBY_ALGOLIA_ADMIN_API_KEY,
+        algoliaAppId: GATSBY_ALGOLIA_APPLICATION_ID,
+        algoliaSearchKey: GATSBY_ALGOLIA_SEARCH_ONLY_API_KEY,
+        enabled: GATSBY_ALGOLIA_APPLICATION_ID?.length > 0,
         indexName: 'blog',
       },
     },

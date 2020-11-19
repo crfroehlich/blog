@@ -121,15 +121,15 @@
     "ts-node": "^9.0.0"
   },
   "envDocumentation": {
-    "ALGOLIA_ADMIN_API_KEY": {
+    "GATSBY_ALGOLIA_ADMIN_API_KEY": {
       "defaultValue": "x",
       "description": "Algolia Search Admin API Key"
     },
-    "ALGOLIA_APPLICATION_ID": {
+    "GATSBY_ALGOLIA_APPLICATION_ID": {
       "defaultValue": "x",
       "description": "Algolia Search Application Id"
     },
-    "ALGOLIA_SEARCH_ONLY_API_KEY": {
+    "GATSBY_ALGOLIA_SEARCH_ONLY_API_KEY": {
       "defaultValue": "x",
       "description": "Alogolia Search API Key"
     },

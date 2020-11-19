@@ -13,7 +13,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [14.x, 15.x]
+        node-version: [15.x]
 
     steps:
       - uses: actions/checkout@v2
@@ -27,9 +27,9 @@ jobs:
           FA_PRO_NPM_TOKEN: ${{ secrets.FA_PRO_NPM_TOKEN }}
       - run: yarn build
         env:
-          ALGOLIA_ADMIN_API_KEY: ${{ secrets.ALGOLIA_ADMIN_API_KEY }}
-          ALGOLIA_APPLICATION_ID: ${{ secrets.ALGOLIA_APPLICATION_ID }}
-          ALGOLIA_SEARCH_ONLY_API_KEY: ${{ secrets.ALGOLIA_SEARCH_ONLY_API_KEY }}
+          GATSBY_ALGOLIA_ADMIN_API_KEY: ${{ secrets.GATSBY_ALGOLIA_ADMIN_API_KEY }}
+          GATSBY_ALGOLIA_APPLICATION_ID: ${{ secrets.GATSBY_ALGOLIA_APPLICATION_ID }}
+          GATSBY_ALGOLIA_SEARCH_ONLY_API_KEY: ${{ secrets.GATSBY_ALGOLIA_SEARCH_ONLY_API_KEY }}
           FA_PRO_NPM_TOKEN: ${{ secrets.FA_PRO_NPM_TOKEN }}
       - run: git config --global user.email "${{ secrets.GH_EMAIL }}"
       - run: git config --global user.name "${{ secrets.GH_NAME }}"

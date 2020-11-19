@@ -28,11 +28,11 @@ First
 
 ## Environment Variables
 
-- `ALGOLIA_ADMIN_API_KEY`: Algolia Search Admin API Key
+- `GATSBY_ALGOLIA_ADMIN_API_KEY`: Algolia Search Admin API Key
   - Default Value: "x"
-- `ALGOLIA_APPLICATION_ID`: Algolia Search Application Id
+- `GATSBY_ALGOLIA_APPLICATION_ID`: Algolia Search Application Id
   - Default Value: "x"
-- `ALGOLIA_SEARCH_ONLY_API_KEY`: Alogolia Search API Key
+- `GATSBY_ALGOLIA_SEARCH_ONLY_API_KEY`: Alogolia Search API Key
   - Default Value: "x"
 - `DOCS_CREATE_README_INDEX`: If true, creates an index in the main README file for all markdown content
   - Default Value: "true"
