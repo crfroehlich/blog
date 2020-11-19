@@ -4,11 +4,10 @@ import { theme } from './DarkTheme';
 
 export const RightSidebarStyles = styled('aside')`
   width: 100%;
-  border-right: 1px solid #ede7f3;
   height: 100vh;
   overflow: auto;
+  padding-right: 5px;
   position: fixed;
-  padding-left: 24px;
   position: -webkit-sticky;
   position: -moz-sticky;
   position: sticky;
@@ -17,15 +16,13 @@ export const RightSidebarStyles = styled('aside')`
   background: ${theme.colors.background};
 
   .rightSideTitle {
-    font-size: 10px;
+    font-size: 12px;
     line-height: 1;
-    font-weight: 700;
+    font-weight: 900;
+    text-align: center;
     text-transform: uppercase;
     letter-spacing: 1.2px;
     padding: 7px 24px 7px 16px;
-    border-left: 1px solid #e6ecf1;
-    border-left-color: rgb(230, 236, 241);
-
     color: ${theme.colors.text};
   }
 
@@ -35,16 +32,13 @@ export const RightSidebarStyles = styled('aside')`
 
   .rightSideBarUL li {
     list-style-type: none;
-    border-left: 1px solid #e6ecf1;
-    border-left-color: rgb(230, 236, 241);
   }
 
   .rightSideBarUL li a {
     font-size: 12px;
     font-weight: 500;
     line-height: 1.5;
-    padding: 7px 24px 7px 16px;
-
+    padding: 10px 10px 10px 10px;
     color: ${theme.colors.text};
   }
 
@@ -81,9 +75,6 @@ export const ListItemStyles = styled(({ className, active, level, ...props }) =>
       props.active &&
       `
       color: #1ED3C6;
-      border-color: rgb(230,236,241) !important;
-      border-style: solid none solid solid;
-      border-width: 1px 0px 1px 1px;
       background-color: #fff;
     `} // external link icon
     svg {

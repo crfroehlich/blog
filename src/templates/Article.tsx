@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
 import { graphql } from 'gatsby';
 import MDXRenderer from 'gatsby-plugin-mdx/mdx-renderer';
-import { IPageProps, INode } from '../types/interfaces';
+import React, { Component } from 'react';
+import { getConfig } from '../../config';
 import {
   Comments,
   Edit,
@@ -12,7 +12,7 @@ import {
   StyledMainWrapper,
   TagSet,
 } from '../components';
-import { getConfig } from '../../config';
+import { INode, IPageProps } from '../types/interfaces';
 
 const config = getConfig();
 
@@ -22,12 +22,13 @@ export default class Article extends Component<IPageProps> {
       data,
       pageContext: { next, previous, pageTags },
     } = this.props;
+    if (!data) return null;
     const { mdx } = data;
     const { title } = mdx.fields;
     const date = new Date(mdx.fields.date);
 
     return (
-      <div>
+      <div className="articleWrapper">
         <div className={'titleWrapper'}>
           <StyledHeading>{title}</StyledHeading>
           <Edit className={'mobileView'}>
@@ -64,19 +65,6 @@ export const articleQuery = graphql`
         slug
         date
         tags
-      }
-      frontmatter {
-        background {
-          childImageSharp {
-            fluid(maxWidth: 200, maxHeight: 100) {
-              base64
-              aspectRatio
-              src
-              srcSet
-              sizes
-            }
-          }
-        }
       }
       body
     }

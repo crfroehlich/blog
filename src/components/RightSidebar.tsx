@@ -1,10 +1,12 @@
+import Img from 'gatsby-image';
 import React from 'react';
-import { RightSidebarStyles, ListItemStyles } from './styles/RightSidebarStyles';
+import { Paper } from '@material-ui/core';
 import { IPageProps } from '../types/interfaces';
+import { ListItemStyles, RightSidebarStyles } from './styles/RightSidebarStyles';
 
 export const RightSidebar: React.FC<IPageProps> = (props): JSX.Element => {
   const {
-    pageContext: { toc },
+    pageContext: { toc, background },
   } = props;
 
   const menu = toc?.content?.map((item, i) => {
@@ -15,11 +17,19 @@ export const RightSidebar: React.FC<IPageProps> = (props): JSX.Element => {
     );
   });
   let title = '';
+  let image = <div />;
 
   switch (toc?.type) {
     case 'Article':
       if (toc.content?.length > 0) {
         title = 'CONTENTS';
+      }
+      if (background) {
+        image = (
+          <ListItemStyles key="background_image">
+            <Img fixed={background.childImageSharp.fixed} style={{ borderRadius: '5px' }} />
+          </ListItemStyles>
+        );
       }
       break;
     case 'Tag':
@@ -37,10 +47,13 @@ export const RightSidebar: React.FC<IPageProps> = (props): JSX.Element => {
 
   return (
     <RightSidebarStyles>
-      <ul className={'rightSideBarUL'}>
-        {header}
-        {menu}
-      </ul>
+      <Paper elevation={15} style={{ backgroundColor: '#33475B' }}>
+        <ul className={'rightSideBarUL'}>
+          {image}
+          {header}
+          {menu}
+        </ul>
+      </Paper>
     </RightSidebarStyles>
   );
 };

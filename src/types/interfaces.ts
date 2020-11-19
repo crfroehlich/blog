@@ -5,11 +5,12 @@ export interface IPageProps {
   data: Query;
   path: string;
   pageContext: {
+    background?: any;
     next?: INode;
+    pageLabels?: any[];
+    pageTags?: any[];
     previous?: INode;
     slug: string;
-    pageTags?: any[];
-    pageLabels?: any[];
     toc?: {
       type: 'Article' | 'Tag' | 'Visualization';
       content: any;

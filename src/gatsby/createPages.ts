@@ -42,6 +42,18 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions 
                 subtitle
                 date
                 tags
+                background {
+                  childImageSharp {
+                    fixed(width: 200) {
+                      base64
+                      aspectRatio
+                      width
+                      height
+                      src
+                      srcSet
+                    }
+                  }
+                }
               }
             }
           }
@@ -98,16 +110,16 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions 
   }
 
   // Create blog posts pages.
-  const posts = queryResult?.data?.allPages?.edges || [];
+  const articles = queryResult?.data?.allPages?.edges || [];
 
   // Extract tag data from query
   const tags = queryResult?.data?.tagsGroup?.group || [];
 
-  posts.forEach((post, index) => {
-    const prevNode = index === posts.length - 1 ? posts[0].node : posts[index + 1].node;
+  articles.forEach((post, index) => {
+    const prevNode = index === articles.length - 1 ? articles[0].node : articles[index + 1].node;
     const previous = prevNode as INode;
 
-    const nextNode = index === 0 ? posts[posts.length - 1].node : posts[index - 1].node;
+    const nextNode = index === 0 ? articles[articles.length - 1].node : articles[index - 1].node;
     const next = nextNode as INode;
 
     const node = post?.node;
@@ -132,14 +144,15 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions 
       path: pagePath,
       component: templates.article,
       context: {
-        id: node?.fields?.id,
+        id: node.fields.id,
         slug: pagePath,
         previous,
         next,
         pageTags,
+        background: node.frontmatter.background,
         toc: {
           type: 'Article',
-          content: node?.tableOfContents?.items?.map((item) => {
+          content: node.tableOfContents?.items?.map((item) => {
             return {
               id: `#${item.title?.replace(/\s+/g, '').toLowerCase()}`,
               name: item.title,
