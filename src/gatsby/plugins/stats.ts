@@ -5,7 +5,7 @@ export const addStats: addConfig = (config, plugins): void => {
     resolve: 'gatsby-plugin-bundle-stats',
     options: {
       compare: true,
-      outDir: '../dist',
+      outDir: '../artifacts',
       stats: {
         context: './src',
         assets: true,

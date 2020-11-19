@@ -3351,6 +3351,10 @@ export type SitePageFieldsEnum =
   | 'pluginCreator___pluginOptions___feeds___query'
   | 'pluginCreator___pluginOptions___feeds___output'
   | 'pluginCreator___pluginOptions___feeds___title'
+  | 'pluginCreator___pluginOptions___pathCheck'
+  | 'pluginCreator___pluginOptions___allExtensions'
+  | 'pluginCreator___pluginOptions___isTSX'
+  | 'pluginCreator___pluginOptions___jsxPragma'
   | 'pluginCreator___pluginOptions___compare'
   | 'pluginCreator___pluginOptions___outDir'
   | 'pluginCreator___pluginOptions___stats___context'
@@ -3358,10 +3362,6 @@ export type SitePageFieldsEnum =
   | 'pluginCreator___pluginOptions___stats___entrypoints'
   | 'pluginCreator___pluginOptions___stats___chunks'
   | 'pluginCreator___pluginOptions___stats___modules'
-  | 'pluginCreator___pluginOptions___pathCheck'
-  | 'pluginCreator___pluginOptions___allExtensions'
-  | 'pluginCreator___pluginOptions___isTSX'
-  | 'pluginCreator___pluginOptions___jsxPragma'
   | 'pluginCreator___nodeAPIs'
   | 'pluginCreator___browserAPIs'
   | 'pluginCreator___ssrAPIs'
@@ -3615,6 +3615,10 @@ export type SitePluginFieldsEnum =
   | 'pluginOptions___feeds___query'
   | 'pluginOptions___feeds___output'
   | 'pluginOptions___feeds___title'
+  | 'pluginOptions___pathCheck'
+  | 'pluginOptions___allExtensions'
+  | 'pluginOptions___isTSX'
+  | 'pluginOptions___jsxPragma'
   | 'pluginOptions___compare'
   | 'pluginOptions___outDir'
   | 'pluginOptions___stats___context'
@@ -3622,10 +3626,6 @@ export type SitePluginFieldsEnum =
   | 'pluginOptions___stats___entrypoints'
   | 'pluginOptions___stats___chunks'
   | 'pluginOptions___stats___modules'
-  | 'pluginOptions___pathCheck'
-  | 'pluginOptions___allExtensions'
-  | 'pluginOptions___isTSX'
-  | 'pluginOptions___jsxPragma'
   | 'nodeAPIs'
   | 'browserAPIs'
   | 'ssrAPIs'
@@ -3800,13 +3800,13 @@ export type SitePluginPluginOptions = {
   policy?: Maybe<Array<Maybe<SitePluginPluginOptionsPolicy>>>;
   query?: Maybe<Scalars['String']>;
   feeds?: Maybe<Array<Maybe<SitePluginPluginOptionsFeeds>>>;
-  compare?: Maybe<Scalars['Boolean']>;
-  outDir?: Maybe<Scalars['String']>;
-  stats?: Maybe<SitePluginPluginOptionsStats>;
   pathCheck?: Maybe<Scalars['Boolean']>;
   allExtensions?: Maybe<Scalars['Boolean']>;
   isTSX?: Maybe<Scalars['Boolean']>;
   jsxPragma?: Maybe<Scalars['String']>;
+  compare?: Maybe<Scalars['Boolean']>;
+  outDir?: Maybe<Scalars['String']>;
+  stats?: Maybe<SitePluginPluginOptionsStats>;
 };
 
 export type SitePluginPluginOptionsFeeds = {
@@ -3888,13 +3888,13 @@ export type SitePluginPluginOptionsFilterInput = {
   policy?: Maybe<SitePluginPluginOptionsPolicyFilterListInput>;
   query?: Maybe<StringQueryOperatorInput>;
   feeds?: Maybe<SitePluginPluginOptionsFeedsFilterListInput>;
-  compare?: Maybe<BooleanQueryOperatorInput>;
-  outDir?: Maybe<StringQueryOperatorInput>;
-  stats?: Maybe<SitePluginPluginOptionsStatsFilterInput>;
   pathCheck?: Maybe<BooleanQueryOperatorInput>;
   allExtensions?: Maybe<BooleanQueryOperatorInput>;
   isTSX?: Maybe<BooleanQueryOperatorInput>;
   jsxPragma?: Maybe<StringQueryOperatorInput>;
+  compare?: Maybe<BooleanQueryOperatorInput>;
+  outDir?: Maybe<StringQueryOperatorInput>;
+  stats?: Maybe<SitePluginPluginOptionsStatsFilterInput>;
 };
 
 export type SitePluginPluginOptionsPolicy = {
