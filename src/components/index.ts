@@ -1,5 +1,6 @@
 export * from './AnchorTag';
 export * from './Comments';
+export * from './DateTime';
 export * from './Header';
 export * from './Icon';
 export * from './Layout';

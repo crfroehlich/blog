@@ -69,7 +69,7 @@ const GridCard = ({ edge, idx }) => {
   const handleNavigate = () => navigate(edge.node.fields.slug);
 
   return (
-    <Grid item xs={6} key={`gridcell_${idx}_${edge.node.fields.id}`}>
+    <Grid item xs key={`gridcell_${idx}_${edge.node.fields.id}`}>
       <Card className={classes.root} variant="elevation">
         <CardActionArea onClick={handleNavigate}>
           <Img fluid={edge.node.frontmatter.background?.childImageSharp.fluid} />

@@ -3,7 +3,7 @@ import Chip from '@material-ui/core/Chip';
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
 import kebabCase from 'lodash/kebabCase';
 import React from 'react';
-import { DisplayDate, Link } from './Link';
+import { Link } from './Link';
 
 const getChipStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -14,11 +14,25 @@ const getChipStyles = makeStyles((theme: Theme) =>
         margin: theme.spacing(0.5),
       },
     },
+    badge: {
+      color: theme.palette.text.primary,
+      right: '-0.3rem', 
+      top: '-0.3rem',
+    },
+    link: {
+      marginRight: '0.5rem',
+    },
+    chip: {
+      backgroundColor: '#1ed3c6', 
+      color: 'fff',
+      cursor: 'pointer'
+    }
   }),
 );
 
-export const TagSet = ({ tags, linkPrefix, date }): JSX.Element => {
+export const TagSet = (props): JSX.Element => {
   const classes = getChipStyles();
+  const { tags, linkPrefix } = props;
 
   return (
     <div className={classes.root}>
@@ -26,18 +40,17 @@ export const TagSet = ({ tags, linkPrefix, date }): JSX.Element => {
         <Link
           to={`/${linkPrefix}/${kebabCase(tag.name)}`}
           key={kebabCase(tag.name)}
-          style={{ marginRight: '0.5rem' }}
+          className={classes.link}
         >
           <Badge
             badgeContent={tag.count > 1 ? tag.count : 0}
             color="primary"
-            style={{ right: '-0.3rem', top: '-0.3rem' }}
+            className={classes.badge}
           >
-            <Chip style={{ backgroundColor: '#1ed3c6', color: 'fff' }} label={tag.name} />
+            <Chip className={classes.chip} label={tag.name} />
           </Badge>
         </Link>
       ))}
-      <DisplayDate style={{ color: '#1ed3c6' }} date={date} />
     </div>
   );
 };

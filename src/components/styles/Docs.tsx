@@ -1,5 +1,32 @@
+import React from 'react';
 import styled from '@emotion/styled';
-import { IStyle } from '../../types/interfaces';
+import { Theme, Typography, makeStyles } from '@material-ui/core';
+import { theme as darkTheme } from './DarkTheme';
+
+const useStyles = makeStyles((theme: Theme) => ({
+  root: {
+    padding: theme.spacing(1),
+  },
+  pageTitle: {
+    fontSize: '32px',
+    lineHeight: '1.5',
+    fontWeight: 500,
+    borderLeft: '2px solid #1ed3c6',
+    padding: '0 16px',
+    flex: '1',
+    marginTop: '0',
+    paddingTop: '0',
+    color: darkTheme.colors.heading,
+  },
+}));
+
+export const PageHeader = (props): JSX.Element => {
+  const classes = useStyles();
+  const { children } = props;
+  return (
+    <Typography {...props} className={classes.pageTitle} variant="h1" component="h1" gutterBottom>{children}</Typography>
+  );
+}
 
 export const StyledHeading = styled('h1')`
   font-size: 32px;
@@ -10,7 +37,7 @@ export const StyledHeading = styled('h1')`
   flex: 1;
   margin-top: 0;
   padding-top: 0;
-  color: ${(props: IStyle) => props.theme?.colors?.heading};
+  color: ${darkTheme.colors.heading};
 `;
 
 export const Edit = styled('div')`
@@ -40,7 +67,7 @@ export const Edit = styled('div')`
 
 export const StyledMainWrapper = styled.div`
   max-width: 750px;
-  color: ${(props: IStyle) => props.theme?.colors?.text};
+  color: ${darkTheme.colors.text};
 
   ul,
   ol {
@@ -59,7 +86,7 @@ export const StyledMainWrapper = styled.div`
 
   a {
     transition: color 0.15s;
-    color: ${(props: IStyle) => props.theme?.colors?.link};
+    color: ${darkTheme.colors.link};
   }
 
   code {

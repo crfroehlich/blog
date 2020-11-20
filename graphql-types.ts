@@ -706,9 +706,6 @@ export type FileFieldsEnum =
   | 'childMdx___rawBody'
   | 'childMdx___fileAbsolutePath'
   | 'childMdx___frontmatter___title'
-  | 'childMdx___frontmatter___date'
-  | 'childMdx___frontmatter___description'
-  | 'childMdx___frontmatter___draft'
   | 'childMdx___frontmatter___background___sourceInstanceName'
   | 'childMdx___frontmatter___background___absolutePath'
   | 'childMdx___frontmatter___background___relativePath'
@@ -745,8 +742,11 @@ export type FileFieldsEnum =
   | 'childMdx___frontmatter___background___publicURL'
   | 'childMdx___frontmatter___background___id'
   | 'childMdx___frontmatter___background___children'
-  | 'childMdx___frontmatter___subtitle'
+  | 'childMdx___frontmatter___date'
+  | 'childMdx___frontmatter___description'
+  | 'childMdx___frontmatter___draft'
   | 'childMdx___frontmatter___tags'
+  | 'childMdx___frontmatter___subtitle'
   | 'childMdx___frontmatter___created'
   | 'childMdx___frontmatter___updated'
   | 'childMdx___frontmatter___github'
@@ -1799,9 +1799,6 @@ export type MdxFieldsEnum =
   | 'rawBody'
   | 'fileAbsolutePath'
   | 'frontmatter___title'
-  | 'frontmatter___date'
-  | 'frontmatter___description'
-  | 'frontmatter___draft'
   | 'frontmatter___background___sourceInstanceName'
   | 'frontmatter___background___absolutePath'
   | 'frontmatter___background___relativePath'
@@ -1865,8 +1862,11 @@ export type MdxFieldsEnum =
   | 'frontmatter___background___childMdx___timeToRead'
   | 'frontmatter___background___childMdx___id'
   | 'frontmatter___background___childMdx___children'
-  | 'frontmatter___subtitle'
+  | 'frontmatter___date'
+  | 'frontmatter___description'
+  | 'frontmatter___draft'
   | 'frontmatter___tags'
+  | 'frontmatter___subtitle'
   | 'frontmatter___created'
   | 'frontmatter___updated'
   | 'frontmatter___github'
@@ -2020,12 +2020,12 @@ export type MdxFilterInput = {
 
 export type MdxFrontmatter = {
   title: Scalars['String'];
+  background?: Maybe<File>;
   date?: Maybe<Scalars['String']>;
   description?: Maybe<Scalars['String']>;
   draft?: Maybe<Scalars['Boolean']>;
-  background?: Maybe<File>;
-  subtitle?: Maybe<Scalars['String']>;
   tags?: Maybe<Array<Maybe<Scalars['String']>>>;
+  subtitle?: Maybe<Scalars['String']>;
   created?: Maybe<Scalars['String']>;
   updated?: Maybe<Scalars['String']>;
   github?: Maybe<Scalars['String']>;
@@ -2034,12 +2034,12 @@ export type MdxFrontmatter = {
 
 export type MdxFrontmatterFilterInput = {
   title?: Maybe<StringQueryOperatorInput>;
+  background?: Maybe<FileFilterInput>;
   date?: Maybe<StringQueryOperatorInput>;
   description?: Maybe<StringQueryOperatorInput>;
   draft?: Maybe<BooleanQueryOperatorInput>;
-  background?: Maybe<FileFilterInput>;
-  subtitle?: Maybe<StringQueryOperatorInput>;
   tags?: Maybe<StringQueryOperatorInput>;
+  subtitle?: Maybe<StringQueryOperatorInput>;
   created?: Maybe<StringQueryOperatorInput>;
   updated?: Maybe<StringQueryOperatorInput>;
   github?: Maybe<StringQueryOperatorInput>;
@@ -3330,6 +3330,10 @@ export type SitePageFieldsEnum =
   | 'pluginCreator___resolve'
   | 'pluginCreator___name'
   | 'pluginCreator___version'
+  | 'pluginCreator___pluginOptions___sourceMap'
+  | 'pluginCreator___pluginOptions___autoLabel'
+  | 'pluginCreator___pluginOptions___labelFormat'
+  | 'pluginCreator___pluginOptions___cssPropOptimization'
   | 'pluginCreator___pluginOptions___indentedSyntax'
   | 'pluginCreator___pluginOptions___indentType'
   | 'pluginCreator___pluginOptions___indentWidth'
@@ -3397,10 +3401,6 @@ export type SitePageFieldsEnum =
   | 'pluginCreator___pluginOptions___allExtensions'
   | 'pluginCreator___pluginOptions___isTSX'
   | 'pluginCreator___pluginOptions___jsxPragma'
-  | 'pluginCreator___pluginOptions___sourceMap'
-  | 'pluginCreator___pluginOptions___autoLabel'
-  | 'pluginCreator___pluginOptions___labelFormat'
-  | 'pluginCreator___pluginOptions___cssPropOptimization'
   | 'pluginCreator___nodeAPIs'
   | 'pluginCreator___browserAPIs'
   | 'pluginCreator___ssrAPIs'
@@ -3674,6 +3674,10 @@ export type SitePluginFieldsEnum =
   | 'resolve'
   | 'name'
   | 'version'
+  | 'pluginOptions___sourceMap'
+  | 'pluginOptions___autoLabel'
+  | 'pluginOptions___labelFormat'
+  | 'pluginOptions___cssPropOptimization'
   | 'pluginOptions___indentedSyntax'
   | 'pluginOptions___indentType'
   | 'pluginOptions___indentWidth'
@@ -3741,10 +3745,6 @@ export type SitePluginFieldsEnum =
   | 'pluginOptions___allExtensions'
   | 'pluginOptions___isTSX'
   | 'pluginOptions___jsxPragma'
-  | 'pluginOptions___sourceMap'
-  | 'pluginOptions___autoLabel'
-  | 'pluginOptions___labelFormat'
-  | 'pluginOptions___cssPropOptimization'
   | 'nodeAPIs'
   | 'browserAPIs'
   | 'ssrAPIs'
@@ -3860,6 +3860,10 @@ export type SitePluginPackageJsonPeerDependenciesFilterListInput = {
 };
 
 export type SitePluginPluginOptions = {
+  sourceMap?: Maybe<Scalars['Boolean']>;
+  autoLabel?: Maybe<Scalars['Boolean']>;
+  labelFormat?: Maybe<Scalars['String']>;
+  cssPropOptimization?: Maybe<Scalars['Boolean']>;
   indentedSyntax?: Maybe<Scalars['Boolean']>;
   indentType?: Maybe<Scalars['String']>;
   indentWidth?: Maybe<Scalars['Int']>;
@@ -3922,10 +3926,6 @@ export type SitePluginPluginOptions = {
   allExtensions?: Maybe<Scalars['Boolean']>;
   isTSX?: Maybe<Scalars['Boolean']>;
   jsxPragma?: Maybe<Scalars['String']>;
-  sourceMap?: Maybe<Scalars['Boolean']>;
-  autoLabel?: Maybe<Scalars['Boolean']>;
-  labelFormat?: Maybe<Scalars['String']>;
-  cssPropOptimization?: Maybe<Scalars['Boolean']>;
 };
 
 export type SitePluginPluginOptionsFeeds = {
@@ -3945,6 +3945,10 @@ export type SitePluginPluginOptionsFeedsFilterListInput = {
 };
 
 export type SitePluginPluginOptionsFilterInput = {
+  sourceMap?: Maybe<BooleanQueryOperatorInput>;
+  autoLabel?: Maybe<BooleanQueryOperatorInput>;
+  labelFormat?: Maybe<StringQueryOperatorInput>;
+  cssPropOptimization?: Maybe<BooleanQueryOperatorInput>;
   indentedSyntax?: Maybe<BooleanQueryOperatorInput>;
   indentType?: Maybe<StringQueryOperatorInput>;
   indentWidth?: Maybe<IntQueryOperatorInput>;
@@ -4007,10 +4011,6 @@ export type SitePluginPluginOptionsFilterInput = {
   allExtensions?: Maybe<BooleanQueryOperatorInput>;
   isTSX?: Maybe<BooleanQueryOperatorInput>;
   jsxPragma?: Maybe<StringQueryOperatorInput>;
-  sourceMap?: Maybe<BooleanQueryOperatorInput>;
-  autoLabel?: Maybe<BooleanQueryOperatorInput>;
-  labelFormat?: Maybe<StringQueryOperatorInput>;
-  cssPropOptimization?: Maybe<BooleanQueryOperatorInput>;
 };
 
 export type SitePluginPluginOptionsPolicy = {
