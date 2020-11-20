@@ -16,6 +16,7 @@ export interface IPageProps {
       content: any;
     };
     title: string;
+    mdx?: INode;
   };
   pageTags?: any;
   site: {
@@ -89,6 +90,7 @@ export interface INodeFields {
   id: number;
   labels?: string[];
   slug?: string;
+  subtitle?: string;
   tags?: string[];
   title?: string;
   type: 'Article' | 'Source';
@@ -103,6 +105,7 @@ export interface INode {
   html?: string;
   name?: string;
   relativePath?: string;
+  parent?: INode;
   tableOfContents?: {
     items?: any[];
   };

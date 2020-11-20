@@ -18,13 +18,32 @@ const useStyles = makeStyles((theme: Theme) => ({
     paddingTop: '0',
     color: darkTheme.colors.heading,
   },
+  pageSubtitle: {
+    fontSize: '16px',
+    lineHeight: '.75',
+    fontWeight: 300,
+    borderLeft: '2px solid #1ed3c6',
+    padding: '0 16px',
+    flex: '1',
+    marginTop: '0',
+    paddingTop: '0',
+    color: darkTheme.colors.heading,
+  },
 }));
 
 export const PageHeader = (props): JSX.Element => {
   const classes = useStyles();
   const { children } = props;
   return (
-    <Typography {...props} className={classes.pageTitle} variant="h1" component="h1" gutterBottom>{children}</Typography>
+    <Typography {...props} className={classes.pageTitle} variant="h1" gutterBottom>{children}</Typography>
+  );
+}
+
+export const PageSubtitle = (props): JSX.Element => {
+  const classes = useStyles();
+  const { children } = props;
+  return (
+    <Typography {...props} className={classes.pageSubtitle} variant="subtitle1" >{children}</Typography>
   );
 }
 

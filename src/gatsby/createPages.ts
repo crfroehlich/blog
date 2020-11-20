@@ -24,18 +24,14 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions 
         allPages: allMdx(filter: { fileAbsolutePath: { glob: "**/content/posts/**" } }) {
           edges {
             node {
+              body
               fields {
-                id
-                title
-                slug
                 date
+                id
+                slug
+                subtitle
                 tags
-              }
-              tableOfContents
-              parent {
-                ... on File {
-                  relativePath
-                }
+                title
               }
               frontmatter {
                 title
@@ -55,6 +51,12 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions 
                   }
                 }
               }
+              parent {
+                ... on File {
+                  relativePath
+                }
+              }
+              tableOfContents
             }
           }
         }
@@ -68,13 +70,16 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions 
           edges {
             node {
               fields {
-                id
-                title
-                slug
                 created
-                updated
+                date
                 github
+                id
                 labels
+                slug
+                subtitle
+                tags
+                title
+                updated
               }
               parent {
                 ... on File {
@@ -88,6 +93,7 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions 
                 updated
                 labels
               }
+              body
             }
           }
         }
@@ -144,12 +150,11 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions 
       path: pagePath,
       component: templates.article,
       context: {
-        id: node.fields.id,
-        slug: pagePath,
-        previous,
+        mdx: node,
         next,
         pageTags,
-        background: node.frontmatter.background,
+        previous,
+        slug: pagePath,
         toc: {
           type: 'Article',
           content: node.tableOfContents?.items?.map((item) => {
@@ -159,7 +164,7 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions 
             };
           }),
         },
-        title: node?.fields?.title,
+        title: node.fields.title,
         type: 'Article',
       },
     });
@@ -199,6 +204,7 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions 
         pageLabels,
         type: 'Source',
         title: node?.fields?.title,
+        mdx: node,
       },
     });
   });

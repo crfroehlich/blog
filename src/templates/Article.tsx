@@ -1,4 +1,3 @@
-import { graphql } from 'gatsby';
 import MDXRenderer from 'gatsby-plugin-mdx/mdx-renderer';
 import React from 'react';
 import { Button, Paper, Grid, Theme, makeStyles } from '@material-ui/core';
@@ -9,6 +8,7 @@ import {
   Icon,
   NextPrevious,
   PageHeader,
+  PageSubtitle,
   StyledMainWrapper,
   TagSet,
 } from '../components';
@@ -38,22 +38,19 @@ const useStyles = makeStyles((theme: Theme) => ({
 export const Article: React.FC<IPageProps> = (props): JSX.Element => {
   const classes = useStyles();
   const {
-    data,
-    pageContext: { next, previous, pageTags },
+    pageContext: { mdx, next, previous, pageTags },
   } = props;
-  if (!data) return null;
-  const { mdx } = data;
-  const { title } = mdx.fields;
+  if (!mdx) return null;
+  const { title, subtitle } = mdx.fields;
   const date = new Date(mdx.fields.date);
-  console.log(props)
+  
   return (
     <div>
       <Paper className={`${classes.root}`}>
         <Grid container spacing={3}>
           <Grid item xs={10}>
-            <PageHeader>
-              {title.split(':')[0].trim()}
-            </PageHeader>
+            <PageHeader>{title.split(':')[0].trim()}</PageHeader>
+            <PageSubtitle>{subtitle || title.split(':')[1]?.trim()}</PageSubtitle>
           </Grid>
           <Grid item xs={2}>
             <Button
@@ -88,18 +85,3 @@ export const Article: React.FC<IPageProps> = (props): JSX.Element => {
 };
 
 export default Article;
-
-export const articleQuery = graphql`
-  query GetArticeByIdQuery($id: String!) {
-    mdx(fields: { id: { eq: $id } }) {
-      fields {
-        id
-        title
-        slug
-        date
-        tags
-      }
-      body
-    }
-  }
-`;

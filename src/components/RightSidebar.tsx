@@ -6,7 +6,7 @@ import { ListItemStyles, RightSidebarStyles } from './styles/RightSidebarStyles'
 
 export const RightSidebar: React.FC<IPageProps> = (props): JSX.Element => {
   const {
-    pageContext: { toc, background },
+    pageContext: { toc, mdx: { frontmatter: { background } } },
   } = props;
 
   const menu = toc?.content?.map((item, i) => {
