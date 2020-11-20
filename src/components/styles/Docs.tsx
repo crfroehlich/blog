@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import { Theme, Typography, makeStyles } from '@material-ui/core';
-import { theme as darkTheme } from './DarkTheme';
+import { DarkStyles } from './Theme';
 
 const useStyles = makeStyles((theme: Theme) => ({
   root: {
@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     flex: '1',
     marginTop: '0',
     paddingTop: '0',
-    color: darkTheme.colors.heading,
+    color: DarkStyles.colors.heading,
   },
   pageSubtitle: {
     fontSize: '16px',
@@ -27,7 +27,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     flex: '1',
     marginTop: '0',
     paddingTop: '0',
-    color: darkTheme.colors.heading,
+    color: DarkStyles.colors.heading,
   },
 }));
 
@@ -37,7 +37,7 @@ export const PageHeader = (props): JSX.Element => {
   return (
     <Typography {...props} className={classes.pageTitle} variant="h1" gutterBottom>{children}</Typography>
   );
-}
+};
 
 export const PageSubtitle = (props): JSX.Element => {
   const classes = useStyles();
@@ -45,7 +45,7 @@ export const PageSubtitle = (props): JSX.Element => {
   return (
     <Typography {...props} className={classes.pageSubtitle} variant="subtitle1" >{children}</Typography>
   );
-}
+};
 
 export const StyledHeading = styled('h1')`
   font-size: 32px;
@@ -56,7 +56,7 @@ export const StyledHeading = styled('h1')`
   flex: 1;
   margin-top: 0;
   padding-top: 0;
-  color: ${darkTheme.colors.heading};
+  color: ${DarkStyles.colors.heading};
 `;
 
 export const Edit = styled('div')`
@@ -86,7 +86,7 @@ export const Edit = styled('div')`
 
 export const StyledMainWrapper = styled.div`
   max-width: 750px;
-  color: ${darkTheme.colors.text};
+  color: ${DarkStyles.colors.text};
 
   ul,
   ol {
@@ -105,7 +105,7 @@ export const StyledMainWrapper = styled.div`
 
   a {
     transition: color 0.15s;
-    color: ${darkTheme.colors.link};
+    color: ${DarkStyles.colors.link};
   }
 
   code {

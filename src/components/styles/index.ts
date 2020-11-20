@@ -1,5 +1,5 @@
 export * from './BaseStyles';
-export * from './DarkTheme';
+export * from './Theme';
 export * from './Docs';
 export * from './LayoutStyles';
 export * from './RightSidebarStyles';

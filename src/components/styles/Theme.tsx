@@ -1,11 +1,11 @@
-import * as React from 'react';
-import { ThemeProvider as EmotionThemeProvider } from 'emotion-theming';
 import { Global } from '@emotion/core';
+import { ThemeProvider } from 'emotion-theming';
+import * as React from 'react';
+import { IPageProps } from '../../types';
 import { Header } from '../Header';
 import { BaseStyles } from './BaseStyles';
-import { IPageProps } from '../../types';
 
-export const theme = {
+export const DarkStyles = {
   fonts: {
     mono: '"SF Mono", "Roboto Mono", Menlo, monospace',
   },
@@ -25,7 +25,7 @@ export const DarkTheme: React.FC<IPageProps> = (props): JSX.Element => {
     <div>
       <Global styles={BaseStyles} />
       <Header {...props} />
-      <EmotionThemeProvider theme={theme}>{children}</EmotionThemeProvider>
+      <ThemeProvider theme={DarkStyles}>{children}</ThemeProvider>
     </div>
   );
 };

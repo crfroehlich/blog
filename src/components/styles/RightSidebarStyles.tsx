@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import { IStyle } from '../../types/interfaces';
-import { theme } from './DarkTheme';
+import { DarkStyles } from './Theme';
 
 export const RightSidebarStyles = styled('aside')`
   width: 100%;
@@ -12,8 +12,7 @@ export const RightSidebarStyles = styled('aside')`
   position: -moz-sticky;
   position: sticky;
   top: 0;
-
-  background: ${theme.colors.background};
+  background: ${DarkStyles.colors.background};
 
   .rightSideTitle {
     font-size: 12px;
@@ -23,7 +22,7 @@ export const RightSidebarStyles = styled('aside')`
     text-transform: uppercase;
     letter-spacing: 1.2px;
     padding: 7px 24px 7px 16px;
-    color: ${theme.colors.text};
+    color: ${DarkStyles.colors.text};
   }
 
   .rightSideBarUL {
@@ -39,7 +38,7 @@ export const RightSidebarStyles = styled('aside')`
     font-weight: 500;
     line-height: 1.5;
     padding: 10px 10px 10px 10px;
-    color: ${theme.colors.text};
+    color: ${DarkStyles.colors.text};
   }
 
   @media only screen and (max-width: 50rem) {

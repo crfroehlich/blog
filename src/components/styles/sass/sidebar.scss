@@ -1,11 +1,11 @@
-$sidebar-bg-color: #001933 !default;
+$sidebar-bg-color: #33475B !default;
 $sidebar-color: #fff !default;
-$sidebar-width: 300px !default;
+$sidebar-width: 297px !default;
 $sidebar-collapsed-width: 80px !default;
 $highlight-color: orange !default;
-$submenu-bg-color: #001933 !default;
+$submenu-bg-color: #33475B !default;
 $submenu-bg-color-collapsed: #2b2b2b !default;
-$icon-bg-color: #001933 !default;
+$icon-bg-color: #33475B !default;
 $icon-size: 20px !default;
 $breakpoint-xs: 480px !default;
 $breakpoint-sm: 576px !default;
@@ -13,4 +13,8 @@ $breakpoint-md: 768px !default;
 $breakpoint-lg: 992px !default;
 $breakpoint-xl: 1200px !default;
 
-@import './styles.scss';
+@import './partials/animation';
+@import './partials/sidebar';
+@import './partials/menu';
+@import './partials/popperArrow';
+@import './partials/reactSlidedown';

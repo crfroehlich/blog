@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { theme } from './DarkTheme';
+import { DarkStyles } from './Theme';
 
 export const StyledNextPrevious = styled('div')`
   margin: 0px;
@@ -28,8 +28,8 @@ export const StyledNextPrevious = styled('div')`
     box-shadow: rgba(116, 129, 141, 0.1) 0px 3px 8px 0px;
     text-decoration: none;
 
-    background-color: ${theme.colors.background};
-    color: ${theme.colors.text};
+    background-color: ${DarkStyles.colors.background};
+    color: ${DarkStyles.colors.text};
   }
 
   .nextBtn {
@@ -50,8 +50,8 @@ export const StyledNextPrevious = styled('div')`
     box-shadow: rgba(116, 129, 141, 0.1) 0px 3px 8px 0px;
     text-decoration: none;
 
-    background-color: ${theme.colors.background};
-    color: ${theme.colors.text};
+    background-color: ${DarkStyles.colors.background};
+    color: ${DarkStyles.colors.text};
   }
 
   .nextBtn:hover,

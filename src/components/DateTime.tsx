@@ -1,7 +1,7 @@
 import React from 'react';
 import { Theme, Typography, makeStyles } from '@material-ui/core';
 import { tools } from '../utils/tools';
-import { theme as darkTheme } from './styles/DarkTheme';
+import { DarkStyles as darkTheme } from './styles/Theme';
 import { Tooltip } from './Tooltip';
 
 const useStyles = makeStyles((theme: Theme) => ({

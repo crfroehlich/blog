@@ -1,17 +1,16 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
+import { Paper } from '@material-ui/core';
 import React, { useRef } from 'react';
 import {
-  ProSidebar,
   Menu,
   MenuItem,
-  SubMenu,
+  ProSidebar,
   SidebarContent,
-  SidebarFooter,
+  SubMenu,
 } from 'react-pro-sidebar';
+import { getYearOfThe } from '../utils';
 import { Icon } from './Icon';
 import { Link } from './Link';
-import { getYearOfThe } from '../utils';
-import { Paper } from '@material-ui/core';
 
 export const LeftSidebar = ({ sidebar }): JSX.Element => {
   const data = useRef(sidebar);
@@ -94,11 +93,22 @@ export const LeftSidebar = ({ sidebar }): JSX.Element => {
   };
 
   return (
-    <Paper elevation={15} style={{ 
-      backgroundColor: '#33475B', 
-      position: 'fixed',
-      }}>
-      <ProSidebar className={'sidebarOR'} breakPoint={'md'}>
+    <Paper
+      elevation={15}
+      style={{
+        backgroundColor: '#33475B',
+        fontSize: '20px',
+        marginLeft: '5px',
+        marginTop: '1.7em',
+        overflow: 'auto',
+        paddingBottom: '2px',
+        paddingTop: '2px',
+        position: 'sticky',
+        top: 0,
+        width: '100%',
+      }}
+    >
+      <ProSidebar breakPoint={'md'}>
         <SidebarContent>
           <Menu iconShape="square">
             <MenuItem icon={Icon({ icon: 'ruble-sign', size: 'lg' })}>
@@ -121,11 +131,6 @@ export const LeftSidebar = ({ sidebar }): JSX.Element => {
             })}
           </Menu>
         </SidebarContent>
-        <SidebarFooter>
-          {/**
-           *  You can add a footer for the sidebar ex: copyright
-           */}
-        </SidebarFooter>
       </ProSidebar>
     </Paper>
   );

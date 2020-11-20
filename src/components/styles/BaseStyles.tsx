@@ -316,10 +316,6 @@ export const BaseStyles: any = injectGlobal`
     border: 0 !important;
     background-color: rgb(245, 247, 249); /* !important; */
   }
-  .sidebarOR {
-    padding-top: 1.1em;
-    font-size: 20px;
-  }
   blockquote {
     color: rgb(116, 129, 141);
     margin: 0px 0px 24px;
