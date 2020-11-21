@@ -13,3 +13,4 @@ export * from './SEO';
 export * from './styles';
 export * from './TagSet';
 export * from './ThemeProvider';
+export * from './Tooltip';

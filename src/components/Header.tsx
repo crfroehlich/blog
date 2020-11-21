@@ -6,6 +6,7 @@ import { getConfig } from '../../config';
 import { IPageProps } from '../types/interfaces';
 import { Tools } from '../utils';
 import { SearchComponent } from './search/SearchComponent';
+import { Tooltip } from './Tooltip';
 
 const config = getConfig();
 const isSearchEnabled = config.header?.search?.enabled;
@@ -51,10 +52,12 @@ export const Header: React.FC<IPageProps> = (): JSX.Element => {
           <Link to={'/'} className={'navBarBrand'}>
             <img className={'img-responsive displayInline'} src={config.header.logo} alt={'logo'} />
           </Link>
-          <div
-            className={'headerTitle displayInline'}
-            dangerouslySetInnerHTML={{ __html: config.header.title }}
-          />
+          <Tooltip title="Luddites, Incorporated">
+            <div
+              className={'headerTitle displayInline'}
+              dangerouslySetInnerHTML={{ __html: config.header.title }}
+            />
+          </Tooltip>
         </div>
         {isSearchEnabled ? (
           <div className={'searchWrapper hiddenMobile navBarUL'}>
@@ -65,9 +68,11 @@ export const Header: React.FC<IPageProps> = (): JSX.Element => {
           <ul className={'navBarUL navBarNav navBarULRight'}>
             {config.header.links.map((link, key) => (
               <li key={key}>
-                <Link className="sidebarLink" to={link.link} title={link.text}>
-                  {link.text}
-                </Link>
+                <Tooltip title={link.tooltip || link.text}>
+                  <Link className="sidebarLink" to={link.link} title={link.text}>
+                    {link.text}
+                  </Link>
+                </Tooltip>
               </li>
             ))}
             <li className={'hiddenMobile githubBtn'}>

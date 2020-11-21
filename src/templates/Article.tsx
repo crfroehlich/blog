@@ -57,7 +57,7 @@ export const Article: React.FC<IPageProps> = (props): JSX.Element => {
               variant="contained"
               href={`${config.siteMetadata.docsLocation}/${(mdx.parent as INode)?.relativePath}`}
               className={classes.gitBtn}
-              startIcon={Icon({ icon: ['fab', 'github'] })}
+              startIcon={<Icon icon={['fab', 'github']}/>}
             >
               Edit
             </Button>

@@ -99,7 +99,7 @@ export const LeftSidebar = ({ sidebar }): JSX.Element => {
         backgroundColor: '#33475B',
         fontSize: '20px',
         marginLeft: '5px',
-        marginTop: '1.7em',
+        marginTop: '1.9em',
         overflow: 'auto',
         paddingBottom: '2px',
         paddingTop: '2px',

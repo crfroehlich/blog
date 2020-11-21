@@ -34,6 +34,7 @@ export interface Header {
 export interface Link {
   text: string;
   link: string;
+  tooltip: string;
 }
 
 export interface Search {
@@ -114,7 +115,7 @@ export const getConfig = (env: any = tools.getEnv()): IConfig => {
       tweetText: "T'was...",
       twitterUrl: 'https://twitter.com/tquestingbeast',
       linkedInUrl: 'https://www.linkedin.com/in/christopherfroehlich/',
-      links: [{ text: 'визуализации', link: '/визуализации' }],
+      links: [{ text: 'визуализации', link: '/визуализации', tooltip: 'Visualizations' }],
       search: {
         algoliaAdminKey: GATSBY_ALGOLIA_ADMIN_API_KEY,
         algoliaAppId: GATSBY_ALGOLIA_APPLICATION_ID,
