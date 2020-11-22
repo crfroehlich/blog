@@ -21,7 +21,7 @@ import { StyledMainWrapper } from '../styles';
 const getCardStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
-      maxWidth: 345,
+      maxWidth: 360,
       color: theme.palette.text.secondary,
       backgroundColor: '#d1d2d3',
     },
@@ -67,7 +67,7 @@ const GridCard = ({ edge, idx }) => {
     <Grid item xs key={`gridcell_${idx}_${edge.node.fields.id}`}>
       <Card className={classes.root} variant="elevation">
         <CardActionArea onClick={handleNavigate}>
-          <Img fluid={edge.node?.frontmatter?.background?.childImageSharp.fluid} />
+          <Img fixed={edge.node?.frontmatter?.background?.childImageSharp.fixed} />
           <CardContent>
             <Typography gutterBottom variant="h5" component="h2">
               {edge.node.fields.title}
@@ -159,12 +159,13 @@ export const tagQuery = graphql`
           frontmatter {
             background {
               childImageSharp {
-                fluid(maxWidth: 345, maxHeight: 180) {
+                fixed(width: 360) {
                   base64
                   aspectRatio
+                  width
+                  height
                   src
                   srcSet
-                  sizes
                 }
               }
             }

@@ -3578,6 +3578,10 @@ export type SitePageFieldsEnum =
   | 'pluginCreator___resolve'
   | 'pluginCreator___name'
   | 'pluginCreator___version'
+  | 'pluginCreator___pluginOptions___sourceMap'
+  | 'pluginCreator___pluginOptions___autoLabel'
+  | 'pluginCreator___pluginOptions___labelFormat'
+  | 'pluginCreator___pluginOptions___cssPropOptimization'
   | 'pluginCreator___pluginOptions___indentedSyntax'
   | 'pluginCreator___pluginOptions___indentType'
   | 'pluginCreator___pluginOptions___indentWidth'
@@ -3646,10 +3650,6 @@ export type SitePageFieldsEnum =
   | 'pluginCreator___pluginOptions___allExtensions'
   | 'pluginCreator___pluginOptions___isTSX'
   | 'pluginCreator___pluginOptions___jsxPragma'
-  | 'pluginCreator___pluginOptions___sourceMap'
-  | 'pluginCreator___pluginOptions___autoLabel'
-  | 'pluginCreator___pluginOptions___labelFormat'
-  | 'pluginCreator___pluginOptions___cssPropOptimization'
   | 'pluginCreator___nodeAPIs'
   | 'pluginCreator___browserAPIs'
   | 'pluginCreator___ssrAPIs'
@@ -3837,6 +3837,10 @@ export type SitePluginFieldsEnum =
   | 'resolve'
   | 'name'
   | 'version'
+  | 'pluginOptions___sourceMap'
+  | 'pluginOptions___autoLabel'
+  | 'pluginOptions___labelFormat'
+  | 'pluginOptions___cssPropOptimization'
   | 'pluginOptions___indentedSyntax'
   | 'pluginOptions___indentType'
   | 'pluginOptions___indentWidth'
@@ -3905,10 +3909,6 @@ export type SitePluginFieldsEnum =
   | 'pluginOptions___allExtensions'
   | 'pluginOptions___isTSX'
   | 'pluginOptions___jsxPragma'
-  | 'pluginOptions___sourceMap'
-  | 'pluginOptions___autoLabel'
-  | 'pluginOptions___labelFormat'
-  | 'pluginOptions___cssPropOptimization'
   | 'nodeAPIs'
   | 'browserAPIs'
   | 'ssrAPIs'
@@ -4024,6 +4024,10 @@ export type SitePluginPackageJsonPeerDependenciesFilterListInput = {
 };
 
 export type SitePluginPluginOptions = {
+  sourceMap?: Maybe<Scalars['Boolean']>;
+  autoLabel?: Maybe<Scalars['Boolean']>;
+  labelFormat?: Maybe<Scalars['String']>;
+  cssPropOptimization?: Maybe<Scalars['Boolean']>;
   indentedSyntax?: Maybe<Scalars['Boolean']>;
   indentType?: Maybe<Scalars['String']>;
   indentWidth?: Maybe<Scalars['Int']>;
@@ -4087,10 +4091,6 @@ export type SitePluginPluginOptions = {
   allExtensions?: Maybe<Scalars['Boolean']>;
   isTSX?: Maybe<Scalars['Boolean']>;
   jsxPragma?: Maybe<Scalars['String']>;
-  sourceMap?: Maybe<Scalars['Boolean']>;
-  autoLabel?: Maybe<Scalars['Boolean']>;
-  labelFormat?: Maybe<Scalars['String']>;
-  cssPropOptimization?: Maybe<Scalars['Boolean']>;
 };
 
 export type SitePluginPluginOptionsFeeds = {
@@ -4110,6 +4110,10 @@ export type SitePluginPluginOptionsFeedsFilterListInput = {
 };
 
 export type SitePluginPluginOptionsFilterInput = {
+  sourceMap?: Maybe<BooleanQueryOperatorInput>;
+  autoLabel?: Maybe<BooleanQueryOperatorInput>;
+  labelFormat?: Maybe<StringQueryOperatorInput>;
+  cssPropOptimization?: Maybe<BooleanQueryOperatorInput>;
   indentedSyntax?: Maybe<BooleanQueryOperatorInput>;
   indentType?: Maybe<StringQueryOperatorInput>;
   indentWidth?: Maybe<IntQueryOperatorInput>;
@@ -4173,10 +4177,6 @@ export type SitePluginPluginOptionsFilterInput = {
   allExtensions?: Maybe<BooleanQueryOperatorInput>;
   isTSX?: Maybe<BooleanQueryOperatorInput>;
   jsxPragma?: Maybe<StringQueryOperatorInput>;
-  sourceMap?: Maybe<BooleanQueryOperatorInput>;
-  autoLabel?: Maybe<BooleanQueryOperatorInput>;
-  labelFormat?: Maybe<StringQueryOperatorInput>;
-  cssPropOptimization?: Maybe<BooleanQueryOperatorInput>;
 };
 
 export type SitePluginPluginOptionsPolicy = {
@@ -4307,16 +4307,6 @@ export type GetLabelByNameQueryQuery = { allMdx: (
     & { edges: Array<{ node: { fields?: Maybe<Pick<MdxFields, 'id' | 'title' | 'slug' | 'updated'>> } }> }
   ) };
 
-export type GetSourceByIdQueryQueryVariables = Exact<{
-  id: Scalars['String'];
-}>;
-
-
-export type GetSourceByIdQueryQuery = { mdx?: Maybe<(
-    Pick<Mdx, 'body' | 'tableOfContents'>
-    & { fields?: Maybe<Pick<MdxFields, 'id' | 'title' | 'slug' | 'created' | 'updated' | 'github' | 'labels'>> }
-  )> };
-
 export type GetTagByNameQueryQueryVariables = Exact<{
   tag?: Maybe<Scalars['String']>;
 }>;
@@ -4326,7 +4316,7 @@ export type GetTagByNameQueryQuery = { allMdx: (
     Pick<MdxConnection, 'totalCount'>
     & { edges: Array<{ node: (
         Pick<Mdx, 'excerpt'>
-        & { fields?: Maybe<Pick<MdxFields, 'id' | 'title' | 'slug' | 'date' | 'tags' | 'description'>>, frontmatter?: Maybe<{ background?: Maybe<{ childImageSharp?: Maybe<{ fluid?: Maybe<Pick<ImageSharpFluid, 'base64' | 'aspectRatio' | 'src' | 'srcSet' | 'sizes'>> }> }> }> }
+        & { fields?: Maybe<Pick<MdxFields, 'id' | 'title' | 'slug' | 'date' | 'tags' | 'description'>>, frontmatter?: Maybe<{ background?: Maybe<{ childImageSharp?: Maybe<{ fixed?: Maybe<Pick<ImageSharpFixed, 'base64' | 'aspectRatio' | 'width' | 'height' | 'src' | 'srcSet'>> }> }> }> }
       ) }> }
   ) };
 

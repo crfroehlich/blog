@@ -130,7 +130,7 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions 
 
     const node = post?.node;
 
-    const pagePath = node?.fields?.slug || '/';
+    const articlePath = node?.fields?.slug || '/';
 
     const nodeTags = node?.fields?.tags || [];
     const pageTags = [];
@@ -142,19 +142,19 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions 
       });
     });
 
-    if (!pagePath) {
-      return Logger.info('Warning: Blog post has no path. Skipping...');
+    if (!articlePath) {
+      return Logger.info('Warning: Article has no path. Skipping...');
     }
 
     createPage({
-      path: pagePath,
+      path: articlePath,
       component: templates.article,
       context: {
         mdx: node,
         next,
         pageTags,
         previous,
-        slug: pagePath,
+        slug: articlePath,
         toc: {
           type: 'Article',
           content: node.tableOfContents?.items?.map((item) => {

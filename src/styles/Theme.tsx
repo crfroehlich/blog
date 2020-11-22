@@ -1,9 +1,7 @@
-import { Global } from '@emotion/core';
 import { ThemeProvider } from 'emotion-theming';
 import * as React from 'react';
 import { IPageProps } from '../types';
 import { Header } from '../components';
-import { BaseStyles } from './BaseStyles';
 
 export const DarkStyles = {
   fonts: {
@@ -23,7 +21,6 @@ export const DarkTheme: React.FC<IPageProps> = (props): JSX.Element => {
 
   return (
     <div>
-      <Global styles={BaseStyles} />
       <Header {...props} />
       <ThemeProvider theme={DarkStyles}>{children}</ThemeProvider>
     </div>

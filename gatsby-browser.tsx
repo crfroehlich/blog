@@ -2,8 +2,10 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import { Layout } from './src/components';
 import configureStore from './src/state/store';
-import './src/styles/sass/sidebar.scss';
+import './src/styles/sass/index.scss';
 import Logger from './src/utils/Logger';
+import 'prismjs/plugins/line-numbers/prism-line-numbers.css';
+import 'prismjs/plugins/command-line/prism-command-line.css';
 
 export const wrapPageElement = ({ element, props }) => {
   // props provide same data to Layout as Page element will get

@@ -1,4 +1,3 @@
-export * from './BaseStyles';
 export * from './Theme';
 export * from './Docs';
 export * from './LayoutStyles';
