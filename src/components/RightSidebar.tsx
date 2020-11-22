@@ -2,17 +2,16 @@ import Img from 'gatsby-image';
 import React from 'react';
 import { Paper } from '@material-ui/core';
 import { IPageProps } from '../types/interfaces';
-import { ListItemStyles, RightSidebarStyles } from './styles/RightSidebarStyles';
+import { ListItemStyles, RightSidebarStyles } from '../styles';
 
 export const RightSidebar: React.FC<IPageProps> = (props): JSX.Element => {
   const {
     pageContext: {
       toc,
-      mdx: {
-        frontmatter: { background },
-      },
+      mdx,
     },
   } = props;
+  const background = mdx?.frontmatter?.background;
 
   const menu = toc?.content?.map((item, i) => {
     return (

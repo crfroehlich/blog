@@ -135,7 +135,7 @@ export const getConfig = (env: any = tools.getEnv()): IConfig => {
       title: "Christopher Froehlich's Blog | Hiking My Desk",
       description: 'A blog apart',
       ogImage: null,
-      docsLocation: 'https://github.com/crfroehlich/blog/tree/main/content/posts',
+      docsLocation: 'https://github.com/crfroehlich/blog/tree/main/content',
       favicon: '/favicon.svg',
     },
     offline: {

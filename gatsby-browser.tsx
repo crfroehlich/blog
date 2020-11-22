@@ -2,7 +2,7 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import { Layout } from './src/components';
 import configureStore from './src/state/store';
-import './src/components/styles/sass/sidebar.scss';
+import './src/styles/sass/sidebar.scss';
 import Logger from './src/utils/Logger';
 
 export const wrapPageElement = ({ element, props }) => {

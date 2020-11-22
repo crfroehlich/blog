@@ -8,16 +8,14 @@ import {
   Index,
   InstantSearch,
 } from 'react-instantsearch-dom';
-import { getConfig } from '../../../config';
-import { IStyle } from '../../types/interfaces';
-import { Tools } from '../../utils';
+import { getConfig } from '../../config';
+import { Tools } from '../utils';
 import { ConnectSearchBox } from './ConnectSearchBox';
 import * as PageHit from './PageHit';
-import { PoweredBy } from './PoweredBy';
 
 const HitsWrapper = styled.div`
   asgrid: true;
-  display: ${(props: IStyle) => (props.show ? `grid` : `none`)};
+  display: ${({ show }:any) => (show ? `grid` : `none`)};
   max-height: 80vh;
   overflow: scroll;
   z-index: 2;
@@ -38,15 +36,15 @@ const HitsWrapper = styled.div`
     width: 100%;
     max-width: 500px;
   }
-  border-radius: ${(props: IStyle) => props.theme.smallBorderRadius};
+  border-radius: ${({ theme }:any) => theme.smallBorderRadius};
   > * + * {
     padding-top: 1em !important;
-    border-top: 2px solid ${(props: IStyle) => props.theme.darkGray};
+    border-top: 2px solid ${({ theme }:any) => theme.darkGray};
   }
   li + li {
     margin-top: 0.7em;
     padding-top: 0.7em;
-    border-top: 1px solid ${(props: IStyle) => props.theme.lightGray};
+    border-top: 1px solid ${({ theme }:any) => theme.lightGray};
   }
   * {
     margin-top: 0;
@@ -57,8 +55,8 @@ const HitsWrapper = styled.div`
     list-style: none;
   }
   mark {
-    color: ${(props: IStyle) => props.theme.lightBlue};
-    background: ${(props: IStyle) => props.theme.darkBlue};
+    color: ${({ theme }:any) => theme.lightBlue};
+    background: ${({ theme }:any) => theme.darkBlue};
   }
   header {
     display: flex;
@@ -66,9 +64,9 @@ const HitsWrapper = styled.div`
     margin-bottom: 0.3em;
     h3 {
       color: black;
-      background: ${(props: IStyle) => props.theme.gray};
+      background: ${({ theme }:any) => theme.gray};
       padding: 0.1em 0.4em;
-      border-radius: ${(props: IStyle) => props.theme.smallBorderRadius};
+      border-radius: ${({ theme }:any) => theme.smallBorderRadius};
     }
   }
   h3 {
@@ -145,7 +143,6 @@ export const SearchComponent = ({ indices, collapse }) => {
             </Index>
           );
         })}
-        <PoweredBy />
       </HitsWrapper>
       <Configure hitsPerPage={5} />
     </InstantSearch>

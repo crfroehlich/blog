@@ -1,5 +1,4 @@
 import styled from '@emotion/styled';
-import { IStyle } from '../../types/interfaces';
 import { DarkStyles } from './Theme';
 
 export const RightSidebarStyles = styled('aside')`
@@ -62,7 +61,7 @@ export const ListItemStyles = styled(({ className, active, level, ...props }) =>
     color: #5c6975;
     text-decoration: none;
     font-weight: ${({ level }: any) => (level === 0 ? 700 : 400)};
-    padding: 0.45rem 0 0.45rem ${(props: IStyle) => 2 + (props.level || 0) * 1}rem;
+    padding: 0.45rem 0 0.45rem ${({ level }:any) => 2 + (level || 0) * 1}rem;
     display: block;
     position: relative;
 
@@ -70,8 +69,8 @@ export const ListItemStyles = styled(({ className, active, level, ...props }) =>
       color: #1ed3c6 !important;
     }
 
-    ${(props: IStyle) =>
-      props.active &&
+    ${({ active }:any) =>
+      active &&
       `
       color: #1ED3C6;
       background-color: #fff;

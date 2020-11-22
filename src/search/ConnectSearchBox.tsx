@@ -1,24 +1,23 @@
 import { connectSearchBox } from 'react-instantsearch-dom';
 import styled from '@emotion/styled';
-import { Search } from '@styled-icons/fa-solid/Search';
-import { IStyle } from '../../types/interfaces';
+import { Icon } from '../components';
 
-const SearchIcon = styled(Search)`
-  width: 1em;
-  pointer-events: none;
-  margin-right: 10px;
-  position: absolute;
-  left: 15px;
-  color: #2fd2c5;
-`;
+// const SearchIcon = styled(Icon)`
+//   width: 1em;
+//   pointer-events: none;
+//   margin-right: 10px;
+//   position: absolute;
+//   left: 15px;
+//   color: #2fd2c5;
+// `;
 
 const Input = styled.input`
   outline: none;
   border: none;
   font-size: 1em;
   background: white;
-  transition: ${(props: IStyle) => props.theme.shortTrans};
-  border-radius: ${(props: IStyle) => props.theme.smallBorderRadius};
+  transition: ${({ theme }:any) => theme?.shortTrans};
+  border-radius: ${({ theme }:any) => theme?.smallBorderRadius};
   {collapseExpand}
 `;
 
@@ -38,7 +37,7 @@ export const ConnectSearchBox = connectSearchBox(({ refine, ...rest }) => {
 
   return (
     <Form className={'formElement'} onSubmit={preventSubmit}>
-      <SearchIcon />
+      <Icon icon={['fas', 'search']} />
       <Input
         className={'searchInput '}
         type="text"

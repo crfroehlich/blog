@@ -11,10 +11,10 @@ const LightTooltip = withStyles((theme: Theme) => ({
 }))(MuiTooltip);
 
 export const Tooltip = (props): JSX.Element => {
-  const { title, children } = props;
+  const { tip, children } = props;
   return (
     <div>
-      <LightTooltip title={title}>
+      <LightTooltip title={tip}>
         {children}
       </LightTooltip>
     </div>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Theme, Typography, makeStyles } from '@material-ui/core';
 import { tools } from '../utils/tools';
-import { DarkStyles as darkTheme } from './styles/Theme';
+import { DarkStyles } from '../styles';
 import { Tooltip } from './Tooltip';
 
 const useStyles = makeStyles((theme: Theme) => ({
@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     marginTop: 'auto',
     marginBottom: 'auto',
     fontSize: 'large',
-    color: darkTheme.colors.link,
+    color: DarkStyles.colors.link,
   },
 }));
 
@@ -24,7 +24,7 @@ export const DateTime = (props): JSX.Element => {
   const classes = useStyles();
   const { date, style } = props;
   return (
-    <Tooltip title={tools.getLocalDate(date, 'en-US')} >
+    <Tooltip tip={tools.getLocalDate(date, 'en-US')} >
       <Typography {...props} style={style} className={classes.date} variant="h4" gutterBottom>
         {tools.getLocalDate(date)}
       </Typography>

@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { graphql } from 'gatsby';
 import MDXRenderer from 'gatsby-plugin-mdx/mdx-renderer';
 import { IPageProps } from '../types/interfaces';
-import { Edit, Icon, Link, StyledHeading, StyledMainWrapper, TagSet } from '../components';
+import { PageTitle } from '../components';
+import { StyledMainWrapper } from '../styles';
 
 export default class Source extends Component<IPageProps> {
   render(): JSX.Element {
@@ -16,17 +17,14 @@ export default class Source extends Component<IPageProps> {
 
     return (
       <div>
-        <div className={'titleWrapper'}>
-          <StyledHeading>{title}</StyledHeading>
-          <Edit className={'mobileView'}>
-            <Link className={'gitBtn'} to={github}>
-              {Icon({ icon: ['fab', 'github'] })}
-              <div style={{ paddingLeft: '5px' }}>Source</div>
-            </Link>
-          </Edit>
-        </div>
+        <PageTitle 
+          title={title} 
+          gitHubPath={github} 
+          tags={pageLabels} 
+          tagLinkPrefix={'этикетка'}
+          date={updated}
+        />
         <StyledMainWrapper>
-          <TagSet tags={pageLabels} linkPrefix="этикетка" date={updated} />
           <MDXRenderer>{mdx.body}</MDXRenderer>
         </StyledMainWrapper>
       </div>

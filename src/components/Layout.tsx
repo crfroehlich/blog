@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { MDXProvider } from '@mdx-js/react';
-import mdxComponents from './styles/StyledProp';
+import mdxComponents from '../styles/StyledProp';
 import { RightSidebar } from './RightSidebar';
 import { IPageProps } from '../types';
 import { LeftSidebar } from './LeftSidebar';
@@ -12,7 +12,7 @@ import {
   MaxWidth,
   RightSideBarWidth,
   DarkTheme,
-} from './styles';
+} from '../styles';
 import { getSideBarData } from '../utils';
 
 export const Layout: React.FC<IPageProps> = (props): JSX.Element => {

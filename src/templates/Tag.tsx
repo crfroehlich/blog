@@ -1,7 +1,3 @@
-// import Card from '@material-ui/core/Card';
-// import CardActionArea from '@material-ui/core/CardActionArea';
-// import CardContent from '@material-ui/core/CardContent';
-// import Grid from '@material-ui/core/Grid';
 import {
   Card,
   CardActionArea,
@@ -15,13 +11,12 @@ import {
   Theme,
   Typography,
 } from '@material-ui/core';
-// import { makeStyles } from '@material-ui/core/styles';
 import clsx from 'clsx';
 import { graphql, navigate } from 'gatsby';
 import Img from 'gatsby-image';
-import React, { FC, useState } from 'react';
-import { DisplayDate, Icon, IPageProps, StyledHeading, StyledMainWrapper } from '..';
-// import { IPageProps } from '../types/interfaces';
+import React, { useState } from 'react';
+import { DisplayDate, Icon, PageTitle } from '../components';
+import { StyledMainWrapper } from '../styles';
 
 const getCardStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -72,7 +67,7 @@ const GridCard = ({ edge, idx }) => {
     <Grid item xs key={`gridcell_${idx}_${edge.node.fields.id}`}>
       <Card className={classes.root} variant="elevation">
         <CardActionArea onClick={handleNavigate}>
-          <Img fluid={edge.node.frontmatter.background?.childImageSharp.fluid} />
+          <Img fluid={edge.node?.frontmatter?.background?.childImageSharp.fluid} />
           <CardContent>
             <Typography gutterBottom variant="h5" component="h2">
               {edge.node.fields.title}
@@ -112,7 +107,7 @@ const GridCard = ({ edge, idx }) => {
   );
 };
 
-export const Tag: FC<IPageProps> = (props): JSX.Element => {
+export const Tag = (props): JSX.Element => {
   const {
     data: {
       allMdx: { edges },
@@ -124,9 +119,7 @@ export const Tag: FC<IPageProps> = (props): JSX.Element => {
 
   return (
     <div>
-      <div className={'titleWrapper'}>
-        <StyledHeading>{title}</StyledHeading>
-      </div>
+      <PageTitle title={title} />
       <StyledMainWrapper>
         <div className={classes.grid}>
           <Grid container spacing={3}>

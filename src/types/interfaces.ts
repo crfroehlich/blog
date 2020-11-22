@@ -34,34 +34,6 @@ export interface IPageProps {
 
 export type WindowLocation = Window['location'] & HLocation;
 
-export interface IColors {
-  background?: string;
-  heading?: string;
-  link?: string;
-  preFormattedText?: string;
-  text?: string;
-}
-
-export interface ITheme {
-  colors?: IColors;
-  darkBlue?: string;
-  darkGray?: string;
-  gray?: string;
-  lightBlue?: string;
-  lightGray?: string;
-  shortTrans?: string | boolean;
-  smallBorderRadius?: string | number;
-  veryLightGray?: string;
-}
-
-export interface IStyle {
-  active?: boolean;
-  focus?: any;
-  level?: number;
-  show?: string | boolean;
-  theme?: ITheme;
-}
-
 export interface ICategory {
   fieldValue?: string;
   totalCount?: number;

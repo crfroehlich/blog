@@ -1,8 +1,8 @@
 import { Global } from '@emotion/core';
 import { ThemeProvider } from 'emotion-theming';
 import * as React from 'react';
-import { IPageProps } from '../../types';
-import { Header } from '../Header';
+import { IPageProps } from '../types';
+import { Header } from '../components';
 import { BaseStyles } from './BaseStyles';
 
 export const DarkStyles = {

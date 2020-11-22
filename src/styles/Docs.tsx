@@ -27,6 +27,13 @@ const useStyles = makeStyles((theme: Theme) => ({
     paddingTop: '0',
     color: DarkStyles.colors.heading,
   },
+  edit: {
+    padding: '1rem 1.5rem',
+    textAlign: 'right',
+  },
+  editLink: {
+
+  }
 }));
 
 export const PageHeader = (props): JSX.Element => {
@@ -44,43 +51,6 @@ export const PageSubtitle = (props): JSX.Element => {
     <Typography {...props} className={classes.pageSubtitle} variant="subtitle1" >{children}</Typography>
   );
 };
-
-export const StyledHeading = styled('h1')`
-  font-size: 32px;
-  line-height: 1.5;
-  font-weight: 500;
-  border-left: 2px solid #1ed3c6;
-  padding: 0 16px;
-  flex: 1;
-  margin-top: 0;
-  padding-top: 0;
-  color: ${DarkStyles.colors.heading};
-`;
-
-export const Edit = styled('div')`
-  padding: 1rem 1.5rem;
-  text-align: right;
-
-  a {
-    font-size: 14px;
-    font-weight: 500;
-    line-height: 1em;
-    text-decoration: none;
-    color: #555;
-    border: 1px solid rgb(211, 220, 228);
-    cursor: pointer;
-    border-radius: 3px;
-    transition: all 0.2s ease-out 0s;
-    text-decoration: none;
-    color: rgb(36, 42, 49);
-    background-color: rgb(255, 255, 255);
-    height: 30px;
-    padding: 5px 16px;
-    &:hover {
-      background-color: rgb(245, 247, 249);
-    }
-  }
-`;
 
 export const StyledMainWrapper = styled.div`
   max-width: 750px;

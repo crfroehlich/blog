@@ -137,36 +137,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@apollo/client@npm:^3.1.5":
-  version: 3.2.5
-  resolution: "@apollo/client@npm:3.2.5"
-  dependencies:
-    "@graphql-typed-document-node/core": ^3.0.0
-    "@types/zen-observable": ^0.8.0
-    "@wry/context": ^0.5.2
-    "@wry/equality": ^0.2.0
-    fast-json-stable-stringify: ^2.0.0
-    graphql-tag: ^2.11.0
-    hoist-non-react-statics: ^3.3.2
-    optimism: ^0.13.0
-    prop-types: ^15.7.2
-    symbol-observable: ^2.0.0
-    ts-invariant: ^0.4.4
-    tslib: ^1.10.0
-    zen-observable: ^0.8.14
-  peerDependencies:
-    graphql: ^14.0.0 || ^15.0.0
-    react: ^16.8.0
-    subscriptions-transport-ws: ^0.9.0
-  peerDependenciesMeta:
-    react:
-      optional: true
-    subscriptions-transport-ws:
-      optional: true
-  checksum: 0dc20d1c452cb6a8411b034d91d8fd34d242fd5e9493b68aaf80b0979a46f9ef6bf2668a5b30b81247171792a0426c716dcaecc094bb78592fef5451769eb4e7
-  languageName: node
-  linkType: hard
-
 "@apollo/federation@npm:0.20.4":
   version: 0.20.4
   resolution: "@apollo/federation@npm:0.20.4"
@@ -384,7 +354,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/helper-annotate-as-pure@npm:^7.0.0, @babel/helper-annotate-as-pure@npm:^7.10.4":
+"@babel/helper-annotate-as-pure@npm:^7.10.4":
   version: 7.10.4
   resolution: "@babel/helper-annotate-as-pure@npm:7.10.4"
   dependencies:
@@ -1765,7 +1735,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/runtime@npm:^7.0.0, @babel/runtime@npm:^7.1.2, @babel/runtime@npm:^7.10.0, @babel/runtime@npm:^7.10.2, @babel/runtime@npm:^7.10.5, @babel/runtime@npm:^7.11.2, @babel/runtime@npm:^7.12.1, @babel/runtime@npm:^7.12.5, @babel/runtime@npm:^7.3.1, @babel/runtime@npm:^7.3.4, @babel/runtime@npm:^7.4.4, @babel/runtime@npm:^7.5.5, @babel/runtime@npm:^7.7.2, @babel/runtime@npm:^7.8.3, @babel/runtime@npm:^7.8.4, @babel/runtime@npm:^7.8.7, @babel/runtime@npm:^7.9.2":
+"@babel/runtime@npm:^7.0.0, @babel/runtime@npm:^7.1.2, @babel/runtime@npm:^7.10.0, @babel/runtime@npm:^7.10.2, @babel/runtime@npm:^7.11.2, @babel/runtime@npm:^7.12.1, @babel/runtime@npm:^7.12.5, @babel/runtime@npm:^7.3.1, @babel/runtime@npm:^7.3.4, @babel/runtime@npm:^7.4.4, @babel/runtime@npm:^7.5.5, @babel/runtime@npm:^7.7.2, @babel/runtime@npm:^7.8.3, @babel/runtime@npm:^7.8.4, @babel/runtime@npm:^7.8.7, @babel/runtime@npm:^7.9.2":
   version: 7.12.5
   resolution: "@babel/runtime@npm:7.12.5"
   dependencies:
@@ -1837,7 +1807,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/traverse@npm:^7.0.0, @babel/traverse@npm:^7.10.4, @babel/traverse@npm:^7.10.5, @babel/traverse@npm:^7.11.5, @babel/traverse@npm:^7.12.1, @babel/traverse@npm:^7.12.5, @babel/traverse@npm:^7.4.5, @babel/traverse@npm:^7.7.0":
+"@babel/traverse@npm:^7.0.0, @babel/traverse@npm:^7.10.4, @babel/traverse@npm:^7.10.5, @babel/traverse@npm:^7.11.5, @babel/traverse@npm:^7.12.1, @babel/traverse@npm:^7.12.5, @babel/traverse@npm:^7.7.0":
   version: 7.12.5
   resolution: "@babel/traverse@npm:7.12.5"
   dependencies:
@@ -1957,15 +1927,6 @@ __metadata:
   peerDependencies:
     lodash: ^4.17.11
   checksum: 169c3f06e9ed1e24fa1a4f52e11521a0cebe6e895f8f96a6c0544de34568f90852cf23e5a38baf0936a9c6c2b5e6dd7d7c6613cbb8205c410cd42b02f1f3f148
-  languageName: node
-  linkType: hard
-
-"@cometjs/core@npm:^0.1.0":
-  version: 0.1.0
-  resolution: "@cometjs/core@npm:0.1.0"
-  dependencies:
-    core-js: ^3.6.4
-  checksum: b160323ebd4ac922e98d824af8895f4f4c0afeb04e5c2c70c560bcb94f9ce389fd356d6eb1c98c2002a9717f1e7e2dff627559b66b07e6f6b9809c9724a5b194
   languageName: node
   linkType: hard
 
@@ -2145,7 +2106,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@emotion/is-prop-valid@npm:0.8.8, @emotion/is-prop-valid@npm:^0.8.7, @emotion/is-prop-valid@npm:^0.8.8":
+"@emotion/is-prop-valid@npm:0.8.8":
   version: 0.8.8
   resolution: "@emotion/is-prop-valid@npm:0.8.8"
   dependencies:
@@ -2209,14 +2170,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@emotion/stylis@npm:0.8.5, @emotion/stylis@npm:^0.8.4":
+"@emotion/stylis@npm:0.8.5":
   version: 0.8.5
   resolution: "@emotion/stylis@npm:0.8.5"
   checksum: bb43a77f784cce86f7a625519544aab56b8f341117957f7dd15315398780289784bd2ec0ba1bc1b19ac639bdb304a4ed08b1f8e3e4c13e8063b9824e551b3994
   languageName: node
   linkType: hard
 
-"@emotion/unitless@npm:0.7.5, @emotion/unitless@npm:^0.7.4":
+"@emotion/unitless@npm:0.7.5":
   version: 0.7.5
   resolution: "@emotion/unitless@npm:0.7.5"
   checksum: 0be366ef09860037ef08aed0450cb5510f4be25886005e2f120f8e8b7385de6b41ac47df5b9bd55781e5153853e9ed5f49aa517dcbad34cc23bd8afb0201932a
@@ -2421,7 +2382,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@graphql-codegen/core@npm:1.17.8, @graphql-codegen/core@npm:^1.13.1, @graphql-codegen/core@npm:^1.16.3":
+"@graphql-codegen/core@npm:1.17.8, @graphql-codegen/core@npm:^1.13.1":
   version: 1.17.8
   resolution: "@graphql-codegen/core@npm:1.17.8"
   dependencies:
@@ -2432,51 +2393,6 @@ __metadata:
   peerDependencies:
     graphql: ^0.8.0 || ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0
   checksum: 3bc9b4ff4b0536c358cf882223a1ada0069d7a915ba03019188339dd3b21e374371463f731e801a4bcc57015dfbd40eef1dad8981cda188f7e17b24c15cb0570
-  languageName: node
-  linkType: hard
-
-"@graphql-codegen/flow-operations@npm:^1.16.3":
-  version: 1.18.2
-  resolution: "@graphql-codegen/flow-operations@npm:1.18.2"
-  dependencies:
-    "@graphql-codegen/flow": ^1.18.1
-    "@graphql-codegen/plugin-helpers": ^1.18.1
-    "@graphql-codegen/visitor-plugin-common": ^1.17.17
-    auto-bind: ~4.0.0
-    tslib: ~2.0.1
-  peerDependencies:
-    graphql: ^0.8.0 || ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0
-  checksum: bcbaf5853a25811858f929846f93d5aad68e0156c00b35165a963a1bbd6ea05601d408a712b5bc0493c1c8a5ba477cd74af71d227984f160e26d3ad24dfda2f8
-  languageName: node
-  linkType: hard
-
-"@graphql-codegen/flow-resolvers@npm:^1.16.3":
-  version: 1.17.10
-  resolution: "@graphql-codegen/flow-resolvers@npm:1.17.10"
-  dependencies:
-    "@graphql-codegen/flow": ^1.18.0
-    "@graphql-codegen/plugin-helpers": ^1.17.9
-    "@graphql-codegen/visitor-plugin-common": ^1.17.15
-    "@graphql-tools/utils": ^6
-    auto-bind: ~4.0.0
-    tslib: ~2.0.1
-  peerDependencies:
-    graphql: ^0.8.0 || ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0
-  checksum: 6e31b25a4c947b9718706645fcd7dd2b0f18fabea7cb6a81d47990890d63f84b50af3827f14ecb89d7f86c93cd4f56e82b94d4bac8ff694725c45d426d02915e
-  languageName: node
-  linkType: hard
-
-"@graphql-codegen/flow@npm:^1.16.3, @graphql-codegen/flow@npm:^1.18.0, @graphql-codegen/flow@npm:^1.18.1":
-  version: 1.18.1
-  resolution: "@graphql-codegen/flow@npm:1.18.1"
-  dependencies:
-    "@graphql-codegen/plugin-helpers": ^1.17.8
-    "@graphql-codegen/visitor-plugin-common": ^1.17.13
-    auto-bind: ~4.0.0
-    tslib: ~2.0.1
-  peerDependencies:
-    graphql: ^0.8.0 || ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0
-  checksum: f89eba9516613b484bfb3b86ae0522ebaef76a92ca059ffb33fe56b06b73443a52a3550c3b50fd6940b1a098cd49f13204f61bc2e971af3a92e947b49463225b
   languageName: node
   linkType: hard
 
@@ -2525,7 +2441,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@graphql-codegen/typescript-operations@npm:^1.13.1, @graphql-codegen/typescript-operations@npm:^1.16.3":
+"@graphql-codegen/typescript-operations@npm:^1.13.1":
   version: 1.17.9
   resolution: "@graphql-codegen/typescript-operations@npm:1.17.9"
   dependencies:
@@ -2572,23 +2488,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@graphql-codegen/typescript-resolvers@npm:^1.16.3":
-  version: 1.17.10
-  resolution: "@graphql-codegen/typescript-resolvers@npm:1.17.10"
-  dependencies:
-    "@graphql-codegen/plugin-helpers": ^1.17.9
-    "@graphql-codegen/typescript": ^1.17.10
-    "@graphql-codegen/visitor-plugin-common": ^1.17.15
-    "@graphql-tools/utils": ^6
-    auto-bind: ~4.0.0
-    tslib: ~2.0.1
-  peerDependencies:
-    graphql: ^0.8.0 || ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0
-  checksum: d0aaf45100d245dd512df1b8f24697bc69118dbc46988942b6b824feb48b1d2ea8b9f982ae1f3eeddbfb8f43e053591ae80bf2fc6a3b9c5a3d163e30763c9794
-  languageName: node
-  linkType: hard
-
-"@graphql-codegen/typescript@npm:^1.13.1, @graphql-codegen/typescript@npm:^1.16.3, @graphql-codegen/typescript@npm:^1.17.10, @graphql-codegen/typescript@npm:^1.17.11, @graphql-codegen/typescript@npm:^1.17.8":
+"@graphql-codegen/typescript@npm:^1.13.1, @graphql-codegen/typescript@npm:^1.17.11, @graphql-codegen/typescript@npm:^1.17.8":
   version: 1.17.11
   resolution: "@graphql-codegen/typescript@npm:1.17.11"
   dependencies:
@@ -2602,7 +2502,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@graphql-codegen/visitor-plugin-common@npm:^1.17.13, @graphql-codegen/visitor-plugin-common@npm:^1.17.15, @graphql-codegen/visitor-plugin-common@npm:^1.17.16, @graphql-codegen/visitor-plugin-common@npm:^1.17.17":
+"@graphql-codegen/visitor-plugin-common@npm:^1.17.16, @graphql-codegen/visitor-plugin-common@npm:^1.17.17":
   version: 1.17.17
   resolution: "@graphql-codegen/visitor-plugin-common@npm:1.17.17"
   dependencies:
@@ -2818,23 +2718,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@graphql-tools/delegate@npm:^7.0.3":
-  version: 7.0.5
-  resolution: "@graphql-tools/delegate@npm:7.0.5"
-  dependencies:
-    "@ardatan/aggregate-error": 0.0.6
-    "@graphql-tools/batch-execute": ^7.0.0
-    "@graphql-tools/schema": ^7.0.0
-    "@graphql-tools/utils": ^7.0.2
-    dataloader: 2.0.0
-    is-promise: 4.0.0
-    tslib: ~2.0.1
-  peerDependencies:
-    graphql: ^14.0.0 || ^15.0.0
-  checksum: 1deb9670d50f07d811df5009a594df85d30b1aa1a26e52fc726fe196a5b826b4d56b7930e7cd17c20fd4ecd4dc762e2f9e7e27dcdf93a4fbee894e11b7c9593c
-  languageName: node
-  linkType: hard
-
 "@graphql-tools/git-loader@npm:^6":
   version: 6.2.5
   resolution: "@graphql-tools/git-loader@npm:6.2.5"
@@ -2876,7 +2759,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@graphql-tools/graphql-tag-pluck@npm:^6.0.12, @graphql-tools/graphql-tag-pluck@npm:^6.2.6":
+"@graphql-tools/graphql-tag-pluck@npm:^6.2.6":
   version: 6.3.0
   resolution: "@graphql-tools/graphql-tag-pluck@npm:6.3.0"
   dependencies:
@@ -2918,24 +2801,6 @@ __metadata:
   peerDependencies:
     graphql: ^14.0.0 || ^15.0.0
   checksum: 58f771a0d5728cb1bbb4ad3646009f9e306377e655b2ac60314ba1b84aa819807047c4f0d2e1d4c9ef8a43a7adda7ae36e620d0b3133844021988385f3e69659
-  languageName: node
-  linkType: hard
-
-"@graphql-tools/links@npm:^7.0.3":
-  version: 7.0.3
-  resolution: "@graphql-tools/links@npm:7.0.3"
-  dependencies:
-    "@graphql-tools/delegate": ^7.0.3
-    "@graphql-tools/utils": ^7.0.2
-    apollo-upload-client: 14.1.2
-    cross-fetch: 3.0.6
-    form-data: 3.0.0
-    is-promise: 4.0.0
-    tslib: ~2.0.1
-  peerDependencies:
-    "@apollo/client": ~3.2.5
-    graphql: ^14.0.0 || ^15.0.0
-  checksum: 6fb5b6978877f1ef8128b8197b54563fe1166c686de4a4c57110cf1e68e7c0fa4189bb250988b050a5a1cb835bd331525ac54a36df61b6392f9be447de9bd8c7
   languageName: node
   linkType: hard
 
@@ -3050,7 +2915,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@graphql-tools/utils@npm:^6, @graphql-tools/utils@npm:^6.0.0, @graphql-tools/utils@npm:^6.0.12, @graphql-tools/utils@npm:^6.0.18":
+"@graphql-tools/utils@npm:^6, @graphql-tools/utils@npm:^6.0.0, @graphql-tools/utils@npm:^6.0.18":
   version: 6.2.4
   resolution: "@graphql-tools/utils@npm:6.2.4"
   dependencies:
@@ -3076,7 +2941,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@graphql-tools/wrap@npm:^7.0.0, @graphql-tools/wrap@npm:^7.0.1":
+"@graphql-tools/wrap@npm:^7.0.0":
   version: 7.0.1
   resolution: "@graphql-tools/wrap@npm:7.0.1"
   dependencies:
@@ -3088,15 +2953,6 @@ __metadata:
   peerDependencies:
     graphql: ^14.0.0 || ^15.0.0
   checksum: 7dadff867915b5a01ab66ee4468059af16946ceb77f89ca801c42ca43996431cafd0239e1792caef9561837109c51216d61a780d7311e0af84c4b603b40fadd3
-  languageName: node
-  linkType: hard
-
-"@graphql-typed-document-node/core@npm:^3.0.0":
-  version: 3.1.0
-  resolution: "@graphql-typed-document-node/core@npm:3.1.0"
-  peerDependencies:
-    graphql: ^0.8.0 || ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0
-  checksum: f1c90f749b516ad67aa1eaeca1fdbe915ed1737464c6f99fb8571e301ade486587711b7bbdda4994068fd652992de7ed03538c7b6e585194edfa25feedf73e04
   languageName: node
   linkType: hard
 
@@ -4705,448 +4561,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@styled-icons/bootstrap@npm:^10.19.0":
-  version: 10.19.0
-  resolution: "@styled-icons/bootstrap@npm:10.19.0"
-  dependencies:
-    "@babel/runtime": ^7.10.5
-    "@styled-icons/styled-icon": ^10.6.0
-  peerDependencies:
-    react: "*"
-    styled-components: "*"
-  checksum: b0831e69ff0b4859b3c76185805f7b1ddfad584123f9599ff45a0394a1ee8b72506e061e2ef4b72bb7e0d866136789b45231f588fe3ca1192f2755880f2c9ea4
-  languageName: node
-  linkType: hard
-
-"@styled-icons/boxicons-logos@npm:^10.18.0":
-  version: 10.18.0
-  resolution: "@styled-icons/boxicons-logos@npm:10.18.0"
-  dependencies:
-    "@babel/runtime": ^7.10.5
-    "@styled-icons/styled-icon": ^10.6.0
-  peerDependencies:
-    react: "*"
-    styled-components: "*"
-  checksum: f258cc74e58686d1aeee32667663bf4e68de1f8bf93ca1423bf54f79845581ece3ac6b27d530c55e8d0349c2d4f53991fe9cdda5db5f6c96e93808b4f0bc7937
-  languageName: node
-  linkType: hard
-
-"@styled-icons/boxicons-regular@npm:^10.18.0":
-  version: 10.18.0
-  resolution: "@styled-icons/boxicons-regular@npm:10.18.0"
-  dependencies:
-    "@babel/runtime": ^7.10.5
-    "@styled-icons/styled-icon": ^10.6.0
-  peerDependencies:
-    react: "*"
-    styled-components: "*"
-  checksum: 9c8aeb47abcfec1926fe15e20f5a1bb0f8dd1cee045b9240a4860a3f6e653f2b9d68f1d45725870164c124164a61e0a8624f4dafeae197ea32b04bd37b24f371
-  languageName: node
-  linkType: hard
-
-"@styled-icons/boxicons-solid@npm:^10.18.0":
-  version: 10.18.0
-  resolution: "@styled-icons/boxicons-solid@npm:10.18.0"
-  dependencies:
-    "@babel/runtime": ^7.10.5
-    "@styled-icons/styled-icon": ^10.6.0
-  peerDependencies:
-    react: "*"
-    styled-components: "*"
-  checksum: 665be3523dc7a9c992f23a9278b1be7240b10050ed8877ff6897d3130af8b9f9d50e0699d90f33db974c7c79473200dae2efccef4787b52c71bbb5fc01b749e5
-  languageName: node
-  linkType: hard
-
-"@styled-icons/crypto@npm:^10.18.0":
-  version: 10.18.0
-  resolution: "@styled-icons/crypto@npm:10.18.0"
-  dependencies:
-    "@babel/runtime": ^7.10.5
-    "@styled-icons/styled-icon": ^10.6.0
-  peerDependencies:
-    react: "*"
-    styled-components: "*"
-  checksum: d81cef1b98ae30a006baca7b74a8fd85941d35fe5122f2b8892982416867a0224d0d62e2adb91fa4c89022e2d4461e823d4cee45db453b516149ded047c406fb
-  languageName: node
-  linkType: hard
-
-"@styled-icons/entypo-social@npm:^10.18.0":
-  version: 10.18.0
-  resolution: "@styled-icons/entypo-social@npm:10.18.0"
-  dependencies:
-    "@babel/runtime": ^7.10.5
-    "@styled-icons/styled-icon": ^10.6.0
-  peerDependencies:
-    react: "*"
-    styled-components: "*"
-  checksum: cb2b840e4fa992d94907052fd7435d05d23570b27909a03e06d2f2bdff4a0fdf0cf104f7aa27e935dec97b8e708704cfec8febe734f6063f07e43624f940d8c5
-  languageName: node
-  linkType: hard
-
-"@styled-icons/entypo@npm:^10.18.0":
-  version: 10.18.0
-  resolution: "@styled-icons/entypo@npm:10.18.0"
-  dependencies:
-    "@babel/runtime": ^7.10.5
-    "@styled-icons/styled-icon": ^10.6.0
-  peerDependencies:
-    react: "*"
-    styled-components: "*"
-  checksum: f10e1d20ad249da46deab5f784cdc89b7ab1a60c1ba1deeb8b1a79b8f25ef76664ba95ba693c6825d0934899d6919ea05671f16ed388f3ae2020e11fa5f6387f
-  languageName: node
-  linkType: hard
-
-"@styled-icons/evaicons-outline@npm:^10.18.0":
-  version: 10.18.0
-  resolution: "@styled-icons/evaicons-outline@npm:10.18.0"
-  dependencies:
-    "@babel/runtime": ^7.10.5
-    "@styled-icons/styled-icon": ^10.6.0
-  peerDependencies:
-    react: "*"
-    styled-components: "*"
-  checksum: 9935325e1c4a64fcc8f9d4cebfb6855aff85d98ff5a00493bf18e22b329259af187a9989eb4c86838b62270575bb661de896914c1cfab2063d489a558337d1e0
-  languageName: node
-  linkType: hard
-
-"@styled-icons/evaicons-solid@npm:^10.18.0":
-  version: 10.18.0
-  resolution: "@styled-icons/evaicons-solid@npm:10.18.0"
-  dependencies:
-    "@babel/runtime": ^7.10.5
-    "@styled-icons/styled-icon": ^10.6.0
-  peerDependencies:
-    react: "*"
-    styled-components: "*"
-  checksum: 6658520e73ca5be998ea7e433ede92dae98f30e8fc134f6231ea491b110e43d42a17db60083fe20b7a0de3378bd0de2ba49bcf4006b1a310a81fa46b2e27df72
-  languageName: node
-  linkType: hard
-
-"@styled-icons/evil@npm:^10.18.0":
-  version: 10.18.0
-  resolution: "@styled-icons/evil@npm:10.18.0"
-  dependencies:
-    "@babel/runtime": ^7.10.5
-    "@styled-icons/styled-icon": ^10.6.0
-  peerDependencies:
-    react: "*"
-    styled-components: "*"
-  checksum: 8e66044d2dc317d9e011915963f5da1cd978092e0e9115a0ce9cf0a79732e07ebc84ce3cf6a1975138ff6eaf5672956bbff2b6a019113ffa714d6f9dd79259fe
-  languageName: node
-  linkType: hard
-
-"@styled-icons/fa-brands@npm:^10.22.0":
-  version: 10.22.0
-  resolution: "@styled-icons/fa-brands@npm:10.22.0"
-  dependencies:
-    "@babel/runtime": ^7.10.5
-    "@styled-icons/styled-icon": ^10.6.0
-  peerDependencies:
-    react: "*"
-    styled-components: "*"
-  checksum: 7ac0b7a42b5b637e341001a2231c97a34ff19d9fe36ee42b39db3425b4608f7989889579acca5e669ee181ef3b36442ef7274254acebb19c422ccfbbf1bea527
-  languageName: node
-  linkType: hard
-
-"@styled-icons/fa-regular@npm:^10.22.0":
-  version: 10.22.0
-  resolution: "@styled-icons/fa-regular@npm:10.22.0"
-  dependencies:
-    "@babel/runtime": ^7.10.5
-    "@styled-icons/styled-icon": ^10.6.0
-  peerDependencies:
-    react: "*"
-    styled-components: "*"
-  checksum: e26d87248f96187ff11d88448d54a945e100db8800c338dc7e54c11f19e7cb66a49a97e48c7a36b010a3871b8aa10631df559f3e980b708c52ecf8fd1a8d198d
-  languageName: node
-  linkType: hard
-
-"@styled-icons/fa-solid@npm:^10.22.0":
-  version: 10.22.0
-  resolution: "@styled-icons/fa-solid@npm:10.22.0"
-  dependencies:
-    "@babel/runtime": ^7.10.5
-    "@styled-icons/styled-icon": ^10.6.0
-  peerDependencies:
-    react: "*"
-    styled-components: "*"
-  checksum: 76dd1c40068501cf81142d69e9eebd09bc82424002fc3fbf6ebd16630f5ea7f735ba04227e104fd32dd5f27ed04a828f6e8d217757f5ebfb9ad71ba7032c55e5
-  languageName: node
-  linkType: hard
-
-"@styled-icons/feather@npm:^10.18.0":
-  version: 10.18.0
-  resolution: "@styled-icons/feather@npm:10.18.0"
-  dependencies:
-    "@babel/runtime": ^7.10.5
-    "@styled-icons/styled-icon": ^10.6.0
-  peerDependencies:
-    react: "*"
-    styled-components: "*"
-  checksum: 6851c7362f09e76760acc2203bb0738dc7b4abd4b8c013c999d583a4dfddc0a5d9619e8cfaff6767d2f6b7490bd885ad51127d449776780c56302c3ebbae358d
-  languageName: node
-  linkType: hard
-
-"@styled-icons/foundation@npm:^10.18.0":
-  version: 10.18.0
-  resolution: "@styled-icons/foundation@npm:10.18.0"
-  dependencies:
-    "@babel/runtime": ^7.10.5
-    "@styled-icons/styled-icon": ^10.6.0
-  peerDependencies:
-    react: "*"
-    styled-components: "*"
-  checksum: 465093ae38144d65f35d2e861d6ba8a09a82bc658d61c2346fc33df829fe4b26079daa9a4ede82d5a67cb37b53bebbc15bf0a0041115d1264d334ba485a66c09
-  languageName: node
-  linkType: hard
-
-"@styled-icons/heroicons-outline@npm:^10.19.0":
-  version: 10.19.0
-  resolution: "@styled-icons/heroicons-outline@npm:10.19.0"
-  dependencies:
-    "@babel/runtime": ^7.10.5
-    "@styled-icons/styled-icon": ^10.6.0
-  peerDependencies:
-    react: "*"
-    styled-components: "*"
-  checksum: 6386e01a382b6f37c99fb590533fefe5893c6b3cbb4439da4f52a5454a3990f48a32117fa96584cf65c5c3b33156777d57474ac95100374a5abe09a3bae7e328
-  languageName: node
-  linkType: hard
-
-"@styled-icons/heroicons-solid@npm:^10.19.0":
-  version: 10.19.0
-  resolution: "@styled-icons/heroicons-solid@npm:10.19.0"
-  dependencies:
-    "@babel/runtime": ^7.10.5
-    "@styled-icons/styled-icon": ^10.6.0
-  peerDependencies:
-    react: "*"
-    styled-components: "*"
-  checksum: 15bff29fd69737914fbdc579c02415afd355df3be78d75f94bc352e56f03ff9e9b10b32793a1a08f3b5986e97bad3fd67f9d2f383b84709288354b3d720c4185
-  languageName: node
-  linkType: hard
-
-"@styled-icons/icomoon@npm:^10.18.0":
-  version: 10.18.0
-  resolution: "@styled-icons/icomoon@npm:10.18.0"
-  dependencies:
-    "@babel/runtime": ^7.10.5
-    "@styled-icons/styled-icon": ^10.6.0
-  peerDependencies:
-    react: "*"
-    styled-components: "*"
-  checksum: 5c4553afd062089e223aff65263fb9c5a122465db1d62cdfd0bcf2cce6641faa26bbd5b5440e56efce22cc592f955ab02cf0f8ecc1db9cb86b5c2695bce463d8
-  languageName: node
-  linkType: hard
-
-"@styled-icons/ionicons-outline@npm:^10.18.0":
-  version: 10.18.0
-  resolution: "@styled-icons/ionicons-outline@npm:10.18.0"
-  dependencies:
-    "@babel/runtime": ^7.10.5
-    "@styled-icons/styled-icon": ^10.6.0
-  peerDependencies:
-    react: "*"
-    styled-components: "*"
-  checksum: 8a921a85b45c040f8bae309ff0a57c9e6f583694b8ef36df8b0de26d976eb9e4e3964eb03623036ec6f981fa81719becab64c2c412ee55a3dab2921e976a8373
-  languageName: node
-  linkType: hard
-
-"@styled-icons/ionicons-sharp@npm:^10.18.0":
-  version: 10.18.0
-  resolution: "@styled-icons/ionicons-sharp@npm:10.18.0"
-  dependencies:
-    "@babel/runtime": ^7.10.5
-    "@styled-icons/styled-icon": ^10.6.0
-  peerDependencies:
-    react: "*"
-    styled-components: "*"
-  checksum: 3e0b5b2d97fd50e6ede2bf923cf36bd076fede98a3cc6ad20b7509bf996e3e3be06afb47778642a4bb873c7b2ceb61d770c8317a683348449681ef2969dd2aca
-  languageName: node
-  linkType: hard
-
-"@styled-icons/ionicons-solid@npm:^10.18.0":
-  version: 10.18.0
-  resolution: "@styled-icons/ionicons-solid@npm:10.18.0"
-  dependencies:
-    "@babel/runtime": ^7.10.5
-    "@styled-icons/styled-icon": ^10.6.0
-  peerDependencies:
-    react: "*"
-    styled-components: "*"
-  checksum: f8274f46ad281b75ff69fe06609f6dad2ca14488977d45886ede1617dceff5983a684e981fce9c92f87733a8ac5bbadf878b045709ec76afb84a85596ed4b7da
-  languageName: node
-  linkType: hard
-
-"@styled-icons/material-outlined@npm:^10.18.0":
-  version: 10.18.0
-  resolution: "@styled-icons/material-outlined@npm:10.18.0"
-  dependencies:
-    "@babel/runtime": ^7.10.5
-    "@styled-icons/styled-icon": ^10.6.0
-  peerDependencies:
-    react: "*"
-    styled-components: "*"
-  checksum: c9b9825db211a056a2682c051b7821635097b1dc07e690b9c0e2e2934a34168c2c356acd98bfc8bebcb56f1984fc0c22454c9ae3fa14cbd9748dba4dde8b4a58
-  languageName: node
-  linkType: hard
-
-"@styled-icons/material-rounded@npm:^10.18.0":
-  version: 10.18.0
-  resolution: "@styled-icons/material-rounded@npm:10.18.0"
-  dependencies:
-    "@babel/runtime": ^7.10.5
-    "@styled-icons/styled-icon": ^10.6.0
-  peerDependencies:
-    react: "*"
-    styled-components: "*"
-  checksum: c90f13ff20fff548aeff2ade81f43b99549e5d1559a3e8bd6cb56838c3d7b8fc4e060e696d64127ffe425d696a274e9e196930f92e9446513208e1a176ab65cd
-  languageName: node
-  linkType: hard
-
-"@styled-icons/material-sharp@npm:^10.18.0":
-  version: 10.18.0
-  resolution: "@styled-icons/material-sharp@npm:10.18.0"
-  dependencies:
-    "@babel/runtime": ^7.10.5
-    "@styled-icons/styled-icon": ^10.6.0
-  peerDependencies:
-    react: "*"
-    styled-components: "*"
-  checksum: fc56553e152022779ef79774adf1a42c9b3a6d62349b6aeb4a2adba82ff576b41cc7a021bda0886c8f65099fc94966abb4d32affa7ede51bcc6274671e3f7d3f
-  languageName: node
-  linkType: hard
-
-"@styled-icons/material-twotone@npm:^10.18.0":
-  version: 10.18.0
-  resolution: "@styled-icons/material-twotone@npm:10.18.0"
-  dependencies:
-    "@babel/runtime": ^7.10.5
-    "@styled-icons/styled-icon": ^10.6.0
-  peerDependencies:
-    react: "*"
-    styled-components: "*"
-  checksum: 7af6d0c0e692fae2a79f2d277625c473eb9505970a8d9f997855d061bef116ba09d0171e8602abbeef795595d4a88819d8e62ff1d6af333d7bcd5caf564da829
-  languageName: node
-  linkType: hard
-
-"@styled-icons/material@npm:^10.18.0":
-  version: 10.18.0
-  resolution: "@styled-icons/material@npm:10.18.0"
-  dependencies:
-    "@babel/runtime": ^7.10.5
-    "@styled-icons/styled-icon": ^10.6.0
-  peerDependencies:
-    react: "*"
-    styled-components: "*"
-  checksum: 454a3bfcaf265a4651663ccfeedb10edb5fe0de1aca6369df244d0d5fedb5e3da404133eeefffbf9b8401e79badbbff54c5817ee6d04ab057deee957d9930b0b
-  languageName: node
-  linkType: hard
-
-"@styled-icons/octicons@npm:^10.20.0":
-  version: 10.20.0
-  resolution: "@styled-icons/octicons@npm:10.20.0"
-  dependencies:
-    "@babel/runtime": ^7.10.5
-    "@styled-icons/styled-icon": ^10.6.0
-  peerDependencies:
-    react: "*"
-    styled-components: "*"
-  checksum: 629c3f0484f47cc062600b6e383bb6fd12396a08d6d4d7be5536bb425c365ec73ded7a7c7f37eea26a91842b92f65856b6c17b7712f30fa712c5e2a0ee26a839
-  languageName: node
-  linkType: hard
-
-"@styled-icons/open-iconic@npm:^10.18.0":
-  version: 10.18.0
-  resolution: "@styled-icons/open-iconic@npm:10.18.0"
-  dependencies:
-    "@babel/runtime": ^7.10.5
-    "@styled-icons/styled-icon": ^10.6.0
-  peerDependencies:
-    react: "*"
-    styled-components: "*"
-  checksum: 114e735a04be9ea4d4228ff985022a30997e0d7b39cab5138a44c888086152f0cbb6cab9aeef35defa63715e71d5c8fcd290bf2b6e92b3c28105077adc21848e
-  languageName: node
-  linkType: hard
-
-"@styled-icons/remix-fill@npm:^10.18.0":
-  version: 10.18.0
-  resolution: "@styled-icons/remix-fill@npm:10.18.0"
-  dependencies:
-    "@babel/runtime": ^7.10.5
-    "@styled-icons/styled-icon": ^10.6.0
-  peerDependencies:
-    react: "*"
-    styled-components: "*"
-  checksum: 506f1a128a49ab88ffad476d03f110ca38409f408943c3477f506d85f7c3284801ea12ce45877c32547b861a881a8f5814b02d4b832782b7bbe9a431fd76f33c
-  languageName: node
-  linkType: hard
-
-"@styled-icons/remix-line@npm:^10.18.0":
-  version: 10.18.0
-  resolution: "@styled-icons/remix-line@npm:10.18.0"
-  dependencies:
-    "@babel/runtime": ^7.10.5
-    "@styled-icons/styled-icon": ^10.6.0
-  peerDependencies:
-    react: "*"
-    styled-components: "*"
-  checksum: 673bc7a7a82095ae32c75492522dec7741f6962ce9e4f175838aaccb0e6e345cadaf076e98242c825c4606af088b5741965309e27f33408d37e604d61e3e293f
-  languageName: node
-  linkType: hard
-
-"@styled-icons/simple-icons@npm:^10.22.0":
-  version: 10.22.0
-  resolution: "@styled-icons/simple-icons@npm:10.22.0"
-  dependencies:
-    "@babel/runtime": ^7.10.5
-    "@styled-icons/styled-icon": ^10.6.0
-  peerDependencies:
-    react: "*"
-    styled-components: "*"
-  checksum: 8aa808bb608db52c56f49a2786ccce6b23601b135fc43743abe89fefec5c7368f384bbafeb6707f34d32b282aafb81de2d6a5b5b7a6b06dc1efc0c08c71559c1
-  languageName: node
-  linkType: hard
-
-"@styled-icons/styled-icon@npm:^10.6.0":
-  version: 10.6.3
-  resolution: "@styled-icons/styled-icon@npm:10.6.3"
-  dependencies:
-    "@babel/runtime": ^7.10.5
-    "@emotion/is-prop-valid": ^0.8.7
-  peerDependencies:
-    react: "*"
-    styled-components: ">=4.1.0 <6"
-  checksum: 413c40354d23e5b9ef3d10750017e418b9c169ab4128035081a965058290adb11bb2c1daf95cb7434f1c7b895a3f9f3c88dc70367feef01375a7a674ccc5cddc
-  languageName: node
-  linkType: hard
-
-"@styled-icons/typicons@npm:^10.18.0":
-  version: 10.18.0
-  resolution: "@styled-icons/typicons@npm:10.18.0"
-  dependencies:
-    "@babel/runtime": ^7.10.5
-    "@styled-icons/styled-icon": ^10.6.0
-  peerDependencies:
-    react: "*"
-    styled-components: "*"
-  checksum: 7304707c6f221dc79f1dadb10015fee42bed4842de0c4cd0a1d952dedae327ff268af1d0653b7ac377d55b2c178fd77d680f5071faaccb6dce3884f63ad84109
-  languageName: node
-  linkType: hard
-
-"@styled-icons/zondicons@npm:^10.18.0":
-  version: 10.18.0
-  resolution: "@styled-icons/zondicons@npm:10.18.0"
-  dependencies:
-    "@babel/runtime": ^7.10.5
-    "@styled-icons/styled-icon": ^10.6.0
-  peerDependencies:
-    react: "*"
-    styled-components: "*"
-  checksum: e222e06ad9ac485d451af2abcbb746350fee7c5b0190473a097e2e8ca7fda1ed00a5475b074a4cf6d5ecef5eb907aefd5bde8c62011b4dde665a4ea1419d2836
-  languageName: node
-  linkType: hard
-
 "@szmarczak/http-timer@npm:^1.1.2":
   version: 1.1.2
   resolution: "@szmarczak/http-timer@npm:1.1.2"
@@ -5864,13 +5278,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/zen-observable@npm:^0.8.0":
-  version: 0.8.1
-  resolution: "@types/zen-observable@npm:0.8.1"
-  checksum: 4a58609be82674418755e6c41137e55e5466f662f41410f5bcdf56c1e606bc37519c8d1d1ca7bb8d184f77533d7bf5f629b895c2f6c3afe7ebdbcc1085f031f2
-  languageName: node
-  linkType: hard
-
 "@typescript-eslint/eslint-plugin@npm:^2.24.0":
   version: 2.34.0
   resolution: "@typescript-eslint/eslint-plugin@npm:2.34.0"
@@ -6226,30 +5633,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@wry/context@npm:^0.5.2":
-  version: 0.5.2
-  resolution: "@wry/context@npm:0.5.2"
-  dependencies:
-    tslib: ^1.9.3
-  checksum: 6547fb0eb53431d655e65400a7f16c1cc9b2ebd5b4924dee2912e0d9925343264f4cd6f3300e09199e5a1b44cb235d71de0cf561d2fa4b8c8519adf758cfcefe
-  languageName: node
-  linkType: hard
-
 "@wry/equality@npm:^0.1.2":
   version: 0.1.11
   resolution: "@wry/equality@npm:0.1.11"
   dependencies:
     tslib: ^1.9.3
   checksum: 3d1da5799967fc272ae53f698514c169c85a04c11c1db3e4641a21edc82af75bfb4db9221c4f87aa333f14c7b43b72311fa66dae1ae981fa6f24c2bc5863d92b
-  languageName: node
-  linkType: hard
-
-"@wry/equality@npm:^0.2.0":
-  version: 0.2.0
-  resolution: "@wry/equality@npm:0.2.0"
-  dependencies:
-    tslib: ^1.9.3
-  checksum: ddd217fbefd8f105174abe099450e0ac1b813e19451b8525d2143098b23c42b30dd5042f38c5c92ba55017f9efab2ae4ce18d66a83d0e329de8523691a8bf60e
   languageName: node
   linkType: hard
 
@@ -6868,7 +6257,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"apollo-link-http@npm:^1.5.17, apollo-link-http@npm:^1.5.5":
+"apollo-link-http@npm:^1.5.5":
   version: 1.5.17
   resolution: "apollo-link-http@npm:1.5.17"
   dependencies:
@@ -6881,7 +6270,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"apollo-link@npm:1.2.14, apollo-link@npm:^1.2.12, apollo-link@npm:^1.2.14, apollo-link@npm:^1.2.3":
+"apollo-link@npm:^1.2.12, apollo-link@npm:^1.2.14, apollo-link@npm:^1.2.3":
   version: 1.2.14
   resolution: "apollo-link@npm:1.2.14"
   dependencies:
@@ -6920,20 +6309,6 @@ __metadata:
   peerDependencies:
     graphql: ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0
   checksum: 638fc54b24dcfd473fb55db4d9998bfad0b91b9c4b27f41e4a983b36055eed038a7d848470357318f28d78ea2c3f6e8418c5def07a88336cff5d33fe35891ba0
-  languageName: node
-  linkType: hard
-
-"apollo-upload-client@npm:14.1.2":
-  version: 14.1.2
-  resolution: "apollo-upload-client@npm:14.1.2"
-  dependencies:
-    "@apollo/client": ^3.1.5
-    "@babel/runtime": ^7.11.2
-    extract-files: ^9.0.0
-  peerDependencies:
-    graphql: 14 - 15
-    subscriptions-transport-ws: ^0.9.0
-  checksum: 835653cf389f3f994b692ae7b596983e06101edfa3479af24a5b2b6eb5762a676dd95486ab986370680f2ea7ede4780ada0b746d154047b3e9002cfead85d45e
   languageName: node
   linkType: hard
 
@@ -7688,20 +7063,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"babel-plugin-styled-components@npm:>= 1":
-  version: 1.11.1
-  resolution: "babel-plugin-styled-components@npm:1.11.1"
-  dependencies:
-    "@babel/helper-annotate-as-pure": ^7.0.0
-    "@babel/helper-module-imports": ^7.0.0
-    babel-plugin-syntax-jsx: ^6.18.0
-    lodash: ^4.17.11
-  peerDependencies:
-    styled-components: ">= 2"
-  checksum: 4b545bed54127b236a90e746bf0237c98352960ac3c9da75a3186b04f4b75794db9916b6161ae96e4239d25c3bf3d50dd0f6b711a6fbde93e4c9f7d5de39f018
-  languageName: node
-  linkType: hard
-
 "babel-plugin-syntax-jsx@npm:^6.18.0":
   version: 6.18.0
   resolution: "babel-plugin-syntax-jsx@npm:6.18.0"
@@ -8089,131 +7450,6 @@ __metadata:
   checksum: 8018fa57aebcb00899e6d6e035d7fdab518d217156396e7442aac718c890ede0ce3e5258659f060cf3a558b40d771e809f4f4b706520ca13de3be5d8b6ae10e7
   languageName: node
   linkType: hard
-
-"blog@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "blog@workspace:."
-  dependencies:
-    "@emotion/core": ^10.1.1
-    "@emotion/styled": ^10.0.27
-    "@emotion/styled-base": ^10.0.31
-    "@fortawesome/fontawesome-pro": ^5.15.1
-    "@fortawesome/fontawesome-svg-core": ^1.2.32
-    "@fortawesome/free-brands-svg-icons": ^5.15.1
-    "@fortawesome/pro-duotone-svg-icons": ^5.15.1
-    "@fortawesome/pro-light-svg-icons": ^5.15.1
-    "@fortawesome/pro-regular-svg-icons": ^5.15.1
-    "@fortawesome/pro-solid-svg-icons": ^5.15.1
-    "@fortawesome/react-fontawesome": ^0.1.12
-    "@graphql-codegen/cli": ^1.19.2
-    "@graphql-codegen/introspection": 1.18.0
-    "@graphql-codegen/plugin-helpers": ^1.18.1
-    "@graphql-codegen/typescript": ^1.17.11
-    "@graphql-codegen/typescript-graphql-files-modules": 1.18.0
-    "@graphql-codegen/typescript-operations": ^1.17.10
-    "@graphql-codegen/typescript-react-apollo": ^2.1.1
-    "@hot-loader/react-dom": ^17.0.0
-    "@luddites-me/ts-tools": ^1.1.4
-    "@material-ui/core": ^4.11.0
-    "@mdx-js/mdx": ^1.6.21
-    "@mdx-js/react": ^1.6.21
-    "@philpl/buble": ^0.19.7
-    "@relative-ci/agent": ^1.4.0
-    "@types/lodash": ^4.14.165
-    "@types/node": ^14.14.9
-    "@types/prettier": ^2.1.5
-    "@types/react": ^17.0.0
-    "@types/react-dom": ^17.0.0
-    "@types/react-helmet": ^6.1.0
-    "@types/react-redux": ^7.1.11
-    "@types/react-slick": ^0.23.4
-    "@types/redux": ^3.6.31
-    "@typescript-eslint/eslint-plugin": ^4.8.1
-    "@typescript-eslint/parser": ^4.8.1
-    algoliasearch: ^4.8.0
-    chalk: ^4.1.0
-    clsx: ^1.1.1
-    emotion: ^10.0.27
-    emotion-theming: ^10.0.27
-    eslint: ^7.14.0
-    eslint-config-airbnb-base: ^14.2.1
-    eslint-config-prettier: ^6.15.0
-    eslint-plugin-import: ^2.22.1
-    eslint-plugin-jsx-a11y: ^6.4.1
-    eslint-plugin-prettier: ^3.1.4
-    eslint-plugin-react: ^7.21.5
-    eslint-plugin-react-hooks: ^4.2.0
-    gatsby: ^2.27.0
-    gatsby-cli: ^2.14.0
-    gatsby-image: ^2.6.0
-    gatsby-link: ^2.6.0
-    gatsby-plugin-algolia: ^0.16.1
-    gatsby-plugin-bundle-stats: ^2.3.0
-    gatsby-plugin-catch-links: ^2.5.0
-    gatsby-plugin-codegen: ^1.2.14
-    gatsby-plugin-dark-mode: ^1.1.2
-    gatsby-plugin-emotion: ^4.5.0
-    gatsby-plugin-feed: ^2.8.0
-    gatsby-plugin-google-fonts: ^1.0.1
-    gatsby-plugin-gtag: ^1.0.13
-    gatsby-plugin-layout: ^1.5.0
-    gatsby-plugin-manifest: ^2.7.0
-    gatsby-plugin-mdx: ^1.5.0
-    gatsby-plugin-offline: ^3.5.0
-    gatsby-plugin-react-helmet: ^3.5.0
-    gatsby-plugin-remove-serviceworker: ^1.0.0
-    gatsby-plugin-remove-trailing-slashes: ^2.5.0
-    gatsby-plugin-robots-txt: ^1.5.3
-    gatsby-plugin-sass: ^2.6.0
-    gatsby-plugin-sharp: ^2.9.0
-    gatsby-plugin-sitemap: ^2.7.0
-    gatsby-plugin-ts: ^2.7.1
-    gatsby-plugin-typegen: ^2.2.1
-    gatsby-plugin-typography: ^2.7.0
-    gatsby-remark-copy-linked-files: ^2.5.0
-    gatsby-remark-images: ^3.6.0
-    gatsby-remark-prismjs: ^3.8.0
-    gatsby-remark-responsive-iframe: ^2.6.0
-    gatsby-remark-smartypants: ^2.5.0
-    gatsby-source-filesystem: ^2.6.0
-    gatsby-source-graphql: ^2.9.0
-    gatsby-transformer-remark: ^2.11.0
-    gatsby-transformer-sharp: ^2.7.0
-    gh-pages: ^3.1.0
-    google-fonts-plugin: ^5.0.2
-    graphql: ^15.4.0
-    gray-matter: 4.0.2
-    husky: ^4.3.0
-    is-absolute-url: ^3.0.3
-    lint-staged: ^10.5.1
-    lodash: ^4.17.20
-    node-sass: ^4.9.0
-    prettier: ^2.2.0
-    prettier-plugin-organize-imports: ^1.1.1
-    pretty-quick: ^3.1.0
-    prism-react-renderer: ^1.1.1
-    prismjs: ^1.22.0
-    react: ^17.0.1
-    react-device-detect: ^1.14.0
-    react-dom: ^17.0.1
-    react-feather: ^2.0.9
-    react-github-btn: ^1.2.0
-    react-helmet: ^6.1.0
-    react-id-generator: ^3.0.1
-    react-instantsearch-dom: ^6.8.2
-    react-keyword-cloud: 1.0.3
-    react-live: ^2.2.3
-    react-pro-sidebar: ^0.4.4
-    react-redux: ^7.2.2
-    react-slick: ^0.27.13
-    react-typography: ^0.16.19
-    redux: ^4.0.5
-    styled-components: ^5.2.1
-    styled-icons: ^10.22.0
-    ts-node: ^9.0.0
-    typescript: ^4.1.2
-  languageName: unknown
-  linkType: soft
 
 "bluebird@npm:^3.0.5, bluebird@npm:^3.5.0, bluebird@npm:^3.5.1, bluebird@npm:^3.5.3, bluebird@npm:^3.5.5, bluebird@npm:^3.7.2":
   version: 3.7.2
@@ -8916,13 +8152,6 @@ __metadata:
   version: 6.2.0
   resolution: "camelcase@npm:6.2.0"
   checksum: 654700600a80cb1f06ab85b3e2fe80333f94b441884d40826becdac549774f51b0317c6dcb6040416df26241fa9481eb58d0c1659d4d6d5627dcd4259be61beb
-  languageName: node
-  linkType: hard
-
-"camelize@npm:^1.0.0":
-  version: 1.0.0
-  resolution: "camelize@npm:1.0.0"
-  checksum: 6891ec64c7f4cf6a6182040d592915dc36770ec9f3e96e4dd03925f93f72aa92fc90b59b314ad3ebce406426955b1b8aded52bbb26e5d96242a724f324c95871
   languageName: node
   linkType: hard
 
@@ -10509,13 +9738,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"css-color-keywords@npm:^1.0.0":
-  version: 1.0.0
-  resolution: "css-color-keywords@npm:1.0.0"
-  checksum: a820d3a6ebb826571e541c4127197ab92bbac652b6d8a875a14faff4e3a2e81b35b61083da60a471c059c1f94bb09f26cd3553aefffa3e571257ac3cd8758ce2
-  languageName: node
-  linkType: hard
-
 "css-color-names@npm:0.0.4, css-color-names@npm:^0.0.4":
   version: 0.0.4
   resolution: "css-color-names@npm:0.0.4"
@@ -10600,17 +9822,6 @@ __metadata:
     cssesc: ^3.0.0
     fastparse: ^1.1.2
   checksum: b4c0095098fe69fb079ca8b9e42767d5ae3222b752276a94be88d8ad68b485478109b96d11d646393edfa055a5f6d3a2269e384b821d645d35d1324f2e17fb2b
-  languageName: node
-  linkType: hard
-
-"css-to-react-native@npm:^3.0.0":
-  version: 3.0.0
-  resolution: "css-to-react-native@npm:3.0.0"
-  dependencies:
-    camelize: ^1.0.0
-    css-color-keywords: ^1.0.0
-    postcss-value-parser: ^4.0.2
-  checksum: d035e1a126cdec0cc52eba94c2294fae2474fdc9b8c971aa64e883f429791cc121726f7a9f390f9b593432691dd21c615c1a85c248ba5085b576e718fc6f739d
   languageName: node
   linkType: hard
 
@@ -10943,7 +10154,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"dataloader@npm:2.0.0, dataloader@npm:^2.0.0":
+"dataloader@npm:2.0.0":
   version: 2.0.0
   resolution: "dataloader@npm:2.0.0"
   checksum: 0165c2e80751d269c33d2a14b0078a4f3853cb010e2531e7aa99523aba8d0cdc922b9ad67e4c2bb9074c90e0ee0a41b6e7f5f63c40d31224a71c8a0b703f4be3
@@ -12153,13 +11364,6 @@ __metadata:
     memory-fs: ^0.5.0
     tapable: ^1.0.0
   checksum: aecdc0b2085990d84682c2ef829d0df3fe52511ac6353b2210ff138892fa36e524e117e1a534e0d5e51853cb1a9cce8941a68c81ed51a4989d2b041739aab65b
-  languageName: node
-  linkType: hard
-
-"enquire.js@npm:^2.1.6":
-  version: 2.1.6
-  resolution: "enquire.js@npm:2.1.6"
-  checksum: b606573cfe49285ef5648ddd7044f2b4bef21a20ca32e48f2f5d10cedef2454c82f5085805f1a966aa65faec1a36eac081c337ae80cb8e74872d7643a5c93c94
   languageName: node
   linkType: hard
 
@@ -13890,7 +13094,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"form-data@npm:3.0.0, form-data@npm:^3.0.0":
+"form-data@npm:^3.0.0":
   version: 3.0.0
   resolution: "form-data@npm:3.0.0"
   dependencies:
@@ -14338,17 +13542,6 @@ fsevents@~2.1.2:
   languageName: node
   linkType: hard
 
-"gatsby-plugin-dark-mode@npm:^1.1.2":
-  version: 1.1.2
-  resolution: "gatsby-plugin-dark-mode@npm:1.1.2"
-  dependencies:
-    prop-types: ^15.5.7
-  peerDependencies:
-    react: 16.x
-  checksum: 5f047ef8cac5b3ad510bf95d8c59e47f0822bd322fa989cc88ee9c902dbacca11c0a672a00555afc6d0313e481cc7fef24002c469731e08ad30e328f22da95c1
-  languageName: node
-  linkType: hard
-
 "gatsby-plugin-emotion@npm:^4.5.0":
   version: 4.5.0
   resolution: "gatsby-plugin-emotion@npm:4.5.0"
@@ -14418,15 +13611,6 @@ fsevents@~2.1.2:
   peerDependencies:
     gatsby: ">2.0.0-alpha"
   checksum: fa71494e4cddfa05437fc6e948ccf184e56d8f524e21764d02dfc65b08a06f57cbc522fb099a578de074aa1352a2a1616588e116d2423612fe0f2ab834355736
-  languageName: node
-  linkType: hard
-
-"gatsby-plugin-layout@npm:^1.5.0":
-  version: 1.5.0
-  resolution: "gatsby-plugin-layout@npm:1.5.0"
-  dependencies:
-    "@babel/runtime": ^7.12.5
-  checksum: 350fc149e0040c181f8e522fb88fcc09f0c428ae3615ecc36ea0c9b6337c7336085ccf32f9f634cb0569b1195bdaccb5770a00b68f05b9e271951b0ad90c6f13
   languageName: node
   linkType: hard
 
@@ -14644,30 +13828,6 @@ fsevents@~2.1.2:
   languageName: node
   linkType: hard
 
-"gatsby-plugin-typegen@npm:^2.2.1":
-  version: 2.2.1
-  resolution: "gatsby-plugin-typegen@npm:2.2.1"
-  dependencies:
-    "@cometjs/core": ^0.1.0
-    "@graphql-codegen/core": ^1.16.3
-    "@graphql-codegen/flow": ^1.16.3
-    "@graphql-codegen/flow-operations": ^1.16.3
-    "@graphql-codegen/flow-resolvers": ^1.16.3
-    "@graphql-codegen/typescript": ^1.16.3
-    "@graphql-codegen/typescript-operations": ^1.16.3
-    "@graphql-codegen/typescript-resolvers": ^1.16.3
-    "@graphql-tools/graphql-tag-pluck": ^6.0.12
-    "@graphql-tools/utils": ^6.0.12
-    async: ^3.2.0
-    common-tags: ^1.8.0
-  peerDependencies:
-    gatsby: ">=2.0.0"
-    graphql: ^0.13.0 || ^14.0.0 || ^15.0.0
-    react: ^16.4.2
-  checksum: 9050b9f0940148e50d65f2fed7b8783a622f152789f1c1fdd2dcc7b6406f7861e2f5202dfaeb6d4f154fd909922272e5d9c139832a9100f6495880a819fa917f
-  languageName: node
-  linkType: hard
-
 "gatsby-plugin-typescript@npm:^2.7.0":
   version: 2.7.0
   resolution: "gatsby-plugin-typescript@npm:2.7.0"
@@ -14680,21 +13840,6 @@ fsevents@~2.1.2:
     "@babel/runtime": ^7.12.5
     babel-plugin-remove-graphql-queries: ^2.11.0
   checksum: b1eebfada9c48c7a10cec33a90a2449e87505e38415f35cee22fc208c55b4877d17db24d7177551cb360b56ca817b02b9663cbdaa40cf512541b453bd2fdcce4
-  languageName: node
-  linkType: hard
-
-"gatsby-plugin-typography@npm:^2.7.0":
-  version: 2.7.0
-  resolution: "gatsby-plugin-typography@npm:2.7.0"
-  dependencies:
-    "@babel/runtime": ^7.12.5
-  peerDependencies:
-    gatsby: ^2.0.0
-    react: ^16.4.2
-    react-dom: ^16.4.2
-    react-typography: ^0.16.1 || ^1.0.0-alpha.0
-    typography: ^0.16.0 || ^1.0.0-alpha.0
-  checksum: 43793925a5c42d6c0233019028605135024043ea652700acf806cea0667f9907e09f02cda9c86fe20899afa29c1bb5533acb5f09f53df420c9f9461ef7a0ba0e
   languageName: node
   linkType: hard
 
@@ -14891,26 +14036,6 @@ fsevents@~2.1.2:
   peerDependencies:
     gatsby: ^2.2.0
   checksum: 77dcf0c6fc14bb57f9b96f302fc9233bdae6d3217eb05a3cac650ee2ccb956e68b384d56fabf4a047640cdcd6a20ee0479a288e6aac8f13536975180ce0ac6a3
-  languageName: node
-  linkType: hard
-
-"gatsby-source-graphql@npm:^2.9.0":
-  version: 2.9.0
-  resolution: "gatsby-source-graphql@npm:2.9.0"
-  dependencies:
-    "@babel/runtime": ^7.12.5
-    "@graphql-tools/links": ^7.0.3
-    "@graphql-tools/utils": ^7.0.2
-    "@graphql-tools/wrap": ^7.0.1
-    apollo-link: 1.2.14
-    apollo-link-http: ^1.5.17
-    dataloader: ^2.0.0
-    invariant: ^2.2.4
-    node-fetch: ^1.7.3
-    uuid: 3.4.0
-  peerDependencies:
-    gatsby: ^2.0.15
-  checksum: 8779a016f184d257c52ec040e62a3d7c92566700ef6838c1638a193a3aa2657174560534d46a217b4aa8ada648be3fbaa5b76cb57e42ac63ec10b16545a0712c
   languageName: node
   linkType: hard
 
@@ -15442,13 +14567,6 @@ fsevents@~2.1.2:
     js-base64: ^2.1.9
     utf8: ^2.1.1
   checksum: 7ee60b94e587df1bb33d5c67683248bfd73acfddd476f9839d6d5953395e99ea7562974f28de6d3b4d4a3a2b09246c947d8d1bf81c87464c3b14bf1b90931722
-  languageName: node
-  linkType: hard
-
-"github-buttons@npm:^2.8.0":
-  version: 2.14.0
-  resolution: "github-buttons@npm:2.14.0"
-  checksum: 26710160b16069647c5ecfa7c83246abd33dac2903b243c84179b1cdfe74c6c3cd7c12ab756759d85f43c1820dada64e4a005ae101cf25a5218dff80b0e09e06
   languageName: node
   linkType: hard
 
@@ -16456,6 +15574,118 @@ fsevents@~2.1.2:
   languageName: node
   linkType: hard
 
+"hiking-my-desk@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "hiking-my-desk@workspace:."
+  dependencies:
+    "@emotion/core": ^10.1.1
+    "@emotion/styled": ^10.0.27
+    "@emotion/styled-base": ^10.0.31
+    "@fortawesome/fontawesome-pro": ^5.15.1
+    "@fortawesome/fontawesome-svg-core": ^1.2.32
+    "@fortawesome/free-brands-svg-icons": ^5.15.1
+    "@fortawesome/pro-duotone-svg-icons": ^5.15.1
+    "@fortawesome/pro-light-svg-icons": ^5.15.1
+    "@fortawesome/pro-regular-svg-icons": ^5.15.1
+    "@fortawesome/pro-solid-svg-icons": ^5.15.1
+    "@fortawesome/react-fontawesome": ^0.1.12
+    "@graphql-codegen/cli": ^1.19.2
+    "@graphql-codegen/introspection": 1.18.0
+    "@graphql-codegen/plugin-helpers": ^1.18.1
+    "@graphql-codegen/typescript": ^1.17.11
+    "@graphql-codegen/typescript-graphql-files-modules": 1.18.0
+    "@graphql-codegen/typescript-operations": ^1.17.10
+    "@graphql-codegen/typescript-react-apollo": ^2.1.1
+    "@hot-loader/react-dom": ^17.0.0
+    "@luddites-me/ts-tools": ^1.1.4
+    "@material-ui/core": ^4.11.0
+    "@mdx-js/mdx": ^1.6.21
+    "@mdx-js/react": ^1.6.21
+    "@philpl/buble": ^0.19.7
+    "@relative-ci/agent": ^1.4.0
+    "@types/lodash": ^4.14.165
+    "@types/node": ^14.14.9
+    "@types/prettier": ^2.1.5
+    "@types/react": ^17.0.0
+    "@types/react-dom": ^17.0.0
+    "@types/react-helmet": ^6.1.0
+    "@types/react-redux": ^7.1.11
+    "@types/redux": ^3.6.31
+    "@typescript-eslint/eslint-plugin": ^4.8.1
+    "@typescript-eslint/parser": ^4.8.1
+    algoliasearch: ^4.8.0
+    chalk: ^4.1.0
+    clsx: ^1.1.1
+    emotion: ^10.0.27
+    emotion-theming: ^10.0.27
+    eslint: ^7.14.0
+    eslint-config-airbnb-base: ^14.2.1
+    eslint-config-prettier: ^6.15.0
+    eslint-plugin-import: ^2.22.1
+    eslint-plugin-jsx-a11y: ^6.4.1
+    eslint-plugin-prettier: ^3.1.4
+    eslint-plugin-react: ^7.21.5
+    eslint-plugin-react-hooks: ^4.2.0
+    gatsby: ^2.27.0
+    gatsby-cli: ^2.14.0
+    gatsby-image: ^2.6.0
+    gatsby-link: ^2.6.0
+    gatsby-plugin-algolia: ^0.16.1
+    gatsby-plugin-bundle-stats: ^2.3.0
+    gatsby-plugin-catch-links: ^2.5.0
+    gatsby-plugin-codegen: ^1.2.14
+    gatsby-plugin-emotion: ^4.5.0
+    gatsby-plugin-feed: ^2.8.0
+    gatsby-plugin-google-fonts: ^1.0.1
+    gatsby-plugin-gtag: ^1.0.13
+    gatsby-plugin-manifest: ^2.7.0
+    gatsby-plugin-mdx: ^1.5.0
+    gatsby-plugin-offline: ^3.5.0
+    gatsby-plugin-react-helmet: ^3.5.0
+    gatsby-plugin-remove-serviceworker: ^1.0.0
+    gatsby-plugin-remove-trailing-slashes: ^2.5.0
+    gatsby-plugin-robots-txt: ^1.5.3
+    gatsby-plugin-sass: ^2.6.0
+    gatsby-plugin-sharp: ^2.9.0
+    gatsby-plugin-sitemap: ^2.7.0
+    gatsby-plugin-ts: ^2.7.1
+    gatsby-remark-copy-linked-files: ^2.5.0
+    gatsby-remark-images: ^3.6.0
+    gatsby-remark-prismjs: ^3.8.0
+    gatsby-remark-responsive-iframe: ^2.6.0
+    gatsby-remark-smartypants: ^2.5.0
+    gatsby-source-filesystem: ^2.6.0
+    gatsby-transformer-remark: ^2.11.0
+    gatsby-transformer-sharp: ^2.7.0
+    gh-pages: ^3.1.0
+    google-fonts-plugin: ^5.0.2
+    graphql: ^15.4.0
+    gray-matter: 4.0.2
+    husky: ^4.3.0
+    lint-staged: ^10.5.1
+    lodash: ^4.17.20
+    node-sass: ^4.9.0
+    prettier: ^2.2.0
+    prettier-plugin-organize-imports: ^1.1.1
+    pretty-quick: ^3.1.0
+    prism-react-renderer: ^1.1.1
+    prismjs: ^1.22.0
+    react: ^17.0.1
+    react-device-detect: ^1.14.0
+    react-dom: ^17.0.1
+    react-feather: ^2.0.9
+    react-helmet: ^6.1.0
+    react-instantsearch-dom: ^6.8.2
+    react-keyword-cloud: 1.0.3
+    react-live: ^2.2.3
+    react-pro-sidebar: ^0.4.4
+    react-redux: ^7.2.2
+    redux: ^4.0.5
+    ts-node: ^9.0.0
+    typescript: ^4.1.2
+  languageName: unknown
+  linkType: soft
+
 "hmac-drbg@npm:^1.0.0":
   version: 1.0.1
   resolution: "hmac-drbg@npm:1.0.1"
@@ -16467,7 +15697,7 @@ fsevents@~2.1.2:
   languageName: node
   linkType: hard
 
-"hoist-non-react-statics@npm:^3.0.0, hoist-non-react-statics@npm:^3.3.0, hoist-non-react-statics@npm:^3.3.2":
+"hoist-non-react-statics@npm:^3.3.0, hoist-non-react-statics@npm:^3.3.2":
   version: 3.3.2
   resolution: "hoist-non-react-statics@npm:3.3.2"
   dependencies:
@@ -18525,15 +17755,6 @@ fsevents@~2.1.2:
     remedial: ^1.0.7
     remove-trailing-spaces: ^1.0.6
   checksum: 8c8b5118d9bdbd56a19be490cccabb30befe5f517a605c9859b4541cff87929728cca75ed8db0a53494a45ec06455fe7094fedce0f0aa66f6f08f1ac84a6dc4e
-  languageName: node
-  linkType: hard
-
-"json2mq@npm:^0.2.0":
-  version: 0.2.0
-  resolution: "json2mq@npm:0.2.0"
-  dependencies:
-    string-convert: ^0.2.0
-  checksum: 4d017ede2baf2a2b5cd27d311082b49acbabd498020ec1bd1c36a915662c8be011f3a1a7e9629076bb779d8382466a0067e0d442cde6f9b8d09273273424c702
   languageName: node
   linkType: hard
 
@@ -22448,15 +21669,6 @@ fsevents@~2.1.2:
   languageName: node
   linkType: hard
 
-"optimism@npm:^0.13.0":
-  version: 0.13.0
-  resolution: "optimism@npm:0.13.0"
-  dependencies:
-    "@wry/context": ^0.5.2
-  checksum: ca8946d38954b87bca7654f2ce132162e1941a19056be3c2871067498e0f9e65a1fcad600e5b04af3cce0841fbb3eaa160917d7c40d19f1234d6d7e4e58cb8f2
-  languageName: node
-  linkType: hard
-
 "optimize-css-assets-webpack-plugin@npm:^5.0.3":
   version: 5.0.4
   resolution: "optimize-css-assets-webpack-plugin@npm:5.0.4"
@@ -24317,7 +23529,7 @@ fsevents@~2.1.2:
   languageName: node
   linkType: hard
 
-"prop-types@npm:^15.5.10, prop-types@npm:^15.5.7, prop-types@npm:^15.5.8, prop-types@npm:^15.6.1, prop-types@npm:^15.6.2, prop-types@npm:^15.7.2":
+"prop-types@npm:^15.5.10, prop-types@npm:^15.5.8, prop-types@npm:^15.6.1, prop-types@npm:^15.6.2, prop-types@npm:^15.7.2":
   version: 15.7.2
   resolution: "prop-types@npm:15.7.2"
   dependencies:
@@ -24796,15 +24008,6 @@ fsevents@~2.1.2:
   languageName: node
   linkType: hard
 
-"react-github-btn@npm:^1.2.0":
-  version: 1.2.0
-  resolution: "react-github-btn@npm:1.2.0"
-  dependencies:
-    github-buttons: ^2.8.0
-  checksum: d08a78843bf1168e87bdbdd2722d36f2ebce6e1bbcc3781c71b217e2e3e0856f4adc7870d58d780b4c7d2559039f0bdae6db7245ab3b7cf1c5cbc4006513bcf6
-  languageName: node
-  linkType: hard
-
 "react-helmet@npm:^6.1.0":
   version: 6.1.0
   resolution: "react-helmet@npm:6.1.0"
@@ -24839,15 +24042,6 @@ fsevents@~2.1.2:
     "@types/react":
       optional: true
   checksum: f1df03e93206b379b605f3da983f700d5c8a16e3ebedf25ca1311067f4dc95cf968206af44d0b734a5505619958f2da5efe9df4bf749ed6a4989e1f6ea5d2915
-  languageName: node
-  linkType: hard
-
-"react-id-generator@npm:^3.0.1":
-  version: 3.0.1
-  resolution: "react-id-generator@npm:3.0.1"
-  peerDependencies:
-    react: ">= 16.8.0"
-  checksum: 212c8c1f96f0b1a953841fa861991755b43e7fd82a5d988789197e3b47fd07ddd216849f60489879b2f25641a5480ac0707d8fc2cac17ec913624ecfeecac3a5
   languageName: node
   linkType: hard
 
@@ -25009,22 +24203,6 @@ fsevents@~2.1.2:
   languageName: node
   linkType: hard
 
-"react-slick@npm:^0.27.13":
-  version: 0.27.13
-  resolution: "react-slick@npm:0.27.13"
-  dependencies:
-    classnames: ^2.2.5
-    enquire.js: ^2.1.6
-    json2mq: ^0.2.0
-    lodash.debounce: ^4.0.8
-    resize-observer-polyfill: ^1.5.0
-  peerDependencies:
-    react: ^0.14.0 || ^15.0.1 || ^16.0.0 || ^17.0.0
-    react-dom: ^0.14.0 || ^15.0.1 || ^16.0.0 || ^17.0.0
-  checksum: b58aba1c79c2037e3dca874c7d0c4e273b3934c880a6759d9f1e92eece78cc55269c9f0881835cc80ece106189d97ef483d415989890e7bc85d3f1ed39ca8fa7
-  languageName: node
-  linkType: hard
-
 "react-slidedown@npm:^2.4.5":
   version: 2.4.5
   resolution: "react-slidedown@npm:2.4.5"
@@ -25049,15 +24227,6 @@ fsevents@~2.1.2:
     react: ">=16.6.0"
     react-dom: ">=16.6.0"
   checksum: e14446123f820e804335c64be5270333c29e8cfaa43dfc33387e132c5d521cf4a0a7c2408058a147b254ae82a6569f373394d83e977ef340d6937bc2f4ff7d6c
-  languageName: node
-  linkType: hard
-
-"react-typography@npm:^0.16.19":
-  version: 0.16.19
-  resolution: "react-typography@npm:0.16.19"
-  peerDependencies:
-    react: ^0.14.0 || ^15.0.0 || ^16.0.0
-  checksum: 9b31cbca4f914ddec1193a1df826417bc3e5b63c2900af319823d6aae917f9715fe55545cdbafdaf47260b33806b03ce490192dce0260fe60322150ee76727fb
   languageName: node
   linkType: hard
 
@@ -25935,7 +25104,7 @@ fsevents@~2.1.2:
   languageName: node
   linkType: hard
 
-"resize-observer-polyfill@npm:^1.5.0, resize-observer-polyfill@npm:^1.5.1":
+"resize-observer-polyfill@npm:^1.5.1":
   version: 1.5.1
   resolution: "resize-observer-polyfill@npm:1.5.1"
   checksum: ba14bfaf584eda299eafd6a06233a65c76586bc2bab3cdfdd1edd25fc6479f4270788ddd082e65390049b3ed542558f02bdf1f123bd912624de5b11d48857ac8
@@ -27693,13 +26862,6 @@ resolve@~1.17.0:
   languageName: node
   linkType: hard
 
-"string-convert@npm:^0.2.0":
-  version: 0.2.1
-  resolution: "string-convert@npm:0.2.1"
-  checksum: 75d8fa2c6ec50105f232ed394142086e60ae358b4902111be7d93baa0d848b7551ab23db508cb959a33652fdc5808276bb8300e3792f9ec8e02b6736496b4295
-  languageName: node
-  linkType: hard
-
 "string-env-interpolation@npm:1.0.1, string-env-interpolation@npm:^1.0.1":
   version: 1.0.1
   resolution: "string-env-interpolation@npm:1.0.1"
@@ -28058,74 +27220,6 @@ resolve@~1.17.0:
   languageName: node
   linkType: hard
 
-"styled-components@npm:^5.2.1":
-  version: 5.2.1
-  resolution: "styled-components@npm:5.2.1"
-  dependencies:
-    "@babel/helper-module-imports": ^7.0.0
-    "@babel/traverse": ^7.4.5
-    "@emotion/is-prop-valid": ^0.8.8
-    "@emotion/stylis": ^0.8.4
-    "@emotion/unitless": ^0.7.4
-    babel-plugin-styled-components: ">= 1"
-    css-to-react-native: ^3.0.0
-    hoist-non-react-statics: ^3.0.0
-    shallowequal: ^1.1.0
-    supports-color: ^5.5.0
-  peerDependencies:
-    react: ">= 16.8.0"
-    react-dom: ">= 16.8.0"
-    react-is: ">= 16.8.0"
-  checksum: c27911be08f2c6212d1f381d154cab5204c63b34d1b9ba56388b19654497a523ff466884fbf8914637c046ae8862387b0fc63f9ead67e1a8ab3a8af70b0d8089
-  languageName: node
-  linkType: hard
-
-"styled-icons@npm:^10.22.0":
-  version: 10.22.0
-  resolution: "styled-icons@npm:10.22.0"
-  dependencies:
-    "@babel/runtime": ^7.10.5
-    "@styled-icons/bootstrap": ^10.19.0
-    "@styled-icons/boxicons-logos": ^10.18.0
-    "@styled-icons/boxicons-regular": ^10.18.0
-    "@styled-icons/boxicons-solid": ^10.18.0
-    "@styled-icons/crypto": ^10.18.0
-    "@styled-icons/entypo": ^10.18.0
-    "@styled-icons/entypo-social": ^10.18.0
-    "@styled-icons/evaicons-outline": ^10.18.0
-    "@styled-icons/evaicons-solid": ^10.18.0
-    "@styled-icons/evil": ^10.18.0
-    "@styled-icons/fa-brands": ^10.22.0
-    "@styled-icons/fa-regular": ^10.22.0
-    "@styled-icons/fa-solid": ^10.22.0
-    "@styled-icons/feather": ^10.18.0
-    "@styled-icons/foundation": ^10.18.0
-    "@styled-icons/heroicons-outline": ^10.19.0
-    "@styled-icons/heroicons-solid": ^10.19.0
-    "@styled-icons/icomoon": ^10.18.0
-    "@styled-icons/ionicons-outline": ^10.18.0
-    "@styled-icons/ionicons-sharp": ^10.18.0
-    "@styled-icons/ionicons-solid": ^10.18.0
-    "@styled-icons/material": ^10.18.0
-    "@styled-icons/material-outlined": ^10.18.0
-    "@styled-icons/material-rounded": ^10.18.0
-    "@styled-icons/material-sharp": ^10.18.0
-    "@styled-icons/material-twotone": ^10.18.0
-    "@styled-icons/octicons": ^10.20.0
-    "@styled-icons/open-iconic": ^10.18.0
-    "@styled-icons/remix-fill": ^10.18.0
-    "@styled-icons/remix-line": ^10.18.0
-    "@styled-icons/simple-icons": ^10.22.0
-    "@styled-icons/styled-icon": ^10.6.0
-    "@styled-icons/typicons": ^10.18.0
-    "@styled-icons/zondicons": ^10.18.0
-  peerDependencies:
-    react: "*"
-    styled-components: ">=4.1.0 <6"
-  checksum: d280c3f4930b70fc02172ec167a987d16a6cfe2e37f5d72e287db05982315965feb45dc54f378837dd8c6f0b715a3c2382b96cdae63262c0815c4f47dc35fcf3
-  languageName: node
-  linkType: hard
-
 "stylehacks@npm:^4.0.0":
   version: 4.0.3
   resolution: "stylehacks@npm:4.0.3"
@@ -28267,13 +27361,6 @@ resolve@~1.17.0:
   version: 1.2.0
   resolution: "symbol-observable@npm:1.2.0"
   checksum: 268834a1d4cba19d40f367e5c2755f612969c8418e43a3be17408e392802a667f8bb542893440d58a080a8ea8da05ea98e27e472b9f4ff6fbda78a21a1a41c53
-  languageName: node
-  linkType: hard
-
-"symbol-observable@npm:^2.0.0":
-  version: 2.0.3
-  resolution: "symbol-observable@npm:2.0.3"
-  checksum: c022177891e0aa3169bbaaed68d928ff7a2b5f5b1b2bf655b99804ecfabe280a6f1042dd3bda609475e637c57141d39b33e692b6f6b5fdb29ce7f61cf77be57f
   languageName: node
   linkType: hard
 
@@ -28826,7 +27913,7 @@ resolve@~1.17.0:
   languageName: node
   linkType: hard
 
-"ts-invariant@npm:^0.4.0, ts-invariant@npm:^0.4.4":
+"ts-invariant@npm:^0.4.0":
   version: 0.4.4
   resolution: "ts-invariant@npm:0.4.4"
   dependencies:
@@ -31394,7 +30481,7 @@ typescript@^4.1.2:
   languageName: node
   linkType: hard
 
-"zen-observable@npm:^0.8.0, zen-observable@npm:^0.8.14":
+"zen-observable@npm:^0.8.0":
   version: 0.8.15
   resolution: "zen-observable@npm:0.8.15"
   checksum: 7d155f8a75b9314f9f31e70a31edcd897b0e8a1313737502ab84a573e49d2c333b738e415c156334a6e910c363ce546b59fa7921eff61440285caa99c843df74

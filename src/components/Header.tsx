@@ -1,11 +1,11 @@
 import React from 'react';
-  import styled from '@emotion/styled';
+import styled from '@emotion/styled';
 import { Link } from './Link';
 import { Icon } from './Icon';
 import { getConfig } from '../../config';
-import { IPageProps } from '../types/interfaces';
+import { IPageProps } from '../types';
 import { Tools } from '../utils';
-import { SearchComponent } from './search/SearchComponent';
+import { SearchComponent } from '../search';
 import { Tooltip } from './Tooltip';
 
 const config = getConfig();
@@ -52,7 +52,7 @@ export const Header: React.FC<IPageProps> = (): JSX.Element => {
           <Link to={'/'} className={'navBarBrand'}>
             <img className={'img-responsive displayInline'} src={config.header.logo} alt={'logo'} />
           </Link>
-          <Tooltip title="Luddites, Incorporated">
+          <Tooltip tip="Luddites, Incorporated">
             <div
               className={'headerTitle displayInline'}
               dangerouslySetInnerHTML={{ __html: config.header.title }}
@@ -68,11 +68,9 @@ export const Header: React.FC<IPageProps> = (): JSX.Element => {
           <ul className={'navBarUL navBarNav navBarULRight'}>
             {config.header.links.map((link, key) => (
               <li key={key}>
-                <Tooltip title={link.tooltip || link.text}>
-                  <Link className="sidebarLink" to={link.link} title={link.text}>
-                    {link.text}
-                  </Link>
-                </Tooltip>
+                <Link className="sidebarLink" to={link.link} title={link.tooltip}>
+                  {link.text}
+                </Link>
               </li>
             ))}
             <li className={'hiddenMobile githubBtn'}>
