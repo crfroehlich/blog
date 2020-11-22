@@ -11,5 +11,4 @@ export * from './PageTitle';
 export * from './RightSidebar';
 export * from './SEO';
 export * from './TagSet';
-export * from './ThemeProvider';
 export * from './Tooltip';

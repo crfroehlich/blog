@@ -3,7 +3,6 @@
   "dependencies": {
     "@emotion/core": "^10.1.1",
     "@emotion/styled": "^10.0.27",
-    "@emotion/styled-base": "^10.0.31",
     "@fortawesome/fontawesome-pro": "^5.15.1",
     "@fortawesome/fontawesome-svg-core": "^1.2.32",
     "@fortawesome/free-brands-svg-icons": "^5.15.1",
@@ -18,7 +17,6 @@
     "algoliasearch": "^4.8.0",
     "clsx": "^1.1.1",
     "emotion": "^10.0.27",
-    "emotion-theming": "^10.0.27",
     "gatsby": "^2.27.0",
     "gatsby-image": "^2.6.0",
     "gatsby-link": "^2.6.0",

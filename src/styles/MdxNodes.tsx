@@ -1,14 +1,6 @@
 import React from 'react';
-import styled from '@emotion/styled';
-import { AnchorTag } from '../components';
 
-export const StyledPre = styled('pre')`
-  padding: 1px;
-  background-color: #000;
-  border-radius: 25px;
-`;
-
-export const StyledProp = {
+export const MdxNodes = {
   h1: (props) => (
     <h1 className="heading1" id={props.children.replace(/\s+/g, '').toLowerCase()} {...props} />
   ),
@@ -28,12 +20,10 @@ export const StyledProp = {
     <h6 className="heading6" id={props.children.replace(/\s+/g, '').toLowerCase()} {...props} />
   ),
   p: (props) => <p className="paragraph" {...props} />,
-  a: AnchorTag,
+  a: (props) => <a href={props.href} target="_blank" rel="noopener noreferrer" id={props.children.replace(/\s+/g, '').toLowerCase()} {...props} />,
   // TODO add `img`
   // TODO add `blockquote`
   // TODO add `ul`
   // TODO add `li`
   // TODO add `table`
 };
-
-export default StyledProp;

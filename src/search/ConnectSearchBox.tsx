@@ -2,15 +2,6 @@ import { connectSearchBox } from 'react-instantsearch-dom';
 import styled from '@emotion/styled';
 import { Icon } from '../components';
 
-// const SearchIcon = styled(Icon)`
-//   width: 1em;
-//   pointer-events: none;
-//   margin-right: 10px;
-//   position: absolute;
-//   left: 15px;
-//   color: #2fd2c5;
-// `;
-
 const Input = styled.input`
   outline: none;
   border: none;
