@@ -1,6 +1,6 @@
 import chalk from 'chalk';
-
-const log = console;
+import log from 'roarr';
+//const log = console;
 
 export class Logger {
   public static info(...props): void {
