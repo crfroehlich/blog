@@ -35,6 +35,4 @@ jobs:
           RELATIVE_CI_KEY: ${{ secrets.RELATIVE_CI_KEY }}
       - run: git config --global user.email "${{ secrets.GH_EMAIL }}"
       - run: git config --global user.name "${{ secrets.GH_NAME }}"
-      - run: npx relative-ci-agent
-        env:
-          RELATIVE_CI_KEY: ${{ secrets.RELATIVE_CI_KEY }}
+
