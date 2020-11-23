@@ -18,10 +18,10 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v2-beta
         with:
           node-version: ${{ matrix.node-version }}
-      - run: npm install -g gatsby-cli yarn rimraf
+      - run: npm install -g yarn
       - run: yarn install
         env:
           FA_PRO_NPM_TOKEN: ${{ secrets.FA_PRO_NPM_TOKEN }}
