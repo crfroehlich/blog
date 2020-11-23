@@ -1,13 +1,7 @@
 import { addConfig } from '../../../config';
 
 export const addStats: addConfig = (config, plugins): void => {
-  plugins.push({
-    resolve: 'gatsby-plugin-bundle-stats',
-    options: {
-      compare: true,
-      outDir: '../dist',
-    },
-  });
+  plugins.push('gatsby-plugin-bundle-stats');
   plugins.push({
     resolve: 'gatsby-plugin-webpack-bundle-analyser-v2',
     options: {
