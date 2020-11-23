@@ -1,3 +1,13 @@
-import { loadEnv } from '@luddites-me/ts-tools';
+import dotEnvExtended from 'dotenv-extended';
 
-export const env = loadEnv();
+export const rawEnv = dotEnvExtended.load();
+
+export const env = {
+  FA_PRO_NPM_TOKEN: rawEnv.FA_PRO_NPM_TOKEN,
+  GATSBY_ALGOLIA_ADMIN_API_KEY: rawEnv.GATSBY_ALGOLIA_ADMIN_API_KEY,
+  GATSBY_ALGOLIA_APPLICATION_ID: rawEnv.GATSBY_ALGOLIA_APPLICATION_ID,
+  GATSBY_ALGOLIA_SEARCH_ONLY_API_KEY: rawEnv.GATSBY_ALGOLIA_SEARCH_ONLY_API_KEY,
+  GH_ACCESS_TOKEN: rawEnv.GH_ACCESS_TOKEN,
+  NODE_ENV: rawEnv.NODE_ENV,
+  RELATIVE_CI_KEY: rawEnv.RELATIVE_CI_KEY,
+};

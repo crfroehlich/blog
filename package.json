@@ -21,7 +21,6 @@
     "gatsby-image": "^2.6.0",
     "gatsby-link": "^2.6.0",
     "gatsby-plugin-algolia": "^0.16.1",
-    "gatsby-plugin-bundle-stats": "^2.3.0",
     "gatsby-plugin-catch-links": "^2.5.0",
     "gatsby-plugin-codegen": "^1.2.14",
     "gatsby-plugin-emotion": "^4.5.0",
@@ -44,7 +43,7 @@
     "gatsby-remark-prismjs": "^3.8.0",
     "gatsby-remark-responsive-iframe": "^2.6.0",
     "gatsby-remark-smartypants": "^2.5.0",
-    "gatsby-source-filesystem": "^2.6.0",
+    "gatsby-source-filesystem": "^2.6.1",
     "gatsby-transformer-remark": "^2.11.0",
     "gatsby-transformer-sharp": "^2.7.0",
     "google-fonts-plugin": "^5.0.2",
@@ -76,7 +75,6 @@
     "@graphql-codegen/typescript-operations": "^1.17.10",
     "@graphql-codegen/typescript-react-apollo": "^2.1.1",
     "@hot-loader/react-dom": "^17.0.0",
-    "@luddites-me/ts-tools": "^1.1.4",
     "@philpl/buble": "^0.19.7",
     "@relative-ci/agent": "^1.4.0",
     "@types/lodash": "^4.14.165",
@@ -90,6 +88,7 @@
     "@typescript-eslint/eslint-plugin": "^4.8.1",
     "@typescript-eslint/parser": "^4.8.1",
     "chalk": "^4.1.0",
+    "dotenv-extended": "2.9.0",
     "eslint": "^7.14.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-config-prettier": "^6.15.0",
@@ -99,17 +98,23 @@
     "eslint-plugin-react": "^7.21.5",
     "eslint-plugin-react-hooks": "^4.2.0",
     "gatsby-cli": "^2.14.0",
-    "gatsby-plugin-webpack-bundle-analyser-v2": "^1.1.16",
+    "gatsby-plugin-bundle-stats": "^2.3.0",
+    "gatsby-plugin-webpack-bundle-analyser-v2": "^1.1.17",
     "gh-pages": "^3.1.0",
+    "glob": "^7.1.6",
     "gray-matter": "4.0.2",
     "husky": "^4.3.0",
     "lint-staged": "^10.5.1",
     "prettier": "^2.2.0",
     "prettier-plugin-organize-imports": "^1.1.1",
     "pretty-quick": "^3.1.0",
+    "sorted-json": "^0.2.6",
     "ts-node": "^9.0.0"
   },
   "envDocumentation": {
+    "FA_PRO_NPM_TOKEN": {
+      "description": "Please document the <FA_PRO_NPM_TOKEN> variable"
+    },
     "GATSBY_ALGOLIA_ADMIN_API_KEY": {
       "defaultValue": "x",
       "description": "Algolia Search Admin API Key"
@@ -122,33 +127,16 @@
       "defaultValue": "x",
       "description": "Alogolia Search API Key"
     },
-    "DOCS_CREATE_README_INDEX": {
-      "defaultValue": true,
-      "description": "If true, creates an index in the main README file for all markdown content"
-    },
-    "DOCS_CREATE_TOC": {
-      "defaultValue": false,
-      "description": "If true, create a Table of Contents for each markdown file"
-    },
     "GH_ACCESS_TOKEN": {
       "defaultValue": "x",
       "description": "A read-write access token used for CI/CD"
-    },
-    "IGNORE_MARKDOWN_FILES": {
-      "defaultValue": ".yarn,.vscode,.github,.tmp,temp,node_modules,.git,.cache,public",
-      "description": "A comma-delimited list of markdown files to exclude from processing"
-    },
-    "IGNORE_PEER_DEPENDENCIES": {
-      "defaultValue": "",
-      "description": "A list of packages to exclude from peer dependencies."
     },
     "NODE_ENV": {
       "defaultValue": "dev",
       "description": "Environment. Options are: dev, test and prod."
     },
-    "SYNC_PEER_DEPENDENCIES": {
-      "defaultValue": false,
-      "description": "If true, sets all project dependencies as peer dependencies"
+    "RELATIVE_CI_KEY": {
+      "description": "Please document the <RELATIVE_CI_KEY> variable"
     }
   },
   "license": "MIT",
@@ -157,21 +145,17 @@
   "scripts": {
     "build": "yarn build:src && gatsby build",
     "build:codegen": "graphql-codegen",
-    "build:prep": "yarn lint && yarn build:index && yarn docs:standardize",
-    "build:src": "rimraf content/src && node ./build/source.js",
     "build:index": "npx cti create ./src -w -b",
+    "build:prep": "yarn lint && yarn build:index",
+    "build:src": "rimraf content/src && node ./build/source.js",
     "clean": "gatsby clean && rimraf .cache .tmp public __generated__ dist content/src src/**/__generated__/**",
     "debug:dev": "node --nolazy node_modules/.bin/gatsby develop --inspect-brk",
     "debug:prod": "node --nolazy node_modules/.bin/gatsby build --inspect-brk",
     "deploy": "yarn build && node build/publish.js",
-    "docs:all": "yarn docs:standardize && yarn docs:api",
-    "docs:api": "rimraf dist && tsc -p tsconfig.tools.json && node ./node_modules/@luddites-me/ts-tools/dist/docs/generateApi.js --path=./api-extractor.json",
-    "docs:publish": "node ./node_modules/@luddites-me/ts-tools/dist/docs/generateApiDocs.js",
-    "docs:standardize": "node ./node_modules/@luddites-me/ts-tools/dist/readme/standardizeReadme.js",
     "lint": "pretty-quick --staged && yarn lint:ts && yarn lint:pretty",
     "lint:md": "npx markdownlint ./content",
-    "lint:pretty": "prettier --write \"src/**/*.{ts,tsx,css,json}\"",
-    "lint:sort": "npx ./node_modules/@luddites-me/ts-tools/dist/lint/sortJson.js",
+    "lint:pretty": "prettier --write \"src/**/*.{js,ts,tsx,css,json}\"",
+    "lint:sort": "npx ts-node ./build/sortJson.ts",
     "lint:ts": "eslint --cache --fix \"src/**/*.{ts,tsx}\"",
     "lint:type-check": "tsc --noEmit",
     "serve": "gatsby build && gatsby serve",
@@ -186,8 +170,16 @@
       "description": "Generate schema from GraphQL interfaces",
       "dev": true
     },
+    "build:index": {
+      "description": "Please document the <build:index> script.",
+      "dev": true
+    },
     "build:prep": {
       "description": "Preps the codebase for building",
+      "dev": true
+    },
+    "build:src": {
+      "description": "Please document the <build:src> script.",
       "dev": true
     },
     "clean": {
@@ -204,10 +196,6 @@
     },
     "deploy": {
       "description": "Publish the app to Github Pages",
-      "dev": true
-    },
-    "docs:standardize": {
-      "description": "Creates or updates a new readme with a standard set of readme sections, including a toc, yarn script documentation, links to repo documentation files and \"The Unlicense\" license.",
       "dev": true
     },
     "lint": {
