@@ -11,7 +11,7 @@ import {
   addRobots,
   addRss,
   addSearch,
-  // addStats,
+  addStats,
 } from './src/gatsby/plugins';
 
 const config = getConfig(env);
@@ -38,7 +38,7 @@ addOffline(config, plugins);
 addRobots(config, plugins);
 addRss(config, plugins);
 addSearch(config, plugins);
-// addStats(config, plugins);
+addStats(config, plugins);
 
 export const gatsbyConfig: GatsbyConfig = {
   plugins,

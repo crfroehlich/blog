@@ -15,7 +15,7 @@ export const RightSidebar: React.FC<IPageProps> = (props): JSX.Element => {
 
   const menu = toc?.content?.map((item, i) => {
     return (
-      <ListItemStyles key={i} to={item.id} level={1}>
+      <ListItemStyles key={i} to={item.id} level={1} active={false} className="" >
         {item.name}
       </ListItemStyles>
     );
@@ -30,7 +30,7 @@ export const RightSidebar: React.FC<IPageProps> = (props): JSX.Element => {
       }
       if (background) {
         image = (
-          <ListItemStyles key="background_image">
+          <ListItemStyles key="background_image" active={false} className="" level={1}>
             <Img fixed={background.childImageSharp.fixed} style={{ borderRadius: '5px' }} />
           </ListItemStyles>
         );

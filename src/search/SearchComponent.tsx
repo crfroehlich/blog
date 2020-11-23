@@ -13,7 +13,9 @@ import { Tools } from '../utils';
 import { ConnectSearchBox } from './ConnectSearchBox';
 import * as PageHit from './PageHit';
 
-const HitsWrapper = styled.div`
+const HitsWrapper = styled(({show, ...props}) => {
+  return <div  {...props}/>
+})`
   asgrid: true;
   display: ${({ show }:any) => (show ? `grid` : `none`)};
   max-height: 80vh;
