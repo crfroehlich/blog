@@ -1,16 +1,16 @@
 ---
-background: ../../assets/images/sweat_lodge.jpg
+background: ../../assets/images/sweat_lodge.png
 date: 3/28/2013
 description: >-
   Aside In all I'd much rather elaborate on [wheres joins and orders
-  by]httphikingludditesme201303curr...
+  by...
 draft: false
-subtitle: ' Series Finale)'
+subtitle: '(aka Communicating and why I Quit Email: Series Finale)'
 tags:
   - email
   - communication
   - lïf
-title: 'The Single Arity (aka Communicating and why I Quit Email: Series Finale)'
+title: 'The Single Arity'
 ---
 
 _Aside: In all, I'd much rather elaborate on [wheres, joins, and orders by](http://hiking.luddites.me/2013/03/currying-favor-with-partial-application.html), but I have a few unfinished pieces. So on with it._

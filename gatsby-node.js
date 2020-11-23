@@ -9,4 +9,5 @@ export {
   createSchemaCustomization,
   onCreateNode,
   onCreateWebpackConfig,
-} from './src/gatsby';
+} from './build/gatsby';
+

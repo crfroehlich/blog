@@ -1,5 +1,5 @@
 ---
-background: ../../assets/images/sweat_lodge.jpg
+background: ../../assets/images/sweat_lodge.png
 date: 4/7/2013
 description: It was the spring of our discontent...
 draft: false
