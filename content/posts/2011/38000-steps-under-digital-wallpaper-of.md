@@ -10,11 +10,13 @@ tags:
 title: 38,000 Steps Under the Digital Wallpaper of the Sun
 ---
 
+## The Trailhead
+
 I've been hiking my desk for nearly a year now, and the road gets ever longer. I've had [a book published](http://www.amazon.com/Complete-Idiots-Guide-Android-Development/dp/1615641068). I've been promoted. We've [had a daughter](https://picasaweb.google.com/108988276571177665337/AntasiLands?authuser=0&feat=directlink), [survived a flood](https://picasaweb.google.com/108988276571177665337/TheGreatFlood?authuser=0&feat=directlink), lost and learned, and [survived baby kidney surgery](https://picasaweb.google.com/108988276571177665337/ThereAndBackAgain?authuser=0&feat=directlink). Eli more fully experienced his latest [Chanukah](https://picasaweb.google.com/108988276571177665337/20111226?authuser=0&feat=directlink), Winter Solstice and [Christmas](https://picasaweb.google.com/108988276571177665337/Christmas2011?authuser=0&feat=directlink). He survived both [Saint Nick](http://www.google.com/search?sourceid=chrome&ie=UTF-8&q=saint+nick+attacks&qscrl=1#pq=saint+nick+attacks&hl=en&cp=10&gs_id=21&xhr=t&q=santa+attack&qe=c2FudGEgYXR0YQ&qesig=NmOn6J806lYHErpOdEIjxg&pkc=AFgZ2tmxSTwayj3wHSOxjL6BcA6wgfzL7fRSKtrgp5gDyvKftJiqESq6b9yqyCNM2ICfv6tY-KIsKHzl33AiuFZO3pVZ9CH7Qw&pf=p&sclient=psy-ab&qscrl=1&source=hp&pbx=1&oq=santa+atta&aq=0&aqi=g3&aql=&gs_sm=&gs_upl=&bav=on.2,or.r_gc.r_pw.r_cp.,cf.osb&fp=a07b3761d35d504a&biw=1670&bih=827) and the [Solstice Squid](http://www.reverbnation.com/play_now/song_1553877). I've slept less this year than any year prior--including years in Iraq. In short, I've continued my hike up the Mountain of Lif.
 
 This year, I also learned JavaScript. Thanks [in no small part to the team at [ChemSW](http://www.chemsw.com/), [Alex Russel](http://www.youtube.com/watch?v=seX7jYI96GE), [Douglas Crockford](http://javascript.crockford.com/)* (and [far](http://bonsaiden.github.com/JavaScript-Garden)  [too](http://perfectionkills.com/)  [many](http://addyosmani.com/blog/)  [more](http://www.bennadel.com/) to [name](http://infrequently.org/) by [name](http://badassjs.com/)) and [others](http://www.html5rocks.com/en/)[who](http://metaphysicaldeveloper.wordpress.com/) dedicated their time to write, [blog](http://www.yuiblog.com/blog/), speak, evangelize, scrutinize and [mock](http://wtfjs.com/) the little language that could] to the tubes which connect us all, I've come to know and love the beauty and elegance that JavaScript has to offer.
 
-Even if you're not a programmer or even if you are and you're JavaScript expert: give yourself a belated Holiday gift. [Watch episode 1 of Crockford's "On JavaScript" series. It's simply profound](http://www.yuiblog.com/blog/2010/02/03/video-crockonjs-1/).
+Even if you're not a programmer or even if you are and you're a JavaScript expert: give yourself a belated Holiday gift. [Watch episode 1 of Crockford's "On JavaScript" series. It's simply profound](http://www.yuiblog.com/blog/2010/02/03/video-crockonjs-1/).
 
 The brief primer (forgive the hubris) which follows is redundant with much of the work that the aforementioned have already produced. I have extended surprisingly (to me) little creative energy in adding my own material--much of this is taken verbatim from its respective sources; however, it does consolidate in one page what it has taken me a year to begin learning. I've tried to give attribution whenever I have borrowed from someone else--if I missed you, please let me know. If for no other reason that to learn by writing (it produced two books already), here is:
 
@@ -77,7 +79,7 @@ JavaScript supports a standard set of operators:
 
 [Never use single or double operator syntax!...!! Equality should always be evaluated using triple operator syntax](http://bonsaiden.github.com/JavaScript-Garden/#types.equality). For example:
 
-```js
+```cs
 const x = 'false';
 !x; // true
 x == false; // true
@@ -88,8 +90,8 @@ Single operator equality evaluation is only possible in the negative (`!`). Doub
 
 Unfortunately, greater than/less than operators perform type coercion as well.
 
-```js
 '1' > 0; // true
+```cs
 '1' > '0'; // true
 'a' > 1; // false
 'a' < 1; // false
@@ -114,7 +116,7 @@ All other values (including objects [that means functions]) are truthy: `0` and 
 
 [Never use the auto-increment or auto-decrement syntax (++/--)](http://www.jslint.com/lint.html)!! The plus and minus operators both add and subtract as well as concatenate. This has the potential to inject unanticipated bugs, as + will inconsistently induce type coercion. The + rule: if (both operands are numbers) { then add them } else { convert them both to strings and concatenate them }.
 
-```js
+```cs
 const x = `${1}1`; // 11
 const y = 1 + +'1'; // 2
 const z = ++[[]][+[]] + [+[]]; // "10"
@@ -145,7 +147,7 @@ typeof returns unexpected results if handed null or an array. As such, it should
 
 Custom Objects:
 
-```js
+```cs
 function Foo() {}
 function Bar() {}
 Bar.prototype = new Foo();
@@ -159,7 +161,7 @@ new Bar() instanceof Foo; // false
 
 Native Types:
 
-```js
+```cs
 new String('foo') instanceof String; // true
 new String('foo') instanceof Object; // true
 'foo' instanceof String; // false
@@ -170,7 +172,7 @@ new String('foo') instanceof Object; // true
 
 All objects are declared either as variables or functions.
 
-```js
+```cs
 const number = 1;
 const string = 'string';
 const boolean = false;
@@ -192,7 +194,7 @@ An object is a dynamic collection of properties. Every property has a key strin
 
 Unfortunately, property keys must resolve to strings--a key cannot be an more complex object. To address the issue of string resolution for property names, Object properties can be accessed literally or by string:
 
-```js
+```c
 prop.key = '1';
 prop.key; // "1"
 
@@ -204,7 +206,7 @@ prop.key === prop.key; // true
 
 Object properties can be get, set and deleted:
 
-```js
+```cs
 const newObject = { prop1: 'new prop' };
 // get
 const x = newObject.prop1;
@@ -219,7 +221,7 @@ delete newObject.prop1;
 
 Object literal notation:
 
-```js
+```cs
 // literal
 var myObject = { foo: bar };
 // explicit
@@ -237,7 +239,7 @@ var myObject = Object.defineProperties(Object.create(Object.prototype), {
 
 Object exposes a toString() method. Do not use it.
 
-```js
+```cs
 const obj = { a: 1, b: 2 };
 // toString === bad
 obj.toString(); // "[object Object]"
@@ -261,7 +263,7 @@ First, when passing strings into (particularly 3rd party) modules which makes lo
 
 Second, if accidentally passed to a for() loop.
 
-```js
+```c
 for (const i in 'string') {
   alert(i);
 }
@@ -269,7 +271,7 @@ for (const i in 'string') {
 
 ES5 does not implement forEach() on the String type, but it is still possible to iterate a string in a for loop due to the indexOf() method. Because each character in a string has a unique, linear index number--String must also have a hasOwnProperty() implementation to find the character at a particular index.
 
-```js
+```cs
 const str = 'string';
 str[0]; // 's'
 str.hasOwnProperty('s'); // false
@@ -309,7 +311,7 @@ Calling toString() on a string returns itself--which is exactly what you would e
 
 The Boolean type has no widespread, documented issues. Boolean variables can only be a strict true or false. Boolean implements hasOwnProperty() but is not subject to any of the potential problems with string as it does not have indexOf() or length.
 
-```js
+```cs
 const t = true;
 t.toString(); // "true"
 t.toString(); // "true"
@@ -327,7 +329,7 @@ Number is 64-bit floating point, similar to Double. There is no integer type. Di
 
 Like most other languages:
 
-```js
+```cs
 (NaN === NaN)(
   // false
   NaN !== NaN,
@@ -356,7 +358,7 @@ Decimal computation in JavaScript is just bad. There is no way around it except 
 
 Number correctly implements toString().
 
-```js
+```cs
 const num = 1;
 num.toString(); // "1"
 num.toString(); // "1"
@@ -395,7 +397,7 @@ This makes JavaScript arrays very convenient to use, but not well suited for app
 
 Always prefer the literal form of array declaration (var x = [];) and remember that [all your commas are belong to array](http://wtfjs.com/2011/02/11/all-your-commas-are-belong-to-Array).
 
-```js
+```cs
 // assignment by literal is preferred
 var arr = [1, 'bob', { x: 2 }, true, null];
 // assignment by constructor is valid but not preferred
@@ -408,7 +410,7 @@ Arrays are not typed, which means the value at each index can be of any type.
 
 Unless you are certain that the value of every index in an Array is a string, boolean or number: do not use the toString() method--use JSON.stringify() instead.  NOTE: You can almost never be certain, so just use JSON.stringify().
 
-```js
+```cs
 const arr = [1, 'bob', { x: 2 }, true, null];
 
 arr.toString(); // "1,bob,[object Object],true,"
@@ -422,7 +424,7 @@ JSON.stringify(arr); // "[1,"bob",{"x":2},true,null]"
 
 Arrays, unlike objects, have a special length property. It is always 1 larger than the highest integer subscript.
 
-```js
+```cs
 const bobs = ['bob', 'robert']; // indexes 0, 1
 bobs[bobs.length] = 'rob'; // index 2
 bobs[bob.length] = 'bobby'; // index 3
@@ -434,7 +436,7 @@ Array.length makes it possible to iterate an array in a for(var prop in arr) loo
 
 - Do not delete array elements using delete.
 
-```js
+```cs
 const x = [0, 1, 2, 3];
 
 x.length; // 4
@@ -453,7 +455,7 @@ This sets the value of the element at the specified index === undefined. In almo
 - IE doesn't always get length right. Beware.
 - DO NOT use the dot notation with Arrays. Always use brackets for fetch/assignment:
 
-```js
+```cs
 bobs[0]  // good
 bobs.0  //bad
 ```
@@ -502,7 +504,7 @@ The **var** statement declares and initializes a variable within a function. T
 
 All defined variables are instanced when their function scope is instanced--this is known as [hoisting](http://www.adequatelygood.com/2010/2/JavaScript-Scoping-and-Hoisting). Variable instancing and assignment are thus split into two steps:
 
-```js
+```cs
 // As written:
 (function () {
   const x = 1;
@@ -527,7 +529,7 @@ All defined variables are instanced when their function scope is instanced--this
 
 Functions may be declared explicitly as variables or implicitly using shorthand, but they are compiled and interpreted identically.
 
-```js
+```cs
 // As written
 function MyFoo(id, value) {
   return id === value;
@@ -549,7 +551,7 @@ With few exceptions, we never need to do this in JavaScript.
 
 Exceptions:
 
-```js
+```cs
 var myDate =  new  Date('01/20/2011');
 ...
 throw  new  Error('unhandled exception');
@@ -562,7 +564,7 @@ JavaScript does not implement a classical inheritance model, it uses a prototyp
 
 ##### Pseudo-classical style
 
-```js
+```cs
 function Gizmo(id) {
   this.id = id;
 }
@@ -580,7 +582,7 @@ Hoozit.prototype.test = function (id) {
 
 ##### Functional Style
 
-```js
+```cs
 function gizmo(id) {
   return {
     id,
@@ -604,7 +606,7 @@ The functional approach delivers the exact same result as the pseudo-classical a
 
 Closure is one of the best parts of the language. When a function is instanced--assigned to a variable, it maintains the private variables which were declared within it. These variables are hidden from the global object and indeed from every other object in the same scope. Without closure, we write code like this:
 
-```js
+```cs
 // Globally scoped
 const names = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'];
 const digit_name = function (n) {
@@ -618,7 +620,7 @@ alert(digit_name(3)); // 'three'
 
 Slightly better, using function scope to protect names:
 
-```js
+```cs
 const digit_name = function (n) {
   const names = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'];
   return names[n];
@@ -631,7 +633,7 @@ alert(digit_name(3)); // 'three'
 
 Much better, using Closure:
 
-```js
+```cs
 const digit_name = (function () {
   const names = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'];
   return function (n) {
@@ -648,7 +650,7 @@ alert(digit_name(3)); // 'three'
 
 One of the nice features of closure is the ability to securely create, seal and open objects. In JavaScript, this kind of functionality is trivial to create:
 
-```js
+```cs
 function makeBoxes() {
   const boxes = [];
   const values = [];
@@ -672,9 +674,9 @@ function makeBoxes() {
 
 Bells and Kazoos
 
-### [](http://draft.blogger.com/blogger.g?blogID=4616760594798789034)[Y Combinator](http://en.wikipedia.org/wiki/Fixed_point_combinator#Y_combinator)
+### [Y Combinator](http://en.wikipedia.org/wiki/Fixed_point_combinator#Y_combinator)
 
-```js
+```cs
 function y(le) {
   return (function (f) {
     return f(f);
@@ -726,7 +728,7 @@ Console is accessible in the DOM, which means that console calls can be placed i
 
 - time: used to capture the start and end time for a particular identifier
 
-```js
+```cs
 console.time("Beginning Async Call #1");  //undefined
 ...
 console.timeEnd("Beginning Async Call #1");  //Beginning Async Call #1: 6319ms
@@ -736,7 +738,7 @@ console.timeEnd("Beginning Async Call #1");  //Beginning Async Call #1: 6319ms
   - Multiple instances of console.time()..timeEnd() may be defined within the same function scope as long as each identifier is unique.
 - profile: used to capture verbose performance information for a particular identifier
 
-```js
+```cs
 console.profile("Begin Async Call #2");
 ...
 console.profileEnd("Begin Async Call #2");
@@ -757,7 +759,7 @@ Console operations can be grouped into a single, collapsible console output: use
 
 - group: defines a logical grouping for a particular identifier
 
-```js
+```cs
 console.group("Async Calls #1");
 ...
 console.groupEnd("Async Calls #1");
