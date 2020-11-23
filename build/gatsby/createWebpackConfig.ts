@@ -14,7 +14,7 @@ export const onCreateWebpackConfig: GatsbyNode['onCreateWebpackConfig'] = ({ act
       plugins: [],
     },
   };
-  if (stage === 'build-javascript' && env.GATSBY_BUILD_MODE?.length) {
+  if (stage === 'build-javascript' && env.GATSBY_BUILD_MODE?.length > 0) {
     config.resolve.plugins.push(new RelativeCiAgentWebpackPlugin());
   } else if (stage === 'develop' || stage === 'develop-html') {
     config.resolve.alias['react-dom'] = '@hot-loader/react-dom';
