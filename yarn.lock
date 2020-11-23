@@ -1860,28 +1860,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@bundle-stats/cli-utils@npm:^2.3.0":
-  version: 2.3.0
-  resolution: "@bundle-stats/cli-utils@npm:2.3.0"
-  dependencies:
-    "@bundle-stats/html-templates": ^2.3.0
-    "@bundle-stats/utils": ^2.3.0
-    core-js: ^3.1.4
-    find-cache-dir: ^3.1.0
-    fs-extra: ^9.0.0
-    lodash: 4.17.20
-  checksum: 838b1f90fc5e58e83d9256db59a35cea5520188d2324184e81553a05a0c812a6070c852abbaecd82346baeaf214f3009da1af812c7787d5cf057a4bf27c6d15b
-  languageName: node
-  linkType: hard
-
-"@bundle-stats/html-templates@npm:^2.3.0":
-  version: 2.3.0
-  resolution: "@bundle-stats/html-templates@npm:2.3.0"
-  checksum: 53dc86c9f466b68e96476485c2089e7bb7744882fbc780c560e888c87f6cd01333b154279ee11357f714b1cbb430390bc89ac0972f4654881648b70e262a320e
-  languageName: node
-  linkType: hard
-
-"@bundle-stats/utils@npm:^2.1.1, @bundle-stats/utils@npm:^2.3.0":
+"@bundle-stats/utils@npm:^2.1.1":
   version: 2.3.0
   resolution: "@bundle-stats/utils@npm:2.3.0"
   dependencies:
@@ -6874,20 +6853,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"bundle-stats-webpack-plugin@npm:^2.3.0":
-  version: 2.3.0
-  resolution: "bundle-stats-webpack-plugin@npm:2.3.0"
-  dependencies:
-    "@bundle-stats/cli-utils": ^2.3.0
-    "@bundle-stats/utils": ^2.3.0
-    core-js: ^3.1.4
-    lodash: 4.17.20
-  peerDependencies:
-    webpack: "*"
-  checksum: 2733249469234370e35e76ad0448999b0b1c33a9a287d6a2345dcd1c3a7ccbcc7be01f8e84df7a7fb49917fede730135e3d546f1119de719fb5ef7de0febb7ea
-  languageName: node
-  linkType: hard
-
 "byline@npm:5.0.0":
   version: 5.0.0
   resolution: "byline@npm:5.0.0"
@@ -11419,7 +11384,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"find-cache-dir@npm:^3.0.0, find-cache-dir@npm:^3.1.0, find-cache-dir@npm:^3.3.1":
+"find-cache-dir@npm:^3.0.0, find-cache-dir@npm:^3.3.1":
   version: 3.3.1
   resolution: "find-cache-dir@npm:3.3.1"
   dependencies:
@@ -11938,15 +11903,6 @@ fsevents@~2.1.2:
     gatsby-cli: ^1.1.58
     lodash.chunk: ^4.2.0
   checksum: c0486725f9fc341f73683371682ed3c01c82d2e98136e3445e96d4dbe2c6314026e8e481e6caa66add0ba6ed4f618864650c5173ab726ad6d336dd0aea54b221
-  languageName: node
-  linkType: hard
-
-"gatsby-plugin-bundle-stats@npm:^2.3.0":
-  version: 2.3.0
-  resolution: "gatsby-plugin-bundle-stats@npm:2.3.0"
-  dependencies:
-    bundle-stats-webpack-plugin: ^2.3.0
-  checksum: e7c8ea71610a2589782e20fbb035bc9e331b05488976e4b5a84f547758e4c7327e9e9dbc385d64db157ebeae2a8ef95216acf63cb3f31755edf3f1e469df1e38
   languageName: node
   linkType: hard
 
@@ -13989,7 +13945,6 @@ fsevents@~2.1.2:
     gatsby-image: ^2.6.0
     gatsby-link: ^2.6.0
     gatsby-plugin-algolia: ^0.16.1
-    gatsby-plugin-bundle-stats: ^2.3.0
     gatsby-plugin-catch-links: ^2.5.0
     gatsby-plugin-codegen: ^1.2.14
     gatsby-plugin-emotion: ^4.5.0
@@ -16987,7 +16942,7 @@ fsevents@~2.1.2:
   languageName: node
   linkType: hard
 
-"lodash@npm:4.17.20, lodash@npm:^4.0.0, lodash@npm:^4.15.0, lodash@npm:^4.17.10, lodash@npm:^4.17.11, lodash@npm:^4.17.13, lodash@npm:^4.17.14, lodash@npm:^4.17.15, lodash@npm:^4.17.19, lodash@npm:^4.17.20, lodash@npm:^4.17.4, lodash@npm:^4.17.5, lodash@npm:^4.3.0, lodash@npm:~4.17.10, lodash@npm:~4.17.20":
+"lodash@npm:^4.0.0, lodash@npm:^4.15.0, lodash@npm:^4.17.10, lodash@npm:^4.17.11, lodash@npm:^4.17.13, lodash@npm:^4.17.14, lodash@npm:^4.17.15, lodash@npm:^4.17.19, lodash@npm:^4.17.20, lodash@npm:^4.17.4, lodash@npm:^4.17.5, lodash@npm:^4.3.0, lodash@npm:~4.17.10, lodash@npm:~4.17.20":
   version: 4.17.20
   resolution: "lodash@npm:4.17.20"
   checksum: c62101d2500c383b5f174a7e9e6fe8098149ddd6e9ccfa85f36d4789446195f5c4afd3cfba433026bcaf3da271256566b04a2bf2618e5a39f6e67f8c12030cb6

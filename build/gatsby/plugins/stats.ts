@@ -4,7 +4,6 @@ import { env } from '../../initEnv';
 export const addStats: addConfig = (config, plugins): void => {
   if(!(env.GATSBY_BUILD_MODE?.length > 0)) return;
 
-  plugins.push('gatsby-plugin-bundle-stats');
   plugins.push({
     resolve: 'gatsby-plugin-webpack-bundle-analyser-v2',
     options: {
