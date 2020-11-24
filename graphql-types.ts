@@ -706,9 +706,6 @@ export type FileFieldsEnum =
   | 'childMdx___rawBody'
   | 'childMdx___fileAbsolutePath'
   | 'childMdx___frontmatter___title'
-  | 'childMdx___frontmatter___date'
-  | 'childMdx___frontmatter___description'
-  | 'childMdx___frontmatter___draft'
   | 'childMdx___frontmatter___background___sourceInstanceName'
   | 'childMdx___frontmatter___background___absolutePath'
   | 'childMdx___frontmatter___background___relativePath'
@@ -745,6 +742,9 @@ export type FileFieldsEnum =
   | 'childMdx___frontmatter___background___publicURL'
   | 'childMdx___frontmatter___background___id'
   | 'childMdx___frontmatter___background___children'
+  | 'childMdx___frontmatter___date'
+  | 'childMdx___frontmatter___description'
+  | 'childMdx___frontmatter___draft'
   | 'childMdx___frontmatter___subtitle'
   | 'childMdx___frontmatter___tags'
   | 'childMdx___frontmatter___created'
@@ -1799,9 +1799,6 @@ export type MdxFieldsEnum =
   | 'rawBody'
   | 'fileAbsolutePath'
   | 'frontmatter___title'
-  | 'frontmatter___date'
-  | 'frontmatter___description'
-  | 'frontmatter___draft'
   | 'frontmatter___background___sourceInstanceName'
   | 'frontmatter___background___absolutePath'
   | 'frontmatter___background___relativePath'
@@ -1865,6 +1862,9 @@ export type MdxFieldsEnum =
   | 'frontmatter___background___childMdx___timeToRead'
   | 'frontmatter___background___childMdx___id'
   | 'frontmatter___background___childMdx___children'
+  | 'frontmatter___date'
+  | 'frontmatter___description'
+  | 'frontmatter___draft'
   | 'frontmatter___subtitle'
   | 'frontmatter___tags'
   | 'frontmatter___created'
@@ -2020,10 +2020,10 @@ export type MdxFilterInput = {
 
 export type MdxFrontmatter = {
   title: Scalars['String'];
+  background?: Maybe<File>;
   date?: Maybe<Scalars['String']>;
   description?: Maybe<Scalars['String']>;
   draft?: Maybe<Scalars['Boolean']>;
-  background?: Maybe<File>;
   subtitle?: Maybe<Scalars['String']>;
   tags?: Maybe<Array<Maybe<Scalars['String']>>>;
   created?: Maybe<Scalars['String']>;
@@ -2034,10 +2034,10 @@ export type MdxFrontmatter = {
 
 export type MdxFrontmatterFilterInput = {
   title?: Maybe<StringQueryOperatorInput>;
+  background?: Maybe<FileFilterInput>;
   date?: Maybe<StringQueryOperatorInput>;
   description?: Maybe<StringQueryOperatorInput>;
   draft?: Maybe<BooleanQueryOperatorInput>;
-  background?: Maybe<FileFilterInput>;
   subtitle?: Maybe<StringQueryOperatorInput>;
   tags?: Maybe<StringQueryOperatorInput>;
   created?: Maybe<StringQueryOperatorInput>;
@@ -2266,6 +2266,8 @@ export type QueryAllDirectoryArgs = {
 export type QuerySiteArgs = {
   buildTime?: Maybe<DateQueryOperatorInput>;
   siteMetadata?: Maybe<SiteSiteMetadataFilterInput>;
+  port?: Maybe<IntQueryOperatorInput>;
+  host?: Maybe<StringQueryOperatorInput>;
   pathPrefix?: Maybe<StringQueryOperatorInput>;
   polyfill?: Maybe<BooleanQueryOperatorInput>;
   id?: Maybe<StringQueryOperatorInput>;
@@ -2422,6 +2424,8 @@ export type QueryAllSitePluginArgs = {
 export type Site = Node & {
   buildTime?: Maybe<Scalars['Date']>;
   siteMetadata?: Maybe<SiteSiteMetadata>;
+  port?: Maybe<Scalars['Int']>;
+  host?: Maybe<Scalars['String']>;
   pathPrefix?: Maybe<Scalars['String']>;
   polyfill?: Maybe<Scalars['Boolean']>;
   id: Scalars['ID'];
@@ -2636,6 +2640,8 @@ export type SiteFieldsEnum =
   | 'siteMetadata___headerLinks___link'
   | 'siteMetadata___headerLinks___tooltip'
   | 'siteMetadata___siteUrl'
+  | 'port'
+  | 'host'
   | 'pathPrefix'
   | 'polyfill'
   | 'id'
@@ -2728,6 +2734,8 @@ export type SiteFieldsEnum =
 export type SiteFilterInput = {
   buildTime?: Maybe<DateQueryOperatorInput>;
   siteMetadata?: Maybe<SiteSiteMetadataFilterInput>;
+  port?: Maybe<IntQueryOperatorInput>;
+  host?: Maybe<StringQueryOperatorInput>;
   pathPrefix?: Maybe<StringQueryOperatorInput>;
   polyfill?: Maybe<BooleanQueryOperatorInput>;
   id?: Maybe<StringQueryOperatorInput>;
@@ -3602,7 +3610,8 @@ export type SitePageFieldsEnum =
   | 'pluginCreator___pluginOptions___disableBgImageOnAlpha'
   | 'pluginCreator___pluginOptions___disableBgImage'
   | 'pluginCreator___pluginOptions___apolloConfigFile'
-  | 'pluginCreator___pluginOptions___addTypename'
+  | 'pluginCreator___pluginOptions___addTypename___prefix'
+  | 'pluginCreator___pluginOptions___addTypename___iconName'
   | 'pluginCreator___pluginOptions___localSchemaFile'
   | 'pluginCreator___pluginOptions___target'
   | 'pluginCreator___pluginOptions___tagName'
@@ -3638,14 +3647,6 @@ export type SitePageFieldsEnum =
   | 'pluginCreator___pluginOptions___feeds___query'
   | 'pluginCreator___pluginOptions___feeds___output'
   | 'pluginCreator___pluginOptions___feeds___title'
-  | 'pluginCreator___pluginOptions___analyzerMode'
-  | 'pluginCreator___pluginOptions___reportFilename'
-  | 'pluginCreator___pluginOptions___generateStatsFile'
-  | 'pluginCreator___pluginOptions___statsOptions___context'
-  | 'pluginCreator___pluginOptions___statsOptions___assets'
-  | 'pluginCreator___pluginOptions___statsOptions___entrypoints'
-  | 'pluginCreator___pluginOptions___statsOptions___chunks'
-  | 'pluginCreator___pluginOptions___statsOptions___modules'
   | 'pluginCreator___pluginOptions___pathCheck'
   | 'pluginCreator___pluginOptions___allExtensions'
   | 'pluginCreator___pluginOptions___isTSX'
@@ -3658,6 +3659,7 @@ export type SitePageFieldsEnum =
   | 'pluginCreator___packageJson___description'
   | 'pluginCreator___packageJson___version'
   | 'pluginCreator___packageJson___main'
+  | 'pluginCreator___packageJson___author'
   | 'pluginCreator___packageJson___license'
   | 'pluginCreator___packageJson___dependencies'
   | 'pluginCreator___packageJson___dependencies___name'
@@ -3868,7 +3870,8 @@ export type SitePluginFieldsEnum =
   | 'pluginOptions___disableBgImageOnAlpha'
   | 'pluginOptions___disableBgImage'
   | 'pluginOptions___apolloConfigFile'
-  | 'pluginOptions___addTypename'
+  | 'pluginOptions___addTypename___prefix'
+  | 'pluginOptions___addTypename___iconName'
   | 'pluginOptions___localSchemaFile'
   | 'pluginOptions___target'
   | 'pluginOptions___tagName'
@@ -3904,14 +3907,6 @@ export type SitePluginFieldsEnum =
   | 'pluginOptions___feeds___query'
   | 'pluginOptions___feeds___output'
   | 'pluginOptions___feeds___title'
-  | 'pluginOptions___analyzerMode'
-  | 'pluginOptions___reportFilename'
-  | 'pluginOptions___generateStatsFile'
-  | 'pluginOptions___statsOptions___context'
-  | 'pluginOptions___statsOptions___assets'
-  | 'pluginOptions___statsOptions___entrypoints'
-  | 'pluginOptions___statsOptions___chunks'
-  | 'pluginOptions___statsOptions___modules'
   | 'pluginOptions___pathCheck'
   | 'pluginOptions___allExtensions'
   | 'pluginOptions___isTSX'
@@ -3924,6 +3919,7 @@ export type SitePluginFieldsEnum =
   | 'packageJson___description'
   | 'packageJson___version'
   | 'packageJson___main'
+  | 'packageJson___author'
   | 'packageJson___license'
   | 'packageJson___dependencies'
   | 'packageJson___dependencies___name'
@@ -3966,6 +3962,7 @@ export type SitePluginPackageJson = {
   description?: Maybe<Scalars['String']>;
   version?: Maybe<Scalars['String']>;
   main?: Maybe<Scalars['String']>;
+  author?: Maybe<Scalars['String']>;
   license?: Maybe<Scalars['String']>;
   dependencies?: Maybe<Array<Maybe<SitePluginPackageJsonDependencies>>>;
   devDependencies?: Maybe<Array<Maybe<SitePluginPackageJsonDevDependencies>>>;
@@ -4006,6 +4003,7 @@ export type SitePluginPackageJsonFilterInput = {
   description?: Maybe<StringQueryOperatorInput>;
   version?: Maybe<StringQueryOperatorInput>;
   main?: Maybe<StringQueryOperatorInput>;
+  author?: Maybe<StringQueryOperatorInput>;
   license?: Maybe<StringQueryOperatorInput>;
   dependencies?: Maybe<SitePluginPackageJsonDependenciesFilterListInput>;
   devDependencies?: Maybe<SitePluginPackageJsonDevDependenciesFilterListInput>;
@@ -4060,7 +4058,7 @@ export type SitePluginPluginOptions = {
   disableBgImageOnAlpha?: Maybe<Scalars['Boolean']>;
   disableBgImage?: Maybe<Scalars['Boolean']>;
   apolloConfigFile?: Maybe<Scalars['String']>;
-  addTypename?: Maybe<Scalars['Boolean']>;
+  addTypename?: Maybe<SitePluginPluginOptionsAddTypename>;
   localSchemaFile?: Maybe<Scalars['String']>;
   target?: Maybe<Scalars['String']>;
   tagName?: Maybe<Scalars['String']>;
@@ -4091,14 +4089,20 @@ export type SitePluginPluginOptions = {
   policy?: Maybe<Array<Maybe<SitePluginPluginOptionsPolicy>>>;
   query?: Maybe<Scalars['String']>;
   feeds?: Maybe<Array<Maybe<SitePluginPluginOptionsFeeds>>>;
-  analyzerMode?: Maybe<Scalars['String']>;
-  reportFilename?: Maybe<Scalars['String']>;
-  generateStatsFile?: Maybe<Scalars['Boolean']>;
-  statsOptions?: Maybe<SitePluginPluginOptionsStatsOptions>;
   pathCheck?: Maybe<Scalars['Boolean']>;
   allExtensions?: Maybe<Scalars['Boolean']>;
   isTSX?: Maybe<Scalars['Boolean']>;
   jsxPragma?: Maybe<Scalars['String']>;
+};
+
+export type SitePluginPluginOptionsAddTypename = {
+  prefix?: Maybe<Scalars['String']>;
+  iconName?: Maybe<Scalars['String']>;
+};
+
+export type SitePluginPluginOptionsAddTypenameFilterInput = {
+  prefix?: Maybe<StringQueryOperatorInput>;
+  iconName?: Maybe<StringQueryOperatorInput>;
 };
 
 export type SitePluginPluginOptionsFeeds = {
@@ -4150,7 +4154,7 @@ export type SitePluginPluginOptionsFilterInput = {
   disableBgImageOnAlpha?: Maybe<BooleanQueryOperatorInput>;
   disableBgImage?: Maybe<BooleanQueryOperatorInput>;
   apolloConfigFile?: Maybe<StringQueryOperatorInput>;
-  addTypename?: Maybe<BooleanQueryOperatorInput>;
+  addTypename?: Maybe<SitePluginPluginOptionsAddTypenameFilterInput>;
   localSchemaFile?: Maybe<StringQueryOperatorInput>;
   target?: Maybe<StringQueryOperatorInput>;
   tagName?: Maybe<StringQueryOperatorInput>;
@@ -4181,10 +4185,6 @@ export type SitePluginPluginOptionsFilterInput = {
   policy?: Maybe<SitePluginPluginOptionsPolicyFilterListInput>;
   query?: Maybe<StringQueryOperatorInput>;
   feeds?: Maybe<SitePluginPluginOptionsFeedsFilterListInput>;
-  analyzerMode?: Maybe<StringQueryOperatorInput>;
-  reportFilename?: Maybe<StringQueryOperatorInput>;
-  generateStatsFile?: Maybe<BooleanQueryOperatorInput>;
-  statsOptions?: Maybe<SitePluginPluginOptionsStatsOptionsFilterInput>;
   pathCheck?: Maybe<BooleanQueryOperatorInput>;
   allExtensions?: Maybe<BooleanQueryOperatorInput>;
   isTSX?: Maybe<BooleanQueryOperatorInput>;
@@ -4203,22 +4203,6 @@ export type SitePluginPluginOptionsPolicyFilterInput = {
 
 export type SitePluginPluginOptionsPolicyFilterListInput = {
   elemMatch?: Maybe<SitePluginPluginOptionsPolicyFilterInput>;
-};
-
-export type SitePluginPluginOptionsStatsOptions = {
-  context?: Maybe<Scalars['String']>;
-  assets?: Maybe<Scalars['Boolean']>;
-  entrypoints?: Maybe<Scalars['Boolean']>;
-  chunks?: Maybe<Scalars['Boolean']>;
-  modules?: Maybe<Scalars['Boolean']>;
-};
-
-export type SitePluginPluginOptionsStatsOptionsFilterInput = {
-  context?: Maybe<StringQueryOperatorInput>;
-  assets?: Maybe<BooleanQueryOperatorInput>;
-  entrypoints?: Maybe<BooleanQueryOperatorInput>;
-  chunks?: Maybe<BooleanQueryOperatorInput>;
-  modules?: Maybe<BooleanQueryOperatorInput>;
 };
 
 export type SitePluginSortInput = {

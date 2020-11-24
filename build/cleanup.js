@@ -72,7 +72,7 @@ const cleanup = (er, files) => {
       delete frontmatter.img;
     }
     const output = matter.stringify(
-      grey.content.replaceAll('\n', '<br>\n'),
+      grey.content.replaceAll('\n', '  \n'),
       sortedJson.sortify(frontmatter),
     );
     writeFileSync(fileName, output);

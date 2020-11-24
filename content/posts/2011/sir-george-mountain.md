@@ -7,7 +7,7 @@ tags:
   - mountain
 title: Sir George Mountain
 ---
-
-Reflection
-The sites of the open road
-The perilous terrain below
+  
+Reflection  
+The sites of the open road  
+The perilous terrain below  

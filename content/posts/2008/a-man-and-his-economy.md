@@ -10,5 +10,5 @@ tags:
   - economics
 title: a man and his economy
 ---
-
-![money management](https://github.com/crfroehlich/cdn/raw/main/images/IMG_1158.JPG) It's hard times for the discerning investor.
+  
+![money management](https://github.com/crfroehlich/cdn/raw/main/images/IMG_1158.JPG) It's hard times for the discerning investor.  

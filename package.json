@@ -17,7 +17,7 @@
     "algoliasearch": "^4.8.0",
     "clsx": "^1.1.1",
     "emotion": "^10.0.27",
-    "gatsby": "^2.27.0",
+    "gatsby": "^2.27.1",
     "gatsby-image": "^2.6.0",
     "gatsby-link": "^2.6.0",
     "gatsby-plugin-algolia": "^0.16.1",
@@ -85,8 +85,8 @@
     "@types/react-helmet": "^6.1.0",
     "@types/react-redux": "^7.1.11",
     "@types/redux": "^3.6.31",
-    "@typescript-eslint/eslint-plugin": "^4.8.1",
-    "@typescript-eslint/parser": "^4.8.1",
+    "@typescript-eslint/eslint-plugin": "^4.8.2",
+    "@typescript-eslint/parser": "^4.8.2",
     "chalk": "^4.1.0",
     "dotenv-extended": "2.9.0",
     "eslint": "^7.14.0",
@@ -157,7 +157,7 @@
     "lint:ts": "eslint --cache --fix \"src/**/*.{ts,tsx}\"",
     "lint:type-check": "tsc --noEmit",
     "serve": "gatsby build && gatsby serve",
-    "start": "yarn build:src && gatsby develop"
+    "start": "gatsby develop"
   },
   "scriptsDocumentation": {
     "build": {

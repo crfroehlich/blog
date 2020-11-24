@@ -9,5 +9,5 @@ tags:
   - logging
 title: over the hill and through the woods
 ---
-
-there is always a time when we must choose how much evil we are willing to support to affect good.
+  
+there is always a time when we must choose how much evil we are willing to support to affect good.  

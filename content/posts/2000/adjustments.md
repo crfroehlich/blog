@@ -8,10 +8,10 @@ tags:
   - spinning
 title: adjustments
 ---
-
-When the world has begun to spin
-and the lines of resolution blur into the horizon of snow -
-the picture will not be adjusted;
-and it sometimes becomes necessary to know
-    more than your place -
-but a reason for staying put.
+  
+When the world has begun to spin  
+and the lines of resolution blur into the horizon of snow -  
+the picture will not be adjusted;  
+and it sometimes becomes necessary to know  
+    more than your place -  
+but a reason for staying put.  

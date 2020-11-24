@@ -31,7 +31,7 @@ export interface PluginCodegenOptions {
 
 const defaultOptions: IPluginRefOptions = {
   apolloConfigFile: 'apollo.config.js',
-  addTypename: false,
+  addTypename: true,
   excludes: [],
   localSchemaFile: './schema.json',
   output: '__generated__',
@@ -41,9 +41,8 @@ const defaultOptions: IPluginRefOptions = {
   includes: [
     './src/**/*.tsx',
     './src/**/*.ts',
-    './plugins/**/*.js',
-    './node_modules/gatsby-transformer-sharp/src/fragments.js',
-    // "./node_modules/gatsby-*/**/*.js" Performance reasons
+    './build/**/*.js',
+    './build/**/*.ts',
   ],
   // True can result in missed error messages through the console
   // Set it the following way to catch the errors during the build and still have watch mode:
