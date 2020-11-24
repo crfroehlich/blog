@@ -1,6 +1,5 @@
 import { GatsbyNode } from 'gatsby';
 import path from 'path';
-import { RelativeCiAgentWebpackPlugin } from '@relative-ci/agent';
 import { env } from '../initEnv';
 
 export const onCreateWebpackConfig: GatsbyNode['onCreateWebpackConfig'] = ({ actions, stage }) => {
@@ -15,7 +14,7 @@ export const onCreateWebpackConfig: GatsbyNode['onCreateWebpackConfig'] = ({ act
     },
   };
   if (stage === 'build-javascript' && env.GATSBY_BUILD_MODE?.length > 0) {
-    config.resolve.plugins.push(new RelativeCiAgentWebpackPlugin());
+    
   } else if (stage === 'develop' || stage === 'develop-html') {
     config.resolve.alias['react-dom'] = '@hot-loader/react-dom';
   }
