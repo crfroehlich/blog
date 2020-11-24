@@ -4805,6 +4805,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"add-px-to-style@npm:1.0.0":
+  version: 1.0.0
+  resolution: "add-px-to-style@npm:1.0.0"
+  checksum: 1d9a386d2280662190d0eb3c805041481f277f328e051f4777de3dd31aa51a54589d73beb12b38a4d96067f64c5747fe2d48de30a977cd46466284bacb9fe426
+  languageName: node
+  linkType: hard
+
 "address@npm:1.0.3":
   version: 1.0.3
   resolution: "address@npm:1.0.3"
@@ -9435,6 +9442,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"dom-css@npm:^2.0.0":
+  version: 2.1.0
+  resolution: "dom-css@npm:2.1.0"
+  dependencies:
+    add-px-to-style: 1.0.0
+    prefix-style: 2.0.1
+    to-camel-case: 1.0.0
+  checksum: 9aa8f9373ebe542c1ef9504914ef2ba28b582aaeab09f52cec2f2ac710d19cc2ab77cf4d72c0ad5fd3535fbe55410cf8ab4669f975cdb26d1570199e549f124f
+  languageName: node
+  linkType: hard
+
 "dom-helpers@npm:^5.0.1":
   version: 5.2.0
   resolution: "dom-helpers@npm:5.2.0"
@@ -13849,6 +13867,7 @@ fsevents@~2.1.2:
     graphql: ^15.4.0
     gray-matter: 4.0.2
     husky: ^4.3.0
+    js-search: ^2.0.0
     lint-staged: ^10.5.1
     lodash: ^4.17.20
     node-sass: ^4.9.0
@@ -13858,6 +13877,7 @@ fsevents@~2.1.2:
     prism-react-renderer: ^1.1.1
     prismjs: ^1.22.0
     react: ^17.0.1
+    react-custom-scrollbars: ^4.2.1
     react-device-detect: ^1.14.0
     react-dom: ^17.0.1
     react-feather: ^2.0.9
@@ -15588,6 +15608,13 @@ fsevents@~2.1.2:
   version: 2.6.4
   resolution: "js-base64@npm:2.6.4"
   checksum: f3fadb18c2feade451a42677d29ddac4e5d40f6561fce38454c0dbf8b5b937d47e65ca54ae109325db90baaab7443780ae071b7d8577273918e8407b01b83f88
+  languageName: node
+  linkType: hard
+
+"js-search@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "js-search@npm:2.0.0"
+  checksum: fbacd176f6119d860643ed715db0acb83702a6fd78c05e47e8aff515af98ddd1dcf02ace38acc839f23735d3c82e435f9815c4e26eee74bd11cd2c6543dcc82e
   languageName: node
   linkType: hard
 
@@ -19981,6 +20008,13 @@ fsevents@~2.1.2:
   languageName: node
   linkType: hard
 
+"prefix-style@npm:2.0.1":
+  version: 2.0.1
+  resolution: "prefix-style@npm:2.0.1"
+  checksum: 561220a0ab6b1ce201e4ec9a34b6ee28c0d86ffd84f900f07814990c404fe396341cdda7e871be4c90c34fb5940b42db3f9304c2151323473fa0973dad81625f
+  languageName: node
+  linkType: hard
+
 "prelude-ls@npm:^1.2.1":
   version: 1.2.1
   resolution: "prelude-ls@npm:1.2.1"
@@ -20443,6 +20477,15 @@ fsevents@~2.1.2:
   languageName: node
   linkType: hard
 
+"raf@npm:^3.1.0":
+  version: 3.4.1
+  resolution: "raf@npm:3.4.1"
+  dependencies:
+    performance-now: ^2.1.0
+  checksum: 567b0160be46ed20b124a05ace6e653f4ad3c047c48d02ac76161e9ac624488c0fdf622b2f4fb9c35c0c828a13dfa549044ad1db89c7af075cb0f99403b88c4b
+  languageName: node
+  linkType: hard
+
 "randombytes@npm:^2.0.0, randombytes@npm:^2.0.1, randombytes@npm:^2.0.5, randombytes@npm:^2.1.0":
   version: 2.1.0
   resolution: "randombytes@npm:2.1.0"
@@ -20511,6 +20554,20 @@ fsevents@~2.1.2:
   bin:
     rc: ./cli.js
   checksum: ea2b7f7cee201a67923a2240de594a5d9b59bd312b814b06536d3d609a416dfd6fb9b85ea2abfd3b8a4eb5ed33eaff946ee75a8f2b7fb10941073c5cfee6b7a5
+  languageName: node
+  linkType: hard
+
+"react-custom-scrollbars@npm:^4.2.1":
+  version: 4.2.1
+  resolution: "react-custom-scrollbars@npm:4.2.1"
+  dependencies:
+    dom-css: ^2.0.0
+    prop-types: ^15.5.10
+    raf: ^3.1.0
+  peerDependencies:
+    react: ^0.14.0 || ^15.0.0 || ^16.0.0
+    react-dom: ^0.14.0 || ^15.0.0 || ^16.0.0
+  checksum: 6b5e3b0135a1d89a11bb7312e2c0258227032203d28980fe13d659cd17bf48faf0836009d1c874d4c88915a3abb9519f0bfabb9447e09cabe97e781eeb5cc745
   languageName: node
   linkType: hard
 
@@ -23893,10 +23950,26 @@ fsevents@~2.1.2:
   languageName: node
   linkType: hard
 
+"to-camel-case@npm:1.0.0":
+  version: 1.0.0
+  resolution: "to-camel-case@npm:1.0.0"
+  dependencies:
+    to-space-case: ^1.0.0
+  checksum: 260aae15d572724dfb9376353e3105909c46fa8273f2c0f89b561a0df73d01f2a44be5f2e415fae2edac892768865e94d100d83a5e566297e38d188cfffe617e
+  languageName: node
+  linkType: hard
+
 "to-fast-properties@npm:^2.0.0":
   version: 2.0.0
   resolution: "to-fast-properties@npm:2.0.0"
   checksum: 40e61984243b183d575a2f3a87d008bd57102115701ee9037fd673e34becf12ee90262631857410169ca82f401a662ed94482235cea8f3b8dea48b87eaabc467
+  languageName: node
+  linkType: hard
+
+"to-no-case@npm:^1.0.0":
+  version: 1.0.2
+  resolution: "to-no-case@npm:1.0.2"
+  checksum: 7aa8962a71897a7086d3e35f3fa4f0377a4c1cb7a77c6cd6bdc0f2778f3e08cf8008dd35f3c60322e5f358c961f5a6691fbb125b68a644b83eebb233b23c5b76
   languageName: node
   linkType: hard
 
@@ -23951,6 +24024,15 @@ fsevents@~2.1.2:
     regex-not: ^1.0.2
     safe-regex: ^1.1.0
   checksum: ed733fdff8970628ef2d425564d1331a812e57cbb6ab7675c970046b2b792cbf2386c8292e45bb201bf85ca71a7708e3e1ffb979f5cd089ad4a82a12df75939b
+  languageName: node
+  linkType: hard
+
+"to-space-case@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "to-space-case@npm:1.0.0"
+  dependencies:
+    to-no-case: ^1.0.0
+  checksum: e83f61676ec329b9d661f6561b648b3ed951ee75f3d32cbdf5b187d271782159cdba7dfbc5b40a50d314e6eeb143d7eca575b63874a285dffc2e5e607e92d151
   languageName: node
   linkType: hard
 

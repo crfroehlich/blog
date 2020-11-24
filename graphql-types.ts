@@ -3610,8 +3610,7 @@ export type SitePageFieldsEnum =
   | 'pluginCreator___pluginOptions___disableBgImageOnAlpha'
   | 'pluginCreator___pluginOptions___disableBgImage'
   | 'pluginCreator___pluginOptions___apolloConfigFile'
-  | 'pluginCreator___pluginOptions___addTypename___prefix'
-  | 'pluginCreator___pluginOptions___addTypename___iconName'
+  | 'pluginCreator___pluginOptions___addTypename'
   | 'pluginCreator___pluginOptions___localSchemaFile'
   | 'pluginCreator___pluginOptions___target'
   | 'pluginCreator___pluginOptions___tagName'
@@ -3870,8 +3869,7 @@ export type SitePluginFieldsEnum =
   | 'pluginOptions___disableBgImageOnAlpha'
   | 'pluginOptions___disableBgImage'
   | 'pluginOptions___apolloConfigFile'
-  | 'pluginOptions___addTypename___prefix'
-  | 'pluginOptions___addTypename___iconName'
+  | 'pluginOptions___addTypename'
   | 'pluginOptions___localSchemaFile'
   | 'pluginOptions___target'
   | 'pluginOptions___tagName'
@@ -4058,7 +4056,7 @@ export type SitePluginPluginOptions = {
   disableBgImageOnAlpha?: Maybe<Scalars['Boolean']>;
   disableBgImage?: Maybe<Scalars['Boolean']>;
   apolloConfigFile?: Maybe<Scalars['String']>;
-  addTypename?: Maybe<SitePluginPluginOptionsAddTypename>;
+  addTypename?: Maybe<Scalars['Boolean']>;
   localSchemaFile?: Maybe<Scalars['String']>;
   target?: Maybe<Scalars['String']>;
   tagName?: Maybe<Scalars['String']>;
@@ -4093,16 +4091,6 @@ export type SitePluginPluginOptions = {
   allExtensions?: Maybe<Scalars['Boolean']>;
   isTSX?: Maybe<Scalars['Boolean']>;
   jsxPragma?: Maybe<Scalars['String']>;
-};
-
-export type SitePluginPluginOptionsAddTypename = {
-  prefix?: Maybe<Scalars['String']>;
-  iconName?: Maybe<Scalars['String']>;
-};
-
-export type SitePluginPluginOptionsAddTypenameFilterInput = {
-  prefix?: Maybe<StringQueryOperatorInput>;
-  iconName?: Maybe<StringQueryOperatorInput>;
 };
 
 export type SitePluginPluginOptionsFeeds = {
@@ -4154,7 +4142,7 @@ export type SitePluginPluginOptionsFilterInput = {
   disableBgImageOnAlpha?: Maybe<BooleanQueryOperatorInput>;
   disableBgImage?: Maybe<BooleanQueryOperatorInput>;
   apolloConfigFile?: Maybe<StringQueryOperatorInput>;
-  addTypename?: Maybe<SitePluginPluginOptionsAddTypenameFilterInput>;
+  addTypename?: Maybe<BooleanQueryOperatorInput>;
   localSchemaFile?: Maybe<StringQueryOperatorInput>;
   target?: Maybe<StringQueryOperatorInput>;
   tagName?: Maybe<StringQueryOperatorInput>;
@@ -4294,39 +4282,3 @@ export type TransformOptions = {
 export type WebPOptions = {
   quality?: Maybe<Scalars['Int']>;
 };
-
-export type GetLabelByNameQueryQueryVariables = Exact<{
-  label?: Maybe<Scalars['String']>;
-}>;
-
-
-export type GetLabelByNameQueryQuery = { allMdx: (
-    Pick<MdxConnection, 'totalCount'>
-    & { edges: Array<{ node: { fields?: Maybe<Pick<MdxFields, 'id' | 'title' | 'slug' | 'updated'>> } }> }
-  ) };
-
-export type GetTagByNameQueryQueryVariables = Exact<{
-  tag?: Maybe<Scalars['String']>;
-}>;
-
-
-export type GetTagByNameQueryQuery = { allMdx: (
-    Pick<MdxConnection, 'totalCount'>
-    & { edges: Array<{ node: (
-        Pick<Mdx, 'excerpt'>
-        & { fields?: Maybe<Pick<MdxFields, 'id' | 'title' | 'slug' | 'date' | 'tags' | 'description'>>, frontmatter?: Maybe<{ background?: Maybe<{ childImageSharp?: Maybe<{ fixed?: Maybe<Pick<ImageSharpFixed, 'base64' | 'aspectRatio' | 'width' | 'height' | 'src' | 'srcSet'>> }> }> }> }
-      ) }> }
-  ) };
-
-export type GetVisualizationsQueryQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-export type GetVisualizationsQueryQuery = { allMdx: { group: Array<Pick<MdxGroupConnection, 'fieldValue' | 'totalCount'>> } };
-
-export type GetNewSidebarLayoutQueryQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-export type GetNewSidebarLayoutQueryQuery = { allMdx: { group: Array<(
-      Pick<MdxGroupConnection, 'fieldValue'>
-      & { edges: Array<{ node: { fields?: Maybe<Pick<MdxFields, 'slug' | 'title' | 'year' | 'date'>> } }> }
-    )> }, allSrc: { edges: Array<{ node: { fields?: Maybe<Pick<MdxFields, 'slug' | 'title'>> } }> } };
