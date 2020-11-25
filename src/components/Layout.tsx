@@ -12,6 +12,7 @@ import {
   MaxWidth,
 } from '../styles';
 import { getSideBarData } from '../utils';
+import { Paper } from '@material-ui/core';
 
 export const Layout: React.FC<IPageProps> = (props): JSX.Element => {
   const [sidebar] = useState(getSideBarData());
@@ -25,9 +26,11 @@ export const Layout: React.FC<IPageProps> = (props): JSX.Element => {
       <MDXProvider components={MdxNodes}>
         <Wrapper>
           <LeftSidebar sidebar={sidebar} />
-          <Content>
-            <MaxWidth>{children}</MaxWidth>
-          </Content>
+            <Content>
+              <Paper>
+                <MaxWidth>{children}</MaxWidth>
+              </Paper>
+            </Content>
           <RightSidebar {...props} />
         </Wrapper>
       </MDXProvider>

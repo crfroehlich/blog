@@ -31,6 +31,7 @@ export const SearchForm = styled.form`
 `;
 
 export const SearchResult = styled.div`
+  z-index: 99999;
   position: absolute;
   width: 100%;
   background: #fff;

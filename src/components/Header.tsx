@@ -1,24 +1,20 @@
-import React from 'react';
 import styled from '@emotion/styled';
-import { Link } from './Link';
-import { Icon } from './Icon';
+import React, { useState } from 'react';
 import { getConfig } from '../../config';
+import {
+  NavSearchButton,
+  NavSearchFromWrapper,
+  NavSearchWrapper,
+  SearchCloseButton,
+} from '../containers/navbar.style';
+import SearchContainer from '../containers/search';
 import { IPageProps } from '../types';
 import { Tools } from '../utils';
-import { SearchComponent } from '../search';
+import { Icon } from './Icon';
+import { Link } from './Link';
 import { Tooltip } from './Tooltip';
 
 const config = getConfig();
-const isSearchEnabled = config.header?.search?.enabled;
-const searchIndices = [];
-
-if (isSearchEnabled && config.header.search.indexName) {
-  searchIndices.push({
-    name: `${config.header.search.indexName}`,
-    title: `Results`,
-    hitComp: `PageHit`,
-  });
-}
 
 const setNavBar = () => {
   const tools = new Tools();
@@ -45,6 +41,17 @@ const StyledBgDiv = styled('div')`
 `;
 
 export const Header: React.FC<IPageProps> = (): JSX.Element => {
+  const [state, setState] = useState({
+    toggle: false,
+    search: '',
+  });
+
+  const toggleHandle = () => {
+    setState({
+      ...state,
+      toggle: !state.toggle,
+    });
+  };
   return (
     <div className={'navBarWrapper'}>
       <nav className={'navBarDefault'}>
@@ -59,11 +66,6 @@ export const Header: React.FC<IPageProps> = (): JSX.Element => {
             />
           </Tooltip>
         </div>
-        {isSearchEnabled ? (
-          <div className={'searchWrapper hiddenMobile navBarUL'}>
-            <SearchComponent collapse={true} indices={searchIndices} />
-          </div>
-        ) : null}
         <div id="navbar" className={'topnav'}>
           <ul className={'navBarUL navBarNav navBarULRight'}>
             {config.header.links.map((link, key) => (
@@ -93,6 +95,11 @@ export const Header: React.FC<IPageProps> = (): JSX.Element => {
                 <Icon {...{ icon: 'rss' }} />
               </Link>
             </li>
+            <li>
+              <NavSearchButton type="button" aria-label="search" onClick={toggleHandle}>
+                <Icon icon={'search'} />
+              </NavSearchButton>
+            </li>
           </ul>
         </div>
       </nav>
@@ -110,12 +117,17 @@ export const Header: React.FC<IPageProps> = (): JSX.Element => {
             <span className={'iconBar'}></span>
           </span>
         </div>
-        {isSearchEnabled ? (
-          <div className={'searchWrapper'}>
-            <SearchComponent collapse={true} indices={searchIndices} />
-          </div>
-        ) : null}
       </StyledBgDiv>
+      <NavSearchWrapper className={state.toggle === true ? 'expand' : ''}>
+        <NavSearchFromWrapper>
+          <SearchContainer />
+          <SearchCloseButton
+            type="submit"
+            aria-label="close"
+            onClick={toggleHandle}
+          ></SearchCloseButton>
+        </NavSearchFromWrapper>
+      </NavSearchWrapper>
     </div>
   );
 };

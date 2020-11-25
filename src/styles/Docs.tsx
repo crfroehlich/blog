@@ -84,3 +84,7 @@ export const StyledMainWrapper = styled.div`
     padding: 0 15px;
   }
 `;
+
+export const PageWrapper = styled.div`
+  background: ${DarkStyles.colors.background};
+`;

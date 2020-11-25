@@ -11,7 +11,7 @@ import {
 import { getYearOfThe } from '../utils';
 import { Icon } from './Icon';
 import { Link } from './Link';
-import { LeftSideBarWidth } from '../styles';
+import { LeftSidebarStyles, LeftSideBarWidth } from '../styles';
 
 export const LeftSidebar = ({ sidebar }): JSX.Element => {
   const data = useRef(sidebar);
@@ -95,46 +95,39 @@ export const LeftSidebar = ({ sidebar }): JSX.Element => {
 
   return (
     <LeftSideBarWidth className={'hiddenMobile'}>
-      <Paper
-        elevation={15}
-        style={{
-          backgroundColor: '#33475B',
-          fontSize: '20px',
-          marginLeft: '5px',
-          marginTop: '1.9em',
-          overflow: 'auto',
-          paddingBottom: '2px',
-          paddingTop: '2px',
-          position: 'sticky',
-          top: 0,
-          width: '100%',
-        }}
-      >
-        <ProSidebar breakPoint={'md'}>
-          <SidebarContent>
-            <Menu iconShape="square">
-              <MenuItem icon={Icon({ icon: 'ruble-sign', size: 'lg' })}>
-                <Link to={'/'} title={'Home'}>
-                  <div>Home</div>
-                </Link>
-              </MenuItem>
-              {data.current.sections.map((s, si) => {
-                return (
-                  <SubMenu
-                    title={<div {...{ onClick: (e) => onNodeClick(e, s) }}>{s.name}</div>}
-                    icon={<Icon {...{ icon: s.icon, size: 'lg' }} />}
-                    defaultOpen={s.open}
-                    key={`${si}_${s.name}`}
-                  >
-                    {s.articles && getArticlesMenu(s.articles)}
-                    {s.source && getSourceMenu(s.source)}
-                  </SubMenu>
-                );
-              })}
-            </Menu>
-          </SidebarContent>
-        </ProSidebar>
-      </Paper>
+      <LeftSidebarStyles>
+        <Paper
+          elevation={15}
+          style={{
+            backgroundColor: '#33475B',
+          }}
+        >
+          <ProSidebar breakPoint={'md'}>
+            <SidebarContent>
+              <Menu iconShape="square">
+                <MenuItem icon={Icon({ icon: 'ruble-sign', size: 'lg' })}>
+                  <Link to={'/'} title={'Home'}>
+                    <div>Home</div>
+                  </Link>
+                </MenuItem>
+                {data.current.sections.map((s, si) => {
+                  return (
+                    <SubMenu
+                      title={<div {...{ onClick: (e) => onNodeClick(e, s) }}>{s.name}</div>}
+                      icon={<Icon {...{ icon: s.icon, size: 'lg' }} />}
+                      defaultOpen={s.open}
+                      key={`${si}_${s.name}`}
+                    >
+                      {s.articles && getArticlesMenu(s.articles)}
+                      {s.source && getSourceMenu(s.source)}
+                    </SubMenu>
+                  );
+                })}
+              </Menu>
+            </SidebarContent>
+          </ProSidebar>
+        </Paper>
+      </LeftSidebarStyles>
     </LeftSideBarWidth>
   );
 };

@@ -745,8 +745,8 @@ export type FileFieldsEnum =
   | 'childMdx___frontmatter___date'
   | 'childMdx___frontmatter___description'
   | 'childMdx___frontmatter___draft'
-  | 'childMdx___frontmatter___subtitle'
   | 'childMdx___frontmatter___tags'
+  | 'childMdx___frontmatter___subtitle'
   | 'childMdx___frontmatter___created'
   | 'childMdx___frontmatter___updated'
   | 'childMdx___frontmatter___github'
@@ -1865,8 +1865,8 @@ export type MdxFieldsEnum =
   | 'frontmatter___date'
   | 'frontmatter___description'
   | 'frontmatter___draft'
-  | 'frontmatter___subtitle'
   | 'frontmatter___tags'
+  | 'frontmatter___subtitle'
   | 'frontmatter___created'
   | 'frontmatter___updated'
   | 'frontmatter___github'
@@ -2024,8 +2024,8 @@ export type MdxFrontmatter = {
   date?: Maybe<Scalars['String']>;
   description?: Maybe<Scalars['String']>;
   draft?: Maybe<Scalars['Boolean']>;
-  subtitle?: Maybe<Scalars['String']>;
   tags?: Maybe<Array<Maybe<Scalars['String']>>>;
+  subtitle?: Maybe<Scalars['String']>;
   created?: Maybe<Scalars['String']>;
   updated?: Maybe<Scalars['String']>;
   github?: Maybe<Scalars['String']>;
@@ -2038,8 +2038,8 @@ export type MdxFrontmatterFilterInput = {
   date?: Maybe<StringQueryOperatorInput>;
   description?: Maybe<StringQueryOperatorInput>;
   draft?: Maybe<BooleanQueryOperatorInput>;
-  subtitle?: Maybe<StringQueryOperatorInput>;
   tags?: Maybe<StringQueryOperatorInput>;
+  subtitle?: Maybe<StringQueryOperatorInput>;
   created?: Maybe<StringQueryOperatorInput>;
   updated?: Maybe<StringQueryOperatorInput>;
   github?: Maybe<StringQueryOperatorInput>;
@@ -4282,3 +4282,47 @@ export type TransformOptions = {
 export type WebPOptions = {
   quality?: Maybe<Scalars['Int']>;
 };
+
+export type GetSearchDataQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type GetSearchDataQuery = { allMdx: { edges: Array<{ node: { fields?: Maybe<Pick<MdxFields, 'slug'>>, frontmatter?: Maybe<(
+          Pick<MdxFrontmatter, 'date' | 'title' | 'description' | 'tags'>
+          & { background?: Maybe<{ childImageSharp?: Maybe<{ fixed?: Maybe<Pick<ImageSharpFixed, 'base64' | 'aspectRatio' | 'width' | 'height' | 'src' | 'srcSet'>> }> }> }
+        )> } }> } };
+
+export type GetLabelByNameQueryQueryVariables = Exact<{
+  label?: Maybe<Scalars['String']>;
+}>;
+
+
+export type GetLabelByNameQueryQuery = { allMdx: (
+    Pick<MdxConnection, 'totalCount'>
+    & { edges: Array<{ node: { fields?: Maybe<Pick<MdxFields, 'id' | 'title' | 'slug' | 'updated'>> } }> }
+  ) };
+
+export type GetTagByNameQueryQueryVariables = Exact<{
+  tag?: Maybe<Scalars['String']>;
+}>;
+
+
+export type GetTagByNameQueryQuery = { allMdx: (
+    Pick<MdxConnection, 'totalCount'>
+    & { edges: Array<{ node: (
+        Pick<Mdx, 'excerpt'>
+        & { fields?: Maybe<Pick<MdxFields, 'id' | 'title' | 'slug' | 'date' | 'tags' | 'description'>>, frontmatter?: Maybe<{ background?: Maybe<{ childImageSharp?: Maybe<{ fixed?: Maybe<Pick<ImageSharpFixed, 'base64' | 'aspectRatio' | 'width' | 'height' | 'src' | 'srcSet'>> }> }> }> }
+      ) }> }
+  ) };
+
+export type GetVisualizationsQueryQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type GetVisualizationsQueryQuery = { allMdx: { group: Array<Pick<MdxGroupConnection, 'fieldValue' | 'totalCount'>> } };
+
+export type GetNewSidebarLayoutQueryQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type GetNewSidebarLayoutQueryQuery = { allMdx: { group: Array<(
+      Pick<MdxGroupConnection, 'fieldValue'>
+      & { edges: Array<{ node: { fields?: Maybe<Pick<MdxFields, 'slug' | 'title' | 'year' | 'date'>> } }> }
+    )> }, allSrc: { edges: Array<{ node: { fields?: Maybe<Pick<MdxFields, 'slug' | 'title'>> } }> } };

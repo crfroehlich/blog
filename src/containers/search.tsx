@@ -23,14 +23,19 @@ function Search() {
               slug
             }
             frontmatter {
-              date(formatString: "MMMM D, YYYY")
+              date
               title
               description
               tags
               background {
                 childImageSharp {
-                  fluid(maxWidth: 62, maxHeight: 62, quality: 90) {
-                    ...GatsbyImageSharpFluid_withWebp_tracedSVG
+                  fixed(width: 30) {
+                    base64
+                    aspectRatio
+                    width
+                    height
+                    src
+                    srcSet
                   }
                 }
               }
@@ -41,7 +46,7 @@ function Search() {
     }
   `);
 
-  const dataset = data.allMarkdownRemark.edges;
+  const dataset = data.allMdx.edges;
 
   /**
    * handles the input change and perfom a search with js-search

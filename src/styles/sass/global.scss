@@ -114,11 +114,6 @@ a {
   border-right: 1px solid rgba(255, 255, 255, 0.3);
 }
 
-.navBarULRight {
-  /* position: absolute;
-right: 30px; */
-}
-
 .githubIcon {
   width: 15px;
   margin-right: 5px;
@@ -798,6 +793,8 @@ img {
 }
 
 .topnav {
+  margin-left: auto;
+  margin-right: 0;
   -webkit-transition: top 0.5s, bottom 0.5s;
 }
 
