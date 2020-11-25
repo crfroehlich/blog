@@ -9,30 +9,27 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
 
     strategy:
       matrix:
-        node-version: [15.2.x]
+        node-version: [15.3.x]
 
     steps:
       - uses: actions/checkout@v2
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v2-beta
         with:
           node-version: ${{ matrix.node-version }}
-      - run: npm install -g gatsby-cli yarn rimraf
+      - run: npm install -g yarn rimraf
       - run: yarn install
         env:
           FA_PRO_NPM_TOKEN: ${{ secrets.FA_PRO_NPM_TOKEN }}
+          RELATIVE_CI_KEY: ${{ secrets.RELATIVE_CI_KEY }}
       - run: yarn build
         env:
-          GATSBY_ALGOLIA_ADMIN_API_KEY: ${{ secrets.GATSBY_ALGOLIA_ADMIN_API_KEY }}
-          GATSBY_ALGOLIA_APPLICATION_ID: ${{ secrets.GATSBY_ALGOLIA_APPLICATION_ID }}
-          GATSBY_ALGOLIA_SEARCH_ONLY_API_KEY: ${{ secrets.GATSBY_ALGOLIA_SEARCH_ONLY_API_KEY }}
           FA_PRO_NPM_TOKEN: ${{ secrets.FA_PRO_NPM_TOKEN }}
+          RELATIVE_CI_KEY: ${{ secrets.RELATIVE_CI_KEY }}
       - run: git config --global user.email "${{ secrets.GH_EMAIL }}"
       - run: git config --global user.name "${{ secrets.GH_NAME }}"
-      - run: npx relative-ci-agent
-        env:
-          RELATIVE_CI_KEY: ${{ secrets.RELATIVE_CI_KEY }}
+

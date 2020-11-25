@@ -1,29 +1,8 @@
+import { Badge, Chip } from '@material-ui/core';
+import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
+import { kebabCase } from 'lodash';
 import React from 'react';
-import kebabCase from 'lodash/kebabCase';
-import { DisplayDate, Link } from '..';
-import { createStyles, Theme, makeStyles } from '@material-ui/core/styles';
-import Chip from '@material-ui/core/Chip';
-import Badge from '@material-ui/core/Badge';
-
-// const getBadgeStyles = makeStyles((theme: Theme) =>
-// createStyles({
-//   root: {
-//     '& > *': {
-//       margin: theme.spacing(2),
-//     },
-//   },
-// }),
-// );
-
-// const TagBadge = () => {
-//   const classes = getBadgeStyles();
-
-//   return (
-//     <div className={classes.root}>
-//       <Badge badgeContent={99} {...defaultProps} />
-//     </div>
-//   );
-// };
+import { Link } from './Link';
 
 const getChipStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -34,11 +13,25 @@ const getChipStyles = makeStyles((theme: Theme) =>
         margin: theme.spacing(0.5),
       },
     },
+    badge: {
+      color: theme.palette.text.primary,
+      right: '-0.3rem',
+      top: '-0.3rem',
+    },
+    link: {
+      marginRight: '0.5rem',
+    },
+    chip: {
+      backgroundColor: '#1ed3c6',
+      color: 'fff',
+      cursor: 'pointer'
+    }
   }),
 );
 
-export const TagSet = ({tags, linkPrefix, date}): JSX.Element => {
+export const TagSet = (props): JSX.Element => {
   const classes = getChipStyles();
+  const { tags, linkPrefix } = props;
 
   return (
     <div className={classes.root}>
@@ -46,35 +39,17 @@ export const TagSet = ({tags, linkPrefix, date}): JSX.Element => {
         <Link
           to={`/${linkPrefix}/${kebabCase(tag.name)}`}
           key={kebabCase(tag.name)}
-          style={{ marginRight: '0.5rem' }}
+          className={classes.link}
         >
-          <Badge badgeContent={tag.count > 1 ? tag.count : 0} color="primary" style={{ right: '-0.3rem', top: '-0.3rem' }}>
-            <Chip style={{ backgroundColor: '#1ed3c6', color: 'fff' }} label={tag.name} onClick={console.log}/>
+          <Badge
+            badgeContent={tag.count > 1 ? tag.count : 0}
+            color="primary"
+            className={classes.badge}
+          >
+            <Chip className={classes.chip} label={tag.name} />
           </Badge>
         </Link>
       ))}
-      <DisplayDate style={{ color: '#1ed3c6' }} date={date} />
     </div>
   );
 };
-
-// export const TagSet: React.FC<any> = ({tags, linkPrefix, date}): JSX.Element => (
-//   <ChipSet>
-//     {tags?.map((tag) => (
-//       <Link
-//         to={`/${linkPrefix}/${kebabCase(tag.name)}`}
-//         key={kebabCase(tag.name)}
-//         style={{ marginRight: '0.5rem' }}
-//       >
-//         <BadgeAnchor>
-//           <Tag style={{ backgroundColor: '#1ed3c6', color: 'fff' }} label={tag.name} />
-//           <Badge
-//             label={tag.count}
-//             style={{ backgroundColor: 'cadetblue', right: '-0.3rem', top: '-0.3rem' }}
-//           />
-//         </BadgeAnchor>
-//       </Link>
-//     ))}
-//     <DisplayDate style={{ color: '#1ed3c6' }} date={date} />
-//   </ChipSet>
-// )

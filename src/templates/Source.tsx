@@ -1,53 +1,29 @@
-import React, { Component } from 'react';
-import { graphql } from 'gatsby';
-import MDXRenderer from 'gatsby-plugin-mdx/mdx-renderer';
-import { IPageProps } from '../types/interfaces';
-import { Edit, Icon, Link, StyledHeading, StyledMainWrapper, TagSet } from '../components';
+import React from 'react';
+import { MDXRenderer } from 'gatsby-plugin-mdx';
+import { PageTitle } from '../components';
+import { PageWrapper, StyledMainWrapper } from '../styles';
 
-export default class Source extends Component<IPageProps> {
-  render(): JSX.Element {
-    const {
-      data,
-      pageContext: { pageLabels },
-    } = this.props;
-    const { mdx } = data;
-    const { title, github } = mdx.fields;
-    const updated = new Date(mdx.fields.updated);
+export const Source = (props): JSX.Element => {
+  const {
+    pageContext: { pageLabels, mdx },
+  } = props;
+  const { title, github } = mdx.fields;
+  const updated = new Date(mdx.fields.updated);
 
-    return (
-      <div>
-        <div className={'titleWrapper'}>
-          <StyledHeading>{title}</StyledHeading>
-          <Edit className={'mobileView'}>
-            <Link className={'gitBtn'} to={github}>
-              {Icon({ icon: ['fab', 'github'] })}
-              <div style={{ paddingLeft: '5px' }}>Source</div>
-            </Link>
-          </Edit>
-        </div>
-        <StyledMainWrapper>
-          <TagSet tags={pageLabels} linkPrefix="этикетка" date={updated} />
-          <MDXRenderer>{mdx.body}</MDXRenderer>
-        </StyledMainWrapper>
-      </div>
-    );
-  }
-}
+  return (
+    <PageWrapper>
+      <PageTitle
+        title={title}
+        gitHubPath={github}
+        tags={pageLabels}
+        tagLinkPrefix={'этикетка'}
+        date={updated}
+      />
+      <StyledMainWrapper>
+        <MDXRenderer>{mdx.body}</MDXRenderer>
+      </StyledMainWrapper>
+    </PageWrapper>
+  );
+};
 
-export const sourceQuery = graphql`
-  query GetSourceByIdQuery($id: String!) {
-    mdx(fields: { id: { eq: $id } }) {
-      fields {
-        id
-        title
-        slug
-        created
-        updated
-        github
-        labels
-      }
-      body
-      tableOfContents
-    }
-  }
-`;
+export default Source;

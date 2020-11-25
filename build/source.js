@@ -68,3 +68,6 @@ ${src}\`\`\`
 };
 
 glob('src/**/**', GLOB_OPTIONS, cleanup);
+glob('build/**/**', GLOB_OPTIONS, cleanup);
+glob('./*.ts', GLOB_OPTIONS, cleanup);
+glob('./*.js', GLOB_OPTIONS, cleanup);

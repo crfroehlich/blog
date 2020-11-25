@@ -1,19 +1,18 @@
 import React, { useState } from 'react';
 import { MDXProvider } from '@mdx-js/react';
-import mdxComponents from './styles/StyledProp';
+import { MdxNodes } from '../styles';
 import { RightSidebar } from './RightSidebar';
 import { IPageProps } from '../types';
 import { LeftSidebar } from './LeftSidebar';
+import { Header } from './Header';
 import { SEO } from './SEO';
 import {
   Wrapper,
-  LeftSideBarWidth,
   Content,
   MaxWidth,
-  RightSideBarWidth,
-  DarkTheme,
-} from './styles';
+} from '../styles';
 import { getSideBarData } from '../utils';
+import { Paper } from '@material-ui/core';
 
 export const Layout: React.FC<IPageProps> = (props): JSX.Element => {
   const [sidebar] = useState(getSideBarData());
@@ -21,22 +20,21 @@ export const Layout: React.FC<IPageProps> = (props): JSX.Element => {
   const { children } = props;
 
   return (
-    <DarkTheme {...props}>
+    <div>
+      <Header {...props} />
       <SEO {...props} />
-      <MDXProvider components={mdxComponents}>
+      <MDXProvider components={MdxNodes}>
         <Wrapper>
-          <LeftSideBarWidth className={'hiddenMobile'}>
-            <LeftSidebar sidebar={sidebar} />
-          </LeftSideBarWidth>
+          <LeftSidebar sidebar={sidebar} />
           <Content>
-            <MaxWidth>{children}</MaxWidth>
+            <Paper>
+              <MaxWidth>{children}</MaxWidth>
+            </Paper>
           </Content>
-          <RightSideBarWidth className={'hiddenMobile'}>
-            <RightSidebar {...props} />
-          </RightSideBarWidth>
+          <RightSidebar {...props} />
         </Wrapper>
       </MDXProvider>
-    </DarkTheme>
+    </div>
   );
 };
 

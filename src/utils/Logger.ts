@@ -1,21 +1,23 @@
 import chalk from 'chalk';
+import log from 'roarr';
+//const log = console;
 
-const log = console;
-
-export default class Logger {
+export class Logger {
   public static info(...props): void {
-    log.info(chalk.blue(...props));
+    log.info(chalk.blue([...props]));
   }
 
   public static warn(...props): void {
-    log.warn(chalk.yellow(...props));
+    log.warn(chalk.yellow([...props]));
   }
 
   public static error(...props): void {
-    log.error(chalk.red(...props));
+    log.error(chalk.red([...props]));
   }
 
   public static success(...props): void {
-    log.info(chalk.green(...props));
+    log.info(chalk.green([...props]));
   }
 }
+
+export default Logger;

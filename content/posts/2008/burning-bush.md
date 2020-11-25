@@ -7,5 +7,5 @@ tags:
   - politics
 title: burning bush
 ---
-
-the agony of waiting for it all to end
+  
+the agony of waiting for it all to end  

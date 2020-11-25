@@ -21,10 +21,10 @@ export class Tools {
     }
   }
 
-  getLocalDate(date: Date = new Date()): string {
+  getLocalDate(date: Date = new Date(), locale = 'ru-RU'): string {
     let ret = '';
     try {
-      ret = date?.toLocaleDateString('ru-RU', {
+      ret = date?.toLocaleDateString(locale, {
         weekday: 'long',
         year: 'numeric',
         month: '2-digit',

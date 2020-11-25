@@ -5,16 +5,18 @@ export interface IPageProps {
   data: Query;
   path: string;
   pageContext: {
+    background?: any;
     next?: INode;
+    pageLabels?: any[];
+    pageTags?: any[];
     previous?: INode;
     slug: string;
-    pageTags?: any[];
-    pageLabels?: any[];
     toc?: {
       type: 'Article' | 'Tag' | 'Visualization';
       content: any;
     };
     title: string;
+    mdx?: INode;
   };
   pageTags?: any;
   site: {
@@ -31,34 +33,6 @@ export interface IPageProps {
 }
 
 export type WindowLocation = Window['location'] & HLocation;
-
-export interface IColors {
-  background?: string;
-  heading?: string;
-  link?: string;
-  preFormattedText?: string;
-  text?: string;
-}
-
-export interface ITheme {
-  colors?: IColors;
-  darkBlue?: string;
-  darkGray?: string;
-  gray?: string;
-  lightBlue?: string;
-  lightGray?: string;
-  shortTrans?: string | boolean;
-  smallBorderRadius?: string | number;
-  veryLightGray?: string;
-}
-
-export interface IStyle {
-  active?: boolean;
-  focus?: any;
-  level?: number;
-  show?: string | boolean;
-  theme?: ITheme;
-}
 
 export interface ICategory {
   fieldValue?: string;
@@ -88,6 +62,7 @@ export interface INodeFields {
   id: number;
   labels?: string[];
   slug?: string;
+  subtitle?: string;
   tags?: string[];
   title?: string;
   type: 'Article' | 'Source';
@@ -102,6 +77,7 @@ export interface INode {
   html?: string;
   name?: string;
   relativePath?: string;
+  parent?: INode;
   tableOfContents?: {
     items?: any[];
   };

@@ -9,8 +9,8 @@ tags:
   - lïf
 title: quit me thisly
 ---
-
-squalor tempests beneath the artificial breeze
-the heat stacks brick ovens beside the bedroom door
-thirst strangles her as she sleeps
-i sweat
+  
+squalor tempests beneath the artificial breeze  
+the heat stacks brick ovens beside the bedroom door  
+thirst strangles her as she sleeps  
+i sweat  

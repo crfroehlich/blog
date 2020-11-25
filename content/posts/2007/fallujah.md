@@ -10,5 +10,5 @@ tags:
   - lïf
 title: Fallujah
 ---
-
-Ithaca College today had the audacity to introduce and screen a film as a documentary, "Fallujah". I am still processing my rage.
+  
+Ithaca College today had the audacity to introduce and screen a film as a documentary, "Fallujah". I am still processing my rage.  

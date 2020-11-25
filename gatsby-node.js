@@ -1,7 +1,6 @@
-import { loadEnv } from '@luddites-me/ts-tools';
+import { env } from './build/initEnv';
 import { getConfig } from './config';
 
-const env = loadEnv();
 getConfig(env);
 
 export {
@@ -9,4 +8,5 @@ export {
   createSchemaCustomization,
   onCreateNode,
   onCreateWebpackConfig,
-} from './src/gatsby';
+} from './build/gatsby';
+

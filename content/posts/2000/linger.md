@@ -9,8 +9,8 @@ tags:
   - wading
 title: linger
 ---
-
-If I leave today I have lost nothing
-but my impatience;
-if I linger here I gain time to wait,
-and linger longer.
+  
+If I leave today I have lost nothing  
+but my impatience;  
+if I linger here I gain time to wait,  
+and linger longer.  

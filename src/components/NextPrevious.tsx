@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from './Link';
 import { INode } from '../types';
-import { StyledNextPrevious } from './styles/StyledNextPrevious';
+import { StyledNextPrevious } from '../styles';
 import { Icon } from './Icon';
 
 interface INextPrev {

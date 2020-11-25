@@ -1,16 +1,28 @@
 import React from 'react';
 import { Link as GatsbyLink } from 'gatsby';
-import isAbsoluteUrl from 'is-absolute-url';
 import { tools } from '../utils/tools';
 
-export const Link: React.FC<any> = ({ to, ...props }): JSX.Element =>
-  isAbsoluteUrl(to) ? (
-    <a href={to} {...props}>
-      {props.children}
-    </a>
-  ) : (
-    <GatsbyLink to={to} {...props} />
+const isRelativeUrl = (url: string): boolean => {
+  const doc = tools.getDocument();
+  if(doc?.baseURI) {
+    return new URL(doc.baseURI).origin === new URL(url, document.baseURI).origin;
+  }
+  const urlPattern = new RegExp('^(?:[a-z]+:)?//', 'i');
+  return urlPattern.test(url) === false;
+}
+
+export const Link: React.FC<any> = ({ to, ...props }): JSX.Element => {
+  if (isRelativeUrl(to)) {
+    return <GatsbyLink to={to} {...props} />;
+  }
+  return (
+    <div>
+      <a href={to} {...props}>
+        {props.children}
+      </a>
+    </div>
   );
+};
 
 interface IDisplayDate {
   date: Date;

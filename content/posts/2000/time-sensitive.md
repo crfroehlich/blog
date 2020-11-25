@@ -7,6 +7,6 @@ tags:
   - poetry
 title: time sensitive
 ---
-
-**_WHAT?_**
-    is truth.
+  
+**_WHAT?_**  
+    is truth.  
