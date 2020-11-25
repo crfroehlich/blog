@@ -3,7 +3,7 @@ import { graphql, navigate } from 'gatsby';
 import KeywordCloud from 'react-keyword-cloud';
 
 import { PageTitle } from '../components';
-import { StyledMainWrapper } from '../styles';
+import { PageWrapper, StyledMainWrapper } from '../styles';
 import { tools } from '../utils';
 
 export const визуализации = (props): JSX.Element => {
@@ -19,7 +19,7 @@ export const визуализации = (props): JSX.Element => {
 
   const title = 'Fancy. Thinking the beast was something we could kill...';
   return (
-    <div>
+    <PageWrapper>
       <PageTitle title={title} />
       <StyledMainWrapper>
         <KeywordCloud
@@ -42,7 +42,7 @@ export const визуализации = (props): JSX.Element => {
         // onKeyWordMouseOut={console.info}
         />
       </StyledMainWrapper>
-    </div>
+    </PageWrapper>
   );
 };
 

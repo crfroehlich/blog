@@ -16,7 +16,7 @@ import { graphql, navigate } from 'gatsby';
 import Img from 'gatsby-image';
 import React, { useState } from 'react';
 import { DisplayDate, Icon, PageTitle } from '../components';
-import { StyledMainWrapper } from '../styles';
+import { PageWrapper, StyledMainWrapper } from '../styles';
 
 const getCardStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -118,7 +118,7 @@ export const Tag = (props): JSX.Element => {
   const classes = getCardStyles();
 
   return (
-    <div>
+    <PageWrapper>
       <PageTitle title={title} />
       <StyledMainWrapper>
         <div className={classes.grid}>
@@ -129,7 +129,7 @@ export const Tag = (props): JSX.Element => {
           </Grid>
         </div>
       </StyledMainWrapper>
-    </div>
+    </PageWrapper>
   );
 };
 

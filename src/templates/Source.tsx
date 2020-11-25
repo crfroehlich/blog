@@ -1,7 +1,7 @@
 import React from 'react';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import { PageTitle } from '../components';
-import { StyledMainWrapper } from '../styles';
+import { PageWrapper, StyledMainWrapper } from '../styles';
 
 export const Source = (props): JSX.Element => {
   const {
@@ -11,7 +11,7 @@ export const Source = (props): JSX.Element => {
   const updated = new Date(mdx.fields.updated);
 
   return (
-    <div>
+    <PageWrapper>
       <PageTitle
         title={title}
         gitHubPath={github}
@@ -22,7 +22,7 @@ export const Source = (props): JSX.Element => {
       <StyledMainWrapper>
         <MDXRenderer>{mdx.body}</MDXRenderer>
       </StyledMainWrapper>
-    </div>
+    </PageWrapper>
   );
 };
 

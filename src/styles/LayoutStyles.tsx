@@ -47,10 +47,6 @@ export const MaxWidth = styled('div')`
   }
 `;
 
-export const LeftSideBarWidth = styled('div')`
-  width: 298px;
-`;
-
 export const RightSideBarWidth = styled('div')`
   width: 224px;
 `;

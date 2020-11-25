@@ -45,21 +45,6 @@ export const RightSidebarStyles = styled('aside')`
     position: relative;
   }
 `;
-export const LeftSidebarStyles = styled('aside')`
-  background: ${DarkStyles.colors.background};
-  font-size: 20px,
-  margin-left: 5px,
-  margin-top: 1.9em,
-  padding-bottom: 2px,
-  padding-left: 5px;
-  padding-top: 2px,
-  position: -moz-sticky;
-  position: -webkit-sticky;
-  position: fixed;
-  position: sticky;
-  top: 0;
-  width: 100%;
-`;
 
 export const ListItemStyles = styled(({ className, active, level, ...props }) => {
   return (

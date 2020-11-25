@@ -1,7 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import { Link, PageTitle } from '../components';
-import { StyledMainWrapper } from '../styles';
+import { PageWrapper, StyledMainWrapper } from '../styles';
 
 export const Label = (props): JSX.Element => {
   const {
@@ -12,7 +12,7 @@ export const Label = (props): JSX.Element => {
   } = props;
 
   return (
-    <div>
+    <PageWrapper>
       <PageTitle title={title} />
       <StyledMainWrapper>
         <ul>
@@ -25,7 +25,7 @@ export const Label = (props): JSX.Element => {
           ))}
         </ul>
       </StyledMainWrapper>
-    </div>
+    </PageWrapper>
   );
 };
 
