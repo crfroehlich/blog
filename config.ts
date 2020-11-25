@@ -1,5 +1,4 @@
 import { PluginRef } from 'gatsby';
-import { tools } from './src/utils';
 
 /* eslint-disable camelcase */
 export interface IConfig {
@@ -54,11 +53,8 @@ export interface Manifest {
 }
 
 export interface Sidebar {
-  forcedNavOrder: any[];
-  collapsedNav: any[];
   links: any[];
   frontLine: boolean;
-  ignoreIndex: boolean;
 }
 
 export interface SiteMetadata {
@@ -89,11 +85,8 @@ const siteConfig = {
     links: [{ text: 'визуализации', link: '/визуализации', tooltip: 'Visualizations' }],
   },
   sidebar: {
-    forcedNavOrder: [],
-    collapsedNav: [],
     links: [],
     frontLine: false,
-    ignoreIndex: true,
   },
   siteMetadata: {
     title: "Christopher Froehlich's Blog | Hiking My Desk",

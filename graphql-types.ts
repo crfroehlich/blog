@@ -745,8 +745,8 @@ export type FileFieldsEnum =
   | 'childMdx___frontmatter___date'
   | 'childMdx___frontmatter___description'
   | 'childMdx___frontmatter___draft'
-  | 'childMdx___frontmatter___subtitle'
   | 'childMdx___frontmatter___tags'
+  | 'childMdx___frontmatter___subtitle'
   | 'childMdx___frontmatter___created'
   | 'childMdx___frontmatter___updated'
   | 'childMdx___frontmatter___github'
@@ -1865,8 +1865,8 @@ export type MdxFieldsEnum =
   | 'frontmatter___date'
   | 'frontmatter___description'
   | 'frontmatter___draft'
-  | 'frontmatter___subtitle'
   | 'frontmatter___tags'
+  | 'frontmatter___subtitle'
   | 'frontmatter___created'
   | 'frontmatter___updated'
   | 'frontmatter___github'
@@ -2024,8 +2024,8 @@ export type MdxFrontmatter = {
   date?: Maybe<Scalars['String']>;
   description?: Maybe<Scalars['String']>;
   draft?: Maybe<Scalars['Boolean']>;
-  subtitle?: Maybe<Scalars['String']>;
   tags?: Maybe<Array<Maybe<Scalars['String']>>>;
+  subtitle?: Maybe<Scalars['String']>;
   created?: Maybe<Scalars['String']>;
   updated?: Maybe<Scalars['String']>;
   github?: Maybe<Scalars['String']>;
@@ -2038,8 +2038,8 @@ export type MdxFrontmatterFilterInput = {
   date?: Maybe<StringQueryOperatorInput>;
   description?: Maybe<StringQueryOperatorInput>;
   draft?: Maybe<BooleanQueryOperatorInput>;
-  subtitle?: Maybe<StringQueryOperatorInput>;
   tags?: Maybe<StringQueryOperatorInput>;
+  subtitle?: Maybe<StringQueryOperatorInput>;
   created?: Maybe<StringQueryOperatorInput>;
   updated?: Maybe<StringQueryOperatorInput>;
   github?: Maybe<StringQueryOperatorInput>;
@@ -3578,10 +3578,6 @@ export type SitePageFieldsEnum =
   | 'pluginCreator___resolve'
   | 'pluginCreator___name'
   | 'pluginCreator___version'
-  | 'pluginCreator___pluginOptions___sourceMap'
-  | 'pluginCreator___pluginOptions___autoLabel'
-  | 'pluginCreator___pluginOptions___labelFormat'
-  | 'pluginCreator___pluginOptions___cssPropOptimization'
   | 'pluginCreator___pluginOptions___indentedSyntax'
   | 'pluginCreator___pluginOptions___indentType'
   | 'pluginCreator___pluginOptions___indentWidth'
@@ -3650,6 +3646,10 @@ export type SitePageFieldsEnum =
   | 'pluginCreator___pluginOptions___allExtensions'
   | 'pluginCreator___pluginOptions___isTSX'
   | 'pluginCreator___pluginOptions___jsxPragma'
+  | 'pluginCreator___pluginOptions___sourceMap'
+  | 'pluginCreator___pluginOptions___autoLabel'
+  | 'pluginCreator___pluginOptions___labelFormat'
+  | 'pluginCreator___pluginOptions___cssPropOptimization'
   | 'pluginCreator___nodeAPIs'
   | 'pluginCreator___browserAPIs'
   | 'pluginCreator___ssrAPIs'
@@ -3837,10 +3837,6 @@ export type SitePluginFieldsEnum =
   | 'resolve'
   | 'name'
   | 'version'
-  | 'pluginOptions___sourceMap'
-  | 'pluginOptions___autoLabel'
-  | 'pluginOptions___labelFormat'
-  | 'pluginOptions___cssPropOptimization'
   | 'pluginOptions___indentedSyntax'
   | 'pluginOptions___indentType'
   | 'pluginOptions___indentWidth'
@@ -3909,6 +3905,10 @@ export type SitePluginFieldsEnum =
   | 'pluginOptions___allExtensions'
   | 'pluginOptions___isTSX'
   | 'pluginOptions___jsxPragma'
+  | 'pluginOptions___sourceMap'
+  | 'pluginOptions___autoLabel'
+  | 'pluginOptions___labelFormat'
+  | 'pluginOptions___cssPropOptimization'
   | 'nodeAPIs'
   | 'browserAPIs'
   | 'ssrAPIs'
@@ -4024,10 +4024,6 @@ export type SitePluginPackageJsonPeerDependenciesFilterListInput = {
 };
 
 export type SitePluginPluginOptions = {
-  sourceMap?: Maybe<Scalars['Boolean']>;
-  autoLabel?: Maybe<Scalars['Boolean']>;
-  labelFormat?: Maybe<Scalars['String']>;
-  cssPropOptimization?: Maybe<Scalars['Boolean']>;
   indentedSyntax?: Maybe<Scalars['Boolean']>;
   indentType?: Maybe<Scalars['String']>;
   indentWidth?: Maybe<Scalars['Int']>;
@@ -4091,6 +4087,10 @@ export type SitePluginPluginOptions = {
   allExtensions?: Maybe<Scalars['Boolean']>;
   isTSX?: Maybe<Scalars['Boolean']>;
   jsxPragma?: Maybe<Scalars['String']>;
+  sourceMap?: Maybe<Scalars['Boolean']>;
+  autoLabel?: Maybe<Scalars['Boolean']>;
+  labelFormat?: Maybe<Scalars['String']>;
+  cssPropOptimization?: Maybe<Scalars['Boolean']>;
 };
 
 export type SitePluginPluginOptionsFeeds = {
@@ -4110,10 +4110,6 @@ export type SitePluginPluginOptionsFeedsFilterListInput = {
 };
 
 export type SitePluginPluginOptionsFilterInput = {
-  sourceMap?: Maybe<BooleanQueryOperatorInput>;
-  autoLabel?: Maybe<BooleanQueryOperatorInput>;
-  labelFormat?: Maybe<StringQueryOperatorInput>;
-  cssPropOptimization?: Maybe<BooleanQueryOperatorInput>;
   indentedSyntax?: Maybe<BooleanQueryOperatorInput>;
   indentType?: Maybe<StringQueryOperatorInput>;
   indentWidth?: Maybe<IntQueryOperatorInput>;
@@ -4177,6 +4173,10 @@ export type SitePluginPluginOptionsFilterInput = {
   allExtensions?: Maybe<BooleanQueryOperatorInput>;
   isTSX?: Maybe<BooleanQueryOperatorInput>;
   jsxPragma?: Maybe<StringQueryOperatorInput>;
+  sourceMap?: Maybe<BooleanQueryOperatorInput>;
+  autoLabel?: Maybe<BooleanQueryOperatorInput>;
+  labelFormat?: Maybe<StringQueryOperatorInput>;
+  cssPropOptimization?: Maybe<BooleanQueryOperatorInput>;
 };
 
 export type SitePluginPluginOptionsPolicy = {
@@ -4326,3 +4326,53 @@ export type GetNewSidebarLayoutQueryQuery = { allMdx: { group: Array<(
       Pick<MdxGroupConnection, 'fieldValue'>
       & { edges: Array<{ node: { fields?: Maybe<Pick<MdxFields, 'slug' | 'title' | 'year' | 'date'>> } }> }
     )> }, allSrc: { edges: Array<{ node: { fields?: Maybe<Pick<MdxFields, 'slug' | 'title'>> } }> } };
+
+export type GatsbyImageSharpFixedFragment = Pick<ImageSharpFixed, 'base64' | 'width' | 'height' | 'src' | 'srcSet'>;
+
+export type GatsbyImageSharpFixed_TracedSvgFragment = Pick<ImageSharpFixed, 'tracedSVG' | 'width' | 'height' | 'src' | 'srcSet'>;
+
+export type GatsbyImageSharpFixed_WithWebpFragment = Pick<ImageSharpFixed, 'base64' | 'width' | 'height' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp'>;
+
+export type GatsbyImageSharpFixed_WithWebp_TracedSvgFragment = Pick<ImageSharpFixed, 'tracedSVG' | 'width' | 'height' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp'>;
+
+export type GatsbyImageSharpFixed_NoBase64Fragment = Pick<ImageSharpFixed, 'width' | 'height' | 'src' | 'srcSet'>;
+
+export type GatsbyImageSharpFixed_WithWebp_NoBase64Fragment = Pick<ImageSharpFixed, 'width' | 'height' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp'>;
+
+export type GatsbyImageSharpFluidFragment = Pick<ImageSharpFluid, 'base64' | 'aspectRatio' | 'src' | 'srcSet' | 'sizes'>;
+
+export type GatsbyImageSharpFluidLimitPresentationSizeFragment = { maxHeight: ImageSharpFluid['presentationHeight'], maxWidth: ImageSharpFluid['presentationWidth'] };
+
+export type GatsbyImageSharpFluid_TracedSvgFragment = Pick<ImageSharpFluid, 'tracedSVG' | 'aspectRatio' | 'src' | 'srcSet' | 'sizes'>;
+
+export type GatsbyImageSharpFluid_WithWebpFragment = Pick<ImageSharpFluid, 'base64' | 'aspectRatio' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp' | 'sizes'>;
+
+export type GatsbyImageSharpFluid_WithWebp_TracedSvgFragment = Pick<ImageSharpFluid, 'tracedSVG' | 'aspectRatio' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp' | 'sizes'>;
+
+export type GatsbyImageSharpFluid_NoBase64Fragment = Pick<ImageSharpFluid, 'aspectRatio' | 'src' | 'srcSet' | 'sizes'>;
+
+export type GatsbyImageSharpFluid_WithWebp_NoBase64Fragment = Pick<ImageSharpFluid, 'aspectRatio' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp' | 'sizes'>;
+
+export type GatsbyImageSharpResolutionsFragment = Pick<ImageSharpResolutions, 'base64' | 'width' | 'height' | 'src' | 'srcSet'>;
+
+export type GatsbyImageSharpResolutions_TracedSvgFragment = Pick<ImageSharpResolutions, 'tracedSVG' | 'width' | 'height' | 'src' | 'srcSet'>;
+
+export type GatsbyImageSharpResolutions_WithWebpFragment = Pick<ImageSharpResolutions, 'base64' | 'width' | 'height' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp'>;
+
+export type GatsbyImageSharpResolutions_WithWebp_TracedSvgFragment = Pick<ImageSharpResolutions, 'tracedSVG' | 'width' | 'height' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp'>;
+
+export type GatsbyImageSharpResolutions_NoBase64Fragment = Pick<ImageSharpResolutions, 'width' | 'height' | 'src' | 'srcSet'>;
+
+export type GatsbyImageSharpResolutions_WithWebp_NoBase64Fragment = Pick<ImageSharpResolutions, 'width' | 'height' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp'>;
+
+export type GatsbyImageSharpSizesFragment = Pick<ImageSharpSizes, 'base64' | 'aspectRatio' | 'src' | 'srcSet' | 'sizes'>;
+
+export type GatsbyImageSharpSizes_TracedSvgFragment = Pick<ImageSharpSizes, 'tracedSVG' | 'aspectRatio' | 'src' | 'srcSet' | 'sizes'>;
+
+export type GatsbyImageSharpSizes_WithWebpFragment = Pick<ImageSharpSizes, 'base64' | 'aspectRatio' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp' | 'sizes'>;
+
+export type GatsbyImageSharpSizes_WithWebp_TracedSvgFragment = Pick<ImageSharpSizes, 'tracedSVG' | 'aspectRatio' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp' | 'sizes'>;
+
+export type GatsbyImageSharpSizes_NoBase64Fragment = Pick<ImageSharpSizes, 'aspectRatio' | 'src' | 'srcSet' | 'sizes'>;
+
+export type GatsbyImageSharpSizes_WithWebp_NoBase64Fragment = Pick<ImageSharpSizes, 'aspectRatio' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp' | 'sizes'>;

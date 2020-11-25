@@ -1,8 +1,10 @@
 import { addConfig } from '../../../config';
 
+const resolve = 'gatsby-source-filesystem';
+
 export const addContent: addConfig = (config, plugins): void => {
   plugins.push({
-    resolve: 'gatsby-source-filesystem',
+    resolve,
     options: {
       name: 'docs',
       path: `${__dirname}/../../../content/posts`,
@@ -10,15 +12,15 @@ export const addContent: addConfig = (config, plugins): void => {
   });
 
   plugins.push({
-    resolve: 'gatsby-source-filesystem',
+    resolve,
     options: {
       name: 'src',
       path: `${__dirname}/../../../content/src`,
     },
   });
-  
+
   plugins.push({
-    resolve: 'gatsby-source-filesystem',
+    resolve,
     options: {
       name: 'assets',
       path: `${__dirname}/../../../content/assets`,

@@ -33,7 +33,6 @@ export const config: {
       link: string;
     }[];
     frontLine: boolean;
-    ignoreIndex: boolean;
     title: string;
   };
   siteMetadata: {

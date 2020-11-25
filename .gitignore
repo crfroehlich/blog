@@ -138,5 +138,7 @@ schema.json
 artifacts
 dist
 temp
-content/src
+content
+!content/assets
+!content/posts
 .env.development

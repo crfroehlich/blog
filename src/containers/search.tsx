@@ -11,7 +11,7 @@ import {
   NoResult,
 } from './search.style';
 
-function Search() {
+export const Search = () => {
   const [state, dispatch] = useReducer(SearchReducer, initialState);
 
   const data = useStaticQuery(graphql`

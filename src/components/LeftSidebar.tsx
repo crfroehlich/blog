@@ -1,6 +1,7 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import { Paper, makeStyles } from '@material-ui/core';
 import React, { useRef } from 'react';
+import { Scrollbars } from 'react-custom-scrollbars';
 import {
   Menu,
   MenuItem,
@@ -15,11 +16,11 @@ import { DarkStyles } from '../styles';
 
 const useStyles = makeStyles(() => ({
   root: {
-    width: '302px',
+    width: '298px',
   },
   sidebar: {
     width: '100%',
-    //height: '100vh',
+    height: '100vh',
     background: DarkStyles.colors.background,
     fontSize: '20px',
     marginLeft: '5px',
@@ -33,8 +34,7 @@ const useStyles = makeStyles(() => ({
   inner: {
     width: '100%',
     height: '100%',
-    overflowY: 'scroll',
-  }
+  },
 }));
 
 const onNodeClick = (e, node) => {
@@ -121,32 +121,34 @@ export const LeftSidebar = ({ sidebar }): JSX.Element => {
   return (
     <div className={classes.root}>
       <aside className={`hiddenMobile ${classes.sidebar}`}>
-        <Paper elevation={15} className={classes.inner}>
-          <ProSidebar breakPoint={'md'}>
-            <SidebarContent>
-              <Menu iconShape="square">
-                <MenuItem icon={Icon({ icon: 'ruble-sign', size: 'lg' })}>
-                  <Link to={'/'} title={'Home'}>
-                    <div>Home</div>
-                  </Link>
-                </MenuItem>
-                {data.current.sections.map((s, si) => {
-                  return (
-                    <SubMenu
-                      title={<div {...{ onClick: (e) => onNodeClick(e, s) }}>{s.name}</div>}
-                      icon={<Icon {...{ icon: s.icon, size: 'lg' }} />}
-                      defaultOpen={s.open}
-                      key={`${si}_${s.name}`}
-                    >
-                      {s.articles && getArticlesMenu(s.articles)}
-                      {s.source && getSourceMenu(s.source)}
-                    </SubMenu>
-                  );
-                })}
-              </Menu>
-            </SidebarContent>
-          </ProSidebar>
-        </Paper>
+        <Scrollbars autoHeight={true} autohide autoHeightMin={'100vh'}>
+          <Paper elevation={15} className={classes.inner}>
+            <ProSidebar breakPoint={'md'}>
+              <SidebarContent>
+                <Menu iconShape="square">
+                  <MenuItem icon={Icon({ icon: 'ruble-sign', size: 'lg' })}>
+                    <Link to={'/'} title={'Home'}>
+                      <div>Home</div>
+                    </Link>
+                  </MenuItem>
+                  {data.current.sections.map((s, si) => {
+                    return (
+                      <SubMenu
+                        title={<div {...{ onClick: (e) => onNodeClick(e, s) }}>{s.name}</div>}
+                        icon={<Icon {...{ icon: s.icon, size: 'lg' }} />}
+                        defaultOpen={s.open}
+                        key={`${si}_${s.name}`}
+                      >
+                        {s.articles && getArticlesMenu(s.articles)}
+                        {s.source && getSourceMenu(s.source)}
+                      </SubMenu>
+                    );
+                  })}
+                </Menu>
+              </SidebarContent>
+            </ProSidebar>
+          </Paper>
+        </Scrollbars>
       </aside>
     </div>
   );
