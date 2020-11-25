@@ -1,7 +1,6 @@
-import Badge from '@material-ui/core/Badge';
-import Chip from '@material-ui/core/Chip';
+import { Badge, Chip } from '@material-ui/core';
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
-import kebabCase from 'lodash/kebabCase';
+import { kebabCase } from 'lodash';
 import React from 'react';
 import { Link } from './Link';
 
@@ -16,14 +15,14 @@ const getChipStyles = makeStyles((theme: Theme) =>
     },
     badge: {
       color: theme.palette.text.primary,
-      right: '-0.3rem', 
+      right: '-0.3rem',
       top: '-0.3rem',
     },
     link: {
       marginRight: '0.5rem',
     },
     chip: {
-      backgroundColor: '#1ed3c6', 
+      backgroundColor: '#1ed3c6',
       color: 'fff',
       cursor: 'pointer'
     }

@@ -6,4 +6,3 @@ export * from './mdx';
 export * from './offline';
 export * from './robots';
 export * from './rss';
-export * from './search';

@@ -24,13 +24,6 @@ export const config: {
       text: string;
       link: string;
     }[];
-    search: {
-      enabled: boolean;
-      indexName: string;
-      algoliaAppId: string;
-      algoliaSearchKey: string;
-      algoliaAdminKey: string;
-    };
   };
   sidebar: {
     forcedNavOrder: string[];

@@ -1,5 +1,4 @@
 import type { GatsbyConfig, PluginRef } from 'gatsby';
-import { env } from '../initEnv';
 import { getConfig } from '../../config';
 import {
   addCodegen,
@@ -10,10 +9,9 @@ import {
   addOffline,
   addRobots,
   addRss,
-  addSearch,
 } from './plugins';
 
-const config = getConfig(env);
+const config = getConfig();
 
 const plugins: Array<PluginRef> = [
   'gatsby-plugin-catch-links',
@@ -36,7 +34,6 @@ addMdx(config, plugins);
 addOffline(config, plugins);
 addRobots(config, plugins);
 addRss(config, plugins);
-addSearch(config, plugins);
 
 export const gatsbyConfig: GatsbyConfig = {
   plugins,
