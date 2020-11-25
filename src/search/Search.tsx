@@ -1,5 +1,5 @@
 import React, { useReducer, useEffect } from 'react';
-import { SearchReducer, initialState } from './SearchReducer';
+import { SearchReducer, initialSearchState } from './SearchReducer';
 import { useStaticQuery, graphql } from 'gatsby';
 import { Scrollbars } from 'react-custom-scrollbars';
 import { RebuildIndex } from './RebuildIndex';
@@ -12,7 +12,7 @@ import {
 } from '../styles/SearchStyles';
 
 export const Search = () => {
-  const [state, dispatch] = useReducer(SearchReducer, initialState);
+  const [state, dispatch] = useReducer(SearchReducer, initialSearchState);
 
   const data = useStaticQuery(graphql`
     query GetSearchData {

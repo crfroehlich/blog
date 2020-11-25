@@ -1,4 +1,4 @@
-export const initialState = {
+export const initialSearchState = {
   totalData: [],
   search: [],
   searchResults: [],
