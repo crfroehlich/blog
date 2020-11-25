@@ -2,8 +2,8 @@ import * as JsSearch from 'js-search'
 /**
  * rebuilds the overall index based on the options
  */
-export const rebuildIndex = (searchData: any) => {
-  const dataToSearch = new JsSearch.Search('title')
+export const RebuildIndex = (searchData: any) => {
+  const dataToSearch = new JsSearch.Search('excerpt')
   /**
    *  defines a indexing strategy for the data
    * more more about it in here https://github.com/bvaughn/js-search#configuring-the-index-strategy
@@ -19,11 +19,13 @@ export const rebuildIndex = (searchData: any) => {
    * defines the search index
    * read more in here https://github.com/bvaughn/js-search#configuring-the-search-index
    */
-  dataToSearch.searchIndex = new JsSearch.TfIdfSearchIndex('title')
+  dataToSearch.searchIndex = new JsSearch.TfIdfSearchIndex('excerpt')
 
   dataToSearch.addIndex('title') // sets the index attribute for the data
   dataToSearch.addIndex('description') // sets the index attribute for the data
   dataToSearch.addIndex('tags') // sets the index attribute for the data
+  dataToSearch.addIndex('excerpt') // sets the index attribute for the data
+  dataToSearch.addIndex('subtitle') // sets the index attribute for the data
 
   dataToSearch.addDocuments(searchData) // adds the data to be searched
   return dataToSearch

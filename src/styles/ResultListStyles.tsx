@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 
-export const PostListWrapper = styled.div`
+export const ResultListWrapper = styled.div`
   a {
     display: flex;
     align-items: center;
@@ -15,7 +15,7 @@ export const PostListWrapper = styled.div`
   }
 `;
 
-export const PostPreview = styled.div`
+export const ResultPreview = styled.div`
   flex: 0 0 62px;
   flex-shrink: 0;
   margin-right: 30px;
@@ -27,11 +27,11 @@ export const PostPreview = styled.div`
   }
 `;
 
-export const PostDetails = styled.div`
+export const ResultDetails = styled.div`
   flex-grow: 1;
 `;
 
-export const PostTitle = styled.h1`
+export const ResultTitle = styled.h1`
   font-size: 21px;
   font-weight: 700;
   color: #navy;
@@ -50,13 +50,13 @@ export const PostTitle = styled.h1`
   }
 `;
 
-export const PostMeta = styled.div`
+export const ResultMeta = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
 `;
 
-export const PostDate = styled.div`
+export const ResultDate = styled.div`
   font-size: 15px;
   font-weight: normal;
   color: #navy;
@@ -65,7 +65,7 @@ export const PostDate = styled.div`
   }
 `;
 
-export const PostTags = styled.div`
+export const ResultTags = styled.div`
   display: flex;
   flex-wrap: wrap;
   align-items: center;

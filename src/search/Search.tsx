@@ -1,15 +1,15 @@
 import React, { useReducer, useEffect } from 'react';
-import SearchReducer, { initialState } from './search-reducer';
+import { SearchReducer, initialState } from './SearchReducer';
 import { useStaticQuery, graphql } from 'gatsby';
 import { Scrollbars } from 'react-custom-scrollbars';
-import { rebuildIndex } from './search-index-builder-function';
-import PostList from './post-list';
+import { RebuildIndex } from './RebuildIndex';
+import ResultList from './ResultList';
 import {
   SearchWrapper,
   SearchForm,
   SearchResult,
   NoResult,
-} from './search.style';
+} from '../styles/SearchStyles';
 
 export const Search = () => {
   const [state, dispatch] = useReducer(SearchReducer, initialState);
@@ -19,11 +19,13 @@ export const Search = () => {
       allMdx(filter: { fileAbsolutePath: { glob: "**/content/posts/**" } }) {
         edges {
           node {
+            excerpt(truncate: false, pruneLength: 10000)
             fields {
               slug
             }
             frontmatter {
               date
+              subtitle
               title
               description
               tags
@@ -65,17 +67,16 @@ export const Search = () => {
   };
   useEffect(() => {
     if (dataset.length !== 0) {
-      let data: any = [];
-      dataset.forEach(({ node }: any) => {
-        let formatedData = {
+      let data = dataset.map(({ node }: any) => {
+        return {
           ...node.frontmatter,
           slug: node.fields.slug,
+          excerpt: node.excerpt
         };
-        data.push(formatedData);
       });
 
       dispatch({ type: 'SET_DATA', payload: data });
-      const dataToSearch = rebuildIndex(data);
+      const dataToSearch = RebuildIndex(data);
       if (dataToSearch) {
         dispatch({
           type: 'SET_SEARCH',
@@ -95,12 +96,12 @@ export const Search = () => {
           id="Search"
           value={searchQuery}
           onChange={searchData}
-          placeholder="Enter Your Search Topic"
+          placeholder="The Questing Beast asks...?"
         />
       </SearchForm>
       <SearchResult>
         {queryResults.length == 0 && searchQuery !== '' ? (
-          <NoResult>No result found</NoResult>
+          <NoResult>No results found</NoResult>
         ) : (
           ''
         )}
@@ -113,12 +114,12 @@ export const Search = () => {
           >
             {queryResults.map((item: any) => {
               return (
-                <PostList
+                <ResultList
                   key={item.slug}
                   title={item.title}
                   url={item.slug}
                   image={
-                    item.cover == null ? null : item.cover.childImageSharp.fluid
+                    item.background == null ? null : item.background.childImageSharp.fixed
                   }
                   date={item.date}
                   tags={item.tags}

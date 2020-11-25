@@ -6,8 +6,8 @@ import {
   NavSearchFromWrapper,
   NavSearchWrapper,
   SearchCloseButton,
-} from '../containers/navbar.style';
-import SearchContainer from '../containers/search';
+} from '../styles/NavbarStyles';
+import SearchContainer from '../search/Search';
 import { IPageProps } from '../types';
 import { Tools } from '../utils';
 import { Icon } from './Icon';

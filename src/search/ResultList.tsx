@@ -3,16 +3,16 @@ import { Link } from 'gatsby';
 import _ from 'lodash';
 import Img from 'gatsby-image';
 import {
-  PostListWrapper,
-  PostPreview,
-  PostDetails,
-  PostTitle,
-  PostMeta,
-  PostDate,
-  PostTags,
-} from './post-list.style';
+  ResultListWrapper as ResultListWrapper,
+  ResultPreview as ResultPreview,
+  ResultDetails as ResultDetails,
+  ResultTitle as ResultTitle,
+  ResultMeta as ResultMeta,
+  ResultDate as ResultDate,
+  ResultTags as ResultTags,
+} from '../styles/ResultListStyles';
 
-interface PostListProps {
+interface ResultListProps {
   image?: any;
   title: string;
   url: string;
@@ -22,7 +22,7 @@ interface PostListProps {
   imageType?: 'fixed' | 'fluid';
 }
 
-const PostList: React.FunctionComponent<PostListProps> = ({
+export const ResultList: React.FC<ResultListProps> = ({
   image,
   title,
   url,
@@ -41,23 +41,23 @@ const PostList: React.FunctionComponent<PostListProps> = ({
   }
 
   return (
-    <PostListWrapper className={addAllClasses.join(' ')} {...props}>
+    <ResultListWrapper className={addAllClasses.join(' ')} {...props}>
       <Link to={url}>
         {image == null ? null : (
-          <PostPreview className="post_preview">
+          <ResultPreview className="post_preview">
             {imageType === 'fluid' ? (
               <Img fluid={image} alt="post preview" />
             ) : (
               <Img fixed={image} alt="post preview" />
             )}
-          </PostPreview>
+          </ResultPreview>
         )}
 
-        <PostDetails>
-          <PostTitle className="post_title">{title}</PostTitle>
-          <PostMeta>
+        <ResultDetails>
+          <ResultTitle className="post_title">{title}</ResultTitle>
+          <ResultMeta>
             {date && (
-              <PostDate
+              <ResultDate
                 dangerouslySetInnerHTML={{
                   __html: date,
                 }}
@@ -65,21 +65,21 @@ const PostList: React.FunctionComponent<PostListProps> = ({
               />
             )}
             {tags == null ? null : (
-              <PostTags className="post_tags">
+              <ResultTags className="post_tags">
                 {tags.map((tag: string, index: number) => (
                   <span key={index}>{`#${tag}`}</span>
                 ))}
-              </PostTags>
+              </ResultTags>
             )}
-          </PostMeta>
-        </PostDetails>
+          </ResultMeta>
+        </ResultDetails>
       </Link>
-    </PostListWrapper>
+    </ResultListWrapper>
   );
 };
 
-PostList.defaultProps = {
+ResultList.defaultProps = {
   imageType: 'fluid',
 };
 
-export default PostList;
+export default ResultList;

@@ -6,7 +6,8 @@ export const initialState = {
   isError: false,
   searchQuery: '',
 }
-export default function SearchReducer(state: any, action: any) {
+
+export const SearchReducer = (state: any, action: any) => {
   switch (action.type) {
     case 'SET_DATA':
       return {

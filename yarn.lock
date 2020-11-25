@@ -7549,7 +7549,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"commander@npm:^2.18.0, commander@npm:^2.20.0, commander@npm:^2.20.3, commander@npm:^2.8.1":
+"commander@npm:^2.18.0, commander@npm:^2.19.0, commander@npm:^2.20.0, commander@npm:^2.20.3, commander@npm:^2.8.1":
   version: 2.20.3
   resolution: "commander@npm:2.20.3"
   checksum: b73428e97de7624323f81ba13f8ed9271de487017432d18b4da3f07cfc528ad754bbd199004bd5d14e0ccd67d1fdfe0ec8dbbd4c438b401df3c4cc387bfd1daa
@@ -8050,6 +8050,29 @@ __metadata:
     prop-types: ^15.0.0
     react: ^0.14.0 || ^15.0.0 || ^16.0.0
   checksum: dfb153bbcfe44fb0b5d74e097f41fef382c9ea513084f604fea1759aea6683da0eef13b02ede2f0672c4eeacdd8efce0023935ca02909fcb2ae8be28b9aa63f5
+  languageName: node
+  linkType: hard
+
+"create-ts-index@npm:^1.13.6":
+  version: 1.13.6
+  resolution: "create-ts-index@npm:1.13.6"
+  dependencies:
+    chalk: ^2.4.1
+    commander: ^2.19.0
+    dayjs: ^1.8.14
+    debug: ^4.1.1
+    deepmerge: ^4.2.2
+    fast-glob: ^3.2.2
+    glob: ^7.1.3
+    json5: ^2.1.3
+    merge: ^1.2.1
+    minimatch: ^3.0.4
+    my-easy-fp: ^0.5.1
+    tslib: ^1.10.0
+    yargs: ^15.3.1
+  bin:
+    cti: dist/cti.js
+  checksum: b3f8eaf6dc26744b41005db02ab99fdd28b44e1c7488080e1d9446b481d9e9c7554e963749c7606c9ddb8b16639dc7234d7c3b1568138870c3298d650a9c7c37
   languageName: node
   linkType: hard
 
@@ -8562,6 +8585,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"dayjs@npm:^1.8.14":
+  version: 1.9.6
+  resolution: "dayjs@npm:1.9.6"
+  checksum: aaf343022da53b09044327150f1c8546f3a977daa152d027edf7e0f4af5af1697bd5215de9b74f38800c884bbcf02055d7af5c5583ba8e96f41d1c0ac9d169e1
+  languageName: node
+  linkType: hard
+
 "de-indent@npm:^1.0.2":
   version: 1.0.2
   resolution: "de-indent@npm:1.0.2"
@@ -8782,7 +8812,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"deepmerge@npm:4.2.2, deepmerge@npm:^4.0.0":
+"deepmerge@npm:4.2.2, deepmerge@npm:^4.0.0, deepmerge@npm:^4.2.2":
   version: 4.2.2
   resolution: "deepmerge@npm:4.2.2"
   checksum: 85abf8e0045ee280996e7d2396979c877ef0741e413b716e42441110e0a83ac08098b2a49cea035510060bf667c0eae3189b2a52349f5fa4b000c211041637b1
@@ -10589,7 +10619,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fast-glob@npm:^3.0.3, fast-glob@npm:^3.1.1":
+"fast-glob@npm:^3.0.3, fast-glob@npm:^3.1.1, fast-glob@npm:^3.2.2":
   version: 3.2.4
   resolution: "fast-glob@npm:3.2.4"
   dependencies:
@@ -13382,6 +13412,7 @@ fsevents@~2.1.2:
     "@typescript-eslint/parser": ^4.8.2
     chalk: ^4.1.0
     clsx: ^1.1.1
+    create-ts-index: ^1.13.6
     dotenv-extended: 2.9.0
     emotion: ^10.0.27
     eslint: ^7.14.0
@@ -16666,6 +16697,13 @@ fsevents@~2.1.2:
   languageName: node
   linkType: hard
 
+"merge@npm:^1.2.1":
+  version: 1.2.1
+  resolution: "merge@npm:1.2.1"
+  checksum: f6a054fa9666ab56eaac9628c24fb5710ba4ccd3a2d3f511247fbbc470f27d0dcf3bbbddbc84ad98dc47304830775caffe95ee3bd67b5e0b0f7c280122f24ca8
+  languageName: node
+  linkType: hard
+
 "methods@npm:~1.1.2":
   version: 1.1.2
   resolution: "methods@npm:1.1.2"
@@ -17122,6 +17160,16 @@ fsevents@~2.1.2:
   version: 0.0.8
   resolution: "mute-stream@npm:0.0.8"
   checksum: 315c40f463ec31deee54c5b8779207feb6b63dd4c58fe0f84ad46abdd6dac1ada578d53efde4a47b0ae4d29d453d35bb39ecdd98ee9ebf538929039a3a9945df
+  languageName: node
+  linkType: hard
+
+"my-easy-fp@npm:^0.5.1":
+  version: 0.5.1
+  resolution: "my-easy-fp@npm:0.5.1"
+  dependencies:
+    debug: ^4.1.1
+    tslib: 1.11.1
+  checksum: 068b54af63b4eb509e5140a8ff448b76160c5b8fffa3247625cbbcfa4908f64087b28425b66b9957135e12d6568123aacc4fc682ecee23404fe26708d526b0a0
   languageName: node
   linkType: hard
 
@@ -23571,6 +23619,13 @@ fsevents@~2.1.2:
     minimist: ^1.2.0
     strip-bom: ^3.0.0
   checksum: 5383ba626b3ac70e08094b9dfd1e30ce82878407b6c8db8cd84279cc7c7340d5f53f67dbeb8174a233c082a068322a6b00ec8514b96d9a80a453e0476dc116d2
+  languageName: node
+  linkType: hard
+
+"tslib@npm:1.11.1":
+  version: 1.11.1
+  resolution: "tslib@npm:1.11.1"
+  checksum: d40eba08de267b2d3c458ddbf51f9010a45b8e752d3bf8c0fed63e266afc9277c6a26e65e51223335b8753f9f106aeb600e704f2a6eae05729160671a97c52e7
   languageName: node
   linkType: hard
 
