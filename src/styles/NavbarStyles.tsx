@@ -1,6 +1,5 @@
 import styled from '@emotion/styled';
-
-import { DarkStyles } from '.';
+import { DarkStyles } from './Theme';
 
 export const NavSearchButton = styled.button`
   background: transparent;
