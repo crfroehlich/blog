@@ -21,5 +21,6 @@ export const wrapRootElement: React.FC<any> = ({ element }) => {
 };
 
 export const onServiceWorkerUpdateReady = (): void => {
+  console.log('test')
   Logger.info(`This page has been updated. ${new Date().toLocaleTimeString()}`);
 };

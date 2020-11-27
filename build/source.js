@@ -62,12 +62,12 @@ title: '${nameSegments[0]}'
 \`\`\`${language}
 ${src}\`\`\`
 `;
-      makeDirectories(`content/${fileName}`);
-      writeFileSync(`content/${fileName.split('.')[0]}.md`, output);
+      makeDirectories(`content/code/${fileName}`);
+      writeFileSync(`content/code/${fileName.split('.')[0]}.md`, output);
     });
 };
 
 glob('src/**/**', GLOB_OPTIONS, cleanup);
 glob('build/**/**', GLOB_OPTIONS, cleanup);
-glob('./*.ts', GLOB_OPTIONS, cleanup);
-glob('./*.js', GLOB_OPTIONS, cleanup);
+glob('*.ts', GLOB_OPTIONS, cleanup);
+glob('*.js', GLOB_OPTIONS, cleanup);

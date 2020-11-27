@@ -91,9 +91,9 @@ export const Header: React.FC<IPageProps> = (): JSX.Element => {
               </Link>
             </li>
             <li>
-              <Link to={'/rss.xml'}>
+              <a href={'/rss.xml'}>
                 <Icon {...{ icon: 'rss' }} />
-              </Link>
+              </a>
             </li>
             <li>
               <NavSearchButton type="button" aria-label="search" onClick={toggleHandle}>

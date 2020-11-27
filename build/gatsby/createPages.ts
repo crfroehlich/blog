@@ -66,7 +66,7 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions 
             totalCount
           }
         }
-        allSrc: allMdx(filter: { fileAbsolutePath: { glob: "**/content/src/**" } }) {
+        allSrc: allMdx(filter: { fileAbsolutePath: { glob: "**/content/code/**" } }) {
           edges {
             node {
               fields {

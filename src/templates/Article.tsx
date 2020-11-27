@@ -24,7 +24,7 @@ export const Article: React.FC<IPageProps> = (props): JSX.Element => {
       <PageTitle
         title={title}
         subtitle={subtitle}
-        gitHubPath={`${config.siteMetadata.docsLocation}/${(mdx.parent as INode)?.relativePath}`}
+        gitHubPath={`${config.siteMetadata.docsLocation}/posts/${(mdx.parent as INode)?.relativePath}`}
         tags={pageTags}
         tagLinkPrefix={'тег'}
         date={date}

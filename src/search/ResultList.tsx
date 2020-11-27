@@ -3,83 +3,65 @@ import { Link } from 'gatsby';
 import _ from 'lodash';
 import Img from 'gatsby-image';
 import {
-  ResultListWrapper as ResultListWrapper,
-  ResultPreview as ResultPreview,
-  ResultDetails as ResultDetails,
-  ResultTitle as ResultTitle,
-  ResultMeta as ResultMeta,
-  ResultDate as ResultDate,
-  ResultTags as ResultTags,
+  ResultListWrapper,
+  ResultPreview,
+  ResultDetails,
+  ResultTitle,
+  ResultMeta,
+  ResultDate,
+  ResultTags,
 } from '../styles/ResultListStyles';
+import { Logger } from '../utils';
 
-interface ResultListProps {
-  image?: any;
-  title: string;
-  url: string;
-  date?: string;
-  tags?: [];
-  className?: string;
-  imageType?: 'fixed' | 'fluid';
-}
-
-export const ResultList: React.FC<ResultListProps> = ({
-  image,
-  title,
-  url,
-  date,
-  tags,
-  className,
-  imageType,
-  ...props
-}) => {
+export const ResultList = (props) => {
+  const {
+    item: {
+      background,
+      title,
+      slug,
+      date,
+      tags,
+      className,
+    },
+  } = props;
   // Add all classs to an array
-  const addAllClasses = ['post_list'];
+  const addAllClasses = ['resultList'];
 
   // className prop checking
   if (className) {
     addAllClasses.push(className);
   }
-
-  return (
-    <ResultListWrapper className={addAllClasses.join(' ')} {...props}>
-      <Link to={url}>
-        {image == null ? null : (
+  try {
+    return (
+      <ResultListWrapper className={addAllClasses.join(' ')} {...props}>
+        <Link to={slug}>
           <ResultPreview className="post_preview">
-            {imageType === 'fluid' ? (
-              <Img fluid={image} alt="post preview" />
-            ) : (
-              <Img fixed={image} alt="post preview" />
-            )}
+            <Img fixed={background?.childImageSharp?.fixed} alt="post preview" />
           </ResultPreview>
-        )}
-
-        <ResultDetails>
-          <ResultTitle className="post_title">{title}</ResultTitle>
-          <ResultMeta>
-            {date && (
-              <ResultDate
-                dangerouslySetInnerHTML={{
-                  __html: date,
-                }}
-                className="post_date"
-              />
-            )}
-            {tags == null ? null : (
+          <ResultDetails>
+            <ResultTitle className="post_title">{title}</ResultTitle>
+            <ResultMeta>
+              {date && (
+                <ResultDate
+                  dangerouslySetInnerHTML={{
+                    __html: date,
+                  }}
+                  className="post_date"
+                />
+              )}
               <ResultTags className="post_tags">
-                {tags.map((tag: string, index: number) => (
+                {tags?.map((tag: string, index: number) => (
                   <span key={index}>{`#${tag}`}</span>
                 ))}
               </ResultTags>
-            )}
-          </ResultMeta>
-        </ResultDetails>
-      </Link>
-    </ResultListWrapper>
-  );
-};
-
-ResultList.defaultProps = {
-  imageType: 'fluid',
+            </ResultMeta>
+          </ResultDetails>
+        </Link>
+      </ResultListWrapper>
+    );
+  } catch (e) {
+    Logger.error(e);
+  }
 };
 
 export default ResultList;

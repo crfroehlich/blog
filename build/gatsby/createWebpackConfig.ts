@@ -1,22 +1,45 @@
 import { GatsbyNode } from 'gatsby';
 import path from 'path';
-import { env } from '../initEnv';
 
-export const onCreateWebpackConfig: GatsbyNode['onCreateWebpackConfig'] = ({ actions, stage }) => {
+export const onCreateWebpackConfig: GatsbyNode['onCreateWebpackConfig'] = ({
+  actions: {
+    replaceWebpackConfig,
+    setWebpackConfig,
+  },
+  getConfig,
+  stage,
+ }) => {
   const config = {
     resolve: {
       modules: [path.resolve(__dirname, 'src'), 'node_modules'],
       alias: {
         $components: path.resolve(__dirname, 'src/components'),
         buble: '@philpl/buble', // to reduce bundle size
-      },
-      plugins: [],
+      }
     },
   };
-  if (stage === 'build-javascript' && env.GATSBY_BUILD_MODE?.length > 0) {
-    
-  } else if (stage === 'develop' || stage === 'develop-html') {
+  if (stage === 'develop' || stage === 'develop-html') {
     config.resolve.alias['react-dom'] = '@hot-loader/react-dom';
   }
-  actions.setWebpackConfig(config);
+  setWebpackConfig(config);
+
+  const replaceConfig = getConfig();
+  let options = {}
+
+  if (stage === 'build-javascript') {
+    replaceConfig.optimization.moduleIds = 'total-size'
+    options = {
+      name: `built-[1].[hash:6]`,
+      regExp: '(\\w+).worker.(js|ts)$',
+    }
+  }
+
+  replaceConfig.module.rules.push({
+    test: /\.worker\.(js|ts)$/,
+    use: { loader: 'workerize-loader', options },
+  })
+
+  replaceConfig.output.globalObject = 'this'
+
+  replaceWebpackConfig(replaceConfig)
 };

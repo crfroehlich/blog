@@ -40,7 +40,7 @@ export const SearchResult = styled.div`
   display: block;
   box-shadow: 0 30px 30px rgba(0, 0, 0, 0.08);
 
-  .post_list {
+  .resultList {
     border-bottom: 1px solid #f3f3f3;
     &:last-child {
       border: 0;

@@ -6,7 +6,6 @@ export interface IConfig {
   header: Header;
   sidebar: Sidebar;
   siteMetadata: SiteMetadata;
-  offline: Offline;
 }
 
 export interface Gatsby {
@@ -33,23 +32,6 @@ export interface Link {
   text: string;
   link: string;
   tooltip: string;
-}
-
-export interface Offline {
-  enabled: boolean;
-  manifest: Manifest;
-}
-
-export interface Manifest {
-  background_color: string;
-  cache_busting_mode: string;
-  crossOrigin: string;
-  display: string;
-  icon: string;
-  name: string;
-  short_name: string;
-  start_url: string;
-  theme_color: string;
 }
 
 export interface Sidebar {
@@ -94,20 +76,6 @@ const siteConfig = {
     ogImage: null,
     docsLocation: 'https://github.com/crfroehlich/blog/tree/main/content',
     favicon: '/favicon.svg',
-  },
-  offline: {
-    enabled: true, // disabling this will also remove the existing service worker.
-    manifest: {
-      background_color: '#6b37bf',
-      cache_busting_mode: 'query',
-      crossOrigin: 'use-credentials',
-      display: 'standalone',
-      icon: './static/favicon.svg',
-      name: 'Hiking My Desk',
-      short_name: 'HikingMyDesk',
-      start_url: '/',
-      theme_color: '#6b37bf',
-    },
   },
 };
 

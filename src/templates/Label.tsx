@@ -36,7 +36,7 @@ export const labelQuery = graphql`
     allMdx(
       sort: { fields: [frontmatter___updated], order: DESC }
       filter: {
-        fileAbsolutePath: { glob: "**/content/src/**" }
+        fileAbsolutePath: { glob: "**/content/code/**" }
         frontmatter: { labels: { in: [$label] } }
       }
     ) {

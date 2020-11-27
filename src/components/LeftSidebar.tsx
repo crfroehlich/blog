@@ -121,7 +121,7 @@ export const LeftSidebar = ({ sidebar }): JSX.Element => {
   return (
     <div className={classes.root}>
       <aside className={`hiddenMobile ${classes.sidebar}`}>
-        <Scrollbars autoHeight={true} autohide autoHeightMin={'100vh'}>
+        <Scrollbars autoHeight={true} autohide="true" autoHeightMin={'100vh'}>
           <Paper elevation={15} className={classes.inner}>
             <ProSidebar breakPoint={'md'}>
               <SidebarContent>

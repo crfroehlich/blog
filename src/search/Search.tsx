@@ -2,7 +2,7 @@ import React, { useReducer, useEffect } from 'react';
 import { SearchReducer, initialSearchState } from './SearchReducer';
 import { useStaticQuery, graphql } from 'gatsby';
 import { Scrollbars } from 'react-custom-scrollbars';
-import { RebuildIndex } from './RebuildIndex';
+import { BlogSearch } from './RebuildIndex';
 import ResultList from './ResultList';
 import {
   SearchWrapper,
@@ -31,7 +31,7 @@ export const Search = () => {
               tags
               background {
                 childImageSharp {
-                  fixed(width: 30) {
+                  fixed(width: 60) {
                     base64
                     aspectRatio
                     width
@@ -76,7 +76,7 @@ export const Search = () => {
       });
 
       dispatch({ type: 'SET_DATA', payload: data });
-      const dataToSearch = RebuildIndex(data);
+      const dataToSearch = new BlogSearch(data);
       if (dataToSearch) {
         dispatch({
           type: 'SET_SEARCH',
@@ -88,7 +88,6 @@ export const Search = () => {
 
   const { searchResults, searchQuery } = state;
   const queryResults = searchResults;
-
   return (
     <SearchWrapper>
       <SearchForm onSubmit={handleSubmit}>
@@ -101,31 +100,18 @@ export const Search = () => {
       </SearchForm>
       <SearchResult>
         {queryResults.length == 0 && searchQuery !== '' ? (
-          <NoResult>No results found</NoResult>
+          <NoResult>No trail found</NoResult>
         ) : (
           ''
         )}
 
         {queryResults.length !== 0 && (
           <Scrollbars
-            autoHeight={true}
+            autoHeight
             autoHeightMax={505}
             className="search-scrollbar"
           >
-            {queryResults.map((item: any) => {
-              return (
-                <ResultList
-                  key={item.slug}
-                  title={item.title}
-                  url={item.slug}
-                  image={
-                    item.background == null ? null : item.background.childImageSharp.fixed
-                  }
-                  date={item.date}
-                  tags={item.tags}
-                />
-              );
-            })}
+            {queryResults.map((item: any, i: number) => <ResultList key={`result_${i}`} {...item}/>)}
           </Scrollbars>
         )}
       </SearchResult>

@@ -1,32 +1,39 @@
-import * as JsSearch from 'js-search'
-/**
- * rebuilds the overall index based on the options
- */
-export const RebuildIndex = (searchData: any) => {
-  const dataToSearch = new JsSearch.Search('excerpt')
-  /**
-   *  defines a indexing strategy for the data
-   * more more about it in here https://github.com/bvaughn/js-search#configuring-the-index-strategy
-   */
-  dataToSearch.indexStrategy = new JsSearch.PrefixIndexStrategy()
-  /**
-   * defines the sanitizer for the search
-   * to prevent some of the words from being excluded
-   *
-   */
-  dataToSearch.sanitizer = new JsSearch.LowerCaseSanitizer()
-  /**
-   * defines the search index
-   * read more in here https://github.com/bvaughn/js-search#configuring-the-search-index
-   */
-  dataToSearch.searchIndex = new JsSearch.TfIdfSearchIndex('excerpt')
+import Fuse from 'fuse.js';
+import SearchWorker from '../workers/search.worker';
+export class BlogSearch {
+  private fuse;
+  private worker;
+  readonly options = {
+    // isCaseSensitive: false,
+    // includeScore: false,
+    // shouldSort: true,
+    includeMatches: true,
+    findAllMatches: true,
+    minMatchCharLength: 3,
+    // location: 0,
+    // threshold: 0.6,
+    // distance: 100,
+    // useExtendedSearch: false,
+    // ignoreLocation: false,
+    // ignoreFieldNorm: false,
+    keys: [
+      "title",
+      "subtitle",
+      "date",
+      "excerpt",
+      "tags",
+      "description",
+    ],
+  };
 
-  dataToSearch.addIndex('title') // sets the index attribute for the data
-  dataToSearch.addIndex('description') // sets the index attribute for the data
-  dataToSearch.addIndex('tags') // sets the index attribute for the data
-  dataToSearch.addIndex('excerpt') // sets the index attribute for the data
-  dataToSearch.addIndex('subtitle') // sets the index attribute for the data
+  constructor(data: any[]) {
+    const index = Fuse.createIndex(this.options.keys, data);
+    this.fuse = new Fuse(data, this.options, index);
+    this.worker = typeof window === 'object' && new SearchWorker();
+  }
 
-  dataToSearch.addDocuments(searchData) // adds the data to be searched
-  return dataToSearch
+  public search(term: string) {
+    console.log(this.worker.search(100));
+    return this.fuse.search(term);
+  }
 }

@@ -14,8 +14,8 @@ export const addContent: addConfig = (config, plugins): void => {
   plugins.push({
     resolve,
     options: {
-      name: 'src',
-      path: `${__dirname}/../../../content/src`,
+      name: 'code',
+      path: `${__dirname}/../../../content/code`,
     },
   });
 

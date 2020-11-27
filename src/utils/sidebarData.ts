@@ -135,7 +135,7 @@ export const getSideBarData = (): ISidebar => {
           }
         }
         allSrc: allMdx(
-          filter: { fileAbsolutePath: { glob: "**/content/src/**" } }
+          filter: { fileAbsolutePath: { glob: "**/content/code/**" } }
           sort: { fields: slug }
         ) {
           edges {
