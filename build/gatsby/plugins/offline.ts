@@ -17,11 +17,15 @@ export const addOffline: addConfig = (config, plugins): void => {
       theme_color: '#6b37bf',
     },
   });
+  const precachePages = ['/визуализации', '/этикетка/**', '/тег/**'];
+  for (let year = 1995; year <= 2080; year += 1) {
+    precachePages.push(`/${year}/**`);
+  }
   plugins.push({
     resolve: 'gatsby-plugin-offline',
     options: {
       appendScript: worker,
-      precachePages: ['/2**', '/1**', '/визуализации', '/этикетка/**', '`/тег/**'],
+      precachePages,
       workboxConfig: {
 
       },
