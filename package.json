@@ -1,8 +1,9 @@
 {
   "author": "Christopher Froehlich",
   "dependencies": {
-    "@emotion/core": "^10.1.1",
-    "@emotion/styled": "^10.0.27",
+    "@emotion/css": "^11.0.0",
+    "@emotion/react": "^11.1.1",
+    "@emotion/styled": "^11.0.0",
     "@fortawesome/fontawesome-pro": "^5.15.1",
     "@fortawesome/fontawesome-svg-core": "^1.2.32",
     "@fortawesome/free-brands-svg-icons": "^5.15.1",
@@ -15,7 +16,6 @@
     "@mdx-js/mdx": "^1.6.21",
     "@mdx-js/react": "^1.6.21",
     "clsx": "^1.1.1",
-    "emotion": "^10.0.27",
     "fuse.js": "^6.4.3",
     "gatsby": "^2.27.4",
     "gatsby-image": "^2.6.0",

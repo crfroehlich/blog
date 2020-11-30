@@ -65,6 +65,7 @@ const getSourceMenu = (menu, idx = 0): JSX.Element => {
         title={<div {...{ onClick: (e) => onNodeClick(e, menu) }}>{menu.name}</div>}
         defaultOpen={menu.open}
         key={`${idx}_${menu.name}`}
+        icon={<Icon {...{ icon: ['fas', 'cauldron'], size: 'lg' }} />}
       >
         {menu.links.map(getSourceMenu)}
       </SubMenu>

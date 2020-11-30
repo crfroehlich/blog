@@ -47,7 +47,7 @@ export const buildSidebar = (mdx, src): ISidebar => {
 
   const buildSrc = (s) => {
     const menu = {
-      name: 'src',
+      name: 'code',
       links: [],
     };
     s.edges.forEach((e) => {

@@ -15,7 +15,6 @@ const config = getConfig();
 
 const plugins: Array<PluginRef> = [
   'gatsby-plugin-catch-links',
-  'gatsby-plugin-emotion',
   'gatsby-plugin-react-helmet',
   'gatsby-plugin-remove-trailing-slashes',
   'gatsby-plugin-sass',
