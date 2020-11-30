@@ -59,7 +59,7 @@ export const NavSearchWrapper = styled.div`
   }
 
   &.expand {
-    height: 145px;
+    height: 50px;
     visibility: visible;
     @media (max-width: 1199px) {
       height: 120px;

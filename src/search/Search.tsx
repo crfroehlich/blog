@@ -52,6 +52,8 @@ export const Search = () => {
 
   const dataset = data.allMdx.edges;
   
+  let searchInput: HTMLElement;
+
   /**
    * handles the input change and perfom a search with js-search
    * in which the results will be added to the state
@@ -71,6 +73,7 @@ export const Search = () => {
   //   e.preventDefault();
   // };
   useEffect(() => {
+    searchInput.focus();
     if (dataset.length !== 0) {
       let data = dataset.map(({ node }: any) => {
         return {
@@ -95,10 +98,13 @@ export const Search = () => {
     <SearchWrapper>
       <SearchForm onSubmit={searchData}>
         <input
+          autoFocus={true}
+          tabIndex={0}
           id="Search"
           value={searchQuery}
           onChange={searchData}
           placeholder="The Questing Beast asks...?"
+          ref={(r) => searchInput = r}
         />
       </SearchForm>
       <SearchResult>

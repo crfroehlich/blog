@@ -18,13 +18,8 @@ const config = getConfig();
 
 const setNavBar = () => {
   const tools = new Tools();
-  const x = tools.getDocument()?.getElementById('navbar');
-
-  if (x.className === 'topnav') {
-    x.className += ' responsive';
-  } else {
-    x.className = 'topnav';
-  }
+  const navbar = tools.getDocument()?.getElementById('navbar');
+  navbar.className = (navbar.className === 'topnav') ? 'topnav responsive' : 'topnav';
 };
 
 const StyledBgDiv = styled('div')`
