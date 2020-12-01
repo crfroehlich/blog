@@ -1,7 +1,11 @@
+import { ISearch } from './ISearch';
+
+const searchResults: ISearch[] = [];
+
 export const initialSearchState = {
+  searchResults,
   totalData: [],
   search: [],
-  searchResults: [],
   isLoading: true,
   isError: false,
   searchQuery: '',

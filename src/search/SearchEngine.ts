@@ -1,5 +1,5 @@
 import SearchWorker from '../workers/search.worker';
-import { ISearch } from './ISearch';
+import { IResult, ISearch } from './ISearch';
 
 export class SearchEngine {
   private worker;
@@ -22,14 +22,13 @@ export class SearchEngine {
 
   public async search(term: string, log = false): Promise<ISearch> {
     this.init(this.data);
-    const result = await this.worker.search(term);
+    const result: IResult[] = await this.worker.search(term);
     if(log) {
       this.searches.push({term, result});
     } else {
       this.searches.push({term});
     }
-    console.log({term, result})
-    return result;
+    return {term, result};
   }
 
   public async getSearches() {

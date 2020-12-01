@@ -106,18 +106,20 @@ export const NavSearchFromWrapper = styled.div`
   height: 100%;
   position: relative;
   @media (min-width: 990px) {
-    width: 900px;
+    width: calc(100% - 600px);
   }
   @media (min-width: 1200px) {
-    width: 1050px;
+    width: calc(100% - 600px);
   }
   @media (min-width: 1400px) {
-    width: 1170px;
+    width: calc(100% - 600px);
   }
   @media (max-width: 990px) {
+    width: 95%
     padding: 0 45px;
   }
   @media (max-width: 767px) {
+    width: 95%;
     padding: 0 25px;
   }
 `;

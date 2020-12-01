@@ -10,6 +10,7 @@ import {
   SearchResult,
   NoResult,
 } from '../styles/SearchStyles';
+import { IResult, ISearch } from './ISearch';
 
 let searchEngine: SearchEngine;
 
@@ -51,7 +52,7 @@ export const Search = () => {
   `);
 
   const dataset = data.allMdx.edges;
-  
+
   let searchInput: HTMLElement;
 
   /**
@@ -67,6 +68,7 @@ export const Search = () => {
         payload: { searchQuery: value, searchResults },
       });
     });
+    searchInput.focus();
     // e.preventDefault();
   };
   // const handleSubmit = (e: any) => {
@@ -93,7 +95,7 @@ export const Search = () => {
   }, [dataset]);
 
   const { searchResults, searchQuery } = state;
-  const queryResults = searchResults;
+  const queryResults: ISearch = searchResults;
   return (
     <SearchWrapper>
       <SearchForm onSubmit={searchData}>
@@ -108,19 +110,19 @@ export const Search = () => {
         />
       </SearchForm>
       <SearchResult>
-        {queryResults.length == 0 && searchQuery !== '' ? (
+        {(!queryResults?.result || !queryResults?.result?.length || queryResults.result.length === 0) && searchQuery !== '' ? (
           <NoResult>No trail found</NoResult>
         ) : (
           ''
         )}
 
-        {queryResults.length !== 0 && (
+        {queryResults && queryResults.result && queryResults.result.length > 0 && (
           <Scrollbars
             autoHeight
             autoHeightMax={505}
             className="search-scrollbar"
           >
-            {queryResults.map && queryResults.map((item: any, i: number) => <ResultList key={`result_${i}`} {...item}/>)}
+            {queryResults.result.map && queryResults.result.map((item: IResult, i: number) => <ResultList key={`result_${i}`} {...item}/>)}
           </Scrollbars>
         )}
       </SearchResult>

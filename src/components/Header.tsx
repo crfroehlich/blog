@@ -13,6 +13,7 @@ import { Tools } from '../utils';
 import { Icon } from './Icon';
 import { Link } from './Link';
 import { Tooltip } from './Tooltip';
+import { ClickAwayListener } from '@material-ui/core';
 
 const config = getConfig();
 
@@ -38,15 +39,30 @@ const StyledBgDiv = styled('div')`
 export const Header: React.FC<IPageProps> = (): JSX.Element => {
   const [state, setState] = useState({
     toggle: false,
+    clickAway: false,
     search: '',
   });
 
-  const toggleHandle = () => {
+  const toggleHandle = (e) => {
     setState({
       ...state,
       toggle: !state.toggle,
+      clickAway: !state.toggle,
     });
+    e.stopPropagation();
   };
+
+  const handleClickAway = (e) => {
+    if (state.clickAway === true) {
+      setState({
+        ...state,
+        toggle: false,
+        clickAway: false,
+      });
+    }
+    e.preventDefault();
+  }
+
   return (
     <div className={'navBarWrapper'}>
       <nav className={'navBarDefault'}>
@@ -114,14 +130,16 @@ export const Header: React.FC<IPageProps> = (): JSX.Element => {
         </div>
       </StyledBgDiv>
       <NavSearchWrapper className={state.toggle === true ? 'expand' : ''}>
-        <NavSearchFromWrapper>
-          <SearchContainer />
-          <SearchCloseButton
-            type="submit"
-            aria-label="close"
-            onClick={toggleHandle}
-          ></SearchCloseButton>
-        </NavSearchFromWrapper>
+        <ClickAwayListener onClickAway={handleClickAway}>
+          <NavSearchFromWrapper>
+            <SearchContainer />
+            <SearchCloseButton
+              type="submit"
+              aria-label="close"
+              onClick={handleClickAway}
+            ></SearchCloseButton>
+          </NavSearchFromWrapper>
+        </ClickAwayListener>
       </NavSearchWrapper>
     </div>
   );

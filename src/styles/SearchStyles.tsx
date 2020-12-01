@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { DarkStyles } from './Theme';
 
 export const SearchWrapper = styled.div`
   display: block;
@@ -15,7 +16,7 @@ export const SearchForm = styled.form`
     width: 100%;
     font-size: 21px;
     font-weight: normal;
-    color: #navy;
+    color: ${DarkStyles.colors.panel};
     border: 0;
     background: transparent;
     &:focus {
@@ -34,11 +35,16 @@ export const SearchResult = styled.div`
   z-index: 99999;
   position: absolute;
   width: 100%;
-  background: #fff;
+  background: ${DarkStyles.colors.panel};
   top: 100%;
   left: 0;
   display: block;
+  margin-left: 40px;
   box-shadow: 0 30px 30px rgba(0, 0, 0, 0.08);
+
+  @media (max-width: 990px) {
+    margin: 0;
+  }
 
   .resultList {
     border-bottom: 1px solid #f3f3f3;
@@ -68,7 +74,7 @@ export const NoResult = styled.div`
   padding: 30px;
   font-size: 30px;
   text-align: center;
-  color: #cccccc;
+  color: ${DarkStyles.colors.text};
   @media (max-width: 990px) {
     font-size: 24px;
     padding: 25px;

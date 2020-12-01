@@ -2,7 +2,7 @@ import Img from 'gatsby-image';
 import React from 'react';
 import { Paper } from '@material-ui/core';
 import { IPageProps } from '../types/interfaces';
-import { ListItemStyles, RightSidebarStyles, RightSideBarWidth } from '../styles';
+import { ListItemStyles, RightSidebarStyles, RightSideBarWidth, DarkStyles } from '../styles';
 
 export const RightSidebar: React.FC<IPageProps> = (props): JSX.Element => {
   const {
@@ -52,7 +52,7 @@ export const RightSidebar: React.FC<IPageProps> = (props): JSX.Element => {
   return (
     <RightSideBarWidth className={'hiddenMobile'}>
       <RightSidebarStyles>
-        <Paper elevation={15} style={{ backgroundColor: '#33475B' }}>
+        <Paper elevation={15} style={{ backgroundColor: DarkStyles.colors.panel }}>
           <ul className={'rightSideBarUL'}>
             {image}
             {header}

@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { DarkStyles } from './Theme';
 
 export const ResultListWrapper = styled.div`
   a {
@@ -34,11 +35,11 @@ export const ResultDetails = styled.div`
 export const ResultTitle = styled.h1`
   font-size: 21px;
   font-weight: 700;
-  color: #navy;
+  color: ${DarkStyles.colors.text};
   line-height: 1.53;
   margin-bottom: 12px;
   a {
-    color: #navy;
+    color: ${DarkStyles.colors.text};
   }
   @media (max-width: 990px) {
     font-size: 16px;
@@ -59,7 +60,7 @@ export const ResultMeta = styled.div`
 export const ResultDate = styled.div`
   font-size: 15px;
   font-weight: normal;
-  color: #navy;
+  color: ${DarkStyles.colors.text};
   @media (max-width: 575px) {
     font-size: 13px;
   }
@@ -79,7 +80,7 @@ export const ResultTags = styled.div`
     margin-left: 30px;
     font-size: 14px;
     font-weight: 400;
-    color: #navy;
+    color: ${DarkStyles.colors.text};
     @media (max-width: 990px) {
       font-size: 13px;
       margin-left: 25px;

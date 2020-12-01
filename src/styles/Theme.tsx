@@ -8,5 +8,6 @@ export const DarkStyles = {
     text: '#fff',
     preFormattedText: '#000',
     link: '#1ED3C6',
+    panel: '#33475b',
   },
 };

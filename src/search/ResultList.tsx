@@ -12,25 +12,20 @@ import {
   ResultTags,
 } from '../styles/ResultListStyles';
 import { Logger } from '../utils';
+import { IResult, ISearch } from './ISearch';
 
-export const ResultList = (props) => {
+export const ResultList = (props: IResult) => {
   const {
-    item: {
-      background,
-      title,
-      slug,
-      date,
-      tags,
-      className,
-    },
-  } = props;
+    background,
+    title,
+    slug,
+    date,
+    tags,
+  } = props.item;
   // Add all classs to an array
   const addAllClasses = ['resultList'];
 
   // className prop checking
-  if (className) {
-    addAllClasses.push(className);
-  }
   try {
     return (
       <ResultListWrapper className={addAllClasses.join(' ')} {...props}>
