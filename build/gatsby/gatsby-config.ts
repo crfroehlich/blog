@@ -36,6 +36,7 @@ addRss(config, plugins);
 
 export const gatsbyConfig: GatsbyConfig = {
   plugins,
+  // flags: { QUERY_ON_DEMAND: true },
   pathPrefix: config.gatsby.pathPrefix,
   siteMetadata: {
     title: config.siteMetadata.title,

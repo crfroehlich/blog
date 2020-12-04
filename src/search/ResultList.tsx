@@ -12,7 +12,7 @@ import {
   ResultTags,
 } from '../styles/ResultListStyles';
 import { Logger } from '../utils';
-import { IResult, ISearch } from './ISearch';
+import { IResult } from './ISearch';
 
 export const ResultList = (props: IResult) => {
   const {

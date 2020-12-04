@@ -14,6 +14,7 @@ const GLOB_OPTIONS = {
     'tsconfig.json',
     '**/test-data/**',
     'index.ts',
+    'graphql-types.ts',
   ],
   realPath: true,
 };

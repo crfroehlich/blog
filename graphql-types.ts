@@ -2269,6 +2269,7 @@ export type QuerySiteArgs = {
   port?: Maybe<IntQueryOperatorInput>;
   host?: Maybe<StringQueryOperatorInput>;
   pathPrefix?: Maybe<StringQueryOperatorInput>;
+  flags?: Maybe<SiteFlagsFilterInput>;
   polyfill?: Maybe<BooleanQueryOperatorInput>;
   id?: Maybe<StringQueryOperatorInput>;
   parent?: Maybe<NodeFilterInput>;
@@ -2427,6 +2428,7 @@ export type Site = Node & {
   port?: Maybe<Scalars['Int']>;
   host?: Maybe<Scalars['String']>;
   pathPrefix?: Maybe<Scalars['String']>;
+  flags?: Maybe<SiteFlags>;
   polyfill?: Maybe<Scalars['Boolean']>;
   id: Scalars['ID'];
   parent?: Maybe<Node>;
@@ -2643,6 +2645,12 @@ export type SiteFieldsEnum =
   | 'port'
   | 'host'
   | 'pathPrefix'
+  | 'flags___FAST_REFRESH'
+  | 'flags___LAZY_IMAGES'
+  | 'flags___PARALLEL_SOURCING'
+  | 'flags___PRESERVE_FILE_DOWNLOAD_CACHE'
+  | 'flags___PRESERVE_WEBPACK_CACHE'
+  | 'flags___QUERY_ON_DEMAND'
   | 'polyfill'
   | 'id'
   | 'parent___id'
@@ -2737,11 +2745,30 @@ export type SiteFilterInput = {
   port?: Maybe<IntQueryOperatorInput>;
   host?: Maybe<StringQueryOperatorInput>;
   pathPrefix?: Maybe<StringQueryOperatorInput>;
+  flags?: Maybe<SiteFlagsFilterInput>;
   polyfill?: Maybe<BooleanQueryOperatorInput>;
   id?: Maybe<StringQueryOperatorInput>;
   parent?: Maybe<NodeFilterInput>;
   children?: Maybe<NodeFilterListInput>;
   internal?: Maybe<InternalFilterInput>;
+};
+
+export type SiteFlags = {
+  FAST_REFRESH?: Maybe<Scalars['Boolean']>;
+  LAZY_IMAGES?: Maybe<Scalars['Boolean']>;
+  PARALLEL_SOURCING?: Maybe<Scalars['Boolean']>;
+  PRESERVE_FILE_DOWNLOAD_CACHE?: Maybe<Scalars['Boolean']>;
+  PRESERVE_WEBPACK_CACHE?: Maybe<Scalars['Boolean']>;
+  QUERY_ON_DEMAND?: Maybe<Scalars['Boolean']>;
+};
+
+export type SiteFlagsFilterInput = {
+  FAST_REFRESH?: Maybe<BooleanQueryOperatorInput>;
+  LAZY_IMAGES?: Maybe<BooleanQueryOperatorInput>;
+  PARALLEL_SOURCING?: Maybe<BooleanQueryOperatorInput>;
+  PRESERVE_FILE_DOWNLOAD_CACHE?: Maybe<BooleanQueryOperatorInput>;
+  PRESERVE_WEBPACK_CACHE?: Maybe<BooleanQueryOperatorInput>;
+  QUERY_ON_DEMAND?: Maybe<BooleanQueryOperatorInput>;
 };
 
 export type SiteGroupConnection = {
