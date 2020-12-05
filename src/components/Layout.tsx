@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { MDXProvider } from '@mdx-js/react';
-import { ThemeProvider, Global } from '@emotion/react';
+import { ThemeProvider } from '@emotion/react';
 import { MdxNodes } from '../styles';
 import { RightSidebar } from './RightSidebar';
 import { IPageProps } from '../types';
@@ -9,7 +9,6 @@ import { Header } from './Header';
 import { SEO } from './SEO';
 import {
   DarkStyles,
-  GlobalStyles,
   Wrapper,
   Content,
   MaxWidth,
@@ -24,7 +23,6 @@ export const Layout: React.FC<IPageProps> = (props): JSX.Element => {
 
   return (
     <div>
-      <Global styles={GlobalStyles} />
       <Header {...props} />
       <ThemeProvider theme={{...DarkStyles}}/>
       <SEO {...props} />
@@ -42,5 +40,5 @@ export const Layout: React.FC<IPageProps> = (props): JSX.Element => {
     </div>
   );
 };
- 
+
 export default Layout;

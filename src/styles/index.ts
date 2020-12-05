@@ -7,4 +7,3 @@ export * from './SearchStyles';
 export * from './SidebarStyles';
 export * from './StyledNextPrevious';
 export * from './Theme';
-export * from './Global';

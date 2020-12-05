@@ -17,7 +17,6 @@ const plugins: Array<PluginRef> = [
   'gatsby-plugin-catch-links',
   'gatsby-plugin-react-helmet',
   'gatsby-plugin-remove-trailing-slashes',
-  'gatsby-plugin-sass',
   'gatsby-plugin-sharp',
   'gatsby-plugin-sitemap',
   'gatsby-plugin-ts',

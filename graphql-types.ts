@@ -3605,15 +3605,6 @@ export type SitePageFieldsEnum =
   | 'pluginCreator___resolve'
   | 'pluginCreator___name'
   | 'pluginCreator___version'
-  | 'pluginCreator___pluginOptions___indentedSyntax'
-  | 'pluginCreator___pluginOptions___indentType'
-  | 'pluginCreator___pluginOptions___indentWidth'
-  | 'pluginCreator___pluginOptions___linefeed'
-  | 'pluginCreator___pluginOptions___omitSourceMapUrl'
-  | 'pluginCreator___pluginOptions___precision'
-  | 'pluginCreator___pluginOptions___sourceComments'
-  | 'pluginCreator___pluginOptions___sourceMapContents'
-  | 'pluginCreator___pluginOptions___sourceMapEmbed'
   | 'pluginCreator___pluginOptions___base64Width'
   | 'pluginCreator___pluginOptions___stripMetadata'
   | 'pluginCreator___pluginOptions___defaultQuality'
@@ -3861,15 +3852,6 @@ export type SitePluginFieldsEnum =
   | 'resolve'
   | 'name'
   | 'version'
-  | 'pluginOptions___indentedSyntax'
-  | 'pluginOptions___indentType'
-  | 'pluginOptions___indentWidth'
-  | 'pluginOptions___linefeed'
-  | 'pluginOptions___omitSourceMapUrl'
-  | 'pluginOptions___precision'
-  | 'pluginOptions___sourceComments'
-  | 'pluginOptions___sourceMapContents'
-  | 'pluginOptions___sourceMapEmbed'
   | 'pluginOptions___base64Width'
   | 'pluginOptions___stripMetadata'
   | 'pluginOptions___defaultQuality'
@@ -4045,15 +4027,6 @@ export type SitePluginPackageJsonPeerDependenciesFilterListInput = {
 };
 
 export type SitePluginPluginOptions = {
-  indentedSyntax?: Maybe<Scalars['Boolean']>;
-  indentType?: Maybe<Scalars['String']>;
-  indentWidth?: Maybe<Scalars['Int']>;
-  linefeed?: Maybe<Scalars['String']>;
-  omitSourceMapUrl?: Maybe<Scalars['Boolean']>;
-  precision?: Maybe<Scalars['Int']>;
-  sourceComments?: Maybe<Scalars['Boolean']>;
-  sourceMapContents?: Maybe<Scalars['Boolean']>;
-  sourceMapEmbed?: Maybe<Scalars['Boolean']>;
   base64Width?: Maybe<Scalars['Int']>;
   stripMetadata?: Maybe<Scalars['Boolean']>;
   defaultQuality?: Maybe<Scalars['Int']>;
@@ -4128,15 +4101,6 @@ export type SitePluginPluginOptionsFeedsFilterListInput = {
 };
 
 export type SitePluginPluginOptionsFilterInput = {
-  indentedSyntax?: Maybe<BooleanQueryOperatorInput>;
-  indentType?: Maybe<StringQueryOperatorInput>;
-  indentWidth?: Maybe<IntQueryOperatorInput>;
-  linefeed?: Maybe<StringQueryOperatorInput>;
-  omitSourceMapUrl?: Maybe<BooleanQueryOperatorInput>;
-  precision?: Maybe<IntQueryOperatorInput>;
-  sourceComments?: Maybe<BooleanQueryOperatorInput>;
-  sourceMapContents?: Maybe<BooleanQueryOperatorInput>;
-  sourceMapEmbed?: Maybe<BooleanQueryOperatorInput>;
   base64Width?: Maybe<IntQueryOperatorInput>;
   stripMetadata?: Maybe<BooleanQueryOperatorInput>;
   defaultQuality?: Maybe<IntQueryOperatorInput>;
