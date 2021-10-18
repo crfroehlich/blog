@@ -60,7 +60,7 @@
     "react-instantsearch-dom": "^6.8.2",
     "react-keyword-cloud": "1.0.3",
     "react-live": "^2.2.3",
-    "react-pro-sidebar": "^0.4.4",
+    "react-pro-sidebar": "^0.7.0",
     "react-redux": "^7.2.2",
     "redux": "^4.0.5",
     "roarr": "^2.15.4",
