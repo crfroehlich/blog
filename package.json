@@ -75,7 +75,7 @@
     "@graphql-codegen/typescript-graphql-files-modules": "1.18.0",
     "@graphql-codegen/typescript-operations": "^1.17.11",
     "@graphql-codegen/typescript-react-apollo": "^2.2.0",
-    "@hot-loader/react-dom": "^17.0.0",
+    "@hot-loader/react-dom": "17.0.2",
     "@philpl/buble": "^0.19.7",
     "@types/lodash": "^4.14.165",
     "@types/node": "^14.14.10",
